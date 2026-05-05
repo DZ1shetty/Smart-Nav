@@ -469,7 +469,11 @@ export default function FloorPlan() {
                 onRoomMove={handleRoomMove} onRoomResize={handleRoomResize} onBoundaryChange={handleBoundaryChange}
                 onRoomClick={(room) => {
                   if (room.clickable === false) return;
-                  if (room.type === 'staffroom') {
+                  
+                  // Administrative offices like Purchase Section should show their photo, not the faculty list
+                  const isAdminOffice = room.name?.toUpperCase().includes('PURCHASE');
+                  
+                  if (room.type === 'staffroom' && !isAdminOffice) {
                     setIsFacultyModalOpen(true);
                   } else {
                     navigate(`?room=${room.id}`);
