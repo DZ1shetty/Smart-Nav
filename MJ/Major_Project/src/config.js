@@ -16,7 +16,7 @@ export const IS_CLOUD = true;
 
 // --- DYNAMIC BASE URL ---
 export const IMG_BASE_URL = IS_CLOUD 
-  ? `https://cdn.jsdelivr.net/gh/${GITHUB_USER}/${GITHUB_REPO}@${GITHUB_BRANCH}/MJ/Major_Project/OLD_LOCAL_DATA/public-backup`
+  ? `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/MJ/Major_Project/OLD_LOCAL_DATA/public-backup`
   : ""; // Empty string resolves to local root in Vite (e.g. /apj-block-images)
 
 // --- FIREBASE CLIENT CONFIG (REQUIRED FOR STAGE 4) ---
