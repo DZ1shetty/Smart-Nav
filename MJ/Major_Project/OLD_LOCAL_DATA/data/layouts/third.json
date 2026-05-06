@@ -1,0 +1,239 @@
+{
+  "floorId": "third",
+  "lastEdited": "2026-04-28T11:47:07.605Z",
+  "lastEditedBy": "admin",
+  "locked": true,
+  "rooms": [
+    {
+      "id": "lh-311",
+      "x": 19,
+      "y": 44,
+      "w": 146,
+      "h": 90,
+      "width": 146,
+      "height": 90,
+      "floor": "third",
+      "directions": ""
+    },
+    {
+      "id": "staff-room-top",
+      "x": 320,
+      "y": 40,
+      "w": 220,
+      "h": 90,
+      "width": 220,
+      "height": 90,
+      "floor": "third",
+      "directions": ""
+    },
+    {
+      "id": "lh-312",
+      "x": 662,
+      "y": 45,
+      "w": 158,
+      "h": 90,
+      "width": 158,
+      "height": 90,
+      "floor": "third",
+      "directions": "gdhd"
+    },
+    {
+      "id": "staff-room-mid-1",
+      "x": 310,
+      "y": 215,
+      "w": 127,
+      "h": 136,
+      "width": 127,
+      "height": 136,
+      "floor": "third",
+      "directions": ""
+    },
+    {
+      "id": "staff-room-mid-2",
+      "x": 445,
+      "y": 215,
+      "w": 127,
+      "h": 138,
+      "width": 127,
+      "height": 138,
+      "floor": "third",
+      "directions": ""
+    },
+    {
+      "id": "lh-309",
+      "x": 19,
+      "y": 362,
+      "w": 148,
+      "h": 96,
+      "width": 148,
+      "height": 96,
+      "floor": "third",
+      "directions": ""
+    },
+    {
+      "id": "lh-310",
+      "x": 690,
+      "y": 362,
+      "w": 139,
+      "h": 82,
+      "width": 139,
+      "height": 82,
+      "floor": "third",
+      "directions": ""
+    },
+    {
+      "id": "washroom-3",
+      "x": 18,
+      "y": 527,
+      "w": 220,
+      "h": 100,
+      "width": 220,
+      "height": 100,
+      "floor": "third",
+      "directions": ""
+    },
+    {
+      "id": "stairs-top-3",
+      "x": 325,
+      "y": 610,
+      "w": 220,
+      "h": 70,
+      "width": 220,
+      "height": 70,
+      "floor": "third",
+      "directions": ""
+    },
+    {
+      "id": "ladies-common-room",
+      "x": 19,
+      "y": 705,
+      "w": 220,
+      "h": 100,
+      "width": 220,
+      "height": 100,
+      "floor": "third",
+      "directions": ""
+    },
+    {
+      "id": "lift-3",
+      "x": 325,
+      "y": 735,
+      "w": 220,
+      "h": 70,
+      "width": 220,
+      "height": 70,
+      "floor": "third",
+      "directions": ""
+    },
+    {
+      "id": "lh-308",
+      "x": 659,
+      "y": 983,
+      "w": 169,
+      "h": 86,
+      "width": 169,
+      "height": 86,
+      "floor": "third",
+      "directions": ""
+    },
+    {
+      "id": "ec-staff-room-1",
+      "x": 315,
+      "y": 40,
+      "w": 240,
+      "h": 120,
+      "width": 240,
+      "height": 120,
+      "floor": "third",
+      "directions": ""
+    },
+    {
+      "id": "ec-staff-room-2",
+      "x": 19,
+      "y": 963,
+      "w": 240,
+      "h": 120,
+      "width": 240,
+      "height": 120,
+      "floor": "third",
+      "directions": ""
+    },
+    {
+      "id": "staff-room-bot-1",
+      "x": 305,
+      "y": 930,
+      "w": 127,
+      "h": 154,
+      "width": 127,
+      "height": 154,
+      "floor": "third",
+      "directions": ""
+    },
+    {
+      "id": "staff-room-bot-2",
+      "x": 444,
+      "y": 926,
+      "w": 125,
+      "h": 156,
+      "width": 125,
+      "height": 156,
+      "floor": "third",
+      "directions": ""
+    },
+    {
+      "id": "lh-306",
+      "x": 664,
+      "y": 1205,
+      "w": 161,
+      "h": 88,
+      "width": 161,
+      "height": 88,
+      "floor": "third",
+      "directions": ""
+    },
+    {
+      "id": "texas-instruments",
+      "x": 19,
+      "y": 1217,
+      "w": 261,
+      "h": 96,
+      "width": 261,
+      "height": 96,
+      "floor": "third",
+      "directions": ""
+    },
+    {
+      "id": "staff-room-bottom-left",
+      "x": 135,
+      "y": 1364,
+      "w": 154,
+      "h": 70,
+      "width": 154,
+      "height": 70,
+      "floor": "third",
+      "directions": ""
+    },
+    {
+      "id": "stairs-bottom-3",
+      "x": 325,
+      "y": 1365,
+      "w": 220,
+      "h": 70,
+      "width": 220,
+      "height": 70,
+      "floor": "third",
+      "directions": ""
+    },
+    {
+      "id": "corridor-3",
+      "x": 850,
+      "y": 500,
+      "w": 250,
+      "h": 450,
+      "width": 250,
+      "height": 450,
+      "floor": "third",
+      "directions": ""
+    }
+  ]
+}

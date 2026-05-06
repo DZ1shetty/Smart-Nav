@@ -6,11 +6,11 @@ dist
 .env.test.local
 .env.production.local
 
-# Database/Logs
-data/layouts/*.json
-data/logs/*.log
-!data/layouts/.gitkeep
-!data/logs/.gitkeep
+# Database/Logs (Relative to Project Root)
+/data/layouts/*.json
+/data/logs/*.log
+!/data/layouts/.gitkeep
+!/data/logs/.gitkeep
 image_mapping.json
 npm-debug.log*
 yarn-debug.log*
@@ -20,7 +20,6 @@ yarn-error.log*
 serviceAccountKey.json
 
 # Local Assets/Backups
-OLD_LOCAL_DATA/
 *.bak
 *.tmp
 

@@ -13,6 +13,15 @@ const CONFIDENCE_THRESHOLD = 25;
 
 // Internal Cache for the Search Pool
 let SEARCH_POOL_CACHE = null;
+let DYNAMIC_FLOORS_DATA = null;
+
+/**
+ * Updates the search engine with dynamic data from Firestore.
+ */
+export const updateSearchData = (dynamicData) => {
+  DYNAMIC_FLOORS_DATA = dynamicData;
+  SEARCH_POOL_CACHE = null; // Invalidate cache
+};
 
 /**
  * Pre-indexes all searchable items into a flat, efficient pool.
@@ -20,8 +29,10 @@ let SEARCH_POOL_CACHE = null;
 const buildSearchPool = () => {
   if (SEARCH_POOL_CACHE) return SEARCH_POOL_CACHE;
 
+  const activeData = DYNAMIC_FLOORS_DATA || floorsData;
   const facultyMap = {};
-  Object.entries(floorsData).forEach(([floorKey, floorInfo]) => {
+  
+  Object.entries(activeData).forEach(([floorKey, floorInfo]) => {
     floorInfo.faculty?.forEach(fac => {
       if (!facultyMap[fac.roomId]) facultyMap[fac.roomId] = [];
       facultyMap[fac.roomId].push(fac.name);
@@ -29,7 +40,7 @@ const buildSearchPool = () => {
   });
 
   const pool = [];
-  Object.entries(floorsData).forEach(([floorKey, floorInfo]) => {
+  Object.entries(activeData).forEach(([floorKey, floorInfo]) => {
     // Index Rooms
     floorInfo.rooms?.forEach(room => {
       const linkedFaculty = facultyMap[room.id] || [];

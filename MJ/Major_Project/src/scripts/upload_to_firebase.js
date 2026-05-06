@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const serviceAccount = JSON.parse(fs.readFileSync('./serviceAccountKey.json', 'utf8'));
+const serviceAccount = JSON.parse(fs.readFileSync('../../serviceAccountKey.json', 'utf8'));
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
@@ -11,7 +11,7 @@ admin.initializeApp({
 });
 
 const bucket = admin.storage().bucket();
-const IMAGES_DIR = './public/apj-block-images';
+const IMAGES_DIR = '../../OLD_LOCAL_DATA/public-backup/apj-block-images';
 
 async function uploadFile(filePath, destPath) {
   await bucket.upload(filePath, {

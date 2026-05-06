@@ -2,7 +2,9 @@ import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react'
 import { Search, MapPin, ArrowRight, X, User, Command, Volume2, AlertCircle, CornerDownLeft, ArrowUp, ArrowDown, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { resolveNavigationQuery } from '../data/searchEngine';
+import { db } from '../firebase';
+import { collection, onSnapshot } from 'firebase/firestore';
+import { resolveNavigationQuery, updateSearchData } from '../data/searchEngine';
 
 const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
   const [query, setQuery] = useState('');
@@ -10,6 +12,23 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
   const [isFocused, setIsFocused] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [isResolving, setIsResolving] = useState(false);
+
+  // Sync Search Engine with Firestore Data
+  useEffect(() => {
+    const layoutsRef = collection(db, "layouts");
+    const unsub = onSnapshot(layoutsRef, (snap) => {
+      const dynamicData = {};
+      snap.forEach(doc => {
+        const data = doc.data();
+        if (data.floorId) {
+          dynamicData[data.floorId] = data;
+        }
+      });
+      console.log("[SearchSystem] Search data refreshed from Firestore");
+      updateSearchData(dynamicData);
+    });
+    return () => unsub();
+  }, []);
   
   const searchRef = useRef(null);
   const inputRef = useRef(null);

@@ -9,7 +9,8 @@ import FacultyProfileModal from './FacultyProfileModal'
 import FacultyDirectoryModal from './FacultyDirectoryModal'
 import SearchSystem from './SearchSystem'
 import { db } from '../firebase'
-import { doc, onSnapshot, setDoc, getDoc } from 'firebase/firestore'
+import { doc, onSnapshot, setDoc, getDoc, collection, writeBatch } from 'firebase/firestore'
+import DirectionsManagerModal from './DirectionsManagerModal'
 
 // --- GLOBAL SAFETY UTILITY ---
 const SafeComponent = (Component, props) => {
@@ -53,6 +54,7 @@ export default function FloorPlan() {
   const [isEditMode, setIsEditMode] = useState(false);
   const [isLocked, setIsLocked] = useState(true);
   const [mapImage, setMapImage] = useState(null);
+  const [isDirectionsModalOpen, setIsDirectionsModalOpen] = useState(false);
 
   /**
    * STAGE 4: AUTO LOAD (CRITICAL FOR ALL USERS)
@@ -148,7 +150,21 @@ export default function FloorPlan() {
         lastEdited: new Date().toISOString()
       });
 
-      console.log(`[Firestore] Successfully saved ${docName}`);
+      // STAGE 7: SEPARATE DIRECTIONS COLLECTION (As requested)
+      // "Saved under the firestore just like the layouts"
+      const directionsRef = doc(db, "directions", docName);
+      const directionsData = {};
+      cleanRooms.forEach(room => {
+        directionsData[room.id] = room.directions || '';
+      });
+
+      await setDoc(directionsRef, {
+        floorId,
+        directions: directionsData,
+        lastUpdated: new Date().toISOString()
+      });
+
+      console.log(`[Firestore] Successfully saved ${docName} and its directions`);
       setSaveStatus('saved');
       setTimeout(() => {
         setSaveStatus('idle');
@@ -423,6 +439,7 @@ export default function FloorPlan() {
             {isEditMode ? (
               <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }} className="flex items-center gap-1 bg-blue-500/10 border border-blue-500/30 p-1 rounded-xl">
                 <div className="flex items-center border-r border-black/10 dark:border-white/10 mr-1 pr-1 gap-1">
+                  <button onClick={() => setIsDirectionsModalOpen(true)} className="px-3 py-2 hover:bg-blue-500/10 text-blue-500 rounded-lg transition-all font-orbitron font-black text-[8px] uppercase">DIRECTIONS</button>
                   <button onClick={handleResetDefault} className="px-3 py-2 hover:bg-amber-500/10 text-amber-500 rounded-lg transition-all font-orbitron font-black text-[8px] uppercase">RESET</button>
                   <label className="px-3 py-2 hover:bg-emerald-500/10 text-emerald-500 rounded-lg transition-all font-orbitron font-black text-[8px] uppercase cursor-pointer">UPLOAD <input type="file" className="hidden" onChange={handleMapImageUpload} /></label>
                 </div>
@@ -518,6 +535,16 @@ export default function FloorPlan() {
       })}
 
       {SafeComponent(FacultyProfileModal, { faculty: selectedFacultyProfile, onClose: handleCloseFaculty })}
+
+      <DirectionsManagerModal 
+        isOpen={isDirectionsModalOpen} 
+        onClose={() => setIsDirectionsModalOpen(false)} 
+        rooms={rooms} 
+        onSave={async (updatedRooms) => {
+          setRooms(updatedRooms);
+          await onSave(updatedRooms);
+        }}
+      />
     </motion.div>
   )
 }

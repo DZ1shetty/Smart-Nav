@@ -1,14 +1,20 @@
 import admin from 'firebase-admin';
 import fs from 'fs';
-import { ground } from './src/data/apj-block/ground.js';
-import { first } from './src/data/apj-block/first.js';
-import { second } from './src/data/apj-block/second.js';
-import { third } from './src/data/apj-block/third.js';
-import { fourth } from './src/data/apj-block/fourth.js';
-import { fifth } from './src/data/apj-block/fifth.js';
+import { fileURLToPath } from 'url';
+import path from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+import { ground } from '../data/apj-block/ground.js';
+import { first } from '../data/apj-block/first.js';
+import { second } from '../data/apj-block/second.js';
+import { third } from '../data/apj-block/third.js';
+import { fourth } from '../data/apj-block/fourth.js';
+import { fifth } from '../data/apj-block/fifth.js';
 
 // Load service account
-const serviceAccount = JSON.parse(fs.readFileSync('./serviceAccountKey.json', 'utf8'));
+const serviceAccount = JSON.parse(fs.readFileSync(path.join(__dirname, '../../serviceAccountKey.json'), 'utf8'));
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
