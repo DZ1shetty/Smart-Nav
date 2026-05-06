@@ -96,7 +96,7 @@ export const ground = {
       id: "deputy-registrar-final",
       name: "DEPUTY REGISTRAR OFFICE",
       x: 790, y: 900, w: 190, h: 200,
-      type: "staffroom",
+      type: "hod",
       description: "Office of Deputy Registrar",
       image: `${IMG_BASE_URL}/apj-block-images/ground-floor/ground-deputy-registrar.jpg`,
       directions: "Lower right area.",
