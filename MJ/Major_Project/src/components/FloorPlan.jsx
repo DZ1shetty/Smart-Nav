@@ -7,6 +7,7 @@ import FloorMapSVG from './FloorMapSVG'
 import RoomModal from './RoomModal'
 import FacultyProfileModal from './FacultyProfileModal'
 import FacultyDirectoryModal from './FacultyDirectoryModal'
+import FacultyManagerModal from './FacultyManagerModal'
 import SearchSystem from './SearchSystem'
 import { db } from '../firebase'
 import { doc, onSnapshot, setDoc, getDoc, collection, writeBatch } from 'firebase/firestore'
@@ -45,6 +46,7 @@ export default function FloorPlan() {
   const [selectedRoom, setSelectedRoom] = useState(null)
   const [isFloorMenuOpen, setIsFloorMenuOpen] = useState(false)
   const [isFacultyModalOpen, setIsFacultyModalOpen] = useState(false)
+  const [isFacultyManagerOpen, setIsFacultyManagerOpen] = useState(false)
   const [selectedFacultyProfile, setSelectedFacultyProfile] = useState(null)
   const [highlightedRoomId, setHighlightedRoomId] = useState(null)
   const [saveStatus, setSaveStatus] = useState('idle'); // 'idle', 'saving', 'saved'
@@ -294,7 +296,8 @@ export default function FloorPlan() {
         roomName: room.name,
         department: room.department,
         originalRoom: room,
-        floorKey: floorId
+        floorKey: floorId,
+        description: room.description || ''
       }))
     const listFaculty = (floorData.faculty || []).map((f, idx) => {
       const room = floorData.rooms.find(r => r.id === f.roomId)
@@ -305,7 +308,8 @@ export default function FloorPlan() {
         roomName: room?.name || 'Staff Area',
         department: f.department || room?.department,
         originalRoom: room,
-        floorKey: floorId
+        floorKey: floorId,
+        description: f.description || ''
       }
     })
     return [...roomFaculty, ...listFaculty]
@@ -314,11 +318,11 @@ export default function FloorPlan() {
   const findFacultyGlobally = (name) => {
     for (const [fKey, fData] of Object.entries(floorsData)) {
       const roomMatch = fData.rooms?.find(r => r.faculty === name)
-      if (roomMatch) return { id: roomMatch.id, name: roomMatch.faculty, image: roomMatch.image, roomName: roomMatch.name, department: roomMatch.department, originalRoom: roomMatch, floorKey: fKey }
+      if (roomMatch) return { id: roomMatch.id, name: roomMatch.faculty, image: roomMatch.image, roomName: roomMatch.name, department: roomMatch.department, originalRoom: roomMatch, floorKey: fKey, description: roomMatch.description || '' }
       const listMatch = fData.faculty?.find(f => f.name === name)
       if (listMatch) {
         const room = fData.rooms?.find(r => r.id === listMatch.roomId)
-        return { id: `list-${name}`, name: listMatch.name, image: listMatch.image, roomName: room?.name || 'Staff Area', department: listMatch.department || room?.department, originalRoom: room, floorKey: fKey }
+        return { id: `list-${name}`, name: listMatch.name, image: listMatch.image, roomName: room?.name || 'Staff Area', department: listMatch.department || room?.department, originalRoom: room, floorKey: fKey, description: listMatch.description || '' }
       }
     }
     return null
@@ -440,6 +444,7 @@ export default function FloorPlan() {
               <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }} className="flex items-center gap-1 bg-blue-500/10 border border-blue-500/30 p-1 rounded-xl">
                 <div className="flex items-center border-r border-black/10 dark:border-white/10 mr-1 pr-1 gap-1">
                   <button onClick={() => setIsDirectionsModalOpen(true)} className="px-3 py-2 hover:bg-blue-500/10 text-blue-500 rounded-lg transition-all font-orbitron font-black text-[8px] uppercase">DIRECTIONS</button>
+                  <button onClick={() => setIsFacultyManagerOpen(true)} className="px-3 py-2 hover:bg-blue-500/10 text-blue-500 rounded-lg transition-all font-orbitron font-black text-[8px] uppercase">FACULTY</button>
                   <button onClick={handleResetDefault} className="px-3 py-2 hover:bg-amber-500/10 text-amber-500 rounded-lg transition-all font-orbitron font-black text-[8px] uppercase">RESET</button>
                   <label className="px-3 py-2 hover:bg-emerald-500/10 text-emerald-500 rounded-lg transition-all font-orbitron font-black text-[8px] uppercase cursor-pointer">UPLOAD <input type="file" className="hidden" onChange={handleMapImageUpload} /></label>
                 </div>
@@ -543,6 +548,16 @@ export default function FloorPlan() {
         onSave={async (updatedRooms) => {
           setRooms(updatedRooms);
           await onSave(updatedRooms);
+        }}
+      />
+
+      <FacultyManagerModal 
+        isOpen={isFacultyManagerOpen} 
+        onClose={() => setIsFacultyManagerOpen(false)} 
+        facultyList={allFaculty} 
+        onSave={async (updatedFaculty) => {
+          setFaculty(updatedFaculty);
+          await onSave(null, updatedFaculty);
         }}
       />
     </motion.div>

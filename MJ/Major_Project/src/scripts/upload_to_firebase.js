@@ -3,15 +3,18 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const serviceAccount = JSON.parse(fs.readFileSync('../../serviceAccountKey.json', 'utf8'));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const serviceAccount = JSON.parse(fs.readFileSync(path.join(__dirname, '../../serviceAccountKey.json'), 'utf8'));
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  storageBucket: 'smart-nav-44e26'
+  storageBucket: 'smart-nav-44e26.firebasestorage.app'
 });
 
 const bucket = admin.storage().bucket();
-const IMAGES_DIR = '../../OLD_LOCAL_DATA/public-backup/apj-block-images';
+const IMAGES_DIR = path.join(__dirname, '../../OLD_LOCAL_DATA/public-backup/apj-block-images');
 
 async function uploadFile(filePath, destPath) {
   await bucket.upload(filePath, {
