@@ -72,7 +72,7 @@ async function repairFirestore() {
             height: fRoom.height ?? sRoom.height,
             directions: fRoom.directions || sRoom.directions || '',
             description: fRoom.description || sRoom.description || '',
-            image: fRoom.image || sRoom.image || ''
+            image: sRoom.image || fRoom.image || ''
           };
         }
         return sRoom;
