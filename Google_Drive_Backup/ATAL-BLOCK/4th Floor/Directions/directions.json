@@ -1,0 +1,16 @@
+{
+  "buildingName": "ATAL-BLOCK",
+  "floorLabel": "4th Floor",
+  "floorId": "atal_fourth",
+  "lastUpdated": "2026-07-25T14:00:19.706Z",
+  "directions": {
+    "atal-fourth-setup": "Centrally located on the floor."
+  },
+  "detailedDirections": [
+    {
+      "roomId": "atal-fourth-setup",
+      "roomName": "SETUP IN PROGRESS",
+      "directions": "Centrally located on the floor."
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+========================================================
+DIRECTIONS FOR APJ-BLOCK - THIRD FLOOR
+========================================================
+
+1. LH-311 (ID: lh-311)
+   Directions: i. Stairs-1: Turn left and walk to the top of the corridor; LH-311 is on your left, LH-312 is on the opposite side.
+ii. Stairs-2: Walk straight north all the way to the top; LH-311 is on your left at the far end.
+iii. LIFT: Turn left and walk north to the top of the corridor; LH-311 is on your left.
+
+2. STAFF ROOM (ID: staff-room-top)
+   Directions: Top center area.
+
+3. LH-312 (ID: lh-312)
+   Directions: i. Stairs-1: Turn left and walk to the top of the corridor; LH-312 is on your right, LH-311 is on the opposite side.
+ii. Stairs-2: Walk straight north all the way to the top; LH-312 is on your right at the far end.
+iii. LIFT: Turn left and walk north to the top; LH-312 is on your right.
+
+4. STAFF ROOM (ID: staff-room-mid-1)
+   Directions: Middle section center.
+
+5. STAFF ROOM (ID: staff-room-mid-2)
+   Directions: Middle section center.
+
+6. LH-309 (ID: lh-309)
+   Directions: i. Stairs-1: Turn left and walk north a short distance; LH-309 is on your left, just below LH-311.
+ii. Stairs-2: Walk straight north; LH-309 is on your left in the upper-middle section of the corridor.
+iii. LIFT: Turn left and walk north; LH-309 is on your left, a few steps up from the Lift.
+
+7. LH-310 (ID: lh-310)
+   Directions: i. Stairs-1: Turn right; LH-310 is immediately on your right just outside the Stairs-1 exit.
+ii. Stairs-2: Walk north and then turn right at the mid-floor corridor; LH-310 is on your right.
+iii. LIFT: Turn right; LH-310 is directly to your right, adjacent to the Lift on the east side.
+
+8. WASHROOM (ID: washroom-3)
+   Directions: Left side middle.
+
+9. STAIRS-1 (ID: stairs-top-3)
+   Directions: Center area.
+
+10. LADIES COMMON ROOM (ID: ladies-common-room)
+   Directions: i. Stairs-1: Turn left; the Ladies Room is on your left, directly below the Washroom near the Stairs-1 exit.
+ii. Stairs-2: Walk north; the Ladies Room is on your left just above the mid-floor level, below the Washroom.
+iii. LIFT: Turn left; the Ladies Room is on your left, directly beside the Lift on the west side.
+
+11. LIFT (ID: lift-3)
+   Directions: Center area.
+
+12. LH-308 (ID: lh-308)
+   Directions: i. Stairs-1: Turn right and walk south a short distance; LH-308 is on your right, below LH-310.
+ii. Stairs-2: Walk north and turn right; LH-308 is on your right in the mid-east section of the floor.
+iii. LIFT: Turn right and walk south slightly; LH-308 is on your right just below the Lift level.
+
+13. E&C STAFF ROOM (ID: ec-staff-room-1)
+   Directions: Top center area.
+
+14. E&C STAFF ROOM (ID: ec-staff-room-2)
+   Directions: Lower left area.
+
+15. STAFF ROOM (ID: staff-room-bot-1)
+   Directions: Lower center area.
+
+16. STAFF ROOM (ID: staff-room-bot-2)
+   Directions: Lower center area.
+
+17. LH-306 (ID: lh-306)
+   Directions: i. Stairs-1: Turn right and walk south past LH-308; LH-306 is further down on your right in the lower-east section.
+ii. Stairs-2: Turn left and walk north slightly; LH-306 is on your right on the east side, near the south end.
+iii. LIFT: Turn right and walk south past LH-308; LH-306 is on your right further south.
+
+18. TEXAS INSTRUMENTS (ID: texas-instruments)
+   Directions: i. Stairs-1: Turn left and walk south past the Lift and Ladies Room; the lab is on your left in the lower section, above Stairs-2.
+ii. Stairs-2: Turn right; the lab is immediately on your left, just above Stairs-2.
+iii. LIFT: Turn left and walk south; the lab is on your left near the bottom of the floor, just above Stairs-2.
+
+19. STAFF ROOM (ID: staff-room-bottom-center)
+   Directions: Bottom center area.
+
+20. STAIRS-2 (ID: stairs-bottom-3)
+   Directions: Bottom center area.
+
+21. CONNECTION TO RAMANUJAN BLOCK (ID: apj-third-way-ramanujan)
+   Directions: Connecting corridor/bridge on the bottom right leading to Ramanujan Block.
+

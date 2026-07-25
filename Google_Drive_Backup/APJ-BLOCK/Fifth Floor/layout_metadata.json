@@ -1,0 +1,525 @@
+{
+  "floorId": "fifth",
+  "label": "Fifth Floor",
+  "buildingName": "APJ-BLOCK",
+  "mapImage": null,
+  "mainWidth": 960,
+  "bulgeWidth": 320,
+  "bulgeHeight": 500,
+  "viewHeight": 1540,
+  "viewWidth": 1280,
+  "locked": false,
+  "rooms": [
+    {
+      "y": 38,
+      "w": 304,
+      "name": "STAFF ROOM",
+      "height": 69,
+      "clickable": true,
+      "type": "staffroom",
+      "directions": "Top center area.",
+      "x": 321,
+      "label": "STAFF ROOM",
+      "description": "Top level staff workspace",
+      "tags": [
+        "office",
+        "ise"
+      ],
+      "id": "staff-room-top",
+      "h": 69,
+      "image": "https://placehold.co/600x400?text=Staff+Room+Top",
+      "width": 304
+    },
+    {
+      "type": "classroom",
+      "directions": "I. Stairs-1: Turn left and pass LH-504 and LH-506. Turn left through the gap between the two staff rooms, walk straight, and then turn right to reach the classroom.\nII. Stairs-2: turn left and follow along the path,pass along two staff rooms and the ISE HOD ,and LH-503 ,continue staright ahead to find LH-505\nIII. LIFT: turn left.you will see the ISE HOD;turn right again to pass LH-503 continue staright ahead to find LH-505",
+      "x": 34,
+      "label": "LH-505",
+      "description": "Lecture Hall 505",
+      "tags": [
+        "class",
+        "ise",
+        "lh505"
+      ],
+      "id": "lh-505",
+      "h": 90,
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/lh-505.jpeg",
+      "width": 200,
+      "y": 46,
+      "w": 200,
+      "name": "LH-505",
+      "height": 90,
+      "clickable": true
+    },
+    {
+      "height": 90,
+      "w": 200,
+      "name": "LH-503",
+      "clickable": true,
+      "y": 339,
+      "h": 90,
+      "width": 200,
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/lh503.png",
+      "description": "Lecture Hall 503",
+      "tags": [
+        "class",
+        "ise",
+        "lh503"
+      ],
+      "id": "lh-503",
+      "type": "classroom",
+      "directions": "I. Stairs-1: Turn right and then turn right again. You will see the ISE HOD straight ahead; walk towards it and then turn left to reach LH-503.\nII. Stairs-2: Turn left and then turn right. Walk along the two staff rooms and the ISE HOD; LH-503 is located immediately after the ISE HOD.\nIII. LIFT: Turn left and then turn right again to reach the LH-503 classroom.",
+      "x": 36,
+      "label": "LH-503"
+    },
+    {
+      "width": 220,
+      "image": "https://placehold.co/600x400?text=Washroom",
+      "h": 90,
+      "tags": [
+        "toilet"
+      ],
+      "id": "washroom-5",
+      "description": "Restroom facilities",
+      "directions": "Left side middle.",
+      "x": 36,
+      "label": "WASHROOM",
+      "type": "utility",
+      "clickable": true,
+      "height": 90,
+      "w": 220,
+      "name": "WASHROOM",
+      "y": 552
+    },
+    {
+      "y": 682,
+      "w": 220,
+      "name": "ISE HOD",
+      "height": 180,
+      "clickable": true,
+      "type": "hod",
+      "directions": "I. Stairs-1: Turn right and then turn right again. Look straight ahead to find the ISE HOD.\nII. Stairs-2: Turn left and then turn right. Pass along the two staff rooms; the ISE HOD will be directly ahead.\nIII. LIFT: Turn left to find the ISE HOD exactly in front of you.",
+      "x": 36,
+      "label": "ISE HOD",
+      "h": 180,
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/refs/heads/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/5th-floor/hod_cabinise.jpeg",
+      "width": 220,
+      "description": "Head of Department - ISE",
+      "tags": [
+        "hod",
+        "office",
+        "ise"
+      ],
+      "id": "hod-cabin"
+    },
+    {
+      "directions": "Left side, lower middle.",
+      "x": 36,
+      "label": "STAFF ROOM",
+      "type": "staffroom",
+      "image": "https://placehold.co/600x400?text=Staff+Room+Left",
+      "width": 180,
+      "h": 120,
+      "tags": [
+        "office",
+        "cse"
+      ],
+      "id": "staff-room-left",
+      "description": "CSE Staff workspace",
+      "y": 1034,
+      "clickable": true,
+      "w": 180,
+      "name": "STAFF ROOM",
+      "height": 120
+    },
+    {
+      "type": "lab",
+      "directions": "I. Stairs-1: Turn right and pass along LH-502 and LH-500. Continue past Stairs-2; CSL08 is located immediately next to the Library.\nII. Stairs-2: Turn left and pass the Library; CSL08 is located immediately next to the Library.\nIII. LIFT: Turn right and then turn right again. Pass along LH-502 and LH-500, continue past Stairs-2 and the Library; CSL08 is located immediately ahead.",
+      "x": 36,
+      "label": "CSL 08",
+      "h": 90,
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/csl08.png",
+      "width": 180,
+      "description": "Computer Science Lab 08",
+      "tags": [
+        "lab",
+        "cse",
+        "csl08"
+      ],
+      "id": "lab-csl08",
+      "y": 1334,
+      "w": 180,
+      "name": "CSL 08",
+      "height": 90,
+      "clickable": true
+    },
+    {
+      "y": 44,
+      "clickable": true,
+      "w": 200,
+      "name": "LH-506",
+      "height": 90,
+      "directions": "I. Stairs-1: Turn left and pass along LH-504; LH-506 is the next classroom straight ahead.\nII. Stairs-2: Turn right and pass along LH-500, LH-502, and LH-504; LH-506 is the next classroom straight ahead.\nIII. LIFT: Turn right and then turn left. Pass along LH-504; LH-506 is the next classroom straight ahead.",
+      "x": 736,
+      "label": "LH-506",
+      "type": "classroom",
+      "tags": [
+        "class",
+        "ise",
+        "lh506"
+      ],
+      "id": "lh-506",
+      "description": "Lecture Hall 506",
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/lh-506.jpeg",
+      "width": 200,
+      "h": 90
+    },
+    {
+      "w": 200,
+      "name": "LH-504",
+      "height": 90,
+      "clickable": true,
+      "y": 345,
+      "description": "Lecture Hall 504",
+      "tags": [
+        "class",
+        "ise",
+        "lh504"
+      ],
+      "id": "lh-504",
+      "h": 90,
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/lh504.png",
+      "width": 200,
+      "type": "classroom",
+      "directions": "I. Stairs-1: Turn right and then turn left to reach the classroom immediately.\nII. Stairs-2: Turn right and then turn left. Pass LH-500 and LH-502; LH-504 is the next classroom straight ahead.\nIII. LIFT: Turn right and then turn left to reach the classroom.",
+      "x": 736,
+      "label": "LH-504"
+    },
+    {
+      "y": 1076,
+      "w": 200,
+      "name": "LH-502",
+      "height": 90,
+      "clickable": true,
+      "type": "classroom",
+      "directions": "I. Stairs-1: Turn right and walk forward to find LH-502; LH-501 is on the opposite side.\nII. Stairs-2: Turn right and then turn left to reach LH-502; LH-501 is on the opposite side.\nIII. LIFT: Turn right and then turn right again to find LH-502; LH-501 is on the opposite side.",
+      "x": 743,
+      "label": "LH-502",
+      "h": 90,
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/lh502.jpg",
+      "width": 200,
+      "description": "Lecture Hall 502",
+      "tags": [
+        "class",
+        "ise",
+        "lh502"
+      ],
+      "id": "lh-502"
+    },
+    {
+      "directions": "I. From Stairs-1 or LIFT: Turn right, walk straight, and pass LH-502.\nII.From Stairs-2: Turn right to reach the classroom immediately.",
+      "x": 738,
+      "label": "LH-500",
+      "type": "classroom",
+      "tags": [
+        "class",
+        "ise",
+        "lh500"
+      ],
+      "id": "lh-500",
+      "description": "Lecture Hall 500",
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/lh500.png",
+      "width": 200,
+      "h": 90,
+      "y": 1288,
+      "clickable": true,
+      "w": 200,
+      "name": "LH-500",
+      "height": 90
+    },
+    {
+      "height": 180,
+      "w": 200,
+      "name": "STAFF ROOM",
+      "clickable": true,
+      "y": 195,
+      "h": 180,
+      "width": 200,
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/sf(i).jpeg",
+      "description": "Main ISE Staff Room",
+      "tags": [
+        "staff",
+        "office",
+        "ise"
+      ],
+      "id": "staff-room-big",
+      "type": "staffroom",
+      "directions": "Upper center area.",
+      "x": 380,
+      "label": "STAFF ROOM"
+    },
+    {
+      "y": 580,
+      "height": 80,
+      "w": 200,
+      "name": "STAIRS-1",
+      "clickable": true,
+      "type": "utility",
+      "directions": "1. Turn right.\n2. Walk straight.\n3. Pass from LIFT and LH-502.\n4. Reach LH-500.",
+      "x": 380,
+      "label": "STAIRS-1",
+      "description": "Upper central stairs",
+      "tags": [
+        "stairs"
+      ],
+      "id": "stairs-top-5",
+      "h": 80,
+      "width": 200,
+      "image": "https://placehold.co/600x400?text=Stairs+1"
+    },
+    {
+      "clickable": true,
+      "w": 200,
+      "name": "LIFT",
+      "height": 80,
+      "y": 788,
+      "image": "https://placehold.co/600x400?text=Lift",
+      "width": 200,
+      "h": 80,
+      "tags": [
+        "lift"
+      ],
+      "id": "lift-5",
+      "description": "Elevator",
+      "directions": "1. Exit and turn right.\n2. Walk straight and pass LH-502.\n3. LH-500 will be ahead.",
+      "x": 380,
+      "label": "LIFT",
+      "type": "utility"
+    },
+    {
+      "description": "Post Graduate Lecture Hall 501",
+      "tags": [
+        "class",
+        "pg"
+      ],
+      "id": "lh-501",
+      "h": 90,
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/lh501_pg.png",
+      "width": 180,
+      "type": "classroom",
+      "directions": "I. Stairs-1: Turn right and walk forward to find LH-502; LH-501 is on the opposite side.\nII. Stairs-2: Turn right and then turn left to reach LH-502; LH-501 is on the opposite side.\nIII. LIFT: Turn right and then turn right again to find LH-502; LH-501 is on the opposite side.",
+      "x": 413,
+      "label": "LH-501 (PG)",
+      "w": 180,
+      "name": "LH-501 (PG)",
+      "height": 90,
+      "clickable": true,
+      "y": 1076
+    },
+    {
+      "clickable": true,
+      "w": 200,
+      "name": "LIBRARY (CSE)",
+      "height": 80,
+      "y": 1440,
+      "tags": [
+        "books",
+        "cse"
+      ],
+      "id": "library",
+      "description": "CSE Department Library",
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/library.jpg",
+      "width": 200,
+      "h": 80,
+      "directions": "I. Stairs-1: Turn right and pass along LH-502 and LH-500; the Library is located beside Stairs-2.\nII. Stairs-2: Turn sharp left to reach the Library.\nIII. LIFT: Turn right and then turn right again. Pass along LH-502 and LH-500; the Library is located beside Stairs-2.",
+      "x": 197,
+      "label": "LIBRARY (CSE)",
+      "type": "utility"
+    },
+    {
+      "directions": "1. Turn right.\n2. Reach LH-500 immediately.",
+      "x": 418,
+      "label": "STAIRS-2",
+      "type": "utility",
+      "tags": [
+        "stairs"
+      ],
+      "id": "stairs-bottom-5",
+      "description": "Lower central stairs",
+      "image": "https://placehold.co/600x400?text=Stairs+2",
+      "width": 200,
+      "h": 80,
+      "y": 1440,
+      "clickable": true,
+      "w": 200,
+      "name": "STAIRS-2",
+      "height": 80
+    },
+    {
+      "h": 80,
+      "width": 180,
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/cfr03_lab.png",
+      "description": "Computer Research Lab",
+      "tags": [
+        "lab",
+        "cse",
+        "cfr03"
+      ],
+      "id": "cfr03-lab",
+      "type": "lab",
+      "directions": "I. Stairs-1: Turn right and pass along LH-502 and LH-500. The CFR03 Lab is located right beside the LH-500 classroom.\nII. Stairs-2: Turn right to find the Lab immediately beside LH-500.\nIII. LIFT: Turn right and then turn right again. Pass along LH-502 and LH-500; the CFR03 Lab is located right beside LH-500.",
+      "x": 690,
+      "label": "CFR 03 LAB",
+      "height": 80,
+      "w": 180,
+      "name": "CFR 03 LAB",
+      "clickable": true,
+      "y": 1443
+    }
+  ],
+  "faculty": [
+    {
+      "name": "DR. RAVI B.",
+      "department": "ISE",
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.15-pm-1.jpeg",
+      "roomId": "staff-room-big"
+    },
+    {
+      "department": "ISE",
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.15-pm-2.jpeg",
+      "roomId": "staff-room-big",
+      "name": "DR. JASON ELROY MARTIS"
+    },
+    {
+      "roomId": "hod-cabin",
+      "department": "ISE",
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.15-pm.jpeg",
+      "name": "DR. ASHWINI B."
+    },
+    {
+      "roomId": "staff-room-big",
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.16-pm.jpeg",
+      "department": "ISE",
+      "name": "DR. ANUSHA N."
+    },
+    {
+      "name": "DR. CHINMAI SHETTY",
+      "roomId": "staff-room-big",
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.18-pm.jpeg",
+      "department": "ISE"
+    },
+    {
+      "name": "DR. DEEPA",
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.19-pm-1.jpeg",
+      "department": "ISE",
+      "roomId": "staff-room-big"
+    },
+    {
+      "roomId": "staff-room-left",
+      "department": "CSE",
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.19-pm-2.jpeg",
+      "name": "DR. RAGHUNANDAN K R"
+    },
+    {
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.19-pm.jpeg",
+      "department": "ISE",
+      "roomId": "staff-room-big",
+      "name": "DR. RASHMI NAVEEN"
+    },
+    {
+      "roomId": "staff-room-left",
+      "department": "CSE",
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.20-pm-1.jpeg",
+      "name": "MR. PAWAN HEGDE"
+    },
+    {
+      "roomId": "staff-room-left",
+      "department": "CSE",
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.20-pm-2.jpeg",
+      "name": "MS. SAVITHA SHETTY"
+    },
+    {
+      "roomId": "staff-room-left",
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.20-pm.jpeg",
+      "department": "CSE",
+      "name": "DR. SARIKA HEGDE"
+    },
+    {
+      "roomId": "staff-room-left",
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.21-pm-1.jpeg",
+      "department": "CSE",
+      "name": "MS. ANUPAMA HC"
+    },
+    {
+      "name": "MS. PRATHEEKSHA HEGDE N",
+      "department": "ISE",
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.21-pm-2.jpeg",
+      "roomId": "staff-room-big"
+    },
+    {
+      "name": "DR. ASMITA POOJARY",
+      "department": "CSE",
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.21-pm.jpeg",
+      "roomId": "staff-room-left"
+    },
+    {
+      "department": "CSE",
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.22-pm-1.jpeg",
+      "roomId": "staff-room-left",
+      "name": "MS. VAISHALI BANGERA"
+    },
+    {
+      "roomId": "staff-room-left",
+      "department": "CSE",
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.22-pm-2.jpeg",
+      "name": "DR. SANDEEP KUMAR HEGDE"
+    },
+    {
+      "name": "MS. PRATHYAKSHINI",
+      "roomId": "staff-room-big",
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.22-pm.jpeg",
+      "department": "ISE"
+    },
+    {
+      "name": "MS. SIMRAN BANU",
+      "roomId": "staff-room-left",
+      "department": "CSE",
+      "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.23-pm.jpeg"
+    }
+  ],
+  "boundaryVertices": [
+    {
+      "x": 5,
+      "y": 10
+    },
+    {
+      "x": 960,
+      "y": 10
+    },
+    {
+      "x": 960,
+      "y": 520
+    },
+    {
+      "x": 1280,
+      "y": 520
+    },
+    {
+      "x": 1280,
+      "y": 1020
+    },
+    {
+      "x": 960,
+      "y": 1020
+    },
+    {
+      "x": 960,
+      "y": 1540
+    },
+    {
+      "x": 5,
+      "y": 1540
+    }
+  ],
+  "lastEdited": "2026-07-23T11:19:19.768Z"
+}

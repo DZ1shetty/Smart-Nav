@@ -1,0 +1,430 @@
+{
+  "floorId": "ramanujan_first",
+  "buildingName": "RAMANUJAN-BLOCK",
+  "label": "1st Floor",
+  "viewWidth": 1280,
+  "viewHeight": 1540,
+  "mainWidth": 960,
+  "bulgeWidth": 320,
+  "bulgeHeight": 500,
+  "boundaryVertices": [
+    {
+      "x": -688,
+      "y": 690
+    },
+    {
+      "x": -986,
+      "y": 690
+    },
+    {
+      "x": -986,
+      "y": 483
+    },
+    {
+      "x": -275,
+      "y": 483
+    },
+    {
+      "x": -275,
+      "y": 690
+    },
+    {
+      "x": -127,
+      "y": 690
+    },
+    {
+      "y": 690,
+      "x": 731
+    },
+    {
+      "y": 690,
+      "x": 2447
+    },
+    {
+      "x": 2447,
+      "y": 1237
+    },
+    {
+      "x": -688,
+      "y": 1237
+    }
+  ],
+  "faculty": [],
+  "lastEditedBy": "admin",
+  "locked": true,
+  "rooms": [
+    {
+      "id": "ramanujan-first-maths-hod",
+      "name": "DEPT OF MATHEMATICS (HOD)",
+      "label": "DEPT OF MATHEMATICS (HOD)",
+      "type": "hod",
+      "x": -661,
+      "y": 1127,
+      "w": 278,
+      "h": 107,
+      "width": 278,
+      "height": 107,
+      "directions": "Located in the upper bulge area, top-left corner.",
+      "description": "Head of Department cabin for Mathematics.",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/maths_hod.png",
+      "tags": [
+        "hod",
+        "maths",
+        "office"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "ramanujan-first-dr-kvss",
+      "name": "DR. KVSS (STAFF ROOM)",
+      "label": "DR. KVSS (STAFF ROOM)",
+      "type": "office",
+      "x": -673,
+      "y": 937,
+      "w": 209,
+      "h": 115,
+      "width": 209,
+      "height": 115,
+      "directions": "Located in the upper bulge area, next to the Maths HOD cabin.",
+      "description": "Staff office for Dr. KVSS.",
+      "image": "https://placehold.co/600x400?text=Dr+KVSS",
+      "tags": [
+        "staff",
+        "office",
+        "kvss"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "ramanujan-first-ladies-toilet-bulge",
+      "name": "LADIES ROOM",
+      "label": "LADIES ROOM",
+      "type": "utility",
+      "x": -673,
+      "y": 765,
+      "w": 163,
+      "h": 114,
+      "width": 163,
+      "height": 114,
+      "directions": "Located in the upper bulge area, next to Dr. KVSS.",
+      "description": "Female restroom facilities.",
+      "image": "https://placehold.co/600x400?text=Ladies+Room",
+      "tags": [
+        "toilet",
+        "washroom",
+        "utility"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "ramanujan-first-chem-lab-2",
+      "name": "CHEMISTRY LAB 2",
+      "label": "CHEMISTRY LAB 2",
+      "type": "lab",
+      "x": 49,
+      "y": 1114,
+      "w": 225,
+      "h": 105,
+      "width": 225,
+      "height": 105,
+      "directions": "In the left lobby area, above the elevator block.",
+      "description": "Chemistry Laboratory 2 for academic experiments and learning.",
+      "image": "https://placehold.co/600x400?text=Chem+Lab+2",
+      "tags": [
+        "lab",
+        "chemistry"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "ramanujan-first-stairs-1",
+      "name": "STAIRS-1",
+      "label": "STAIRS-1",
+      "type": "utility",
+      "x": 520,
+      "y": 1129,
+      "w": 455,
+      "h": 90,
+      "width": 455,
+      "height": 90,
+      "directions": "Left side lobby area.",
+      "description": "West side staircase access.",
+      "image": "https://placehold.co/600x400?text=Stairs+1",
+      "tags": [
+        "stairs",
+        "utility"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "ramanujan-first-chem-lab-1",
+      "name": "CHEMISTRY LAB 1",
+      "label": "CHEMISTRY LAB 1",
+      "type": "lab",
+      "x": 1033,
+      "y": 1101,
+      "w": 230,
+      "h": 119,
+      "width": 230,
+      "height": 119,
+      "directions": "On the bottom left corridor wing.",
+      "description": "Chemistry Laboratory 1 for academic experiments.",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/chem_lab_1.png",
+      "tags": [
+        "lab",
+        "chemistry"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "ramanujan-first-gents-toilet-left",
+      "name": "GENTS TOILET",
+      "label": "GENTS TOILET",
+      "type": "utility",
+      "x": 1897,
+      "y": 1123,
+      "w": 144,
+      "h": 95,
+      "width": 144,
+      "height": 95,
+      "directions": "Bottom-left corridor area, opposite Chem Lab 1.",
+      "description": "Male restroom facilities.",
+      "image": "https://placehold.co/600x400?text=Gents+Toilet",
+      "tags": [
+        "toilet",
+        "washroom",
+        "utility"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "ramanujan-first-chem-hod",
+      "name": "DEPT OF CHEMISTRY (HOD)",
+      "label": "DEPT OF CHEMISTRY (HOD)",
+      "type": "hod",
+      "x": 289,
+      "y": 1112,
+      "w": 221,
+      "h": 111,
+      "width": 221,
+      "height": 111,
+      "directions": "Located next to the central corridor, beside the Maths HOD area.",
+      "description": "Head of Department cabin for Chemistry.",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/chem_hod.png",
+      "tags": [
+        "hod",
+        "chemistry",
+        "office"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "ramanujan-first-lh108",
+      "name": "LH108",
+      "label": "LH108",
+      "type": "classroom",
+      "x": -48,
+      "y": 708,
+      "w": 157,
+      "h": 83,
+      "width": 157,
+      "height": 83,
+      "directions": "In the upper-middle corridor, next to the Chemistry HOD office.",
+      "description": "Lecture Hall 108.",
+      "image": "https://placehold.co/600x400?text=LH108",
+      "tags": [
+        "classroom",
+        "lh108"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "ramanujan-first-phy-lab-2",
+      "name": "PHYSICS LAB 2",
+      "label": "PHYSICS LAB 2",
+      "type": "lab",
+      "x": 338,
+      "y": 707,
+      "w": 171,
+      "h": 98,
+      "width": 171,
+      "height": 98,
+      "directions": "In the middle corridor, next to LH 108.",
+      "description": "Physics Laboratory 2 for practical learning and experiments.",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/physics_lab_b.png",
+      "tags": [
+        "lab",
+        "physics"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "ramanujan-first-phy-lab-1",
+      "name": "PHYSICS LAB 1",
+      "label": "PHYSICS LAB 1",
+      "type": "lab",
+      "x": 538,
+      "y": 715,
+      "w": 167,
+      "h": 92,
+      "width": 167,
+      "height": 92,
+      "directions": "In the middle corridor, next to Physics Lab 2.",
+      "description": "Physics Laboratory 1 for practical learning.",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/physics_lab_a.png",
+      "tags": [
+        "lab",
+        "physics"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "ramanujan-first-phy-hod",
+      "name": "DEPT OF PHYSICS (HOD)",
+      "label": "DEPT OF PHYSICS (HOD)",
+      "type": "hod",
+      "x": 1005,
+      "y": 701,
+      "w": 208,
+      "h": 119,
+      "width": 208,
+      "height": 119,
+      "directions": "Opposite Physics Lab 1 across the corridor.",
+      "description": "Head of Department cabin for Physics.",
+      "image": "https://placehold.co/600x400?text=Physics+HOD",
+      "tags": [
+        "hod",
+        "physics",
+        "office"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "ramanujan-first-jn-smh",
+      "name": "CABINS (DR. JN & DR. SMH)",
+      "label": "CABINS (DR. JN & DR. SMH)",
+      "type": "office",
+      "x": 1277,
+      "y": 699,
+      "w": 239,
+      "h": 115,
+      "width": 239,
+      "height": 115,
+      "directions": "In the right corridor wing, opposite Main Stairs.",
+      "description": "Staff cabins for Dr. JN and Dr. SMH.",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/jn_smh.png",
+      "tags": [
+        "office",
+        "staff",
+        "cabins"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "ramanujan-first-lh104",
+      "name": "LH104",
+      "label": "LH104",
+      "type": "classroom",
+      "x": 1559,
+      "y": 703,
+      "w": 143,
+      "h": 103,
+      "width": 143,
+      "height": 103,
+      "directions": "In the right corridor wing, next to the Staff Room.",
+      "description": "Lecture Hall 104.",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/lh104.png",
+      "tags": [
+        "classroom",
+        "lh104"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "ramanujan-first-sr-chem",
+      "name": "Staff Room",
+      "label": "Staff Room",
+      "type": "staffroom",
+      "x": 1757,
+      "y": 710,
+      "w": 185,
+      "h": 99,
+      "width": 185,
+      "height": 99,
+      "directions": "In the East wing, past LH 104.",
+      "description": "Staff room for the Chemistry department faculty.",
+      "image": "https://placehold.co/600x400?text=SR+Chem",
+      "tags": [
+        "staffroom",
+        "chemistry"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "ramanujan-first-sr-phy",
+      "name": "Staff Room",
+      "label": "Staff Room",
+      "type": "staffroom",
+      "x": 1960,
+      "y": 715,
+      "w": 215,
+      "h": 94,
+      "width": 215,
+      "height": 94,
+      "directions": "In the East wing, next to SR CHEM.",
+      "description": "Staff room for the Physics department faculty.",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/sr_phy.png",
+      "tags": [
+        "staffroom",
+        "physics"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "ramanujan-first-way-apj",
+      "name": "CONNECTION TO APJ (1ST FLOOR)",
+      "label": "CONNECTION TO APJ (1ST FLOOR)",
+      "type": "utility",
+      "x": -967,
+      "y": 539,
+      "w": 536,
+      "h": 106,
+      "width": 536,
+      "height": 106,
+      "directions": "Connecting exit corridor on the right side.",
+      "description": "Bridge/pathway connecting Ramanujan Block to APJ Block on the 1st Floor.",
+      "image": "https://placehold.co/600x400?text=Connection+to+APJ",
+      "tags": [
+        "path",
+        "utility",
+        "apj",
+        "bridge"
+      ],
+      "clickable": true,
+      "linkToFloor": "first"
+    },
+    {
+      "id": "ramanujan-first-library",
+      "name": "LIBRARY & INFORMATION CENTRE",
+      "label": "LIBRARY & INFORMATION CENTRE",
+      "type": "hall",
+      "x": 2185,
+      "y": 714,
+      "w": 253,
+      "h": 500,
+      "width": 253,
+      "height": 500,
+      "directions": "Spans across the bottom right wing of the first floor.",
+      "description": "Central library and information resource centre for reference and study.",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/library.png",
+      "tags": [
+        "library",
+        "books",
+        "reading",
+        "study"
+      ],
+      "clickable": true
+    }
+  ],
+  "lastEdited": "2026-07-23T11:19:24.064Z"
+}

@@ -1,0 +1,116 @@
+{
+  "floorId": "rajraman_third",
+  "buildingName": "V . RAJRAMAN-BLOCK",
+  "label": "3rd Floor",
+  "viewWidth": 1600,
+  "viewHeight": 1200,
+  "mainWidth": 960,
+  "bulgeWidth": 320,
+  "bulgeHeight": 500,
+  "boundaryVertices": [
+    {
+      "x": 727,
+      "y": 364
+    },
+    {
+      "x": 1073,
+      "y": 364
+    },
+    {
+      "x": 1073,
+      "y": 927
+    },
+    {
+      "x": 1203,
+      "y": 927
+    },
+    {
+      "x": 1203,
+      "y": 728
+    },
+    {
+      "x": 1440,
+      "y": 728
+    },
+    {
+      "x": 1440,
+      "y": 1100
+    },
+    {
+      "x": 727,
+      "y": 1100
+    }
+  ],
+  "rooms": [
+    {
+      "id": "rajraman-third-stairs-2",
+      "name": "STAIRS-2",
+      "label": "STAIRS-2",
+      "type": "utility",
+      "x": 1210,
+      "y": 967,
+      "w": 184,
+      "h": 96,
+      "width": 184,
+      "height": 96,
+      "directions": "Located at the bottom of the main corridor.",
+      "description": "Staircase access.",
+      "image": "https://placehold.co/600x400?text=Stairs+2",
+      "tags": [
+        "stairs",
+        "utility"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "rajraman-third-vayurvya-aero-club",
+      "name": "VAYURVYA Aero Club",
+      "label": "VAYURVYA Aero Club",
+      "type": "lab",
+      "x": 736,
+      "y": 399,
+      "w": 324,
+      "h": 108,
+      "width": 324,
+      "height": 108,
+      "directions": "Located at the very top end of the main corridor.",
+      "description": "VAYURVYA Aero Club room (Centre for Student Innovation - CFSI).",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/vayurvya_aero_club.png",
+      "tags": [
+        "lab",
+        "aero",
+        "club",
+        "vayurvya",
+        "cfsi",
+        "classroom"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "rajraman-third-mca-rl2",
+      "name": "MCA Research Lab-2",
+      "label": "MCA Research Lab-2",
+      "type": "lab",
+      "x": 942,
+      "y": 581,
+      "w": 122,
+      "h": 221,
+      "width": 122,
+      "height": 221,
+      "directions": "Located on the left side of the main corridor.",
+      "description": "MCA Research Laboratory 2.",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_research_lab2.png",
+      "tags": [
+        "lab",
+        "mca",
+        "research",
+        "2"
+      ],
+      "clickable": true
+    }
+  ],
+  "faculty": [],
+  "lastEditedBy": "system-sync-rajraman",
+  "locked": true,
+  "lastEdited": "2026-07-23T11:19:32.733Z"
+}

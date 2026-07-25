@@ -1,0 +1,64 @@
+========================================================
+DIRECTIONS FOR APJ-BLOCK - SECOND FLOOR
+========================================================
+
+1. LH-211 (ID: lh-211)
+   Directions: Top left corner area.
+
+2. STAFF ROOM (ID: staff-room-top)
+   Directions: Top center area.
+
+3. STAFF ROOM (ID: staff-room-sub-1)
+   Directions: Top center, left sub-section.
+
+4. STAFF ROOM (ID: staff-room-sub-2)
+   Directions: Top center, right sub-section.
+
+5. STAFF ROOM (ID: staff-room-lower)
+   Directions: Lower center area near research labs.
+
+6. LH-212 (ID: lh-212)
+   Directions: Top right corner area.
+
+7. BTL09 (ID: btl09)
+   Directions: Left side, upper middle.
+
+8. WASHROOM (ID: washroom-2)
+   Directions: Left side middle.
+
+9. BT HOD (ID: hod-cabin-bt)
+   Directions: Left side middle.
+
+10. STAFF ROOM (ID: staff-room-middle)
+   Directions: Left side, middle between HOD and BTL08.
+
+11. BTL08 (ID: btl08)
+   Directions: Left side, lower middle.
+
+12. BTL07 (ID: btl07)
+   Directions: Bottom left area.
+
+13. BTL10 (ID: btl10)
+   Directions: Bottom center left area.
+
+14. STAIRS-1 (ID: stairs-1)
+   Directions: Center area.
+
+15. LIFT (ID: lift-2)
+   Directions: Center area.
+
+16. STAIRS-2 (ID: stairs-2)
+   Directions: Bottom center area.
+
+17. LH-210 (ID: lh-210)
+   Directions: Middle right area.
+
+18. BTL11 (ID: btl11)
+   Directions: Lower right area.
+
+19. METROLOGY LAB (ID: metrology-lab)
+   Directions: Bottom right area.
+
+20. connection to ramanujan-block(second floor) (ID: apj-second-ramanujan-path)
+   Directions: Connecting corridor/bridge on the bottom right leading to Ramanujan Block.
+

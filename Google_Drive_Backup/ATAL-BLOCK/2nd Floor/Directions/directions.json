@@ -1,0 +1,100 @@
+{
+  "buildingName": "ATAL-BLOCK",
+  "floorLabel": "2nd Floor",
+  "floorId": "atal_second",
+  "lastUpdated": "2026-07-25T14:45:32.367Z",
+  "directions": {
+    "atal-second-stairs-1": "Located at the top-left area, next to the lift.",
+    "atal-second-lift": "Located next to the west stairs.",
+    "atal-second-isl08": "On the upper side of the corridor, between the Lift and Staffs Room.",
+    "atal-second-staff-room": "On the upper side of the corridor, between ISL08 and Central Stairs.",
+    "atal-second-stairs-2": "Central staircase.",
+    "atal-second-aic-nitte": "On the upper side of the corridor, next to Central Stairs.",
+    "atal-second-ladies-washroom": "On the upper side of the corridor, next to the AIC Nitte office.",
+    "atal-second-gents-washroom": "On the upper side of the corridor, next to the Ladies Washroom.",
+    "atal-second-ecopoled": "On the upper side of the corridor, next to the washrooms.",
+    "atal-second-coworking": "At the far east end of the upper corridor bulge.",
+    "atal-second-csl12": "On the lower side of the corridor, opposite ISL08.",
+    "atal-second-csl11": "On the lower side of the corridor, opposite Staffs Room.",
+    "atal-second-coe-digital-manufacturing": "On the lower side of the corridor, opposite Central Stairs.",
+    "atal-second-fab-lab": "On the lower side of the corridor, next to CoE Digital Manufacturing.",
+    "atal-second-nfl002": "On the lower side of the corridor, next to FAB LAB."
+  },
+  "detailedDirections": [
+    {
+      "roomId": "atal-second-stairs-1",
+      "roomName": "STAIRS-1",
+      "directions": "Located at the top-left area, next to the lift."
+    },
+    {
+      "roomId": "atal-second-lift",
+      "roomName": "LIFT",
+      "directions": "Located next to the west stairs."
+    },
+    {
+      "roomId": "atal-second-isl08",
+      "roomName": "ISL08",
+      "directions": "On the upper side of the corridor, between the Lift and Staffs Room."
+    },
+    {
+      "roomId": "atal-second-staff-room",
+      "roomName": "STAFFS ROOM",
+      "directions": "On the upper side of the corridor, between ISL08 and Central Stairs."
+    },
+    {
+      "roomId": "atal-second-stairs-2",
+      "roomName": "STAIRS-2",
+      "directions": "Central staircase."
+    },
+    {
+      "roomId": "atal-second-aic-nitte",
+      "roomName": "AIC NITTE INCUBATION CENTRE",
+      "directions": "On the upper side of the corridor, next to Central Stairs."
+    },
+    {
+      "roomId": "atal-second-ladies-washroom",
+      "roomName": "LADIES WASHROOM",
+      "directions": "On the upper side of the corridor, next to the AIC Nitte office."
+    },
+    {
+      "roomId": "atal-second-gents-washroom",
+      "roomName": "GENTS WASHROOM",
+      "directions": "On the upper side of the corridor, next to the Ladies Washroom."
+    },
+    {
+      "roomId": "atal-second-ecopoled",
+      "roomName": "ECOPOLY BIOTECH LLP",
+      "directions": "On the upper side of the corridor, next to the washrooms."
+    },
+    {
+      "roomId": "atal-second-coworking",
+      "roomName": "COWORKING SPACE",
+      "directions": "At the far east end of the upper corridor bulge."
+    },
+    {
+      "roomId": "atal-second-csl12",
+      "roomName": "CSL12",
+      "directions": "On the lower side of the corridor, opposite ISL08."
+    },
+    {
+      "roomId": "atal-second-csl11",
+      "roomName": "CSL11",
+      "directions": "On the lower side of the corridor, opposite Staffs Room."
+    },
+    {
+      "roomId": "atal-second-coe-digital-manufacturing",
+      "roomName": "CENTRE OF EXCELLENCE IN DIGITAL MANUFACTURING",
+      "directions": "On the lower side of the corridor, opposite Central Stairs."
+    },
+    {
+      "roomId": "atal-second-fab-lab",
+      "roomName": "FAB LAB",
+      "directions": "On the lower side of the corridor, next to CoE Digital Manufacturing."
+    },
+    {
+      "roomId": "atal-second-nfl002",
+      "roomName": "NFL002 COMPONENTS ROOM",
+      "directions": "On the lower side of the corridor, next to FAB LAB."
+    }
+  ]
+}

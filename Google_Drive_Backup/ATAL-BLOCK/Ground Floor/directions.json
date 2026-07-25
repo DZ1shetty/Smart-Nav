@@ -1,0 +1,76 @@
+{
+  "buildingName": "ATAL-BLOCK",
+  "floorLabel": "Ground Floor",
+  "floorId": "atal_ground",
+  "lastUpdated": "2026-07-25T14:00:29.914Z",
+  "directions": {
+    "atal-ground-stairs-1": "Located at the top-left area, next to the Lift lobby.",
+    "atal-ground-lift": "Located at the top-right area, next to NF L003.",
+    "atal-ground-nfl003": "On the right side of the corridor, below the Lift.",
+    "atal-ground-autoliv": "On the right side of the corridor, between NF L003 and Gents Toilet.",
+    "atal-ground-gents-toilet": "On the right side of the corridor, below Autoliv Incubation Centre.",
+    "atal-ground-stairs-2": "On the right side of the corridor, opposite the Main Entrance.",
+    "atal-ground-materials-lab": "On the left side of the corridor, below the west staircase.",
+    "atal-ground-research-lab": "On the left side of the corridor, below the Materials Performance Laboratory.",
+    "atal-ground-main-entrance": "On the left side of the corridor, near the main staircase up.",
+    "atal-ground-main-entrance-left": "Located at the bottom-left main entrance.",
+    "atal-ground-ncrf": "Located at the bottom end of the main corridor."
+  },
+  "detailedDirections": [
+    {
+      "roomId": "atal-ground-stairs-1",
+      "roomName": "STAIRS-1",
+      "directions": "Located at the top-left area, next to the Lift lobby."
+    },
+    {
+      "roomId": "atal-ground-lift",
+      "roomName": "LIFT",
+      "directions": "Located at the top-right area, next to NF L003."
+    },
+    {
+      "roomId": "atal-ground-nfl003",
+      "roomName": "NF L003",
+      "directions": "On the right side of the corridor, below the Lift."
+    },
+    {
+      "roomId": "atal-ground-autoliv",
+      "roomName": "AUTOLIV NMAMIT INCUBATION CENTRE",
+      "directions": "On the right side of the corridor, between NF L003 and Gents Toilet."
+    },
+    {
+      "roomId": "atal-ground-gents-toilet",
+      "roomName": "GENTS TOILET",
+      "directions": "On the right side of the corridor, below Autoliv Incubation Centre."
+    },
+    {
+      "roomId": "atal-ground-stairs-2",
+      "roomName": "STAIRS-2",
+      "directions": "On the right side of the corridor, opposite the Main Entrance."
+    },
+    {
+      "roomId": "atal-ground-materials-lab",
+      "roomName": "MATERIALS PERFORMANCE & CHARACTERIZATION LABORATORY",
+      "directions": "On the left side of the corridor, below the west staircase."
+    },
+    {
+      "roomId": "atal-ground-research-lab",
+      "roomName": "RESEARCH LABORATORY",
+      "directions": "On the left side of the corridor, below the Materials Performance Laboratory."
+    },
+    {
+      "roomId": "atal-ground-main-entrance",
+      "roomName": "MAIN ENTRANCE",
+      "directions": "On the left side of the corridor, near the main staircase up."
+    },
+    {
+      "roomId": "atal-ground-main-entrance-left",
+      "roomName": "MAIN ENTRANCE",
+      "directions": "Located at the bottom-left main entrance."
+    },
+    {
+      "roomId": "atal-ground-ncrf",
+      "roomName": "NCRF & CENTRE FOR NEW MATERIALS & SURFACE ENGINEERING",
+      "directions": "Located at the bottom end of the main corridor."
+    }
+  ]
+}

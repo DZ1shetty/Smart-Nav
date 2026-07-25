@@ -1,0 +1,522 @@
+{
+  "floorId": "svm_ground",
+  "label": "Ground Floor",
+  "buildingName": "SVM-BLOCK",
+  "rooms": [
+    {
+      "id": "svm-ground-geotechnical-lab",
+      "name": "GEOTECHNICAL LAB",
+      "label": "GEOTECHNICAL LAB",
+      "type": "lab",
+      "x": -631,
+      "y": 1298,
+      "w": 250,
+      "h": 96,
+      "width": 250,
+      "height": 96,
+      "directions": "Located on the left side of the vertical wing, near the north exit.",
+      "description": "Geotechnical Engineering Laboratory for soil mechanics and soil properties testing.",
+      "image": "https://placehold.co/600x400?text=Geotechnical+Lab",
+      "tags": [
+        "geotech",
+        "soil",
+        "civil",
+        "lab"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-ground-environmental-lab",
+      "name": "ENVIRONMENTAL ENGINEERING LAB",
+      "label": "ENVIRONMENTAL ENGINEERING LAB",
+      "type": "lab",
+      "x": -81,
+      "y": 1311,
+      "w": 267,
+      "h": 94,
+      "width": 267,
+      "height": 94,
+      "directions": "Located on the left side of the vertical wing, below the Geotechnical Lab.",
+      "description": "Environmental Engineering Laboratory for water and wastewater quality analysis.",
+      "image": "https://placehold.co/600x400?text=Environmental+Lab",
+      "tags": [
+        "environmental",
+        "water",
+        "civil",
+        "lab"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-ground-stairs",
+      "name": "STAIRS UP",
+      "label": "STAIRS UP",
+      "type": "utility",
+      "x": 277,
+      "y": 966,
+      "w": 166,
+      "h": 75,
+      "width": 166,
+      "height": 75,
+      "directions": "Located on the right side of the vertical wing, opposite the Environmental Engineering Lab.",
+      "description": "Staircase leading to the first floor.",
+      "image": "https://placehold.co/600x400?text=Stairs",
+      "tags": [
+        "stairs",
+        "staircase",
+        "utility"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-ground-lift-vertical",
+      "name": "LIFT",
+      "label": "LIFT",
+      "type": "utility",
+      "x": 512,
+      "y": 935,
+      "w": 90,
+      "h": 120,
+      "width": 90,
+      "height": 120,
+      "directions": "Located on the right side of the vertical wing, south of the stairs.",
+      "description": "Elevator serving all floors of the SVM Block.",
+      "image": "https://placehold.co/600x400?text=Elevator",
+      "tags": [
+        "lift",
+        "elevator",
+        "utility"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-ground-fire-exit",
+      "name": "FIRE EXIT",
+      "label": "FIRE EXIT",
+      "type": "utility",
+      "x": -918,
+      "y": 1215,
+      "w": 118,
+      "h": 184,
+      "width": 118,
+      "height": 184,
+      "directions": "At the very north end of the vertical corridor.",
+      "description": "Emergency fire exit door at the north end of the corridor.",
+      "image": "https://placehold.co/600x400?text=Fire+Exit",
+      "tags": [
+        "fire exit",
+        "exit",
+        "utility"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-ground-lift-horizontal",
+      "name": "LIFT (LOBBY)",
+      "label": "LIFT (LOBBY)",
+      "type": "utility",
+      "x": 1176,
+      "y": 930,
+      "w": 137,
+      "h": 105,
+      "width": 137,
+      "height": 105,
+      "directions": "Located on the top side of the horizontal wing corridor, near the lobby junction.",
+      "description": "Main lobby elevator for the SVM Block.",
+      "image": "https://placehold.co/600x400?text=Lobby+Elevator",
+      "tags": [
+        "lift",
+        "elevator",
+        "utility"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-ground-pg-hall-2",
+      "name": "PG LECTURE HALL 02",
+      "label": "PG LECTURE HALL 02",
+      "type": "classroom",
+      "x": 1177,
+      "y": 785,
+      "w": 149,
+      "h": 92,
+      "width": 149,
+      "height": 92,
+      "directions": "Located on the top side of the horizontal wing corridor, next to the lobby lift.",
+      "description": "Postgraduate Lecture Hall 02 for Civil Engineering studies.",
+      "image": "https://placehold.co/600x400?text=PG+Lecture+Hall+02",
+      "tags": [
+        "classroom",
+        "lecture hall",
+        "pg",
+        "civil"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-ground-sr02",
+      "name": "STAFF ROOM 02 (SR02)",
+      "label": "STAFF ROOM 02 (SR02)",
+      "type": "staffroom",
+      "x": 1178,
+      "y": 626,
+      "w": 157,
+      "h": 109,
+      "width": 157,
+      "height": 109,
+      "directions": "Located on the top side of the horizontal wing corridor, next to PG Lecture Hall 02.",
+      "description": "Faculty Staff Room 02 for Civil Engineering department professors.",
+      "image": "https://placehold.co/600x400?text=Staff+Room+02",
+      "tags": [
+        "staffroom",
+        "sr02",
+        "faculty",
+        "civil"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-ground-hod-office",
+      "name": "HOD CIVIL OFFICE",
+      "label": "HOD CIVIL OFFICE",
+      "type": "hod",
+      "x": 1178,
+      "y": 493,
+      "w": 156,
+      "h": 111,
+      "width": 156,
+      "height": 111,
+      "directions": "Located on the top side of the horizontal wing corridor, next to Staff Room 02.",
+      "description": "Office of the Head of Department (HOD) for Civil Engineering.",
+      "image": "https://placehold.co/600x400?text=HOD+Civil",
+      "tags": [
+        "hod",
+        "office",
+        "head",
+        "civil"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-ground-exit",
+      "name": "BUILDING EXIT",
+      "label": "BUILDING EXIT",
+      "type": "utility",
+      "x": 1181,
+      "y": 354,
+      "w": 150,
+      "h": 92,
+      "width": 150,
+      "height": 92,
+      "directions": "Located on the top side of the horizontal wing corridor, east of HOD Civil Office.",
+      "description": "Emergency building exit door leading outside the SVM Block.",
+      "image": "https://placehold.co/600x400?text=Exit",
+      "tags": [
+        "exit",
+        "utility"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-ground-ladies-toilet",
+      "name": "LADIES & HANDICAPPED WASHROOM",
+      "label": "LADIES & HANDICAPPED WASHROOM",
+      "type": "utility",
+      "x": 275,
+      "y": 101,
+      "w": 225,
+      "h": 94,
+      "width": 225,
+      "height": 94,
+      "directions": "Located at the far east end of the horizontal wing corridor, top side.",
+      "description": "Restroom facilities for women and differently-abled individuals.",
+      "image": "https://placehold.co/600x400?text=Ladies+Restroom",
+      "tags": [
+        "washroom",
+        "toilet",
+        "ladies",
+        "handicapped",
+        "utility"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-ground-surveying-lab",
+      "name": "SURVEYING LAB",
+      "label": "SURVEYING LAB",
+      "type": "lab",
+      "x": -448,
+      "y": 141,
+      "w": 180,
+      "h": 180,
+      "width": 180,
+      "height": 180,
+      "directions": "Located at the bottom-left corner of the horizontal wing.",
+      "description": "Surveying Laboratory for mapping, land measurement, and geoinformatics instrumentation.",
+      "image": "https://placehold.co/600x400?text=Surveying+Lab",
+      "tags": [
+        "surveying",
+        "lab",
+        "civil",
+        "mapping"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-ground-nc02",
+      "name": "LECTURE ROOM NC02",
+      "label": "LECTURE ROOM NC02",
+      "type": "classroom",
+      "x": 1585,
+      "y": 1313,
+      "w": 188,
+      "h": 96,
+      "width": 188,
+      "height": 96,
+      "directions": "Located on the bottom side of the horizontal corridor, next to the Surveying Lab.",
+      "description": "Standard lecture classroom NC02 for Civil Engineering classes.",
+      "image": "https://placehold.co/600x400?text=NC02+Classroom",
+      "tags": [
+        "classroom",
+        "nc02",
+        "civil"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-ground-sr01",
+      "name": "STAFF ROOM 01 (SR01)",
+      "label": "STAFF ROOM 01 (SR01)",
+      "type": "staffroom",
+      "x": 1616,
+      "y": 948,
+      "w": 162,
+      "h": 118,
+      "width": 162,
+      "height": 118,
+      "directions": "Located on the bottom side of the horizontal corridor, next to NC02.",
+      "description": "Faculty Staff Room 01 for Civil Engineering department professors.",
+      "image": "https://placehold.co/600x400?text=Staff+Room+01",
+      "tags": [
+        "staffroom",
+        "sr01",
+        "faculty",
+        "civil"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-ground-dept-library",
+      "name": "DEPARTMENT LIBRARY",
+      "label": "DEPARTMENT LIBRARY",
+      "type": "utility",
+      "x": -617,
+      "y": 368,
+      "w": 90,
+      "h": 150,
+      "width": 90,
+      "height": 150,
+      "directions": "Located on the bottom side of the horizontal corridor, next to Staff Room 01.",
+      "description": "Civil Engineering Departmental Reference Library.",
+      "image": "https://placehold.co/600x400?text=Department+Library",
+      "tags": [
+        "library",
+        "books",
+        "civil",
+        "utility"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-ground-smv01",
+      "name": "ROOM SMV01",
+      "label": "ROOM SMV01",
+      "type": "classroom",
+      "x": 1619,
+      "y": 1150,
+      "w": 160,
+      "h": 107,
+      "width": 160,
+      "height": 107,
+      "directions": "Located on the bottom side of the horizontal corridor, next to the Department Library.",
+      "description": "Faculty Research & Seminar Room SMV01.",
+      "image": "https://placehold.co/600x400?text=SMV01",
+      "tags": [
+        "classroom",
+        "smv01",
+        "civil"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-ground-rs-gis-lab",
+      "name": "REMOTE SENSING & GIS LAB",
+      "label": "REMOTE SENSING & GIS LAB",
+      "type": "lab",
+      "x": 1611,
+      "y": 403,
+      "w": 177,
+      "h": 109,
+      "width": 177,
+      "height": 109,
+      "directions": "Located on the bottom side of the horizontal corridor, next to Room SMV01.",
+      "description": "Remote Sensing and Geographic Information Systems (GIS) computer laboratory.",
+      "image": "https://placehold.co/600x400?text=RS+and+GIS+Lab",
+      "tags": [
+        "rs",
+        "gis",
+        "mapping",
+        "lab",
+        "civil"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-ground-nc01",
+      "name": "LECTURE ROOM NC01",
+      "label": "LECTURE ROOM NC01",
+      "type": "classroom",
+      "x": 1609,
+      "y": 271,
+      "w": 177,
+      "h": 94,
+      "width": 177,
+      "height": 94,
+      "directions": "Located on the bottom side of the horizontal corridor, next to the RS & GIS Lab.",
+      "description": "Standard lecture classroom NC01 for Civil Engineering classes.",
+      "image": "https://placehold.co/600x400?text=NC01+Classroom",
+      "tags": [
+        "classroom",
+        "nc01",
+        "civil"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-ground-gents-toilet",
+      "name": "GENTS WASHROOM",
+      "label": "GENTS WASHROOM",
+      "type": "utility",
+      "x": 1377,
+      "y": 109,
+      "w": 191,
+      "h": 74,
+      "width": 191,
+      "height": 74,
+      "directions": "Located at the far east end of the horizontal wing corridor, bottom side.",
+      "description": "Restroom facilities for men.",
+      "image": "https://placehold.co/600x400?text=Gents+Restroom",
+      "tags": [
+        "washroom",
+        "toilet",
+        "gents",
+        "utility"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-ground-vertical-corridor",
+      "name": "VERTICAL CORRIDOR",
+      "label": "VERTICAL CORRIDOR",
+      "type": "corridor",
+      "x": 100,
+      "y": 100,
+      "w": 120,
+      "h": 1100,
+      "width": 120,
+      "height": 1100,
+      "directions": "Main corridor running north-south along the vertical wing.",
+      "description": "North-south vertical wing corridor.",
+      "image": "https://placehold.co/600x400?text=Vertical+Corridor",
+      "tags": [
+        "corridor"
+      ],
+      "clickable": false
+    },
+    {
+      "id": "svm-ground-horizontal-corridor",
+      "name": "HORIZONTAL CORRIDOR",
+      "label": "HORIZONTAL CORRIDOR",
+      "type": "corridor",
+      "x": -800,
+      "y": 1000,
+      "w": 2400,
+      "h": 100,
+      "width": 2400,
+      "height": 100,
+      "directions": "Main corridor running east-west along the horizontal wing.",
+      "description": "East-west horizontal wing corridor.",
+      "image": "https://placehold.co/600x400?text=Horizontal+Corridor",
+      "tags": [
+        "corridor"
+      ],
+      "clickable": false
+    }
+  ],
+  "faculty": [
+    {
+      "department": "Civil Engineering",
+      "image": "https://placehold.co/400x400?text=Dr.+Civil+HOD",
+      "roomId": "svm-ground-hod-office",
+      "name": "Dr. Civil HOD"
+    }
+  ],
+  "mapImage": null,
+  "locked": true,
+  "lastEdited": "2026-06-03T17:00:13.143Z",
+  "boundaryVertices": [
+    {
+      "x": -944,
+      "y": 1422
+    },
+    {
+      "x": -940,
+      "y": 1183
+    },
+    {
+      "x": 244,
+      "y": 1184
+    },
+    {
+      "x": 248,
+      "y": 907
+    },
+    {
+      "x": 633,
+      "y": 907
+    },
+    {
+      "x": 632,
+      "y": 1175
+    },
+    {
+      "x": 1136,
+      "y": 1178
+    },
+    {
+      "x": 1150,
+      "y": 292
+    },
+    {
+      "x": 255,
+      "y": 286
+    },
+    {
+      "x": 256,
+      "y": 73
+    },
+    {
+      "x": 1800,
+      "y": 83
+    },
+    {
+      "x": 1798,
+      "y": 1436
+    }
+  ],
+  "mainWidth": 960,
+  "bulgeWidth": 320,
+  "bulgeHeight": 500,
+  "viewHeight": 1540,
+  "viewWidth": 1280
+}

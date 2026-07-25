@@ -1,0 +1,323 @@
+{
+  "floorId": "atal_ground",
+  "label": "Ground Floor",
+  "buildingName": "ATAL-BLOCK",
+  "faculty": [
+    {
+      "image": "https://placehold.co/600x400?text=Dr.+Vijeesh+V.",
+      "roomId": "atal-ground-materials-lab",
+      "department": "Mechanical Engineering",
+      "name": "Dr. Vijeesh V."
+    },
+    {
+      "name": "Bhaskara P. Achar",
+      "image": "https://placehold.co/600x400?text=Bhaskara+P.+Achar",
+      "roomId": "atal-ground-materials-lab",
+      "department": "Mechanical Engineering"
+    },
+    {
+      "image": "https://placehold.co/600x400?text=Sathish+Shetty",
+      "roomId": "atal-ground-materials-lab",
+      "department": "Mechanical Engineering",
+      "name": "Sathish Shetty"
+    }
+  ],
+  "mapImage": null,
+  "locked": true,
+  "boundaryVertices": [
+    {
+      "y": 600,
+      "x": -950
+    },
+    {
+      "x": 3250,
+      "y": 600
+    },
+    {
+      "y": 1050,
+      "x": 3250
+    },
+    {
+      "x": 1950,
+      "y": 1050
+    },
+    {
+      "y": 1300,
+      "x": 1950
+    },
+    {
+      "y": 1300,
+      "x": 1450
+    },
+    {
+      "x": 1450,
+      "y": 1050
+    },
+    {
+      "y": 1050,
+      "x": 600
+    },
+    {
+      "x": -50,
+      "y": 1050
+    },
+    {
+      "y": 1267,
+      "x": -50
+    },
+    {
+      "x": -470,
+      "y": 1262
+    },
+    {
+      "x": -473,
+      "y": 1050
+    },
+    {
+      "x": -949,
+      "y": 1048
+    }
+  ],
+  "mainWidth": 1600,
+  "bulgeWidth": 695,
+  "bulgeHeight": 500,
+  "viewHeight": 1540,
+  "viewWidth": 4400,
+  "rooms": [
+    {
+      "id": "atal-ground-stairs-1",
+      "name": "STAIRS-1",
+      "label": "STAIRS-1",
+      "type": "utility",
+      "x": -929,
+      "y": 623,
+      "w": 200,
+      "h": 150,
+      "width": 200,
+      "height": 150,
+      "directions": "Located at the top-left area, next to the Lift lobby.",
+      "description": "West side staircase access to all floors.",
+      "image": "https://placehold.co/600x400?text=Staircase+West",
+      "tags": [
+        "stairs",
+        "utility"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "atal-ground-lift",
+      "name": "LIFT",
+      "label": "LIFT",
+      "type": "utility",
+      "x": -401,
+      "y": 611,
+      "w": 150,
+      "h": 150,
+      "width": 150,
+      "height": 150,
+      "directions": "Located at the top-right area, next to NF L003.",
+      "description": "Elevator access to all floors.",
+      "image": "https://placehold.co/600x400?text=Lift",
+      "tags": [
+        "lift",
+        "elevator",
+        "utility"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "atal-ground-nfl003",
+      "name": "NF L003",
+      "label": "NF L003",
+      "type": "office",
+      "x": 220,
+      "y": 620,
+      "w": 223,
+      "h": 73,
+      "width": 223,
+      "height": 73,
+      "directions": "On the right side of the corridor, below the Lift.",
+      "description": "NF L003 Research and academic office area.",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/atal-block-images/ground-floor/nfl003.png",
+      "tags": [
+        "office",
+        "academic",
+        "nfl003"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "atal-ground-autoliv",
+      "name": "AUTOLIV NMAMIT INCUBATION CENTRE",
+      "label": "AUTOLIV NMAMIT INCUBATION CENTRE",
+      "type": "office",
+      "x": 637,
+      "y": 617,
+      "w": 432,
+      "h": 146,
+      "width": 432,
+      "height": 146,
+      "directions": "On the right side of the corridor, between NF L003 and Gents Toilet.",
+      "description": "Collaboration incubation facility between Autoliv and NMAMIT for industrial research projects.",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/atal-block-images/ground-floor/autoliv.png",
+      "tags": [
+        "office",
+        "incubation",
+        "autoliv",
+        "research"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "atal-ground-gents-toilet",
+      "name": "GENTS TOILET",
+      "label": "GENTS TOILET",
+      "type": "utility",
+      "x": 1166,
+      "y": 624,
+      "w": 257,
+      "h": 87,
+      "width": 257,
+      "height": 87,
+      "directions": "On the right side of the corridor, below Autoliv Incubation Centre.",
+      "description": "Gents restroom and washroom facilities.",
+      "image": "https://placehold.co/600x400?text=Gents+Toilet",
+      "tags": [
+        "toilet",
+        "gents",
+        "washroom",
+        "utility"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "atal-ground-stairs-2",
+      "name": "STAIRS-2",
+      "label": "STAIRS-2",
+      "type": "utility",
+      "x": 1614,
+      "y": 617,
+      "w": 240,
+      "h": 160,
+      "width": 240,
+      "height": 160,
+      "directions": "On the right side of the corridor, opposite the Main Entrance.",
+      "description": "Main staircase leading to the first floor.",
+      "image": "https://placehold.co/600x400?text=Stairs+Up",
+      "tags": [
+        "stairs",
+        "staircase",
+        "utility"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "atal-ground-materials-lab",
+      "name": "MATERIALS PERFORMANCE & CHARACTERIZATION LABORATORY",
+      "label": "MATERIALS PERFORMANCE & CHARACTERIZATION LABORATORY",
+      "type": "lab",
+      "x": 308,
+      "y": 862,
+      "w": 506,
+      "h": 171,
+      "width": 506,
+      "height": 171,
+      "directions": "On the left side of the corridor, below the west staircase.",
+      "description": "Advanced laboratory testing and characterization of materials performance.",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/atal-block-images/ground-floor/materials_lab.png",
+      "tags": [
+        "lab",
+        "materials",
+        "characterization",
+        "mechanical"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "atal-ground-research-lab",
+      "name": "RESEARCH LABORATORY",
+      "label": "RESEARCH LABORATORY",
+      "type": "lab",
+      "x": 1098,
+      "y": 899,
+      "w": 325,
+      "h": 136,
+      "width": 325,
+      "height": 136,
+      "directions": "On the left side of the corridor, below the Materials Performance Laboratory.",
+      "description": "Research laboratory for advanced projects.",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/atal-block-images/ground-floor/research_lab.png",
+      "tags": [
+        "lab",
+        "research",
+        "basic sciences"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "atal-ground-main-entrance",
+      "name": "MAIN ENTRANCE",
+      "label": "MAIN ENTRANCE",
+      "type": "lobby",
+      "x": 1507,
+      "y": 1106,
+      "w": 380,
+      "h": 140,
+      "width": 380,
+      "height": 140,
+      "directions": "On the left side of the corridor, near the main staircase up.",
+      "description": "Main entrance lobby area for the Atal Block.",
+      "image": "https://placehold.co/600x400?text=Main+Entrance",
+      "tags": [
+        "lobby",
+        "entrance"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "atal-ground-main-entrance-left",
+      "name": "MAIN ENTRANCE",
+      "label": "MAIN ENTRANCE",
+      "type": "lobby",
+      "x": -430,
+      "y": 1100,
+      "w": 340,
+      "h": 120,
+      "width": 340,
+      "height": 120,
+      "directions": "Located at the bottom-left main entrance.",
+      "description": "Secondary main entrance of the Atal Block.",
+      "image": "https://placehold.co/600x400?text=Main+Entrance",
+      "tags": [
+        "lobby",
+        "entrance"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "atal-ground-ncrf",
+      "name": "NCRF & CENTRE FOR NEW MATERIALS & SURFACE ENGINEERING",
+      "label": "NCRF & CENTRE FOR NEW MATERIALS & SURFACE ENGINEERING",
+      "type": "lab",
+      "x": 2148,
+      "y": 635,
+      "w": 1081,
+      "h": 362,
+      "width": 1081,
+      "height": 362,
+      "directions": "Located at the bottom end of the main corridor.",
+      "description": "National Calibration Research Facility (NCRF) and Centre for New Materials & Surface Engineering.",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/atal-block-images/ground-floor/ncrf.png",
+      "tags": [
+        "lab",
+        "ncrf",
+        "materials",
+        "surface",
+        "engineering",
+        "research"
+      ],
+      "clickable": true
+    }
+  ],
+  "lastEdited": "2026-07-23T11:19:30.308Z"
+}

@@ -1,0 +1,568 @@
+{
+  "floorId": "rajraman_second",
+  "buildingName": "V . RAJRAMAN-BLOCK",
+  "label": "2nd Floor",
+  "viewWidth": 1600,
+  "viewHeight": 1200,
+  "mainWidth": 960,
+  "bulgeWidth": 320,
+  "bulgeHeight": 500,
+  "boundaryVertices": [
+    {
+      "x": -118,
+      "y": 611
+    },
+    {
+      "x": -118,
+      "y": 344
+    },
+    {
+      "x": 400,
+      "y": 344
+    },
+    {
+      "x": 400,
+      "y": 136
+    },
+    {
+      "x": 1479,
+      "y": 136
+    },
+    {
+      "x": 1479,
+      "y": 344
+    },
+    {
+      "x": 697,
+      "y": 344
+    },
+    {
+      "x": 697,
+      "y": 922
+    },
+    {
+      "x": 1440,
+      "y": 922
+    },
+    {
+      "x": 1440,
+      "y": 1100
+    },
+    {
+      "x": 920,
+      "y": 1100
+    },
+    {
+      "x": 920,
+      "y": 1100
+    },
+    {
+      "x": 800,
+      "y": 1100
+    },
+    {
+      "x": 800,
+      "y": 1059
+    },
+    {
+      "x": 400,
+      "y": 1059
+    },
+    {
+      "x": 400,
+      "y": 611
+    }
+  ],
+  "lastEditedBy": "system-sync-rajraman",
+  "locked": true,
+  "rooms": [
+    {
+      "id": "rajraman-second-lift",
+      "name": "LIFT",
+      "label": "LIFT",
+      "type": "utility",
+      "x": 818,
+      "y": 1031,
+      "w": 97,
+      "h": 55,
+      "width": 97,
+      "height": 55,
+      "directions": "Elevator access located next to MCA Research Lab 1.",
+      "description": "Elevator access serving all floors.",
+      "image": "https://placehold.co/600x400?text=Lift",
+      "tags": [
+        "lift",
+        "elevator",
+        "utility"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "rajraman-second-mca-rl1",
+      "name": "MCA Research Lab-1",
+      "label": "MCA Research Lab-1",
+      "type": "lab",
+      "x": 940,
+      "y": 1031,
+      "w": 342,
+      "h": 64,
+      "width": 342,
+      "height": 64,
+      "directions": "Located at the bottom horizontal corridor next to the Lift.",
+      "description": "MCA Research Laboratory 1.",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_research_lab1.png",
+      "tags": [
+        "lab",
+        "mca",
+        "research",
+        "1"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "rajraman-second-stairs-2",
+      "name": "STAIRS-2",
+      "label": "STAIRS-2",
+      "type": "utility",
+      "x": 1295,
+      "y": 933,
+      "w": 127,
+      "h": 100,
+      "width": 127,
+      "height": 100,
+      "directions": "Located at the bottom of the right corridor.",
+      "description": "Staircase access.",
+      "image": "https://placehold.co/600x400?text=Stairs+2",
+      "tags": [
+        "stairs",
+        "utility"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "rajraman-second-sr-bot1",
+      "name": "STAFF ROOM",
+      "label": "STAFF ROOM",
+      "type": "staffroom",
+      "x": 682,
+      "y": 995,
+      "w": 110,
+      "h": 55,
+      "width": 110,
+      "height": 55,
+      "directions": "Located at the bottom corridor to the left of the Lift.",
+      "description": "Faculty Staff Room.",
+      "image": "https://placehold.co/600x400?text=Staff+Room",
+      "tags": [
+        "staffroom",
+        "office"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "rajraman-second-sr-bot2",
+      "name": "STAFF ROOM",
+      "label": "STAFF ROOM",
+      "type": "staffroom",
+      "x": 564,
+      "y": 995,
+      "w": 110,
+      "h": 55,
+      "width": 110,
+      "height": 55,
+      "directions": "Located at the bottom corridor, next to Staff Room 1.",
+      "description": "Faculty Staff Room.",
+      "image": "https://placehold.co/600x400?text=Staff+Room",
+      "tags": [
+        "staffroom",
+        "office"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "rajraman-second-mca-lab1",
+      "name": "MCA LAB 1",
+      "label": "MCA LAB 1",
+      "type": "lab",
+      "x": 600,
+      "y": 800,
+      "w": 85,
+      "h": 70,
+      "width": 85,
+      "height": 70,
+      "directions": "Located on the top side of the central horizontal corridor.",
+      "description": "MCA Laboratory 1.",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_lab1.png",
+      "tags": [
+        "lab",
+        "mca",
+        "1"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "rajraman-second-mca-lab2",
+      "name": "MCA LAB 2",
+      "label": "MCA LAB 2",
+      "type": "lab",
+      "x": 595,
+      "y": 710,
+      "w": 90,
+      "h": 70,
+      "width": 90,
+      "height": 70,
+      "directions": "Located next to MCA LAB 1 on the top side of the corridor.",
+      "description": "MCA Laboratory 2.",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_lab2.png",
+      "tags": [
+        "lab",
+        "mca",
+        "2"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "rajraman-second-mca-lab3",
+      "name": "MCA LAB 3",
+      "label": "MCA LAB 3",
+      "type": "lab",
+      "x": 590,
+      "y": 620,
+      "w": 95,
+      "h": 70,
+      "width": 95,
+      "height": 70,
+      "directions": "Located next to MCA LAB 2 on the top side of the corridor.",
+      "description": "MCA Laboratory 3.",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_lab3.png",
+      "tags": [
+        "lab",
+        "mca",
+        "3"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "rajraman-second-mca-office",
+      "name": "MCA Dept Office",
+      "label": "MCA Dept Office",
+      "type": "office",
+      "x": 743,
+      "y": 157,
+      "w": 152,
+      "h": 109,
+      "width": 152,
+      "height": 109,
+      "directions": "Located at the top of the right vertical wing.",
+      "description": "MCA Department Office.",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_office.png",
+      "tags": [
+        "office",
+        "mca",
+        "department"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "rajraman-second-sr-right",
+      "name": "STAFF ROOM",
+      "label": "STAFF ROOM",
+      "type": "staffroom",
+      "x": 909,
+      "y": 160,
+      "w": 563,
+      "h": 105,
+      "width": 563,
+      "height": 105,
+      "directions": "Located in the right vertical wing, below the MCA Department Office.",
+      "description": "MCA Faculty Staff Room.",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_staff_room.png",
+      "tags": [
+        "staffroom",
+        "office",
+        "mca"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "rajraman-second-mca-lab4",
+      "name": "MCA LAB 4",
+      "label": "MCA LAB 4",
+      "type": "lab",
+      "x": 403,
+      "y": 695,
+      "w": 108,
+      "h": 88,
+      "width": 108,
+      "height": 88,
+      "directions": "Located on the left side of the top vertical corridor.",
+      "description": "MCA Laboratory 4.",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_lab4.png",
+      "tags": [
+        "lab",
+        "mca",
+        "4"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "rajraman-second-sr-top1",
+      "name": "STAFF ROOM",
+      "label": "STAFF ROOM",
+      "type": "staffroom",
+      "x": 316,
+      "y": 515,
+      "w": 75,
+      "h": 88,
+      "width": 75,
+      "height": 88,
+      "directions": "Located in the top left corridor next to MCA LAB 4.",
+      "description": "Faculty Staff Room.",
+      "image": "https://placehold.co/600x400?text=Staff+Room",
+      "tags": [
+        "staffroom",
+        "office"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "rajraman-second-sr-top2",
+      "name": "STAFF ROOM",
+      "label": "STAFF ROOM",
+      "type": "staffroom",
+      "x": 233,
+      "y": 513,
+      "w": 75,
+      "h": 88,
+      "width": 75,
+      "height": 88,
+      "directions": "Located next to Staff Room 1 in the top left corridor.",
+      "description": "Faculty Staff Room.",
+      "image": "https://placehold.co/600x400?text=Staff+Room",
+      "tags": [
+        "staffroom",
+        "office"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "rajraman-second-sr-top3",
+      "name": "STAFF ROOM",
+      "label": "STAFF ROOM",
+      "type": "staffroom",
+      "x": 156,
+      "y": 513,
+      "w": 75,
+      "h": 88,
+      "width": 75,
+      "height": 88,
+      "directions": "Located next to Staff Room 2 in the top left corridor.",
+      "description": "Faculty Staff Room.",
+      "image": "https://placehold.co/600x400?text=Staff+Room",
+      "tags": [
+        "staffroom",
+        "office"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "rajraman-second-gents-toilet",
+      "name": "GENTS TOILET",
+      "label": "GENTS TOILET",
+      "type": "utility",
+      "x": -25,
+      "y": 510,
+      "w": 97,
+      "h": 88,
+      "width": 97,
+      "height": 88,
+      "directions": "Located above the staff rooms on the left side.",
+      "description": "Gents restroom facilities.",
+      "image": "https://placehold.co/600x400?text=Gents+Toilet",
+      "tags": [
+        "toilet",
+        "washroom",
+        "gents",
+        "utility"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "rajraman-second-ladies-toilet",
+      "name": "LADIES ROOM",
+      "label": "LADIES ROOM",
+      "type": "utility",
+      "x": 126,
+      "y": 356,
+      "w": 99,
+      "h": 88,
+      "width": 99,
+      "height": 88,
+      "directions": "Located at the top left of the corridor next to the HOD cabin.",
+      "description": "Ladies restroom facilities.",
+      "image": "https://placehold.co/600x400?text=Ladies+Room",
+      "tags": [
+        "toilet",
+        "washroom",
+        "ladies",
+        "utility"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "rajraman-second-mca-hod",
+      "name": "MCA HOD",
+      "label": "MCA HOD",
+      "type": "hod",
+      "x": 409,
+      "y": 241,
+      "w": 90,
+      "h": 89,
+      "width": 90,
+      "height": 89,
+      "directions": "Located on the right side of the top vertical corridor.",
+      "description": "MCA Head of Department Cabin.",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/hod_mca_mamatha.png",
+      "tags": [
+        "hod",
+        "mca",
+        "office"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "rajraman-second-water-filter",
+      "name": "WATER FILTER",
+      "label": "WATER FILTER",
+      "type": "utility",
+      "x": -11,
+      "y": 357,
+      "w": 88,
+      "h": 82,
+      "width": 88,
+      "height": 82,
+      "directions": "Located next to the Ladies Toilet.",
+      "description": "Water filter drinking facility.",
+      "image": "https://placehold.co/600x400?text=Water+Filter",
+      "tags": [
+        "water",
+        "filter",
+        "utility"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "rajraman-second-stairs-1",
+      "name": "STAIRS-1",
+      "label": "STAIRS-1",
+      "type": "utility",
+      "x": -114,
+      "y": 356,
+      "w": 98,
+      "h": 82,
+      "width": 98,
+      "height": 82,
+      "directions": "Located above HOD on the right side of the top corridor.",
+      "description": "Staircase access.",
+      "image": "https://placehold.co/600x400?text=Stairs+1",
+      "tags": [
+        "stairs",
+        "utility"
+      ],
+      "clickable": true
+    }
+  ],
+  "lastEdited": "2026-07-23T11:19:32.456Z",
+  "faculty": [
+    {
+      "name": "DR. MAMATHA BALIPA",
+      "department": "MCA",
+      "designation": "Professor & Head",
+      "roomId": "rajraman-second-mca-hod",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/hod_mca_mamatha.png",
+      "avatar": "/rajraman-block-images/faculty/mamatha.jpg",
+      "description": "Professor & Head in MCA Department"
+    },
+    {
+      "name": "DR. SURENDRA SHETTY",
+      "department": "MCA",
+      "designation": "Professor",
+      "roomId": "rajraman-second-sr-right",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/prof_surendra.png",
+      "avatar": "/rajraman-block-images/faculty/surendra.jpg",
+      "description": "Professor in MCA Department"
+    },
+    {
+      "name": "DR. PRAVEENA KUMARI M K",
+      "department": "MCA",
+      "designation": "Assistant Professor Gd III",
+      "roomId": "rajraman-second-sr-right",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd3_praveena.png",
+      "avatar": "/rajraman-block-images/faculty/praveena.jpg",
+      "description": "Assistant Professor Gd III in MCA Department"
+    },
+    {
+      "name": "DR. SPOORTHI B. SHETTY",
+      "department": "MCA",
+      "designation": "Associate Professor",
+      "roomId": "rajraman-second-sr-right",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd3_spoorthi.png",
+      "avatar": "/rajraman-block-images/faculty/spoorthi.jpg",
+      "description": "Associate Professor in MCA Department"
+    },
+    {
+      "name": "DR. MANGALA SHETTY",
+      "department": "MCA",
+      "designation": "Associate Professor",
+      "roomId": "rajraman-second-sr-right",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd3_mangala.png",
+      "avatar": "/rajraman-block-images/faculty/mangala.jpg",
+      "description": "Associate Professor in MCA Department"
+    },
+    {
+      "name": "DR. PALLAVI SHETTY",
+      "department": "MCA",
+      "designation": "Associate Professor",
+      "roomId": "rajraman-second-sr-right",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd3_pallavi.png",
+      "avatar": "/rajraman-block-images/faculty/pallavi.jpg",
+      "description": "Associate Professor in MCA Department"
+    },
+    {
+      "name": "DR. ANANTHA MURTHY",
+      "department": "MCA",
+      "designation": "Associate Professor",
+      "roomId": "rajraman-second-sr-right",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/prof_anantha.png",
+      "avatar": "/rajraman-block-images/faculty/anantha.jpg",
+      "description": "Associate Professor in MCA Department"
+    },
+    {
+      "name": "MS. PREMITHA KAMATH",
+      "department": "MCA",
+      "designation": "Assistant Professor Gd I",
+      "roomId": "rajraman-second-sr-right",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd1_premitha.png",
+      "avatar": "/rajraman-block-images/faculty/premitha.jpg",
+      "description": "Assistant Professor Gd I in MCA Department"
+    },
+    {
+      "name": "MR. ARHATH KUMAR",
+      "department": "MCA",
+      "designation": "Assistant Professor Gd II",
+      "roomId": "rajraman-second-sr-right",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd2_arhath.png",
+      "avatar": "/rajraman-block-images/faculty/arhath.jpg",
+      "description": "Assistant Professor Gd II in MCA Department"
+    },
+    {
+      "name": "MS. HARSHITHA G M",
+      "department": "MCA",
+      "designation": "Assistant Professor Gd II",
+      "roomId": "rajraman-second-sr-right",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/prof_harshitha.png",
+      "avatar": "/rajraman-block-images/faculty/harshitha.jpg",
+      "description": "Assistant Professor Gd II in MCA Department"
+    }
+  ]
+}

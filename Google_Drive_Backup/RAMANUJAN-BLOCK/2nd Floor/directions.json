@@ -1,0 +1,190 @@
+{
+  "buildingName": "RAMANUJAN-BLOCK",
+  "floorLabel": "2nd Floor",
+  "floorId": "ramanujan_second",
+  "lastUpdated": "2026-07-25T14:02:41.287Z",
+  "directions": {
+    "ramanujan-second-mrc-add-sr": "Located in the left bulge area, near LH 207.",
+    "ramanujan-second-lh207": "Located in the left bulge area, second from bottom.",
+    "ramanujan-second-lh205": "In the left hallway, next to the bulge area.",
+    "ramanujan-second-techno-cultural": "In the bottom corridor, beside LH 205.",
+    "ramanujan-second-stairs-1": "West side stairs.",
+    "ramanujan-second-mech-hod": "Beside the West stairs in the bottom corridor.",
+    "ramanujan-second-mech-office": "Beside the Mechanical HOD cabin in the bottom corridor.",
+    "ramanujan-second-sr-left": "Along the bottom corridor, next to the Mech HOD office.",
+    "ramanujan-second-gents-toilet": "Restroom located along the bottom corridor.",
+    "ramanujan-second-ladies-room": "Restroom located along the bottom corridor next to the gents toilet.",
+    "ramanujan-second-lh201": "Along the bottom corridor, next to the restrooms.",
+    "ramanujan-second-mech-sr": "Along the bottom corridor, next to LH 201.",
+    "ramanujan-second-phalguni": "Along the bottom corridor, next to LH 201.",
+    "ramanujan-second-dept-library": "Along the bottom corridor, next to Phalguni.",
+    "ramanujan-second-nks-vjs-sr": "Along the corridor, next to the Department Library.",
+    "ramanujan-second-lift": "Elevator block at the bottom-right corridor.",
+    "ramanujan-second-way-apj": "Left exit bridge connecting to the 2nd floor of APJ Block.",
+    "ramanujan-second-ravindra-vs-sr": "Along the APJ connecting corridor, near the bridge.",
+    "ramanujan-second-nm-rp-rnr-sr": "Along the APJ connecting corridor, near the middle area.",
+    "ramanujan-second-lh208": "Along the top corridor, next to Dr. NM cabin.",
+    "ramanujan-second-lh206": "Along the top corridor, next to LH 208.",
+    "ramanujan-second-sr-right": "Along the top corridor, next to LH 206.",
+    "ramanujan-second-cad-cam": "Along the top corridor, next to the Staff Room.",
+    "ramanujan-second-research-lab": "Along the top corridor, next to CAD/CAM lab.",
+    "ramanujan-second-vlsi-lab": "Along the top corridor, next to Research Lab.",
+    "ramanujan-second-arm-processor-lab": "Along the top corridor, next to VLSI Lab.",
+    "ramanujan-second-lh204": "Along the top corridor, next to ARM Processor Lab.",
+    "ramanujan-second-mech-dept-lh": "Along the top corridor, next to LH 204.",
+    "ramanujan-second-lh202": "Along the top corridor, next to Mech Dept LH.",
+    "ramanujan-second-stairs-2": "Main stairs."
+  },
+  "detailedDirections": [
+    {
+      "roomId": "ramanujan-second-mrc-add-sr",
+      "roomName": "Staff Room",
+      "directions": "Located in the left bulge area, near LH 207."
+    },
+    {
+      "roomId": "ramanujan-second-lh207",
+      "roomName": "LH207",
+      "directions": "Located in the left bulge area, second from bottom."
+    },
+    {
+      "roomId": "ramanujan-second-lh205",
+      "roomName": "LH205",
+      "directions": "In the left hallway, next to the bulge area."
+    },
+    {
+      "roomId": "ramanujan-second-techno-cultural",
+      "roomName": "TECHNO CULTURAL CENTRE",
+      "directions": "In the bottom corridor, beside LH 205."
+    },
+    {
+      "roomId": "ramanujan-second-stairs-1",
+      "roomName": "STAIRS-1",
+      "directions": "West side stairs."
+    },
+    {
+      "roomId": "ramanujan-second-mech-hod",
+      "roomName": "DEPT OF MECH (HOD)",
+      "directions": "Beside the West stairs in the bottom corridor."
+    },
+    {
+      "roomId": "ramanujan-second-mech-office",
+      "roomName": "MECH DEPT OFFICE",
+      "directions": "Beside the Mechanical HOD cabin in the bottom corridor."
+    },
+    {
+      "roomId": "ramanujan-second-sr-left",
+      "roomName": "Staff Room",
+      "directions": "Along the bottom corridor, next to the Mech HOD office."
+    },
+    {
+      "roomId": "ramanujan-second-gents-toilet",
+      "roomName": "GENTS TOILET",
+      "directions": "Restroom located along the bottom corridor."
+    },
+    {
+      "roomId": "ramanujan-second-ladies-room",
+      "roomName": "LADIES ROOM",
+      "directions": "Restroom located along the bottom corridor next to the gents toilet."
+    },
+    {
+      "roomId": "ramanujan-second-lh201",
+      "roomName": "LH201",
+      "directions": "Along the bottom corridor, next to the restrooms."
+    },
+    {
+      "roomId": "ramanujan-second-mech-sr",
+      "roomName": "Staff Room",
+      "directions": "Along the bottom corridor, next to LH 201."
+    },
+    {
+      "roomId": "ramanujan-second-phalguni",
+      "roomName": "PHALGUNI",
+      "directions": "Along the bottom corridor, next to LH 201."
+    },
+    {
+      "roomId": "ramanujan-second-dept-library",
+      "roomName": "DEPT LIBRARY",
+      "directions": "Along the bottom corridor, next to Phalguni."
+    },
+    {
+      "roomId": "ramanujan-second-nks-vjs-sr",
+      "roomName": "Staff Room",
+      "directions": "Along the corridor, next to the Department Library."
+    },
+    {
+      "roomId": "ramanujan-second-lift",
+      "roomName": "LIFT",
+      "directions": "Elevator block at the bottom-right corridor."
+    },
+    {
+      "roomId": "ramanujan-second-way-apj",
+      "roomName": "CONNECTION TO APJ (2ND FLOOR)",
+      "directions": "Left exit bridge connecting to the 2nd floor of APJ Block."
+    },
+    {
+      "roomId": "ramanujan-second-ravindra-vs-sr",
+      "roomName": "Staff Room",
+      "directions": "Along the APJ connecting corridor, near the bridge."
+    },
+    {
+      "roomId": "ramanujan-second-nm-rp-rnr-sr",
+      "roomName": "Staff Room",
+      "directions": "Along the APJ connecting corridor, near the middle area."
+    },
+    {
+      "roomId": "ramanujan-second-lh208",
+      "roomName": "LH208",
+      "directions": "Along the top corridor, next to Dr. NM cabin."
+    },
+    {
+      "roomId": "ramanujan-second-lh206",
+      "roomName": "LH206",
+      "directions": "Along the top corridor, next to LH 208."
+    },
+    {
+      "roomId": "ramanujan-second-sr-right",
+      "roomName": "Staff Room",
+      "directions": "Along the top corridor, next to LH 206."
+    },
+    {
+      "roomId": "ramanujan-second-cad-cam",
+      "roomName": "CAD/CAM/CFD LAB",
+      "directions": "Along the top corridor, next to the Staff Room."
+    },
+    {
+      "roomId": "ramanujan-second-research-lab",
+      "roomName": "RESEARCH LAB",
+      "directions": "Along the top corridor, next to CAD/CAM lab."
+    },
+    {
+      "roomId": "ramanujan-second-vlsi-lab",
+      "roomName": "DEPT OF EC (VLSI LAB)",
+      "directions": "Along the top corridor, next to Research Lab."
+    },
+    {
+      "roomId": "ramanujan-second-arm-processor-lab",
+      "roomName": "ARM PROCESSOR LAB",
+      "directions": "Along the top corridor, next to VLSI Lab."
+    },
+    {
+      "roomId": "ramanujan-second-lh204",
+      "roomName": "LH204",
+      "directions": "Along the top corridor, next to ARM Processor Lab."
+    },
+    {
+      "roomId": "ramanujan-second-mech-dept-lh",
+      "roomName": "MECH DEPT LH",
+      "directions": "Along the top corridor, next to LH 204."
+    },
+    {
+      "roomId": "ramanujan-second-lh202",
+      "roomName": "LH202",
+      "directions": "Along the top corridor, next to Mech Dept LH."
+    },
+    {
+      "roomId": "ramanujan-second-stairs-2",
+      "roomName": "STAIRS-2",
+      "directions": "Main stairs."
+    }
+  ]
+}

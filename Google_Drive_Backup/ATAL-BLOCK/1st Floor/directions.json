@@ -1,0 +1,106 @@
+{
+  "buildingName": "ATAL-BLOCK",
+  "floorLabel": "1st Floor",
+  "floorId": "atal_first",
+  "lastUpdated": "2026-07-25T14:00:19.667Z",
+  "directions": {
+    "atal-first-stairs-1": "Located at the top-left area, next to the lift.",
+    "atal-first-lift": "Located next to the west stairs.",
+    "atal-first-nitte-trust": "On the upper side of the corridor, between the Lift and CBL01.",
+    "atal-first-cbl01": "On the upper side of the corridor, next to Nitte Education Trust.",
+    "atal-first-acl01": "On the upper side of the corridor, next to EDC NL 104.",
+    "atal-first-stairs-2": "Central staircase.",
+    "atal-first-ladies-toilet": "On the upper side of the corridor, next to the central stairs.",
+    "atal-first-biotech-fablab": "On the upper side of the corridor, next to the Ladies Toilet.",
+    "atal-first-edc-incubation": "At the far east end of the corridor, upper side.",
+    "atal-first-meeting-shashank": "On the lower side of the corridor, opposite Nitte Education Trust.",
+    "atal-first-elh104": "On the lower side of the corridor, opposite CBL01.",
+    "atal-first-coe": "On the lower side of the corridor, opposite ACL01.",
+    "atal-first-edcnl102": "On the lower side of the corridor, next to the Centre of Excellence.",
+    "atal-first-elh102": "On the lower side of the corridor, next to EDC NL 102.",
+    "atal-first-edcnl101": "On the lower side of the corridor, next to ELH 102.",
+    "atal-first-elh101": "On the lower side of the corridor, next to EDC NL 101."
+  },
+  "detailedDirections": [
+    {
+      "roomId": "atal-first-stairs-1",
+      "roomName": "STAIRS-1",
+      "directions": "Located at the top-left area, next to the lift."
+    },
+    {
+      "roomId": "atal-first-lift",
+      "roomName": "LIFT",
+      "directions": "Located next to the west stairs."
+    },
+    {
+      "roomId": "atal-first-nitte-trust",
+      "roomName": "NITTE EDUCATION TRUST",
+      "directions": "On the upper side of the corridor, between the Lift and CBL01."
+    },
+    {
+      "roomId": "atal-first-cbl01",
+      "roomName": "CBL01",
+      "directions": "On the upper side of the corridor, next to Nitte Education Trust."
+    },
+    {
+      "roomId": "atal-first-acl01",
+      "roomName": "ACL01",
+      "directions": "On the upper side of the corridor, next to EDC NL 104."
+    },
+    {
+      "roomId": "atal-first-stairs-2",
+      "roomName": "STAIRS-2",
+      "directions": "Central staircase."
+    },
+    {
+      "roomId": "atal-first-ladies-toilet",
+      "roomName": "LADIES ROOM",
+      "directions": "On the upper side of the corridor, next to the central stairs."
+    },
+    {
+      "roomId": "atal-first-biotech-fablab",
+      "roomName": "BIOTECH FABLAB",
+      "directions": "On the upper side of the corridor, next to the Ladies Toilet."
+    },
+    {
+      "roomId": "atal-first-edc-incubation",
+      "roomName": "ENTREPRENEURSHIP DEVELOPMENT CELL (EDC)",
+      "directions": "At the far east end of the corridor, upper side."
+    },
+    {
+      "roomId": "atal-first-meeting-shashank",
+      "roomName": "MEETING ROOM (SHASHANK SHETTY)",
+      "directions": "On the lower side of the corridor, opposite Nitte Education Trust."
+    },
+    {
+      "roomId": "atal-first-elh104",
+      "roomName": "ELH 104",
+      "directions": "On the lower side of the corridor, opposite CBL01."
+    },
+    {
+      "roomId": "atal-first-coe",
+      "roomName": "CENTRE OF EXCELLENCE",
+      "directions": "On the lower side of the corridor, opposite ACL01."
+    },
+    {
+      "roomId": "atal-first-edcnl102",
+      "roomName": "EDC NL 102",
+      "directions": "On the lower side of the corridor, next to the Centre of Excellence."
+    },
+    {
+      "roomId": "atal-first-elh102",
+      "roomName": "ELH 102",
+      "directions": "On the lower side of the corridor, next to EDC NL 102."
+    },
+    {
+      "roomId": "atal-first-edcnl101",
+      "roomName": "EDC NL 101",
+      "directions": "On the lower side of the corridor, next to ELH 102."
+    },
+    {
+      "roomId": "atal-first-elh101",
+      "roomName": "ELH 101",
+      "directions": "On the lower side of the corridor, next to EDC NL 101."
+    }
+  ]
+}

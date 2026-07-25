@@ -1,0 +1,641 @@
+{
+  "floorId": "third",
+  "buildingName": "APJ-BLOCK",
+  "label": "Third Floor",
+  "viewWidth": 1280,
+  "viewHeight": 1540,
+  "mainWidth": 960,
+  "bulgeWidth": 320,
+  "bulgeHeight": 500,
+  "boundaryVertices": [
+    {
+      "x": 5,
+      "y": 10
+    },
+    {
+      "x": 960,
+      "y": 10
+    },
+    {
+      "x": 960,
+      "y": 520
+    },
+    {
+      "x": 1280,
+      "y": 520
+    },
+    {
+      "x": 1280,
+      "y": 1020
+    },
+    {
+      "x": 960,
+      "y": 1020
+    },
+    {
+      "x": 960,
+      "y": 1411
+    },
+    {
+      "x": 1734,
+      "y": 1411
+    },
+    {
+      "x": 1734,
+      "y": 1540
+    },
+    {
+      "x": 960,
+      "y": 1540
+    },
+    {
+      "x": 5,
+      "y": 1540
+    }
+  ],
+  "rooms": [
+    {
+      "id": "lh-311",
+      "name": "LH-311",
+      "label": "LH-311",
+      "type": "classroom",
+      "x": 27,
+      "y": 38,
+      "w": 220,
+      "h": 90,
+      "width": 220,
+      "height": 90,
+      "directions": "i. Stairs-1: Turn left and walk to the top of the corridor; LH-311 is on your left, LH-312 is on the opposite side.\nii. Stairs-2: Walk straight north all the way to the top; LH-311 is on your left at the far end.\niii. LIFT: Turn left and walk north to the top of the corridor; LH-311 is on your left.",
+      "description": "Lecture Hall 311",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/lh-311.jpeg",
+      "tags": [
+        "class",
+        "lh311"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "staff-room-top",
+      "name": "STAFF ROOM",
+      "label": "STAFF ROOM",
+      "type": "staffroom",
+      "x": 320,
+      "y": 40,
+      "w": 324,
+      "h": 76,
+      "width": 324,
+      "height": 76,
+      "directions": "Top center area.",
+      "description": "ECE Staff Room 1",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.29-pm-1.jpeg",
+      "tags": [
+        "staff",
+        "office",
+        "ece"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "lh-312",
+      "name": "LH-312",
+      "label": "LH-312",
+      "type": "classroom",
+      "x": 717,
+      "y": 38,
+      "w": 220,
+      "h": 90,
+      "width": 220,
+      "height": 90,
+      "directions": "i. Stairs-1: Turn left and walk to the top of the corridor; LH-312 is on your right, LH-311 is on the opposite side.\nii. Stairs-2: Walk straight north all the way to the top; LH-312 is on your right at the far end.\niii. LIFT: Turn left and walk north to the top; LH-312 is on your right.",
+      "description": "Lecture Hall 312",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/lh-312.jpeg",
+      "tags": [
+        "class",
+        "lh312"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "staff-room-mid-1",
+      "name": "STAFF ROOM",
+      "label": "STAFF ROOM",
+      "type": "staffroom",
+      "x": 310,
+      "y": 170,
+      "w": 151,
+      "h": 122,
+      "width": 151,
+      "height": 122,
+      "directions": "Middle section center.",
+      "description": "Staff workspace",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.29-pm-2.jpeg",
+      "tags": [
+        "office"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "staff-room-mid-2",
+      "name": "STAFF ROOM",
+      "label": "STAFF ROOM",
+      "type": "staffroom",
+      "x": 490,
+      "y": 173,
+      "w": 146,
+      "h": 122,
+      "width": 146,
+      "height": 122,
+      "directions": "Middle section center.",
+      "description": "Staff workspace",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.29-pm-1.jpeg",
+      "tags": [
+        "office"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "lh-309",
+      "name": "LH-309",
+      "label": "LH-309",
+      "type": "classroom",
+      "x": 27,
+      "y": 340,
+      "w": 220,
+      "h": 90,
+      "width": 220,
+      "height": 90,
+      "directions": "i. Stairs-1: Turn left and walk north a short distance; LH-309 is on your left, just below LH-311.\nii. Stairs-2: Walk straight north; LH-309 is on your left in the upper-middle section of the corridor.\niii. LIFT: Turn left and walk north; LH-309 is on your left, a few steps up from the Lift.",
+      "description": "Lecture Hall 309",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/lh-309.jpeg",
+      "tags": [
+        "class",
+        "lh309"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "lh-310",
+      "name": "LH-310",
+      "label": "LH-310",
+      "type": "classroom",
+      "x": 717,
+      "y": 348,
+      "w": 220,
+      "h": 90,
+      "width": 220,
+      "height": 90,
+      "directions": "i. Stairs-1: Turn right; LH-310 is immediately on your right just outside the Stairs-1 exit.\nii. Stairs-2: Walk north and then turn right at the mid-floor corridor; LH-310 is on your right.\niii. LIFT: Turn right; LH-310 is directly to your right, adjacent to the Lift on the east side.",
+      "description": "Lecture Hall 310",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/lh-310.jpeg",
+      "tags": [
+        "class",
+        "lh310"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "washroom-3",
+      "name": "WASHROOM",
+      "label": "WASHROOM",
+      "type": "utility",
+      "x": 21,
+      "y": 575,
+      "w": 220,
+      "h": 100,
+      "width": 220,
+      "height": 100,
+      "directions": "Left side middle.",
+      "description": "Restroom facilities",
+      "image": "https://placehold.co/600x400?text=Washroom",
+      "tags": [
+        "toilet"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "stairs-top-3",
+      "name": "STAIRS-1",
+      "label": "STAIRS-1",
+      "type": "utility",
+      "x": 406,
+      "y": 618,
+      "w": 220,
+      "h": 70,
+      "width": 220,
+      "height": 70,
+      "directions": "Center area.",
+      "description": "Upper central stairs",
+      "image": "https://placehold.co/600x400?text=Stairs+1",
+      "tags": [
+        "stairs"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "ladies-common-room",
+      "name": "LADIES COMMON ROOM",
+      "label": "LADIES COMMON ROOM",
+      "type": "utility",
+      "x": 20,
+      "y": 762,
+      "w": 220,
+      "h": 100,
+      "width": 220,
+      "height": 100,
+      "directions": "i. Stairs-1: Turn left; the Ladies Room is on your left, directly below the Washroom near the Stairs-1 exit.\nii. Stairs-2: Walk north; the Ladies Room is on your left just above the mid-floor level, below the Washroom.\niii. LIFT: Turn left; the Ladies Room is on your left, directly beside the Lift on the west side.",
+      "description": "Ladies common room",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/ladies_room.jpeg",
+      "tags": [
+        "common"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "lift-3",
+      "name": "LIFT",
+      "label": "LIFT",
+      "type": "utility",
+      "x": 408,
+      "y": 786,
+      "w": 220,
+      "h": 70,
+      "width": 220,
+      "height": 70,
+      "directions": "Center area.",
+      "description": "Elevator",
+      "image": "https://placehold.co/600x400?text=Lift",
+      "tags": [
+        "lift"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "lh-308",
+      "name": "LH-308",
+      "label": "LH-308",
+      "type": "classroom",
+      "x": 714,
+      "y": 1038,
+      "w": 220,
+      "h": 90,
+      "width": 220,
+      "height": 90,
+      "directions": "i. Stairs-1: Turn right and walk south a short distance; LH-308 is on your right, below LH-310.\nii. Stairs-2: Walk north and turn right; LH-308 is on your right in the mid-east section of the floor.\niii. LIFT: Turn right and walk south slightly; LH-308 is on your right just below the Lift level.",
+      "description": "Lecture Hall 308",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/lh-308.jpeg",
+      "tags": [
+        "class",
+        "lh308"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "ec-staff-room-1",
+      "name": "E&C STAFF ROOM",
+      "label": "E&C STAFF ROOM",
+      "type": "staffroom",
+      "x": 20,
+      "y": 941,
+      "w": 220,
+      "h": 110,
+      "width": 220,
+      "height": 110,
+      "directions": "Top center area.",
+      "description": "ECE Staff Room",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.28-pm.jpeg",
+      "tags": [
+        "staff",
+        "office",
+        "ece"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "ec-staff-room-2",
+      "name": "E&C STAFF ROOM",
+      "label": "E&C STAFF ROOM",
+      "type": "staffroom",
+      "x": 25,
+      "y": 1128,
+      "w": 220,
+      "h": 110,
+      "width": 220,
+      "height": 110,
+      "directions": "Lower left area.",
+      "description": "ECE Staff Room",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.32-pm-1.jpeg",
+      "tags": [
+        "staff",
+        "office",
+        "ece"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "staff-room-bot-1",
+      "name": "STAFF ROOM",
+      "label": "STAFF ROOM",
+      "type": "staffroom",
+      "x": 360,
+      "y": 1146,
+      "w": 128,
+      "h": 101,
+      "width": 128,
+      "height": 101,
+      "directions": "Lower center area.",
+      "description": "Department staff room",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.29-pm-1.jpeg",
+      "tags": [
+        "office"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "staff-room-bot-2",
+      "name": "STAFF ROOM",
+      "label": "STAFF ROOM",
+      "type": "staffroom",
+      "x": 505,
+      "y": 1146,
+      "w": 131,
+      "h": 99,
+      "width": 131,
+      "height": 99,
+      "directions": "Lower center area.",
+      "description": "Department staff room",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.29-pm-2.jpeg",
+      "tags": [
+        "office"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "lh-306",
+      "name": "LH-306",
+      "label": "LH-306",
+      "type": "classroom",
+      "x": 724,
+      "y": 1293,
+      "w": 220,
+      "h": 90,
+      "width": 220,
+      "height": 90,
+      "directions": "i. Stairs-1: Turn right and walk south past LH-308; LH-306 is further down on your right in the lower-east section.\nii. Stairs-2: Turn left and walk north slightly; LH-306 is on your right on the east side, near the south end.\niii. LIFT: Turn right and walk south past LH-308; LH-306 is on your right further south.",
+      "description": "Lecture Hall 306",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/lh-306.jpeg",
+      "tags": [
+        "class",
+        "lh306"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "texas-instruments",
+      "name": "TEXAS INSTRUMENTS",
+      "label": "TEXAS INSTRUMENTS",
+      "type": "lab",
+      "x": 25,
+      "y": 1342,
+      "w": 281,
+      "h": 85,
+      "width": 281,
+      "height": 85,
+      "directions": "i. Stairs-1: Turn left and walk south past the Lift and Ladies Room; the lab is on your left in the lower section, above Stairs-2.\nii. Stairs-2: Turn right; the lab is immediately on your left, just above Stairs-2.\niii. LIFT: Turn left and walk south; the lab is on your left near the bottom of the floor, just above Stairs-2.",
+      "description": "Texas Instruments Innovation Lab",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/texas.jpeg",
+      "tags": [
+        "lab",
+        "ece",
+        "innovation"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "staff-room-bottom-center",
+      "name": "STAFF ROOM",
+      "label": "STAFF ROOM",
+      "type": "staffroom",
+      "x": 219,
+      "y": 1450,
+      "w": 153,
+      "h": 80,
+      "width": 153,
+      "height": 80,
+      "directions": "Bottom center area.",
+      "description": "Auxiliary staff room",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.32-pm-1.jpeg",
+      "tags": [
+        "office"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "stairs-bottom-3",
+      "name": "STAIRS-2",
+      "label": "STAIRS-2",
+      "type": "utility",
+      "x": 411,
+      "y": 1448,
+      "w": 220,
+      "h": 80,
+      "width": 220,
+      "height": 80,
+      "directions": "Bottom center area.",
+      "description": "Lower central stairs",
+      "image": "https://placehold.co/600x400?text=Stairs+2",
+      "tags": [
+        "stairs"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "apj-third-way-ramanujan",
+      "name": "CONNECTION TO RAMANUJAN BLOCK",
+      "label": "CONNECTION TO RAMANUJAN BLOCK",
+      "type": "utility",
+      "x": 980,
+      "y": 1425,
+      "w": 730,
+      "h": 100,
+      "width": 730,
+      "height": 100,
+      "directions": "Connecting corridor/bridge on the bottom right leading to Ramanujan Block.",
+      "description": "Bridge leading from APJ Block to Ramanujan Block on the Third Floor.",
+      "image": "https://placehold.co/600x400?text=Connection+to+Ramanujan+Block",
+      "tags": [
+        "path",
+        "utility",
+        "ramanujan"
+      ],
+      "clickable": true,
+      "linkToFloor": "ramanujan_third"
+    }
+  ],
+  "faculty": [
+    {
+      "name": "DR. KARUNA PANDIT",
+      "department": "ISE",
+      "roomId": "ec-staff-room-1",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.54-pm-1.jpeg"
+    },
+    {
+      "name": "DR. ASHWINI K.",
+      "department": "ECE",
+      "roomId": "ec-staff-room-1",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.54-pm-2.jpeg"
+    },
+    {
+      "name": "DR. BALASUBRAMANI R.",
+      "department": "ECE",
+      "roomId": "ec-staff-room-1",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.54-pm.jpeg"
+    },
+    {
+      "name": "DR. ANUSHA R. SHARATH",
+      "department": "ECE",
+      "roomId": "ec-staff-room-1",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.55-pm-1.jpeg"
+    },
+    {
+      "name": "DR. SHUBHA B.",
+      "department": "ECE",
+      "roomId": "ec-staff-room-1",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.55-pm.jpeg"
+    },
+    {
+      "name": "DR. ANISHA P. RODRIGUES",
+      "department": "ECE",
+      "roomId": "ec-staff-room-1",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.58-pm.jpeg"
+    },
+    {
+      "name": "DR. SHRIVIDYA G.",
+      "department": "ECE",
+      "roomId": "ec-staff-room-1",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.59-pm-1.jpeg"
+    },
+    {
+      "name": "DR. RAJU K.",
+      "department": "ECE",
+      "roomId": "ec-staff-room-1",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.59-pm.jpeg"
+    },
+    {
+      "name": "DR. PADMAVATHI K.",
+      "department": "ECE",
+      "roomId": "ec-staff-room-1",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.00-pm-1.jpeg"
+    },
+    {
+      "name": "DR. MAMATHA GIRISH",
+      "department": "ECE",
+      "roomId": "ec-staff-room-1",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.00-pm-2.jpeg"
+    },
+    {
+      "name": "DR. SUDEEPA K. B.",
+      "department": "ECE",
+      "roomId": "ec-staff-room-1",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.00-pm.jpeg"
+    },
+    {
+      "name": "DR. CHAITRA K.",
+      "department": "ECE",
+      "roomId": "ec-staff-room-2",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.01-pm-1.jpeg"
+    },
+    {
+      "name": "MRS. SOWMYA P.",
+      "department": "ECE",
+      "roomId": "ec-staff-room-2",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.01-pm-2.jpeg"
+    },
+    {
+      "name": "MS. SHANKARI N.",
+      "department": "ECE",
+      "roomId": "ec-staff-room-2",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.01-pm.jpeg"
+    },
+    {
+      "name": "DR. CHAITRA S. N.",
+      "department": "ECE",
+      "roomId": "ec-staff-room-2",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.02-pm-1.jpeg"
+    },
+    {
+      "name": "MR. VASUDEVA PAI",
+      "department": "ECE",
+      "roomId": "ec-staff-room-2",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.02-pm-2.jpeg"
+    },
+    {
+      "name": "DR. DEVIDAS",
+      "department": "ECE",
+      "roomId": "ec-staff-room-2",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.02-pm.jpeg"
+    },
+    {
+      "name": "DR. ULLAL HARSHINI DEVI",
+      "department": "ECE",
+      "roomId": "ec-staff-room-2",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.03-pm-1.jpeg"
+    },
+    {
+      "name": "DR. SANTHOSH POOJARY",
+      "department": "ECE",
+      "roomId": "ec-staff-room-2",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.03-pm-2.jpeg"
+    },
+    {
+      "name": "DR. KAVITHA S.",
+      "department": "ECE",
+      "roomId": "ec-staff-room-2",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.03-pm.jpeg"
+    },
+    {
+      "name": "MS. BHAVYA K.",
+      "department": "ECE",
+      "roomId": "ec-staff-room-2",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.04-pm-1.jpeg"
+    },
+    {
+      "name": "DR. SNEHA NAYAK",
+      "department": "ECE",
+      "roomId": "ec-staff-room-2",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.04-pm.jpeg"
+    },
+    {
+      "name": "DR. VIJAYA MURARI T.",
+      "department": "ECE",
+      "roomId": "ec-staff-room-2",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.05-pm-1.jpeg"
+    },
+    {
+      "name": "MS. RAMYA SHETTY",
+      "department": "ECE",
+      "roomId": "ec-staff-room-2",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.05-pm-2.jpeg"
+    },
+    {
+      "name": "DR. RAJALAXMI HEGDE",
+      "department": "ECE",
+      "roomId": "ec-staff-room-2",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.05-pm.jpeg"
+    },
+    {
+      "name": "DR. CHARISHMA",
+      "department": "ECE",
+      "roomId": "ec-staff-room-2",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.06-pm-1.jpeg"
+    },
+    {
+      "name": "DR. NIJU RAJAN",
+      "department": "ECE",
+      "roomId": "ec-staff-room-2",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.06-pm.jpeg"
+    }
+  ],
+  "lastEditedBy": "system-sync",
+  "locked": true,
+  "lastEdited": "2026-07-23T11:19:18.829Z"
+}

@@ -1,0 +1,58 @@
+========================================================
+DIRECTIONS FOR RAMANUJAN-BLOCK - 1ST FLOOR
+========================================================
+
+1. DEPT OF MATHEMATICS (HOD) (ID: ramanujan-first-maths-hod)
+   Directions: Located in the upper bulge area, top-left corner.
+
+2. DR. KVSS (STAFF ROOM) (ID: ramanujan-first-dr-kvss)
+   Directions: Located in the upper bulge area, next to the Maths HOD cabin.
+
+3. LADIES ROOM (ID: ramanujan-first-ladies-toilet-bulge)
+   Directions: Located in the upper bulge area, next to Dr. KVSS.
+
+4. CHEMISTRY LAB 2 (ID: ramanujan-first-chem-lab-2)
+   Directions: In the left lobby area, above the elevator block.
+
+5. STAIRS-1 (ID: ramanujan-first-stairs-1)
+   Directions: Left side lobby area.
+
+6. CHEMISTRY LAB 1 (ID: ramanujan-first-chem-lab-1)
+   Directions: On the bottom left corridor wing.
+
+7. GENTS TOILET (ID: ramanujan-first-gents-toilet-left)
+   Directions: Bottom-left corridor area, opposite Chem Lab 1.
+
+8. DEPT OF CHEMISTRY (HOD) (ID: ramanujan-first-chem-hod)
+   Directions: Located next to the central corridor, beside the Maths HOD area.
+
+9. LH108 (ID: ramanujan-first-lh108)
+   Directions: In the upper-middle corridor, next to the Chemistry HOD office.
+
+10. PHYSICS LAB 2 (ID: ramanujan-first-phy-lab-2)
+   Directions: In the middle corridor, next to LH 108.
+
+11. PHYSICS LAB 1 (ID: ramanujan-first-phy-lab-1)
+   Directions: In the middle corridor, next to Physics Lab 2.
+
+12. DEPT OF PHYSICS (HOD) (ID: ramanujan-first-phy-hod)
+   Directions: Opposite Physics Lab 1 across the corridor.
+
+13. CABINS (DR. JN & DR. SMH) (ID: ramanujan-first-jn-smh)
+   Directions: In the right corridor wing, opposite Main Stairs.
+
+14. LH104 (ID: ramanujan-first-lh104)
+   Directions: In the right corridor wing, next to the Staff Room.
+
+15. Staff Room (ID: ramanujan-first-sr-chem)
+   Directions: In the East wing, past LH 104.
+
+16. Staff Room (ID: ramanujan-first-sr-phy)
+   Directions: In the East wing, next to SR CHEM.
+
+17. CONNECTION TO APJ (1ST FLOOR) (ID: ramanujan-first-way-apj)
+   Directions: Connecting exit corridor on the right side.
+
+18. LIBRARY & INFORMATION CENTRE (ID: ramanujan-first-library)
+   Directions: Spans across the bottom right wing of the first floor.
+

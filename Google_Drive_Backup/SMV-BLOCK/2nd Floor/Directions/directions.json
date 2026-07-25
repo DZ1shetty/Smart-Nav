@@ -1,0 +1,136 @@
+{
+  "buildingName": "SMV-BLOCK",
+  "floorLabel": "2nd Floor",
+  "floorId": "svm_second",
+  "lastUpdated": "2026-07-25T14:03:43.940Z",
+  "directions": {
+    "smv-second-gents-toilet": "At the top-left end of the horizontal corridor, second floor.",
+    "smv-second-nc21": "Top horizontal corridor, second room from left.",
+    "smv-second-nc22": "Top horizontal corridor, third room from left.",
+    "smv-second-sr21": "Top horizontal corridor, fourth room from left.",
+    "smv-second-sr22": "Top horizontal corridor, fifth room from left.",
+    "smv-second-nc23": "Top horizontal corridor, far right end.",
+    "smv-second-fire-exit-inner": "Located at the far left end of the inner corridor.",
+    "smv-second-ladies-toilet": "Located on the top side of the horizontal wing, left end.",
+    "smv-second-hod-eee": "Located on the inner side of the vertical wing, top area.",
+    "smv-second-sr23": "Located on the inner side of the vertical wing, below HOD EEE.",
+    "smv-second-nc27": "Located on the inner side of the vertical wing, below SR23.",
+    "smv-second-lift-lobby": "Located near the lobby lift, inner vertical wing.",
+    "smv-second-lift-vertical": "Center vertical corridor, elevator.",
+    "smv-second-stairs-1": "Center vertical corridor, staircase.",
+    "smv-second-nc24": "Located on the right vertical wing, upper section.",
+    "smv-second-sr24": "Located on the right vertical wing, below NC24.",
+    "smv-second-nc25": "Located on the right vertical wing, middle section.",
+    "smv-second-nc26": "Located on the right vertical wing, lower section.",
+    "smv-second-fire-exit-bottom": "Located at the bottom of the right vertical wing.",
+    "smv-second-vertical-corridor": "Main corridor running north-south along the vertical wing.",
+    "smv-second-horizontal-corridor": "Main corridor running east-west along the horizontal wing."
+  },
+  "detailedDirections": [
+    {
+      "roomId": "smv-second-gents-toilet",
+      "roomName": "GENTS WASHROOM",
+      "directions": "At the top-left end of the horizontal corridor, second floor."
+    },
+    {
+      "roomId": "smv-second-nc21",
+      "roomName": "LECTURE ROOM NC21",
+      "directions": "Top horizontal corridor, second room from left."
+    },
+    {
+      "roomId": "smv-second-nc22",
+      "roomName": "LECTURE ROOM NC22",
+      "directions": "Top horizontal corridor, third room from left."
+    },
+    {
+      "roomId": "smv-second-sr21",
+      "roomName": "STAFF ROOM 21 (SR21)",
+      "directions": "Top horizontal corridor, fourth room from left."
+    },
+    {
+      "roomId": "smv-second-sr22",
+      "roomName": "STAFF ROOM 22 (SR22)",
+      "directions": "Top horizontal corridor, fifth room from left."
+    },
+    {
+      "roomId": "smv-second-nc23",
+      "roomName": "LECTURE ROOM NC23",
+      "directions": "Top horizontal corridor, far right end."
+    },
+    {
+      "roomId": "smv-second-fire-exit-inner",
+      "roomName": "FIRE EXIT",
+      "directions": "Located at the far left end of the inner corridor."
+    },
+    {
+      "roomId": "smv-second-ladies-toilet",
+      "roomName": "LADIES & HANDICAPPED WASHROOM",
+      "directions": "Located on the top side of the horizontal wing, left end."
+    },
+    {
+      "roomId": "smv-second-hod-eee",
+      "roomName": "HOD EEE OFFICE",
+      "directions": "Located on the inner side of the vertical wing, top area."
+    },
+    {
+      "roomId": "smv-second-sr23",
+      "roomName": "STAFF ROOM 23 (SR23)",
+      "directions": "Located on the inner side of the vertical wing, below HOD EEE."
+    },
+    {
+      "roomId": "smv-second-nc27",
+      "roomName": "LECTURE ROOM NC27",
+      "directions": "Located on the inner side of the vertical wing, below SR23."
+    },
+    {
+      "roomId": "smv-second-lift-lobby",
+      "roomName": "LIFT (LOBBY)",
+      "directions": "Located near the lobby lift, inner vertical wing."
+    },
+    {
+      "roomId": "smv-second-lift-vertical",
+      "roomName": "LIFT",
+      "directions": "Center vertical corridor, elevator."
+    },
+    {
+      "roomId": "smv-second-stairs-1",
+      "roomName": "STAIRS-1",
+      "directions": "Center vertical corridor, staircase."
+    },
+    {
+      "roomId": "smv-second-nc24",
+      "roomName": "LECTURE ROOM NC24",
+      "directions": "Located on the right vertical wing, upper section."
+    },
+    {
+      "roomId": "smv-second-sr24",
+      "roomName": "STAFF ROOM 24 (SR24)",
+      "directions": "Located on the right vertical wing, below NC24."
+    },
+    {
+      "roomId": "smv-second-nc25",
+      "roomName": "LECTURE ROOM NC25",
+      "directions": "Located on the right vertical wing, middle section."
+    },
+    {
+      "roomId": "smv-second-nc26",
+      "roomName": "LECTURE ROOM NC26",
+      "directions": "Located on the right vertical wing, lower section."
+    },
+    {
+      "roomId": "smv-second-fire-exit-bottom",
+      "roomName": "FIRE EXIT",
+      "directions": "Located at the bottom of the right vertical wing."
+    },
+    {
+      "roomId": "smv-second-vertical-corridor",
+      "roomName": "VERTICAL CORRIDOR",
+      "directions": "Main corridor running north-south along the vertical wing."
+    },
+    {
+      "roomId": "smv-second-horizontal-corridor",
+      "roomName": "HORIZONTAL CORRIDOR",
+      "directions": "Main corridor running east-west along the horizontal wing."
+    }
+  ]
+}

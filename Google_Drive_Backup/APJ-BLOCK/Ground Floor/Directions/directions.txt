@@ -1,0 +1,47 @@
+========================================================
+DIRECTIONS FOR APJ-BLOCK - GROUND FLOOR
+========================================================
+
+1. NITTE ALUMNI LOUNGE (ID: alumni-lounge)
+   Directions: Top left area.
+
+2. BOARD ROOM (ID: board-room-final)
+   Directions: Top center area.
+
+3. VINAY HEGDE CABIN (ID: vinay-hegde)
+   Directions: Top right area.bdfgdh
+
+4. VICE PRINCIPAL CABIN (ID: vice-principal)
+   Directions: Left side, upper middle.
+
+5. VICE PRESIDENT CABIN (TE) (ID: vice-president)
+   Directions: Left side middle.hi
+
+
+6. WASHROOM (ID: washroom-g)
+   Directions: Left side middle.
+
+7. EXAMINATION CENTER (ID: examination-center)
+   Directions: Large vertical block on the left.
+
+8. STAIRS-1 (ID: stairs-1)
+   Directions: Center area.
+
+9. LIFT (ID: lift-g)
+   Directions: Center area.
+
+10. STAIRS-2 (ID: stairs-2)
+   Directions: Bottom center area.
+
+11. PRINCIPAL CABIN (ID: principal-office)
+   Directions: Middle right area.
+
+12. DEPUTY REGISTRAR OFFICE (ID: deputy-registrar-final)
+   Directions: Lower right area.
+
+13. NANDHINI SEMINAR HALL (ID: nandhini-hall)
+   Directions: Bottom right area.
+
+14. CONNECTION TO RAMANUJAN BLOCK (GROUND) (ID: apj-ground-ramanujan-path)
+   Directions: Connecting corridor on the bottom right next to Nandhini Seminar Hall.
+

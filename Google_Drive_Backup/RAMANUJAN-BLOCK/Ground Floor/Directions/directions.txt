@@ -1,0 +1,76 @@
+========================================================
+DIRECTIONS FOR RAMANUJAN-BLOCK - GROUND FLOOR
+========================================================
+
+1. connection to APJ(Ground floor) (ID: ramanujan-ground-apj-path)
+   Directions: Immediately to the left inside the entrance.
+
+2. SHAL-01 (ID: ramanujan-ground-shal01)
+   Directions: To the left of the main corridor.
+
+3. GUEST ROOM (ID: ramanujan-ground-guest)
+   Directions: To the left of the main corridor, next to Seminar Hall 01.
+
+4. LH006 (ID: ramanujan-ground-lh006)
+   Directions: Right side of the main corridor near the entrance.
+
+5. INTERVIEW CUBICLES (ID: ramanujan-ground-cubicles)
+   Directions: Right side of the main corridor, next to LH-006.
+
+6. STAIRS-2 (ID: ramanujan-ground-stairs-2)
+   Directions: Located past the interview cubicles on the right side.
+
+7. LIFT (ID: ramanujan-ground-lift)
+   Directions: Next to the West staircase in the left lobby area.
+
+8. STAIRS-1 (ID: ramanujan-ground-stairs-1)
+   Directions: Left side lobby area, next to the lift.
+
+9. SECURITY OFFICE (ID: ramanujan-ground-security)
+   Directions: In the left lobby area, above the elevator block.
+
+10. LH002 (ID: ramanujan-ground-lh002)
+   Directions: Top-left corner of the ground floor layout.
+
+11. LH001 (ID: ramanujan-ground-lh001)
+   Directions: Top-middle area of the floor plan.
+
+12. GENTS TOILET (ID: ramanujan-ground-gents-toilet-mid)
+   Directions: Located next to LH-001.
+
+13. LADIES ROOM (ID: ramanujan-ground-ladies-toilet-mid)
+   Directions: Located next to LH-001 and the LH-003 department office.
+
+14. LH003 (ID: ramanujan-ground-lh003-office)
+   Directions: In the upper-middle corridor, next to LH-001.
+
+15. PURCHASE DEPARTMENT (ID: ramanujan-ground-purchase)
+   Directions: In the middle-right corridor, next to the department office.
+
+16. GROUP DISCUSSION-1 (ID: ramanujan-ground-gd1)
+   Directions: In the middle-right corridor, next to the purchase department.
+
+17. PLACEMENT OFFICE (ID: ramanujan-ground-placement)
+   Directions: In the right corridor wing, opposite Stairs-Up.
+
+18. BHARATH SIR CABIN (ID: ramanujan-ground-bharath-cabin)
+   Directions: In the East wing, located between the Placement Office and Interview Cubicles.
+
+19. INTERVIEW CUBICLES (ID: ramanujan-ground-bharath-cubicles)
+   Directions: Located next to the Placement Office in the East wing.
+
+20. GENTS TOILET (ID: ramanujan-ground-gents-toilet-right)
+   Directions: In the East wing, past Bharath Interview Cubicles.
+
+21. LADIES ROOM (ID: ramanujan-ground-ladies-toilet-right)
+   Directions: In the East wing, next to Gents Toilet.
+
+22. MAIN ENTRANCE LOBBY (ID: ramanujan-ground-entrance-lobby)
+   Directions: Bottom center entry point of the floor.
+
+23. Sambhram Hall (ID: ramanujan-ground-way-sambhram)
+   Directions: Connecting exit corridor on the left.
+
+24. WAY TO SAC (STUDENT ACTIVITY CENTRE) (ID: ramanujan-ground-way-sac)
+   Directions: Connecting exit corridor on the right side.
+

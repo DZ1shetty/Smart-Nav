@@ -1,0 +1,456 @@
+{
+  "floorId": "first",
+  "buildingName": "APJ-BLOCK",
+  "label": "First Floor",
+  "viewWidth": 1280,
+  "viewHeight": 1540,
+  "mainWidth": 960,
+  "bulgeWidth": 320,
+  "bulgeHeight": 500,
+  "boundaryVertices": [
+    {
+      "x": 5,
+      "y": 10
+    },
+    {
+      "x": 960,
+      "y": 10
+    },
+    {
+      "y": 520,
+      "x": 960
+    },
+    {
+      "y": 520,
+      "x": 1280
+    },
+    {
+      "x": 1280,
+      "y": 962
+    },
+    {
+      "y": 962,
+      "x": 960
+    },
+    {
+      "x": 960,
+      "y": 1399
+    },
+    {
+      "x": 1873,
+      "y": 1399
+    },
+    {
+      "x": 1873,
+      "y": 1540
+    },
+    {
+      "x": 960,
+      "y": 1540
+    },
+    {
+      "x": 5,
+      "y": 1540
+    }
+  ],
+  "faculty": [
+    {
+      "image": "${IMG_BASE_URL}/apj-block-images/1st-floor/1st-floor-staff-room/whatsapp-image-2026-04-24-at-9.59.08-pm.jpeg",
+      "department": "Admissions",
+      "name": "DR. K RAJESH SHETTY",
+      "roomId": "rajesh-shetty"
+    }
+  ],
+  "lastEditedBy": "admin",
+  "locked": true,
+  "rooms": [
+    {
+      "id": "ug-project-lab",
+      "name": "BTL05",
+      "label": "BTL05",
+      "type": "lab",
+      "x": 30,
+      "y": 50,
+      "w": 220,
+      "h": 220,
+      "width": 220,
+      "height": 220,
+      "directions": "Top left corner.",
+      "description": "Undergraduate Project Laboratory",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.24-pm.jpeg",
+      "tags": [
+        "lab",
+        "project",
+        "ug",
+        "BTL05"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "bio-info-lab",
+      "name": "BTL06",
+      "label": "BTL06",
+      "type": "lab",
+      "x": 350,
+      "y": 150,
+      "w": 320,
+      "h": 180,
+      "width": 320,
+      "height": 180,
+      "directions": "Top center area.",
+      "description": "Bioinformatics Laboratory",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.24-pm-1.jpeg",
+      "tags": [
+        "lab",
+        "bio",
+        "BTL06"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "seminar-hall-1",
+      "name": "SEMINAR HALL",
+      "label": "SEMINAR HALL",
+      "type": "hall",
+      "x": 740,
+      "y": 50,
+      "w": 196,
+      "h": 125,
+      "width": 196,
+      "height": 125,
+      "directions": "Top right area.",
+      "description": "Department Seminar Hall",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.25-pm.jpeg",
+      "tags": [
+        "seminar",
+        "hall"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "btl04",
+      "name": "BTL04",
+      "label": "BTL04",
+      "type": "lab",
+      "x": 30,
+      "y": 320,
+      "w": 200,
+      "h": 180,
+      "width": 200,
+      "height": 180,
+      "directions": "Left side, upper middle.",
+      "description": "Biotechnology Lab 04",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.15-pm.jpeg",
+      "tags": [
+        "lab",
+        "bt",
+        "04"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "btl03",
+      "name": "BTL03",
+      "label": "BTL03",
+      "type": "lab",
+      "x": 30,
+      "y": 540,
+      "w": 200,
+      "h": 180,
+      "width": 200,
+      "height": 180,
+      "directions": "Left side middle.",
+      "description": "Biotechnology Lab 03",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.14-pm-1.jpeg",
+      "tags": [
+        "lab",
+        "bt",
+        "03"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "washroom-1",
+      "name": "WASHROOM",
+      "label": "WASHROOM",
+      "type": "utility",
+      "x": 30,
+      "y": 760,
+      "w": 297,
+      "h": 69,
+      "width": 297,
+      "height": 69,
+      "directions": "Left side middle.",
+      "description": "Restroom facilities",
+      "image": "https://placehold.co/600x400?text=Washroom",
+      "tags": [
+        "toilet"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "btl02",
+      "name": "BTL02",
+      "label": "BTL02",
+      "type": "lab",
+      "x": 30,
+      "y": 860,
+      "w": 220,
+      "h": 280,
+      "width": 220,
+      "height": 280,
+      "directions": "Left side, lower middle.",
+      "description": "Biotechnology Lab 02",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.23-pm-1.jpeg",
+      "tags": [
+        "lab",
+        "bt",
+        "02"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "btl12",
+      "name": "BTL12",
+      "label": "BTL12",
+      "type": "lab",
+      "x": 30,
+      "y": 1180,
+      "w": 220,
+      "h": 320,
+      "width": 220,
+      "height": 320,
+      "directions": "Bottom left corner.",
+      "description": "Biotechnology Lab 12",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.22-pm.jpeg",
+      "tags": [
+        "lab",
+        "bt",
+        "12"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "stairs-1",
+      "name": "STAIRS-1",
+      "label": "STAIRS-1",
+      "type": "utility",
+      "x": 420,
+      "y": 800,
+      "w": 239,
+      "h": 60,
+      "width": 239,
+      "height": 60,
+      "directions": "Center area.",
+      "description": "Upper central stairs",
+      "image": "https://placehold.co/600x400?text=Stairs+1",
+      "tags": [
+        "stairs"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "lift-1",
+      "name": "LIFT",
+      "label": "LIFT",
+      "type": "utility",
+      "x": 458,
+      "y": 918,
+      "w": 160,
+      "h": 60,
+      "width": 160,
+      "height": 60,
+      "directions": "Center area.",
+      "description": "Elevator",
+      "image": "https://placehold.co/600x400?text=Lift",
+      "tags": [
+        "lift"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "purchase-section",
+      "name": "PURCHASE SECTION",
+      "label": "PURCHASE SECTION",
+      "type": "staffroom",
+      "x": 333,
+      "y": 1031,
+      "w": 239,
+      "h": 80,
+      "width": 239,
+      "height": 80,
+      "directions": "Lower center left.",
+      "description": "Purchase and Procurement Section",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.23-pm.jpeg",
+      "tags": [
+        "office",
+        "purchase"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "rajesh-shetty",
+      "name": "STAFF ROOM",
+      "label": "STAFF ROOM",
+      "type": "staffroom",
+      "x": 527,
+      "y": 1156,
+      "w": 180,
+      "h": 80,
+      "width": 180,
+      "height": 80,
+      "directions": "Lower center right.",
+      "description": "Dr. Rajesh Shetty Office",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.20-pm-1.jpeg",
+      "tags": [
+        "office"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "seminar-hall-2",
+      "name": "SEMINAR HALL",
+      "label": "SEMINAR HALL",
+      "type": "hall",
+      "x": 745,
+      "y": 372,
+      "w": 201,
+      "h": 93,
+      "width": 201,
+      "height": 93,
+      "directions": "Middle right area.",
+      "description": "Secondary Seminar Hall",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.25-pm.jpeg",
+      "tags": [
+        "seminar",
+        "hall"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "shambavi-hall",
+      "name": "SHAMBAVI SEMINAR HALL",
+      "label": "SHAMBAVI SEMINAR HALL",
+      "type": "hall",
+      "x": 991,
+      "y": 546,
+      "w": 240,
+      "h": 110,
+      "width": 240,
+      "height": 110,
+      "directions": "Bulge section on the right.",
+      "description": "Shambavi Seminar Hall",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.20-pm.jpeg",
+      "tags": [
+        "seminar",
+        "hall"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "lh-110",
+      "name": "LH-110",
+      "label": "LH-110",
+      "type": "classroom",
+      "x": 784,
+      "y": 1031,
+      "w": 160,
+      "h": 60,
+      "width": 160,
+      "height": 60,
+      "directions": "Lower right area.",
+      "description": "Lecture Hall 110",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.14-pm.jpeg",
+      "tags": [
+        "class",
+        "lh",
+        "110"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "lh-112",
+      "name": "LH-112",
+      "label": "LH-112",
+      "type": "classroom",
+      "x": 784,
+      "y": 1279,
+      "w": 160,
+      "h": 60,
+      "width": 160,
+      "height": 60,
+      "directions": "Bottom right area.",
+      "description": "Lecture Hall 112",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.20-pm-2.jpeg",
+      "tags": [
+        "class",
+        "lh",
+        "112"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "btl01",
+      "name": "BTL01",
+      "label": "BTL01",
+      "type": "lab",
+      "x": 272,
+      "y": 1456,
+      "w": 160,
+      "h": 70,
+      "width": 160,
+      "height": 70,
+      "directions": "Bottom center left.",
+      "description": "Biotechnology Lab 01",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.21-pm.jpeg",
+      "tags": [
+        "lab",
+        "bt",
+        "01"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "stairs-2",
+      "name": "STAIRS-2",
+      "label": "STAIRS-2",
+      "type": "utility",
+      "x": 450,
+      "y": 1470,
+      "w": 221,
+      "h": 61,
+      "width": 221,
+      "height": 61,
+      "directions": "Bottom center right.",
+      "description": "Lower central stairs",
+      "image": "https://placehold.co/600x400?text=Stairs+2",
+      "tags": [
+        "stairs"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "apj-first-ramanujan-path",
+      "name": "connection to ramanujan-block(first floor)",
+      "label": "connection to ramanujan-block(first floor)",
+      "type": "utility",
+      "x": 1020,
+      "y": 1408,
+      "w": 782,
+      "h": 114,
+      "width": 782,
+      "height": 114,
+      "directions": "Connecting corridor/bridge on the bottom right leading to Ramanujan Block.",
+      "description": "Bridge leading from APJ Block to Ramanujan Block on the First Floor.",
+      "image": "https://placehold.co/600x400?text=Connection+to+Ramanujan+Block",
+      "tags": [
+        "path",
+        "utility",
+        "ramanujan"
+      ],
+      "clickable": true,
+      "linkToFloor": "ramanujan_first"
+    }
+  ],
+  "lastEdited": "2026-07-23T11:19:18.055Z"
+}

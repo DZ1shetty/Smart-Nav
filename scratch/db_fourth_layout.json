@@ -1,0 +1,584 @@
+{
+  "floorId": "svm_fourth",
+  "label": "4th Floor",
+  "buildingName": "SVM-BLOCK",
+  "rooms": [
+    {
+      "id": "svm-fourth-matlab",
+      "name": "MATLAB LABORATORY",
+      "label": "MATLAB LABORATORY",
+      "type": "lab",
+      "x": 1579,
+      "y": 347,
+      "w": 209,
+      "h": 75,
+      "width": 209,
+      "height": 75,
+      "directions": "Located on the horizontal wing, near the far-left fire exit.",
+      "description": "MATLAB Computer Laboratory under Computer Applications Department.",
+      "image": "https://placehold.co/600x400?text=MATLAB+Lab",
+      "tags": [
+        "lab",
+        "matlab",
+        "computer",
+        "mca"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-fourth-ncl48",
+      "name": "NCL 48 EV LAB",
+      "label": "NCL 48 EV LAB",
+      "type": "lab",
+      "x": 1584,
+      "y": 770,
+      "w": 210,
+      "h": 90,
+      "width": 210,
+      "height": 90,
+      "directions": "Located on the horizontal wing, between MATLAB and Staff Room.",
+      "description": "NCL 48 EV Lab (Electric Vehicle Laboratory) under Electrical & Electronics Engineering Department.",
+      "image": "https://placehold.co/600x400?text=NCL48+EV+Lab",
+      "tags": [
+        "lab",
+        "ev",
+        "ncl48",
+        "electrical",
+        "eee"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-fourth-sr-vertical",
+      "name": "STAFF ROOM",
+      "label": "STAFF ROOM",
+      "type": "staffroom",
+      "x": 1584,
+      "y": 915,
+      "w": 210,
+      "h": 90,
+      "width": 210,
+      "height": 90,
+      "directions": "Located on the right vertical wing, top section.",
+      "description": "Faculty Staff Room for Information Technology and Computer Applications.",
+      "image": "https://placehold.co/600x400?text=Staff+Room",
+      "tags": [
+        "staffroom",
+        "faculty",
+        "computer",
+        "it"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-fourth-it-cell",
+      "name": "IT CELL",
+      "label": "IT CELL",
+      "type": "utility",
+      "x": 1601,
+      "y": 1052,
+      "w": 180,
+      "h": 90,
+      "width": 180,
+      "height": 90,
+      "directions": "Located on the horizontal wing, next to the Staff Room.",
+      "description": "IT Cell and Server administration room.",
+      "image": "https://placehold.co/600x400?text=IT+Cell",
+      "tags": [
+        "utility",
+        "it",
+        "cell",
+        "server"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-fourth-csl18",
+      "name": "CS L18 IT SKILL LAB",
+      "label": "CS L18 IT SKILL LAB",
+      "type": "lab",
+      "x": 1603,
+      "y": 1308,
+      "w": 179,
+      "h": 94,
+      "width": 179,
+      "height": 94,
+      "directions": "Located at the junction of the bottom horizontal wing and right vertical wing.",
+      "description": "CS L18 / IT Skill Lab for computer training and software development workshops.",
+      "image": "/csl18_door.png",
+      "tags": [
+        "lab",
+        "csl18",
+        "skill",
+        "it",
+        "computer"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-fourth-fire-exit-horizontal",
+      "name": "FIRE EXIT",
+      "label": "FIRE EXIT",
+      "type": "utility",
+      "x": -930,
+      "y": 1223,
+      "w": 125,
+      "h": 167,
+      "width": 125,
+      "height": 167,
+      "directions": "Located at the far right end of the horizontal corridor.",
+      "description": "Emergency fire exit.",
+      "image": "https://placehold.co/600x400?text=Fire+Exit",
+      "tags": [
+        "fire exit",
+        "exit",
+        "utility"
+      ],
+      "clickable": false
+    },
+    {
+      "id": "svm-fourth-gents-toilet",
+      "name": "GENTS WASHROOM",
+      "label": "GENTS WASHROOM",
+      "type": "utility",
+      "x": 1376,
+      "y": 102,
+      "w": 223,
+      "h": 84,
+      "width": 223,
+      "height": 84,
+      "directions": "At the bottom end of the vertical corridor.",
+      "description": "Gents washroom facilities.",
+      "image": "https://placehold.co/600x400?text=Gents+Restroom",
+      "tags": [
+        "washroom",
+        "toilet",
+        "gents",
+        "utility"
+      ],
+      "clickable": false
+    },
+    {
+      "id": "svm-fourth-ladies-toilet",
+      "name": "LADIES WASHROOM",
+      "label": "LADIES WASHROOM",
+      "type": "utility",
+      "x": 480,
+      "y": 100,
+      "w": 225,
+      "h": 94,
+      "width": 225,
+      "height": 94,
+      "directions": "Located on the lower side of the horizontal corridor.",
+      "description": "Washroom facilities.",
+      "image": "https://placehold.co/600x400?text=Ladies+Restroom",
+      "tags": [
+        "washroom",
+        "toilet",
+        "ladies",
+        "utility"
+      ],
+      "clickable": false
+    },
+    {
+      "id": "svm-fourth-hod-cce",
+      "name": "HOD CCE OFFICE",
+      "label": "HOD CCE OFFICE",
+      "type": "hod",
+      "x": 1297,
+      "y": 506,
+      "w": 180,
+      "h": 90,
+      "width": 180,
+      "height": 90,
+      "directions": "Located on the inner side of the horizontal corridor.",
+      "description": "Office of the Head of Department — Computer & Communication Engineering (CCE).",
+      "image": "https://placehold.co/600x400?text=HOD+CCE",
+      "tags": [
+        "hod",
+        "office",
+        "head",
+        "cce"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-fourth-ccl46",
+      "name": "COMPUTER LAB CCL-46",
+      "label": "COMPUTER LAB CCL-46",
+      "type": "lab",
+      "x": 1296,
+      "y": 659,
+      "w": 193,
+      "h": 81,
+      "width": 193,
+      "height": 81,
+      "directions": "Located on the inner side of the horizontal corridor, next to HOD CCE.",
+      "description": "Computer Laboratory CCL-46 under Computer Science Department.",
+      "image": "https://placehold.co/600x400?text=CCL-46",
+      "tags": [
+        "lab",
+        "ccl46",
+        "computer"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-fourth-ccl41",
+      "name": "COMPUTER LAB CCL-41",
+      "label": "COMPUTER LAB CCL-41",
+      "type": "lab",
+      "x": -743,
+      "y": 1315,
+      "w": 180,
+      "h": 80,
+      "width": 180,
+      "height": 80,
+      "directions": "Located on the right vertical wing, below CCL-42.",
+      "description": "Computer Laboratory CCL-41 under Computer Science & Engineering Department.",
+      "image": "/ccl41_door.png",
+      "tags": [
+        "lab",
+        "ccl41",
+        "computer"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-fourth-ccl42",
+      "name": "COMPUTER LAB CCL-42",
+      "label": "COMPUTER LAB CCL-42",
+      "type": "lab",
+      "x": -542,
+      "y": 1322,
+      "w": 197,
+      "h": 78,
+      "width": 197,
+      "height": 78,
+      "directions": "Located on the right vertical wing, below CCL-43.",
+      "description": "Computer Laboratory CCL-42 under Computer Science & Engineering Department.",
+      "image": "/ccl42_door.png",
+      "tags": [
+        "lab",
+        "ccl42",
+        "computer"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-fourth-ccl43",
+      "name": "COMPUTER LAB CCL-43",
+      "label": "COMPUTER LAB CCL-43",
+      "type": "lab",
+      "x": -328,
+      "y": 1321,
+      "w": 195,
+      "h": 78,
+      "width": 195,
+      "height": 78,
+      "directions": "Located on the right vertical wing, below CCL-44.",
+      "description": "Computer Laboratory CCL-43 under Computer Science & Engineering Department.",
+      "image": "/ccl43_door.png",
+      "tags": [
+        "lab",
+        "ccl43",
+        "computer"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-fourth-ccl44",
+      "name": "COMPUTER LAB CCL-44",
+      "label": "COMPUTER LAB CCL-44",
+      "type": "lab",
+      "x": -111,
+      "y": 1321,
+      "w": 206,
+      "h": 82,
+      "width": 206,
+      "height": 82,
+      "directions": "Located on the right vertical wing, below the Server Room.",
+      "description": "Computer Laboratory CCL-44 under Computer Science & Engineering Department.",
+      "image": "/ccl44_door.png",
+      "tags": [
+        "lab",
+        "ccl44",
+        "computer"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-fourth-server-room",
+      "name": "SERVER ROOM",
+      "label": "SERVER ROOM",
+      "type": "utility",
+      "x": 700,
+      "y": 1333,
+      "w": 180,
+      "h": 80,
+      "width": 180,
+      "height": 80,
+      "directions": "Located on the right vertical wing, below CCL-45.",
+      "description": "Departmental main server and network control room.",
+      "image": "https://placehold.co/600x400?text=Server+Room",
+      "tags": [
+        "utility",
+        "server"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-fourth-ccl45",
+      "name": "COMPUTER LAB CCL-45",
+      "label": "COMPUTER LAB CCL-45",
+      "type": "lab",
+      "x": 890,
+      "y": 1332,
+      "w": 191,
+      "h": 78,
+      "width": 191,
+      "height": 78,
+      "directions": "Located on the right vertical wing, below the Staff Room.",
+      "description": "Computer Laboratory CCL-45 under Computer Science & Engineering Department.",
+      "image": "/ccl45_door.png",
+      "tags": [
+        "lab",
+        "ccl45",
+        "computer"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-fourth-sr-horizontal",
+      "name": "STAFF ROOM (SR)",
+      "label": "STAFF ROOM (SR)",
+      "type": "staffroom",
+      "x": 1096,
+      "y": 1335,
+      "w": 180,
+      "h": 80,
+      "width": 180,
+      "height": 80,
+      "directions": "Located on the horizontal wing, next to NCL 48.",
+      "description": "Faculty Staff Room for Computer Science and Information Technology Department.",
+      "image": "/sr_horizontal_door.png",
+      "tags": [
+        "staffroom",
+        "faculty",
+        "computer",
+        "it"
+      ],
+      "clickable": true
+    },
+    {
+      "id": "svm-fourth-fire-exit-vertical",
+      "name": "FIRE EXIT",
+      "label": "FIRE EXIT",
+      "type": "utility",
+      "x": 1287,
+      "y": 352,
+      "w": 150,
+      "h": 92,
+      "width": 150,
+      "height": 92,
+      "directions": "Located on the inner side of the vertical wing.",
+      "description": "Emergency fire exit.",
+      "image": "https://placehold.co/600x400?text=Fire+Exit",
+      "tags": [
+        "fire exit",
+        "exit",
+        "utility"
+      ],
+      "clickable": false
+    },
+    {
+      "id": "svm-fourth-lift-lobby",
+      "name": "LIFT (LOBBY)",
+      "label": "LIFT (LOBBY)",
+      "type": "utility",
+      "x": 1283,
+      "y": 779,
+      "w": 221,
+      "h": 45,
+      "width": 221,
+      "height": 45,
+      "directions": "Located near the lobby lift.",
+      "description": "Lobby elevator.",
+      "image": "https://placehold.co/600x400?text=Lobby+Elevator",
+      "tags": [
+        "lift",
+        "elevator",
+        "utility"
+      ],
+      "clickable": false
+    },
+    {
+      "id": "svm-fourth-stairs-up",
+      "name": "STAIRS UP",
+      "label": "STAIRS UP",
+      "type": "utility",
+      "x": 167,
+      "y": 921,
+      "w": 153,
+      "h": 73,
+      "width": 153,
+      "height": 73,
+      "directions": "Located opposite the lift.",
+      "description": "Staircase leading up.",
+      "image": "https://placehold.co/600x400?text=Stairs+Up",
+      "tags": [
+        "stairs",
+        "staircase",
+        "utility"
+      ],
+      "clickable": false
+    },
+    {
+      "id": "svm-fourth-stairs-down",
+      "name": "STAIRS DOWN",
+      "label": "STAIRS DOWN",
+      "type": "utility",
+      "x": 335,
+      "y": 925,
+      "w": 153,
+      "h": 75,
+      "width": 153,
+      "height": 75,
+      "directions": "Located opposite the lift.",
+      "description": "Staircase leading down.",
+      "image": "https://placehold.co/600x400?text=Stairs+Down",
+      "tags": [
+        "stairs",
+        "staircase",
+        "utility"
+      ],
+      "clickable": false
+    },
+    {
+      "id": "svm-fourth-lift-vertical",
+      "name": "LIFT",
+      "label": "LIFT",
+      "type": "utility",
+      "x": 504,
+      "y": 924,
+      "w": 120,
+      "h": 103,
+      "width": 120,
+      "height": 103,
+      "directions": "Elevator serving the first floor.",
+      "description": "Elevator.",
+      "image": "https://placehold.co/600x400?text=Elevator",
+      "tags": [
+        "lift",
+        "elevator",
+        "utility"
+      ],
+      "clickable": false
+    },
+    {
+      "id": "svm-fourth-vertical-corridor",
+      "name": "VERTICAL CORRIDOR",
+      "label": "VERTICAL CORRIDOR",
+      "type": "corridor",
+      "x": 100,
+      "y": 100,
+      "w": 120,
+      "h": 1100,
+      "width": 120,
+      "height": 1100,
+      "directions": "Main corridor running north-south along the vertical wing.",
+      "description": "North-south vertical wing corridor.",
+      "image": "https://placehold.co/600x400?text=Vertical+Corridor",
+      "tags": [
+        "corridor"
+      ],
+      "clickable": false
+    },
+    {
+      "id": "svm-fourth-horizontal-corridor",
+      "name": "HORIZONTAL CORRIDOR",
+      "label": "HORIZONTAL CORRIDOR",
+      "type": "corridor",
+      "x": -800,
+      "y": 1000,
+      "w": 2400,
+      "h": 100,
+      "width": 2400,
+      "height": 100,
+      "directions": "Main corridor running east-west along the horizontal wing.",
+      "description": "East-west horizontal wing corridor.",
+      "image": "https://placehold.co/600x400?text=Horizontal+Corridor",
+      "tags": [
+        "corridor"
+      ],
+      "clickable": false
+    }
+  ],
+  "faculty": [],
+  "mapImage": null,
+  "locked": true,
+  "lastEdited": "2026-06-04T15:16:13.622Z",
+  "boundaryVertices": [
+    {
+      "y": 1422,
+      "x": -944
+    },
+    {
+      "y": 1183,
+      "x": -940
+    },
+    {
+      "y": 1184,
+      "x": 151
+    },
+    {
+      "y": 903,
+      "x": 153
+    },
+    {
+      "x": 633,
+      "y": 907
+    },
+    {
+      "x": 635,
+      "y": 1116
+    },
+    {
+      "x": 355,
+      "y": 1118
+    },
+    {
+      "y": 1178,
+      "x": 355
+    },
+    {
+      "x": 1270,
+      "y": 1183
+    },
+    {
+      "y": 290,
+      "x": 1269
+    },
+    {
+      "y": 286,
+      "x": 255
+    },
+    {
+      "x": 256,
+      "y": 73
+    },
+    {
+      "y": 83,
+      "x": 1800
+    },
+    {
+      "y": 1436,
+      "x": 1798
+    }
+  ],
+  "mainWidth": 960,
+  "bulgeWidth": 320,
+  "bulgeHeight": 500,
+  "viewHeight": 1540,
+  "viewWidth": 1280
+}

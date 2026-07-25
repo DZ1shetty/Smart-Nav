@@ -1,0 +1,54 @@
+{
+  "viewWidth": 1280,
+  "buildingName": "RAMANUJAN-BLOCK",
+  "bulgeWidth": 320,
+  "rooms": [
+    {
+      "type": "office",
+      "directions": "Centrally located on the floor.",
+      "x": 340,
+      "label": "SETUP IN PROGRESS",
+      "h": 400,
+      "width": 600,
+      "image": "https://placehold.co/600x400?text=Setup+in+Progress",
+      "description": "Building room outlines and layout setup is currently in progress. Switch to Edit Mode to customize.",
+      "tags": [
+        "setup",
+        "coming-soon"
+      ],
+      "id": "ramanujan-fifth-setup",
+      "y": 470,
+      "height": 400,
+      "w": 600,
+      "name": "SETUP IN PROGRESS",
+      "clickable": true
+    }
+  ],
+  "mainWidth": 960,
+  "mapImage": null,
+  "label": "5th Floor",
+  "viewHeight": 1540,
+  "locked": true,
+  "floorId": "ramanujan_fifth",
+  "bulgeHeight": 500,
+  "faculty": [],
+  "boundaryVertices": [
+    {
+      "x": 100,
+      "y": 100
+    },
+    {
+      "y": 100,
+      "x": 1180
+    },
+    {
+      "y": 1440,
+      "x": 1180
+    },
+    {
+      "y": 1440,
+      "x": 100
+    }
+  ],
+  "lastEdited": "2026-06-21T07:27:03.146Z"
+}

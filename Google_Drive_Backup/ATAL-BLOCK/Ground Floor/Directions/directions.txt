@@ -1,0 +1,37 @@
+========================================================
+DIRECTIONS FOR ATAL-BLOCK - GROUND FLOOR
+========================================================
+
+1. STAIRS-1 (ID: atal-ground-stairs-1)
+   Directions: Located at the top-left area, next to the Lift lobby.
+
+2. LIFT (ID: atal-ground-lift)
+   Directions: Located at the top-right area, next to NF L003.
+
+3. NF L003 (ID: atal-ground-nfl003)
+   Directions: On the right side of the corridor, below the Lift.
+
+4. AUTOLIV NMAMIT INCUBATION CENTRE (ID: atal-ground-autoliv)
+   Directions: On the right side of the corridor, between NF L003 and Gents Toilet.
+
+5. GENTS TOILET (ID: atal-ground-gents-toilet)
+   Directions: On the right side of the corridor, below Autoliv Incubation Centre.
+
+6. STAIRS-2 (ID: atal-ground-stairs-2)
+   Directions: On the right side of the corridor, opposite the Main Entrance.
+
+7. MATERIALS PERFORMANCE & CHARACTERIZATION LABORATORY (ID: atal-ground-materials-lab)
+   Directions: On the left side of the corridor, below the west staircase.
+
+8. RESEARCH LABORATORY (ID: atal-ground-research-lab)
+   Directions: On the left side of the corridor, below the Materials Performance Laboratory.
+
+9. MAIN ENTRANCE (ID: atal-ground-main-entrance)
+   Directions: On the left side of the corridor, near the main staircase up.
+
+10. MAIN ENTRANCE (ID: atal-ground-main-entrance-left)
+   Directions: Located at the bottom-left main entrance.
+
+11. NCRF & CENTRE FOR NEW MATERIALS & SURFACE ENGINEERING (ID: atal-ground-ncrf)
+   Directions: Located at the bottom end of the main corridor.
+

@@ -1,0 +1,49 @@
+========================================================
+DIRECTIONS FOR ATAL-BLOCK - 2ND FLOOR
+========================================================
+
+1. STAIRS-1 (ID: atal-second-stairs-1)
+   Directions: Located at the top-left area, next to the lift.
+
+2. LIFT (ID: atal-second-lift)
+   Directions: Located next to the west stairs.
+
+3. ISL08 (ID: atal-second-isl08)
+   Directions: On the upper side of the corridor, between the Lift and Staffs Room.
+
+4. STAFFS ROOM (ID: atal-second-staff-room)
+   Directions: On the upper side of the corridor, between ISL08 and Central Stairs.
+
+5. STAIRS-2 (ID: atal-second-stairs-2)
+   Directions: Central staircase.
+
+6. AIC NITTE INCUBATION CENTRE (ID: atal-second-aic-nitte)
+   Directions: On the upper side of the corridor, next to Central Stairs.
+
+7. LADIES WASHROOM (ID: atal-second-ladies-washroom)
+   Directions: On the upper side of the corridor, next to the AIC Nitte office.
+
+8. GENTS WASHROOM (ID: atal-second-gents-washroom)
+   Directions: On the upper side of the corridor, next to the Ladies Washroom.
+
+9. ECOPOLY BIOTECH LLP (ID: atal-second-ecopoled)
+   Directions: On the upper side of the corridor, next to the washrooms.
+
+10. COWORKING SPACE (ID: atal-second-coworking)
+   Directions: At the far east end of the upper corridor bulge.
+
+11. CSL12 (ID: atal-second-csl12)
+   Directions: On the lower side of the corridor, opposite ISL08.
+
+12. CSL11 (ID: atal-second-csl11)
+   Directions: On the lower side of the corridor, opposite Staffs Room.
+
+13. CENTRE OF EXCELLENCE IN DIGITAL MANUFACTURING (ID: atal-second-coe-digital-manufacturing)
+   Directions: On the lower side of the corridor, opposite Central Stairs.
+
+14. FAB LAB (ID: atal-second-fab-lab)
+   Directions: On the lower side of the corridor, next to CoE Digital Manufacturing.
+
+15. NFL002 COMPONENTS ROOM (ID: atal-second-nfl002)
+   Directions: On the lower side of the corridor, next to FAB LAB.
+

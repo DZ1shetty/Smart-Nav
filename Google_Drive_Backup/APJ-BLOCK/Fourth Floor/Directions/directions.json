@@ -1,0 +1,148 @@
+{
+  "buildingName": "APJ-BLOCK",
+  "floorLabel": "Fourth Floor",
+  "floorId": "fourth",
+  "lastUpdated": "2026-07-25T14:01:47.399Z",
+  "directions": {
+    "staff-room-top-left": "i. Stairs-1: Turn right, cross the center area to the left side of the building, then turn right and walk to the very top.\nii. Stairs-2: Turn left towards the left side of the building, turn right and walk all the way up.\niii. LIFT: Turn left to the left wall, then turn right and walk all the way up.",
+    "csl-06": "i. Stairs-1: Turn right, cross over to the left side of the floor, turn right and walk past CSL 05.\nii. Stairs-2: Turn left towards the left hallway, turn right and walk straight up past the Washroom.\niii. LIFT: Turn left to the left hallway, turn right and walk past CSL 05.",
+    "csl-05": "i. Stairs-1: Turn right, cross over to the left area, turn right and it will be on your left.\nii. Stairs-2: Turn left to the left side, turn right and walk past the Washroom.\niii. LIFT: Turn left across the hall, then turn right and it is immediately there.",
+    "washroom-4": "i. Stairs-1: Turn right and cross straight into the middle intersection, it is right there.\nii. Stairs-2: Turn left to the left hallway, turn right and walk past the HOD Cabin.\niii. LIFT: Turn left and walk straight, the washroom is exactly in front of you.",
+    "cse-hod-cabin": "i. Stairs-1: Turn right, walk towards the Washroom, then turn left.\nii. Stairs-2: Turn left to the left hallway, turn right and walk past CSL 03.\niii. LIFT: Turn left, walk straight, and it is immediately on your right.",
+    "csl-03": "i. Stairs-1: Turn right, cross towards the left side, turn left and walk past the HOD Cabin.\nii. Stairs-2: Turn left to the left hallway, and turn right to walk past CSL 04.\niii. LIFT: Turn left to the left side, then turn left to walk past the HOD Cabin.",
+    "csl-04": "i. Stairs-1: Turn right, cross to the left side, turn left and walk all the way down past CSL 03.\nii. Stairs-2: Turn left to the left side, and it is the first room on your left.\niii. LIFT: Turn left to the left side, turn left and walk to the very end.",
+    "isl-04": "i. Stairs-1: Turn right, cross to the left side, turn left and walk to the very end.\nii. Stairs-2: Turn left, and it is immediately there straight ahead on your left.\niii. LIFT: Turn left to the left side, turn left and walk to the very end.",
+    "csl-07": "i. Stairs-1: Turn left and walk straight ahead to the very end.\nii. Stairs-2: Walk straight ahead along the right side of the building all the way to the top.\niii. LIFT: Turn right, and walk straight all the way to the top.",
+    "isl-03": "i. Stairs-1: Turn left and walk up past ISL 02.\nii. Stairs-2: Walk straight ahead along the right side passing the middle area.\niii. LIFT: Turn right, then turn left and walk past ISL 02.",
+    "isl-02": "i. Stairs-1: Turn left, and it is the very first room on your right.\nii. Stairs-2: Walk straight ahead along the right side, just past the middle intersection.\niii. LIFT: Turn right, then turn left. It is immediately on your right.",
+    "isl-01": "i. Stairs-1: Turn right and walk down past the Server Room.\nii. Stairs-2: Walk straight ahead past CSL 02.\niii. LIFT: Turn right, then turn right and walk down. It is on your left.",
+    "csl-02": "i. Stairs-1: Turn right and walk down past ISL 01.\nii. Stairs-2: Walk straight ahead. It is the first room on your right.\niii. LIFT: Turn right, then turn right and walk down past ISL 01.",
+    "csl-01": "i. Stairs-1: Turn right and walk all the way straight down to the end.\nii. Stairs-2: Turn right, and it is immediately there on your right.\niii. LIFT: Turn right, then turn right and walk all the way down to the end.",
+    "staff-room-top-center": "i. Stairs-1: Walk forward and turn left, go all the way to the top wall, then turn left again.\nii. Stairs-2: Walk straight ahead through the entire building to the top wall, then turn left.\niii. LIFT: Turn right, walk all the way to the top, then turn left.",
+    "staff-room-mid-left": "i. Stairs-1: Turn right, cross to the left hallway, turn right to go up. It is on your right.\nii. Stairs-2: Turn left to the left hallway, turn right and walk past the Washroom. It is on your right.\niii. LIFT: Turn left to the left hallway, turn right to go up. It is on your right.",
+    "staff-room-mid-right": "i. Stairs-1: Turn left and walk slightly up. It is on your left.\nii. Stairs-2: Walk straight ahead along the right hallway past the middle intersection. It is on your left.\niii. LIFT: Turn right to the right hallway, turn left to go up. It is on your left.",
+    "stairs-top-4": "Exit to your right into the hallway.",
+    "lift-4": "Exit straight forward into the center intersection.",
+    "ups-room": "i. Stairs-1: Turn right, cross to the left hallway, turn left to walk down. It is on your left.\nii. Stairs-2: Turn left to the left hallway, turn right to walk up. It is on your right.\niii. LIFT: Turn left to the left hallway, turn left to walk down. It is on your left.",
+    "server-room": "i. Stairs-1: Turn right to walk down the hallway. It is on your right.\nii. Stairs-2: Walk straight ahead along the right hallway, and it is on your left.\niii. LIFT: Turn right to the right hallway, turn right to walk down. It is on your right.",
+    "stairs-bottom-4": "Exit straight forward into the bottom corridor.",
+    "apj-fourth-way-ramanujan": "Right exit bridge connecting to the 4th floor of Ramanujan Block."
+  },
+  "detailedDirections": [
+    {
+      "roomId": "staff-room-top-left",
+      "roomName": "STAFF ROOM",
+      "directions": "i. Stairs-1: Turn right, cross the center area to the left side of the building, then turn right and walk to the very top.\nii. Stairs-2: Turn left towards the left side of the building, turn right and walk all the way up.\niii. LIFT: Turn left to the left wall, then turn right and walk all the way up."
+    },
+    {
+      "roomId": "csl-06",
+      "roomName": "CSL 06",
+      "directions": "i. Stairs-1: Turn right, cross over to the left side of the floor, turn right and walk past CSL 05.\nii. Stairs-2: Turn left towards the left hallway, turn right and walk straight up past the Washroom.\niii. LIFT: Turn left to the left hallway, turn right and walk past CSL 05."
+    },
+    {
+      "roomId": "csl-05",
+      "roomName": "CSL 05",
+      "directions": "i. Stairs-1: Turn right, cross over to the left area, turn right and it will be on your left.\nii. Stairs-2: Turn left to the left side, turn right and walk past the Washroom.\niii. LIFT: Turn left across the hall, then turn right and it is immediately there."
+    },
+    {
+      "roomId": "washroom-4",
+      "roomName": "WASHROOM",
+      "directions": "i. Stairs-1: Turn right and cross straight into the middle intersection, it is right there.\nii. Stairs-2: Turn left to the left hallway, turn right and walk past the HOD Cabin.\niii. LIFT: Turn left and walk straight, the washroom is exactly in front of you."
+    },
+    {
+      "roomId": "cse-hod-cabin",
+      "roomName": "CSE HOD",
+      "directions": "i. Stairs-1: Turn right, walk towards the Washroom, then turn left.\nii. Stairs-2: Turn left to the left hallway, turn right and walk past CSL 03.\niii. LIFT: Turn left, walk straight, and it is immediately on your right."
+    },
+    {
+      "roomId": "csl-03",
+      "roomName": "CSL 03",
+      "directions": "i. Stairs-1: Turn right, cross towards the left side, turn left and walk past the HOD Cabin.\nii. Stairs-2: Turn left to the left hallway, and turn right to walk past CSL 04.\niii. LIFT: Turn left to the left side, then turn left to walk past the HOD Cabin."
+    },
+    {
+      "roomId": "csl-04",
+      "roomName": "CSL 04",
+      "directions": "i. Stairs-1: Turn right, cross to the left side, turn left and walk all the way down past CSL 03.\nii. Stairs-2: Turn left to the left side, and it is the first room on your left.\niii. LIFT: Turn left to the left side, turn left and walk to the very end."
+    },
+    {
+      "roomId": "isl-04",
+      "roomName": "ISL 04",
+      "directions": "i. Stairs-1: Turn right, cross to the left side, turn left and walk to the very end.\nii. Stairs-2: Turn left, and it is immediately there straight ahead on your left.\niii. LIFT: Turn left to the left side, turn left and walk to the very end."
+    },
+    {
+      "roomId": "csl-07",
+      "roomName": "CSL 07",
+      "directions": "i. Stairs-1: Turn left and walk straight ahead to the very end.\nii. Stairs-2: Walk straight ahead along the right side of the building all the way to the top.\niii. LIFT: Turn right, and walk straight all the way to the top."
+    },
+    {
+      "roomId": "isl-03",
+      "roomName": "ISL 03",
+      "directions": "i. Stairs-1: Turn left and walk up past ISL 02.\nii. Stairs-2: Walk straight ahead along the right side passing the middle area.\niii. LIFT: Turn right, then turn left and walk past ISL 02."
+    },
+    {
+      "roomId": "isl-02",
+      "roomName": "ISL 02",
+      "directions": "i. Stairs-1: Turn left, and it is the very first room on your right.\nii. Stairs-2: Walk straight ahead along the right side, just past the middle intersection.\niii. LIFT: Turn right, then turn left. It is immediately on your right."
+    },
+    {
+      "roomId": "isl-01",
+      "roomName": "ISL 01",
+      "directions": "i. Stairs-1: Turn right and walk down past the Server Room.\nii. Stairs-2: Walk straight ahead past CSL 02.\niii. LIFT: Turn right, then turn right and walk down. It is on your left."
+    },
+    {
+      "roomId": "csl-02",
+      "roomName": "CSL 02",
+      "directions": "i. Stairs-1: Turn right and walk down past ISL 01.\nii. Stairs-2: Walk straight ahead. It is the first room on your right.\niii. LIFT: Turn right, then turn right and walk down past ISL 01."
+    },
+    {
+      "roomId": "csl-01",
+      "roomName": "CSL 01",
+      "directions": "i. Stairs-1: Turn right and walk all the way straight down to the end.\nii. Stairs-2: Turn right, and it is immediately there on your right.\niii. LIFT: Turn right, then turn right and walk all the way down to the end."
+    },
+    {
+      "roomId": "staff-room-top-center",
+      "roomName": "STAFF ROOM",
+      "directions": "i. Stairs-1: Walk forward and turn left, go all the way to the top wall, then turn left again.\nii. Stairs-2: Walk straight ahead through the entire building to the top wall, then turn left.\niii. LIFT: Turn right, walk all the way to the top, then turn left."
+    },
+    {
+      "roomId": "staff-room-mid-left",
+      "roomName": "STAFF ROOM",
+      "directions": "i. Stairs-1: Turn right, cross to the left hallway, turn right to go up. It is on your right.\nii. Stairs-2: Turn left to the left hallway, turn right and walk past the Washroom. It is on your right.\niii. LIFT: Turn left to the left hallway, turn right to go up. It is on your right."
+    },
+    {
+      "roomId": "staff-room-mid-right",
+      "roomName": "STAFF ROOM",
+      "directions": "i. Stairs-1: Turn left and walk slightly up. It is on your left.\nii. Stairs-2: Walk straight ahead along the right hallway past the middle intersection. It is on your left.\niii. LIFT: Turn right to the right hallway, turn left to go up. It is on your left."
+    },
+    {
+      "roomId": "stairs-top-4",
+      "roomName": "STAIRS-1",
+      "directions": "Exit to your right into the hallway."
+    },
+    {
+      "roomId": "lift-4",
+      "roomName": "LIFT",
+      "directions": "Exit straight forward into the center intersection."
+    },
+    {
+      "roomId": "ups-room",
+      "roomName": "UPS ROOM",
+      "directions": "i. Stairs-1: Turn right, cross to the left hallway, turn left to walk down. It is on your left.\nii. Stairs-2: Turn left to the left hallway, turn right to walk up. It is on your right.\niii. LIFT: Turn left to the left hallway, turn left to walk down. It is on your left."
+    },
+    {
+      "roomId": "server-room",
+      "roomName": "SERVER ROOM",
+      "directions": "i. Stairs-1: Turn right to walk down the hallway. It is on your right.\nii. Stairs-2: Walk straight ahead along the right hallway, and it is on your left.\niii. LIFT: Turn right to the right hallway, turn right to walk down. It is on your right."
+    },
+    {
+      "roomId": "stairs-bottom-4",
+      "roomName": "STAIRS-2",
+      "directions": "Exit straight forward into the bottom corridor."
+    },
+    {
+      "roomId": "apj-fourth-way-ramanujan",
+      "roomName": "CONNECTION TO RAMANUJAN BLOCK(FOURTH FLOOR)",
+      "directions": "Right exit bridge connecting to the 4th floor of Ramanujan Block."
+    }
+  ]
+}

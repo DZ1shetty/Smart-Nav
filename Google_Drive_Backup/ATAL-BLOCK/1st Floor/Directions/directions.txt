@@ -1,0 +1,52 @@
+========================================================
+DIRECTIONS FOR ATAL-BLOCK - 1ST FLOOR
+========================================================
+
+1. STAIRS-1 (ID: atal-first-stairs-1)
+   Directions: Located at the top-left area, next to the lift.
+
+2. LIFT (ID: atal-first-lift)
+   Directions: Located next to the west stairs.
+
+3. NITTE EDUCATION TRUST (ID: atal-first-nitte-trust)
+   Directions: On the upper side of the corridor, between the Lift and CBL01.
+
+4. CBL01 (ID: atal-first-cbl01)
+   Directions: On the upper side of the corridor, next to Nitte Education Trust.
+
+5. ACL01 (ID: atal-first-acl01)
+   Directions: On the upper side of the corridor, next to EDC NL 104.
+
+6. STAIRS-2 (ID: atal-first-stairs-2)
+   Directions: Central staircase.
+
+7. LADIES ROOM (ID: atal-first-ladies-toilet)
+   Directions: On the upper side of the corridor, next to the central stairs.
+
+8. BIOTECH FABLAB (ID: atal-first-biotech-fablab)
+   Directions: On the upper side of the corridor, next to the Ladies Toilet.
+
+9. ENTREPRENEURSHIP DEVELOPMENT CELL (EDC) (ID: atal-first-edc-incubation)
+   Directions: At the far east end of the corridor, upper side.
+
+10. MEETING ROOM (SHASHANK SHETTY) (ID: atal-first-meeting-shashank)
+   Directions: On the lower side of the corridor, opposite Nitte Education Trust.
+
+11. ELH 104 (ID: atal-first-elh104)
+   Directions: On the lower side of the corridor, opposite CBL01.
+
+12. CENTRE OF EXCELLENCE (ID: atal-first-coe)
+   Directions: On the lower side of the corridor, opposite ACL01.
+
+13. EDC NL 102 (ID: atal-first-edcnl102)
+   Directions: On the lower side of the corridor, next to the Centre of Excellence.
+
+14. ELH 102 (ID: atal-first-elh102)
+   Directions: On the lower side of the corridor, next to EDC NL 102.
+
+15. EDC NL 101 (ID: atal-first-edcnl101)
+   Directions: On the lower side of the corridor, next to ELH 102.
+
+16. ELH 101 (ID: atal-first-elh101)
+   Directions: On the lower side of the corridor, next to EDC NL 101.
+

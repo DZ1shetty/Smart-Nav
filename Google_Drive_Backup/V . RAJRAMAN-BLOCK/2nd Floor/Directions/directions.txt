@@ -1,0 +1,61 @@
+========================================================
+DIRECTIONS FOR V . RAJRAMAN-BLOCK - 2ND FLOOR
+========================================================
+
+1. LIFT (ID: rajraman-second-lift)
+   Directions: Elevator access located next to MCA Research Lab 1.
+
+2. MCA Research Lab-1 (ID: rajraman-second-mca-rl1)
+   Directions: Located at the bottom horizontal corridor next to the Lift.
+
+3. STAIRS-2 (ID: rajraman-second-stairs-2)
+   Directions: Located at the bottom of the right corridor.
+
+4. STAFF ROOM (ID: rajraman-second-sr-bot1)
+   Directions: Located at the bottom corridor to the left of the Lift.
+
+5. STAFF ROOM (ID: rajraman-second-sr-bot2)
+   Directions: Located at the bottom corridor, next to Staff Room 1.
+
+6. MCA LAB 1 (ID: rajraman-second-mca-lab1)
+   Directions: Located on the top side of the central horizontal corridor.
+
+7. MCA LAB 2 (ID: rajraman-second-mca-lab2)
+   Directions: Located next to MCA LAB 1 on the top side of the corridor.
+
+8. MCA LAB 3 (ID: rajraman-second-mca-lab3)
+   Directions: Located next to MCA LAB 2 on the top side of the corridor.
+
+9. MCA Dept Office (ID: rajraman-second-mca-office)
+   Directions: Located at the top of the right vertical wing.
+
+10. STAFF ROOM (ID: rajraman-second-sr-right)
+   Directions: Located in the right vertical wing, below the MCA Department Office.
+
+11. MCA LAB 4 (ID: rajraman-second-mca-lab4)
+   Directions: Located on the left side of the top vertical corridor.
+
+12. STAFF ROOM (ID: rajraman-second-sr-top1)
+   Directions: Located in the top left corridor next to MCA LAB 4.
+
+13. STAFF ROOM (ID: rajraman-second-sr-top2)
+   Directions: Located next to Staff Room 1 in the top left corridor.
+
+14. STAFF ROOM (ID: rajraman-second-sr-top3)
+   Directions: Located next to Staff Room 2 in the top left corridor.
+
+15. GENTS TOILET (ID: rajraman-second-gents-toilet)
+   Directions: Located above the staff rooms on the left side.
+
+16. LADIES ROOM (ID: rajraman-second-ladies-toilet)
+   Directions: Located at the top left of the corridor next to the HOD cabin.
+
+17. MCA HOD (ID: rajraman-second-mca-hod)
+   Directions: Located on the right side of the top vertical corridor.
+
+18. WATER FILTER (ID: rajraman-second-water-filter)
+   Directions: Located next to the Ladies Toilet.
+
+19. STAIRS-1 (ID: rajraman-second-stairs-1)
+   Directions: Located above HOD on the right side of the top corridor.
+

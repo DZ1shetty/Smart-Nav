@@ -1,0 +1,112 @@
+{
+  "buildingName": "SMV-BLOCK",
+  "floorLabel": "3rd Floor",
+  "floorId": "svm_third",
+  "lastUpdated": "2026-07-25T14:03:46.508Z",
+  "directions": {
+    "smv-third-ncl31": "Located on the right side of the vertical wing, top section.",
+    "smv-third-ncl32": "Located on the right side of the vertical wing, below NCL31.",
+    "smv-third-ncl33": "Located on the right side of the vertical wing, bottom section.",
+    "smv-third-ncl37": "Located on the inner side of the vertical corridor, middle.",
+    "smv-third-fire-exit-horizontal": "Located at the far left end of the horizontal wing corridor.",
+    "smv-third-nc36": "Located on the horizontal wing, near the vertical corridor junction.",
+    "smv-third-dept-library": "Located on the horizontal wing, between NC34 and NC36.",
+    "smv-third-nc34": "Located on the horizontal wing, between NC35 and Department Library.",
+    "smv-third-nc35": "Located on the horizontal wing, next to the far-left Fire Exit.",
+    "smv-third-gents-toilet": "At the top end of the vertical corridor.",
+    "smv-third-ladies-toilet": "Located on the lower side of the horizontal corridor.",
+    "smv-third-fire-exit-vertical": "Located on the inner side of the vertical wing.",
+    "smv-third-lift-lobby": "Located near the lobby lift.",
+    "smv-third-stairs-1": "Located opposite the lift.",
+    "smv-third-lift-vertical": "Elevator serving the third floor.",
+    "smv-third-vertical-corridor": "Main corridor running north-south along the vertical wing.",
+    "smv-third-horizontal-corridor": "Main corridor running east-west along the horizontal wing."
+  },
+  "detailedDirections": [
+    {
+      "roomId": "smv-third-ncl31",
+      "roomName": "MICROCONTROLLER LABORATORY (NCL31)",
+      "directions": "Located on the right side of the vertical wing, top section."
+    },
+    {
+      "roomId": "smv-third-ncl32",
+      "roomName": "ANALOG SIGNAL PROCESSING LAB (NCL32)",
+      "directions": "Located on the right side of the vertical wing, below NCL31."
+    },
+    {
+      "roomId": "smv-third-ncl33",
+      "roomName": "POWER ELECTRONICS LABORATORY (NCL33)",
+      "directions": "Located on the right side of the vertical wing, bottom section."
+    },
+    {
+      "roomId": "smv-third-ncl37",
+      "roomName": "RESEARCH LABORATORY (NCL37)",
+      "directions": "Located on the inner side of the vertical corridor, middle."
+    },
+    {
+      "roomId": "smv-third-fire-exit-horizontal",
+      "roomName": "FIRE EXIT",
+      "directions": "Located at the far left end of the horizontal wing corridor."
+    },
+    {
+      "roomId": "smv-third-nc36",
+      "roomName": "LECTURE ROOM NC36 (MCA CLASS)",
+      "directions": "Located on the horizontal wing, near the vertical corridor junction."
+    },
+    {
+      "roomId": "smv-third-dept-library",
+      "roomName": "DEPARTMENT LIBRARY & E-LEARNING CENTER",
+      "directions": "Located on the horizontal wing, between NC34 and NC36."
+    },
+    {
+      "roomId": "smv-third-nc34",
+      "roomName": "LECTURE ROOM NC34",
+      "directions": "Located on the horizontal wing, between NC35 and Department Library."
+    },
+    {
+      "roomId": "smv-third-nc35",
+      "roomName": "LECTURE ROOM NC35",
+      "directions": "Located on the horizontal wing, next to the far-left Fire Exit."
+    },
+    {
+      "roomId": "smv-third-gents-toilet",
+      "roomName": "GENTS WASHROOM",
+      "directions": "At the top end of the vertical corridor."
+    },
+    {
+      "roomId": "smv-third-ladies-toilet",
+      "roomName": "LADIES & HANDICAPPED WASHROOM",
+      "directions": "Located on the lower side of the horizontal corridor."
+    },
+    {
+      "roomId": "smv-third-fire-exit-vertical",
+      "roomName": "FIRE EXIT",
+      "directions": "Located on the inner side of the vertical wing."
+    },
+    {
+      "roomId": "smv-third-lift-lobby",
+      "roomName": "LIFT (LOBBY)",
+      "directions": "Located near the lobby lift."
+    },
+    {
+      "roomId": "smv-third-stairs-1",
+      "roomName": "STAIRS-1",
+      "directions": "Located opposite the lift."
+    },
+    {
+      "roomId": "smv-third-lift-vertical",
+      "roomName": "LIFT",
+      "directions": "Elevator serving the third floor."
+    },
+    {
+      "roomId": "smv-third-vertical-corridor",
+      "roomName": "VERTICAL CORRIDOR",
+      "directions": "Main corridor running north-south along the vertical wing."
+    },
+    {
+      "roomId": "smv-third-horizontal-corridor",
+      "roomName": "HORIZONTAL CORRIDOR",
+      "directions": "Main corridor running east-west along the horizontal wing."
+    }
+  ]
+}

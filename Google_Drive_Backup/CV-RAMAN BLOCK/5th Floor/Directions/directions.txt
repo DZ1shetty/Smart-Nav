@@ -1,0 +1,37 @@
+========================================================
+DIRECTIONS FOR CV-RAMAN BLOCK - 5TH FLOOR
+========================================================
+
+1. EEE COMPUTER LABORATORY (ID: cv-raman-fifth-eee-lab)
+   Directions: Right wing end, upper corridor.
+
+2. CAD LAB (ID: cv-raman-fifth-cad-lab)
+   Directions: Right wing, upper corridor next to EEE Computer Lab.
+
+3. CAED LAB (ID: cv-raman-fifth-caed-lab)
+   Directions: Right wing, lower corridor opposite CAD Lab.
+
+4. SUBASHINI LANGUAGE LAB-2 (ID: cv-raman-fifth-language-lab)
+   Directions: Right wing end, lower corridor.
+
+5. SUBASHINI LANGUAGE LAB (ID: cv-raman-fifth-subashini-language-lab)
+   Directions: Left wing, upper corridor near lift.
+
+6. PG & RESEARCH LAB (ID: cv-raman-fifth-research-lab)
+   Directions: Left wing end, upper corridor.
+
+7. DEPT. OF HUMANITIES STAFF ROOM (ID: cv-raman-fifth-humanities-staff)
+   Directions: Bottom wing corridor near stairs.
+
+8. COMPUTER PROGRAMMING LAB (CCP/CSL10) (ID: cv-raman-fifth-ccp-csl10)
+   Directions: Bottom left wing end.
+
+9. LIFT (ID: cv-raman-fifth-lift)
+   Directions: Center area.
+
+10. STAIRS-1 (ID: cv-raman-fifth-stairs-1)
+   Directions: Center-left stairs.
+
+11. STAIRS-2 (ID: cv-raman-fifth-stairs-2)
+   Directions: Bottom-right stairs.
+

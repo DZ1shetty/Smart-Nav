@@ -1,0 +1,454 @@
+import { IMG_BASE_URL } from '../../config.js'
+
+export const ground = {
+  buildingName: 'CV-RAMAN BLOCK',
+  label: 'Ground Floor',
+  viewWidth: 1280,
+  viewHeight: 1540,
+  mainWidth: 960,
+  bulgeWidth: 320,
+  bulgeHeight: 500,
+  boundaryVertices: [
+  {
+    "y": 36,
+    "x": 700
+  },
+  {
+    "x": 700,
+    "y": 218
+  },
+  {
+    "x": 700,
+    "y": 309
+  },
+  {
+    "x": 641,
+    "y": 395
+  },
+  {
+    "x": 776,
+    "y": 524
+  },
+  {
+    "y": 532,
+    "x": 1765
+  },
+  {
+    "y": 829,
+    "x": 1763
+  },
+  {
+    "x": 826,
+    "y": 825
+  },
+  {
+    "x": 825,
+    "y": 940
+  },
+  {
+    "x": 823,
+    "y": 1038
+  },
+  {
+    "x": 642,
+    "y": 1039
+  },
+  {
+    "y": 928,
+    "x": 642
+  },
+  {
+    "x": 556,
+    "y": 927
+  },
+  {
+    "y": 1247,
+    "x": 554
+  },
+  {
+    "x": 324,
+    "y": 1243
+  },
+  {
+    "y": 1480,
+    "x": 322
+  },
+  {
+    "y": 1473,
+    "x": -338
+  },
+  {
+    "y": 1150,
+    "x": -341
+  },
+  {
+    "y": 1150,
+    "x": 60
+  },
+  {
+    "y": 961,
+    "x": 194
+  },
+  {
+    "x": -628,
+    "y": 958
+  },
+  {
+    "y": 669,
+    "x": -627
+  },
+  {
+    "x": 106,
+    "y": 673
+  },
+  {
+    "x": 281,
+    "y": 470
+  },
+  {
+    "x": 287,
+    "y": 36
+  }
+],
+  rooms: [
+  {
+    "id": "cv-raman-ground-gents-toilet",
+    "name": "GENTS TOILET",
+    "label": "GENTS TOILET",
+    "type": "utility",
+    "x": -577,
+    "y": 691,
+    "w": 236,
+    "h": 70,
+    "width": 236,
+    "height": 70,
+    "directions": "Left side along top corridor.",
+    "description": "Gents washroom facilities",
+    "image": "https://placehold.co/600x400?text=Gents+Toilet",
+    "tags": [
+      "toilet",
+      "washroom",
+      "utility"
+    ],
+    "clickable": true
+  },
+  {
+    "id": "cv-raman-ground-ladies-toilet",
+    "name": "LADIES ROOM",
+    "label": "LADIES ROOM",
+    "type": "utility",
+    "x": 1420,
+    "y": 552,
+    "w": 265,
+    "h": 66,
+    "width": 265,
+    "height": 66,
+    "directions": "Left side along top corridor.",
+    "description": "Ladies washroom facilities",
+    "image": "https://placehold.co/600x400?text=Ladies+Room",
+    "tags": [
+      "toilet",
+      "washroom",
+      "utility"
+    ],
+    "clickable": true
+  },
+  {
+    "id": "cv-raman-ground-lc01",
+    "name": "LC-01",
+    "label": "LC-01",
+    "type": "classroom",
+    "x": -178,
+    "y": 686,
+    "w": 153,
+    "h": 79,
+    "width": 153,
+    "height": 79,
+    "directions": "Top corridor, next to Gents Toilet.",
+    "description": "Classroom LC-01",
+    "image": "${IMG_BASE_URL}/cv-raman-block-images/ground-floor/lc01.png",
+    "tags": [
+      "classroom",
+      "lc01",
+      "computer"
+    ],
+    "clickable": true
+  },
+  {
+    "id": "cv-raman-ground-watchman",
+    "name": "WATCHMAN CABIN",
+    "label": "WATCHMAN CABIN",
+    "type": "office",
+    "x": 211,
+    "y": 583,
+    "w": 214,
+    "h": 66,
+    "width": 214,
+    "height": 66,
+    "directions": "Top corridor slant corner.",
+    "description": "Watchman and Security desk",
+    "image": "https://placehold.co/600x400?text=Watchman+Cabin",
+    "tags": [
+      "office",
+      "security",
+      "watchman"
+    ],
+    "clickable": true
+  },
+  {
+    "id": "cv-raman-ground-lift",
+    "name": "LIFT",
+    "label": "LIFT",
+    "type": "utility",
+    "x": 576,
+    "y": 473,
+    "w": 120,
+    "h": 160,
+    "width": 120,
+    "height": 160,
+    "directions": "Middle section, next to stairs.",
+    "description": "Elevator access shaft",
+    "image": "https://placehold.co/600x400?text=Lift",
+    "tags": [
+      "lift",
+      "elevator",
+      "utility"
+    ],
+    "clickable": true
+  },
+  {
+    "id": "cv-raman-ground-lc02",
+    "name": "LC-02",
+    "label": "LC-02",
+    "type": "classroom",
+    "x": 827,
+    "y": 543,
+    "w": 178,
+    "h": 70,
+    "width": 178,
+    "height": 70,
+    "directions": "Right wing, next to Lift lobby.",
+    "description": "Classroom LC-02",
+    "image": "${IMG_BASE_URL}/cv-raman-block-images/ground-floor/lc02.png",
+    "tags": [
+      "classroom",
+      "lc02",
+      "computer"
+    ],
+    "clickable": true
+  },
+  {
+    "id": "cv-raman-ground-narashima-bailkeri",
+    "name": "DR. NARASHIMA BAILKERI (HOD)",
+    "label": "DR. NARASHIMA BAILKERI (HOD)",
+    "type": "hod",
+    "x": -230,
+    "y": 859,
+    "w": 303,
+    "h": 86,
+    "width": 303,
+    "height": 86,
+    "directions": "Bottom-left area, next to Staff Room.",
+    "description": "Office of Dr. Narashima Bailkeri",
+    "image": "${IMG_BASE_URL}/cv-raman-block-images/ground-floor/narashima_bailkeri.png",
+    "tags": [
+      "hod",
+      "faculty",
+      "office"
+    ],
+    "clickable": true
+  },
+  {
+    "id": "cv-raman-ground-xerox",
+    "name": "XEROX CENTER",
+    "label": "XEROX CENTER",
+    "type": "utility",
+    "x": 167,
+    "y": 1307,
+    "w": 141,
+    "h": 102,
+    "width": 141,
+    "height": 102,
+    "directions": "Bottom corridor next to Notice Board.",
+    "description": "Photocopying and printing center",
+    "image": `${IMG_BASE_URL}/cv-raman-block-images/ground-floor/xerox.png`,
+    "tags": [
+      "xerox",
+      "copy",
+      "utility"
+    ],
+    "clickable": true
+  },
+  {
+    "id": "cv-raman-ground-notice-board",
+    "name": "NOTICE BOARD",
+    "label": "NOTICE BOARD",
+    "type": "utility",
+    "x": 328,
+    "y": 1070,
+    "w": 211,
+    "h": 155,
+    "width": 211,
+    "height": 155,
+    "directions": "Bottom corridor next to Xerox.",
+    "description": "Department announcement notice board",
+    "image": "${IMG_BASE_URL}/cv-raman-block-images/ground-floor/notice_board.png",
+    "tags": [
+      "notice",
+      "board",
+      "info"
+    ],
+    "clickable": true
+  },
+  {
+    "id": "cv-raman-ground-stairs-2",
+    "name": "STAIRS-2",
+    "label": "STAIRS-2",
+    "type": "utility",
+    "x": 654,
+    "y": 919,
+    "w": 160,
+    "h": 100,
+    "width": 160,
+    "height": 100,
+    "directions": "Bottom-right wing.",
+    "description": "Staircase access to upper floor",
+    "image": "https://placehold.co/600x400?text=Stairs+2",
+    "tags": [
+      "stairs",
+      "utility"
+    ],
+    "clickable": true
+  },
+  {
+    "id": "cv-raman-ground-stairs-1",
+    "name": "STAIRS-1",
+    "label": "STAIRS-1",
+    "type": "utility",
+    "x": 311,
+    "y": 56,
+    "w": 369,
+    "h": 100,
+    "width": 369,
+    "height": 100,
+    "directions": "Bottom-right wing.",
+    "description": "Staircase access",
+    "image": "https://placehold.co/600x400?text=Stairs+1",
+    "tags": [
+      "stairs",
+      "utility"
+    ],
+    "clickable": true
+  },
+  {
+    "id": "cv-raman-ground-lc04",
+    "name": "LC-04",
+    "label": "LC-04",
+    "type": "classroom",
+    "x": 848,
+    "y": 723,
+    "w": 158,
+    "h": 72,
+    "width": 158,
+    "height": 72,
+    "directions": "Top-right area.",
+    "description": "Classroom LC-04",
+    "image": "${IMG_BASE_URL}/cv-raman-block-images/ground-floor/lc04.png",
+    "tags": [
+      "classroom",
+      "lc04"
+    ],
+    "clickable": true
+  },
+  {
+    "id": "cv-raman-ground-skill-dev",
+    "name": "SKILL DEVELOPMENT LAB",
+    "label": "SKILL DEVELOPMENT LAB",
+    "type": "lab",
+    "x": 1091,
+    "y": 727,
+    "w": 330,
+    "h": 79,
+    "width": 330,
+    "height": 79,
+    "directions": "Bottom-right end, next to ISL09.",
+    "description": "Skill Development & Training Lab",
+    "image": "${IMG_BASE_URL}/cv-raman-block-images/ground-floor/skill_dev.png",
+    "tags": [
+      "lab",
+      "skill",
+      "training"
+    ],
+    "clickable": true
+  },
+  {
+    "id": "cv-raman-ground-isl09",
+    "name": "ISL09 (LAB)",
+    "label": "ISL09 (LAB)",
+    "type": "lab",
+    "x": 1445,
+    "y": 736,
+    "w": 191,
+    "h": 70,
+    "width": 191,
+    "height": 70,
+    "directions": "Bottom-right corner.",
+    "description": "Information Science Lab 09",
+    "image": "${IMG_BASE_URL}/cv-raman-block-images/ground-floor/skill_dev.png",
+    "tags": [
+      "lab",
+      "isl09",
+      "ise"
+    ],
+    "clickable": true
+  },
+  {
+    "id": "cv-raman-ground-connect-apj",
+    "name": "APJ BLOCK CONNECTION",
+    "label": "APJ BLOCK CONNECTION",
+    "type": "corridor",
+    "x": 800,
+    "y": 960,
+    "w": 400,
+    "h": 60,
+    "width": 400,
+    "height": 60,
+    "directions": "Bottom-right corridor leading out of CV Raman Block.",
+    "description": "Connecting corridor to APJ Block",
+    "image": "https://placehold.co/600x400?text=APJ+Connection",
+    "tags": [
+      "corridor",
+      "transition"
+    ],
+    "clickable": false
+  },
+  {
+    "id": "cv-raman-ground-entrance",
+    "name": "MAIN ENTRANCE",
+    "label": "MAIN ENTRANCE",
+    "type": "lobby",
+    "x": -101,
+    "y": 1347,
+    "w": 192,
+    "h": 104,
+    "width": 192,
+    "height": 104,
+    "directions": "Bottom-center entrance doors.",
+    "description": "Ground floor main entrance lobby",
+    "image": "https://placehold.co/600x400?text=Main+Entrance",
+    "tags": [
+      "entrance",
+      "lobby"
+    ],
+    "clickable": true
+  }
+],
+  faculty: [
+  {
+    "department": "Mechanical Engineering",
+    "roomId": "cv-raman-ground-narashima-bailkeri",
+    "image": "${IMG_BASE_URL}/cv-raman-block-images/ground-floor/narashima_bailkeri.png",
+    "name": "Dr. Narashima Bailkeri"
+  }
+],
+}

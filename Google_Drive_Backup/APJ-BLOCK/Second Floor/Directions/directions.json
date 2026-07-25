@@ -1,0 +1,130 @@
+{
+  "buildingName": "APJ-BLOCK",
+  "floorLabel": "Second Floor",
+  "floorId": "second",
+  "lastUpdated": "2026-07-25T14:03:06.038Z",
+  "directions": {
+    "lh-211": "Top left corner area.",
+    "staff-room-top": "Top center area.",
+    "staff-room-sub-1": "Top center, left sub-section.",
+    "staff-room-sub-2": "Top center, right sub-section.",
+    "staff-room-lower": "Lower center area near research labs.",
+    "lh-212": "Top right corner area.",
+    "btl09": "Left side, upper middle.",
+    "washroom-2": "Left side middle.",
+    "hod-cabin-bt": "Left side middle.",
+    "staff-room-middle": "Left side, middle between HOD and BTL08.",
+    "btl08": "Left side, lower middle.",
+    "btl07": "Bottom left area.",
+    "btl10": "Bottom center left area.",
+    "stairs-1": "Center area.",
+    "lift-2": "Center area.",
+    "stairs-2": "Bottom center area.",
+    "lh-210": "Middle right area.",
+    "btl11": "Lower right area.",
+    "metrology-lab": "Bottom right area.",
+    "apj-second-ramanujan-path": "Connecting corridor/bridge on the bottom right leading to Ramanujan Block."
+  },
+  "detailedDirections": [
+    {
+      "roomId": "lh-211",
+      "roomName": "LH-211",
+      "directions": "Top left corner area."
+    },
+    {
+      "roomId": "staff-room-top",
+      "roomName": "STAFF ROOM",
+      "directions": "Top center area."
+    },
+    {
+      "roomId": "staff-room-sub-1",
+      "roomName": "STAFF ROOM",
+      "directions": "Top center, left sub-section."
+    },
+    {
+      "roomId": "staff-room-sub-2",
+      "roomName": "STAFF ROOM",
+      "directions": "Top center, right sub-section."
+    },
+    {
+      "roomId": "staff-room-lower",
+      "roomName": "STAFF ROOM",
+      "directions": "Lower center area near research labs."
+    },
+    {
+      "roomId": "lh-212",
+      "roomName": "LH-212",
+      "directions": "Top right corner area."
+    },
+    {
+      "roomId": "btl09",
+      "roomName": "BTL09",
+      "directions": "Left side, upper middle."
+    },
+    {
+      "roomId": "washroom-2",
+      "roomName": "WASHROOM",
+      "directions": "Left side middle."
+    },
+    {
+      "roomId": "hod-cabin-bt",
+      "roomName": "BT HOD",
+      "directions": "Left side middle."
+    },
+    {
+      "roomId": "staff-room-middle",
+      "roomName": "STAFF ROOM",
+      "directions": "Left side, middle between HOD and BTL08."
+    },
+    {
+      "roomId": "btl08",
+      "roomName": "BTL08",
+      "directions": "Left side, lower middle."
+    },
+    {
+      "roomId": "btl07",
+      "roomName": "BTL07",
+      "directions": "Bottom left area."
+    },
+    {
+      "roomId": "btl10",
+      "roomName": "BTL10",
+      "directions": "Bottom center left area."
+    },
+    {
+      "roomId": "stairs-1",
+      "roomName": "STAIRS-1",
+      "directions": "Center area."
+    },
+    {
+      "roomId": "lift-2",
+      "roomName": "LIFT",
+      "directions": "Center area."
+    },
+    {
+      "roomId": "stairs-2",
+      "roomName": "STAIRS-2",
+      "directions": "Bottom center area."
+    },
+    {
+      "roomId": "lh-210",
+      "roomName": "LH-210",
+      "directions": "Middle right area."
+    },
+    {
+      "roomId": "btl11",
+      "roomName": "BTL11",
+      "directions": "Lower right area."
+    },
+    {
+      "roomId": "metrology-lab",
+      "roomName": "METROLOGY LAB",
+      "directions": "Bottom right area."
+    },
+    {
+      "roomId": "apj-second-ramanujan-path",
+      "roomName": "connection to ramanujan-block(second floor)",
+      "directions": "Connecting corridor/bridge on the bottom right leading to Ramanujan Block."
+    }
+  ]
+}

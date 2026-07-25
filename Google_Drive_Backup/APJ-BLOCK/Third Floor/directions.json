@@ -1,0 +1,136 @@
+{
+  "buildingName": "APJ-BLOCK",
+  "floorLabel": "Third Floor",
+  "floorId": "third",
+  "lastUpdated": "2026-07-25T14:03:51.871Z",
+  "directions": {
+    "lh-311": "i. Stairs-1: Turn left and walk to the top of the corridor; LH-311 is on your left, LH-312 is on the opposite side.\nii. Stairs-2: Walk straight north all the way to the top; LH-311 is on your left at the far end.\niii. LIFT: Turn left and walk north to the top of the corridor; LH-311 is on your left.",
+    "staff-room-top": "Top center area.",
+    "lh-312": "i. Stairs-1: Turn left and walk to the top of the corridor; LH-312 is on your right, LH-311 is on the opposite side.\nii. Stairs-2: Walk straight north all the way to the top; LH-312 is on your right at the far end.\niii. LIFT: Turn left and walk north to the top; LH-312 is on your right.",
+    "staff-room-mid-1": "Middle section center.",
+    "staff-room-mid-2": "Middle section center.",
+    "lh-309": "i. Stairs-1: Turn left and walk north a short distance; LH-309 is on your left, just below LH-311.\nii. Stairs-2: Walk straight north; LH-309 is on your left in the upper-middle section of the corridor.\niii. LIFT: Turn left and walk north; LH-309 is on your left, a few steps up from the Lift.",
+    "lh-310": "i. Stairs-1: Turn right; LH-310 is immediately on your right just outside the Stairs-1 exit.\nii. Stairs-2: Walk north and then turn right at the mid-floor corridor; LH-310 is on your right.\niii. LIFT: Turn right; LH-310 is directly to your right, adjacent to the Lift on the east side.",
+    "washroom-3": "Left side middle.",
+    "stairs-top-3": "Center area.",
+    "ladies-common-room": "i. Stairs-1: Turn left; the Ladies Room is on your left, directly below the Washroom near the Stairs-1 exit.\nii. Stairs-2: Walk north; the Ladies Room is on your left just above the mid-floor level, below the Washroom.\niii. LIFT: Turn left; the Ladies Room is on your left, directly beside the Lift on the west side.",
+    "lift-3": "Center area.",
+    "lh-308": "i. Stairs-1: Turn right and walk south a short distance; LH-308 is on your right, below LH-310.\nii. Stairs-2: Walk north and turn right; LH-308 is on your right in the mid-east section of the floor.\niii. LIFT: Turn right and walk south slightly; LH-308 is on your right just below the Lift level.",
+    "ec-staff-room-1": "Top center area.",
+    "ec-staff-room-2": "Lower left area.",
+    "staff-room-bot-1": "Lower center area.",
+    "staff-room-bot-2": "Lower center area.",
+    "lh-306": "i. Stairs-1: Turn right and walk south past LH-308; LH-306 is further down on your right in the lower-east section.\nii. Stairs-2: Turn left and walk north slightly; LH-306 is on your right on the east side, near the south end.\niii. LIFT: Turn right and walk south past LH-308; LH-306 is on your right further south.",
+    "texas-instruments": "i. Stairs-1: Turn left and walk south past the Lift and Ladies Room; the lab is on your left in the lower section, above Stairs-2.\nii. Stairs-2: Turn right; the lab is immediately on your left, just above Stairs-2.\niii. LIFT: Turn left and walk south; the lab is on your left near the bottom of the floor, just above Stairs-2.",
+    "staff-room-bottom-center": "Bottom center area.",
+    "stairs-bottom-3": "Bottom center area.",
+    "apj-third-way-ramanujan": "Connecting corridor/bridge on the bottom right leading to Ramanujan Block."
+  },
+  "detailedDirections": [
+    {
+      "roomId": "lh-311",
+      "roomName": "LH-311",
+      "directions": "i. Stairs-1: Turn left and walk to the top of the corridor; LH-311 is on your left, LH-312 is on the opposite side.\nii. Stairs-2: Walk straight north all the way to the top; LH-311 is on your left at the far end.\niii. LIFT: Turn left and walk north to the top of the corridor; LH-311 is on your left."
+    },
+    {
+      "roomId": "staff-room-top",
+      "roomName": "STAFF ROOM",
+      "directions": "Top center area."
+    },
+    {
+      "roomId": "lh-312",
+      "roomName": "LH-312",
+      "directions": "i. Stairs-1: Turn left and walk to the top of the corridor; LH-312 is on your right, LH-311 is on the opposite side.\nii. Stairs-2: Walk straight north all the way to the top; LH-312 is on your right at the far end.\niii. LIFT: Turn left and walk north to the top; LH-312 is on your right."
+    },
+    {
+      "roomId": "staff-room-mid-1",
+      "roomName": "STAFF ROOM",
+      "directions": "Middle section center."
+    },
+    {
+      "roomId": "staff-room-mid-2",
+      "roomName": "STAFF ROOM",
+      "directions": "Middle section center."
+    },
+    {
+      "roomId": "lh-309",
+      "roomName": "LH-309",
+      "directions": "i. Stairs-1: Turn left and walk north a short distance; LH-309 is on your left, just below LH-311.\nii. Stairs-2: Walk straight north; LH-309 is on your left in the upper-middle section of the corridor.\niii. LIFT: Turn left and walk north; LH-309 is on your left, a few steps up from the Lift."
+    },
+    {
+      "roomId": "lh-310",
+      "roomName": "LH-310",
+      "directions": "i. Stairs-1: Turn right; LH-310 is immediately on your right just outside the Stairs-1 exit.\nii. Stairs-2: Walk north and then turn right at the mid-floor corridor; LH-310 is on your right.\niii. LIFT: Turn right; LH-310 is directly to your right, adjacent to the Lift on the east side."
+    },
+    {
+      "roomId": "washroom-3",
+      "roomName": "WASHROOM",
+      "directions": "Left side middle."
+    },
+    {
+      "roomId": "stairs-top-3",
+      "roomName": "STAIRS-1",
+      "directions": "Center area."
+    },
+    {
+      "roomId": "ladies-common-room",
+      "roomName": "LADIES COMMON ROOM",
+      "directions": "i. Stairs-1: Turn left; the Ladies Room is on your left, directly below the Washroom near the Stairs-1 exit.\nii. Stairs-2: Walk north; the Ladies Room is on your left just above the mid-floor level, below the Washroom.\niii. LIFT: Turn left; the Ladies Room is on your left, directly beside the Lift on the west side."
+    },
+    {
+      "roomId": "lift-3",
+      "roomName": "LIFT",
+      "directions": "Center area."
+    },
+    {
+      "roomId": "lh-308",
+      "roomName": "LH-308",
+      "directions": "i. Stairs-1: Turn right and walk south a short distance; LH-308 is on your right, below LH-310.\nii. Stairs-2: Walk north and turn right; LH-308 is on your right in the mid-east section of the floor.\niii. LIFT: Turn right and walk south slightly; LH-308 is on your right just below the Lift level."
+    },
+    {
+      "roomId": "ec-staff-room-1",
+      "roomName": "E&C STAFF ROOM",
+      "directions": "Top center area."
+    },
+    {
+      "roomId": "ec-staff-room-2",
+      "roomName": "E&C STAFF ROOM",
+      "directions": "Lower left area."
+    },
+    {
+      "roomId": "staff-room-bot-1",
+      "roomName": "STAFF ROOM",
+      "directions": "Lower center area."
+    },
+    {
+      "roomId": "staff-room-bot-2",
+      "roomName": "STAFF ROOM",
+      "directions": "Lower center area."
+    },
+    {
+      "roomId": "lh-306",
+      "roomName": "LH-306",
+      "directions": "i. Stairs-1: Turn right and walk south past LH-308; LH-306 is further down on your right in the lower-east section.\nii. Stairs-2: Turn left and walk north slightly; LH-306 is on your right on the east side, near the south end.\niii. LIFT: Turn right and walk south past LH-308; LH-306 is on your right further south."
+    },
+    {
+      "roomId": "texas-instruments",
+      "roomName": "TEXAS INSTRUMENTS",
+      "directions": "i. Stairs-1: Turn left and walk south past the Lift and Ladies Room; the lab is on your left in the lower section, above Stairs-2.\nii. Stairs-2: Turn right; the lab is immediately on your left, just above Stairs-2.\niii. LIFT: Turn left and walk south; the lab is on your left near the bottom of the floor, just above Stairs-2."
+    },
+    {
+      "roomId": "staff-room-bottom-center",
+      "roomName": "STAFF ROOM",
+      "directions": "Bottom center area."
+    },
+    {
+      "roomId": "stairs-bottom-3",
+      "roomName": "STAIRS-2",
+      "directions": "Bottom center area."
+    },
+    {
+      "roomId": "apj-third-way-ramanujan",
+      "roomName": "CONNECTION TO RAMANUJAN BLOCK",
+      "directions": "Connecting corridor/bridge on the bottom right leading to Ramanujan Block."
+    }
+  ]
+}

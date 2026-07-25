@@ -1,0 +1,40 @@
+========================================================
+DIRECTIONS FOR CV-RAMAN BLOCK - BASEMENT FLOOR
+========================================================
+
+1. HOUSE KEEPING SECTION (ID: cv-raman-basement-housekeeping)
+   Directions: Top left corner along the main corridor.
+
+2. MEL05 (LAB) (ID: cv-raman-basement-mel05)
+   Directions: Top corridor, next to House Keeping.
+
+3. NMEDL (ID: cv-raman-basement-nmedl)
+   Directions: Top corridor, between MEL05 and Dynamics Lab.
+
+4. MEL04 (ID: cv-raman-basement-mel04)
+   Directions: Top corridor, left side of Dynamics area.
+
+5. DYNAMIC LABORATORY (ID: cv-raman-basement-dynamics-lab)
+   Directions: Top corridor, right side of Dynamics area.
+
+6. MEL03 (ENERGY CONVERSION) (ID: cv-raman-basement-mel03)
+   Directions: Right corridor wing, slanting down.
+
+7. STAFF TOILET (ID: cv-raman-basement-toilet)
+   Directions: Middle-left area, above the Lift.
+
+8. LIFT (ID: cv-raman-basement-lift)
+   Directions: Middle-left area, below the Staff Toilet.
+
+9. BMTL (ID: cv-raman-basement-bmtl)
+   Directions: Middle-right area, above Basic Material Testing Lab.
+
+10. BASIC MATERIAL TESTING LAB (ID: cv-raman-basement-material-testing)
+   Directions: Middle-right area, directly below BMTL.
+
+11. FLUID MECH & HYDRAULICS LAB (ID: cv-raman-basement-fluid-mech)
+   Directions: Bottom-left area.
+
+12. STAIRS-2 (ID: cv-raman-basement-stairs-2)
+   Directions: Bottom-center area.
+

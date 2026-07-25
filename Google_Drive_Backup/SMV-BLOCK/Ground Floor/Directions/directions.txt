@@ -1,0 +1,67 @@
+========================================================
+DIRECTIONS FOR SMV-BLOCK - GROUND FLOOR
+========================================================
+
+1. GEOTECHNICAL LAB (ID: smv-ground-geotechnical-lab)
+   Directions: Located on the left side of the vertical wing, near the north exit.
+
+2. ENVIRONMENTAL ENGINEERING LAB (ID: smv-ground-environmental-lab)
+   Directions: Located on the left side of the vertical wing, below the Geotechnical Lab.
+
+3. STAIRS-1 (ID: smv-ground-stairs-1)
+   Directions: Located on the right side of the vertical wing, opposite the Environmental Engineering Lab.
+
+4. LIFT (ID: smv-ground-lift-vertical)
+   Directions: Located on the right side of the vertical wing, south of the stairs.
+
+5. FIRE EXIT (ID: smv-ground-fire-exit)
+   Directions: At the very north end of the vertical corridor.
+
+6. LIFT (LOBBY) (ID: smv-ground-lift-horizontal)
+   Directions: Located on the top side of the horizontal wing corridor, near the lobby junction.
+
+7. PG LECTURE HALL 02 (ID: smv-ground-pg-hall-2)
+   Directions: Located on the top side of the horizontal wing corridor, next to the lobby lift.
+
+8. STAFF ROOM 02 (SR02) (ID: smv-ground-sr02)
+   Directions: Located on the top side of the horizontal wing corridor, next to PG Lecture Hall 02.
+
+9. HOD CIVIL OFFICE (ID: smv-ground-hod-office)
+   Directions: Located on the top side of the horizontal wing corridor, next to Staff Room 02.
+
+10. BUILDING EXIT (ID: smv-ground-exit)
+   Directions: Located on the top side of the horizontal wing corridor, east of HOD Civil Office.
+
+11. MAIN ENTRANCE (ID: smv-ground-main-entrance)
+   Directions: Located at the top of the right vertical wing, above the Building Exit.
+
+12. LADIES & HANDICAPPED WASHROOM (ID: smv-ground-ladies-toilet)
+   Directions: Located at the far east end of the horizontal wing corridor, top side.
+
+13. LECTURE ROOM NC02 (ID: smv-ground-nc02)
+   Directions: Located on the bottom side of the horizontal corridor, next to the Surveying Lab.
+
+14. STAFF ROOM 01 (SR01) (ID: smv-ground-sr01)
+   Directions: Located on the bottom side of the horizontal corridor, next to NC02.
+
+15. DEPARTMENT LIBRARY (ID: smv-ground-dept-library)
+   Directions: Located on the bottom side of the horizontal corridor, next to Staff Room 01.
+
+16. ROOM SMV01 (ID: smv-ground-smv01)
+   Directions: Located on the bottom side of the horizontal corridor, next to the Department Library.
+
+17. REMOTE SENSING & GIS LAB (ID: smv-ground-rs-gis-lab)
+   Directions: Located on the bottom side of the horizontal corridor, next to Room SMV01.
+
+18. LECTURE ROOM NC01 (ID: smv-ground-nc01)
+   Directions: Located on the bottom side of the horizontal corridor, next to the RS & GIS Lab.
+
+19. GENTS WASHROOM (ID: smv-ground-gents-toilet)
+   Directions: Located at the far east end of the horizontal wing corridor, bottom side.
+
+20. VERTICAL CORRIDOR (ID: smv-ground-vertical-corridor)
+   Directions: Main corridor running north-south along the vertical wing.
+
+21. HORIZONTAL CORRIDOR (ID: smv-ground-horizontal-corridor)
+   Directions: Main corridor running east-west along the horizontal wing.
+

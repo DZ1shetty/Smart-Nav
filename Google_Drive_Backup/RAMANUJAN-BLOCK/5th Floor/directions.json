@@ -1,0 +1,16 @@
+{
+  "buildingName": "RAMANUJAN-BLOCK",
+  "floorLabel": "5th Floor",
+  "floorId": "ramanujan_fifth",
+  "lastUpdated": "2026-07-25T14:02:01.947Z",
+  "directions": {
+    "ramanujan-fifth-setup": "Centrally located on the floor."
+  },
+  "detailedDirections": [
+    {
+      "roomId": "ramanujan-fifth-setup",
+      "roomName": "SETUP IN PROGRESS",
+      "directions": "Centrally located on the floor."
+    }
+  ]
+}

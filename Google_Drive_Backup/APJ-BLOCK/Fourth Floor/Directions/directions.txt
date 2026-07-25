@@ -1,0 +1,111 @@
+========================================================
+DIRECTIONS FOR APJ-BLOCK - FOURTH FLOOR
+========================================================
+
+1. STAFF ROOM (ID: staff-room-top-left)
+   Directions: i. Stairs-1: Turn right, cross the center area to the left side of the building, then turn right and walk to the very top.
+ii. Stairs-2: Turn left towards the left side of the building, turn right and walk all the way up.
+iii. LIFT: Turn left to the left wall, then turn right and walk all the way up.
+
+2. CSL 06 (ID: csl-06)
+   Directions: i. Stairs-1: Turn right, cross over to the left side of the floor, turn right and walk past CSL 05.
+ii. Stairs-2: Turn left towards the left hallway, turn right and walk straight up past the Washroom.
+iii. LIFT: Turn left to the left hallway, turn right and walk past CSL 05.
+
+3. CSL 05 (ID: csl-05)
+   Directions: i. Stairs-1: Turn right, cross over to the left area, turn right and it will be on your left.
+ii. Stairs-2: Turn left to the left side, turn right and walk past the Washroom.
+iii. LIFT: Turn left across the hall, then turn right and it is immediately there.
+
+4. WASHROOM (ID: washroom-4)
+   Directions: i. Stairs-1: Turn right and cross straight into the middle intersection, it is right there.
+ii. Stairs-2: Turn left to the left hallway, turn right and walk past the HOD Cabin.
+iii. LIFT: Turn left and walk straight, the washroom is exactly in front of you.
+
+5. CSE HOD (ID: cse-hod-cabin)
+   Directions: i. Stairs-1: Turn right, walk towards the Washroom, then turn left.
+ii. Stairs-2: Turn left to the left hallway, turn right and walk past CSL 03.
+iii. LIFT: Turn left, walk straight, and it is immediately on your right.
+
+6. CSL 03 (ID: csl-03)
+   Directions: i. Stairs-1: Turn right, cross towards the left side, turn left and walk past the HOD Cabin.
+ii. Stairs-2: Turn left to the left hallway, and turn right to walk past CSL 04.
+iii. LIFT: Turn left to the left side, then turn left to walk past the HOD Cabin.
+
+7. CSL 04 (ID: csl-04)
+   Directions: i. Stairs-1: Turn right, cross to the left side, turn left and walk all the way down past CSL 03.
+ii. Stairs-2: Turn left to the left side, and it is the first room on your left.
+iii. LIFT: Turn left to the left side, turn left and walk to the very end.
+
+8. ISL 04 (ID: isl-04)
+   Directions: i. Stairs-1: Turn right, cross to the left side, turn left and walk to the very end.
+ii. Stairs-2: Turn left, and it is immediately there straight ahead on your left.
+iii. LIFT: Turn left to the left side, turn left and walk to the very end.
+
+9. CSL 07 (ID: csl-07)
+   Directions: i. Stairs-1: Turn left and walk straight ahead to the very end.
+ii. Stairs-2: Walk straight ahead along the right side of the building all the way to the top.
+iii. LIFT: Turn right, and walk straight all the way to the top.
+
+10. ISL 03 (ID: isl-03)
+   Directions: i. Stairs-1: Turn left and walk up past ISL 02.
+ii. Stairs-2: Walk straight ahead along the right side passing the middle area.
+iii. LIFT: Turn right, then turn left and walk past ISL 02.
+
+11. ISL 02 (ID: isl-02)
+   Directions: i. Stairs-1: Turn left, and it is the very first room on your right.
+ii. Stairs-2: Walk straight ahead along the right side, just past the middle intersection.
+iii. LIFT: Turn right, then turn left. It is immediately on your right.
+
+12. ISL 01 (ID: isl-01)
+   Directions: i. Stairs-1: Turn right and walk down past the Server Room.
+ii. Stairs-2: Walk straight ahead past CSL 02.
+iii. LIFT: Turn right, then turn right and walk down. It is on your left.
+
+13. CSL 02 (ID: csl-02)
+   Directions: i. Stairs-1: Turn right and walk down past ISL 01.
+ii. Stairs-2: Walk straight ahead. It is the first room on your right.
+iii. LIFT: Turn right, then turn right and walk down past ISL 01.
+
+14. CSL 01 (ID: csl-01)
+   Directions: i. Stairs-1: Turn right and walk all the way straight down to the end.
+ii. Stairs-2: Turn right, and it is immediately there on your right.
+iii. LIFT: Turn right, then turn right and walk all the way down to the end.
+
+15. STAFF ROOM (ID: staff-room-top-center)
+   Directions: i. Stairs-1: Walk forward and turn left, go all the way to the top wall, then turn left again.
+ii. Stairs-2: Walk straight ahead through the entire building to the top wall, then turn left.
+iii. LIFT: Turn right, walk all the way to the top, then turn left.
+
+16. STAFF ROOM (ID: staff-room-mid-left)
+   Directions: i. Stairs-1: Turn right, cross to the left hallway, turn right to go up. It is on your right.
+ii. Stairs-2: Turn left to the left hallway, turn right and walk past the Washroom. It is on your right.
+iii. LIFT: Turn left to the left hallway, turn right to go up. It is on your right.
+
+17. STAFF ROOM (ID: staff-room-mid-right)
+   Directions: i. Stairs-1: Turn left and walk slightly up. It is on your left.
+ii. Stairs-2: Walk straight ahead along the right hallway past the middle intersection. It is on your left.
+iii. LIFT: Turn right to the right hallway, turn left to go up. It is on your left.
+
+18. STAIRS-1 (ID: stairs-top-4)
+   Directions: Exit to your right into the hallway.
+
+19. LIFT (ID: lift-4)
+   Directions: Exit straight forward into the center intersection.
+
+20. UPS ROOM (ID: ups-room)
+   Directions: i. Stairs-1: Turn right, cross to the left hallway, turn left to walk down. It is on your left.
+ii. Stairs-2: Turn left to the left hallway, turn right to walk up. It is on your right.
+iii. LIFT: Turn left to the left hallway, turn left to walk down. It is on your left.
+
+21. SERVER ROOM (ID: server-room)
+   Directions: i. Stairs-1: Turn right to walk down the hallway. It is on your right.
+ii. Stairs-2: Walk straight ahead along the right hallway, and it is on your left.
+iii. LIFT: Turn right to the right hallway, turn right to walk down. It is on your right.
+
+22. STAIRS-2 (ID: stairs-bottom-4)
+   Directions: Exit straight forward into the bottom corridor.
+
+23. CONNECTION TO RAMANUJAN BLOCK(FOURTH FLOOR) (ID: apj-fourth-way-ramanujan)
+   Directions: Right exit bridge connecting to the 4th floor of Ramanujan Block.
+

@@ -1,0 +1,43 @@
+========================================================
+DIRECTIONS FOR V . RAJRAMAN-BLOCK - 1ST FLOOR
+========================================================
+
+1. LIFT (ID: rajraman-first-lift)
+   Directions: Elevator access located next to the Robotics Club.
+
+2. Robotics Club (ID: rajraman-first-robotics-club)
+   Directions: Located at the bottom horizontal corridor next to the Lift.
+
+3. STAIRS-2 (ID: rajraman-first-stairs-2)
+   Directions: Located at the bottom of the right corridor.
+
+4. STAFF ROOM (ID: rajraman-first-sr1)
+   Directions: Located at the bottom corridor to the left of the Lift.
+
+5. STAFF ROOM (ID: rajraman-first-sr2)
+   Directions: Located at the bottom corridor, next to the other Staff Room.
+
+6. LAB 4 (ID: rajraman-first-lab4)
+   Directions: Located on the top side of the central horizontal corridor.
+
+7. LAB 5 (ID: rajraman-first-lab5)
+   Directions: Located next to LAB 4 on the top side of the corridor.
+
+8. LAB 6 (ID: rajraman-first-lab6)
+   Directions: Located on the left side of the top vertical corridor.
+
+9. SERVER/BATTERY ROOM (ID: rajraman-first-sb-room)
+   Directions: Located between LAB 6 and the Gents washroom on the left side.
+
+10. GENTS TOILET (ID: rajraman-first-gents-toilet)
+   Directions: Located above the S/B Room on the left side.
+
+11. STAIRS-1 (ID: rajraman-first-stairs-1)
+   Directions: Located on the left corridor wing.
+
+12. LADIES ROOM (ID: rajraman-first-ladies-toilet)
+   Directions: Located at the top left of the corridor next to the stairs.
+
+13. MCA STAFF ROOM (ID: rajraman-first-mca-sr)
+   Directions: Located at the top left corridor next to the Ladies Toilet.
+

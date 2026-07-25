@@ -1,0 +1,85 @@
+========================================================
+DIRECTIONS FOR RAMANUJAN-BLOCK - 3RD FLOOR
+========================================================
+
+1. CONNECTION TO APJ (3RD FLOOR) (ID: ramanujan-third-way-apj)
+   Directions: Left exit bridge connecting to the 3rd floor of APJ Block.
+
+2. Staff Room (ID: ramanujan-third-dr-sbf-sr)
+   Directions: Along the APJ connecting corridor, near the bridge.
+
+3. Staff Room (ID: ramanujan-third-sr-top)
+   Directions: Along the APJ connecting corridor, next to Dr. SBF Staff Room.
+
+4. ECL07 (ID: ramanujan-third-ecl07)
+   Directions: Located in the left bulge area, top-left corner.
+
+5. ECL05 (ID: ramanujan-third-ecl05)
+   Directions: Located in the left bulge area, next to ECL 07.
+
+6. ECL06 (ID: ramanujan-third-ecl06)
+   Directions: Along the APJ connecting corridor, opposite ECL 05.
+
+7. STAIRS-1 (ID: ramanujan-third-stairs-1)
+   Directions: West side stairs.
+
+8. Staff Room (ID: ramanujan-third-dr-sbb-sr)
+   Directions: Along the top corridor, next to EC Seminar Room.
+
+9. Staff Room (ID: ramanujan-third-mr-mk-sr)
+   Directions: Along the top corridor, next to Dr. SBB Staff Cabin.
+
+10. E&C DEPT. OFFICE / HOD (ID: ramanujan-third-dr-vds-hod)
+   Directions: Beside the West stairs in the bottom corridor.
+
+11. ECL03 (ID: ramanujan-third-ecl03)
+   Directions: Along the top corridor, next to Mr. MK Staff Cabin.
+
+12. ECL02 (ID: ramanujan-third-ecl02)
+   Directions: Beside the E&C HOD cabin in the bottom corridor.
+
+13. ECL04 (ID: ramanujan-third-ecl04)
+   Directions: Along the top corridor, next to ECL 03.
+
+14. COMMUNICATION & MICROWAVE LABORATORY (ID: ramanujan-third-comm-microwave-lab)
+   Directions: Along the top corridor bulge area, next to ECL 04.
+
+15. LH305 (ID: ramanujan-third-lh305)
+   Directions: Along the top corridor, next to the Microwave Lab.
+
+16. LH304 (ID: ramanujan-third-lh304)
+   Directions: Along the top corridor, next to LH 305.
+
+17. LH303 (ID: ramanujan-third-lh303)
+   Directions: Along the top corridor, next to LH 304.
+
+18. GENTS TOILET (ID: ramanujan-third-gents-toilet)
+   Directions: Restroom located along the bottom corridor.
+
+19. LADIES ROOM (ID: ramanujan-third-ladies-toilet)
+   Directions: Restroom located along the bottom corridor next to the gents toilet.
+
+20. LH302 (ID: ramanujan-third-lh302)
+   Directions: Along the bottom corridor, next to the restrooms.
+
+21. Staff Room (ID: ramanujan-third-sr-bottom)
+   Directions: Along the bottom corridor, next to LH 302.
+
+22. LH301 (ID: ramanujan-third-lh301)
+   Directions: Along the bottom corridor, next to Staff Room.
+
+23. ECL01 (ID: ramanujan-third-ecl01)
+   Directions: Along the bottom corridor, next to the Lift.
+
+24. DEPT OF EC (LIBRARY) (ID: ramanujan-third-ec-library)
+   Directions: Along the bottom corridor, next to ECL 01.
+
+25. Staff Room (ID: ramanujan-third-sr-bottom-right)
+   Directions: Along the bottom corridor, next to the E&C Library.
+
+26. LIFT (ID: ramanujan-third-lift)
+   Directions: Elevator block at the bottom-right corridor.
+
+27. STAIRS-2 (ID: ramanujan-third-stairs-2)
+   Directions: Main stairs.
+

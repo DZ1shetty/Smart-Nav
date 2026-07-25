@@ -1,0 +1,40 @@
+========================================================
+DIRECTIONS FOR V . RAJRAMAN-BLOCK - GROUND FLOOR
+========================================================
+
+1. LIFT (ID: rajraman-ground-lift)
+   Directions: Elevator access located next to the main entrance.
+
+2. MAIN ENTRANCE (ID: rajraman-ground-entrance)
+   Directions: Located at the bottom horizontal corridor next to the Lift.
+
+3. STAIRS-2 (ID: rajraman-ground-stairs-2)
+   Directions: Located at the bottom of the left entrance corridor.
+
+4. LAB 1 (ID: rajraman-ground-lab1)
+   Directions: Located on the top side of the central horizontal corridor.
+
+5. LAB 2 (ID: rajraman-ground-lab2)
+   Directions: Located next to LAB 1 on the top side of the corridor.
+
+6. LAB 3 (ID: rajraman-ground-lab3)
+   Directions: Located on the left side of the top vertical corridor.
+
+7. GENTS TOILET (ID: rajraman-ground-gents-toilet)
+   Directions: Located above LAB 3 on the left side of the top corridor.
+
+8. HOD (ID: rajraman-ground-hod)
+   Directions: Located on the right side of the top vertical corridor.
+
+9. STAIRS-1 (ID: rajraman-ground-stairs-1)
+   Directions: Located above HOD on the right side of the top corridor.
+
+10. LADIES ROOM (ID: rajraman-ground-ladies-washroom)
+   Directions: Located at the very top on the right side of the corridor.
+
+11. DEPT OFFICE ROBOTICS (ID: rajraman-ground-office)
+   Directions: Located at the top of the right vertical wing.
+
+12. STAFF ROOM (ID: rajraman-ground-staffroom)
+   Directions: Located in the right vertical wing, below the Department Office.
+

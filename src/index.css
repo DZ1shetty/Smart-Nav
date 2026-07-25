@@ -1,0 +1,468 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #eef3fa;
+    --text-main: #0f172a;
+    --blueprint-dot: #cbd2e1;
+    --blueprint-line: #e5ecf6;
+    --room-bg: #ffffff;
+    --room-corridor: rgba(37, 99, 235, 0.04);
+    --boundary-stroke: rgba(15, 23, 42, 0.85);
+
+    /* BOX LABEL TEXT */
+    --BOX_FONT_SIZE: 14px;
+    --box-font-weight: 900;
+    --box-line-height: 1.1;
+
+    /* COORDINATES TEXT */
+    --coord-font-size: 10px;
+    --coord-font-weight: 400;
+
+    /* FONT FAMILY */
+    --font-main: 'Orbitron', 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  .dark {
+    --bg-main: #0d0d0d;
+    --text-main: #ffffff;
+    --blueprint-dot: #333333;
+    --blueprint-line: #1a1a1a;
+    --room-bg: #121212;
+    --room-corridor: rgba(255, 255, 255, 0.03);
+    --boundary-stroke: rgba(255, 255, 255, 0.35);
+  }
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Monaco', 'Consolas', monospace;
+  margin: 0;
+  overflow-x: hidden;
+  transition:
+    background-color 0.3s ease-in-out,
+    color 0.3s ease-in-out;
+}
+
+.layout-container {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center center;
+}
+
+.blueprint-grid {
+  background-color: var(--bg-main);
+  background-image: radial-gradient(
+    circle,
+    var(--blueprint-dot) 1px,
+    transparent 1px
+  );
+  background-size: 30px 30px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.blueprint-lines {
+  background-color: var(--bg-main);
+  background-image:
+    linear-gradient(to right, var(--blueprint-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--blueprint-line) 1px, transparent 1px);
+  background-size: 40px 40px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+@layer utilities {
+  .text-shadow-glow {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+
+  .animate-shimmer {
+    display: none !important;
+  }
+
+  .animate-scan {
+    animation: scan 8s linear infinite;
+    will-change: transform;
+  }
+
+  .animate-scan-slow {
+    animation: scan 12s linear infinite;
+    will-change: transform;
+  }
+
+  /* UI/UX Pro Max Glassmorphic & Cyber Glow Utilities */
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  }
+
+  .dark .glass-panel {
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .glass-panel-elevated {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08), 0 0 30px rgba(59, 130, 246, 0.08);
+  }
+
+  .dark .glass-panel-elevated {
+    background: rgba(12, 12, 16, 0.85);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(6, 182, 212, 0.1);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .dark .glass-card {
+    background: rgba(30, 41, 59, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .glass-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.25);
+    border-color: rgba(59, 130, 246, 0.4);
+  }
+
+  .dark .glass-card:hover {
+    box-shadow: 0 20px 40px -15px rgba(6, 182, 212, 0.3);
+    border-color: rgba(6, 182, 212, 0.5);
+  }
+
+  .glass-badge {
+    background: rgba(59, 130, 246, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+  }
+
+  .gradient-text-hero {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 35%, #8b5cf6 70%, #d946ef 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .dark .gradient-text-hero {
+    background: linear-gradient(135deg, #38bdf8 0%, #60a5fa 35%, #a855f7 70%, #f43f5e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+}
+
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+/* Custom scrollbar for dark/light theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+.box-label {
+  font-family: var(--font-main) !important;
+  font-size: var(--BOX_FONT_SIZE);
+  font-weight: var(--box-font-weight) !important;
+  line-height: var(--box-line-height) !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  letter-spacing: -0.05em !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 4px !important;
+  height: 100% !important;
+
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  white-space: normal !important;
+  -webkit-text-stroke: 0.8px currentColor !important;
+  paint-order: stroke fill !important;
+}
+
+/* BASEMENT, GROUND, FIRST & SECOND FLOOR EXCEPTION (Scale Correction)
+   APJ Block floors have viewBox of 1280.
+*/
+.floor-basement .box-label,
+.floor-ground .box-label,
+.floor-first .box-label,
+.floor-second .box-label {
+  font-size: 28px;
+}
+
+/* THIRD FLOOR EXCEPTION */
+.floor-third .box-label {
+  font-size: 28px;
+}
+
+/* CV RAMAN EXCEPTION (Set to 27px) */
+.floor-cv_raman_basement .box-label,
+.floor-cv_raman_ground .box-label,
+.floor-cv_raman_first .box-label,
+.floor-cv_raman_second .box-label,
+.floor-cv_raman_third .box-label,
+.floor-cv_raman_fourth .box-label,
+.floor-cv_raman_fifth .box-label {
+  font-size: 27px;
+  font-weight: 1000 !important;
+}
+
+/* SVM/SMV BLOCK EXCEPTION (Scale Correction & Normalized size for all 1280 viewBox floors) */
+.floor-svm_ground .box-label,
+.floor-svm_first .box-label,
+.floor-svm_second .box-label,
+.floor-svm_third .box-label,
+.floor-svm_fourth .box-label,
+.floor-svm_fifth .box-label,
+.floor-svm_sixth .box-label,
+.floor-smv_ground .box-label,
+.floor-smv_first .box-label,
+.floor-smv_second .box-label,
+.floor-smv_third .box-label,
+.floor-smv_fourth .box-label,
+.floor-smv_fifth .box-label,
+.floor-smv_sixth .box-label,
+/* V. RAJRAMAN BLOCK EXCEPTION (Scale Correction & Normalized size for all 1280 viewBox floors) */
+.floor-rajraman_basement .box-label,
+.floor-rajraman_ground .box-label,
+.floor-rajraman_first .box-label,
+.floor-rajraman_second .box-label,
+.floor-rajraman_third .box-label,
+.floor-rajraman_fourth .box-label,
+.floor-rajraman_fifth .box-label {
+  font-size: 26px;
+  font-weight: 1000 !important;
+}
+
+/* RAMANUJAN BLOCK EXCEPTION (Scale Correction for 3800 viewBox floors to render at ~18px physical screen size) */
+.floor-ramanujan_ground .box-label,
+.floor-ramanujan_first .box-label,
+.floor-ramanujan_second .box-label,
+.floor-ramanujan_third .box-label,
+.floor-ramanujan_fourth .box-label {
+  font-size: 54px;
+  font-weight: 1000 !important;
+}
+
+/* ATAL BLOCK EXCEPTION (Scale Correction for 4400 viewBox floors to render at ~18px physical screen size) */
+.floor-atal_ground .box-label,
+.floor-atal_first .box-label,
+.floor-atal_second .box-label,
+.floor-atal_third .box-label {
+  font-size: 62px;
+  font-weight: 1000 !important;
+}
+
+/* FOURTH & FIFTH FLOOR */
+.floor-fourth .box-label,
+.floor-fifth .box-label {
+  font-size: 28px;
+}
+
+.coord-label {
+  font-family: var(--font-mono);
+  font-size: var(--coord-font-size);
+  font-weight: 700;
+
+  color: #00eaff;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 234, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+  position: absolute;
+  top: -24px;
+  left: 0;
+
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* COORDINATE LABEL SCALING (Physical 10px target) */
+.floor-ground .coord-label,
+.floor-first .coord-label,
+.floor-second .coord-label {
+  font-size: 26px !important;
+  top: -48px !important;
+  padding: 5px 12px !important;
+  border-radius: 8px !important;
+  border-width: 2px !important;
+}
+
+.floor-third .coord-label {
+  font-size: 22px !important;
+  top: -42px !important;
+  padding: 4px 10px !important;
+  border-radius: 6px !important;
+  border-width: 1.5px !important;
+}
+
+.floor-fourth .coord-label,
+.floor-fifth .coord-label {
+  font-size: 26px !important;
+  top: -48px !important;
+  padding: 5px 12px !important;
+  border-radius: 8px !important;
+  border-width: 2px !important;
+}
+
+.floor-cv_raman_basement .coord-label {
+  font-size: 32px !important;
+  top: -60px !important;
+  padding: 8px 16px !important;
+  border-radius: 10px !important;
+  border-width: 3px !important;
+}
+
+.floor-cv_raman_ground .coord-label,
+.floor-cv_raman_first .coord-label,
+.floor-cv_raman_second .coord-label,
+.floor-cv_raman_third .coord-label,
+.floor-cv_raman_fourth .coord-label,
+.floor-cv_raman_fifth .coord-label,
+.floor-svm_ground .coord-label,
+.floor-svm_first .coord-label,
+.floor-svm_second .coord-label,
+.floor-svm_third .coord-label,
+.floor-svm_fourth .coord-label,
+.floor-svm_fifth .coord-label,
+.floor-svm_sixth .coord-label,
+.floor-smv_ground .coord-label,
+.floor-smv_first .coord-label,
+.floor-smv_second .coord-label,
+.floor-smv_third .coord-label,
+.floor-smv_fourth .coord-label,
+.floor-smv_fifth .coord-label,
+.floor-smv_sixth .coord-label,
+/* V. RAJRAMAN BLOCK COORDINATE LABELS */
+.floor-rajraman_basement .coord-label,
+.floor-rajraman_ground .coord-label,
+.floor-rajraman_first .coord-label,
+.floor-rajraman_second .coord-label,
+.floor-rajraman_third .coord-label,
+.floor-rajraman_fourth .coord-label,
+.floor-rajraman_fifth .coord-label {
+  font-size: 24px !important;
+  top: -46px !important;
+  padding: 4px 10px !important;
+  border-radius: 7px !important;
+}
+
+/* RAMANUJAN BLOCK COORDINATE LABELS */
+.floor-ramanujan_ground .coord-label,
+.floor-ramanujan_first .coord-label,
+.floor-ramanujan_second .coord-label,
+.floor-ramanujan_third .coord-label,
+.floor-ramanujan_fourth .coord-label {
+  font-size: 55px !important;
+  top: -95px !important;
+  padding: 8px 20px !important;
+  border-radius: 14px !important;
+  border-width: 3px !important;
+}
+
+/* Premium Holographic & Shimmer Animations */
+@keyframes shimmer-loader {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer-fast {
+  animation: shimmer-loader 2s infinite linear;
+  background-size: 200% 100%;
+}
+
+@keyframes laser-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Custom overlay theme transitions are handled in ThemeContext.jsx */
+
+/* Hide Chatbot Widget in Blueprint Mode */
+.blueprint-mode-active .fixed.right-0.top-\[60\%\] {
+  display: none !important;
+}
+.blueprint-mode-active .fixed.bottom-24.right-6 {
+  display: none !important;
+}
+
+
+
+
+

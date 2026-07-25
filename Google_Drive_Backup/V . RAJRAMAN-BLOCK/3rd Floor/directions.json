@@ -1,0 +1,28 @@
+{
+  "buildingName": "V . RAJRAMAN-BLOCK",
+  "floorLabel": "3rd Floor",
+  "floorId": "rajraman_third",
+  "lastUpdated": "2026-07-25T14:02:00.761Z",
+  "directions": {
+    "rajraman-third-stairs-2": "Located at the bottom of the main corridor.",
+    "rajraman-third-vayurvya-aero-club": "Located at the very top end of the main corridor.",
+    "rajraman-third-mca-rl2": "Located on the left side of the main corridor."
+  },
+  "detailedDirections": [
+    {
+      "roomId": "rajraman-third-stairs-2",
+      "roomName": "STAIRS-2",
+      "directions": "Located at the bottom of the main corridor."
+    },
+    {
+      "roomId": "rajraman-third-vayurvya-aero-club",
+      "roomName": "VAYURVYA Aero Club",
+      "directions": "Located at the very top end of the main corridor."
+    },
+    {
+      "roomId": "rajraman-third-mca-rl2",
+      "roomName": "MCA Research Lab-2",
+      "directions": "Located on the left side of the main corridor."
+    }
+  ]
+}

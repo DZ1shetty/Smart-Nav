@@ -1,0 +1,94 @@
+========================================================
+DIRECTIONS FOR RAMANUJAN-BLOCK - 2ND FLOOR
+========================================================
+
+1. Staff Room (ID: ramanujan-second-mrc-add-sr)
+   Directions: Located in the left bulge area, near LH 207.
+
+2. LH207 (ID: ramanujan-second-lh207)
+   Directions: Located in the left bulge area, second from bottom.
+
+3. LH205 (ID: ramanujan-second-lh205)
+   Directions: In the left hallway, next to the bulge area.
+
+4. TECHNO CULTURAL CENTRE (ID: ramanujan-second-techno-cultural)
+   Directions: In the bottom corridor, beside LH 205.
+
+5. STAIRS-1 (ID: ramanujan-second-stairs-1)
+   Directions: West side stairs.
+
+6. DEPT OF MECH (HOD) (ID: ramanujan-second-mech-hod)
+   Directions: Beside the West stairs in the bottom corridor.
+
+7. MECH DEPT OFFICE (ID: ramanujan-second-mech-office)
+   Directions: Beside the Mechanical HOD cabin in the bottom corridor.
+
+8. Staff Room (ID: ramanujan-second-sr-left)
+   Directions: Along the bottom corridor, next to the Mech HOD office.
+
+9. GENTS TOILET (ID: ramanujan-second-gents-toilet)
+   Directions: Restroom located along the bottom corridor.
+
+10. LADIES ROOM (ID: ramanujan-second-ladies-room)
+   Directions: Restroom located along the bottom corridor next to the gents toilet.
+
+11. LH201 (ID: ramanujan-second-lh201)
+   Directions: Along the bottom corridor, next to the restrooms.
+
+12. Staff Room (ID: ramanujan-second-mech-sr)
+   Directions: Along the bottom corridor, next to LH 201.
+
+13. PHALGUNI (ID: ramanujan-second-phalguni)
+   Directions: Along the bottom corridor, next to LH 201.
+
+14. DEPT LIBRARY (ID: ramanujan-second-dept-library)
+   Directions: Along the bottom corridor, next to Phalguni.
+
+15. Staff Room (ID: ramanujan-second-nks-vjs-sr)
+   Directions: Along the corridor, next to the Department Library.
+
+16. LIFT (ID: ramanujan-second-lift)
+   Directions: Elevator block at the bottom-right corridor.
+
+17. CONNECTION TO APJ (2ND FLOOR) (ID: ramanujan-second-way-apj)
+   Directions: Left exit bridge connecting to the 2nd floor of APJ Block.
+
+18. Staff Room (ID: ramanujan-second-ravindra-vs-sr)
+   Directions: Along the APJ connecting corridor, near the bridge.
+
+19. Staff Room (ID: ramanujan-second-nm-rp-rnr-sr)
+   Directions: Along the APJ connecting corridor, near the middle area.
+
+20. LH208 (ID: ramanujan-second-lh208)
+   Directions: Along the top corridor, next to Dr. NM cabin.
+
+21. LH206 (ID: ramanujan-second-lh206)
+   Directions: Along the top corridor, next to LH 208.
+
+22. Staff Room (ID: ramanujan-second-sr-right)
+   Directions: Along the top corridor, next to LH 206.
+
+23. CAD/CAM/CFD LAB (ID: ramanujan-second-cad-cam)
+   Directions: Along the top corridor, next to the Staff Room.
+
+24. RESEARCH LAB (ID: ramanujan-second-research-lab)
+   Directions: Along the top corridor, next to CAD/CAM lab.
+
+25. DEPT OF EC (VLSI LAB) (ID: ramanujan-second-vlsi-lab)
+   Directions: Along the top corridor, next to Research Lab.
+
+26. ARM PROCESSOR LAB (ID: ramanujan-second-arm-processor-lab)
+   Directions: Along the top corridor, next to VLSI Lab.
+
+27. LH204 (ID: ramanujan-second-lh204)
+   Directions: Along the top corridor, next to ARM Processor Lab.
+
+28. MECH DEPT LH (ID: ramanujan-second-mech-dept-lh)
+   Directions: Along the top corridor, next to LH 204.
+
+29. LH202 (ID: ramanujan-second-lh202)
+   Directions: Along the top corridor, next to Mech Dept LH.
+
+30. STAIRS-2 (ID: ramanujan-second-stairs-2)
+   Directions: Main stairs.
+
