@@ -7,7 +7,7 @@
 
 // --- CONFIGURATION SETTINGS ---
 const GITHUB_USER = 'DZ1shetty'
-const GITHUB_REPO = 'Smart_Nav'
+const GITHUB_REPO = 'Smart-Nav'
 const GITHUB_BRANCH = 'main'
 
 const isLocalhost =
