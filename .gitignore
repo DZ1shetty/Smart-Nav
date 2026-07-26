@@ -31,6 +31,7 @@ MJ/
 
 # Scratch / Temp work
 scratch/
+docs/raw_html/
 
 # Local Assets/Backups
 *.bak
