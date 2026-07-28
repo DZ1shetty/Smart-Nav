@@ -29,3 +29,10 @@ jobs:
 
       - name: Test Build Production Bundle
         run: npm run build
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run Playwright E2E Tests
+        run: npm run test:e2e
+

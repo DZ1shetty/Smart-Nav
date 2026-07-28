@@ -49,4 +49,9 @@ docs/raw_html/
 # OS
 .DS_Store
 Thumbs.db
-desktop.ini
+desktop.ini
+
+# Playwright
+/playwright-report/
+/test-results/
+
