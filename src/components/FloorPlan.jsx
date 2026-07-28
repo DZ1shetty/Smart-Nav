@@ -25,7 +25,7 @@ import {
   Search,
 } from 'lucide-react'
 import { puter } from '@heyputer/puter.js'
-import { floorsData } from '../data/floorsData'
+import { floorsData, getFloorDataLoader } from '../data/floorsData'
 import { searchIndex } from '../data/searchIndex'
 import FloorMapSVG from './FloorMapSVG'
 import RoomModal from './RoomModal'
@@ -417,7 +417,7 @@ export default function FloorPlan() {
     const loadData = async () => {
       let resolvedStaticData = null
       try {
-        const loader = floorsData[floorId]
+        const loader = getFloorDataLoader(floorId)
         if (loader) {
           resolvedStaticData = await loader()
           if (isMounted) {
