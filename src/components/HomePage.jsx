@@ -413,11 +413,11 @@ export default function HomePage() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 1.05, filter: 'blur(12px) brightness(1.5)' }}
-      animate={{ opacity: 1, scale: 1, filter: 'blur(0px) brightness(1)' }}
-      exit={{ opacity: 0, scale: 0.95, filter: 'blur(12px) brightness(0.6)' }}
-      transition={{ duration: 0.85, ease: [0.25, 1, 0.5, 1] }}
-      className="relative min-h-screen w-full bg-[var(--bg-main)] text-[var(--text-main)] font-space p-3 md:p-5 lg:p-6 flex flex-col items-center justify-start overflow-y-auto selection:bg-blue-500/30"
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -8 }}
+      transition={{ duration: 0.25, ease: 'easeOut' }}
+      className="relative min-h-screen w-full bg-[var(--bg-main)] text-[var(--text-main)] font-space p-3 md:p-5 lg:p-6 flex flex-col items-center justify-start overflow-y-auto selection:bg-blue-500/30 transform-gpu"
     >
       <Toaster richColors position="top-right" />
       {/* BACKGROUND ELEMENTS */}
@@ -647,7 +647,7 @@ export default function HomePage() {
             >
               {/* Background glow matching the active theme */}
               <div 
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[150px] opacity-[0.09] dark:opacity-[0.07] pointer-events-none transition-all duration-1000 ease-in-out z-0"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full blur-2xl opacity-[0.06] dark:opacity-[0.05] pointer-events-none transition-all duration-700 ease-in-out z-0"
                 style={{
                   background: `radial-gradient(circle, ${
                     theme.primary === 'emerald' ? '#10b981' :

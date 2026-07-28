@@ -1219,11 +1219,11 @@ export default function FloorPlan() {
 
   return (
     <motion.div
-      initial={skipTransition ? false : { opacity: 0, scale: 1.05, filter: 'blur(12px) brightness(1.5)' }}
-      animate={{ opacity: 1, scale: 1, filter: 'blur(0px) brightness(1)' }}
-      exit={{ opacity: 0, scale: 0.95, filter: 'blur(12px) brightness(0.6)' }}
-      transition={{ duration: skipTransition ? 0 : 0.85, ease: [0.25, 1, 0.5, 1] }}
-      className={`relative h-screen text-[var(--text-main)] flex flex-col items-center overflow-hidden select-none transition-colors duration-500 ${
+      initial={skipTransition ? false : { opacity: 0, y: 6 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -6 }}
+      transition={{ duration: skipTransition ? 0 : 0.25, ease: 'easeOut' }}
+      className={`relative h-screen text-[var(--text-main)] flex flex-col items-center overflow-hidden select-none transition-colors duration-500 transform-gpu ${
         isBlueprintMode ? 'bg-black' : 'bg-[var(--bg-main)]'
       }`}
     >
