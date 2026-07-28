@@ -133,14 +133,20 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                   }}
                 />
 
-                {/* Hover/Touch Fullscreen Indicator */}
-                <div className="absolute top-3 left-3 bg-black/70 text-white text-[11px] font-mono px-2.5 py-1 rounded-lg border border-white/10 backdrop-blur-md opacity-90 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 pointer-events-none shadow-md">
-                  <Maximize2 className="w-3.5 h-3.5 text-blue-400" />
+                {/* Always-Visible Prominent Expand Image Button */}
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    setIsFullScreen(true)
+                  }}
+                  className="absolute bottom-3 left-3 z-20 px-3.5 py-1.5 bg-black/80 hover:bg-blue-600 active:scale-95 text-white text-xs font-mono font-bold rounded-xl border border-white/25 backdrop-blur-md transition-all shadow-xl flex items-center gap-2 cursor-pointer"
+                >
+                  <Maximize2 className="w-4 h-4 text-blue-400 group-hover:text-white" />
                   <span>Expand Image</span>
-                </div>
+                </button>
 
                 {images.length > 1 && (
-                  <div className="absolute inset-x-0 bottom-4 flex justify-center gap-2 px-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="absolute inset-x-0 bottom-12 flex justify-center gap-2 px-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity z-10">
                     <button
                       onClick={(e) => {
                         e.stopPropagation()

@@ -84,8 +84,11 @@ export default function FacultyProfileModal({ faculty, onClose }) {
                         e.target.src = 'https://placehold.co/600x400?text=Image+Not+Found';
                       }}
                     />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <Maximize2 className="w-6 h-6 text-white" />
+                    <div className="absolute inset-0 bg-black/30 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                      <div className="px-2.5 py-1 bg-black/80 text-white text-[10px] font-mono rounded-lg border border-white/20 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
+                        <Maximize2 className="w-3 h-3 text-blue-400" />
+                        <span>Expand</span>
+                      </div>
                     </div>
                   </>
                 ) : (
