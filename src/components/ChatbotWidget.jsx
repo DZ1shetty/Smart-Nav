@@ -48,7 +48,7 @@ const extractLocationDetails = (text) => {
  */
 function NaviBotIcon({ className = "w-5 h-5", glowColor = "currentColor" }) {
   return (
-    <div className={`relative flex items-center justify-center ${className}`}>
+    <div className={`relative flex items-center justify-center flex-shrink-0 max-w-[32px] max-h-[32px] ${className}`}>
       <svg
         viewBox="0 0 24 24"
         fill="none"
@@ -991,28 +991,26 @@ export default function ChatbotWidget() {
   return (
     <>
       {/* FLOATING TRIGGER BUTTON */}
-      <div ref={triggerRef} className="fixed bottom-4 right-4 sm:right-0 sm:top-[60%] sm:-translate-y-1/2 z-[300]">
+      <div ref={triggerRef} className="fixed bottom-4 right-4 sm:bottom-6 sm:right-5 z-[300]">
         <motion.button
           onClick={() => {
             setIsOpen(!isOpen)
             setIsMinimized(false)
           }}
           aria-label="Open campus chatbot"
-          initial={{ x: 0 }}
-          animate={{ x: isOpen ? (typeof window !== 'undefined' && window.innerWidth < 640 ? 0 : 120) : 0 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           transition={{ type: 'spring', stiffness: 350, damping: 25 }}
-          className="relative flex items-center gap-2 px-3.5 py-2.5 sm:pl-3.5 sm:pr-5 rounded-full sm:rounded-l-2xl sm:rounded-r-none bg-white/95 dark:bg-[#0c0c0e]/95 backdrop-blur-2xl border border-blue-500/30 dark:border-cyan-500/25 shadow-[-4px_6px_25px_rgba(0,0,0,0.2)] dark:shadow-[-4px_6px_35px_rgba(0,0,0,0.7)] hover:shadow-[-6px_6px_30px_rgba(59,130,246,0.35)] hover:border-blue-500/60 dark:hover:border-cyan-400/60 transition-all duration-300 group overflow-hidden focus:outline-none text-[var(--text-main)]"
+          className="relative flex items-center gap-2 px-3.5 py-2.5 rounded-full bg-slate-900/90 dark:bg-black/90 text-white backdrop-blur-xl border border-cyan-500/40 dark:border-cyan-500/30 shadow-[0_8px_25px_rgba(0,0,0,0.3)] dark:shadow-[0_10px_35px_rgba(0,0,0,0.8)] hover:border-cyan-400 hover:shadow-cyan-500/20 transition-all duration-300 group overflow-hidden focus:outline-none"
         >
-          {/* Subtle spinning background gradient glow on hover */}
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          {/* Subtle glow effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           
-          <div className="relative z-10 flex items-center justify-center text-blue-500 dark:text-cyan-400 group-hover:scale-110 transition-transform duration-300">
-            <NaviBotIcon className="w-5.5 h-5.5 md:w-6 md:h-6" glowColor="currentColor" />
+          <div className="relative z-10 flex items-center justify-center text-cyan-400 w-5 h-5 flex-shrink-0">
+            <NaviBotIcon className="w-5 h-5" glowColor="currentColor" />
           </div>
           
-          <span className="relative z-10 text-[10px] md:text-xs font-orbitron font-black uppercase tracking-widest text-black/80 dark:text-white/90 group-hover:text-blue-500 dark:group-hover:text-cyan-400 transition-colors duration-300">
+          <span className="relative z-10 text-[10.5px] md:text-xs font-orbitron font-black uppercase tracking-wider text-white group-hover:text-cyan-300 transition-colors duration-300">
             Ask AI
           </span>
         </motion.button>
