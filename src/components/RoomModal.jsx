@@ -8,6 +8,7 @@ import {
   Edit3,
   Save,
   Bookmark,
+  Maximize2,
 } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
@@ -22,22 +23,30 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
   const [isEditing, setIsEditing] = useState(false)
   const [editedDirections, setEditedDirections] = useState('')
   const [editedImage, setEditedImage] = useState('')
+  const [isFullScreen, setIsFullScreen] = useState(false)
 
   const images = (room?.images || (room?.image ? [room.image] : [])).map(resolveImageUrl)
 
   useEffect(() => {
     const handleEsc = (e) => {
-      if (e.key === 'Escape') onClose()
+      if (e.key === 'Escape') {
+        if (isFullScreen) {
+          setIsFullScreen(false)
+        } else {
+          onClose()
+        }
+      }
     }
     window.addEventListener('keydown', handleEsc)
     return () => window.removeEventListener('keydown', handleEsc)
-  }, [onClose])
+  }, [onClose, isFullScreen])
 
   useEffect(() => {
     if (room) {
       setEditedDirections(room.directions || '')
       setEditedImage(room.image || '')
       setIsEditing(false)
+      setIsFullScreen(false)
     }
   }, [room])
 
@@ -51,108 +60,121 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
   }
 
   return (
-    <div className="fixed inset-0 z-[110] flex items-center justify-center p-2 md:p-8 overflow-hidden">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="absolute inset-0 bg-black/50 dark:bg-black/85 backdrop-blur-xl"
-        onMouseDown={onClose}
-      />
+    <>
+      <div className="fixed inset-0 z-[110] flex items-center justify-center p-2 md:p-8 overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="absolute inset-0 bg-black/50 dark:bg-black/85 backdrop-blur-xl"
+          onMouseDown={onClose}
+        />
 
-      <motion.div
-        initial={{ opacity: 0, y: 20, scale: 0.97 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        exit={{ opacity: 0, y: 20, scale: 0.97 }}
-        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-        className="relative w-full max-w-4xl bg-white/95 dark:bg-[#0c0c0e]/95 backdrop-blur-2xl border border-black/10 dark:border-white/10 rounded-2xl md:rounded-3xl shadow-[0_25px_60px_rgba(0,0,0,0.3)] overflow-hidden flex flex-col md:flex-row items-stretch max-h-[90vh]"
-      >
-        {/* Actions Container */}
-        <div className="absolute top-4 right-4 flex items-center gap-2.5 z-[60]">
-          {onToggleBookmark && (
+        <motion.div
+          initial={{ opacity: 0, y: 20, scale: 0.97 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 20, scale: 0.97 }}
+          transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+          className="relative w-full max-w-4xl bg-white/95 dark:bg-[#0c0c0e]/95 backdrop-blur-2xl border border-black/10 dark:border-white/10 rounded-2xl md:rounded-3xl shadow-[0_25px_60px_rgba(0,0,0,0.3)] overflow-hidden flex flex-col md:flex-row items-stretch max-h-[90vh]"
+        >
+          {/* Actions Container */}
+          <div className="absolute top-4 right-4 flex items-center gap-2.5 z-[60]">
+            {onToggleBookmark && (
+              <button
+                onClick={onToggleBookmark}
+                className={`p-2 border rounded-lg transition-all duration-300 backdrop-blur-md ${
+                  isBookmarked
+                    ? 'bg-amber-500/10 border-amber-500/30 text-amber-500 hover:bg-amber-500/20'
+                    : 'bg-black/5 dark:bg-white/5 border-black/5 dark:border-white/5 text-black/40 dark:text-white/20 hover:text-amber-500 dark:hover:text-amber-400 shadow-sm'
+                }`}
+                aria-label={isBookmarked ? "Remove Bookmark" : "Add Bookmark"}
+                title={isBookmarked ? "Remove Bookmark" : "Add Bookmark"}
+              >
+                <Bookmark className={`w-5 h-5 ${isBookmarked ? 'fill-current' : ''}`} />
+              </button>
+            )}
             <button
-              onClick={onToggleBookmark}
-              className={`p-2 border rounded-lg transition-all duration-300 backdrop-blur-md ${
-                isBookmarked
-                  ? 'bg-amber-500/10 border-amber-500/30 text-amber-500 hover:bg-amber-500/20'
-                  : 'bg-black/5 dark:bg-white/5 border-black/5 dark:border-white/5 text-black/40 dark:text-white/20 hover:text-amber-500 dark:hover:text-amber-400 shadow-sm'
-              }`}
-              aria-label={isBookmarked ? "Remove Bookmark" : "Add Bookmark"}
-              title={isBookmarked ? "Remove Bookmark" : "Add Bookmark"}
+              onClick={onClose}
+              className="p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-lg transition-all group border border-black/5 dark:border-white/5 backdrop-blur-md shadow-sm"
+              aria-label="Close"
             >
-              <Bookmark className={`w-5 h-5 ${isBookmarked ? 'fill-current' : ''}`} />
+              <X className="w-5 h-5 text-black/40 dark:text-white/20 group-hover:text-red-500 dark:group-hover:text-red-400 transition-colors" />
             </button>
-          )}
-          <button
-            onClick={onClose}
-            className="p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-lg transition-all group border border-black/5 dark:border-white/5 backdrop-blur-md shadow-sm"
-            aria-label="Close"
+          </div>
+
+          {/* Left Side: Image Carousel with Fullscreen Trigger */}
+          <div
+            onClick={() => {
+              if (images.length > 0) setIsFullScreen(true)
+            }}
+            className="relative w-full md:w-[50%] bg-black/[0.03] dark:bg-white/[0.02] flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-black/5 dark:border-white/5 overflow-hidden group cursor-zoom-in"
+            style={{ minHeight: '40vw', maxHeight: '42vh' }}
           >
-            <X className="w-5 h-5 text-black/40 dark:text-white/20 group-hover:text-red-500 dark:group-hover:text-red-400 transition-colors" />
-          </button>
-        </div>
-
-        {/* Left Side: Image Carousel */}
-        <div className="relative w-full md:w-[50%] bg-black/[0.03] dark:bg-white/[0.02] flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-black/5 dark:border-white/5 overflow-hidden" style={{minHeight: '40vw', maxHeight: '42vh'}}>
-          {images.length > 0 ? (
-            <div className="relative w-full h-full group">
-              <motion.img
-                key={images[currentImageIndex]}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                src={images[currentImageIndex]}
-                alt={room.name}
-                loading="lazy"
-                className="w-full h-full object-contain"
-                onError={(e) => {
-                  const currentSrc = e.target.src;
-                  if (currentSrc.includes('raw.githubusercontent.com')) {
-                    const parts = currentSrc.split('/public-backup');
-                    if (parts.length > 1) {
-                      e.target.src = parts[1];
-                      return;
+            {images.length > 0 ? (
+              <div className="relative w-full h-full flex items-center justify-center">
+                <motion.img
+                  key={images[currentImageIndex]}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  src={images[currentImageIndex]}
+                  alt={room.name}
+                  loading="lazy"
+                  className="w-full h-full object-contain"
+                  onError={(e) => {
+                    const currentSrc = e.target.src;
+                    if (currentSrc.includes('raw.githubusercontent.com')) {
+                      const parts = currentSrc.split('/public-backup');
+                      if (parts.length > 1) {
+                        e.target.src = parts[1];
+                        return;
+                      }
                     }
-                  }
-                  e.target.src = 'https://placehold.co/600x400?text=Image+Not+Found';
-                }}
-              />
+                    e.target.src = 'https://placehold.co/600x400?text=Image+Not+Found';
+                  }}
+                />
 
-              {images.length > 1 && (
-                <div className="absolute inset-x-0 bottom-6 flex justify-center gap-2 px-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      setCurrentImageIndex((prev) =>
-                        prev === 0 ? images.length - 1 : prev - 1
-                      )
-                    }}
-                    className="p-2 bg-black/50 hover:bg-blue-500/80 rounded-lg border border-white/10 text-white transition-all"
-                  >
-                    <ChevronLeft className="w-5 h-5" />
-                  </button>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      setCurrentImageIndex((prev) =>
-                        prev === images.length - 1 ? 0 : prev + 1
-                      )
-                    }}
-                    className="p-2 bg-black/50 hover:bg-blue-500/80 rounded-lg border border-white/10 text-white transition-all"
-                  >
-                    <ChevronRight className="w-5 h-5" />
-                  </button>
+                {/* Hover/Touch Fullscreen Indicator */}
+                <div className="absolute top-3 left-3 bg-black/70 text-white text-[11px] font-mono px-2.5 py-1 rounded-lg border border-white/10 backdrop-blur-md opacity-90 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 pointer-events-none shadow-md">
+                  <Maximize2 className="w-3.5 h-3.5 text-blue-400" />
+                  <span>Expand Image</span>
                 </div>
-              )}
-            </div>
-          ) : (
-            <div className="w-full h-full flex flex-col items-center justify-center text-black/5 dark:text-white/5">
-              <Building className="w-12 h-12 mb-3" />
-              <span className="text-[10px] font-orbitron font-black uppercase tracking-widest">
-                No Visual Data
-              </span>
-            </div>
-          )}
-        </div>
+
+                {images.length > 1 && (
+                  <div className="absolute inset-x-0 bottom-4 flex justify-center gap-2 px-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        setCurrentImageIndex((prev) =>
+                          prev === 0 ? images.length - 1 : prev - 1
+                        )
+                      }}
+                      className="p-2 bg-black/60 hover:bg-blue-500/80 rounded-lg border border-white/10 text-white transition-all shadow-md"
+                    >
+                      <ChevronLeft className="w-5 h-5" />
+                    </button>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        setCurrentImageIndex((prev) =>
+                          prev === images.length - 1 ? 0 : prev + 1
+                        )
+                      }}
+                      className="p-2 bg-black/60 hover:bg-blue-500/80 rounded-lg border border-white/10 text-white transition-all shadow-md"
+                    >
+                      <ChevronRight className="w-5 h-5" />
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div className="w-full h-full flex flex-col items-center justify-center text-black/5 dark:text-white/5">
+                <Building className="w-12 h-12 mb-3" />
+                <span className="text-[10px] font-orbitron font-black uppercase tracking-widest">
+                  No Visual Data
+                </span>
+              </div>
+            )}
+          </div>
 
         {/* Right Side: Information */}
         <div className="flex-1 p-4 md:p-10 overflow-y-auto custom-scrollbar flex flex-col">
@@ -281,8 +303,82 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
             </div>
           </div>
         </div>
-      </motion.div>
-    </div>
+
+        {/* Fullscreen Image Lightbox Overlay */}
+        {isFullScreen && images.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[300] bg-black/95 backdrop-blur-2xl flex items-center justify-center p-4"
+            onClick={() => setIsFullScreen(false)}
+          >
+            {/* Prominent Floating Close Button (Cross Mark) */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                setIsFullScreen(false)
+              }}
+              className="absolute top-4 right-4 md:top-6 md:right-6 z-[310] p-3 md:p-4 bg-white/10 hover:bg-red-500 text-white rounded-full border border-white/20 backdrop-blur-md transition-all shadow-2xl active:scale-90 group"
+              aria-label="Close Fullscreen View"
+              title="Close Fullscreen View (Esc)"
+            >
+              <X className="w-6 h-6 md:w-8 md:h-8 text-white group-hover:rotate-90 transition-transform duration-300" />
+            </button>
+
+            {/* Fullscreen Image Display Container */}
+            <div
+              className="relative w-full h-full flex items-center justify-center max-w-7xl max-h-[92vh]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={images[currentImageIndex]}
+                alt={room.name}
+                className="max-w-full max-h-full object-contain rounded-xl shadow-2xl select-none"
+              />
+
+              {/* Prev / Next controls if multiple images */}
+              {images.length > 1 && (
+                <>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      setCurrentImageIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))
+                    }}
+                    className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 p-3.5 bg-black/70 hover:bg-blue-600 text-white rounded-full border border-white/20 backdrop-blur-md transition-all shadow-xl active:scale-95"
+                  >
+                    <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
+                  </button>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      setCurrentImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))
+                    }}
+                    className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 p-3.5 bg-black/70 hover:bg-blue-600 text-white rounded-full border border-white/20 backdrop-blur-md transition-all shadow-xl active:scale-95"
+                  >
+                    <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
+                  </button>
+                </>
+              )}
+
+              {/* Bottom Caption Pill */}
+              <div className="absolute bottom-4 inset-x-0 flex justify-center items-center pointer-events-none">
+                <div className="px-5 py-2 bg-black/80 text-white text-xs font-mono rounded-full border border-white/15 backdrop-blur-md shadow-xl flex items-center gap-3 pointer-events-auto">
+                  <span className="font-bold">{room.name}</span>
+                  {images.length > 1 && (
+                    <span className="text-white/60 font-medium">
+                      ({currentImageIndex + 1}/{images.length})
+                    </span>
+                  )}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+        </motion.div>
+      </div>
+    </>
   )
 }
 
