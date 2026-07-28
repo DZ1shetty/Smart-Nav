@@ -181,6 +181,7 @@ export default function FloorPlan() {
   const [mouseCoords, setMouseCoords] = useState({ x: 0, y: 0 })
   const [activeFilters, setActiveFilters] = useState([])
   const [activeSearchIds, setActiveSearchIds] = useState(null)
+  const [isMobileFloorOpen, setIsMobileFloorOpen] = useState(false)
   const constraintsRef = useRef(null)
   const floorMenuRef = useRef(null)
 
@@ -1485,12 +1486,58 @@ export default function FloorPlan() {
           )}
         </div>
 
-        {/* Google Maps Style Floating Vertical Controls Stack (Floor Switcher - Left Side Overlay, elevated) */}
+        {/* Google Maps Style Floating Controls (Floor Switcher) */}
         <div
-          className={`absolute top-5 left-5 z-30 transition-all duration-500 ${selectedRoom ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'}`}
+          className={`absolute top-3 left-3 md:top-5 md:left-5 z-30 transition-all duration-500 ${selectedRoom ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'}`}
         >
-          {/* Vertical Floor Switcher Stack */}
-          <div className="bg-white/90 dark:bg-black/60 backdrop-blur-xl border border-black/10 dark:border-white/10 p-2 rounded-2xl shadow-xl flex flex-col gap-1.5 items-center w-28 md:w-32">
+          {/* Mobile Collapsible Floor Switcher Button */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsMobileFloorOpen(!isMobileFloorOpen)}
+              className="bg-white/95 dark:bg-black/90 backdrop-blur-xl border border-black/10 dark:border-white/10 px-3 py-2 rounded-xl shadow-xl flex items-center gap-2 text-black/80 dark:text-white/90 font-orbitron font-black text-[10px] uppercase tracking-wider"
+            >
+              <Map className="w-3.5 h-3.5 text-blue-500" />
+              <span>{getFloorWord(floorData?.label || 'FLOOR')}</span>
+              <ChevronDown className={`w-3.5 h-3.5 text-black/50 dark:text-white/40 transition-transform ${isMobileFloorOpen ? 'rotate-180' : ''}`} />
+            </button>
+
+            <AnimatePresence>
+              {isMobileFloorOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -5, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -5, scale: 0.95 }}
+                  className="mt-1.5 bg-white/95 dark:bg-black/90 backdrop-blur-xl border border-black/10 dark:border-white/10 p-1.5 rounded-xl shadow-2xl flex flex-col gap-1 w-32 max-h-[45vh] overflow-y-auto"
+                >
+                  {floors.slice().reverse().map((f) => {
+                    const isActive = f.id === floorId
+                    const floorWord = getFloorWord(f.label)
+                    return (
+                      <button
+                        key={f.id}
+                        onClick={(e) => {
+                          e.preventDefault()
+                          setIsMobileFloorOpen(false)
+                          navigate(floorIdToUrl(f.id))
+                          resetView()
+                        }}
+                        className={`w-full px-2 py-1.5 text-[9px] font-orbitron font-black uppercase tracking-wider rounded-lg transition-all flex items-center justify-center text-center
+                          ${isActive 
+                            ? 'bg-blue-500 text-white font-black' 
+                            : 'bg-black/[0.03] dark:bg-white/5 text-black/70 dark:text-white/60 hover:text-blue-500 font-bold'
+                          }`}
+                      >
+                        {floorWord}
+                      </button>
+                    )
+                  })}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Desktop Vertical Floor Switcher Stack */}
+          <div className="hidden md:flex bg-white/90 dark:bg-black/60 backdrop-blur-xl border border-black/10 dark:border-white/10 p-2 rounded-2xl shadow-xl flex-col gap-1.5 items-center w-28 md:w-32">
             <span className="text-[9px] md:text-[9.5px] font-orbitron font-black text-black/50 dark:text-white/40 uppercase tracking-wider pb-1 border-b border-black/10 dark:border-white/10 w-full text-center select-none">
               Floor Select
             </span>

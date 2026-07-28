@@ -991,19 +991,19 @@ export default function ChatbotWidget() {
   return (
     <>
       {/* FLOATING TRIGGER BUTTON */}
-      <div ref={triggerRef} className="fixed right-0 top-[60%] -translate-y-1/2 z-[300]">
+      <div ref={triggerRef} className="fixed bottom-4 right-4 sm:right-0 sm:top-[60%] sm:-translate-y-1/2 z-[300]">
         <motion.button
           onClick={() => {
             setIsOpen(!isOpen)
             setIsMinimized(false)
           }}
           aria-label="Open campus chatbot"
-          initial={{ x: 65 }}
-          animate={{ x: isOpen ? 120 : 65 }}
-          whileHover={{ x: 0 }}
+          initial={{ x: 0 }}
+          animate={{ x: isOpen ? (typeof window !== 'undefined' && window.innerWidth < 640 ? 0 : 120) : 0 }}
+          whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           transition={{ type: 'spring', stiffness: 350, damping: 25 }}
-          className="relative flex items-center gap-2.5 pl-3.5 pr-5 py-2.5 rounded-l-2xl rounded-r-none bg-white/95 dark:bg-[#0c0c0e]/95 backdrop-blur-2xl border-y border-l border-blue-500/30 dark:border-cyan-500/25 shadow-[-6px_6px_25px_rgba(0,0,0,0.15)] dark:shadow-[-6px_6px_35px_rgba(0,0,0,0.6)] hover:shadow-[-6px_6px_30px_rgba(59,130,246,0.35)] hover:border-blue-500/60 dark:hover:border-cyan-400/60 transition-all duration-300 group overflow-hidden focus:outline-none text-[var(--text-main)]"
+          className="relative flex items-center gap-2 px-3.5 py-2.5 sm:pl-3.5 sm:pr-5 rounded-full sm:rounded-l-2xl sm:rounded-r-none bg-white/95 dark:bg-[#0c0c0e]/95 backdrop-blur-2xl border border-blue-500/30 dark:border-cyan-500/25 shadow-[-4px_6px_25px_rgba(0,0,0,0.2)] dark:shadow-[-4px_6px_35px_rgba(0,0,0,0.7)] hover:shadow-[-6px_6px_30px_rgba(59,130,246,0.35)] hover:border-blue-500/60 dark:hover:border-cyan-400/60 transition-all duration-300 group overflow-hidden focus:outline-none text-[var(--text-main)]"
         >
           {/* Subtle spinning background gradient glow on hover */}
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -1070,7 +1070,7 @@ export default function ChatbotWidget() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="fixed bottom-16 right-5 w-[340px] md:w-[380px] flex flex-col bg-transparent shadow-[0_20px_50px_rgba(0,0,0,0.18)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.6)] overflow-hidden z-[300] transition-colors"
+            className="fixed bottom-16 right-3 sm:right-5 w-[calc(100vw-24px)] max-w-[380px] sm:w-[380px] max-h-[80vh] sm:max-h-none flex flex-col bg-transparent shadow-[0_20px_50px_rgba(0,0,0,0.18)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.6)] overflow-hidden z-[300] transition-colors"
           >
             {/* Top Gemini-style gradient bar */}
             <div className="h-1.5 w-full bg-gradient-to-r from-blue-500 via-purple-500 via-pink-500 to-amber-400 relative z-10" />
