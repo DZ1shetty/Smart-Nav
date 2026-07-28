@@ -11,13 +11,24 @@ dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Load Service Account
-const serviceAccount = JSON.parse(fs.readFileSync('./serviceAccountKey.json', 'utf8'));
+// Load Service Account (from env variable in production, or file in dev)
+let serviceAccount;
+if (process.env.FIREBASE_SERVICE_ACCOUNT) {
+  serviceAccount = typeof process.env.FIREBASE_SERVICE_ACCOUNT === 'string'
+    ? JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT)
+    : process.env.FIREBASE_SERVICE_ACCOUNT;
+} else if (fs.existsSync('./serviceAccountKey.json')) {
+  serviceAccount = JSON.parse(fs.readFileSync('./serviceAccountKey.json', 'utf8'));
+} else {
+  console.error('CRITICAL ERROR: No Firebase service account credentials found!');
+}
 
 // 1. Initialize Firebase Admin
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
+if (serviceAccount) {
+  admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount)
+  });
+}
 
 const db = admin.firestore();
 const layoutsRef = db.collection('layouts');
@@ -25,7 +36,7 @@ const bookmarksRef = db.collection('bookmarks');
 const activityLogsRef = db.collection('activityLogs');
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -405,6 +416,16 @@ app.post('/api/activity-log', async (req, res) => {
   }
 });
 
+// Serve static production build (Vite dist) if available
+const distPath = path.join(__dirname, 'dist');
+if (fs.existsSync(distPath)) {
+  app.use(express.static(distPath));
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api/')) return next();
+    res.sendFile(path.join(distPath, 'index.html'));
+  });
+}
+
 app.listen(PORT, () => {
-  console.log(`Firestore-backed server running at http://localhost:${PORT}`);
+  console.log(`Firestore-backed server running on port ${PORT}`);
 });
