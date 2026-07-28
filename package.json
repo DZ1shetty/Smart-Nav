@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@heyputer/puter.js": "^2.5.4",
+    "@sentry/react": "^10.68.0",
     "body-parser": "^2.3.0",
     "clsx": "^2.1.1",
     "cors": "^2.8.6",
