@@ -22,6 +22,7 @@ import {
   Locate,
   Bookmark,
   Map,
+  Search,
 } from 'lucide-react'
 import { puter } from '@heyputer/puter.js'
 import { floorsData } from '../data/floorsData'
@@ -182,8 +183,14 @@ export default function FloorPlan() {
   const [activeFilters, setActiveFilters] = useState([])
   const [activeSearchIds, setActiveSearchIds] = useState(null)
   const [isMobileFloorOpen, setIsMobileFloorOpen] = useState(false)
+  const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false)
   const constraintsRef = useRef(null)
   const floorMenuRef = useRef(null)
+
+  // Pinch-to-zoom refs
+  const lastPinchDistRef = useRef(null)
+  const isPinchingRef = useRef(false)
+  const autoFittedFloor = useRef(null)
 
   const [isBlueprintMode, setIsBlueprintMode] = useState(isBlueprintModeGlobal)
 
@@ -1080,6 +1087,69 @@ export default function FloorPlan() {
     setResetKey((prev) => prev + 1)
   }
 
+  // ── Pinch-to-zoom: attach touch handlers to the map container ──────────────
+  useEffect(() => {
+    const el = constraintsRef.current
+    if (!el) return
+    const getPinchDist = (touches) => {
+      const dx = touches[0].clientX - touches[1].clientX
+      const dy = touches[0].clientY - touches[1].clientY
+      return Math.sqrt(dx * dx + dy * dy)
+    }
+    const onTouchStart = (e) => {
+      if (e.touches.length === 2) {
+        isPinchingRef.current = true
+        lastPinchDistRef.current = getPinchDist(e.touches)
+      }
+    }
+    const onTouchMove = (e) => {
+      if (!isPinchingRef.current || e.touches.length !== 2) return
+      e.preventDefault()
+      const newDist = getPinchDist(e.touches)
+      if (!lastPinchDistRef.current) return
+      const ratio = newDist / lastPinchDistRef.current
+      lastPinchDistRef.current = newDist
+      setZoom((prev) => Math.min(Math.max(prev * ratio, 0.5), 4))
+    }
+    const onTouchEnd = () => {
+      isPinchingRef.current = false
+      lastPinchDistRef.current = null
+    }
+    el.addEventListener('touchstart', onTouchStart, { passive: true })
+    el.addEventListener('touchmove', onTouchMove, { passive: false })
+    el.addEventListener('touchend', onTouchEnd, { passive: true })
+    return () => {
+      el.removeEventListener('touchstart', onTouchStart)
+      el.removeEventListener('touchmove', onTouchMove)
+      el.removeEventListener('touchend', onTouchEnd)
+    }
+  }, []) // constraintsRef is stable after mount
+
+  // ── Auto-fit: set best zoom when a floor map loads for the first time ───────
+  useEffect(() => {
+    if (!rooms || rooms.length === 0) return
+    if (!mapBounds?.svgW || !mapBounds?.svgH) return
+    if (autoFittedFloor.current === floorId) return // already fitted this floor
+    const container = constraintsRef.current
+    if (!container) return
+    const containerW = container.clientWidth
+    const containerH = container.clientHeight
+    if (!containerW || !containerH) return
+    // Leave a little padding (filter bar height ~44px, plus 2×4px padding)
+    const availW = containerW - 8
+    const availH = containerH - 52
+    if (availW <= 0 || availH <= 0) return
+    const fitZoom = Math.min(availW / mapBounds.svgW, availH / mapBounds.svgH)
+    const clamped = Math.min(Math.max(fitZoom, 0.4), 2.5)
+    setZoom(clamped)
+    autoFittedFloor.current = floorId
+  }, [rooms, mapBounds, floorId])
+
+  // Reset auto-fit flag on floor change so next floor gets its own fit
+  useEffect(() => {
+    autoFittedFloor.current = null
+  }, [floorId])
+
   const isCvRaman  = floorId.startsWith('cv_raman_')
   const isRamanujan = floorId.startsWith('ramanujan_')
   const isSmv      = floorId.startsWith('smv_') || floorId.startsWith('svm_')
@@ -1181,8 +1251,9 @@ export default function FloorPlan() {
       <div className="absolute inset-0 blueprint-grid opacity-[0.05] pointer-events-none" />
 
       {!isBlueprintMode && (
+        <>
         <header className="w-full z-40 bg-[var(--bg-main)]/80 backdrop-blur-md border-b border-black/5 dark:border-white/5 py-2 px-3 md:py-2.5 md:px-8 flex items-center justify-between gap-2 md:gap-4">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 md:gap-4">
           <button
             onClick={() => {
               const bSlug = 
@@ -1194,11 +1265,11 @@ export default function FloorPlan() {
                 'APJ-Block'
               navigate(`/${bSlug}`)
             }}
-            className="p-2 md:p-2.5 bg-black/[0.03] dark:bg-white/5 hover:bg-blue-500/10 border border-black/10 dark:border-white/10 rounded-xl transition-all group active:scale-95 shadow-sm"
+            className="p-2 md:p-2.5 bg-black/[0.03] dark:bg-white/5 hover:bg-blue-500/10 border border-black/10 dark:border-white/10 rounded-xl transition-all group active:scale-95 shadow-sm flex-shrink-0"
           >
             <ArrowLeft className="w-4 h-4 text-black/50 dark:text-white/40 group-hover:text-blue-500 transition-colors" />
           </button>
-          <div className="flex flex-col">
+          <div className="flex flex-col min-w-0">
             <nav className="hidden md:flex items-center gap-1.5 text-[9px] md:text-[10px] font-orbitron font-black uppercase tracking-[0.15em] text-black/40 dark:text-white/30">
               <Link to="/" className="hover:text-blue-500 transition-colors">
                 HOME
@@ -1221,7 +1292,7 @@ export default function FloorPlan() {
               <span className="text-blue-500">{getFloorFullNameInWords(floorData?.label)}</span>
             </nav>
             <div className="relative mt-0.5">
-              <span className="text-sm md:text-xl font-orbitron font-black uppercase tracking-tighter text-[var(--text-main)]">
+              <span className="text-sm md:text-xl font-orbitron font-black uppercase tracking-tighter text-[var(--text-main)] truncate">
                 {getFloorFullNameInWords(floorData?.label)}
               </span>
             </div>
@@ -1354,7 +1425,41 @@ export default function FloorPlan() {
             )}
           </AnimatePresence>
         </div>
+        {/* Mobile search button — visible only on mobile, sits right of the zoom strip */}
+        <button
+          onClick={() => setIsMobileSearchOpen((p) => !p)}
+          className={`md:hidden p-2 border rounded-xl transition-all active:scale-95 flex-shrink-0 ${
+            isMobileSearchOpen
+              ? 'bg-blue-500 border-blue-500 text-white shadow-md'
+              : 'bg-black/[0.03] dark:bg-white/5 border-black/10 dark:border-white/10 text-black/50 dark:text-white/40 hover:text-blue-500'
+          }`}
+          title="Search rooms"
+        >
+          <Search className="w-4 h-4" />
+        </button>
       </header>
+
+      {/* Mobile search overlay — slides in below header */}
+      <AnimatePresence>
+        {isMobileSearchOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -8, scaleY: 0.95 }}
+            animate={{ opacity: 1, y: 0, scaleY: 1 }}
+            exit={{ opacity: 0, y: -8, scaleY: 0.95 }}
+            transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="md:hidden w-full z-30 bg-[var(--bg-main)]/95 backdrop-blur-xl border-b border-black/5 dark:border-white/5 px-3 py-2 shadow-lg origin-top"
+          >
+            <SearchSystem
+              currentFloor={floorId}
+              onResultsChange={(ids) => {
+                setActiveSearchIds(ids)
+                if (ids) setIsMobileSearchOpen(false)
+              }}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      </>
       )}
 
       <main
