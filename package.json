@@ -10,7 +10,8 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "server": "node server.js",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "test:live": "powershell -Command \"$env:BASE_URL='https://smart-nav-g4b4.onrender.com'; npx playwright test\""
   },
   "dependencies": {
     "@heyputer/puter.js": "^2.5.4",
