@@ -342,6 +342,21 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                 src={images[currentImageIndex]}
                 alt={room.name}
                 className="max-w-full max-h-full object-contain rounded-xl shadow-2xl select-none"
+                onError={(e) => {
+                  const currentSrc = e.target.src
+                  if (currentSrc.includes('Smart_Nav')) {
+                    e.target.src = currentSrc.replace('Smart_Nav', 'Smart-Nav')
+                    return
+                  }
+                  if (currentSrc.includes('raw.githubusercontent.com')) {
+                    const parts = currentSrc.split('/public-backup')
+                    if (parts.length > 1) {
+                      e.target.src = parts[1]
+                      return
+                    }
+                  }
+                  e.target.src = `https://placehold.co/800x600/0f172a/ffffff?text=${encodeURIComponent(room.name || 'Room Image')}`
+                }}
               />
 
               {/* Prev / Next controls if multiple images */}

@@ -220,6 +220,21 @@ export default function FacultyProfileModal({ faculty, onClose }) {
                 src={resolveImageUrl(faculty.image)}
                 alt={faculty.name}
                 className="max-w-full max-h-full object-contain rounded-2xl shadow-2xl select-none"
+                onError={(e) => {
+                  const currentSrc = e.target.src
+                  if (currentSrc.includes('Smart_Nav')) {
+                    e.target.src = currentSrc.replace('Smart_Nav', 'Smart-Nav')
+                    return
+                  }
+                  if (currentSrc.includes('raw.githubusercontent.com')) {
+                    const parts = currentSrc.split('/public-backup')
+                    if (parts.length > 1) {
+                      e.target.src = parts[1]
+                      return
+                    }
+                  }
+                  e.target.src = `https://placehold.co/800x600/0f172a/ffffff?text=${encodeURIComponent(faculty.name || 'Faculty Portrait')}`
+                }}
               />
 
               <div className="absolute bottom-4 inset-x-0 flex justify-center items-center pointer-events-none">
