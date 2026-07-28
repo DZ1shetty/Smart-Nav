@@ -1125,29 +1125,9 @@ export default function FloorPlan() {
     }
   }, []) // constraintsRef is stable after mount
 
-  // ── Auto-fit: set best zoom when a floor map loads for the first time ───────
+  // ── Ensure zoom is constantly 100% (1.0) on floor load ──────────────────────
   useEffect(() => {
-    if (!rooms || rooms.length === 0) return
-    if (!mapBounds?.svgW || !mapBounds?.svgH) return
-    if (autoFittedFloor.current === floorId) return // already fitted this floor
-    const container = constraintsRef.current
-    if (!container) return
-    const containerW = container.clientWidth
-    const containerH = container.clientHeight
-    if (!containerW || !containerH) return
-    // Leave a little padding (filter bar height ~44px, plus 2×4px padding)
-    const availW = containerW - 8
-    const availH = containerH - 52
-    if (availW <= 0 || availH <= 0) return
-    const fitZoom = Math.min(availW / mapBounds.svgW, availH / mapBounds.svgH)
-    const clamped = Math.min(Math.max(fitZoom, 0.4), 2.5)
-    setZoom(clamped)
-    autoFittedFloor.current = floorId
-  }, [rooms, mapBounds, floorId])
-
-  // Reset auto-fit flag on floor change so next floor gets its own fit
-  useEffect(() => {
-    autoFittedFloor.current = null
+    setZoom(1.0)
   }, [floorId])
 
   const isCvRaman  = floorId.startsWith('cv_raman_')
@@ -1472,50 +1452,16 @@ export default function FloorPlan() {
           <div className="absolute top-2 left-1/2 transform -translate-x-1/2 flex items-center w-full max-w-[96vw] overflow-x-auto no-scrollbar py-1 z-20 px-1">
             <div className="flex items-center gap-1 md:gap-1.5 bg-white/90 dark:bg-black/60 backdrop-blur-xl border border-black/10 dark:border-white/10 p-1 md:p-1.5 rounded-lg md:rounded-xl shadow-xl mx-auto max-w-full overflow-x-auto no-scrollbar">
               
-              {/* Mobile Floor Selector Chip (Integrated into scroll bar on mobile) */}
-              <div className="relative md:hidden flex-shrink-0">
+              {/* Mobile Floor Selector Chip (Triggers unclipped floating modal overlay) */}
+              <div className="md:hidden flex-shrink-0">
                 <button
                   onClick={() => setIsMobileFloorOpen(!isMobileFloorOpen)}
-                  className="flex items-center gap-1 px-2 py-1 rounded-md border border-blue-500/40 bg-blue-500/10 text-blue-600 dark:text-blue-400 font-orbitron font-black text-[8.5px] uppercase tracking-wider transition-all active:scale-95 whitespace-nowrap shadow-sm"
+                  className="flex items-center gap-1 px-2.5 py-1 rounded-md border border-blue-500/40 bg-blue-500/10 text-blue-600 dark:text-blue-400 font-orbitron font-black text-[9px] uppercase tracking-wider transition-all active:scale-95 whitespace-nowrap shadow-sm"
                 >
                   <Map className="w-3 h-3 text-blue-500" />
                   <span>{getFloorWord(floorData?.label || 'FLOOR')}</span>
                   <ChevronDown className={`w-3 h-3 text-blue-500 transition-transform ${isMobileFloorOpen ? 'rotate-180' : ''}`} />
                 </button>
-
-                <AnimatePresence>
-                  {isMobileFloorOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 4, scale: 0.95 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 4, scale: 0.95 }}
-                      className="absolute top-full left-0 mt-1.5 bg-white/95 dark:bg-black/90 backdrop-blur-xl border border-black/10 dark:border-white/10 p-1.5 rounded-xl shadow-2xl flex flex-col gap-1 w-32 max-h-[45vh] overflow-y-auto z-40"
-                    >
-                      {floors.slice().reverse().map((f) => {
-                        const isActive = f.id === floorId
-                        const floorWord = getFloorWord(f.label)
-                        return (
-                          <button
-                            key={f.id}
-                            onClick={(e) => {
-                              e.preventDefault()
-                              setIsMobileFloorOpen(false)
-                              navigate(floorIdToUrl(f.id))
-                              resetView()
-                            }}
-                            className={`w-full px-2 py-1.5 text-[9px] font-orbitron font-black uppercase tracking-wider rounded-lg transition-all flex items-center justify-center text-center
-                              ${isActive 
-                                ? 'bg-blue-500 text-white font-black' 
-                                : 'bg-black/[0.03] dark:bg-white/5 text-black/70 dark:text-white/60 hover:text-blue-500 font-bold'
-                              }`}
-                          >
-                            {floorWord}
-                          </button>
-                        )
-                      })}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
               </div>
 
               {/* Divider on mobile */}
@@ -1560,6 +1506,51 @@ export default function FloorPlan() {
             </div>
           </div>
         )}
+
+        {/* Mobile Floor Selector Floating Overlay (Unclipped, Fixed position) */}
+        <AnimatePresence>
+          {isMobileFloorOpen && (
+            <>
+              <div
+                className="fixed inset-0 z-40 bg-black/30 backdrop-blur-[2px] md:hidden"
+                onClick={() => setIsMobileFloorOpen(false)}
+              />
+              <motion.div
+                initial={{ opacity: 0, y: -8, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -8, scale: 0.95 }}
+                transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                className="fixed top-14 left-4 z-50 md:hidden bg-white/95 dark:bg-black/95 backdrop-blur-2xl border border-black/10 dark:border-white/10 p-2 rounded-2xl shadow-2xl flex flex-col gap-1.5 w-36 max-h-[50vh] overflow-y-auto"
+              >
+                <div className="px-2 py-1 text-[8.5px] font-orbitron font-black text-black/40 dark:text-white/40 uppercase tracking-widest border-b border-black/5 dark:border-white/5 text-center">
+                  Select Floor
+                </div>
+                {floors.slice().reverse().map((f) => {
+                  const isActive = f.id === floorId
+                  const floorWord = getFloorWord(f.label)
+                  return (
+                    <button
+                      key={f.id}
+                      onClick={(e) => {
+                        e.preventDefault()
+                        setIsMobileFloorOpen(false)
+                        navigate(floorIdToUrl(f.id))
+                        resetView()
+                      }}
+                      className={`w-full px-2.5 py-2 text-[9.5px] font-orbitron font-black uppercase tracking-wider rounded-xl transition-all flex items-center justify-center text-center
+                        ${isActive 
+                          ? 'bg-blue-500 text-white font-black shadow-md shadow-blue-500/25' 
+                          : 'bg-black/[0.03] dark:bg-white/5 text-black/70 dark:text-white/70 hover:text-blue-500 font-bold'
+                        }`}
+                    >
+                      {floorWord}
+                    </button>
+                  )
+                })}
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
 
         <div className="relative w-full h-full flex flex-col items-center justify-center p-1 md:p-2">
           {isLoadingStatic && (
