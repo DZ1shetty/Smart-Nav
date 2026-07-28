@@ -1181,7 +1181,7 @@ export default function FloorPlan() {
       <div className="absolute inset-0 blueprint-grid opacity-[0.05] pointer-events-none" />
 
       {!isBlueprintMode && (
-        <header className="w-full z-40 bg-[var(--bg-main)]/80 backdrop-blur-md border-b border-black/5 dark:border-white/5 py-2.5 px-4 md:px-8 flex items-center justify-between gap-4">
+        <header className="w-full z-40 bg-[var(--bg-main)]/80 backdrop-blur-md border-b border-black/5 dark:border-white/5 py-2 px-3 md:py-2.5 md:px-8 flex items-center justify-between gap-2 md:gap-4">
         <div className="flex items-center gap-4">
           <button
             onClick={() => {
@@ -1199,7 +1199,7 @@ export default function FloorPlan() {
             <ArrowLeft className="w-4 h-4 text-black/50 dark:text-white/40 group-hover:text-blue-500 transition-colors" />
           </button>
           <div className="flex flex-col">
-            <nav className="flex items-center gap-1.5 text-[9px] md:text-[10px] font-orbitron font-black uppercase tracking-[0.15em] text-black/40 dark:text-white/30">
+            <nav className="hidden md:flex items-center gap-1.5 text-[9px] md:text-[10px] font-orbitron font-black uppercase tracking-[0.15em] text-black/40 dark:text-white/30">
               <Link to="/" className="hover:text-blue-500 transition-colors">
                 HOME
               </Link>
@@ -1221,7 +1221,7 @@ export default function FloorPlan() {
               <span className="text-blue-500">{getFloorFullNameInWords(floorData?.label)}</span>
             </nav>
             <div className="relative mt-0.5">
-              <span className="text-lg md:text-xl font-orbitron font-black uppercase tracking-tighter text-[var(--text-main)]">
+              <span className="text-sm md:text-xl font-orbitron font-black uppercase tracking-tighter text-[var(--text-main)]">
                 {getFloorFullNameInWords(floorData?.label)}
               </span>
             </div>
@@ -1234,9 +1234,9 @@ export default function FloorPlan() {
           </div>
         </div>
 
-        <div className="flex items-center gap-2 md:gap-3 md:min-w-[260px] justify-end">
+        <div className="flex items-center gap-1.5 md:gap-2 md:min-w-[260px] justify-end">
           {/* Zoom & Recenter controls (Always visible in navbar) */}
-          <div className="flex items-center gap-1 bg-black/[0.03] dark:bg-white/5 border border-black/10 dark:border-white/10 p-1 rounded-xl shadow-sm">
+          <div className="flex items-center gap-0.5 bg-black/[0.03] dark:bg-white/5 border border-black/10 dark:border-white/10 p-0.5 md:p-1 rounded-xl shadow-sm">
             <button
               onClick={() => handleZoom(-0.25)}
               className="p-1.5 hover:bg-black/5 dark:hover:bg-white/10 rounded-lg text-black/50 dark:text-white/40 hover:text-blue-500 transition-all active:scale-90"
@@ -1244,7 +1244,7 @@ export default function FloorPlan() {
             >
               <Minus className="w-3.5 h-3.5" />
             </button>
-            <span className="text-[10.5px] font-orbitron font-black text-blue-500 w-10 text-center select-none">
+            <span className="text-[10.5px] font-orbitron font-black text-blue-500 w-8 md:w-10 text-center select-none">
               {Math.round(zoom * 100)}%
             </span>
             <button
@@ -1323,13 +1323,13 @@ export default function FloorPlan() {
                 <ThemeToggle />
               </motion.div>
             ) : (
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1.5">
                 <button
                   onClick={() => {
                     setFacultyModalSearchTerm('')
                     setIsFacultyModalOpen(true)
                   }}
-                  className="relative group overflow-hidden p-2.5 md:p-3 bg-gradient-to-r from-blue-500/5 to-purple-500/5 hover:from-blue-500/10 hover:to-purple-500/10 active:scale-95 border border-blue-500/20 hover:border-blue-500/40 rounded-xl transition-all duration-300 flex items-center justify-center shadow-sm"
+                  className="relative group overflow-hidden p-2 md:p-2.5 bg-gradient-to-r from-blue-500/5 to-purple-500/5 hover:from-blue-500/10 hover:to-purple-500/10 active:scale-95 border border-blue-500/20 hover:border-blue-500/40 rounded-xl transition-all duration-300 flex items-center justify-center shadow-sm"
                   title="Faculty Directory"
                 >
                   <div className="absolute inset-0 bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
@@ -1337,14 +1337,14 @@ export default function FloorPlan() {
                 </button>
                 <button
                   onClick={handleEditUnlock}
-                  className="p-2.5 md:p-3 bg-black/[0.03] dark:bg-white/5 hover:bg-blue-500/10 border border-black/10 dark:border-white/10 rounded-xl transition-all text-black/50 dark:text-white/40 hover:text-blue-500 active:scale-95 shadow-sm"
+                  className="hidden md:block p-2 md:p-2.5 bg-black/[0.03] dark:bg-white/5 hover:bg-blue-500/10 border border-black/10 dark:border-white/10 rounded-xl transition-all text-black/50 dark:text-white/40 hover:text-blue-500 active:scale-95 shadow-sm"
                   title="Edit Layout"
                 >
                   <Edit3 className="w-4 h-4" />
                 </button>
                 <button
                   onClick={toggleBlueprintMode}
-                  className="p-2.5 md:p-3 bg-black/[0.03] dark:bg-white/5 hover:bg-blue-500/10 border border-black/10 dark:border-white/10 rounded-xl transition-all text-black/50 dark:text-white/40 hover:text-blue-500 active:scale-95 shadow-sm"
+                  className="hidden md:block p-2 md:p-2.5 bg-black/[0.03] dark:bg-white/5 hover:bg-blue-500/10 border border-black/10 dark:border-white/10 rounded-xl transition-all text-black/50 dark:text-white/40 hover:text-blue-500 active:scale-95 shadow-sm"
                   title="Blueprint Mode"
                 >
                   <Map className="w-4 h-4" />
@@ -1358,14 +1358,14 @@ export default function FloorPlan() {
       )}
 
       <main
-        className={`relative flex-1 w-full flex items-center justify-center overflow-hidden transition-all duration-500 ${isBlueprintMode ? 'p-0' : 'p-3 md:p-6'}`}
+        className={`relative flex-1 w-full flex items-stretch justify-center overflow-hidden transition-all duration-500 ${isBlueprintMode ? 'p-0' : 'p-2 md:p-6'}`}
         ref={constraintsRef}
       >
 
         {/* Horizontal scrollable category filter chips (Google Maps style) */}
         {!selectedRoom && (
-          <div className="absolute top-2.5 left-1/2 transform -translate-x-1/2 flex items-center max-w-[90vw] overflow-x-auto no-scrollbar py-1 z-20">
-            <div className="flex gap-1.5 bg-white/90 dark:bg-black/60 backdrop-blur-xl border border-black/10 dark:border-white/10 p-1.5 rounded-xl shadow-xl mx-auto">
+          <div className="absolute top-2 left-1/2 transform -translate-x-1/2 flex items-center max-w-[96vw] overflow-x-auto no-scrollbar py-1 z-20">
+            <div className="flex gap-1 md:gap-1.5 bg-white/90 dark:bg-black/60 backdrop-blur-xl border border-black/10 dark:border-white/10 p-1 md:p-1.5 rounded-lg md:rounded-xl shadow-xl mx-auto">
               {[
                 { type: 'classroom', label: 'Classrooms', icon: BookOpen },
                 { type: 'lab', label: 'Labs', icon: FlaskConical },
@@ -1382,7 +1382,7 @@ export default function FloorPlan() {
                   <button
                     key={chip.type}
                     onClick={() => toggleFilter(chip.type)}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-[9.5px] md:text-[10.5px] font-orbitron font-black uppercase tracking-wider transition-all duration-300 active:scale-95 whitespace-nowrap
+                    className={`flex items-center gap-1 md:gap-1.5 px-2 md:px-3 py-1 md:py-1.5 rounded-md md:rounded-lg border text-[8.5px] md:text-[10.5px] font-orbitron font-black uppercase tracking-wider transition-all duration-300 active:scale-95 whitespace-nowrap
                       ${isActive 
                         ? 'bg-blue-500 border-blue-500 text-white shadow-md shadow-blue-500/25 scale-102 font-black' 
                         : 'bg-black/[0.02] dark:bg-white/[0.02] border-black/10 dark:border-white/10 text-black/70 dark:text-white/60 hover:bg-black/5 dark:hover:bg-white/10 hover:text-blue-500 dark:hover:text-blue-400 font-bold'
@@ -1406,7 +1406,7 @@ export default function FloorPlan() {
           </div>
         )}
 
-        <div className="relative w-full h-full flex flex-col items-center justify-center p-2">
+        <div className="relative w-full h-full flex flex-col items-center justify-center p-1 md:p-2">
           {isLoadingStatic && (
             <div className="absolute inset-0 z-50 flex items-center justify-center bg-[var(--bg-main)]/90 backdrop-blur-sm text-[var(--text-main)] font-mono rounded-2xl">
               <div className="animate-pulse flex flex-col items-center gap-4">
@@ -1446,7 +1446,7 @@ export default function FloorPlan() {
               className={`relative floor-${floorId} bg-white dark:bg-[#121215] overflow-hidden transition-all duration-500 ${
                 isBlueprintMode
                   ? 'border-2 border-blue-500/30 dark:border-blue-500/25 rounded-[20px] shadow-[0_0_60px_rgba(0,0,0,0.8)]'
-                  : 'w-[95%] h-[95%] max-w-[95vw] max-h-[85vh] border border-black/10 dark:border-white/10 rounded-[24px] shadow-xl'
+                  : 'w-full h-full border border-black/10 dark:border-white/10 rounded-[16px] md:rounded-[24px] shadow-xl'
               }`}
               onMouseMove={handleMouseMove}
             >

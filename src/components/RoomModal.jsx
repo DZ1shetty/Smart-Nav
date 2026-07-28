@@ -51,7 +51,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
   }
 
   return (
-    <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 md:p-8 overflow-hidden">
+    <div className="fixed inset-0 z-[110] flex items-center justify-center p-2 md:p-8 overflow-hidden">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -65,7 +65,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: 20, scale: 0.97 }}
         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-        className="relative w-full max-w-4xl bg-white/95 dark:bg-[#0c0c0e]/95 backdrop-blur-2xl border border-black/10 dark:border-white/10 rounded-3xl shadow-[0_25px_60px_rgba(0,0,0,0.3)] overflow-hidden flex flex-col md:flex-row items-stretch max-h-[88vh]"
+        className="relative w-full max-w-4xl bg-white/95 dark:bg-[#0c0c0e]/95 backdrop-blur-2xl border border-black/10 dark:border-white/10 rounded-2xl md:rounded-3xl shadow-[0_25px_60px_rgba(0,0,0,0.3)] overflow-hidden flex flex-col md:flex-row items-stretch max-h-[90vh]"
       >
         {/* Actions Container */}
         <div className="absolute top-4 right-4 flex items-center gap-2.5 z-[60]">
@@ -93,7 +93,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
         </div>
 
         {/* Left Side: Image Carousel */}
-        <div className="relative w-full md:w-[50%] bg-black/[0.03] dark:bg-white/[0.02] flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-black/5 dark:border-white/5 overflow-hidden">
+        <div className="relative w-full md:w-[50%] bg-black/[0.03] dark:bg-white/[0.02] flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-black/5 dark:border-white/5 overflow-hidden" style={{minHeight: '40vw', maxHeight: '42vh'}}>
           {images.length > 0 ? (
             <div className="relative w-full h-full group">
               <motion.img
@@ -155,10 +155,10 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
         </div>
 
         {/* Right Side: Information */}
-        <div className="flex-1 p-8 md:p-10 overflow-y-auto custom-scrollbar flex flex-col">
-          <div className="mb-8">
-            <div className="flex items-center justify-between gap-3 mb-2 pr-20">
-              <h2 className="text-3xl font-orbitron font-black uppercase tracking-tighter text-black dark:text-white leading-tight">
+        <div className="flex-1 p-4 md:p-10 overflow-y-auto custom-scrollbar flex flex-col">
+          <div className="mb-3 md:mb-8">
+            <div className="flex items-center justify-between gap-3 mb-1 md:mb-2 pr-20">
+              <h2 className="text-xl md:text-3xl font-orbitron font-black uppercase tracking-tighter text-black dark:text-white leading-tight">
                 {room.name}
               </h2>
             </div>
@@ -173,10 +173,10 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
             </div>
           </div>
 
-          <div className="space-y-8 flex-1">
+          <div className="space-y-4 md:space-y-8 flex-1">
             <InfoSection label="Description" value={room.description} />
 
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-2 gap-4 md:gap-8">
               {room.faculty && (
                 <InfoSection
                   label="Personnel"
@@ -211,7 +211,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
               </div>
             )}
 
-            <div className="p-6 bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 rounded-2xl relative group/directions overflow-hidden">
+            <div className="p-3 md:p-6 bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 rounded-xl md:rounded-2xl relative group/directions overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 blur-3xl -mr-16 -mt-16 pointer-events-none" />
 
               <div className="flex items-center justify-between mb-4">
@@ -313,7 +313,7 @@ function DirectionDisplay({ value }) {
       <ul className="space-y-3 mt-1">
         {items.map((item, idx) => (
           <li key={idx} className="flex gap-3 items-start">
-            <span className="flex-1 text-[15px] font-black leading-snug text-black dark:text-white tracking-tight">
+            <span className="flex-1 text-xs md:text-[15px] font-black leading-snug text-black dark:text-white tracking-tight">
               {item.trim()}
             </span>
           </li>
@@ -323,7 +323,7 @@ function DirectionDisplay({ value }) {
   }
 
   return (
-    <p className="leading-relaxed text-[15px] font-black text-black dark:text-white">
+    <p className="leading-relaxed text-xs md:text-[15px] font-black text-black dark:text-white">
       {value}
     </p>
   )
@@ -335,7 +335,7 @@ function InfoSection({ label, value, isFaculty, onViewProfile }) {
 
     return (
       <div className="flex flex-col gap-2">
-        <p className="leading-relaxed text-sm font-bold text-black dark:text-white">
+        <p className="leading-relaxed text-xs md:text-sm font-bold text-black dark:text-white">
           {value}
         </p>
         {isFaculty && onViewProfile && (
