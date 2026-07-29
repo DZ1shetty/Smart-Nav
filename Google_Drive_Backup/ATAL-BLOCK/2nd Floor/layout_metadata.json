@@ -49,12 +49,12 @@
       "y": 1050
     },
     {
-      "y": 1050,
-      "x": 600
+      "x": 600,
+      "y": 1050
     },
     {
-      "x": -50,
-      "y": 1050
+      "y": 1050,
+      "x": -50
     },
     {
       "y": 1050,
@@ -65,9 +65,6 @@
       "y": 1048
     }
   ],
-  "faculty": [],
-  "lastEditedBy": "admin",
-  "locked": true,
   "rooms": [
     {
       "id": "atal-second-stairs-1",
@@ -87,7 +84,8 @@
         "stairs",
         "utility"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "atal-second-lift",
@@ -108,7 +106,8 @@
         "elevator",
         "utility"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "atal-second-isl08",
@@ -131,7 +130,8 @@
         "security",
         "isl08"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "atal-second-staff-room",
@@ -152,7 +152,8 @@
         "staffs",
         "staff room"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "atal-second-stairs-2",
@@ -172,7 +173,8 @@
         "stairs",
         "utility"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "atal-second-aic-nitte",
@@ -181,9 +183,9 @@
       "type": "office",
       "x": 1422,
       "y": 610,
-      "w": 295,
+      "w": 317,
       "h": 432,
-      "width": 295,
+      "width": 317,
       "height": 432,
       "directions": "On the upper side of the corridor, next to Central Stairs.",
       "description": "AIC Nitte Incubation Centre.",
@@ -194,7 +196,8 @@
         "aic",
         "nitte"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "atal-second-ladies-washroom",
@@ -216,7 +219,8 @@
         "washroom",
         "utility"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "atal-second-gents-washroom",
@@ -238,7 +242,8 @@
         "washroom",
         "utility"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "atal-second-ecopoled",
@@ -259,7 +264,8 @@
         "biotech",
         "ecopoled"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "atal-second-coworking",
@@ -281,7 +287,8 @@
         "coworking",
         "space"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "atal-second-csl12",
@@ -304,7 +311,8 @@
         "web",
         "unix"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "atal-second-csl11",
@@ -326,7 +334,8 @@
         "csl11",
         "dsa"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "atal-second-coe-digital-manufacturing",
@@ -348,7 +357,8 @@
         "manufacturing",
         "digital"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "atal-second-fab-lab",
@@ -369,7 +379,8 @@
         "fab",
         "fabrication"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "atal-second-nfl002",
@@ -390,8 +401,12 @@
         "components",
         "nfl002"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     }
   ],
-  "lastEdited": "2026-07-23T11:19:31.133Z"
+  "faculty": [],
+  "lastEdited": "2026-07-25T14:45:32.151Z",
+  "lastEditedBy": "admin",
+  "locked": true
 }

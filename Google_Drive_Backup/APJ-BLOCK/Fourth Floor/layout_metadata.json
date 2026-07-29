@@ -99,6 +99,7 @@
   ],
   "lastEditedBy": "admin",
   "locked": true,
+  "lastEdited": "2026-07-23T11:19:19.276Z",
   "rooms": [
     {
       "id": "staff-room-top-left",
@@ -113,7 +114,7 @@
       "height": 100,
       "directions": "i. Stairs-1: Turn right, cross the center area to the left side of the building, then turn right and walk to the very top.\nii. Stairs-2: Turn left towards the left side of the building, turn right and walk all the way up.\niii. LIFT: Turn left to the left wall, then turn right and walk all the way up.",
       "description": "CSE Staff workspace",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/sr1.jpeg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/sr1.jpeg",
       "tags": [
         "staff",
         "office",
@@ -134,7 +135,7 @@
       "height": 90,
       "directions": "i. Stairs-1: Turn right, cross over to the left side of the floor, turn right and walk past CSL 05.\nii. Stairs-2: Turn left towards the left hallway, turn right and walk straight up past the Washroom.\niii. LIFT: Turn left to the left hallway, turn right and walk past CSL 05.",
       "description": "Computer Science Lab 06",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/csl06.jpeg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/csl06.jpeg",
       "tags": [
         "lab",
         "cse",
@@ -155,7 +156,7 @@
       "height": 90,
       "directions": "i. Stairs-1: Turn right, cross over to the left area, turn right and it will be on your left.\nii. Stairs-2: Turn left to the left side, turn right and walk past the Washroom.\niii. LIFT: Turn left across the hall, then turn right and it is immediately there.",
       "description": "Computer Science Lab 05",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/csl05.jpeg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/csl05.jpeg",
       "tags": [
         "lab",
         "cse",
@@ -195,7 +196,7 @@
       "height": 180,
       "directions": "i. Stairs-1: Turn right, walk towards the Washroom, then turn left.\nii. Stairs-2: Turn left to the left hallway, turn right and walk past CSL 03.\niii. LIFT: Turn left, walk straight, and it is immediately on your right.",
       "description": "Head of Department - CSE",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/hod-cse.jpeg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/hod-cse.jpeg",
       "tags": [
         "hod",
         "office",
@@ -216,7 +217,7 @@
       "height": 90,
       "directions": "i. Stairs-1: Turn right, cross towards the left side, turn left and walk past the HOD Cabin.\nii. Stairs-2: Turn left to the left hallway, and turn right to walk past CSL 04.\niii. LIFT: Turn left to the left side, then turn left to walk past the HOD Cabin.",
       "description": "Computer Science Lab 03",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/csl03.jpeg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/csl03.jpeg",
       "tags": [
         "lab",
         "cse",
@@ -237,7 +238,7 @@
       "height": 90,
       "directions": "i. Stairs-1: Turn right, cross to the left side, turn left and walk all the way down past CSL 03.\nii. Stairs-2: Turn left to the left side, and it is the first room on your left.\niii. LIFT: Turn left to the left side, turn left and walk to the very end.",
       "description": "Computer Science Lab 04",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/csl04.jpeg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/csl04.jpeg",
       "tags": [
         "lab",
         "cse",
@@ -258,7 +259,7 @@
       "height": 90,
       "directions": "i. Stairs-1: Turn right, cross to the left side, turn left and walk to the very end.\nii. Stairs-2: Turn left, and it is immediately there straight ahead on your left.\niii. LIFT: Turn left to the left side, turn left and walk to the very end.",
       "description": "Information Science Lab 04",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/isl04.jpeg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/isl04.jpeg",
       "tags": [
         "lab",
         "ise",
@@ -279,7 +280,7 @@
       "height": 90,
       "directions": "i. Stairs-1: Turn left and walk straight ahead to the very end.\nii. Stairs-2: Walk straight ahead along the right side of the building all the way to the top.\niii. LIFT: Turn right, and walk straight all the way to the top.",
       "description": "Computer Science Lab 07",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/csl07.jpeg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/csl07.jpeg",
       "tags": [
         "lab",
         "cse",
@@ -300,7 +301,7 @@
       "height": 90,
       "directions": "i. Stairs-1: Turn left and walk up past ISL 02.\nii. Stairs-2: Walk straight ahead along the right side passing the middle area.\niii. LIFT: Turn right, then turn left and walk past ISL 02.",
       "description": "Information Science Lab 03",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/isl03.jpeg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/isl03.jpeg",
       "tags": [
         "lab",
         "ise",
@@ -321,7 +322,7 @@
       "height": 90,
       "directions": "i. Stairs-1: Turn left, and it is the very first room on your right.\nii. Stairs-2: Walk straight ahead along the right side, just past the middle intersection.\niii. LIFT: Turn right, then turn left. It is immediately on your right.",
       "description": "Information Science Lab 02",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/isl02.jpeg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/isl02.jpeg",
       "tags": [
         "lab",
         "ise",
@@ -342,7 +343,7 @@
       "height": 90,
       "directions": "i. Stairs-1: Turn right and walk down past the Server Room.\nii. Stairs-2: Walk straight ahead past CSL 02.\niii. LIFT: Turn right, then turn right and walk down. It is on your left.",
       "description": "Information Science Lab 01",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/isl01.jpeg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/isl01.jpeg",
       "tags": [
         "lab",
         "ise",
@@ -363,7 +364,7 @@
       "height": 90,
       "directions": "i. Stairs-1: Turn right and walk down past ISL 01.\nii. Stairs-2: Walk straight ahead. It is the first room on your right.\niii. LIFT: Turn right, then turn right and walk down past ISL 01.",
       "description": "Computer Science Lab 02",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/csl02.jpeg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/csl02.jpeg",
       "tags": [
         "lab",
         "cse",
@@ -384,7 +385,7 @@
       "height": 90,
       "directions": "i. Stairs-1: Turn right and walk all the way straight down to the end.\nii. Stairs-2: Turn right, and it is immediately there on your right.\niii. LIFT: Turn right, then turn right and walk all the way down to the end.",
       "description": "Computer Science Lab 01",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/csl01.jpeg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/csl01.jpeg",
       "tags": [
         "lab",
         "cse",
@@ -405,7 +406,7 @@
       "height": 90,
       "directions": "i. Stairs-1: Walk forward and turn left, go all the way to the top wall, then turn left again.\nii. Stairs-2: Walk straight ahead through the entire building to the top wall, then turn left.\niii. LIFT: Turn right, walk all the way to the top, then turn left.",
       "description": "Main CSE Staff Room",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/sr2.jpeg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/sr2.jpeg",
       "tags": [
         "staff",
         "office",
@@ -426,7 +427,7 @@
       "height": 90,
       "directions": "i. Stairs-1: Turn right, cross to the left hallway, turn right to go up. It is on your right.\nii. Stairs-2: Turn left to the left hallway, turn right and walk past the Washroom. It is on your right.\niii. LIFT: Turn left to the left hallway, turn right to go up. It is on your right.",
       "description": "Staff workspace left",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/sr1.jpeg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/sr1.jpeg",
       "tags": [
         "office"
       ],
@@ -445,7 +446,7 @@
       "height": 90,
       "directions": "i. Stairs-1: Turn left and walk slightly up. It is on your left.\nii. Stairs-2: Walk straight ahead along the right hallway past the middle intersection. It is on your left.\niii. LIFT: Turn right to the right hallway, turn left to go up. It is on your left.",
       "description": "Staff workspace right",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/sr2.jpeg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/sr2.jpeg",
       "tags": [
         "office"
       ],
@@ -569,6 +570,5 @@
       "clickable": true,
       "linkToFloor": "ramanujan_fourth"
     }
-  ],
-  "lastEdited": "2026-07-23T11:19:19.276Z"
+  ]
 }

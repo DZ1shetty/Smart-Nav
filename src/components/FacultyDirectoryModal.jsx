@@ -3,6 +3,7 @@ import { X, Users, Search, MapPin, User, Trash2 } from 'lucide-react'
 import { useState, useMemo, useEffect } from 'react'
 import { resolveImageUrl } from '../config'
 import { getFloorFullNameInWords } from '../utils/floorFormatter'
+import { useDebounce } from '../hooks/useDebounce'
 
 function FacultyPortraitImage({ sources = [], name = '' }) {
   const [currentIdx, setCurrentIdx] = useState(0);
@@ -56,6 +57,7 @@ export default function FacultyDirectoryModal({
   initialSearch = '',
 }) {
   const [searchTerm, setSearchTerm] = useState(initialSearch)
+  const debouncedSearchTerm = useDebounce(searchTerm, 200)
 
   // Sync searchTerm when initialSearch updates (e.g. clicking different rooms)
   useEffect(() => {
@@ -66,7 +68,7 @@ export default function FacultyDirectoryModal({
   const filteredFaculty = useMemo(() => {
     if (!facultyList) return []
 
-    const query = searchTerm.toLowerCase().trim()
+    const query = debouncedSearchTerm.toLowerCase().trim()
     if (!query) return facultyList
 
     return facultyList.filter((f) => {
@@ -75,7 +77,7 @@ export default function FacultyDirectoryModal({
       const roomMatch = f.roomName?.toLowerCase().includes(query)
       return nameMatch || deptMatch || roomMatch
     })
-  }, [facultyList, searchTerm])
+  }, [facultyList, debouncedSearchTerm])
 
   return (
     <div className="fixed inset-0 z-[120] flex items-center justify-center p-4 md:p-8 overflow-hidden">

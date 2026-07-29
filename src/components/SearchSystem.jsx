@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
+import { useDebounce } from '../hooks/useDebounce'
 import {
   Search,
   MapPin,
@@ -166,6 +167,7 @@ const ResultRow = ({ item, isSelected, onSelect, onHover }) => {
 // ─── MAIN COMPONENT ───────────────────────────────────────────────────────────
 const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
   const [query, setQuery] = useState('')
+  const debouncedQuery = useDebounce(query, 250)
   const [resolution, setResolution] = useState(null)
   const [isFocused, setIsFocused] = useState(false)
   const [selectedIndex, setSelectedIndex] = useState(0)
@@ -195,18 +197,29 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
   }, [])
 
 
-  // ── Search ──────────────────────────────────────────────────────────────────
+  // ── Debounced Search ────────────────────────────────────────────────────────
   useEffect(() => {
     if (!query.trim()) {
       setResolution(null)
       setIsResolving(false)
+      if (onResultsChange) onResultsChange(null)
       return
     }
     setIsResolving(true)
-    const result = resolveNavigationQuery(query, { currentFloor })
+  }, [query, onResultsChange])
+
+  useEffect(() => {
+    if (!debouncedQuery.trim()) {
+      setResolution(null)
+      setIsResolving(false)
+      return
+    }
+
+    const result = resolveNavigationQuery(debouncedQuery, { currentFloor })
     setResolution(result)
     setIsResolving(false)
     setSelectedIndex(0)
+
     if (onResultsChange) {
       if (result && result.confidence_score >= 20) {
         onResultsChange(
@@ -218,7 +231,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
         onResultsChange(null)
       }
     }
-  }, [query, currentFloor, onResultsChange])
+  }, [debouncedQuery, currentFloor, onResultsChange])
 
   // ── Focus pass-through ──────────────────────────────────────────────────────
   useEffect(() => {

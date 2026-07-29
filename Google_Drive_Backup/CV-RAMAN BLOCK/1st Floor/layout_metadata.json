@@ -9,77 +9,74 @@
   "bulgeHeight": 500,
   "boundaryVertices": [
     {
-      "y": 36,
-      "x": 700
+      "x": 700,
+      "y": 36
     },
     {
-      "y": 218,
-      "x": 700
+      "x": 700,
+      "y": 218
     },
     {
-      "y": 309,
-      "x": 700
+      "x": 700,
+      "y": 309
     },
     {
-      "y": 395,
-      "x": 641
+      "x": 641,
+      "y": 395
     },
     {
-      "x": 812,
-      "y": 594
+      "y": 594,
+      "x": 812
     },
     {
-      "x": 1770,
-      "y": 598
+      "y": 598,
+      "x": 1770
     },
     {
-      "x": 1772,
-      "y": 963
+      "y": 963,
+      "x": 1772
     },
     {
-      "x": 749,
-      "y": 963
+      "y": 963,
+      "x": 749
     },
     {
-      "x": 752,
-      "y": 1246
+      "y": 1246,
+      "x": 752
     },
     {
-      "y": 1247,
-      "x": 554
+      "x": 554,
+      "y": 1247
     },
     {
-      "x": 326,
-      "y": 1248
+      "y": 1248,
+      "x": 326
     },
     {
-      "y": 970,
-      "x": 328
+      "x": 328,
+      "y": 970
     },
     {
-      "x": -628,
-      "y": 969
+      "y": 969,
+      "x": -628
     },
     {
-      "x": -627,
-      "y": 669
+      "y": 669,
+      "x": -627
     },
     {
-      "y": 673,
-      "x": 106
+      "x": 106,
+      "y": 673
     },
     {
-      "x": 281,
-      "y": 470
+      "y": 470,
+      "x": 281
     },
     {
-      "y": 36,
-      "x": 287
+      "x": 287,
+      "y": 36
     }
   ],
-  "faculty": [],
-  "lastEditedBy": "admin",
-  "locked": true,
   "rooms": [
     {
       "id": "cv-raman-first-ladies-toilet",
@@ -100,7 +97,8 @@
         "washroom",
         "utility"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "cv-raman-first-lc12",
@@ -113,14 +111,15 @@
       "h": 70,
       "width": 178,
       "height": 70,
-      "directions": "Right wing, near lift.",
+      "directions": "Right wing, near lift",
       "description": "Classroom LC-12",
       "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/first-floor/lc12.png",
       "tags": [
         "classroom",
         "lc12"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "cv-raman-first-lift",
@@ -141,7 +140,8 @@
         "elevator",
         "utility"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "cv-raman-first-lc11",
@@ -161,7 +161,8 @@
         "classroom",
         "lc11"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "cv-raman-first-gents-toilet",
@@ -182,7 +183,8 @@
         "washroom",
         "utility"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "cv-raman-first-lc13",
@@ -202,7 +204,8 @@
         "classroom",
         "lc13"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "cv-raman-first-lc14",
@@ -222,7 +225,8 @@
         "classroom",
         "lc14"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "cv-raman-first-cnmse",
@@ -243,7 +247,8 @@
         "cnmse",
         "research"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "cv-raman-first-heat-transfer-lab",
@@ -264,7 +269,8 @@
         "engineering",
         "heat-transfer"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "cv-raman-first-stairs-1",
@@ -284,7 +290,8 @@
         "stairs",
         "utility"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "cv-raman-first-stairs-2",
@@ -304,8 +311,12 @@
         "stairs",
         "utility"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     }
   ],
-  "lastEdited": "2026-07-23T11:19:21.307Z"
+  "faculty": [],
+  "lastEdited": "2026-07-25T15:19:31.300Z",
+  "lastEditedBy": "admin",
+  "locked": true
 }

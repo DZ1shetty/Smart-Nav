@@ -10,6 +10,7 @@ import {
 } from 'lucide-react'
 import { useState, useMemo, useEffect } from 'react'
 import { resolveImageUrl } from '../config'
+import { useDebounce } from '../hooks/useDebounce'
 
 export default function FacultyManagerModal({
   isOpen,
@@ -18,6 +19,7 @@ export default function FacultyManagerModal({
   onSave,
 }) {
   const [searchQuery, setSearchQuery] = useState('')
+  const debouncedSearchQuery = useDebounce(searchQuery, 200)
   const [editedFaculty, setEditedFaculty] = useState({})
   const [isSaving, setIsSaving] = useState(false)
   const [saveSuccess, setSaveSuccess] = useState(false)
@@ -45,11 +47,11 @@ export default function FacultyManagerModal({
       }))
       .filter(
         (f) =>
-          f.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          f.id.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          f.department?.toLowerCase().includes(searchQuery.toLowerCase())
+          f.name.toLowerCase().includes(debouncedSearchQuery.toLowerCase()) ||
+          f.id.toLowerCase().includes(debouncedSearchQuery.toLowerCase()) ||
+          f.department?.toLowerCase().includes(debouncedSearchQuery.toLowerCase())
       )
-  }, [facultyList, searchQuery])
+  }, [facultyList, debouncedSearchQuery])
 
   const handleFieldChange = (facultyId, field, value) => {
     setEditedFaculty((prev) => ({

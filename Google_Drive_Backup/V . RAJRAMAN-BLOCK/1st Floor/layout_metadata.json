@@ -29,8 +29,8 @@
       "y": 300
     },
     {
-      "y": 300,
-      "x": 697
+      "x": 697,
+      "y": 300
     },
     {
       "x": 697,
@@ -69,8 +69,6 @@
       "x": 274
     }
   ],
-  "lastEditedBy": "admin",
-  "locked": true,
   "rooms": [
     {
       "id": "rajraman-first-lift",
@@ -91,7 +89,8 @@
         "elevator",
         "utility"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "rajraman-first-robotics-club",
@@ -112,7 +111,8 @@
         "robotics",
         "classroom"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "rajraman-first-stairs-2",
@@ -132,7 +132,8 @@
         "stairs",
         "utility"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "rajraman-first-sr1",
@@ -152,7 +153,8 @@
         "staffroom",
         "office"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "rajraman-first-sr2",
@@ -172,7 +174,8 @@
         "staffroom",
         "office"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "rajraman-first-lab4",
@@ -193,7 +196,8 @@
         "robotics",
         "4"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "rajraman-first-lab5",
@@ -214,7 +218,8 @@
         "robotics",
         "5"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "rajraman-first-lab6",
@@ -235,7 +240,8 @@
         "robotics",
         "6"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "rajraman-first-sb-room",
@@ -244,9 +250,9 @@
       "type": "utility",
       "x": -76,
       "y": 278,
-      "w": 120,
+      "w": 195,
       "h": 71,
-      "width": 120,
+      "width": 195,
       "height": 71,
       "directions": "Located between LAB 6 and the Gents washroom on the left side.",
       "description": "Server and Battery Room.",
@@ -257,7 +263,8 @@
         "room",
         "utility"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "rajraman-first-gents-toilet",
@@ -279,7 +286,8 @@
         "gents",
         "utility"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "rajraman-first-stairs-1",
@@ -299,7 +307,8 @@
         "stairs",
         "utility"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "rajraman-first-ladies-toilet",
@@ -321,7 +330,8 @@
         "ladies",
         "utility"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     },
     {
       "id": "rajraman-first-mca-sr",
@@ -342,80 +352,83 @@
         "office",
         "mca"
       ],
-      "clickable": true
+      "clickable": true,
+      "linkToFloor": null
     }
   ],
   "faculty": [
     {
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_staff_room.png",
+      "avatar": "/rajraman-block-images/faculty/anusha.jpg",
       "name": "MS. ANUSHA PRASHANTH SHETTY",
       "department": "MCA",
-      "roomId": "rajraman-first-mca-sr",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_staff_room.png",
-      "avatar": "/rajraman-block-images/faculty/anusha.jpg"
+      "roomId": "rajraman-first-mca-sr"
     },
     {
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_staff_room.png",
+      "avatar": "/rajraman-block-images/faculty/raksha.jpg",
       "name": "MS. RAKSHA PUTHRAN",
-      "department": "MCA",
       "roomId": "rajraman-first-mca-sr",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_staff_room.png",
-      "avatar": "/rajraman-block-images/faculty/raksha.jpg"
+      "department": "MCA"
     },
     {
-      "name": "MS. ASHWINI K.M.",
-      "department": "MCA",
-      "roomId": "rajraman-first-mca-sr",
+      "avatar": "/rajraman-block-images/faculty/ashwini.jpg",
       "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_staff_room.png",
-      "avatar": "/rajraman-block-images/faculty/ashwini.jpg"
+      "roomId": "rajraman-first-mca-sr",
+      "department": "MCA",
+      "name": "MS. ASHWINI K.M."
     },
     {
-      "name": "DR. ROSHAN D SUVARIS",
-      "department": "MCA",
-      "roomId": "rajraman-first-mca-sr",
+      "avatar": "/rajraman-block-images/faculty/roshan.jpg",
       "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_staffroom_roshan.png",
-      "avatar": "/rajraman-block-images/faculty/roshan.jpg"
+      "department": "MCA",
+      "roomId": "rajraman-first-mca-sr",
+      "name": "DR. ROSHAN D SUVARIS"
     },
     {
       "name": "MS. SARITHA SHETTY",
-      "department": "MCA",
       "roomId": "rajraman-first-mca-sr",
+      "department": "MCA",
       "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_staffroom_saritha.png",
       "avatar": "/rajraman-block-images/faculty/saritha.jpg"
     },
     {
-      "name": "MRS. ANKITHA RAO",
-      "department": "Dept. of Robotics and AI",
-      "roomId": "rajraman-first-sr1",
       "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd1_ankitha.png",
-      "avatar": "/rajraman-block-images/faculty/ankitha.jpg"
+      "avatar": "/rajraman-block-images/faculty/ankitha.jpg",
+      "name": "MRS. ANKITHA RAO",
+      "roomId": "rajraman-first-sr1",
+      "department": "Dept. of Robotics and AI"
     },
     {
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd2_rajashree.png",
+      "avatar": "/rajraman-block-images/faculty/rajashree.jpg",
       "name": "MRS. RAJASHREE NAMBIAR",
       "department": "Dept. of Robotics and AI",
-      "roomId": "rajraman-first-sr2",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd2_rajashree.png",
-      "avatar": "/rajraman-block-images/faculty/rajashree.jpg"
+      "roomId": "rajraman-first-sr2"
     },
     {
-      "name": "MR. RANJITH BHAT",
-      "department": "Dept. of Robotics and AI",
       "roomId": "rajraman-first-sr1",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd3_ranjith.png",
-      "avatar": "/rajraman-block-images/faculty/ranjith.jpg"
+      "department": "Dept. of Robotics and AI",
+      "name": "MR. RANJITH BHAT",
+      "avatar": "/rajraman-block-images/faculty/ranjith.jpg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd3_ranjith.png"
     },
     {
-      "name": "DR. A. ADARSH RAI",
-      "department": "Dept. of Robotics and AI",
-      "roomId": "rajraman-first-sr2",
+      "avatar": "/rajraman-block-images/faculty/adarsh.jpg",
       "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd3_adarsh.png",
-      "avatar": "/rajraman-block-images/faculty/adarsh.jpg"
-    },
-    {
-      "name": "DR. VEERESHA R K",
       "department": "Dept. of Robotics and AI",
       "roomId": "rajraman-first-sr2",
+      "name": "DR. A. ADARSH RAI"
+    },
+    {
+      "avatar": "/rajraman-block-images/faculty/veeresha.jpg",
       "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/assoc_veeresha.png",
-      "avatar": "/rajraman-block-images/faculty/veeresha.jpg"
+      "roomId": "rajraman-first-sr2",
+      "department": "Dept. of Robotics and AI",
+      "name": "DR. VEERESHA R K"
     }
   ],
-  "lastEdited": "2026-07-23T11:19:32.141Z"
+  "lastEdited": "2026-07-25T14:49:06.318Z",
+  "lastEditedBy": "admin",
+  "locked": true
 }

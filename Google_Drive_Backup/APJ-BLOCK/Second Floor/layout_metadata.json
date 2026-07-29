@@ -99,6 +99,7 @@
   ],
   "lastEditedBy": "admin",
   "locked": true,
+  "lastEdited": "2026-07-23T11:19:18.434Z",
   "rooms": [
     {
       "id": "lh-211",
@@ -113,7 +114,7 @@
       "height": 80,
       "directions": "Top left corner area.",
       "description": "Lecture Hall 211",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/lh-211.jpeg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/lh-211.jpeg",
       "tags": [
         "classroom",
         "lh211"
@@ -217,7 +218,7 @@
       "height": 78,
       "directions": "Top right corner area.",
       "description": "Lecture Hall 212",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/lh-212.jpeg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/lh-212.jpeg",
       "tags": [
         "classroom",
         "lh212"
@@ -237,7 +238,7 @@
       "height": 220,
       "directions": "Left side, upper middle.",
       "description": "Biotechnology Lab 09",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/bioprocessbtl09.jpeg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/bioprocessbtl09.jpeg",
       "tags": [
         "lab",
         "bt",
@@ -277,7 +278,7 @@
       "height": 140,
       "directions": "Left side middle.",
       "description": "Head of Department - BT",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/hodbt.jpeg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/hodbt.jpeg",
       "tags": [
         "hod",
         "office",
@@ -319,7 +320,7 @@
       "height": 120,
       "directions": "Left side, lower middle.",
       "description": "Biotechnology Lab 08",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/btl08.jpeg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/btl08.jpeg",
       "tags": [
         "lab",
         "bt",
@@ -340,7 +341,7 @@
       "height": 100,
       "directions": "Bottom left area.",
       "description": "Biotechnology Lab 07",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/immunology-labbtl07.jpeg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/immunology-labbtl07.jpeg",
       "tags": [
         "lab",
         "bt",
@@ -361,7 +362,7 @@
       "height": 80,
       "directions": "Bottom center left area.",
       "description": "Biotechnology Lab 10",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/research_labbtl10.jpeg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/research_labbtl10.jpeg",
       "tags": [
         "lab",
         "bt",
@@ -439,7 +440,7 @@
       "height": 80,
       "directions": "Middle right area.",
       "description": "Lecture Hall 210",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/lh-210.jpeg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/lh-210.jpeg",
       "tags": [
         "classroom",
         "lh210"
@@ -459,7 +460,7 @@
       "height": 81,
       "directions": "Lower right area.",
       "description": "Biotechnology Lab 11",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/research_labbtl-11.jpeg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/research_labbtl-11.jpeg",
       "tags": [
         "lab",
         "bt",
@@ -480,7 +481,7 @@
       "height": 106,
       "directions": "Bottom right area.",
       "description": "Metrology and Measurements Lab",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/metrology_lab.jpeg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/metrology_lab.jpeg",
       "tags": [
         "lab",
         "mechanical"
@@ -509,6 +510,5 @@
       "clickable": true,
       "linkToFloor": "ramanujan_second"
     }
-  ],
-  "lastEdited": "2026-07-23T11:19:18.434Z"
+  ]
 }

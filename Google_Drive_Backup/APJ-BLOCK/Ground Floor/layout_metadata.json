@@ -87,6 +87,7 @@
   ],
   "lastEditedBy": "admin",
   "locked": true,
+  "lastEdited": "2026-07-23T11:19:17.675Z",
   "rooms": [
     {
       "id": "alumni-lounge",
@@ -101,7 +102,7 @@
       "height": 200,
       "directions": "Top left area.",
       "description": "Alumni Lounge Area",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/alumni-lounge.jpg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/alumni-lounge.jpg",
       "tags": [
         "lounge",
         "alumni"
@@ -121,7 +122,7 @@
       "height": 80,
       "directions": "Top center area.",
       "description": "Main Board Room",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/ground-board-room.jpg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/ground-board-room.jpg",
       "tags": [
         "board",
         "room"
@@ -141,7 +142,7 @@
       "height": 136,
       "directions": "Top right area.bdfgdh",
       "description": "President's Cabin - N. Vinay Hegde",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/vinay-hegde.jpg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/vinay-hegde.jpg",
       "tags": [
         "office"
       ],
@@ -160,7 +161,7 @@
       "height": 250,
       "directions": "Left side, upper middle.",
       "description": "Vice Principal's Office",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/vice-principal.jpg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/vice-principal.jpg",
       "tags": [
         "office",
         "principal"
@@ -180,7 +181,7 @@
       "height": 125,
       "directions": "Left side middle.hi\n",
       "description": "Vice President Cabin (Technical Education)",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/vice-president.jpg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/vice-president.jpg",
       "tags": [
         "office"
       ],
@@ -218,7 +219,7 @@
       "height": 525,
       "directions": "Large vertical block on the left.",
       "description": "Main Examination Section",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/exam-section.jpg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/exam-section.jpg",
       "tags": [
         "exam",
         "center"
@@ -295,7 +296,7 @@
       "height": 100,
       "directions": "Middle right area.",
       "description": "Principal's Office",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/principal.jpg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/principal.jpg",
       "tags": [
         "office",
         "principal"
@@ -315,7 +316,7 @@
       "height": 125,
       "directions": "Lower right area.",
       "description": "Office of Deputy Registrar",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/ground-deputy-registrar.jpg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/ground-deputy-registrar.jpg",
       "tags": [
         "office",
         "registry"
@@ -335,7 +336,7 @@
       "height": 115,
       "directions": "Bottom right area.",
       "description": "Nandhini Seminar Hall",
-      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/nandhini-hall.jpg",
+      "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/nandhini-hall.jpg",
       "tags": [
         "seminar",
         "hall"
@@ -364,6 +365,5 @@
       "clickable": true,
       "linkToFloor": "ramanujan_ground"
     }
-  ],
-  "lastEdited": "2026-07-23T11:19:17.675Z"
+  ]
 }
