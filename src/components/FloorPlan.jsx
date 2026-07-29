@@ -29,6 +29,8 @@ import { floorsData, getFloorDataLoader } from '../data/floorsData'
 import { searchIndex } from '../data/searchIndex'
 import FloorMapSVG from './FloorMapSVG'
 import FloorMapCanvas from './FloorMapCanvas'
+import FloorMapSkeleton from './FloorMapSkeleton'
+import ModalSkeleton from './ModalSkeleton'
 import RoomModal from './RoomModal'
 import ThemeToggle from './ThemeToggle'
 import SearchSystem from './SearchSystem'
@@ -1557,13 +1559,8 @@ export default function FloorPlan() {
 
         <div className="relative w-full h-full flex flex-col items-center justify-center p-1 md:p-2">
           {isLoadingStatic && (
-            <div className="absolute inset-0 z-50 flex items-center justify-center bg-[var(--bg-main)]/90 backdrop-blur-sm text-[var(--text-main)] font-mono rounded-2xl">
-              <div className="animate-pulse flex flex-col items-center gap-4">
-                <div className="w-12 h-12 rounded-full border-t-2 border-cyan-500 animate-spin"></div>
-                <span className="text-xs font-orbitron font-black tracking-widest text-[var(--text-accent)]">
-                  LOADING MAP DETAILS...
-                </span>
-              </div>
+            <div className="absolute inset-0 z-50 flex items-center justify-center rounded-2xl">
+              <FloorMapSkeleton />
             </div>
           )}
           {!rooms || rooms.length === 0 ? (
@@ -1789,7 +1786,7 @@ export default function FloorPlan() {
         )}
       </AnimatePresence>
 
-      <Suspense fallback={null}>
+      <Suspense fallback={<ModalSkeleton />}>
         <AnimatePresence>
           {isFacultyModalOpen && (
             <FacultyDirectoryModal
