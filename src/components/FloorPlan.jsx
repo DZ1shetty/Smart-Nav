@@ -28,6 +28,7 @@ import { puter } from '@heyputer/puter.js'
 import { floorsData, getFloorDataLoader } from '../data/floorsData'
 import { searchIndex } from '../data/searchIndex'
 import FloorMapSVG from './FloorMapSVG'
+import FloorMapCanvas from './FloorMapCanvas'
 import RoomModal from './RoomModal'
 import FacultyProfileModal from './FacultyProfileModal'
 import FacultyDirectoryModal from './FacultyDirectoryModal'
@@ -267,6 +268,7 @@ export default function FloorPlan() {
   const [rooms, setRooms] = useState([])
   const [faculty, setFaculty] = useState([]) // Dynamic faculty list
   const [bookmarkedRoomIds, setBookmarkedRoomIds] = useState([])
+  const [rendererMode, setRendererMode] = useState('svg') // 'svg' | 'canvas'
 
   const handleToggleBookmark = async (roomId) => {
     let activeUsername = 'anonymous';
@@ -1596,38 +1598,71 @@ export default function FloorPlan() {
               }`}
               onMouseMove={handleMouseMove}
             >
-              <FloorMapSVG
-                floorData={floorData}
-                isEditMode={isEditMode}
-                selectedRoomId={selectedRoom?.id}
-                highlightedRoomId={highlightedRoomId}
-                activeSearchIds={activeSearchIds}
-                activeFilters={activeFilters}
-                bookmarkedRoomIds={bookmarkedRoomIds}
-                alignmentGuides={alignmentGuides}
-                onVertexDragEnd={() => setAlignmentGuides([])}
-                onRoomMove={handleRoomMove}
-                onRoomResize={handleRoomResize}
-                onBoundaryChange={handleBoundaryChange}
-                onVertexMove={handleVertexMove}
-                onVertexAdd={handleVertexAdd}
-                onVertexDelete={handleVertexDelete}
-                onRoomClick={(room) => {
-                  if (room.clickable === false) return
+              {rendererMode === 'canvas' ? (
+                <FloorMapCanvas
+                  floorData={floorData}
+                  isEditMode={isEditMode}
+                  selectedRoomId={selectedRoom?.id}
+                  highlightedRoomId={highlightedRoomId}
+                  activeSearchIds={activeSearchIds}
+                  activeFilters={activeFilters}
+                  bookmarkedRoomIds={bookmarkedRoomIds}
+                  alignmentGuides={alignmentGuides}
+                  onVertexDragEnd={() => setAlignmentGuides([])}
+                  onRoomMove={handleRoomMove}
+                  onRoomResize={handleRoomResize}
+                  onBoundaryChange={handleBoundaryChange}
+                  onVertexMove={handleVertexMove}
+                  onVertexAdd={handleVertexAdd}
+                  onVertexDelete={handleVertexDelete}
+                  onRoomClick={(room) => {
+                    if (room.clickable === false) return
 
-                  // Administrative offices like Purchase Section should show their photo, not the faculty list
-                  const isAdminOffice = room.name
-                    ?.toUpperCase()
-                    .includes('PURCHASE')
+                    const isAdminOffice = room.name
+                      ?.toUpperCase()
+                      .includes('PURCHASE')
 
-                  if (room.type === 'staffroom' && !isAdminOffice) {
-                    setFacultyModalSearchTerm(room.name || '')
-                    setIsFacultyModalOpen(true)
-                  } else {
-                    navigate(`?room=${room.id}`)
-                  }
-                }}
-              />
+                    if (room.type === 'staffroom' && !isAdminOffice) {
+                      setFacultyModalSearchTerm(room.name || '')
+                      setIsFacultyModalOpen(true)
+                    } else {
+                      navigate(`?room=${room.id}`)
+                    }
+                  }}
+                />
+              ) : (
+                <FloorMapSVG
+                  floorData={floorData}
+                  isEditMode={isEditMode}
+                  selectedRoomId={selectedRoom?.id}
+                  highlightedRoomId={highlightedRoomId}
+                  activeSearchIds={activeSearchIds}
+                  activeFilters={activeFilters}
+                  bookmarkedRoomIds={bookmarkedRoomIds}
+                  alignmentGuides={alignmentGuides}
+                  onVertexDragEnd={() => setAlignmentGuides([])}
+                  onRoomMove={handleRoomMove}
+                  onRoomResize={handleRoomResize}
+                  onBoundaryChange={handleBoundaryChange}
+                  onVertexMove={handleVertexMove}
+                  onVertexAdd={handleVertexAdd}
+                  onVertexDelete={handleVertexDelete}
+                  onRoomClick={(room) => {
+                    if (room.clickable === false) return
+
+                    const isAdminOffice = room.name
+                      ?.toUpperCase()
+                      .includes('PURCHASE')
+
+                    if (room.type === 'staffroom' && !isAdminOffice) {
+                      setFacultyModalSearchTerm(room.name || '')
+                      setIsFacultyModalOpen(true)
+                    } else {
+                      navigate(`?room=${room.id}`)
+                    }
+                  }}
+                />
+              )}
             </motion.div>
           )}
         </div>
@@ -1709,6 +1744,14 @@ export default function FloorPlan() {
                 title="Recenter Map"
               >
                 <Locate className="w-4 h-4" />
+              </button>
+              <div className="h-5 w-px bg-black/10 dark:bg-white/10 mx-1.5" />
+              <button
+                onClick={() => setRendererMode((prev) => (prev === 'svg' ? 'canvas' : 'svg'))}
+                className="px-2.5 py-1 text-[9px] font-orbitron font-black bg-blue-500/10 hover:bg-blue-500 text-blue-500 hover:text-white rounded-xl transition-all active:scale-90 uppercase tracking-wider"
+                title="Toggle Map Engine (SVG vs Canvas)"
+              >
+                ENGINE: {rendererMode.toUpperCase()}
               </button>
             </motion.div>
           </>
