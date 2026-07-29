@@ -418,7 +418,7 @@ export default function HomePage() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -8 }}
       transition={{ duration: 0.25, ease: 'easeOut' }}
-      className="relative min-h-screen w-full bg-[var(--bg-main)] text-[var(--text-main)] font-space p-3 md:p-5 lg:p-6 flex flex-col items-center justify-start overflow-y-auto selection:bg-blue-500/30 transform-gpu"
+      className="relative min-h-screen lg:h-screen w-full bg-[var(--bg-main)] text-[var(--text-main)] font-space p-2 md:p-3 lg:p-4 lg:py-3 flex flex-col items-center justify-between overflow-y-auto lg:overflow-hidden selection:bg-blue-500/30 transform-gpu"
     >
       <Toaster richColors position="top-right" />
       {/* BACKGROUND ELEMENTS */}
@@ -430,16 +430,16 @@ export default function HomePage() {
       <div className="fixed inset-0 pointer-events-none z-50 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%] opacity-0 dark:opacity-20" />
 
       {/* THEME TOGGLE + ADMIN (Local to HomePage) */}
-      <div className="absolute top-3 right-3 md:top-4 md:right-4 z-50 flex items-center gap-2">
+      <div className="absolute top-2 right-2 md:top-3 md:right-3 z-50 flex items-center gap-2">
         <ThemeToggle />
       </div>
 
       {/* HEADER SECTION */}
-      <header className="relative z-30 flex flex-col items-center gap-2 mb-3 flex-shrink-0 w-full max-w-4xl">
+      <header className="relative z-30 flex flex-col items-center gap-1.5 mb-1.5 md:mb-2 flex-shrink-0 w-full max-w-4xl pt-1">
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-xl md:text-2xl lg:text-3xl font-orbitron font-black tracking-tighter leading-none text-center"
+          className="text-lg md:text-xl lg:text-2xl font-orbitron font-black tracking-tighter leading-none text-center"
         >
           SMART{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-teal-400 to-emerald-500">
@@ -448,9 +448,9 @@ export default function HomePage() {
         </motion.h1>
 
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.18 }}
+          transition={{ delay: 0.15 }}
           className="w-full max-w-xl"
         >
           <SearchSystem />
@@ -458,15 +458,15 @@ export default function HomePage() {
       </header>
 
       {/* MAIN NAVIGATION GRID */}
-      <main className="relative z-10 flex-1 flex items-center justify-center w-full max-w-5xl">
+      <main className="relative z-10 flex-1 flex items-center justify-center w-full max-w-5xl py-0.5">
         <AnimatePresence mode="wait">
           {!selectedBuilding ? (
             <motion.div
               key="building-selector"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="w-full max-w-5xl mx-auto py-1 md:py-2"
+              exit={{ opacity: 0, y: -16 }}
+              className="w-full max-w-5xl mx-auto py-0.5"
             >
               <BuildingBentoGrid onSelectBuilding={handleSelectBuilding} />
             </motion.div>
