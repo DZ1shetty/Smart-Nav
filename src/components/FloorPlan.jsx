@@ -1401,13 +1401,6 @@ export default function FloorPlan() {
                 >
                   <Edit3 className="w-4 h-4" />
                 </button>
-                <button
-                  onClick={toggleBlueprintMode}
-                  className="hidden md:block p-2 md:p-2.5 bg-black/[0.03] dark:bg-white/5 hover:bg-blue-500/10 border border-black/10 dark:border-white/10 rounded-xl transition-all text-black/50 dark:text-white/40 hover:text-blue-500 active:scale-95 shadow-sm"
-                  title="Blueprint Mode"
-                >
-                  <Map className="w-4 h-4" />
-                </button>
                 <ThemeToggle />
               </div>
             )}
