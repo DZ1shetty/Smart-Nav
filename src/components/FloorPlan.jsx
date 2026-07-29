@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect, useRef, useCallback } from 'react'
+import { useState, useMemo, useEffect, useRef, useCallback, lazy, Suspense } from 'react'
 import { useParams, useNavigate, Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
@@ -30,20 +30,21 @@ import { searchIndex } from '../data/searchIndex'
 import FloorMapSVG from './FloorMapSVG'
 import FloorMapCanvas from './FloorMapCanvas'
 import RoomModal from './RoomModal'
-import FacultyProfileModal from './FacultyProfileModal'
-import FacultyDirectoryModal from './FacultyDirectoryModal'
-import FacultyManagerModal from './FacultyManagerModal'
 import ThemeToggle from './ThemeToggle'
 import SearchSystem from './SearchSystem'
 import { db } from '../firebase'
 import { doc, onSnapshot, setDoc, getDoc } from 'firebase/firestore'
-import DirectionsManagerModal from './DirectionsManagerModal'
 import { useTheme } from '../context/ThemeContext'
 import { Toaster, toast } from 'sonner'
 import { getFirestoreDocName } from '../config'
 import { getFloorFullNameInWords } from '../utils/floorFormatter'
 import { trackFloorVisit, trackRoomView } from '../utils/analytics'
 import { floorIdToUrl, urlToFloorId } from '../utils/slugHelpers'
+
+const FacultyProfileModal = lazy(() => import('./FacultyProfileModal'))
+const FacultyDirectoryModal = lazy(() => import('./FacultyDirectoryModal'))
+const FacultyManagerModal = lazy(() => import('./FacultyManagerModal'))
+const DirectionsManagerModal = lazy(() => import('./DirectionsManagerModal'))
 
 /**
  * Case-insensitive name matching helper that handles prefix variations (Dr., Mr., Prof., etc.)
@@ -1788,64 +1789,66 @@ export default function FloorPlan() {
         )}
       </AnimatePresence>
 
-      <AnimatePresence>
-        {isFacultyModalOpen && (
-          <FacultyDirectoryModal
-            isOpen={isFacultyModalOpen}
-            onClose={() => setIsFacultyModalOpen(false)}
-            initialSearch={facultyModalSearchTerm}
-            floorData={floorData}
-            facultyList={allFaculty}
-            isEditMode={isEditMode}
-            onDeleteFaculty={handleDeleteFaculty}
-            onSelectFaculty={(f) => {
-              setIsFacultyModalOpen(false)
-              if (f.originalRoom) {
-                navigate(`?room=${f.originalRoom.id}&faculty=${encodeURIComponent(f.name)}`)
-              } else {
-                navigate(`?faculty=${encodeURIComponent(f.name)}`)
-              }
-            }}
-          />
-        )}
-      </AnimatePresence>
+      <Suspense fallback={null}>
+        <AnimatePresence>
+          {isFacultyModalOpen && (
+            <FacultyDirectoryModal
+              isOpen={isFacultyModalOpen}
+              onClose={() => setIsFacultyModalOpen(false)}
+              initialSearch={facultyModalSearchTerm}
+              floorData={floorData}
+              facultyList={allFaculty}
+              isEditMode={isEditMode}
+              onDeleteFaculty={handleDeleteFaculty}
+              onSelectFaculty={(f) => {
+                setIsFacultyModalOpen(false)
+                if (f.originalRoom) {
+                  navigate(`?room=${f.originalRoom.id}&faculty=${encodeURIComponent(f.name)}`)
+                } else {
+                  navigate(`?faculty=${encodeURIComponent(f.name)}`)
+                }
+              }}
+            />
+          )}
+        </AnimatePresence>
 
-      <AnimatePresence>
-        {selectedFacultyProfile && (
-          <FacultyProfileModal
-            faculty={selectedFacultyProfile}
-            onClose={handleCloseFaculty}
-          />
-        )}
-      </AnimatePresence>
+        <AnimatePresence>
+          {selectedFacultyProfile && (
+            <FacultyProfileModal
+              faculty={selectedFacultyProfile}
+              onClose={handleCloseFaculty}
+            />
+          )}
+        </AnimatePresence>
 
-      <AnimatePresence>
-        {isDirectionsModalOpen && (
-          <DirectionsManagerModal
-            isOpen={isDirectionsModalOpen}
-            onClose={() => setIsDirectionsModalOpen(false)}
-            rooms={rooms}
-            onSave={async (updatedRooms) => {
-              setRooms(updatedRooms)
-              await onSave(updatedRooms)
-            }}
-          />
-        )}
-      </AnimatePresence>
+        <AnimatePresence>
+          {isDirectionsModalOpen && (
+            <DirectionsManagerModal
+              isOpen={isDirectionsModalOpen}
+              onClose={() => setIsDirectionsModalOpen(false)}
+              rooms={rooms}
+              onSave={async (updatedRooms) => {
+                setRooms(updatedRooms)
+                await onSave(updatedRooms)
+              }}
+            />
+          )}
+        </AnimatePresence>
 
-      <AnimatePresence>
-        {isFacultyManagerOpen && (
-          <FacultyManagerModal
-            isOpen={isFacultyManagerOpen}
-            onClose={() => setIsFacultyManagerOpen(false)}
-            facultyList={allFaculty}
-            onSave={async (updatedFaculty) => {
-              setFaculty(updatedFaculty)
-              await onSave(null, updatedFaculty)
-            }}
-          />
-        )}
-      </AnimatePresence>
+        <AnimatePresence>
+          {isFacultyManagerOpen && (
+            <FacultyManagerModal
+              isOpen={isFacultyManagerOpen}
+              onClose={() => setIsFacultyManagerOpen(false)}
+              facultyList={allFaculty}
+              onSave={async (updatedFaculty) => {
+                setFaculty(updatedFaculty)
+                await onSave(null, updatedFaculty)
+              }}
+            />
+          )}
+        </AnimatePresence>
+      </Suspense>
     </motion.div>
   )
 }
