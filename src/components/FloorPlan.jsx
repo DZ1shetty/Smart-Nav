@@ -23,6 +23,7 @@ import {
   Bookmark,
   Map,
   Search,
+  SlidersHorizontal,
 } from 'lucide-react'
 import { puter } from '@heyputer/puter.js'
 import { floorsData, getFloorDataLoader } from '../data/floorsData'
@@ -31,6 +32,7 @@ import FloorMapSVG from './FloorMapSVG'
 import FloorMapCanvas from './FloorMapCanvas'
 import FloorMapSkeleton from './FloorMapSkeleton'
 import ModalSkeleton from './ModalSkeleton'
+import MobileOptionsSheet from './MobileOptionsSheet'
 import RoomModal from './RoomModal'
 import ThemeToggle from './ThemeToggle'
 import SearchSystem from './SearchSystem'
@@ -188,6 +190,7 @@ export default function FloorPlan() {
   const [activeSearchIds, setActiveSearchIds] = useState(null)
   const [isMobileFloorOpen, setIsMobileFloorOpen] = useState(false)
   const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false)
+  const [isMobileOptionsOpen, setIsMobileOptionsOpen] = useState(false)
   const constraintsRef = useRef(null)
   const floorMenuRef = useRef(null)
 
@@ -1290,8 +1293,8 @@ export default function FloorPlan() {
           </div>
         </div>
 
-        <div className="flex items-center gap-1.5 md:gap-2 md:min-w-[260px] justify-end">
-          {/* Zoom & Recenter controls (Always visible in navbar) */}
+        <div className="hidden md:flex items-center gap-1.5 md:gap-2 md:min-w-[260px] justify-end">
+          {/* Zoom & Recenter controls (Desktop) */}
           <div className="flex items-center gap-0.5 bg-black/[0.03] dark:bg-white/5 border border-black/10 dark:border-white/10 p-0.5 md:p-1 rounded-xl shadow-sm">
             <button
               onClick={() => handleZoom(-0.25)}
@@ -1410,19 +1413,55 @@ export default function FloorPlan() {
             )}
           </AnimatePresence>
         </div>
-        {/* Mobile search button — visible only on mobile, sits right of the zoom strip */}
-        <button
-          onClick={() => setIsMobileSearchOpen((p) => !p)}
-          className={`md:hidden p-2 border rounded-xl transition-all active:scale-95 flex-shrink-0 ${
-            isMobileSearchOpen
-              ? 'bg-blue-500 border-blue-500 text-white shadow-md'
-              : 'bg-black/[0.03] dark:bg-white/5 border-black/10 dark:border-white/10 text-black/50 dark:text-white/40 hover:text-blue-500'
-          }`}
-          title="Search rooms"
-        >
-          <Search className="w-4 h-4" />
-        </button>
+
+        {/* Mobile controls action cluster (Search 🔍 + Options Drawer ⚙️) */}
+        <div className="md:hidden flex items-center gap-1.5 flex-shrink-0">
+          <button
+            onClick={() => {
+              setIsMobileSearchOpen((p) => !p)
+              if (isMobileOptionsOpen) setIsMobileOptionsOpen(false)
+            }}
+            className={`p-2 border rounded-xl transition-all active:scale-95 flex-shrink-0 ${
+              isMobileSearchOpen
+                ? 'bg-blue-500 border-blue-500 text-white shadow-md'
+                : 'bg-black/[0.03] dark:bg-white/5 border-black/10 dark:border-white/10 text-black/50 dark:text-white/40 hover:text-blue-500'
+            }`}
+            aria-label="Search rooms"
+            title="Search rooms"
+          >
+            <Search className="w-4 h-4" />
+          </button>
+          <button
+            onClick={() => {
+              setIsMobileOptionsOpen((p) => !p)
+              if (isMobileSearchOpen) setIsMobileSearchOpen(false)
+            }}
+            className={`p-2 border rounded-xl transition-all active:scale-95 flex-shrink-0 ${
+              isMobileOptionsOpen
+                ? 'bg-cyan-500 border-cyan-500 text-white shadow-md'
+                : 'bg-black/[0.03] dark:bg-white/5 border-black/10 dark:border-white/10 text-black/50 dark:text-white/40 hover:text-cyan-500'
+            }`}
+            aria-label="Map Controls & Options"
+            title="Map Controls & Options"
+          >
+            <SlidersHorizontal className="w-4 h-4" />
+          </button>
+        </div>
       </header>
+
+      {/* Mobile Options Sheet */}
+      <MobileOptionsSheet
+        isOpen={isMobileOptionsOpen}
+        onClose={() => setIsMobileOptionsOpen(false)}
+        zoom={zoom}
+        onZoomIn={() => handleZoom(0.25)}
+        onZoomOut={() => handleZoom(-0.25)}
+        onResetView={resetView}
+        onOpenFacultyDirectory={() => {
+          setFacultyModalSearchTerm('')
+          setIsFacultyModalOpen(true)
+        }}
+      />
 
       {/* Mobile search overlay — slides in below header */}
       <AnimatePresence>
