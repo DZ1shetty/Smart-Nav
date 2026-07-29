@@ -31,6 +31,7 @@ import FloorMapSVG from './FloorMapSVG'
 import FloorMapCanvas from './FloorMapCanvas'
 import FloorMapSkeleton from './FloorMapSkeleton'
 import ModalSkeleton from './ModalSkeleton'
+import MobileDock from './MobileDock'
 import RoomModal from './RoomModal'
 import ThemeToggle from './ThemeToggle'
 import SearchSystem from './SearchSystem'
@@ -1846,6 +1847,18 @@ export default function FloorPlan() {
           )}
         </AnimatePresence>
       </Suspense>
+
+      {/* Floating Control Dock for Mobile Viewports */}
+      <MobileDock
+        onOpenSearch={() => {
+          const searchInput = document.querySelector('input[type="text"]')
+          if (searchInput) {
+            searchInput.focus()
+          }
+        }}
+        onOpenFloorSelector={() => setIsFloorMenuOpen(true)}
+        onOpenFacultyDirectory={() => setIsFacultyModalOpen(true)}
+      />
     </motion.div>
   )
 }
