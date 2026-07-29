@@ -1,6 +1,6 @@
 {
-  "name": "Smart-Nav Campus Navigation",
-  "short_name": "Smart-Nav",
+  "name": "SmartNav Campus Navigation",
+  "short_name": "SmartNav",
   "description": "Interactive Campus Map, Room Search & Faculty Directory Navigation System",
   "start_url": "/",
   "display": "standalone",
