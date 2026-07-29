@@ -1,8 +1,9 @@
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useContext, useEffect, useState, useRef } from 'react'
 
 const ThemeContext = createContext()
 
 export const ThemeProvider = ({ children }) => {
+  const isPendingRef = useRef(false)
   const [theme, setTheme] = useState(() => {
     // Check localStorage first
     const savedTheme = localStorage.getItem('theme')
@@ -44,6 +45,8 @@ export const ThemeProvider = ({ children }) => {
   }, [])
 
   const toggleTheme = (e) => {
+    if (isPendingRef.current) return
+
     const isTest =
       (typeof process !== 'undefined' && process.env.NODE_ENV === 'test') ||
       (import.meta.env && import.meta.env.MODE === 'test')
@@ -58,6 +61,8 @@ export const ThemeProvider = ({ children }) => {
       return
     }
 
+    isPendingRef.current = true
+
     const x = e?.clientX ?? window.innerWidth / 2
     const y = e?.clientY ?? window.innerHeight / 2
     const endRadius = Math.hypot(
@@ -70,7 +75,7 @@ export const ThemeProvider = ({ children }) => {
     })
 
     transition.ready.then(() => {
-      document.documentElement.animate(
+      const anim = document.documentElement.animate(
         {
           clipPath: [
             `circle(0px at ${x}px ${y}px)`,
@@ -78,11 +83,19 @@ export const ThemeProvider = ({ children }) => {
           ],
         },
         {
-          duration: 400,
+          duration: 450,
           easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
           pseudoElement: '::view-transition-new(root)',
         }
       )
+
+      anim.onfinish = () => {
+        isPendingRef.current = false
+      }
+    })
+
+    transition.finished.catch(() => {
+      isPendingRef.current = false
     })
   }
 

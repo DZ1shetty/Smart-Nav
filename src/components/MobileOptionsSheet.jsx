@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { Minus, Plus, Locate, Users, Sun, Moon, X } from 'lucide-react'
+import { Minus, Plus, Locate, Users, X } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
+import ThemeToggle from './ThemeToggle'
 
 /**
  * Glassmorphic Options Sheet for Mobile Navigation.
@@ -92,13 +93,10 @@ export default function MobileOptionsSheet({
             </button>
 
             {/* Theme Toggle Card */}
-            <button
-              onClick={toggleTheme}
-              className="flex items-center justify-between p-2.5 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-300 transition-colors"
-            >
+            <div className="flex items-center justify-between p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300">
               <span className="text-[11px] font-orbitron font-bold">THEME</span>
-              {isDark ? <Moon className="w-4 h-4 text-blue-400" /> : <Sun className="w-4 h-4 text-amber-400" />}
-            </button>
+              <ThemeToggle />
+            </div>
           </div>
         </motion.div>
       )}
