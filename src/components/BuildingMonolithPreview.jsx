@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import {
   ChevronLeft,
@@ -11,9 +11,11 @@ import {
   Users,
   Building,
   Upload,
-  CheckCircle,
   Image as ImageIcon,
   Link as LinkIcon,
+  Clock,
+  Accessibility,
+  Layers,
 } from 'lucide-react'
 import { floorIdToUrl } from '../utils/slugHelpers'
 
@@ -35,7 +37,7 @@ export default function BuildingMonolithPreview({
   const navigate = useNavigate()
   const [activeFloorHover, setActiveFloorHover] = useState(null)
 
-  // Map floor ID index to architectural level codes (e.g. L06, L05, L00, L-1)
+  // Map floor ID index to architectural level codes (e.g. L06, L05, L00, B01)
   const getLevelCode = (floorId, index, total) => {
     if (floorId.includes('basement')) return 'B01'
     if (floorId.includes('ground')) return 'L00'
@@ -61,18 +63,18 @@ export default function BuildingMonolithPreview({
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.98 }}
       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-      className="w-full max-w-6xl mx-auto flex flex-col justify-between py-2 px-2 md:px-4 text-[var(--text-main)] select-none"
+      className="w-full max-w-7xl mx-auto flex flex-col justify-between py-1 px-3 md:px-6 text-[var(--text-main)] select-none"
     >
       {/* TOP CONTROL BAR: BACK + ARCHITECTURAL TITLE + ADMIN CONTROLS */}
-      <div className="w-full flex items-center justify-between border-b border-black/10 dark:border-white/10 pb-3 mb-4">
+      <div className="w-full flex items-center justify-between border-b border-black/10 dark:border-white/10 pb-2.5 mb-3">
         {/* Back Button */}
         <button
           onClick={handleBackToHome}
-          className="group flex items-center gap-2 px-3 py-2 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20 transition-all active:scale-95"
+          className="group flex items-center gap-2 px-3 py-1.5 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20 transition-all active:scale-95 shadow-sm"
         >
           <ChevronLeft className="w-4 h-4 text-slate-400 group-hover:text-white transition-colors" />
           <span className="text-xs font-orbitron font-black uppercase tracking-widest text-slate-400 group-hover:text-white transition-colors">
-            CAMPUS MAP
+            BACK
           </span>
         </button>
 
@@ -83,7 +85,7 @@ export default function BuildingMonolithPreview({
           >
             {theme.name}
           </h1>
-          <span className="px-2.5 py-0.5 rounded-full text-[10px] md:text-xs font-orbitron font-black uppercase tracking-wider bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-slate-400">
+          <span className="px-3 py-1 rounded-full text-xs font-orbitron font-black uppercase tracking-wider bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-slate-400 shadow-sm">
             {theme.floors}
           </span>
         </div>
@@ -120,11 +122,11 @@ export default function BuildingMonolithPreview({
       </div>
 
       {/* CENTER MONOLITH EXHIBIT AREA */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start my-2">
-        {/* LEFT COLUMN: DESCRIPTION & ARCHITECTURAL CALLOUTS */}
-        <div className="lg:col-span-5 flex flex-col gap-4">
-          {/* Building Photo / Image Area */}
-          <div className="relative rounded-3xl border border-black/10 dark:border-white/10 overflow-hidden bg-black/5 dark:bg-white/[0.02] aspect-[16/9] max-h-[180px] shadow-md flex flex-col justify-end group">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 md:gap-6 items-start my-1">
+        {/* LEFT COLUMN: IMAGE, OVERVIEW & 3 CALLOUTS */}
+        <div className="lg:col-span-6 flex flex-col gap-3.5">
+          {/* Building Photo / Image Showcase */}
+          <div className="relative rounded-2xl md:rounded-3xl border border-black/10 dark:border-white/10 overflow-hidden bg-black/5 dark:bg-white/[0.02] aspect-[16/8] max-h-[210px] shadow-lg flex flex-col justify-end group">
             {isEditing ? (
               <div className="w-full h-full relative flex items-center justify-center">
                 {editedData?.imageUrl ? (
@@ -150,13 +152,13 @@ export default function BuildingMonolithPreview({
               <img
                 src={buildingData.imageUrl}
                 alt={buildingData.name || theme.name}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700"
               />
             ) : (
               <div className="w-full h-full flex flex-col items-center justify-center p-4 text-center">
                 <Building className="w-10 h-10 text-slate-400 mb-1 opacity-40" />
                 <span className="text-[10px] font-orbitron font-bold text-slate-400 uppercase tracking-widest">
-                  ARCHITECTURAL PHOTO DISPLAY SLOT
+                  ARCHITECTURAL PHOTO SHOWCASE
                 </span>
               </div>
             )}
@@ -164,7 +166,7 @@ export default function BuildingMonolithPreview({
 
           {/* Image Input Controls when isEditing === true */}
           {isEditing && (
-            <div className="p-3.5 rounded-2xl bg-white/80 dark:bg-white/[0.03] border border-black/10 dark:border-white/10 shadow-sm flex flex-col gap-2">
+            <div className="p-3 rounded-2xl bg-white/80 dark:bg-white/[0.03] border border-black/10 dark:border-white/10 shadow-sm flex flex-col gap-2">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-orbitron font-black uppercase tracking-wider text-blue-500 flex items-center gap-1">
                   <ImageIcon className="w-3.5 h-3.5" /> BUILDING IMAGE URL / UPLOAD
@@ -206,7 +208,7 @@ export default function BuildingMonolithPreview({
           )}
 
           {/* Building Overview Panel */}
-          <div className="p-5 rounded-3xl bg-white/80 dark:bg-white/[0.03] backdrop-blur-2xl border border-black/10 dark:border-white/10 shadow-lg flex flex-col gap-3">
+          <div className="p-4 md:p-4.5 rounded-2xl md:rounded-3xl bg-white/80 dark:bg-white/[0.03] backdrop-blur-2xl border border-black/10 dark:border-white/10 shadow-sm flex flex-col gap-2">
             <span className="text-[10px] font-orbitron font-black uppercase tracking-widest text-slate-400">
               BUILDING OVERVIEW
             </span>
@@ -217,7 +219,7 @@ export default function BuildingMonolithPreview({
                   setEditedData({ ...editedData, description: e.target.value })
                 }
                 rows={3}
-                className="w-full bg-black/5 dark:bg-white/5 border border-black/15 dark:border-white/15 focus:border-blue-500 rounded-xl p-3 text-xs text-[var(--text-main)] leading-relaxed resize-none"
+                className="w-full bg-black/5 dark:bg-white/5 border border-black/15 dark:border-white/15 focus:border-blue-500 rounded-xl p-2.5 text-xs text-[var(--text-main)] leading-relaxed resize-none"
               />
             ) : (
               <p className="text-xs md:text-sm text-slate-700 dark:text-zinc-300 leading-relaxed font-medium">
@@ -226,15 +228,18 @@ export default function BuildingMonolithPreview({
             )}
           </div>
 
-          {/* Architectural Callout 1: Main Entrance */}
-          <div className="p-4 rounded-2xl bg-white/60 dark:bg-white/[0.02] backdrop-blur-xl border border-black/10 dark:border-white/10 flex items-start gap-3 shadow-sm">
-            <div className={`p-2 rounded-xl bg-black/5 dark:bg-white/10 ${theme.colorClass} flex-shrink-0`}>
-              <MapPin className="w-4 h-4" />
-            </div>
-            <div className="flex flex-col gap-1 flex-1">
-              <span className="text-[10px] font-orbitron font-black uppercase tracking-wider text-slate-400">
-                MAIN ENTRANCE
-              </span>
+          {/* 3 Architectural Callout Cards (Horizontal Grid for Maximum Breathing Room) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5">
+            {/* Callout 1: Main Entrance */}
+            <div className="p-3 md:p-3.5 rounded-2xl bg-white/60 dark:bg-white/[0.02] backdrop-blur-xl border border-black/10 dark:border-white/10 flex flex-col gap-1.5 shadow-sm">
+              <div className="flex items-center gap-2">
+                <div className={`p-1.5 rounded-lg bg-black/5 dark:bg-white/10 ${theme.colorClass} flex-shrink-0`}>
+                  <MapPin className="w-3.5 h-3.5" />
+                </div>
+                <span className="text-[10px] font-orbitron font-black uppercase tracking-wider text-slate-400">
+                  ENTRANCE
+                </span>
+              </div>
               {isEditing ? (
                 <textarea
                   value={editedData?.entranceDetails || ''}
@@ -245,25 +250,25 @@ export default function BuildingMonolithPreview({
                     })
                   }
                   rows={2}
-                  className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-lg p-2 text-xs text-[var(--text-main)] resize-none"
+                  className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-lg p-1.5 text-xs text-[var(--text-main)] resize-none"
                 />
               ) : (
-                <p className="text-xs text-slate-700 dark:text-zinc-300 leading-normal font-medium">
+                <p className="text-xs text-slate-700 dark:text-zinc-300 leading-snug font-medium">
                   {buildingData?.entranceDetails}
                 </p>
               )}
             </div>
-          </div>
 
-          {/* Architectural Callout 2: Lab Access */}
-          <div className="p-4 rounded-2xl bg-white/60 dark:bg-white/[0.02] backdrop-blur-xl border border-black/10 dark:border-white/10 flex items-start gap-3 shadow-sm">
-            <div className={`p-2 rounded-xl bg-black/5 dark:bg-white/10 ${theme.colorClass} flex-shrink-0`}>
-              <FlaskConical className="w-4 h-4" />
-            </div>
-            <div className="flex flex-col gap-1 flex-1">
-              <span className="text-[10px] font-orbitron font-black uppercase tracking-wider text-slate-400">
-                LAB ACCESS
-              </span>
+            {/* Callout 2: Lab Access */}
+            <div className="p-3 md:p-3.5 rounded-2xl bg-white/60 dark:bg-white/[0.02] backdrop-blur-xl border border-black/10 dark:border-white/10 flex flex-col gap-1.5 shadow-sm">
+              <div className="flex items-center gap-2">
+                <div className={`p-1.5 rounded-lg bg-black/5 dark:bg-white/10 ${theme.colorClass} flex-shrink-0`}>
+                  <FlaskConical className="w-3.5 h-3.5" />
+                </div>
+                <span className="text-[10px] font-orbitron font-black uppercase tracking-wider text-slate-400">
+                  LAB ACCESS
+                </span>
+              </div>
               {isEditing ? (
                 <textarea
                   value={editedData?.labDetails || ''}
@@ -274,25 +279,25 @@ export default function BuildingMonolithPreview({
                     })
                   }
                   rows={2}
-                  className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-lg p-2 text-xs text-[var(--text-main)] resize-none"
+                  className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-lg p-1.5 text-xs text-[var(--text-main)] resize-none"
                 />
               ) : (
-                <p className="text-xs text-slate-700 dark:text-zinc-300 leading-normal font-medium">
+                <p className="text-xs text-slate-700 dark:text-zinc-300 leading-snug font-medium">
                   {buildingData?.labDetails}
                 </p>
               )}
             </div>
-          </div>
 
-          {/* Architectural Callout 3: Staff Rooms */}
-          <div className="p-4 rounded-2xl bg-white/60 dark:bg-white/[0.02] backdrop-blur-xl border border-black/10 dark:border-white/10 flex items-start gap-3 shadow-sm">
-            <div className={`p-2 rounded-xl bg-black/5 dark:bg-white/10 ${theme.colorClass} flex-shrink-0`}>
-              <Users className="w-4 h-4" />
-            </div>
-            <div className="flex flex-col gap-1 flex-1">
-              <span className="text-[10px] font-orbitron font-black uppercase tracking-wider text-slate-400">
-                STAFF ROOMS
-              </span>
+            {/* Callout 3: Staff Rooms */}
+            <div className="p-3 md:p-3.5 rounded-2xl bg-white/60 dark:bg-white/[0.02] backdrop-blur-xl border border-black/10 dark:border-white/10 flex flex-col gap-1.5 shadow-sm">
+              <div className="flex items-center gap-2">
+                <div className={`p-1.5 rounded-lg bg-black/5 dark:bg-white/10 ${theme.colorClass} flex-shrink-0`}>
+                  <Users className="w-3.5 h-3.5" />
+                </div>
+                <span className="text-[10px] font-orbitron font-black uppercase tracking-wider text-slate-400">
+                  STAFF ROOMS
+                </span>
+              </div>
               {isEditing ? (
                 <textarea
                   value={editedData?.staffDetails || ''}
@@ -303,10 +308,10 @@ export default function BuildingMonolithPreview({
                     })
                   }
                   rows={2}
-                  className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-lg p-2 text-xs text-[var(--text-main)] resize-none"
+                  className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-lg p-1.5 text-xs text-[var(--text-main)] resize-none"
                 />
               ) : (
-                <p className="text-xs text-slate-700 dark:text-zinc-300 leading-normal font-medium">
+                <p className="text-xs text-slate-700 dark:text-zinc-300 leading-snug font-medium">
                   {buildingData?.staffDetails}
                 </p>
               )}
@@ -315,8 +320,8 @@ export default function BuildingMonolithPreview({
         </div>
 
         {/* RIGHT COLUMN: THE ARCHITECTURAL LEVEL MONOLITH TOWER */}
-        <div className="lg:col-span-7 flex flex-col items-center">
-          <div className="w-full flex items-center justify-between mb-3 px-1">
+        <div className="lg:col-span-6 flex flex-col items-center">
+          <div className="w-full flex items-center justify-between mb-2.5 px-1">
             <span className="text-[10px] font-orbitron font-black uppercase tracking-widest text-slate-400">
               STRUCTURAL LEVEL TOWER
             </span>
@@ -326,7 +331,7 @@ export default function BuildingMonolithPreview({
           </div>
 
           {/* Architectural Slabs Stack */}
-          <div className="w-full flex flex-col gap-2.5">
+          <div className="w-full flex flex-col gap-2">
             {reversedFloors.map((floor, idx) => {
               const levelCode = getLevelCode(floor.id, idx, floors.length)
               const isHovered = activeFloorHover === floor.id
@@ -337,10 +342,10 @@ export default function BuildingMonolithPreview({
                   onClick={() => navigate(floorIdToUrl(floor.id))}
                   onMouseEnter={() => setActiveFloorHover(floor.id)}
                   onMouseLeave={() => setActiveFloorHover(null)}
-                  whileHover={{ scale: 1.015, x: 4 }}
+                  whileHover={{ scale: 1.012, x: 3 }}
                   whileTap={{ scale: 0.985 }}
                   transition={{ type: 'spring', stiffness: 350, damping: 22 }}
-                  className={`group relative w-full p-4 md:p-5 rounded-2xl md:rounded-3xl border transition-all duration-300 flex items-center justify-between overflow-hidden shadow-md ${
+                  className={`group relative w-full p-3 md:p-3.5 rounded-2xl border transition-all duration-300 flex items-center justify-between overflow-hidden shadow-sm ${
                     isHovered
                       ? `${theme.borderClass} bg-white dark:bg-white/[0.08] ${theme.shadowClass}`
                       : 'border-black/10 dark:border-white/10 bg-white/70 dark:bg-white/[0.03] hover:border-black/20 dark:hover:border-white/20'
@@ -352,9 +357,9 @@ export default function BuildingMonolithPreview({
                   />
 
                   {/* Level Code Slab Tag */}
-                  <div className="flex items-center gap-4 z-10">
+                  <div className="flex items-center gap-3.5 z-10">
                     <div
-                      className={`px-3 py-1.5 rounded-xl text-xs md:text-sm font-orbitron font-black uppercase tracking-widest border transition-colors ${
+                      className={`px-2.5 py-1 rounded-xl text-xs md:text-sm font-orbitron font-black uppercase tracking-widest border transition-colors ${
                         isHovered
                           ? `${theme.bgClass} ${theme.colorClass} ${theme.borderClass}`
                           : 'bg-black/5 dark:bg-white/5 text-slate-400 border-black/10 dark:border-white/10'
@@ -366,7 +371,7 @@ export default function BuildingMonolithPreview({
                     {/* Floor Label */}
                     <div className="flex flex-col text-left">
                       <h3
-                        className={`text-sm md:text-base lg:text-lg font-orbitron font-black tracking-tight uppercase transition-colors ${
+                        className={`text-xs md:text-sm lg:text-base font-orbitron font-black tracking-tight uppercase transition-colors ${
                           isHovered ? theme.colorClass : 'text-[var(--text-main)]'
                         }`}
                       >
@@ -378,23 +383,42 @@ export default function BuildingMonolithPreview({
                   {/* Level Action Trigger */}
                   <div className="flex items-center gap-2 z-10">
                     <span
-                      className={`text-xs font-orbitron font-black tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${theme.colorClass}`}
+                      className={`text-[10px] font-orbitron font-black tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${theme.colorClass}`}
                     >
                       OPEN MAP
                     </span>
                     <div
-                      className={`w-8 h-8 rounded-xl border flex items-center justify-center transition-all duration-300 ${
+                      className={`w-7 h-7 rounded-lg border flex items-center justify-center transition-all duration-300 ${
                         isHovered
-                          ? `${theme.btnBg} text-white border-transparent shadow-md scale-110`
+                          ? `${theme.btnBg} text-white border-transparent shadow-md scale-105`
                           : 'border-black/10 dark:border-white/10 text-slate-400 bg-black/5 dark:bg-white/5'
                       }`}
                     >
-                      <Building className="w-4 h-4" />
+                      <Building className="w-3.5 h-3.5" />
                     </div>
                   </div>
                 </motion.button>
               )
             })}
+          </div>
+
+          {/* Useful Campus Utility Bar */}
+          <div className="w-full flex items-center justify-start gap-2 mt-3 pt-2.5 border-t border-black/10 dark:border-white/10 flex-wrap">
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-black/5 dark:bg-white/[0.02] border border-black/5 dark:border-white/5">
+              <Layers className="w-3.5 h-3.5 text-blue-500" />
+              <span className="text-[10px] font-orbitron font-bold text-slate-400 uppercase tracking-wider">
+                ELEVATOR & STAIRS ACCESSIBLE
+              </span>
+            </div>
+
+            {buildingKey === 'apj' && (
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-black/5 dark:bg-white/[0.02] border border-black/5 dark:border-white/5">
+                <Accessibility className="w-3.5 h-3.5 text-purple-500" />
+                <span className="text-[10px] font-orbitron font-bold text-slate-400 uppercase tracking-wider">
+                  WHEELCHAIR RAMP AT ENTRANCE
+                </span>
+              </div>
+            )}
           </div>
         </div>
       </div>
