@@ -23,7 +23,12 @@ const DraggableVertex = ({ x, y, index, onDrag, onDragEnd, onDoubleClick, isSnap
     const startX = safeX
     const startY = safeY
 
+    let lastRan = 0
     const onPointerMove = (moveEvent) => {
+      const now = Date.now()
+      if (now - lastRan < 16) return // Throttle pointermove to max 60fps (~16ms)
+      lastRan = now
+
       const movePt = svg.createSVGPoint()
       movePt.x = moveEvent.clientX
       movePt.y = moveEvent.clientY

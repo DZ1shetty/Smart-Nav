@@ -212,7 +212,12 @@ const DraggableRoom = ({ room, onMove, onResize, floorId, commonFontSize }) => {
     const startRoomX = room.x
     const startRoomY = room.y
 
+    let lastRanMove = 0
     const onPointerMove = (moveEvent) => {
+      const now = Date.now()
+      if (now - lastRanMove < 16) return // Throttle pointermove to max 60fps (~16ms)
+      lastRanMove = now
+
       const movePt = svg.createSVGPoint()
       movePt.x = moveEvent.clientX
       movePt.y = moveEvent.clientY
@@ -247,7 +252,12 @@ const DraggableRoom = ({ room, onMove, onResize, floorId, commonFontSize }) => {
     const startRoomW = w
     const startRoomH = h
 
+    let lastRanResize = 0
     const onPointerMove = (moveEvent) => {
+      const now = Date.now()
+      if (now - lastRanResize < 16) return // Throttle pointermove to max 60fps (~16ms)
+      lastRanResize = now
+
       const movePt = svg.createSVGPoint()
       movePt.x = moveEvent.clientX
       movePt.y = moveEvent.clientY
