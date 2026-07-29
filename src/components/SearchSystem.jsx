@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useDebounce } from '../hooks/useDebounce'
+import { useSearchWorker } from '../hooks/useSearchWorker'
 import {
   Search,
   MapPin,
@@ -168,6 +169,7 @@ const ResultRow = ({ item, isSelected, onSelect, onHover }) => {
 const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
   const [query, setQuery] = useState('')
   const debouncedQuery = useDebounce(query, 250)
+  const { resolveQueryAsync } = useSearchWorker()
   const [resolution, setResolution] = useState(null)
   const [isFocused, setIsFocused] = useState(false)
   const [selectedIndex, setSelectedIndex] = useState(0)
@@ -209,29 +211,36 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
   }, [query, onResultsChange])
 
   useEffect(() => {
+    let isCurrent = true
     if (!debouncedQuery.trim()) {
       setResolution(null)
       setIsResolving(false)
       return
     }
 
-    const result = resolveNavigationQuery(debouncedQuery, { currentFloor })
-    setResolution(result)
-    setIsResolving(false)
-    setSelectedIndex(0)
+    resolveQueryAsync(debouncedQuery, currentFloor).then((result) => {
+      if (!isCurrent) return
+      setResolution(result)
+      setIsResolving(false)
+      setSelectedIndex(0)
 
-    if (onResultsChange) {
-      if (result && result.confidence_score >= 20) {
-        onResultsChange(
-          [result.id, ...(result.alternatives?.map((a) => a.id) || [])].filter(
-            Boolean
+      if (onResultsChange) {
+        if (result && result.confidence_score >= 20) {
+          onResultsChange(
+            [result.id, ...(result.alternatives?.map((a) => a.id) || [])].filter(
+              Boolean
+            )
           )
-        )
-      } else {
-        onResultsChange(null)
+        } else {
+          onResultsChange(null)
+        }
       }
+    })
+
+    return () => {
+      isCurrent = false
     }
-  }, [debouncedQuery, currentFloor, onResultsChange])
+  }, [debouncedQuery, currentFloor, onResultsChange, resolveQueryAsync])
 
   // ── Focus pass-through ──────────────────────────────────────────────────────
   useEffect(() => {
