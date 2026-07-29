@@ -356,6 +356,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
             onFocus={() => setIsFocused(true)}
             onKeyDown={handleKeyDown}
             placeholder="Search campus blocks, rooms or staff..."
+            aria-label="Search campus blocks, rooms or staff"
             className="w-full py-[9px] md:py-[11px] bg-transparent outline-none text-[14px] md:text-[15px] font-medium text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-zinc-500"
             style={{
               fontFamily: 'Inter, Segoe UI, system-ui, sans-serif',
@@ -378,6 +379,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
                     setQuery('')
                     inputRef.current?.focus()
                   }}
+                  aria-label="Clear search input"
                   className="p-1.5 text-slate-400 dark:text-zinc-500 hover:text-slate-600 dark:hover:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 rounded-full transition-all"
                 >
                   <X className="w-[16px] h-[16px]" />
