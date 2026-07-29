@@ -24,6 +24,7 @@ import SearchSystem from './SearchSystem'
 import ThemeToggle from './ThemeToggle'
 import { floorIdToUrl } from '../utils/slugHelpers'
 import BuildingBentoGrid from './BuildingBentoGrid'
+import BuildingMonolithPreview from './BuildingMonolithPreview'
 
 const buildingSlugMap = {
   'apj': 'apj',
@@ -472,332 +473,33 @@ export default function HomePage() {
             </motion.div>
 
           ) : (
-            <motion.div
-              key="floor-grid"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.4, ease: 'easeOut' }}
-              className="w-full py-4 relative flex flex-col justify-start"
-            >
-              {/* Background glow matching the active theme */}
-              <div 
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full blur-2xl opacity-[0.06] dark:opacity-[0.05] pointer-events-none transition-all duration-700 ease-in-out z-0"
-                style={{
-                  background: `radial-gradient(circle, ${
-                    theme.primary === 'emerald' ? '#10b981' :
-                    theme.primary === 'purple' ? '#a855f7' :
-                    theme.primary === 'amber' ? '#f59e0b' :
-                    theme.primary === 'rose' ? '#f43f5e' :
-                    theme.primary === 'cyan' ? '#06b6d4' :
-                    '#3b82f6'
-                  } 0%, transparent 70%)`
-                }}
-              />
-
-              <div className="flex items-center justify-between mb-4 flex-shrink-0 relative z-10">
-                <div className="flex items-center gap-3 md:gap-4">
-                  <button
-                    onClick={handleBackToHome}
-                    className={`group p-2 md:p-2.5 bg-black/[0.03] dark:bg-white/[0.02] border border-black/10 dark:border-white/10 rounded-xl transition-all active:scale-95
-                      hover:border-black/20 dark:hover:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 shadow-sm`}
-                  >
-                    <ChevronLeft className={`w-4 h-4 text-[var(--text-main)] transition-colors group-hover:${theme.colorClass}`} />
-                  </button>
-                  <div className="flex items-baseline gap-2.5">
-                    <h3 className={`text-base md:text-lg lg:text-xl font-orbitron font-black tracking-tighter uppercase leading-none ${theme.colorClass}`}>
-                      {theme.name}
-                    </h3>
-                    <span className="text-[10px] md:text-xs font-orbitron font-bold tracking-widest text-black/40 dark:text-white/30 uppercase">
-                      {theme.floors}
-                    </span>
-                  </div>
-                </div>
-
-                {buildingData && (
-                  <div className="flex items-center gap-2">
-                    {isEditing ? (
-                      <>
-                        <button
-                          onClick={handleCancelEdit}
-                          className="px-2.5 py-1.5 rounded-lg text-[10px] md:text-xs font-orbitron font-bold uppercase tracking-wider flex items-center gap-1 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:bg-black/10 dark:hover:bg-white/10 transition-all text-black/60 dark:text-white/60 active:scale-95"
-                        >
-                          <X className="w-3 h-3" />
-                          Cancel
-                        </button>
-                        <button
-                          onClick={handleSaveBuilding}
-                          className={`px-2.5 py-1.5 rounded-lg text-[10px] md:text-xs font-orbitron font-black uppercase tracking-wider flex items-center gap-1 text-white ${theme.btnBg} ${theme.btnShadow} transition-all active:scale-95`}
-                        >
-                          <Save className="w-3 h-3" />
-                          Save
-                        </button>
-                      </>
-                    ) : (
-                      <button
-                        onClick={handleStartEdit}
-                        className="px-2.5 py-1.5 rounded-lg text-[10px] md:text-xs font-orbitron font-black uppercase tracking-wider flex items-center gap-1 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20 transition-all text-black/60 dark:text-white/60 hover:text-blue-500 active:scale-95 shadow-sm"
-                      >
-                        <Edit3 className="w-3 h-3" />
-                        Edit Info
-                      </button>
-                    )}
-                  </div>
-                )}
-              </div>
-
-              {isLoading ? (
-                <div className="flex-1 flex flex-col items-center justify-center min-h-[160px] relative z-10">
-                  <Loader2 className={`w-6 h-6 animate-spin ${theme.colorClass} mb-2`} />
-                  <span className="text-[9px] uppercase font-orbitron font-bold tracking-widest opacity-40">
-                    Retrieving building data...
-                  </span>
-                </div>
-              ) : (
-                <div className="flex-1 flex flex-col gap-4 relative z-10">
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 items-start">
-                    
-                    {/* Left Column: Image & Description */}
-                    <div className="lg:col-span-5 flex flex-col gap-3">
-                      
-                      {/* Image Card */}
-                      <div className="relative rounded-xl md:rounded-2xl border border-black/[0.08] dark:border-white/[0.08] overflow-hidden bg-black/[0.02] dark:bg-white/[0.01] aspect-[21/9] max-h-[130px] md:max-h-[150px] min-h-[110px] group transition-all duration-500 shadow-md">
-                        {isEditing ? (
-                          <div className="w-full h-full relative">
-                            {editedData?.imageUrl ? (
-                              <img
-                                src={editedData.imageUrl}
-                                alt={buildingData?.name}
-                                className="w-full h-full object-cover"
-                                onError={(e) => {
-                                  e.target.onerror = null;
-                                  e.target.style.display = 'none';
-                                  const parent = e.target.parentNode;
-                                  if (parent) {
-                                    const fallbackDiv = parent.querySelector('.url-fallback');
-                                    if (fallbackDiv) fallbackDiv.style.display = 'flex';
-                                  }
-                                }}
-                              />
-                            ) : (
-                              <BuildingPlaceholder themeColor={theme.primary} />
-                            )}
-                            <div
-                              className="url-fallback w-full h-full hidden items-center justify-center bg-black/20 text-[11px] font-mono text-rose-500 p-2 text-center absolute inset-0"
-                            >
-                              <BuildingPlaceholder themeColor={theme.primary} />
-                            </div>
-                          </div>
-                        ) : (
-                          buildingData?.imageUrl ? (
-                            <img
-                              src={buildingData.imageUrl}
-                              alt={buildingData.name}
-                              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-101"
-                              onError={(e) => {
-                                e.target.onerror = null;
-                                e.target.style.display = 'none';
-                                const parent = e.target.parentNode;
-                                if (parent) {
-                                  const fallbackDiv = parent.querySelector('.view-fallback');
-                                  if (fallbackDiv) fallbackDiv.style.display = 'flex';
-                                }
-                              }}
-                            />
-                          ) : (
-                            <BuildingPlaceholder themeColor={theme.primary} />
-                          )
-                        )}
-                        
-                        <div className="view-fallback w-full h-full hidden absolute inset-0">
-                          <BuildingPlaceholder themeColor={theme.primary} />
-                        </div>
-                      </div>
-
-                      {/* Image Edit Controls when isEditing is true */}
-                      {isEditing && (
-                        <div className="flex flex-col gap-2 p-2.5 bg-black/[0.03] dark:bg-white/[0.03] border border-black/10 dark:border-white/10 rounded-xl shadow-sm">
-                          <div className="flex items-center justify-between">
-                            <span className="text-[9.5px] font-orbitron font-black uppercase tracking-wider text-blue-500 dark:text-cyan-400 flex items-center gap-1">
-                              <Image className="w-3 h-3" />
-                              Building Image
-                            </span>
-                            {editedData?.imageUrl && (
-                              <button
-                                type="button"
-                                onClick={() => setEditedData({ ...editedData, imageUrl: '' })}
-                                className="text-[9px] font-orbitron font-bold text-rose-500 hover:text-rose-600 transition-colors uppercase"
-                              >
-                                Clear Image
-                              </button>
-                            )}
-                          </div>
-
-                          <div className="flex flex-col sm:flex-row gap-2">
-                            <div className="relative flex-1 flex items-center">
-                              <LinkIcon className="absolute left-2.5 w-3 h-3 text-black/40 dark:text-white/40 pointer-events-none" />
-                              <input
-                                type="text"
-                                value={editedData?.imageUrl || ''}
-                                onChange={(e) => setEditedData({ ...editedData, imageUrl: e.target.value })}
-                                placeholder="Paste Image URL or choose file..."
-                                className="w-full pl-7 pr-2 py-1.5 text-xs rounded-lg bg-white dark:bg-black/40 border border-black/15 dark:border-white/15 focus:outline-none focus:ring-2 focus:ring-blue-500 text-[var(--text-main)] font-mono"
-                              />
-                            </div>
-                            <label className="cursor-pointer px-3 py-1.5 bg-blue-500 hover:bg-blue-600 text-white rounded-lg text-[9.5px] font-orbitron font-black uppercase tracking-wider flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95 whitespace-nowrap">
-                              <Upload className="w-3 h-3" />
-                              Upload File
-                              <input
-                                type="file"
-                                accept="image/*"
-                                className="hidden"
-                                onChange={handleImageFileUpload}
-                              />
-                            </label>
-                          </div>
-                        </div>
-                      )}
-
-                      {/* Description */}
-                      <div className="flex flex-col gap-1 px-0.5">
-                        <span className="text-[10.5px] font-orbitron font-black tracking-widest text-black/90 dark:text-white/90 uppercase block mb-0.5">
-                          About Building
-                        </span>
-                        {isEditing ? (
-                          <textarea
-                            value={editedData?.description || ''}
-                            onChange={(e) => setEditedData({ ...editedData, description: e.target.value })}
-                            placeholder="Write building description..."
-                            rows={3}
-                            className={`w-full bg-white dark:bg-black/40 border border-black/15 dark:border-white/15 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 rounded-xl p-2.5 text-xs text-[var(--text-main)] leading-relaxed transition-all resize-none font-medium`}
-                          />
-                        ) : (
-                          <p className="text-xs text-black/85 dark:text-white/85 leading-relaxed font-medium tracking-normal">
-                            {buildingData?.description}
-                          </p>
-                        )}
-                      </div>
-
-                    </div>
-                    
-                    {/* Right Column: Floor Grid */}
-                    <div className="lg:col-span-7 flex flex-col gap-2">
-                      <span className="text-[10.5px] font-orbitron font-black tracking-widest text-black/90 dark:text-white/90 uppercase block mb-0.5">
-                        Select Floor
-                      </span>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-2.5">
-                        {(
-                          selectedBuilding === 'cv-raman' ? cvRamanFloors : 
-                          selectedBuilding === 'ramanujan' ? ramanujanFloors :
-                          selectedBuilding === 'smv' ? smvFloors :
-                          selectedBuilding === 'atal' ? atalFloors :
-                          selectedBuilding === 'rajraman' ? rajramanFloors :
-                          apjFloors
-                        ).map((floor, idx) => (
-                          <motion.button
-                            key={floor.id}
-                            initial={{ opacity: 0, y: 6 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.015 * idx }}
-                            whileHover={{ scale: 1.01, y: -1 }}
-                            whileTap={{ scale: 0.98 }}
-                            onClick={() => navigate(floorIdToUrl(floor.id))}
-                            className={`group relative overflow-hidden bg-black/[0.02] dark:bg-white/[0.02] hover:bg-black/[0.05] dark:hover:bg-white/[0.05] border border-black/10 dark:border-white/10 py-2.5 px-4 text-center transition-all duration-300 rounded-xl flex items-center justify-between min-h-[40px] md:min-h-[44px] cursor-pointer hover:-translate-y-0.5 shadow-sm hover:shadow-md`}
-                          >
-                            <span className={`text-[11px] md:text-xs lg:text-sm font-orbitron font-black tracking-wider text-black/90 dark:text-white/90 transition-colors duration-300 z-10 group-hover:${theme.colorClass}`}>
-                              {floor.label}
-                            </span>
-                            <div className={`w-2.5 h-2.5 rounded-full bg-transparent border border-black/30 dark:border-white/30 group-hover:bg-current group-hover:scale-125 transition-all duration-300 z-10 ${theme.colorClass}`} />
-                            
-                            <div className={`absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none ${theme.gradient}`} />
-                          </motion.button>
-                        ))}
-                      </div>
-                    </div>
-
-                  </div>
-
-
-                  {/* QUICK NAVIGATION TIPS */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 mt-2.5 pt-3 border-t border-black/10 dark:border-white/10">
-                    {/* Entrance Details */}
-                    <div className="flex flex-col justify-start">
-                      <div className="flex items-center gap-2 mb-1.5">
-                        <div className={`p-1.5 rounded-lg bg-black/5 dark:bg-white/10 ${theme.colorClass}`}>
-                          <Map className="w-4 h-4" />
-                        </div>
-                        <h4 className="text-xs md:text-sm font-orbitron font-black uppercase tracking-wider text-black/90 dark:text-white/90">
-                          Main Entrance
-                        </h4>
-                      </div>
-                      {isEditing ? (
-                        <textarea
-                          value={editedData?.entranceDetails || ''}
-                          onChange={(e) => setEditedData({ ...editedData, entranceDetails: e.target.value })}
-                          placeholder="Entrance details..."
-                          rows={2}
-                          className="w-full bg-transparent border-b border-dashed border-black/20 dark:border-white/15 focus:border-white/30 focus:outline-none text-xs text-black/85 dark:text-white/85 leading-relaxed font-medium resize-none py-0.5"
-                        />
-                      ) : (
-                        <p className="text-xs text-black/85 dark:text-white/85 leading-relaxed font-medium">
-                          {buildingData?.entranceDetails}
-                        </p>
-                      )}
-                    </div>
-
-                    {/* Lab Access */}
-                    <div className="flex flex-col justify-start">
-                      <div className="flex items-center gap-2 mb-1.5">
-                        <div className={`p-1.5 rounded-lg bg-black/5 dark:bg-white/10 ${theme.colorClass}`}>
-                          <FlaskConical className="w-4 h-4" />
-                        </div>
-                        <h4 className="text-xs md:text-sm font-orbitron font-black uppercase tracking-wider text-black/90 dark:text-white/90">
-                          Lab Access
-                        </h4>
-                      </div>
-                      {isEditing ? (
-                        <textarea
-                          value={editedData?.labDetails || ''}
-                          onChange={(e) => setEditedData({ ...editedData, labDetails: e.target.value })}
-                          placeholder="Lab access details..."
-                          rows={2}
-                          className="w-full bg-transparent border-b border-dashed border-black/20 dark:border-white/15 focus:border-white/30 focus:outline-none text-xs text-black/85 dark:text-white/85 leading-relaxed font-medium resize-none py-0.5"
-                        />
-                      ) : (
-                        <p className="text-xs text-black/85 dark:text-white/85 leading-relaxed font-medium">
-                          {buildingData?.labDetails}
-                        </p>
-                      )}
-                    </div>
-
-                    {/* Staff Rooms */}
-                    <div className="flex flex-col justify-start">
-                      <div className="flex items-center gap-2 mb-1.5">
-                        <div className={`p-1.5 rounded-lg bg-black/5 dark:bg-white/10 ${theme.colorClass}`}>
-                          <Users className="w-4 h-4" />
-                        </div>
-                        <h4 className="text-xs md:text-sm font-orbitron font-black uppercase tracking-wider text-black/90 dark:text-white/90">
-                          Staff Rooms
-                        </h4>
-                      </div>
-                      {isEditing ? (
-                        <textarea
-                          value={editedData?.staffDetails || ''}
-                          onChange={(e) => setEditedData({ ...editedData, staffDetails: e.target.value })}
-                          placeholder="Staff room details..."
-                          rows={2}
-                          className="w-full bg-transparent border-b border-dashed border-black/20 dark:border-white/15 focus:border-white/30 focus:outline-none text-xs text-black/85 dark:text-white/85 leading-relaxed font-medium resize-none py-0.5"
-                        />
-                      ) : (
-                        <p className="text-xs text-black/85 dark:text-white/85 leading-relaxed font-medium">
-                          {buildingData?.staffDetails}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              )}
-            </motion.div>
+            <BuildingMonolithPreview
+              buildingKey={selectedBuilding}
+              theme={theme}
+              floors={
+                selectedBuilding === 'cv-raman'
+                  ? cvRamanFloors
+                  : selectedBuilding === 'ramanujan'
+                  ? ramanujanFloors
+                  : selectedBuilding === 'smv'
+                  ? smvFloors
+                  : selectedBuilding === 'atal'
+                  ? atalFloors
+                  : selectedBuilding === 'rajraman'
+                  ? rajramanFloors
+                  : apjFloors
+              }
+              buildingData={buildingData}
+              isLoading={isLoading}
+              isEditing={isEditing}
+              editedData={editedData}
+              setEditedData={setEditedData}
+              handleStartEdit={handleStartEdit}
+              handleCancelEdit={handleCancelEdit}
+              handleSaveBuilding={handleSaveBuilding}
+              handleBackToHome={handleBackToHome}
+              handleImageFileUpload={handleImageFileUpload}
+            />
           )}
         </AnimatePresence>
       </main>
