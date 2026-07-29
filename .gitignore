@@ -34,6 +34,9 @@ scratch/
 docs/raw_html/
 
 # Local Assets/Backups
+Google_Drive_Backup/
+google_drive_backup/
+Campus_Navigation_Firestore_Drive_Backup.zip
 *.bak
 *.tmp
 
