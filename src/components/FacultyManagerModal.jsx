@@ -28,6 +28,7 @@ export default function FacultyManagerModal({
   const [isSaving, setIsSaving] = useState(false)
   const [saveSuccess, setSaveSuccess] = useState(false)
   const [uploadingImageFor, setUploadingImageFor] = useState({})
+  const [clearedImages, setClearedImages] = useState({})
 
   // Initialize edited data when modal opens or facultyList changes
   useEffect(() => {
@@ -235,14 +236,35 @@ export default function FacultyManagerModal({
                           Profile Image
                         </span>
                       </div>
-                      {editedFaculty[faculty.id]?.image && (
+                      {editedFaculty[faculty.id]?.image ? (
                         <button
-                          onClick={() => handleFieldChange(faculty.id, 'image', '')}
+                          onClick={() => {
+                            setClearedImages(prev => ({
+                              ...prev,
+                              [faculty.id]: editedFaculty[faculty.id].image
+                            }))
+                            handleFieldChange(faculty.id, 'image', '')
+                          }}
                           className="flex items-center gap-1 px-2 py-1 rounded-md bg-red-500/10 text-red-500 hover:bg-red-500/20 transition-colors"
                           title="Clear Image"
                         >
                           <Trash2 className="w-3 h-3" />
                           <span className="text-[10px] font-bold">CLEAR</span>
+                        </button>
+                      ) : clearedImages[faculty.id] && (
+                        <button
+                          onClick={() => {
+                            handleFieldChange(faculty.id, 'image', clearedImages[faculty.id])
+                            setClearedImages(prev => {
+                              const newCleared = { ...prev }
+                              delete newCleared[faculty.id]
+                              return newCleared
+                            })
+                          }}
+                          className="flex items-center gap-1 px-2 py-1 rounded-md bg-blue-500/10 text-blue-500 hover:bg-blue-500/20 transition-colors"
+                          title="Undo Clear"
+                        >
+                          <span className="text-[10px] font-bold">UNDO CLEAR</span>
                         </button>
                       )}
                     </div>

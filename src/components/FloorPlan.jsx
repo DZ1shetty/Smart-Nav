@@ -420,8 +420,10 @@ export default function FloorPlan() {
   const [alignmentGuides, setAlignmentGuides] = useState([])
   const [isEditMode, setIsEditMode] = useState(false)
   // eslint-disable-next-line no-unused-vars
-  const [isLocked, setIsLocked] = useState(true)
+  const [isDrawEnabled, setIsDrawEnabled] = useState(false)
   const [mapImage, setMapImage] = useState(null)
+  const [clearedMapImage, setClearedMapImage] = useState(null)
+  const [mapScale, setMapScale] = useState(1)
   const [isDirectionsModalOpen, setIsDirectionsModalOpen] = useState(false)
   const [mainWidth, setMainWidth] = useState(0)
   const [bulgeWidth, setBulgeWidth] = useState(0)
@@ -1388,12 +1390,25 @@ export default function FloorPlan() {
                       onChange={handleMapImageUpload}
                     />
                   </label>
-                  {mapImage && (
+                  {mapImage ? (
                     <button
-                      onClick={() => setMapImage(null)}
+                      onClick={() => {
+                        setClearedMapImage(mapImage)
+                        setMapImage(null)
+                      }}
                       className="px-2.5 py-1.5 hover:bg-red-500/10 text-red-500 rounded-lg transition-all font-orbitron font-black text-[8px] uppercase flex items-center gap-1"
                     >
                       <Trash2 className="w-3 h-3" /> CLEAR
+                    </button>
+                  ) : clearedMapImage && (
+                    <button
+                      onClick={() => {
+                        setMapImage(clearedMapImage)
+                        setClearedMapImage(null)
+                      }}
+                      className="px-2.5 py-1.5 hover:bg-blue-500/10 text-blue-500 rounded-lg transition-all font-orbitron font-black text-[8px] uppercase flex items-center gap-1"
+                    >
+                      UNDO CLEAR
                     </button>
                   )}
                 </div>

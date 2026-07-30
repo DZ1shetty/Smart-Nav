@@ -330,109 +330,109 @@ export const fifth = {
     {
       name: 'DR. RAVI B.',
       department: 'ISE',
-      roomId: 'staff-room-big',
+      roomId: '',
       image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.15-pm-1.jpeg'
     },
     {
       name: 'DR. JASON ELROY MARTIS',
       department: 'ISE',
-      roomId: 'staff-room-big',
+      roomId: '',
       image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.15-pm-2.jpeg'
     },
     {
       name: 'DR. ASHWINI B.',
       department: 'ISE',
-      roomId: 'hod-cabin',
+      roomId: '',
       image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.15-pm.jpeg'
     },
     {
       name: 'DR. ANUSHA N.',
       department: 'ISE',
-      roomId: 'staff-room-big',
+      roomId: '',
       image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.16-pm.jpeg'
     },
     {
       name: 'DR. CHINMAI SHETTY',
       department: 'ISE',
-      roomId: 'staff-room-big',
+      roomId: '',
       image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.18-pm.jpeg'
     },
     {
       name: 'DR. DEEPA',
       department: 'ISE',
-      roomId: 'staff-room-big',
+      roomId: '',
       image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.19-pm-1.jpeg'
     },
     {
       name: 'DR. RAGHUNANDAN K R',
       department: 'CSE',
-      roomId: 'staff-room-left',
+      roomId: '',
       image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.19-pm-2.jpeg'
     },
     {
       name: 'DR. RASHMI NAVEEN',
       department: 'ISE',
-      roomId: 'staff-room-big',
+      roomId: '',
       image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.19-pm.jpeg'
     },
     {
       name: 'MR. PAWAN HEGDE',
       department: 'CSE',
-      roomId: 'staff-room-left',
+      roomId: '',
       image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.20-pm-1.jpeg'
     },
     {
       name: 'MS. SAVITHA SHETTY',
       department: 'CSE',
-      roomId: 'staff-room-left',
+      roomId: '',
       image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.20-pm-2.jpeg'
     },
     {
       name: 'DR. SARIKA HEGDE',
       department: 'CSE',
-      roomId: 'staff-room-left',
+      roomId: '',
       image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.20-pm.jpeg'
     },
     {
       name: 'MS. ANUPAMA HC',
       department: 'CSE',
-      roomId: 'staff-room-left',
+      roomId: '',
       image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.21-pm-1.jpeg'
     },
     {
       name: 'MS. PRATHEEKSHA HEGDE N',
       department: 'ISE',
-      roomId: 'staff-room-big',
+      roomId: '',
       image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.21-pm-2.jpeg'
     },
     {
       name: 'DR. ASMITA POOJARY',
       department: 'CSE',
-      roomId: 'staff-room-left',
+      roomId: '',
       image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.21-pm.jpeg'
     },
     {
       name: 'MS. VAISHALI BANGERA',
       department: 'CSE',
-      roomId: 'staff-room-left',
+      roomId: '',
       image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.22-pm-1.jpeg'
     },
     {
       name: 'DR. SANDEEP KUMAR HEGDE',
       department: 'CSE',
-      roomId: 'staff-room-left',
+      roomId: '',
       image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.22-pm-2.jpeg'
     },
     {
       name: 'MS. PRATHYAKSHINI',
       department: 'ISE',
-      roomId: 'staff-room-big',
+      roomId: '',
       image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.22-pm.jpeg'
     },
     {
       name: 'MS. SIMRAN BANU',
       department: 'CSE',
-      roomId: 'staff-room-left',
+      roomId: '',
       image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.23-pm.jpeg'
     }
   ]

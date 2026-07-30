@@ -41,6 +41,7 @@ export default function BuildingMonolithPreview({
   const fileInputRef = useRef(null)
   const [uploadProgress, setUploadProgress] = useState(null)
   const [uploadError, setUploadError] = useState(null)
+  const [clearedImage, setClearedImage] = useState(null)
 
   const handleImageFile = async (file) => {
     if (!file || !file.type.startsWith('image/')) return
@@ -195,13 +196,27 @@ export default function BuildingMonolithPreview({
                 <span className="text-[10px] font-orbitron font-black uppercase tracking-wider text-blue-500 flex items-center gap-1">
                   <ImageIcon className="w-3.5 h-3.5" /> UPLOAD BUILDING IMAGE
                 </span>
-                {editedData?.imageUrl && (
+                {editedData?.imageUrl ? (
                   <button
                     type="button"
-                    onClick={() => setEditedData({ ...editedData, imageUrl: '' })}
+                    onClick={() => {
+                      setClearedImage(editedData.imageUrl)
+                      setEditedData({ ...editedData, imageUrl: '' })
+                    }}
                     className="text-[9px] font-orbitron font-bold text-red-500 hover:underline uppercase flex items-center gap-1"
                   >
                     <Trash2 className="w-3 h-3" /> Clear Image
+                  </button>
+                ) : clearedImage && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setEditedData({ ...editedData, imageUrl: clearedImage })
+                      setClearedImage(null)
+                    }}
+                    className="text-[9px] font-orbitron font-bold text-blue-500 hover:underline uppercase flex items-center gap-1"
+                  >
+                    Undo Clear
                   </button>
                 )}
               </div>

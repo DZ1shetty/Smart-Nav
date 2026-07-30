@@ -41,6 +41,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
   const [uploadProgress, setUploadProgress] = useState(null)  // 0-100 or null
   const [uploadError, setUploadError] = useState(null)
   const [previewUrl, setPreviewUrl] = useState(null)
+  const [clearedImage, setClearedImage] = useState(null)
   const fileInputRef = useRef(null)
 
   // Prefer room.image if it exists (meaning it was just uploaded/edited), fallback to room.images array
@@ -337,16 +338,32 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                         <span className="text-[8px] font-orbitron font-black uppercase text-black/30 dark:text-white/20 block">
                           Room Image
                         </span>
-                        {(previewUrl || editedImage) && (
+                        {(previewUrl || editedImage) ? (
                           <button
                             type="button"
                             onClick={() => {
+                              setClearedImage(previewUrl || editedImage)
                               setEditedImage('')
                               setPreviewUrl(null)
                             }}
                             className="text-[9px] font-orbitron font-bold text-red-500 hover:underline uppercase flex items-center gap-1"
                           >
                             <Trash2 className="w-3 h-3" /> Clear Image
+                          </button>
+                        ) : clearedImage && (
+                          <button
+                            type="button"
+                            onClick={() => {
+                              if (clearedImage.startsWith('blob:')) {
+                                setPreviewUrl(clearedImage)
+                              } else {
+                                setEditedImage(clearedImage)
+                              }
+                              setClearedImage(null)
+                            }}
+                            className="text-[9px] font-orbitron font-bold text-blue-500 hover:underline uppercase flex items-center gap-1"
+                          >
+                            Undo Clear
                           </button>
                         )}
                       </div>
