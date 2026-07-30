@@ -9,7 +9,7 @@ function App() {
   const location = useLocation()
 
   return (
-    <div className="min-h-screen bg-[var(--bg-main)] text-[var(--text-main)] font-mono overflow-hidden transition-colors duration-300">
+    <div className="min-h-screen bg-[var(--bg-main)] text-[var(--text-main)] font-mono overflow-x-hidden transition-colors duration-300">
       {/* Global AI Chatbot Widget */}
       <ChatbotWidget />
 

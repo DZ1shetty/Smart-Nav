@@ -128,7 +128,7 @@ const buildingsData = [
 
 export default function BuildingBentoGrid({ onSelectBuilding }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5 md:gap-3 lg:gap-3.5 py-1 px-1 md:px-0 w-full max-w-5xl mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-2 lg:gap-2.5 py-1 px-1 md:px-0 w-full max-w-5xl mx-auto">
       {buildingsData.map((item, idx) => (
         <motion.button
           key={item.id}
@@ -138,7 +138,7 @@ export default function BuildingBentoGrid({ onSelectBuilding }) {
           transition={{ delay: idx * 0.05, type: 'spring', stiffness: 300, damping: 22 }}
           whileHover={{ scale: 1.012, y: -2 }}
           whileTap={{ scale: 0.98 }}
-          className={`group relative ${item.spanClass} bg-white/80 dark:bg-white/[0.04] backdrop-blur-2xl border ${item.borderClass} p-3.5 md:p-4 lg:p-4 rounded-2xl md:rounded-3xl flex flex-col justify-between overflow-hidden transition-all duration-500 ${item.shadowClass} shadow-md text-left active:scale-[0.98]`}
+          className={`group relative ${item.spanClass} bg-white/80 dark:bg-white/[0.04] backdrop-blur-2xl border ${item.borderClass} p-3 md:p-3.5 lg:p-3.5 rounded-2xl md:rounded-3xl flex flex-col justify-between overflow-hidden transition-all duration-500 ${item.shadowClass} shadow-md text-left active:scale-[0.98]`}
         >
           {/* Animated Ambient Glow Gradient Background */}
           <div
@@ -146,7 +146,7 @@ export default function BuildingBentoGrid({ onSelectBuilding }) {
           />
 
           {/* Top Section: Building Header & Side-by-Side Floor Badge */}
-          <div className="relative z-10 flex flex-col gap-1.5 md:gap-2">
+          <div className="relative z-10 flex flex-col gap-1 md:gap-1.5">
             <div className="flex items-center justify-between gap-2">
               <div className="flex items-center gap-2 md:gap-2.5 flex-wrap">
                 <div
@@ -187,7 +187,7 @@ export default function BuildingBentoGrid({ onSelectBuilding }) {
           </div>
 
           {/* Middle Animated Marquee Loop (Magic UI Style) */}
-          <div className="relative z-10 mt-2 overflow-hidden rounded-xl bg-black/5 dark:bg-black/40 border border-black/5 dark:border-white/5 p-1.5 md:p-2">
+          <div className="relative z-10 mt-1 md:mt-1.5 overflow-hidden rounded-xl bg-black/5 dark:bg-black/40 border border-black/5 dark:border-white/5 p-1.5">
             <div className="flex items-center gap-2 overflow-hidden mask-fade-edge">
               <motion.div
                 animate={{ x: ['0%', '-50%'] }}

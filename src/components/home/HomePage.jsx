@@ -403,7 +403,7 @@ export default function HomePage() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -8 }}
       transition={{ duration: 0.25, ease: 'easeOut' }}
-      className="relative min-h-screen lg:h-screen w-full bg-[var(--bg-main)] text-[var(--text-main)] font-space p-2 md:p-3 lg:p-4 lg:py-3 flex flex-col items-center justify-between overflow-y-auto lg:overflow-hidden selection:bg-blue-500/30 transform-gpu"
+      className="relative min-h-screen w-full bg-[var(--bg-main)] text-[var(--text-main)] font-space p-2 md:p-2 lg:p-3 lg:py-2 flex flex-col items-center justify-between overflow-x-hidden selection:bg-blue-500/30 transform-gpu"
     >
       <Toaster richColors position="top-right" />
       {/* BACKGROUND ELEMENTS */}
@@ -420,7 +420,7 @@ export default function HomePage() {
       </div>
 
       {/* HEADER SECTION */}
-      <header className="relative z-30 flex flex-col items-center gap-1.5 mb-1.5 md:mb-2 flex-shrink-0 w-full max-w-4xl pt-1">
+      <header className="relative z-30 flex flex-col items-center gap-1.5 mb-1 md:mb-1.5 flex-shrink-0 w-full max-w-4xl pt-0.5">
         <motion.h1
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}

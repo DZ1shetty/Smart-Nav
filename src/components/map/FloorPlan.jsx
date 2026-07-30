@@ -88,6 +88,7 @@ const ZoomControlsProxy = memo(({ controlsRef }) => {
   }, [controls, controlsRef])
   return null
 })
+ZoomControlsProxy.displayName = 'ZoomControlsProxy'
 
 // --- DYNAMIC DEFAULT SYSTEM (STABLE + ERROR-FREE) ---
 
