@@ -1878,34 +1878,40 @@ export default function FloorPlan() {
 
         <AnimatePresence>
           {isSetupProgressOpen && (
-            <DossierModal
-              isOpen={isSetupProgressOpen}
-              onClose={handleCloseSetupProgress}
-              title="Setup in Progress"
-              subtitle="Floor Layout Status"
-              icon={Wrench}
-              maxWidth="max-w-md"
-            >
-              <div className="p-6 md:p-8 flex flex-col items-center text-center gap-6">
-                <div className="w-20 h-20 bg-blue-500/10 border border-blue-500/20 rounded-3xl flex items-center justify-center shadow-lg shadow-blue-500/5 animate-bounce">
-                  <Wrench className="w-10 h-10 text-blue-400" />
+            <div className="fixed inset-0 z-[150] flex items-center justify-center p-4">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="absolute inset-0 bg-black/60 backdrop-blur-md"
+                onClick={handleCloseSetupProgress}
+              />
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95, y: 10 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: 10 }}
+                className="relative w-full max-w-sm bg-black/40 dark:bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl p-8 flex flex-col items-center text-center overflow-hidden"
+              >
+                {/* Minimalist Icon */}
+                <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-6">
+                  <Wrench className="w-8 h-8 text-white/40" strokeWidth={1.5} />
                 </div>
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-lg font-orbitron font-black tracking-widest text-white uppercase italic">
-                    Layout Coming Soon
-                  </h3>
-                  <p className="text-sm text-white/60 font-mono leading-relaxed max-w-sm">
-                    This floor's interactive blueprint is currently being mapped by our administrative team.
-                  </p>
-                </div>
+                
+                <h3 className="text-xl font-orbitron font-medium tracking-wide text-white mb-3">
+                  Under Construction
+                </h3>
+                <p className="text-sm text-white/50 font-mono leading-relaxed mb-8">
+                  This floor's interactive layout is currently being mapped and will be available soon.
+                </p>
+                
                 <button
                   onClick={handleCloseSetupProgress}
-                  className="w-full py-3 bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-orbitron font-black text-xs tracking-widest uppercase rounded-xl transition-all shadow-lg active:scale-95 border border-blue-400/20"
+                  className="w-full py-3 bg-white/10 hover:bg-white/15 text-white font-orbitron font-medium text-xs tracking-widest uppercase rounded-xl transition-all active:scale-95 border border-white/10"
                 >
-                  Acknowledge & Go Back
+                  Return to Map
                 </button>
-              </div>
-            </DossierModal>
+              </motion.div>
+            </div>
           )}
         </AnimatePresence>
 
