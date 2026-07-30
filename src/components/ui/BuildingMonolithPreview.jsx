@@ -90,7 +90,7 @@ export default function BuildingMonolithPreview({
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.98 }}
       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-      className="w-full max-w-7xl mx-auto flex flex-col justify-between py-1 px-3 md:px-6 text-[var(--text-main)] select-none"
+      className="w-full max-w-7xl mx-auto flex flex-col justify-between min-h-[calc(100dvh-4rem)] py-1 px-3 md:px-6 text-[var(--text-main)] select-none"
     >
       {/* TOP CONTROL BAR: BACK + ARCHITECTURAL TITLE + ADMIN CONTROLS */}
       <div className="w-full flex flex-wrap md:flex-nowrap items-center justify-between gap-2 md:gap-0 border-b border-black/10 dark:border-white/10 pb-2.5 mb-3">
@@ -313,105 +313,15 @@ export default function BuildingMonolithPreview({
               </p>
             )}
           </div>
-
-          {/* 3 Architectural Callout Cards (Horizontal Grid for Maximum Breathing Room) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5">
-            {/* Callout 1: Main Entrance */}
-            <div className="p-3 md:p-3.5 rounded-2xl bg-white/60 dark:bg-white/[0.02] backdrop-blur-xl border border-black/10 dark:border-white/10 flex flex-col gap-2.5 shadow-sm">
-              <div className="flex items-center gap-2">
-                <div className={`p-2.5 rounded-lg bg-black/5 dark:bg-white/10 ${theme.colorClass} flex-shrink-0`}>
-                  <MapPin className="w-3.5 h-3.5" />
-                </div>
-                <span className="text-xs font-orbitron font-black uppercase tracking-wider text-slate-500">
-                  ENTRANCE
-                </span>
-              </div>
-              {isEditing ? (
-                <textarea
-                  value={editedData?.entranceDetails || ''}
-                  onChange={(e) =>
-                    setEditedData({
-                      ...editedData,
-                      entranceDetails: e.target.value,
-                    })
-                  }
-                  rows={2}
-                  className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-lg p-2.5 text-xs text-[var(--text-main)] resize-none"
-                />
-              ) : (
-                <p className="text-xs text-slate-700 dark:text-zinc-300 leading-snug font-medium">
-                  {buildingData?.entranceDetails}
-                </p>
-              )}
-            </div>
-
-            {/* Callout 2: Lab Access */}
-            <div className="p-3 md:p-3.5 rounded-2xl bg-white/60 dark:bg-white/[0.02] backdrop-blur-xl border border-black/10 dark:border-white/10 flex flex-col gap-2.5 shadow-sm">
-              <div className="flex items-center gap-2">
-                <div className={`p-2.5 rounded-lg bg-black/5 dark:bg-white/10 ${theme.colorClass} flex-shrink-0`}>
-                  <FlaskConical className="w-3.5 h-3.5" />
-                </div>
-                <span className="text-xs font-orbitron font-black uppercase tracking-wider text-slate-500">
-                  LAB ACCESS
-                </span>
-              </div>
-              {isEditing ? (
-                <textarea
-                  value={editedData?.labDetails || ''}
-                  onChange={(e) =>
-                    setEditedData({
-                      ...editedData,
-                      labDetails: e.target.value,
-                    })
-                  }
-                  rows={2}
-                  className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-lg p-2.5 text-xs text-[var(--text-main)] resize-none"
-                />
-              ) : (
-                <p className="text-xs text-slate-700 dark:text-zinc-300 leading-snug font-medium">
-                  {buildingData?.labDetails}
-                </p>
-              )}
-            </div>
-
-            {/* Callout 3: Staff Rooms */}
-            <div className="p-3 md:p-3.5 rounded-2xl bg-white/60 dark:bg-white/[0.02] backdrop-blur-xl border border-black/10 dark:border-white/10 flex flex-col gap-2.5 shadow-sm">
-              <div className="flex items-center gap-2">
-                <div className={`p-2.5 rounded-lg bg-black/5 dark:bg-white/10 ${theme.colorClass} flex-shrink-0`}>
-                  <Users className="w-3.5 h-3.5" />
-                </div>
-                <span className="text-xs font-orbitron font-black uppercase tracking-wider text-slate-500">
-                  STAFF ROOMS
-                </span>
-              </div>
-              {isEditing ? (
-                <textarea
-                  value={editedData?.staffDetails || ''}
-                  onChange={(e) =>
-                    setEditedData({
-                      ...editedData,
-                      staffDetails: e.target.value,
-                    })
-                  }
-                  rows={2}
-                  className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-lg p-2.5 text-xs text-[var(--text-main)] resize-none"
-                />
-              ) : (
-                <p className="text-xs text-slate-700 dark:text-zinc-300 leading-snug font-medium">
-                  {buildingData?.staffDetails}
-                </p>
-              )}
-            </div>
-          </div>
         </div>
 
         {/* RIGHT COLUMN: THE ARCHITECTURAL LEVEL MONOLITH TOWER */}
         <div className="lg:col-span-6 flex flex-col items-center">
           <div className="w-full flex items-center justify-between mb-2.5 px-1">
-            <span className="text-xs font-orbitron font-black uppercase tracking-widest text-slate-500">
+            <span className="text-[10px] font-orbitron font-black uppercase tracking-widest text-slate-500">
               STRUCTURAL LEVEL TOWER
             </span>
-            <span className="text-xs font-orbitron font-bold text-slate-500 uppercase">
+            <span className="text-[10px] font-orbitron font-bold text-slate-500 uppercase">
               SELECT LEVEL TO OPEN MAP
             </span>
           </div>
@@ -504,6 +414,99 @@ export default function BuildingMonolithPreview({
                   WHEELCHAIR RAMP AT ENTRANCE
                 </span>
               </div>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* BOTTOM ROW: 3 CALLOUTS (Full Width Symmetry, Pushed to Bottom) */}
+      <div className="w-full mt-auto pt-8 pb-4">
+        {/* 3 Architectural Callout Cards (Horizontal Grid for Maximum Breathing Room) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8 w-full">
+          {/* Callout 1: Main Entrance */}
+          <div className="p-4 md:p-5 rounded-2xl md:rounded-3xl bg-white/60 dark:bg-white/[0.02] backdrop-blur-xl border border-black/10 dark:border-white/10 flex flex-col gap-3 shadow-sm h-full">
+            <div className="flex items-center gap-3">
+              <div className={`p-2.5 rounded-lg bg-black/5 dark:bg-white/10 ${theme.colorClass} flex-shrink-0`}>
+                <MapPin className="w-4 h-4" />
+              </div>
+              <span className="text-xs md:text-sm font-orbitron font-black uppercase tracking-wider text-slate-500">
+                ENTRANCE
+              </span>
+            </div>
+            {isEditing ? (
+              <textarea
+                value={editedData?.entranceDetails || ''}
+                onChange={(e) =>
+                  setEditedData({
+                    ...editedData,
+                    entranceDetails: e.target.value,
+                  })
+                }
+                rows={2}
+                className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl p-3 text-xs md:text-sm text-[var(--text-main)] resize-none"
+              />
+            ) : (
+              <p className="text-xs md:text-sm text-slate-700 dark:text-zinc-300 leading-relaxed font-medium">
+                {buildingData?.entranceDetails}
+              </p>
+            )}
+          </div>
+
+          {/* Callout 2: Lab Access */}
+          <div className="p-4 md:p-5 rounded-2xl md:rounded-3xl bg-white/60 dark:bg-white/[0.02] backdrop-blur-xl border border-black/10 dark:border-white/10 flex flex-col gap-3 shadow-sm h-full">
+            <div className="flex items-center gap-3">
+              <div className={`p-2.5 rounded-lg bg-black/5 dark:bg-white/10 ${theme.colorClass} flex-shrink-0`}>
+                <FlaskConical className="w-4 h-4" />
+              </div>
+              <span className="text-xs md:text-sm font-orbitron font-black uppercase tracking-wider text-slate-500">
+                LAB ACCESS
+              </span>
+            </div>
+            {isEditing ? (
+              <textarea
+                value={editedData?.labDetails || ''}
+                onChange={(e) =>
+                  setEditedData({
+                    ...editedData,
+                    labDetails: e.target.value,
+                  })
+                }
+                rows={2}
+                className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl p-3 text-xs md:text-sm text-[var(--text-main)] resize-none"
+              />
+            ) : (
+              <p className="text-xs md:text-sm text-slate-700 dark:text-zinc-300 leading-relaxed font-medium">
+                {buildingData?.labDetails}
+              </p>
+            )}
+          </div>
+
+          {/* Callout 3: Staff Rooms */}
+          <div className="p-4 md:p-5 rounded-2xl md:rounded-3xl bg-white/60 dark:bg-white/[0.02] backdrop-blur-xl border border-black/10 dark:border-white/10 flex flex-col gap-3 shadow-sm h-full">
+            <div className="flex items-center gap-3">
+              <div className={`p-2.5 rounded-lg bg-black/5 dark:bg-white/10 ${theme.colorClass} flex-shrink-0`}>
+                <Users className="w-4 h-4" />
+              </div>
+              <span className="text-xs md:text-sm font-orbitron font-black uppercase tracking-wider text-slate-500">
+                STAFF ROOMS
+              </span>
+            </div>
+            {isEditing ? (
+              <textarea
+                value={editedData?.staffDetails || ''}
+                onChange={(e) =>
+                  setEditedData({
+                    ...editedData,
+                    staffDetails: e.target.value,
+                  })
+                }
+                rows={2}
+                className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl p-3 text-xs md:text-sm text-[var(--text-main)] resize-none"
+              />
+            ) : (
+              <p className="text-xs md:text-sm text-slate-700 dark:text-zinc-300 leading-relaxed font-medium">
+                {buildingData?.staffDetails}
+              </p>
             )}
           </div>
         </div>
