@@ -1,9 +1,9 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { Suspense, lazy } from 'react'
-const HomePage = lazy(() => import('./components/HomePage'))
-const FloorPlan = lazy(() => import('./components/FloorPlan'))
+const HomePage = lazy(() => import('./components/home/HomePage'))
+const FloorPlan = lazy(() => import('./components/map/FloorPlan'))
 import { AnimatePresence } from 'framer-motion'
-import ChatbotWidget from './components/ChatbotWidget'
+import ChatbotWidget from './components/ui/ChatbotWidget'
 
 function App() {
   const location = useLocation()
