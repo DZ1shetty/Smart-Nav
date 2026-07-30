@@ -7,10 +7,14 @@ import {
   User,
   Image as ImageIcon,
   FileText,
+  Upload,
+  Trash2,
+  Loader2,
 } from 'lucide-react'
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect, useCallback } from 'react'
 import { resolveImageUrl } from '../config'
 import { useDebounce } from '../hooks/useDebounce'
+import { uploadToCloudinary } from '../utils/cloudinaryUpload'
 
 export default function FacultyManagerModal({
   isOpen,
@@ -23,6 +27,7 @@ export default function FacultyManagerModal({
   const [editedFaculty, setEditedFaculty] = useState({})
   const [isSaving, setIsSaving] = useState(false)
   const [saveSuccess, setSaveSuccess] = useState(false)
+  const [uploadingImageFor, setUploadingImageFor] = useState({})
 
   // Initialize edited data when modal opens or facultyList changes
   useEffect(() => {
@@ -62,6 +67,35 @@ export default function FacultyManagerModal({
       },
     }))
   }
+
+  const handleImageFileUpload = async (facultyId, file) => {
+    if (!file) return;
+
+    setUploadingImageFor(prev => ({ ...prev, [facultyId]: true }));
+    try {
+      const url = await uploadToCloudinary(file);
+      handleFieldChange(facultyId, 'image', url);
+    } catch (error) {
+      console.error('Error uploading image:', error);
+      alert('Failed to upload image. Please try again.');
+    } finally {
+      setUploadingImageFor(prev => ({ ...prev, [facultyId]: false }));
+    }
+  };
+
+  const handleDragOver = useCallback((e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  }, []);
+
+  const handleDrop = useCallback((e, facultyId) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const files = e.dataTransfer?.files;
+    if (files && files.length > 0) {
+      handleImageFileUpload(facultyId, files[0]);
+    }
+  }, []);
 
   const handleSaveAll = async () => {
     setIsSaving(true)
@@ -192,23 +226,62 @@ export default function FacultyManagerModal({
                 </div>
 
                 <div className="flex-1 flex flex-col gap-4">
-                  {/* Image URL Field */}
+                  {/* Profile Image Field */}
                   <div className="flex flex-col gap-2">
-                    <div className="flex items-center gap-2">
-                      <ImageIcon className="w-3 h-3 text-blue-500" />
-                      <span className="text-[9px] font-orbitron font-black uppercase tracking-widest text-black/40">
-                        Profile Image URL
-                      </span>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <ImageIcon className="w-3 h-3 text-blue-500" />
+                        <span className="text-[9px] font-orbitron font-black uppercase tracking-widest text-black/40">
+                          Profile Image
+                        </span>
+                      </div>
+                      {editedFaculty[faculty.id]?.image && (
+                        <button
+                          onClick={() => handleFieldChange(faculty.id, 'image', '')}
+                          className="flex items-center gap-1 px-2 py-1 rounded-md bg-red-500/10 text-red-500 hover:bg-red-500/20 transition-colors"
+                          title="Clear Image"
+                        >
+                          <Trash2 className="w-3 h-3" />
+                          <span className="text-[10px] font-bold">CLEAR</span>
+                        </button>
+                      )}
                     </div>
-                    <input
-                      type="text"
-                      value={editedFaculty[faculty.id]?.image || ''}
-                      onChange={(e) =>
-                        handleFieldChange(faculty.id, 'image', e.target.value)
-                      }
-                      placeholder="https://example.com/photo.jpg"
-                      className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl px-4 py-2 text-xs font-mono text-blue-500 focus:outline-none focus:border-blue-500/50 transition-all"
-                    />
+                    
+                    <label 
+                      className={`relative flex flex-col items-center justify-center w-full h-24 bg-black/5 dark:bg-white/5 border-2 border-dashed ${uploadingImageFor[faculty.id] ? 'border-blue-500/50 bg-blue-500/5' : 'border-black/10 dark:border-white/10 hover:border-blue-500/30'} rounded-xl cursor-pointer transition-all overflow-hidden group`}
+                      onDragOver={handleDragOver}
+                      onDrop={(e) => handleDrop(e, faculty.id)}
+                    >
+                      <input
+                        type="file"
+                        className="hidden"
+                        accept="image/*"
+                        onChange={(e) => {
+                          if (e.target.files && e.target.files.length > 0) {
+                            handleImageFileUpload(faculty.id, e.target.files[0]);
+                          }
+                        }}
+                        disabled={uploadingImageFor[faculty.id]}
+                      />
+                      
+                      {uploadingImageFor[faculty.id] ? (
+                        <div className="flex flex-col items-center gap-2">
+                          <Loader2 className="w-5 h-5 text-blue-500 animate-spin" />
+                          <span className="text-[10px] font-orbitron font-bold text-blue-500 uppercase tracking-widest">
+                            Uploading...
+                          </span>
+                        </div>
+                      ) : (
+                        <div className="flex flex-col items-center gap-2">
+                          <Upload className="w-5 h-5 text-black/30 dark:text-white/30 group-hover:text-blue-500 group-hover:scale-110 transition-all duration-300" />
+                          <div className="text-center">
+                            <span className="text-[10px] font-orbitron font-bold text-black/40 dark:text-white/40 uppercase tracking-widest block">
+                              Click or Drag & Drop
+                            </span>
+                          </div>
+                        </div>
+                      )}
+                    </label>
                   </div>
 
                   {/* description Field */}
