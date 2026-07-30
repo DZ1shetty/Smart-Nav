@@ -248,7 +248,8 @@ export default function FacultyManagerModal({
                     </div>
                     
                     <label 
-                      className={`relative flex flex-col items-center justify-center w-full min-h-[120px] bg-black/5 dark:bg-white/5 border-2 border-dashed ${uploadingImageFor[faculty.id] ? 'border-blue-500/50 bg-blue-500/5' : 'border-black/10 dark:border-white/10 hover:border-blue-500/30 hover:bg-black/[0.07] dark:hover:bg-white/[0.07]'} rounded-xl cursor-pointer transition-all duration-300 overflow-hidden group shadow-inner`}
+                      style={{ minHeight: editedFaculty[faculty.id]?.image ? 240 : 120 }}
+                      className={`relative flex flex-col items-center justify-center w-full bg-black/5 dark:bg-white/5 border-2 border-dashed ${uploadingImageFor[faculty.id] ? 'border-blue-500/50 bg-blue-500/5' : 'border-black/10 dark:border-white/10 hover:border-blue-500/30 hover:bg-black/[0.07] dark:hover:bg-white/[0.07]'} rounded-xl cursor-pointer transition-all duration-300 overflow-hidden group shadow-inner`}
                       onDragOver={handleDragOver}
                       onDrop={(e) => handleDrop(e, faculty.id)}
                     >
@@ -271,6 +272,32 @@ export default function FacultyManagerModal({
                             Uploading...
                           </span>
                         </div>
+                      ) : editedFaculty[faculty.id]?.image ? (
+                        <>
+                          <img
+                            src={resolveImageUrl(editedFaculty[faculty.id].image)}
+                            alt="preview"
+                            className="w-full h-full object-contain rounded-xl p-2 max-h-56"
+                            onError={(e) => {
+                              const currentSrc = e.target.src;
+                              if (currentSrc.includes('raw.githubusercontent.com')) {
+                                const parts = currentSrc.split('/public-backup');
+                                if (parts.length > 1) {
+                                  e.target.src = parts[1];
+                                  return;
+                                }
+                              }
+                              e.target.src = 'https://placehold.co/600x400?text=Image+Not+Found';
+                            }}
+                          />
+                          {/* Hover Overlay */}
+                          <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-black/50 dark:bg-black/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300">
+                            <Upload className="w-6 h-6 text-white" />
+                            <span className="text-[10px] font-orbitron font-black text-white uppercase tracking-widest block">
+                              Change Image
+                            </span>
+                          </div>
+                        </>
                       ) : (
                         <div className="flex flex-col items-center gap-3 p-4">
                           <div className="p-3 bg-black/5 dark:bg-white/5 rounded-full group-hover:scale-110 group-hover:bg-blue-500/10 transition-all duration-300">
@@ -293,8 +320,8 @@ export default function FacultyManagerModal({
                   <div className="flex flex-col gap-2">
                     <div className="flex items-center gap-2">
                       <FileText className="w-3 h-3 text-blue-500" />
-                      <span className="text-[9px] font-orbitron font-black uppercase tracking-widest text-black/40">
-                        Professional description
+                      <span className="text-[9px] font-orbitron font-black uppercase tracking-widest text-black/40 dark:text-white/40">
+                        Professional Description
                       </span>
                     </div>
                     <textarea
@@ -307,7 +334,7 @@ export default function FacultyManagerModal({
                         )
                       }
                       placeholder="Enter faculty description, specializations, or notes..."
-                      className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl p-4 text-sm font-medium text-black dark:text-white focus:outline-none focus:border-blue-500/50 focus:ring-4 focus:ring-blue-500/5 transition-all min-h-[100px] custom-scrollbar"
+                      className="w-full bg-black/5 dark:bg-white/5 border-2 border-black/5 dark:border-white/5 hover:border-blue-500/30 focus:border-blue-500/50 rounded-xl p-4 text-sm font-medium text-black dark:text-white focus:outline-none focus:ring-4 focus:ring-blue-500/5 transition-all min-h-[120px] shadow-inner custom-scrollbar"
                     />
                   </div>
                 </div>
