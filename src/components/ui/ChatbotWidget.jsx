@@ -1106,7 +1106,7 @@ export default function ChatbotWidget() {
                   <span className="text-xs md:text-sm font-orbitron font-black tracking-wider text-[var(--text-main)] uppercase whitespace-nowrap">
                     CAMPUS ASSIST
                   </span>
-                  <span className="px-2 py-0.5 rounded-full bg-blue-500/10 dark:bg-cyan-500/10 border border-blue-500/20 dark:border-cyan-500/20 text-[10px] font-orbitron font-black text-blue-600 dark:text-cyan-400 select-none flex items-center gap-1 whitespace-nowrap" title="Remaining Queries Count">
+                  <span className="px-2 py-0.5 rounded-full bg-blue-500/10 dark:bg-cyan-500/10 border border-blue-500/20 dark:border-cyan-500/20 text-xs font-orbitron font-black text-blue-600 dark:text-cyan-400 select-none flex items-center gap-1 whitespace-nowrap" title="Remaining Queries Count">
                     ⚡ {queriesRemaining} LEFT
                   </span>
                 </div>
@@ -1242,10 +1242,10 @@ export default function ChatbotWidget() {
                       return (
                         <>
                           <div className="flex items-center justify-between px-1 pb-1 select-none">
-                            <span className="text-[10px] font-orbitron font-black text-black/40 dark:text-white/30 uppercase tracking-wider">
+                            <span className="text-xs font-orbitron font-black text-black/40 dark:text-white/30 uppercase tracking-wider">
                               {savedQAs.length} saved · {queriesRemaining} left this month
                             </span>
-                            <span className={`text-[9px] font-orbitron font-black uppercase tracking-widest px-2 py-0.5 rounded-full border ${
+                            <span className={`text-[11px] font-orbitron font-black uppercase tracking-widest px-2 py-0.5 rounded-full border ${
                               queriesRemaining === 0
                                 ? 'text-red-500 border-red-500/30 bg-red-500/10'
                                 : queriesRemaining <= 3
@@ -1264,14 +1264,14 @@ export default function ChatbotWidget() {
                               <div key={monthKey} className="flex flex-col gap-2">
                                 {/* Month section header */}
                                 <div className="flex items-center gap-2 px-1 pt-1">
-                                  <span className={`text-[9px] font-orbitron font-black uppercase tracking-widest px-2 py-0.5 rounded-full border ${
+                                  <span className={`text-[11px] font-orbitron font-black uppercase tracking-widest px-2 py-0.5 rounded-full border ${
                                     isCurrentMonth
                                       ? 'text-blue-500 dark:text-cyan-400 border-blue-500/25 dark:border-cyan-400/25 bg-blue-500/8 dark:bg-cyan-500/8'
                                       : 'text-black/35 dark:text-white/25 border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03]'
                                   }`}>
                                     📅 {monthLabel}{isCurrentMonth ? ' · Now' : ''}
                                   </span>
-                                  <span className="text-[9px] text-black/25 dark:text-white/20 font-orbitron font-black">
+                                  <span className="text-[11px] text-black/25 dark:text-white/20 font-orbitron font-black">
                                     {monthItems.length} {monthItems.length === 1 ? 'query' : 'queries'}
                                   </span>
                                 </div>
@@ -1303,7 +1303,7 @@ export default function ChatbotWidget() {
                                         #{item.queryIndex}/{queryLimit}
                                       </span>
                                     )}
-                                    <span className="text-[9px] font-orbitron font-black text-blue-500 dark:text-cyan-400 uppercase tracking-widest bg-blue-500/10 dark:bg-cyan-500/10 border border-blue-500/20 dark:border-cyan-500/20 px-2 py-0.5 rounded-lg">
+                                    <span className="text-[11px] font-orbitron font-black text-blue-500 dark:text-cyan-400 uppercase tracking-widest bg-blue-500/10 dark:bg-cyan-500/10 border border-blue-500/20 dark:border-cyan-500/20 px-2 py-0.5 rounded-lg">
                                       {isExpanded ? 'Hide' : 'View'}
                                     </span>
                                     {isExpanded ? (
@@ -1314,7 +1314,7 @@ export default function ChatbotWidget() {
                                   </div>
                                 </div>
                                 {tsLabel && (
-                                  <span className="text-[10px] text-black/30 dark:text-white/25 font-sans">
+                                  <span className="text-xs text-black/30 dark:text-white/25 font-sans">
                                     {tsLabel}
                                   </span>
                                 )}
@@ -1358,7 +1358,7 @@ export default function ChatbotWidget() {
                                           setExpandedQAId(null);
                                           toast.success("Recalled to active chat!");
                                         }}
-                                        className="px-3 py-1.5 bg-blue-500 hover:bg-blue-600 dark:bg-cyan-500/10 dark:hover:bg-cyan-500/20 border border-blue-500/20 dark:border-cyan-400/20 text-white dark:text-cyan-400 font-orbitron font-black text-[9px] uppercase tracking-wider rounded-lg transition-all active:scale-[0.99]"
+                                        className="px-3 py-1.5 bg-blue-500 hover:bg-blue-600 dark:bg-cyan-500/10 dark:hover:bg-cyan-500/20 border border-blue-500/20 dark:border-cyan-400/20 text-white dark:text-cyan-400 font-orbitron font-black text-[11px] uppercase tracking-wider rounded-lg transition-all active:scale-[0.99]"
                                       >
                                         Import to Chat
                                       </button>
@@ -1369,7 +1369,7 @@ export default function ChatbotWidget() {
                                             e.stopPropagation();
                                             handleCopyToClipboard(item.answer);
                                           }}
-                                          className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-black/45 dark:text-white/40 hover:text-blue-500 dark:hover:text-cyan-400 transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5 flex items-center gap-1 text-[9px] font-orbitron font-black uppercase tracking-wider"
+                                          className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-black/45 dark:text-white/40 hover:text-blue-500 dark:hover:text-cyan-400 transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5 flex items-center gap-1 text-[11px] font-orbitron font-black uppercase tracking-wider"
                                           title="Copy Answer"
                                         >
                                           <Copy className="w-3.5 h-3.5" />
@@ -1393,7 +1393,7 @@ export default function ChatbotWidget() {
                                               }
                                             }
                                           }}
-                                          className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-black/45 dark:text-white/40 hover:text-red-500 dark:hover:text-red-400 transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5 flex items-center gap-1 text-[9px] font-orbitron font-black uppercase tracking-wider"
+                                          className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-black/45 dark:text-white/40 hover:text-red-500 dark:hover:text-red-400 transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5 flex items-center gap-1 text-[11px] font-orbitron font-black uppercase tracking-wider"
                                           title="Delete Query"
                                         >
                                           <Trash2 className="w-3.5 h-3.5" />
@@ -1446,7 +1446,7 @@ export default function ChatbotWidget() {
                       </span>
                       <button
                         onClick={handleSwitchAccount}
-                        className="py-2 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-orbitron font-black text-[10px] uppercase tracking-wider rounded-xl transition-all shadow-sm active:scale-95 flex items-center justify-center gap-1.5"
+                        className="py-2 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-orbitron font-black text-xs uppercase tracking-wider rounded-xl transition-all shadow-sm active:scale-95 flex items-center justify-center gap-1.5"
                       >
                         <LogOut className="w-3.5 h-3.5" />
                         Switch Google Account
@@ -1495,14 +1495,14 @@ export default function ChatbotWidget() {
                                   {/* Small map indicator banner */}
                                   <div className="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 bg-black/60 backdrop-blur-md rounded-md flex items-center gap-1 pointer-events-none">
                                     <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                                    <span className="text-[8px] font-orbitron font-black uppercase text-white/90 tracking-widest">
+                                    <span className="text-xs font-orbitron font-black uppercase text-white/90 tracking-widest">
                                       {targetFloorData.label} Map Preview
                                     </span>
                                   </div>
 
                                   {/* Hover overlay with button */}
                                   <div className="absolute inset-0 bg-blue-500/10 opacity-0 group-hover/map:opacity-100 transition-opacity flex items-center justify-center z-10 backdrop-blur-[1px]">
-                                    <div className="bg-blue-600/90 text-white font-orbitron font-black text-[8px] tracking-widest uppercase px-2.5 py-1 rounded-md shadow-lg flex items-center gap-1 scale-90 group-hover/map:scale-100 transition-transform">
+                                    <div className="bg-blue-600/90 text-white font-orbitron font-black text-xs tracking-widest uppercase px-2.5 py-1 rounded-md shadow-lg flex items-center gap-1 scale-90 group-hover/map:scale-100 transition-transform">
                                       <Maximize2 className="w-3 h-3" />
                                       Locate in Main View
                                     </div>
@@ -1571,12 +1571,12 @@ export default function ChatbotWidget() {
                         {/* Error message action button */}
                         {msg.isError && (
                           <div className="mt-2 pt-2 border-t border-black/5 dark:border-white/5 flex flex-col gap-1.5">
-                            <span className="text-[10px] text-black/40 dark:text-white/40 font-medium">
+                            <span className="text-xs text-black/40 dark:text-white/40 font-medium">
                               Click below to sign out of the current Puter session:
                             </span>
                             <button
                               onClick={handleSwitchAccount}
-                              className="w-full py-1.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:to-pink-600 text-white font-orbitron font-black text-[9.5px] uppercase tracking-widest rounded-lg transition-all shadow-md active:scale-98 flex items-center justify-center gap-1.5"
+                              className="w-full py-1.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:to-pink-600 text-white font-orbitron font-black text-[11px] uppercase tracking-widest rounded-lg transition-all shadow-md active:scale-98 flex items-center justify-center gap-1.5"
                             >
                               <LogOut className="w-3 h-3" />
                               Switch Google Account
@@ -1638,7 +1638,7 @@ export default function ChatbotWidget() {
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-1 text-blue-600 dark:text-cyan-400">
                             <AlertTriangle className="w-3.5 h-3.5" />
-                            <span className="text-[9px] font-orbitron font-black uppercase tracking-widest">
+                            <span className="text-[11px] font-orbitron font-black uppercase tracking-widest">
                               Similar Query Found
                             </span>
                           </div>
@@ -1708,7 +1708,7 @@ export default function ChatbotWidget() {
                     </button>
                   </form>
                   {/* Google style disclaimer note */}
-                  <div className="text-center text-[9px] font-sans text-black/40 dark:text-white/40 mt-1.5 tracking-wider uppercase select-none font-semibold">
+                  <div className="text-center text-[11px] font-sans text-black/40 dark:text-white/40 mt-1.5 tracking-wider uppercase select-none font-semibold">
                     Campus Assist AI can make mistakes. Verify critical paths.
                   </div>
                 </motion.footer>

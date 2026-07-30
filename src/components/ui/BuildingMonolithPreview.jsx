@@ -98,7 +98,7 @@ export default function BuildingMonolithPreview({
         <div className="order-1 flex-shrink-0">
         <button
           onClick={handleBackToHome}
-          className="group flex items-center gap-2 px-3 py-1.5 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20 transition-all active:scale-95 shadow-sm"
+          className="group flex items-center gap-2 px-3 py-2 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20 transition-all active:scale-95 shadow-sm"
         >
           <ChevronLeft className="w-4 h-4 text-slate-500 group-hover:text-white transition-colors" />
           <span className="text-xs font-orbitron font-black uppercase tracking-widest text-slate-500 group-hover:text-white transition-colors">
@@ -113,14 +113,14 @@ export default function BuildingMonolithPreview({
             <div className="flex items-center gap-2">
               <button
                 onClick={handleCancelEdit}
-                className="px-2 md:px-3 py-1.5 rounded-xl text-[10px] md:text-xs font-orbitron font-bold uppercase tracking-wider flex items-center gap-1 md:gap-1.5 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:bg-red-500/10 hover:border-red-500/30 hover:text-red-400 transition-all active:scale-95"
+                className="px-2 md:px-3 py-2 rounded-xl text-xs md:text-xs font-orbitron font-bold uppercase tracking-wider flex items-center gap-2 md:gap-2.5 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:bg-red-500/10 hover:border-red-500/30 hover:text-red-400 transition-all active:scale-95"
               >
                 <X className="w-3.5 h-3.5" />
                 <span className="hidden sm:inline">Cancel</span>
               </button>
               <button
                 onClick={handleSaveBuilding}
-                className={`px-3 md:px-3.5 py-1.5 rounded-xl text-[10px] md:text-xs font-orbitron font-black uppercase tracking-wider flex items-center gap-1 md:gap-1.5 text-white ${theme.btnBg} shadow-md transition-all active:scale-95`}
+                className={`px-3 md:px-3.5 py-2 rounded-xl text-xs md:text-xs font-orbitron font-black uppercase tracking-wider flex items-center gap-2 md:gap-2.5 text-white ${theme.btnBg} shadow-md transition-all active:scale-95`}
               >
                 <Save className="w-3.5 h-3.5" />
                 Save
@@ -129,7 +129,7 @@ export default function BuildingMonolithPreview({
           ) : (
             <button
               onClick={handleStartEdit}
-              className="px-2 md:px-3 py-1.5 rounded-xl text-[10px] md:text-xs font-orbitron font-black uppercase tracking-wider flex items-center gap-1 md:gap-1.5 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-blue-500/40 hover:text-blue-500 transition-all active:scale-95 shadow-sm"
+              className="px-2 md:px-3 py-2 rounded-xl text-xs md:text-xs font-orbitron font-black uppercase tracking-wider flex items-center gap-2 md:gap-2.5 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-blue-500/40 hover:text-blue-500 transition-all active:scale-95 shadow-sm"
             >
               <Edit3 className="w-3.5 h-3.5" />
               <span className="hidden sm:inline">Edit Info</span>
@@ -172,7 +172,7 @@ export default function BuildingMonolithPreview({
                 ) : (
                   <div className="w-full h-full flex flex-col items-center justify-center p-4 text-center">
                     <ImageIcon className="w-8 h-8 text-slate-500 mb-1" />
-                    <span className="text-[10px] font-orbitron font-bold text-slate-500 uppercase tracking-widest">
+                    <span className="text-xs font-orbitron font-bold text-slate-500 uppercase tracking-widest">
                       PASTE IMAGE URL OR UPLOAD FILE BELOW
                     </span>
                   </div>
@@ -187,7 +187,7 @@ export default function BuildingMonolithPreview({
             ) : (
               <div className="w-full h-full flex flex-col items-center justify-center p-4 text-center">
                 <Building className="w-10 h-10 text-slate-500 mb-1 opacity-40" />
-                <span className="text-[10px] font-orbitron font-bold text-slate-500 uppercase tracking-widest">
+                <span className="text-xs font-orbitron font-bold text-slate-500 uppercase tracking-widest">
                   ARCHITECTURAL PHOTO SHOWCASE
                 </span>
               </div>
@@ -198,7 +198,7 @@ export default function BuildingMonolithPreview({
           {isEditing && (
             <div className="p-3 rounded-2xl bg-white/80 dark:bg-white/[0.03] border border-black/10 dark:border-white/10 shadow-sm flex flex-col gap-2">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-orbitron font-black uppercase tracking-wider text-blue-500 flex items-center gap-1">
+                <span className="text-xs font-orbitron font-black uppercase tracking-wider text-blue-500 flex items-center gap-2">
                   <ImageIcon className="w-3.5 h-3.5" /> UPLOAD BUILDING IMAGE
                 </span>
                 {editedData?.imageUrl ? (
@@ -208,7 +208,7 @@ export default function BuildingMonolithPreview({
                       setClearedImage(editedData.imageUrl)
                       setEditedData({ ...editedData, imageUrl: '' })
                     }}
-                    className="text-[9px] font-orbitron font-bold text-red-500 hover:underline uppercase flex items-center gap-1"
+                    className="text-[11px] font-orbitron font-bold text-red-500 hover:underline uppercase flex items-center gap-2"
                   >
                     <Trash2 className="w-3 h-3" /> Clear Image
                   </button>
@@ -219,7 +219,7 @@ export default function BuildingMonolithPreview({
                       setEditedData({ ...editedData, imageUrl: clearedImage })
                       setClearedImage(null)
                     }}
-                    className="text-[9px] font-orbitron font-bold text-blue-500 hover:underline uppercase flex items-center gap-1"
+                    className="text-[11px] font-orbitron font-bold text-blue-500 hover:underline uppercase flex items-center gap-2"
                   >
                     Undo Clear
                   </button>
@@ -245,7 +245,7 @@ export default function BuildingMonolithPreview({
                 {uploadProgress !== null ? (
                   <div className="flex flex-col items-center justify-center gap-2">
                     <Loader2 className="w-6 h-6 text-blue-400 animate-spin" />
-                    <span className="text-[9px] font-orbitron font-black uppercase tracking-widest text-black/50 dark:text-white/40">
+                    <span className="text-[11px] font-orbitron font-black uppercase tracking-widest text-black/50 dark:text-white/40">
                       Uploading {uploadProgress}%
                     </span>
                     <div className="absolute bottom-0 left-0 right-0 h-1 bg-black/20 rounded-b-xl overflow-hidden">
@@ -258,7 +258,7 @@ export default function BuildingMonolithPreview({
                 ) : (
                   <div className="flex flex-col items-center justify-center gap-2 transition-all opacity-70 group-hover:opacity-100">
                     <ImagePlus className="w-6 h-6 text-blue-400" />
-                    <span className="text-[9px] font-orbitron font-black uppercase tracking-widest text-black/50 dark:text-white/40">
+                    <span className="text-[11px] font-orbitron font-black uppercase tracking-widest text-black/50 dark:text-white/40">
                       Click or Drop Image
                     </span>
                   </div>
@@ -281,21 +281,21 @@ export default function BuildingMonolithPreview({
                   className="flex w-full items-center justify-center gap-2 px-4 py-3 bg-black/5 dark:bg-white/5 rounded-xl border border-black/10 dark:border-white/10 active:bg-blue-500/10 transition-colors"
                 >
                   <Camera className="w-4 h-4 text-blue-500" />
-                  <span className="text-[10px] font-orbitron font-black uppercase tracking-widest text-black/60 dark:text-white/60">
+                  <span className="text-xs font-orbitron font-black uppercase tracking-widest text-black/60 dark:text-white/60">
                     Capture with Camera
                   </span>
                 </button>
               </div>
 
               {uploadError && (
-                <p className="mt-1 text-[9px] font-orbitron text-red-500 font-bold">{uploadError}</p>
+                <p className="mt-1 text-[11px] font-orbitron text-red-500 font-bold">{uploadError}</p>
               )}
             </div>
           )}
 
           {/* Building Overview Panel */}
           <div className="p-4 md:p-4.5 rounded-2xl md:rounded-3xl bg-white/80 dark:bg-white/[0.03] backdrop-blur-2xl border border-black/10 dark:border-white/10 shadow-sm flex flex-col gap-2">
-            <span className="text-[10px] font-orbitron font-black uppercase tracking-widest text-slate-500">
+            <span className="text-xs font-orbitron font-black uppercase tracking-widest text-slate-500">
               BUILDING OVERVIEW
             </span>
             {isEditing ? (
@@ -317,12 +317,12 @@ export default function BuildingMonolithPreview({
           {/* 3 Architectural Callout Cards (Horizontal Grid for Maximum Breathing Room) */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5">
             {/* Callout 1: Main Entrance */}
-            <div className="p-3 md:p-3.5 rounded-2xl bg-white/60 dark:bg-white/[0.02] backdrop-blur-xl border border-black/10 dark:border-white/10 flex flex-col gap-1.5 shadow-sm">
+            <div className="p-3 md:p-3.5 rounded-2xl bg-white/60 dark:bg-white/[0.02] backdrop-blur-xl border border-black/10 dark:border-white/10 flex flex-col gap-2.5 shadow-sm">
               <div className="flex items-center gap-2">
-                <div className={`p-1.5 rounded-lg bg-black/5 dark:bg-white/10 ${theme.colorClass} flex-shrink-0`}>
+                <div className={`p-2.5 rounded-lg bg-black/5 dark:bg-white/10 ${theme.colorClass} flex-shrink-0`}>
                   <MapPin className="w-3.5 h-3.5" />
                 </div>
-                <span className="text-[10px] font-orbitron font-black uppercase tracking-wider text-slate-500">
+                <span className="text-xs font-orbitron font-black uppercase tracking-wider text-slate-500">
                   ENTRANCE
                 </span>
               </div>
@@ -336,7 +336,7 @@ export default function BuildingMonolithPreview({
                     })
                   }
                   rows={2}
-                  className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-lg p-1.5 text-xs text-[var(--text-main)] resize-none"
+                  className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-lg p-2.5 text-xs text-[var(--text-main)] resize-none"
                 />
               ) : (
                 <p className="text-xs text-slate-700 dark:text-zinc-300 leading-snug font-medium">
@@ -346,12 +346,12 @@ export default function BuildingMonolithPreview({
             </div>
 
             {/* Callout 2: Lab Access */}
-            <div className="p-3 md:p-3.5 rounded-2xl bg-white/60 dark:bg-white/[0.02] backdrop-blur-xl border border-black/10 dark:border-white/10 flex flex-col gap-1.5 shadow-sm">
+            <div className="p-3 md:p-3.5 rounded-2xl bg-white/60 dark:bg-white/[0.02] backdrop-blur-xl border border-black/10 dark:border-white/10 flex flex-col gap-2.5 shadow-sm">
               <div className="flex items-center gap-2">
-                <div className={`p-1.5 rounded-lg bg-black/5 dark:bg-white/10 ${theme.colorClass} flex-shrink-0`}>
+                <div className={`p-2.5 rounded-lg bg-black/5 dark:bg-white/10 ${theme.colorClass} flex-shrink-0`}>
                   <FlaskConical className="w-3.5 h-3.5" />
                 </div>
-                <span className="text-[10px] font-orbitron font-black uppercase tracking-wider text-slate-500">
+                <span className="text-xs font-orbitron font-black uppercase tracking-wider text-slate-500">
                   LAB ACCESS
                 </span>
               </div>
@@ -365,7 +365,7 @@ export default function BuildingMonolithPreview({
                     })
                   }
                   rows={2}
-                  className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-lg p-1.5 text-xs text-[var(--text-main)] resize-none"
+                  className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-lg p-2.5 text-xs text-[var(--text-main)] resize-none"
                 />
               ) : (
                 <p className="text-xs text-slate-700 dark:text-zinc-300 leading-snug font-medium">
@@ -375,12 +375,12 @@ export default function BuildingMonolithPreview({
             </div>
 
             {/* Callout 3: Staff Rooms */}
-            <div className="p-3 md:p-3.5 rounded-2xl bg-white/60 dark:bg-white/[0.02] backdrop-blur-xl border border-black/10 dark:border-white/10 flex flex-col gap-1.5 shadow-sm">
+            <div className="p-3 md:p-3.5 rounded-2xl bg-white/60 dark:bg-white/[0.02] backdrop-blur-xl border border-black/10 dark:border-white/10 flex flex-col gap-2.5 shadow-sm">
               <div className="flex items-center gap-2">
-                <div className={`p-1.5 rounded-lg bg-black/5 dark:bg-white/10 ${theme.colorClass} flex-shrink-0`}>
+                <div className={`p-2.5 rounded-lg bg-black/5 dark:bg-white/10 ${theme.colorClass} flex-shrink-0`}>
                   <Users className="w-3.5 h-3.5" />
                 </div>
-                <span className="text-[10px] font-orbitron font-black uppercase tracking-wider text-slate-500">
+                <span className="text-xs font-orbitron font-black uppercase tracking-wider text-slate-500">
                   STAFF ROOMS
                 </span>
               </div>
@@ -394,7 +394,7 @@ export default function BuildingMonolithPreview({
                     })
                   }
                   rows={2}
-                  className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-lg p-1.5 text-xs text-[var(--text-main)] resize-none"
+                  className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-lg p-2.5 text-xs text-[var(--text-main)] resize-none"
                 />
               ) : (
                 <p className="text-xs text-slate-700 dark:text-zinc-300 leading-snug font-medium">
@@ -408,10 +408,10 @@ export default function BuildingMonolithPreview({
         {/* RIGHT COLUMN: THE ARCHITECTURAL LEVEL MONOLITH TOWER */}
         <div className="lg:col-span-6 flex flex-col items-center">
           <div className="w-full flex items-center justify-between mb-2.5 px-1">
-            <span className="text-[10px] font-orbitron font-black uppercase tracking-widest text-slate-500">
+            <span className="text-xs font-orbitron font-black uppercase tracking-widest text-slate-500">
               STRUCTURAL LEVEL TOWER
             </span>
-            <span className="text-[10px] font-orbitron font-bold text-slate-500 uppercase">
+            <span className="text-xs font-orbitron font-bold text-slate-500 uppercase">
               SELECT LEVEL TO OPEN MAP
             </span>
           </div>
@@ -469,7 +469,7 @@ export default function BuildingMonolithPreview({
                   {/* Level Action Trigger */}
                   <div className="flex items-center gap-2 z-10">
                     <span
-                      className={`text-[10px] font-orbitron font-black tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${theme.colorClass}`}
+                      className={`text-xs font-orbitron font-black tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${theme.colorClass}`}
                     >
                       OPEN MAP
                     </span>
@@ -490,17 +490,17 @@ export default function BuildingMonolithPreview({
 
           {/* Useful Campus Utility Bar */}
           <div className="w-full flex items-center justify-start gap-2 mt-3 pt-2.5 border-t border-black/10 dark:border-white/10 flex-wrap">
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-black/5 dark:bg-white/[0.02] border border-black/5 dark:border-white/5">
+            <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-black/5 dark:bg-white/[0.02] border border-black/5 dark:border-white/5">
               <Layers className="w-3.5 h-3.5 text-blue-500" />
-              <span className="text-[10px] font-orbitron font-bold text-slate-500 uppercase tracking-wider">
+              <span className="text-xs font-orbitron font-bold text-slate-500 uppercase tracking-wider">
                 ELEVATOR & STAIRS ACCESSIBLE
               </span>
             </div>
 
             {buildingKey === 'apj' && (
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-black/5 dark:bg-white/[0.02] border border-black/5 dark:border-white/5">
+              <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-black/5 dark:bg-white/[0.02] border border-black/5 dark:border-white/5">
                 <Accessibility className="w-3.5 h-3.5 text-purple-500" />
-                <span className="text-[10px] font-orbitron font-bold text-slate-500 uppercase tracking-wider">
+                <span className="text-xs font-orbitron font-bold text-slate-500 uppercase tracking-wider">
                   WHEELCHAIR RAMP AT ENTRANCE
                 </span>
               </div>

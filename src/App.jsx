@@ -9,14 +9,14 @@ function App() {
   const location = useLocation()
 
   return (
-    <div className="min-h-screen bg-[var(--bg-main)] text-[var(--text-main)] font-mono overflow-x-hidden transition-colors duration-300">
+    <div className="min-h-[100dvh] pb-[env(safe-area-inset-bottom)] bg-[var(--bg-main)] text-[var(--text-main)] font-mono overflow-x-hidden transition-colors duration-300">
       {/* Global AI Chatbot Widget */}
       <ChatbotWidget />
 
       <AnimatePresence mode="wait">
         <Suspense
           fallback={
-            <div className="flex items-center justify-center min-h-screen bg-dark text-white">
+            <div className="flex items-center justify-center min-h-[100dvh] bg-dark text-white">
               <div className="animate-pulse flex flex-col items-center gap-4">
                 <div className="w-12 h-12 rounded-full border-t-2 border-blue-500 animate-spin"></div>
                 <span className="text-xs font-black tracking-widest text-blue-400">

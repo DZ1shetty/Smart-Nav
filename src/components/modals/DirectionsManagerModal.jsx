@@ -80,7 +80,7 @@ export default function DirectionsManagerModal({
               <div className="w-2 h-8 bg-blue-500 rounded-full" />
               Directions Manager
             </h2>
-            <p className="text-[10px] font-orbitron font-bold text-black/40 dark:text-white/20 uppercase tracking-[0.2em] mt-1">
+            <p className="text-xs font-orbitron font-bold text-black/40 dark:text-white/20 uppercase tracking-[0.2em] mt-1">
               Batch edit navigation paths for all rooms
             </p>
           </div>
@@ -95,7 +95,7 @@ export default function DirectionsManagerModal({
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="FILTER ROOMS..."
-                className="bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl pl-10 pr-4 py-2.5 text-[10px] font-orbitron font-black uppercase tracking-widest outline-none focus:border-blue-500/50 transition-all w-48 md:w-64"
+                className="bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl pl-10 pr-4 py-2.5 text-xs font-orbitron font-black uppercase tracking-widest outline-none focus:border-blue-500/50 transition-all w-48 md:w-64"
               />
             </div>
             <button
@@ -124,11 +124,11 @@ export default function DirectionsManagerModal({
                       {room.name}
                     </h4>
                   </div>
-                  <div className="flex flex-col gap-1">
-                    <span className="text-[9px] font-mono text-black/30 dark:text-white/20 uppercase tracking-tighter">
+                  <div className="flex flex-col gap-2">
+                    <span className="text-[11px] font-mono text-black/30 dark:text-white/20 uppercase tracking-tighter">
                       ID: {room.id}
                     </span>
-                    <span className="text-[9px] font-orbitron font-bold text-blue-500/50 uppercase tracking-widest">
+                    <span className="text-[11px] font-orbitron font-bold text-blue-500/50 uppercase tracking-widest">
                       {room.type}
                     </span>
                   </div>
@@ -163,13 +163,13 @@ export default function DirectionsManagerModal({
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
               <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-              <span className="text-[10px] font-orbitron font-black text-black/40 dark:text-white/20 uppercase tracking-widest">
+              <span className="text-xs font-orbitron font-black text-black/40 dark:text-white/20 uppercase tracking-widest">
                 {rooms.length} Rooms Total
               </span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-              <span className="text-[10px] font-orbitron font-black text-black/40 dark:text-white/20 uppercase tracking-widest">
+              <span className="text-xs font-orbitron font-black text-black/40 dark:text-white/20 uppercase tracking-widest">
                 {
                   rooms.filter((r) => !r.directions || r.directions === 'TBD')
                     .length

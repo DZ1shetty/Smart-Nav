@@ -146,7 +146,7 @@ export default function FacultyManagerModal({
               <div className="w-2 h-8 bg-blue-500 rounded-full" />
               Faculty Manager
             </h2>
-            <p className="text-[10px] font-orbitron font-bold text-black/40 dark:text-white/20 uppercase tracking-[0.2em] mt-1">
+            <p className="text-xs font-orbitron font-bold text-black/40 dark:text-white/20 uppercase tracking-[0.2em] mt-1">
               Edit profile details and images for all faculty
             </p>
           </div>
@@ -161,7 +161,7 @@ export default function FacultyManagerModal({
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="FILTER FACULTY..."
-                className="bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl pl-10 pr-4 py-2.5 text-[10px] font-orbitron font-black uppercase tracking-widest outline-none focus:border-blue-500/50 transition-all w-48 md:w-64"
+                className="bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl pl-10 pr-4 py-2.5 text-xs font-orbitron font-black uppercase tracking-widest outline-none focus:border-blue-500/50 transition-all w-48 md:w-64"
               />
             </div>
             <button
@@ -209,13 +209,13 @@ export default function FacultyManagerModal({
                       <h4 className="text-sm font-orbitron font-black uppercase tracking-widest text-black dark:text-white truncate">
                         {faculty.name}
                       </h4>
-                      <span className="text-[9px] font-orbitron font-bold text-blue-500/50 uppercase tracking-widest">
+                      <span className="text-[11px] font-orbitron font-bold text-blue-500/50 uppercase tracking-widest">
                         {faculty.department || 'No Dept'}
                       </span>
                     </div>
                   </div>
                   <div className="flex flex-col gap-2">
-                    <div className="flex items-center gap-2 px-3 py-1.5 bg-black/5 dark:bg-white/5 rounded-lg border border-black/5 dark:border-white/5">
+                    <div className="flex items-center gap-2 px-3 py-2.5 bg-black/5 dark:bg-white/5 rounded-lg border border-black/5 dark:border-white/5">
                       <span className="text-[8px] font-mono text-black/40 dark:text-white/20 uppercase">
                         ROOM:
                       </span>
@@ -232,7 +232,7 @@ export default function FacultyManagerModal({
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <ImageIcon className="w-3 h-3 text-blue-500" />
-                        <span className="text-[9px] font-orbitron font-black uppercase tracking-widest text-black/40">
+                        <span className="text-[11px] font-orbitron font-black uppercase tracking-widest text-black/40">
                           Profile Image
                         </span>
                       </div>
@@ -245,11 +245,11 @@ export default function FacultyManagerModal({
                             }))
                             handleFieldChange(faculty.id, 'image', '')
                           }}
-                          className="flex items-center gap-1 px-2 py-1 rounded-md bg-red-500/10 text-red-500 hover:bg-red-500/20 transition-colors"
+                          className="flex items-center gap-2 px-2 py-2 rounded-md bg-red-500/10 text-red-500 hover:bg-red-500/20 transition-colors"
                           title="Clear Image"
                         >
                           <Trash2 className="w-3 h-3" />
-                          <span className="text-[10px] font-bold">CLEAR</span>
+                          <span className="text-xs font-bold">CLEAR</span>
                         </button>
                       ) : clearedImages[faculty.id] && (
                         <button
@@ -261,10 +261,10 @@ export default function FacultyManagerModal({
                               return newCleared
                             })
                           }}
-                          className="flex items-center gap-1 px-2 py-1 rounded-md bg-blue-500/10 text-blue-500 hover:bg-blue-500/20 transition-colors"
+                          className="flex items-center gap-2 px-2 py-2 rounded-md bg-blue-500/10 text-blue-500 hover:bg-blue-500/20 transition-colors"
                           title="Undo Clear"
                         >
-                          <span className="text-[10px] font-bold">UNDO CLEAR</span>
+                          <span className="text-xs font-bold">UNDO CLEAR</span>
                         </button>
                       )}
                     </div>
@@ -290,7 +290,7 @@ export default function FacultyManagerModal({
                       {uploadingImageFor[faculty.id] ? (
                         <div className="flex flex-col items-center gap-3">
                           <Loader2 className="w-6 h-6 text-blue-500 animate-spin" />
-                          <span className="text-[10px] font-orbitron font-black text-blue-500 uppercase tracking-[0.2em]">
+                          <span className="text-xs font-orbitron font-black text-blue-500 uppercase tracking-[0.2em]">
                             Uploading...
                           </span>
                         </div>
@@ -315,7 +315,7 @@ export default function FacultyManagerModal({
                           {/* Hover Overlay */}
                           <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-black/50 dark:bg-black/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300">
                             <Upload className="w-6 h-6 text-white" />
-                            <span className="text-[10px] font-orbitron font-black text-white uppercase tracking-widest block">
+                            <span className="text-xs font-orbitron font-black text-white uppercase tracking-widest block">
                               Change Image
                             </span>
                           </div>
@@ -326,7 +326,7 @@ export default function FacultyManagerModal({
                             <Upload className="w-5 h-5 text-black/40 dark:text-white/40 group-hover:text-blue-500 transition-colors" />
                           </div>
                           <div className="text-center">
-                            <span className="text-[10px] font-orbitron font-black text-black/50 dark:text-white/50 uppercase tracking-[0.1em] block mb-1">
+                            <span className="text-xs font-orbitron font-black text-black/50 dark:text-white/50 uppercase tracking-[0.1em] block mb-1">
                               Click or Drag & Drop
                             </span>
                             <span className="text-[8px] font-mono text-black/30 dark:text-white/30 uppercase tracking-widest">
@@ -342,7 +342,7 @@ export default function FacultyManagerModal({
                   <div className="flex flex-col gap-2">
                     <div className="flex items-center gap-2">
                       <FileText className="w-3 h-3 text-blue-500" />
-                      <span className="text-[9px] font-orbitron font-black uppercase tracking-widest text-black/40 dark:text-white/40">
+                      <span className="text-[11px] font-orbitron font-black uppercase tracking-widest text-black/40 dark:text-white/40">
                         Professional Description
                       </span>
                     </div>
@@ -370,13 +370,13 @@ export default function FacultyManagerModal({
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
               <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-              <span className="text-[10px] font-orbitron font-black text-black/40 dark:text-white/20 uppercase tracking-widest">
+              <span className="text-xs font-orbitron font-black text-black/40 dark:text-white/20 uppercase tracking-widest">
                 {facultyList.length} Faculty Members
               </span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-              <span className="text-[10px] font-orbitron font-black text-black/40 dark:text-white/20 uppercase tracking-widest">
+              <span className="text-xs font-orbitron font-black text-black/40 dark:text-white/20 uppercase tracking-widest">
                 {
                   Object.values(editedFaculty).filter((f) => !f.description)
                     .length

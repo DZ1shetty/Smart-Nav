@@ -31,7 +31,7 @@ export default function MobileOptionsSheet({
         >
           {/* Header row with close button */}
           <div className="flex items-center justify-between border-b border-white/10 pb-2">
-            <span className="text-[10px] font-orbitron font-black uppercase tracking-widest text-cyan-400">
+            <span className="text-xs font-orbitron font-black uppercase tracking-widest text-cyan-400">
               MAP CONTROLS & OPTIONS
             </span>
             <button
@@ -49,12 +49,12 @@ export default function MobileOptionsSheet({
               <span className="text-[11px] font-orbitron font-bold text-slate-300">
                 ZOOM
               </span>
-              <div className="flex items-center gap-1.5 bg-black/40 p-1 rounded-lg">
+              <div className="flex items-center gap-2.5 bg-black/40 p-2 rounded-lg">
                 <button
                   onClick={onZoomOut}
                   className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center hover:bg-white/10 rounded-md text-white transition-colors"
                 >
-                  <Minus className="w-3.5 h-3.5" />
+                  <Minus className="w-5 h-5" />
                 </button>
                 <span className="text-xs font-mono font-bold text-cyan-400 w-9 text-center">
                   {Math.round(zoom * 100)}%
@@ -63,7 +63,7 @@ export default function MobileOptionsSheet({
                   onClick={onZoomIn}
                   className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center hover:bg-white/10 rounded-md text-white transition-colors"
                 >
-                  <Plus className="w-3.5 h-3.5" />
+                  <Plus className="w-5 h-5" />
                 </button>
               </div>
             </div>

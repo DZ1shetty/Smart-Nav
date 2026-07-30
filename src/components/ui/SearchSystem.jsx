@@ -149,7 +149,7 @@ const ResultRow = ({ item, isSelected, onSelect, onHover }) => {
       <div className="flex items-center gap-2 flex-shrink-0">
         {floor && (
           <span
-            className={`text-[10px] font-orbitron font-black px-2.5 py-1 rounded-lg tracking-wider transition-colors duration-150 uppercase
+            className={`text-xs font-orbitron font-black px-2.5 py-1 rounded-lg tracking-wider transition-colors duration-150 uppercase
               ${isSelected ? color.pill : 'bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-white/40'}`}
           >
             {floor}
@@ -469,7 +469,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
                             setQuery(chip.queryText)
                             inputRef.current?.focus()
                           }}
-                          className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900/40 text-slate-600 dark:text-zinc-400 hover:text-blue-500 dark:hover:text-blue-400 hover:border-blue-500/30 hover:bg-blue-500/5 transition-all text-[10px] font-semibold"
+                          className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900/40 text-slate-600 dark:text-zinc-400 hover:text-blue-500 dark:hover:text-blue-400 hover:border-blue-500/30 hover:bg-blue-500/5 transition-all text-xs font-semibold"
                           style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                         >
                           <Icon className="w-3.5 h-3.5" />
@@ -559,7 +559,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
                             {resolution.directions &&
                               resolution.directions !== 'TBD' && (
                                 <p
-                                  className="text-[11px] mt-2 flex items-center gap-1 font-medium transition-opacity"
+                                  className="text-sm mt-2 flex items-center gap-1 font-medium transition-opacity"
                                   style={{
                                     color: topColor.ring,
                                     opacity: selectedIndex === 0 ? 0.9 : 0.6,
@@ -579,7 +579,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
                             <button
                               onMouseDown={(e) => e.preventDefault()}
                               onClick={() => handleSelect(resolution)}
-                              className={`px-3.5 py-1.5 rounded-lg text-[11px] font-bold transition-all flex items-center gap-1.5 shadow-sm active:scale-95
+                              className={`px-3.5 py-1.5 rounded-lg text-sm font-bold transition-all flex items-center gap-1.5 shadow-sm active:scale-95
                                 ${selectedIndex === 0
                                   ? 'text-white'
                                   : 'bg-slate-200 dark:bg-zinc-800 text-slate-700 dark:text-zinc-300 hover:bg-slate-300 dark:hover:bg-zinc-700'
@@ -643,7 +643,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
                           Nothing found for "{query}"
                         </p>
                         <p
-                          className="text-[11px] text-slate-500 dark:text-zinc-500 mt-1"
+                          className="text-sm text-slate-500 dark:text-zinc-500 mt-1"
                           style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                         >
                           Try a room code, floor name, or faculty name

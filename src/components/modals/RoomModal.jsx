@@ -185,7 +185,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                     e.stopPropagation()
                     setIsFullScreen(true)
                   }}
-                  className="absolute bottom-3 left-3 z-20 px-3.5 py-1.5 bg-black/80 hover:bg-blue-600 active:scale-95 text-white text-xs font-mono font-bold rounded-xl border border-white/25 backdrop-blur-md transition-all shadow-xl flex items-center gap-2 cursor-pointer"
+                  className="absolute bottom-3 left-3 z-20 px-3.5 py-2.5 bg-black/80 hover:bg-blue-600 active:scale-95 text-white text-xs font-mono font-bold rounded-xl border border-white/25 backdrop-blur-md transition-all shadow-xl flex items-center gap-2 cursor-pointer"
                 >
                   <Maximize2 className="w-4 h-4 text-blue-400 group-hover:text-white" />
                   <span>Expand Image</span>
@@ -221,7 +221,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
             ) : (
               <div className="w-full h-full flex flex-col items-center justify-center text-black/5 dark:text-white/5">
                 <Building className="w-12 h-12 mb-3" />
-                <span className="text-[10px] font-orbitron font-black uppercase tracking-widest">
+                <span className="text-xs font-orbitron font-black uppercase tracking-widest">
                   No Visual Data
                 </span>
               </div>
@@ -237,11 +237,11 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                 </h2>
               </div>
               <div className="flex items-center gap-3">
-                <span className="text-blue-500 text-[10px] font-orbitron font-black uppercase tracking-[0.2em]">
+                <span className="text-blue-500 text-xs font-orbitron font-black uppercase tracking-[0.2em]">
                   {room.type}
                 </span>
                 <div className="w-1 h-1 rounded-full bg-black/10 dark:bg-white/10" />
-                <span className="text-black/40 dark:text-white/30 text-[10px] font-orbitron font-bold uppercase tracking-widest">
+                <span className="text-black/40 dark:text-white/30 text-xs font-orbitron font-bold uppercase tracking-widest">
                   {room.id}
                 </span>
               </div>
@@ -289,16 +289,16 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                 <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 blur-3xl -mr-16 -mt-16 pointer-events-none" />
 
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-[10px] font-orbitron font-black uppercase tracking-[0.2em] text-black/30 dark:text-white/20">
+                  <span className="text-xs font-orbitron font-black uppercase tracking-[0.2em] text-black/30 dark:text-white/20">
                     Room Details
                   </span>
                   {!isEditing ? (
                     <button
                       onClick={() => setIsEditing(true)}
-                      className="flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 hover:bg-blue-500 border border-blue-500/20 hover:border-blue-500 text-blue-500 hover:text-white rounded-lg transition-all duration-300 group"
+                      className="flex items-center gap-2 px-3 py-2.5 bg-blue-500/10 hover:bg-blue-500 border border-blue-500/20 hover:border-blue-500 text-blue-500 hover:text-white rounded-lg transition-all duration-300 group"
                     >
                       <Edit3 className="w-3 h-3 group-hover:scale-110 transition-transform" />
-                      <span className="text-[9px] font-orbitron font-black uppercase tracking-widest">
+                      <span className="text-[11px] font-orbitron font-black uppercase tracking-widest">
                         Edit Details
                       </span>
                     </button>
@@ -306,13 +306,13 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                     <div className="flex gap-2">
                       <button
                         onClick={() => setIsEditing(false)}
-                        className="p-1.5 bg-black/5 dark:bg-white/5 hover:bg-red-500/10 border border-black/10 dark:border-white/10 hover:border-red-500/50 text-black/40 dark:text-white/30 hover:text-red-500 rounded-lg transition-all"
+                        className="p-2.5 bg-black/5 dark:bg-white/5 hover:bg-red-500/10 border border-black/10 dark:border-white/10 hover:border-red-500/50 text-black/40 dark:text-white/30 hover:text-red-500 rounded-lg transition-all"
                       >
                         <X className="w-3.5 h-3.5" />
                       </button>
                       <button
                         onClick={handleSave}
-                        className="px-4 py-1.5 bg-blue-500 hover:bg-blue-600 text-white text-[9px] font-orbitron font-black uppercase tracking-widest rounded-lg shadow-lg shadow-blue-500/20 transition-all flex items-center gap-2"
+                        className="px-4 py-2.5 bg-blue-500 hover:bg-blue-600 text-white text-[11px] font-orbitron font-black uppercase tracking-widest rounded-lg shadow-lg shadow-blue-500/20 transition-all flex items-center gap-2"
                       >
                         <Save className="w-3.5 h-3.5" />
                         SAVE ALL
@@ -348,7 +348,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                               setEditedImage('')
                               setPreviewUrl(null)
                             }}
-                            className="text-[9px] font-orbitron font-bold text-red-500 hover:underline uppercase flex items-center gap-1"
+                            className="text-[11px] font-orbitron font-bold text-red-500 hover:underline uppercase flex items-center gap-2"
                           >
                             <Trash2 className="w-3 h-3" /> Clear Image
                           </button>
@@ -363,7 +363,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                               }
                               setClearedImage(null)
                             }}
-                            className="text-[9px] font-orbitron font-bold text-blue-500 hover:underline uppercase flex items-center gap-1"
+                            className="text-[11px] font-orbitron font-bold text-blue-500 hover:underline uppercase flex items-center gap-2"
                           >
                             Undo Clear
                           </button>
@@ -410,7 +410,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                           ) : (
                             <ImagePlus className="w-6 h-6 text-blue-400" />
                           )}
-                          <span className="text-[9px] font-orbitron font-black uppercase tracking-widest text-black/50 dark:text-white/40">
+                          <span className="text-[11px] font-orbitron font-black uppercase tracking-widest text-black/50 dark:text-white/40">
                             {uploadProgress !== null ? `Uploading ${uploadProgress}%` : 'Click or Drop Image'}
                           </span>
                         </div>
@@ -442,7 +442,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                           className="flex w-full items-center justify-center gap-2 px-4 py-3 bg-black/5 dark:bg-white/5 rounded-xl border border-black/10 dark:border-white/10 active:bg-blue-500/10 transition-colors"
                         >
                           <Camera className="w-4 h-4 text-blue-500" />
-                          <span className="text-[10px] font-orbitron font-black uppercase tracking-widest text-black/60 dark:text-white/60">
+                          <span className="text-xs font-orbitron font-black uppercase tracking-widest text-black/60 dark:text-white/60">
                             Capture with Camera
                           </span>
                         </button>
@@ -450,12 +450,12 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
 
                       {/* Error message */}
                       {uploadError && (
-                        <p className="mt-1.5 text-[10px] font-orbitron text-red-500">{uploadError}</p>
+                        <p className="mt-1.5 text-xs font-orbitron text-red-500">{uploadError}</p>
                       )}
 
                       {/* Uploaded indicator */}
                       {uploadProgress === null && editedImage && editedImage.includes('firebasestorage') && (
-                        <p className="mt-1.5 text-[10px] font-orbitron text-emerald-500 flex items-center gap-1">
+                        <p className="mt-1.5 text-xs font-orbitron text-emerald-500 flex items-center gap-2">
                           <Upload className="w-3 h-3" /> Uploaded to Firebase Storage
                         </p>
                       )}
@@ -539,7 +539,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                         e.stopPropagation()
                         setCurrentImageIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))
                       }}
-                      className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 p-3.5 bg-black/70 hover:bg-blue-600 text-white rounded-full border border-white/20 backdrop-blur-md transition-all shadow-xl active:scale-95"
+                      className="absolute left-2 md:left-6 top-2/2 -translate-y-1/2 p-3.5 bg-black/70 hover:bg-blue-600 text-white rounded-full border border-white/20 backdrop-blur-md transition-all shadow-xl active:scale-95"
                     >
                       <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
                     </button>
@@ -548,7 +548,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                         e.stopPropagation()
                         setCurrentImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))
                       }}
-                      className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 p-3.5 bg-black/70 hover:bg-blue-600 text-white rounded-full border border-white/20 backdrop-blur-md transition-all shadow-xl active:scale-95"
+                      className="absolute right-2 md:right-6 top-2/2 -translate-y-1/2 p-3.5 bg-black/70 hover:bg-blue-600 text-white rounded-full border border-white/20 backdrop-blur-md transition-all shadow-xl active:scale-95"
                     >
                       <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
                     </button>
@@ -630,10 +630,10 @@ function InfoSection({ label, value, isFaculty, onViewProfile }) {
         {isFaculty && onViewProfile && (
           <button
             onClick={onViewProfile}
-            className="flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 hover:bg-blue-500 border border-blue-500/20 hover:border-blue-500 text-blue-500 hover:text-white rounded-lg transition-all duration-300 w-fit group"
+            className="flex items-center gap-2 px-3 py-2.5 bg-blue-500/10 hover:bg-blue-500 border border-blue-500/20 hover:border-blue-500 text-blue-500 hover:text-white rounded-lg transition-all duration-300 w-fit group"
           >
             <User className="w-3 h-3 group-hover:scale-110 transition-transform" />
-            <span className="text-[9px] font-orbitron font-black uppercase tracking-widest">
+            <span className="text-[11px] font-orbitron font-black uppercase tracking-widest">
               View Profile
             </span>
           </button>
@@ -644,7 +644,7 @@ function InfoSection({ label, value, isFaculty, onViewProfile }) {
 
   return (
     <div className="space-y-2">
-      <span className="text-[10px] font-orbitron font-black uppercase tracking-[0.2em] text-black/30 dark:text-white/20">
+      <span className="text-xs font-orbitron font-black uppercase tracking-[0.2em] text-black/30 dark:text-white/20">
         {label}
       </span>
       {renderValue()}

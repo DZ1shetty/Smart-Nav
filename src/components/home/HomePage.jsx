@@ -403,7 +403,7 @@ export default function HomePage() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -8 }}
       transition={{ duration: 0.25, ease: 'easeOut' }}
-      className="relative min-h-screen w-full bg-[var(--bg-main)] text-[var(--text-main)] font-space p-2 md:p-2 lg:p-3 lg:py-2 flex flex-col items-center justify-between overflow-x-hidden selection:bg-blue-500/30 transform-gpu"
+      className="relative min-h-[100dvh] pb-[env(safe-area-inset-bottom)] w-full bg-[var(--bg-main)] text-[var(--text-main)] font-space p-2 md:p-2 lg:p-3 lg:py-2 flex flex-col items-center justify-between overflow-x-hidden selection:bg-blue-500/30 transform-gpu"
     >
       <Toaster richColors position="top-right" />
       {/* BACKGROUND ELEMENTS */}
