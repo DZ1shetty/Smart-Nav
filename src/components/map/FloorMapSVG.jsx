@@ -55,8 +55,8 @@ const DraggableVertex = ({ x, y, index, onDrag, onDragEnd, onDoubleClick, isSnap
     <g>
       {/* Outer pulsing ring for premium edit feedback */}
       <circle
-        cx={safeX}
-        cy={safeY}
+        cx={String(safeX)}
+        cy={String(safeY)}
         r="14"
         fill="transparent"
         stroke="#10b981"
@@ -68,8 +68,8 @@ const DraggableVertex = ({ x, y, index, onDrag, onDragEnd, onDoubleClick, isSnap
       {/* Glowing snap target highlight */}
       {isSnapTarget && (
         <circle
-          cx={safeX}
-          cy={safeY}
+          cx={String(safeX)}
+          cy={String(safeY)}
           r="22"
           fill="transparent"
           stroke="#3b82f6"
@@ -79,8 +79,8 @@ const DraggableVertex = ({ x, y, index, onDrag, onDragEnd, onDoubleClick, isSnap
         />
       )}
       <circle
-        cx={safeX}
-        cy={safeY}
+        cx={String(safeX)}
+        cy={String(safeY)}
         r={isSnapTarget ? "10" : "8"}
         fill={isSnapTarget ? "#3b82f6" : "#10b981"}
         stroke="#ffffff"
@@ -359,8 +359,8 @@ const FloorMapSVG = memo(function FloorMapSVG({
                   className="cursor-pointer group"
                 >
                   <circle
-                    cx={midX}
-                    cy={midY}
+                    cx={String(midX)}
+                    cy={String(midY)}
                     r="7"
                     fill="#3b82f6"
                     stroke="#ffffff"

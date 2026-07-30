@@ -1,6 +1,7 @@
-import { useState, useMemo, useEffect, useRef, useCallback, lazy, Suspense } from 'react'
+import { useState, useMemo, useEffect, useRef, useCallback, lazy, Suspense, memo } from 'react'
 import { useParams, useNavigate, Link, useLocation } from 'react-router-dom'
-import { motion, AnimatePresence, useAnimation } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
+import { TransformWrapper, TransformComponent, useControls } from 'react-zoom-pan-pinch'
 import {
   ArrowLeft,
   ChevronDown,
@@ -79,6 +80,14 @@ export const isMatchingName = (nameA, nameB) => {
     wordsA.length < wordsB.length ? [wordsA, wordsB] : [wordsB, wordsA]
   return shorter.every((word) => longer.includes(word))
 }
+
+const ZoomControlsProxy = memo(({ controlsRef }) => {
+  const controls = useControls()
+  useEffect(() => {
+    controlsRef.current = controls
+  }, [controls, controlsRef])
+  return null
+})
 
 // --- DYNAMIC DEFAULT SYSTEM (STABLE + ERROR-FREE) ---
 
@@ -208,7 +217,7 @@ export default function FloorPlan() {
   }
 
   const [zoom, setZoom] = useState(1.0)
-  const mapControls = useAnimation()
+  const zoomControlsRef = useRef(null)
   const [resetKey, setResetKey] = useState(0)
   const [mouseCoords, setMouseCoords] = useState({ x: 0, y: 0 })
   const [activeFilters, setActiveFilters] = useState([])
@@ -216,13 +225,7 @@ export default function FloorPlan() {
   const [isMobileFloorOpen, setIsMobileFloorOpen] = useState(false)
   const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false)
   const [isMobileOptionsOpen, setIsMobileOptionsOpen] = useState(false)
-  const constraintsRef = useRef(null)
   const floorMenuRef = useRef(null)
-
-  // Pinch-to-zoom refs
-  const lastPinchDistRef = useRef(null)
-  const isPinchingRef = useRef(false)
-  const pinchZoomRef = useRef(1.0)
   const autoFittedFloor = useRef(null)
 
   const [isBlueprintMode, setIsBlueprintMode] = useState(isBlueprintModeGlobal)
@@ -1122,68 +1125,23 @@ export default function FloorPlan() {
     }
   }, [location.search, floorData, allFaculty, selectedFacultyProfile, activeSearchIds, highlightedRoomId, selectedRoom])
 
-  const handleZoom = (delta) =>
-    setZoom((prev) => Math.min(Math.max(prev + delta, 0.5), 4))
+  const handleZoom = (delta) => {
+    if (zoomControlsRef.current) {
+      if (delta > 0) {
+        zoomControlsRef.current.zoomIn(delta)
+      } else {
+        zoomControlsRef.current.zoomOut(Math.abs(delta))
+      }
+    }
+  }
+
   const resetView = () => {
     setZoom(1.0)
     setResetKey((prev) => prev + 1)
+    if (zoomControlsRef.current) {
+      zoomControlsRef.current.resetTransform()
+    }
   }
-
-  // Sync zoom state with mapControls (and initialize pinchZoomRef)
-  useEffect(() => {
-    if (!isPinchingRef.current) {
-      pinchZoomRef.current = zoom
-      if (selectedRoom) {
-        mapControls.start({ scale: 0.9, opacity: 1 })
-      } else {
-        mapControls.start({ scale: zoom, opacity: 1 })
-      }
-    }
-  }, [zoom, selectedRoom, mapControls])
-
-  // ── Pinch-to-zoom: attach touch handlers to the map container ──────────────
-  useEffect(() => {
-    const el = constraintsRef.current
-    if (!el) return
-    const getPinchDist = (touches) => {
-      const dx = touches[0].clientX - touches[1].clientX
-      const dy = touches[0].clientY - touches[1].clientY
-      return Math.sqrt(dx * dx + dy * dy)
-    }
-    const onTouchStart = (e) => {
-      if (e.touches.length === 2) {
-        isPinchingRef.current = true
-        lastPinchDistRef.current = getPinchDist(e.touches)
-      }
-    }
-    const onTouchMove = (e) => {
-      if (!isPinchingRef.current || e.touches.length !== 2) return
-      e.preventDefault()
-      const newDist = getPinchDist(e.touches)
-      if (!lastPinchDistRef.current) return
-      const ratio = newDist / lastPinchDistRef.current
-      lastPinchDistRef.current = newDist
-      
-      // Update our local pinch zoom ref and apply instantly
-      pinchZoomRef.current = Math.min(Math.max(pinchZoomRef.current * ratio, 0.5), 4)
-      mapControls.set({ scale: pinchZoomRef.current, opacity: 1 })
-    }
-    const onTouchEnd = () => {
-      if (isPinchingRef.current) {
-        setZoom(pinchZoomRef.current)
-      }
-      isPinchingRef.current = false
-      lastPinchDistRef.current = null
-    }
-    el.addEventListener('touchstart', onTouchStart, { passive: true })
-    el.addEventListener('touchmove', onTouchMove, { passive: false })
-    el.addEventListener('touchend', onTouchEnd, { passive: true })
-    return () => {
-      el.removeEventListener('touchstart', onTouchStart)
-      el.removeEventListener('touchmove', onTouchMove)
-      el.removeEventListener('touchend', onTouchEnd)
-    }
-  }, []) // constraintsRef is stable after mount
 
   // ── Ensure zoom is constantly 100% (1.0) on floor load ──────────────────────
   useEffect(() => {
@@ -1554,7 +1512,6 @@ export default function FloorPlan() {
 
       <main
         className={`relative flex-1 w-full flex items-stretch justify-center overflow-hidden transition-all duration-500 ${isBlueprintMode ? 'p-0' : 'p-2 md:p-6'}`}
-        ref={constraintsRef}
       >
 
         {/* Horizontal scrollable category filter chips (Google Maps style) */}
@@ -1674,17 +1631,26 @@ export default function FloorPlan() {
               <span>NO LAYOUT AVAILABLE</span>
             </div>
           ) : (
-            <motion.div
-              key={`${floorId}-${resetKey}`}
-              drag={!isEditMode}
-              dragConstraints={constraintsRef}
-              dragElastic={0.05}
-              dragMomentum={true}
-              initial={{
-                scale: selectedRoom ? 0.9 : zoom,
-                opacity: 1
+            <TransformWrapper
+              initialScale={zoom}
+              minScale={0.5}
+              maxScale={4}
+              disabled={isEditMode}
+              panning={{ disabled: isEditMode }}
+              pinch={{ disabled: isEditMode }}
+              onTransformed={(ref) => {
+                setZoom(ref.state.scale)
               }}
-              animate={mapControls}
+            >
+              <ZoomControlsProxy controlsRef={zoomControlsRef} />
+              <TransformComponent 
+                wrapperStyle={{ width: "100%", height: "100%" }} 
+                contentStyle={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}
+              >
+                <motion.div
+                  key={`${floorId}-${resetKey}`}
+                  initial={{ opacity: 1 }}
+                  animate={{ opacity: 1 }}
               style={{
                 aspectRatio: `${mapBounds.svgW}/${mapBounds.svgH}`,
                 width: isBlueprintMode
@@ -1729,6 +1695,9 @@ export default function FloorPlan() {
                       setFacultyModalSearchTerm(room.name || '')
                       setIsFacultyModalOpen(true)
                     } else {
+                      if (zoomControlsRef.current) {
+                        zoomControlsRef.current.setTransform(0, 0, 0.9, 300)
+                      }
                       navigate(`?room=${room.id}`)
                     }
                   }}
@@ -1761,12 +1730,17 @@ export default function FloorPlan() {
                       setFacultyModalSearchTerm(room.name || '')
                       setIsFacultyModalOpen(true)
                     } else {
+                      if (zoomControlsRef.current) {
+                        zoomControlsRef.current.setTransform(0, 0, 0.9, 300)
+                      }
                       navigate(`?room=${room.id}`)
                     }
                   }}
                 />
               )}
             </motion.div>
+          </TransformComponent>
+        </TransformWrapper>
           )}
         </div>
 
