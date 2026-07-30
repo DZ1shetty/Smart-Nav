@@ -248,7 +248,7 @@ export default function FacultyManagerModal({
                     </div>
                     
                     <label 
-                      className={`relative flex flex-col items-center justify-center w-full h-24 bg-black/5 dark:bg-white/5 border-2 border-dashed ${uploadingImageFor[faculty.id] ? 'border-blue-500/50 bg-blue-500/5' : 'border-black/10 dark:border-white/10 hover:border-blue-500/30'} rounded-xl cursor-pointer transition-all overflow-hidden group`}
+                      className={`relative flex flex-col items-center justify-center w-full min-h-[120px] bg-black/5 dark:bg-white/5 border-2 border-dashed ${uploadingImageFor[faculty.id] ? 'border-blue-500/50 bg-blue-500/5' : 'border-black/10 dark:border-white/10 hover:border-blue-500/30 hover:bg-black/[0.07] dark:hover:bg-white/[0.07]'} rounded-xl cursor-pointer transition-all duration-300 overflow-hidden group shadow-inner`}
                       onDragOver={handleDragOver}
                       onDrop={(e) => handleDrop(e, faculty.id)}
                     >
@@ -265,18 +265,23 @@ export default function FacultyManagerModal({
                       />
                       
                       {uploadingImageFor[faculty.id] ? (
-                        <div className="flex flex-col items-center gap-2">
-                          <Loader2 className="w-5 h-5 text-blue-500 animate-spin" />
-                          <span className="text-[10px] font-orbitron font-bold text-blue-500 uppercase tracking-widest">
+                        <div className="flex flex-col items-center gap-3">
+                          <Loader2 className="w-6 h-6 text-blue-500 animate-spin" />
+                          <span className="text-[10px] font-orbitron font-black text-blue-500 uppercase tracking-[0.2em]">
                             Uploading...
                           </span>
                         </div>
                       ) : (
-                        <div className="flex flex-col items-center gap-2">
-                          <Upload className="w-5 h-5 text-black/30 dark:text-white/30 group-hover:text-blue-500 group-hover:scale-110 transition-all duration-300" />
+                        <div className="flex flex-col items-center gap-3 p-4">
+                          <div className="p-3 bg-black/5 dark:bg-white/5 rounded-full group-hover:scale-110 group-hover:bg-blue-500/10 transition-all duration-300">
+                            <Upload className="w-5 h-5 text-black/40 dark:text-white/40 group-hover:text-blue-500 transition-colors" />
+                          </div>
                           <div className="text-center">
-                            <span className="text-[10px] font-orbitron font-bold text-black/40 dark:text-white/40 uppercase tracking-widest block">
+                            <span className="text-[10px] font-orbitron font-black text-black/50 dark:text-white/50 uppercase tracking-[0.1em] block mb-1">
                               Click or Drag & Drop
+                            </span>
+                            <span className="text-[8px] font-mono text-black/30 dark:text-white/30 uppercase tracking-widest">
+                              JPEG, PNG, WEBP
                             </span>
                           </div>
                         </div>
