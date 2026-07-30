@@ -414,23 +414,26 @@ export default function HomePage() {
       {/* SCANLINE OVERLAY - Only visible in dark mode for tactical feel */}
       <div className="fixed inset-0 pointer-events-none z-50 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%] opacity-0 dark:opacity-20 hidden md:block" />
 
-      {/* THEME TOGGLE + ADMIN (Local to HomePage) */}
-      <div className="absolute top-2 right-2 md:top-3 md:right-3 z-50 flex items-center gap-2">
-        <ThemeToggle />
-      </div>
 
       {/* HEADER SECTION */}
-      <header className="relative z-30 flex flex-col items-center gap-1.5 mb-1 md:mb-1.5 flex-shrink-0 w-full max-w-4xl pt-0.5">
-        <motion.h1
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-lg md:text-xl lg:text-2xl font-orbitron font-black tracking-tighter leading-none text-center"
-        >
-          SMART{' '}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-teal-400 to-emerald-500">
-            NAVIGATION
-          </span>
-        </motion.h1>
+      <header className="relative z-30 flex flex-col items-center gap-1.5 mb-1 md:mb-1.5 flex-shrink-0 w-full max-w-4xl pt-0.5 px-2 md:px-0">
+        <div className="w-full relative flex justify-center items-center min-h-[32px]">
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-lg md:text-xl lg:text-2xl font-orbitron font-black tracking-tighter leading-none text-center"
+          >
+            SMART{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-teal-400 to-emerald-500">
+              NAVIGATION
+            </span>
+          </motion.h1>
+
+          {/* THEME TOGGLE (Local to HomePage) */}
+          <div className="absolute right-0 flex items-center gap-2">
+            <ThemeToggle />
+          </div>
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 12 }}
