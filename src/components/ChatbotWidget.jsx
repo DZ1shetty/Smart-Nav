@@ -66,8 +66,8 @@ function NaviBotIcon({ className = "w-5 h-5", glowColor = "currentColor" }) {
           className="opacity-40"
         />
         <motion.circle 
-          cx="12" 
-          cy="3" 
+          cx={12} 
+          cy={3} 
           r="1.2" 
           fill={glowColor}
           animate={{
@@ -128,8 +128,8 @@ function NaviBotIcon({ className = "w-5 h-5", glowColor = "currentColor" }) {
         
         {/* Visor Scanning Laser Dot */}
         <motion.circle
-          cx="12"
-          cy="12.25"
+          cx={12}
+          cy={12.25}
           r="1"
           fill={glowColor}
           animate={{

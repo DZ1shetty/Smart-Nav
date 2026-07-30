@@ -186,6 +186,7 @@ export default function FloorPlan() {
   const [isLoadingStatic, setIsLoadingStatic] = useState(true)
   const [staticLoadError, setStaticLoadError] = useState(null)
   const [isSetupProgressOpen, setIsSetupProgressOpen] = useState(false)
+  const [isLocked, setIsLocked] = useState(true)
 
   useEffect(() => {
     if (floorId === 'basement' || floorId === 'apj_basement' || floorId === 'atal_third') {
