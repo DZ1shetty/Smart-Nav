@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect, useRef, useCallback, lazy, Suspense } from 'react'
 import { useParams, useNavigate, Link, useLocation } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, useAnimation } from 'framer-motion'
 import {
   ArrowLeft,
   ChevronDown,
@@ -208,6 +208,7 @@ export default function FloorPlan() {
   }
 
   const [zoom, setZoom] = useState(1.0)
+  const mapControls = useAnimation()
   const [resetKey, setResetKey] = useState(0)
   const [mouseCoords, setMouseCoords] = useState({ x: 0, y: 0 })
   const [activeFilters, setActiveFilters] = useState([])
@@ -221,6 +222,7 @@ export default function FloorPlan() {
   // Pinch-to-zoom refs
   const lastPinchDistRef = useRef(null)
   const isPinchingRef = useRef(false)
+  const pinchZoomRef = useRef(1.0)
   const autoFittedFloor = useRef(null)
 
   const [isBlueprintMode, setIsBlueprintMode] = useState(isBlueprintModeGlobal)
@@ -1127,6 +1129,18 @@ export default function FloorPlan() {
     setResetKey((prev) => prev + 1)
   }
 
+  // Sync zoom state with mapControls (and initialize pinchZoomRef)
+  useEffect(() => {
+    if (!isPinchingRef.current) {
+      pinchZoomRef.current = zoom
+      if (selectedRoom) {
+        mapControls.start({ scale: 0.9, opacity: 1 })
+      } else {
+        mapControls.start({ scale: zoom, opacity: 1 })
+      }
+    }
+  }, [zoom, selectedRoom, mapControls])
+
   // ── Pinch-to-zoom: attach touch handlers to the map container ──────────────
   useEffect(() => {
     const el = constraintsRef.current
@@ -1149,9 +1163,15 @@ export default function FloorPlan() {
       if (!lastPinchDistRef.current) return
       const ratio = newDist / lastPinchDistRef.current
       lastPinchDistRef.current = newDist
-      setZoom((prev) => Math.min(Math.max(prev * ratio, 0.5), 4))
+      
+      // Update our local pinch zoom ref and apply instantly
+      pinchZoomRef.current = Math.min(Math.max(pinchZoomRef.current * ratio, 0.5), 4)
+      mapControls.set({ scale: pinchZoomRef.current, opacity: 1 })
     }
     const onTouchEnd = () => {
+      if (isPinchingRef.current) {
+        setZoom(pinchZoomRef.current)
+      }
       isPinchingRef.current = false
       lastPinchDistRef.current = null
     }
@@ -1660,11 +1680,11 @@ export default function FloorPlan() {
               dragConstraints={constraintsRef}
               dragElastic={0.05}
               dragMomentum={true}
-              animate={
-                selectedRoom
-                  ? { scale: 0.9, opacity: 1 }
-                  : { scale: zoom, opacity: 1 }
-              }
+              initial={{
+                scale: selectedRoom ? 0.9 : zoom,
+                opacity: 1
+              }}
+              animate={mapControls}
               style={{
                 aspectRatio: `${mapBounds.svgW}/${mapBounds.svgH}`,
                 width: isBlueprintMode
