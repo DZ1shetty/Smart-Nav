@@ -18,6 +18,7 @@ import {
   Loader2,
   ImagePlus,
   Upload,
+  Camera,
 } from 'lucide-react'
 import { uploadToCloudinary } from '../utils/cloudinaryUpload'
 import { useEffect, useRef, useState } from 'react'
@@ -43,6 +44,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
   const [previewUrl, setPreviewUrl] = useState(null)
   const [clearedImage, setClearedImage] = useState(null)
   const fileInputRef = useRef(null)
+  const cameraInputRef = useRef(null)
 
   // Prefer room.image if it exists (meaning it was just uploaded/edited), fallback to room.images array
   const rawImages = room?.image ? [room.image] : (room?.images || [])
@@ -421,6 +423,28 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                             />
                           </div>
                         )}
+                      </div>
+                      
+                      {/* Hidden camera input for mobile */}
+                      <input
+                        ref={cameraInputRef}
+                        type="file"
+                        accept="image/*"
+                        capture="environment"
+                        className="hidden"
+                        onChange={(e) => handleImageFile(e.target.files?.[0])}
+                      />
+                      <div className="flex md:hidden mt-2">
+                        <button
+                          type="button"
+                          onClick={() => cameraInputRef.current?.click()}
+                          className="flex w-full items-center justify-center gap-2 px-4 py-3 bg-black/5 dark:bg-white/5 rounded-xl border border-black/10 dark:border-white/10 active:bg-blue-500/10 transition-colors"
+                        >
+                          <Camera className="w-4 h-4 text-blue-500" />
+                          <span className="text-[10px] font-orbitron font-black uppercase tracking-widest text-black/60 dark:text-white/60">
+                            Capture with Camera
+                          </span>
+                        </button>
                       </div>
 
                       {/* Error message */}

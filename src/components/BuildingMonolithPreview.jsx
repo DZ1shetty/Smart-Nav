@@ -19,6 +19,7 @@ import {
   Loader2,
   ImagePlus,
   Trash2,
+  Camera,
 } from 'lucide-react'
 import { uploadToCloudinary } from '../utils/cloudinaryUpload'
 import { floorIdToUrl } from '../utils/slugHelpers'
@@ -39,6 +40,7 @@ export default function BuildingMonolithPreview({
 }) {
   const navigate = useNavigate()
   const fileInputRef = useRef(null)
+  const cameraInputRef = useRef(null)
   const [uploadProgress, setUploadProgress] = useState(null)
   const [uploadError, setUploadError] = useState(null)
   const [clearedImage, setClearedImage] = useState(null)
@@ -259,8 +261,31 @@ export default function BuildingMonolithPreview({
                   </div>
                 )}
               </div>
+              
+              {/* Hidden camera input for mobile */}
+              <input
+                ref={cameraInputRef}
+                type="file"
+                accept="image/*"
+                capture="environment"
+                className="hidden"
+                onChange={(e) => handleImageFile(e.target.files?.[0])}
+              />
+              <div className="flex md:hidden mt-1">
+                <button
+                  type="button"
+                  onClick={() => cameraInputRef.current?.click()}
+                  className="flex w-full items-center justify-center gap-2 px-4 py-3 bg-black/5 dark:bg-white/5 rounded-xl border border-black/10 dark:border-white/10 active:bg-blue-500/10 transition-colors"
+                >
+                  <Camera className="w-4 h-4 text-blue-500" />
+                  <span className="text-[10px] font-orbitron font-black uppercase tracking-widest text-black/60 dark:text-white/60">
+                    Capture with Camera
+                  </span>
+                </button>
+              </div>
+
               {uploadError && (
-                <p className="mt-1 text-[10px] font-orbitron text-red-500">{uploadError}</p>
+                <p className="mt-1 text-[9px] font-orbitron text-red-500 font-bold">{uploadError}</p>
               )}
             </div>
           )}
