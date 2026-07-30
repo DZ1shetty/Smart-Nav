@@ -39,6 +39,10 @@
 
 ## ✨ Key Features & Recent Updates
 
+- **📸 Universal Image Management (Cloudinary)**: Consistent, robust image uploading workflows across Faculty, Rooms, and Building modals leveraging Cloudinary.
+- **↩️ Non-Destructive Undo Clear**: Context-aware undo buttons for all image upload zones, allowing accidental image deletions to be safely reverted instantly.
+- **🤳 Mobile-Native Camera Capture**: Contextual "Capture with Camera" buttons exclusively for mobile devices utilizing HTML5 `capture="environment"`, launching the native camera directly for rapid in-field room and building image uploads.
+- **🪞 Glassmorphic "Under Construction" State**: Redesigned Setup in Progress modals utilizing minimalist, blurred frosted-glass aesthetics ensuring visual consistency.
 - **🎨 Magic UI Bento Grid Building Selector**: Asymmetric, responsive 3-column desktop and 1-column mobile building selection grid with animated, real-time lab marquee loops (*BTL Labs*, *Autoliv Incubation Centre*, *Physics & Chemistry Labs*, *Placement Offices*, *IT Cells*).
 - **📱 Responsive Mobile Navigation & Glassmorphic Sheet**: Sleek, zero-overflow top navigation header with a slide-down `MobileOptionsSheet` housing map zoom, recenter, faculty directory, and theme toggle controls.
 - **⚡ 80% Faster Bundle via Rollup Vendor Splitting**: Configured code-splitting chunks (`vendor-firebase`, `vendor-framer`, `vendor-sentry`, `vendor-lucide`, `vendor-framework`) reducing initial JavaScript payload from 1,718 kB down to 340 kB.
