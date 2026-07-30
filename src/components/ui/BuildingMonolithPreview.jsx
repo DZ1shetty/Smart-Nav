@@ -93,8 +93,9 @@ export default function BuildingMonolithPreview({
       className="w-full max-w-7xl mx-auto flex flex-col justify-between py-1 px-3 md:px-6 text-[var(--text-main)] select-none"
     >
       {/* TOP CONTROL BAR: BACK + ARCHITECTURAL TITLE + ADMIN CONTROLS */}
-      <div className="w-full flex items-center justify-between border-b border-black/10 dark:border-white/10 pb-2.5 mb-3">
+      <div className="w-full flex flex-wrap md:flex-nowrap items-center justify-between gap-2 md:gap-0 border-b border-black/10 dark:border-white/10 pb-2.5 mb-3">
         {/* Back Button */}
+        <div className="order-1 flex-shrink-0">
         <button
           onClick={handleBackToHome}
           className="group flex items-center gap-2 px-3 py-1.5 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20 transition-all active:scale-95 shadow-sm"
@@ -104,33 +105,22 @@ export default function BuildingMonolithPreview({
             BACK
           </span>
         </button>
-
-        {/* Building Title & Floor Count Badge */}
-        <div className="flex items-center gap-3">
-          <h1
-            className={`text-xl md:text-2xl lg:text-3xl font-orbitron font-black tracking-tighter uppercase ${theme.colorClass}`}
-          >
-            {theme.name}
-          </h1>
-          <span className="px-3 py-1 rounded-full text-xs font-orbitron font-black uppercase tracking-wider bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-slate-500 shadow-sm">
-            {theme.floors}
-          </span>
         </div>
 
-        {/* Admin Edit Controls */}
-        <div>
+        {/* Admin Edit Controls (Order 2 on mobile to sit next to Back button) */}
+        <div className="order-2 md:order-3 flex-shrink-0">
           {isEditing ? (
             <div className="flex items-center gap-2">
               <button
                 onClick={handleCancelEdit}
-                className="px-3 py-1.5 rounded-xl text-xs font-orbitron font-bold uppercase tracking-wider flex items-center gap-1.5 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:bg-red-500/10 hover:border-red-500/30 hover:text-red-400 transition-all active:scale-95"
+                className="px-2 md:px-3 py-1.5 rounded-xl text-[10px] md:text-xs font-orbitron font-bold uppercase tracking-wider flex items-center gap-1 md:gap-1.5 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:bg-red-500/10 hover:border-red-500/30 hover:text-red-400 transition-all active:scale-95"
               >
                 <X className="w-3.5 h-3.5" />
-                Cancel
+                <span className="hidden sm:inline">Cancel</span>
               </button>
               <button
                 onClick={handleSaveBuilding}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-orbitron font-black uppercase tracking-wider flex items-center gap-1.5 text-white ${theme.btnBg} shadow-md transition-all active:scale-95`}
+                className={`px-3 md:px-3.5 py-1.5 rounded-xl text-[10px] md:text-xs font-orbitron font-black uppercase tracking-wider flex items-center gap-1 md:gap-1.5 text-white ${theme.btnBg} shadow-md transition-all active:scale-95`}
               >
                 <Save className="w-3.5 h-3.5" />
                 Save
@@ -139,12 +129,25 @@ export default function BuildingMonolithPreview({
           ) : (
             <button
               onClick={handleStartEdit}
-              className="px-3 py-1.5 rounded-xl text-xs font-orbitron font-black uppercase tracking-wider flex items-center gap-1.5 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-blue-500/40 hover:text-blue-500 transition-all active:scale-95 shadow-sm"
+              className="px-2 md:px-3 py-1.5 rounded-xl text-[10px] md:text-xs font-orbitron font-black uppercase tracking-wider flex items-center gap-1 md:gap-1.5 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-blue-500/40 hover:text-blue-500 transition-all active:scale-95 shadow-sm"
             >
               <Edit3 className="w-3.5 h-3.5" />
-              Edit Info
+              <span className="hidden sm:inline">Edit Info</span>
+              <span className="sm:hidden">Edit</span>
             </button>
           )}
+        </div>
+
+        {/* Building Title & Floor Count Badge (Order 3 on mobile - full width) */}
+        <div className="order-3 md:order-2 w-full md:w-auto mt-2 md:mt-0 flex items-center justify-center gap-2 md:gap-3">
+          <h1
+            className={`text-xl md:text-2xl lg:text-3xl font-orbitron font-black tracking-tighter uppercase ${theme.colorClass}`}
+          >
+            {theme.name}
+          </h1>
+          <span className="px-3 py-1 rounded-full text-xs font-orbitron font-black uppercase tracking-wider bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-slate-500 shadow-sm">
+            {theme.floors}
+          </span>
         </div>
       </div>
 

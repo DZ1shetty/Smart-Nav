@@ -140,7 +140,7 @@ export default function FacultyManagerModal({
         className="relative w-full max-w-5xl h-[85vh] bg-white dark:bg-[#0a0a0a] border border-black/10 dark:border-white/10 rounded-[32px] shadow-2xl overflow-hidden flex flex-col"
       >
         {/* Header */}
-        <div className="p-8 border-b border-black/5 dark:border-white/5 flex items-center justify-between bg-black/[0.02] dark:bg-white/[0.02]">
+        <div className="p-4 md:p-8 border-b border-black/5 dark:border-white/5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 bg-black/[0.02] dark:bg-white/[0.02]">
           <div>
             <h2 className="text-2xl font-orbitron font-black uppercase tracking-tighter text-black dark:text-white flex items-center gap-3">
               <div className="w-2 h-8 bg-blue-500 rounded-full" />
@@ -365,8 +365,8 @@ export default function FacultyManagerModal({
           </div>
         </div>
 
-        {/* Footer Actions */}
-        <div className="p-8 border-t border-black/5 dark:border-white/5 bg-black/[0.02] dark:bg-white/[0.02] flex items-center justify-between">
+        {/* Action Bar */}
+        <div className="p-4 md:p-8 border-t border-black/5 dark:border-white/5 bg-black/[0.02] dark:bg-white/[0.02] flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
               <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
