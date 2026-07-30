@@ -118,7 +118,7 @@ const ResultRow = ({ item, isSelected, onSelect, onHover }) => {
         className={`w-9 h-9 rounded-xl flex-shrink-0 flex items-center justify-center transition-all duration-200 
           ${isSelected 
             ? color.icon 
-            : 'bg-slate-100 dark:bg-white/[0.06] text-slate-400 dark:text-white/30 group-hover:text-slate-600 dark:group-hover:text-white/50'
+            : 'bg-slate-100 dark:bg-white/[0.06] text-slate-500 dark:text-white/30 group-hover:text-slate-600 dark:group-hover:text-white/50'
           }`}
       >
         <TypeIcon type={type} size={16} />
@@ -139,7 +139,7 @@ const ResultRow = ({ item, isSelected, onSelect, onHover }) => {
         </div>
         <div
           className={`text-[12px] truncate capitalize transition-colors duration-150 
-            ${isSelected ? 'text-slate-600 dark:text-white/50' : 'text-slate-400 dark:text-white/35'}`}
+            ${isSelected ? 'text-slate-600 dark:text-white/50' : 'text-slate-500 dark:text-white/35'}`}
           style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
         >
           {item.description}
@@ -345,7 +345,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
               <div className="w-[18px] h-[18px] border-2 border-slate-300 dark:border-zinc-600 border-t-blue-500 dark:border-t-blue-400 rounded-full animate-spin" />
             ) : (
               <Search
-                className={`w-[18px] h-[18px] transition-all duration-300 ${isFocused ? 'text-slate-500 dark:text-zinc-400' : 'text-slate-400 dark:text-zinc-500'}`}
+                className={`w-[18px] h-[18px] transition-all duration-300 ${isFocused ? 'text-slate-500 dark:text-zinc-400' : 'text-slate-500 dark:text-zinc-500'}`}
               />
             )}
           </div>
@@ -360,7 +360,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
             onKeyDown={handleKeyDown}
             placeholder="Search campus blocks, rooms or staff..."
             aria-label="Search campus blocks, rooms or staff"
-            className="w-full py-[9px] md:py-[11px] bg-transparent outline-none text-[14px] md:text-[15px] font-medium text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-zinc-500"
+            className="w-full py-[9px] md:py-[11px] bg-transparent outline-none text-[14px] md:text-[15px] font-medium text-slate-900 dark:text-white placeholder:text-slate-500 dark:placeholder:text-zinc-500"
             style={{
               fontFamily: 'Inter, Segoe UI, system-ui, sans-serif',
               fontWeight: 500,
@@ -383,7 +383,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
                     inputRef.current?.focus()
                   }}
                   aria-label="Clear search input"
-                  className="p-1.5 text-slate-400 dark:text-zinc-500 hover:text-slate-600 dark:hover:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 rounded-full transition-all"
+                  className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-500 dark:text-zinc-500 hover:text-slate-600 dark:hover:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 rounded-full transition-all"
                 >
                   <X className="w-[16px] h-[16px]" />
                 </motion.button>
@@ -391,7 +391,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
             </AnimatePresence>
 
             <div
-              className="hidden md:flex items-center px-1.5 py-0.5 rounded text-[8px] font-mono text-slate-400 dark:text-zinc-500"
+              className="hidden md:flex items-center px-1.5 py-0.5 rounded text-[8px] font-mono text-slate-500 dark:text-zinc-500"
               style={{
                 background: 'rgba(128,128,128,0.06)',
                 border: '1px solid rgba(128,128,128,0.12)',
@@ -443,7 +443,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
                       Search any room, lab or faculty
                     </p>
                     <p
-                      className="text-[11.5px] text-slate-400 dark:text-zinc-500 mt-1 font-medium"
+                      className="text-[11.5px] text-slate-500 dark:text-zinc-500 mt-1 font-medium"
                       style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                     >
                       Across all building layouts
@@ -517,7 +517,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
                               color: selectedIndex === 0 ? topColor.ring : undefined,
                             }}
                           >
-                            <div className={selectedIndex !== 0 ? 'text-slate-400 dark:text-zinc-500' : ''}>
+                            <div className={selectedIndex !== 0 ? 'text-slate-500 dark:text-zinc-500' : ''}>
                               <TypeIcon type={topType} size={22} />
                             </div>
                           </div>
@@ -549,7 +549,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
                             </div>
                             <p
                               className={`text-[11.5px] mt-0.5 capitalize transition-colors
-                                ${selectedIndex === 0 ? 'text-slate-500 dark:text-zinc-400' : 'text-slate-400 dark:text-zinc-500'}`}
+                                ${selectedIndex === 0 ? 'text-slate-500 dark:text-zinc-400' : 'text-slate-500 dark:text-zinc-500'}`}
                               style={{
                                 fontFamily: 'Inter, system-ui, sans-serif',
                               }}
@@ -596,7 +596,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
                                 <button
                                   onMouseDown={(e) => e.preventDefault()}
                                   onClick={(e) => handleSpeak(e, resolution)}
-                                  className="p-2 rounded-lg text-slate-400 dark:text-white/25 hover:text-slate-600 dark:hover:text-white/60 hover:bg-slate-100 dark:hover:bg-white/8 transition-all"
+                                  className="p-2 rounded-lg text-slate-500 dark:text-white/25 hover:text-slate-600 dark:hover:text-white/60 hover:bg-slate-100 dark:hover:bg-white/8 transition-all"
                                   title="Read directions aloud"
                                 >
                                   <Volume2 className="w-4 h-4" />
@@ -610,7 +610,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
                       {resolution.alternatives?.length > 0 && (
                         <>
                           <div
-                            className="px-4 pt-2 pb-1.5 text-[9.5px] font-bold uppercase tracking-widest text-slate-400 dark:text-zinc-500"
+                            className="px-4 pt-2 pb-1.5 text-[9.5px] font-bold uppercase tracking-widest text-slate-500 dark:text-zinc-500"
                             style={{
                               fontFamily: 'Inter, system-ui, sans-serif',
                             }}
@@ -643,7 +643,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
                           Nothing found for "{query}"
                         </p>
                         <p
-                          className="text-[11px] text-slate-400 dark:text-zinc-500 mt-1"
+                          className="text-[11px] text-slate-500 dark:text-zinc-500 mt-1"
                           style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                         >
                           Try a room code, floor name, or faculty name
@@ -677,7 +677,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
                 ].map(({ icon, label }) => (
                   <div
                     key={label}
-                    className="flex items-center gap-1.5 text-slate-400 dark:text-zinc-500"
+                    className="flex items-center gap-1.5 text-slate-500 dark:text-zinc-500"
                   >
                     <div className="flex gap-0.5">{icon}</div>
                     <span
@@ -689,7 +689,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
                   </div>
                 ))}
               </div>
-              <div className="flex items-center gap-1.5 text-slate-400 dark:text-zinc-500">
+              <div className="flex items-center gap-1.5 text-slate-500 dark:text-zinc-500">
                 <kbd
                   className="px-1.5 py-0.5 rounded text-[8.5px] font-mono font-bold bg-slate-200/60 dark:bg-zinc-900 border border-slate-300 dark:border-zinc-800/60 text-slate-500 dark:text-zinc-400"
                 >

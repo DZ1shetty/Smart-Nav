@@ -395,6 +395,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                           <img
                             src={previewUrl || resolveImageUrl(editedImage)}
                             alt="preview"
+                            loading="lazy"
                             className="w-full h-full object-contain rounded-xl max-h-48"
                           />
                         )}
@@ -511,6 +512,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                 <img
                   src={images[currentImageIndex]}
                   alt={room.name}
+                  loading="lazy"
                   className="max-w-full max-h-full object-contain rounded-xl shadow-2xl select-none"
                   onError={(e) => {
                     const currentSrc = e.target.src

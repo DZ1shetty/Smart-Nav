@@ -36,7 +36,7 @@ export default function MobileOptionsSheet({
             </span>
             <button
               onClick={onClose}
-              className="p-1 rounded-full text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
+              className="p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
@@ -52,7 +52,7 @@ export default function MobileOptionsSheet({
               <div className="flex items-center gap-1.5 bg-black/40 p-1 rounded-lg">
                 <button
                   onClick={onZoomOut}
-                  className="p-1.5 hover:bg-white/10 rounded-md text-white transition-colors"
+                  className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center hover:bg-white/10 rounded-md text-white transition-colors"
                 >
                   <Minus className="w-3.5 h-3.5" />
                 </button>
@@ -61,7 +61,7 @@ export default function MobileOptionsSheet({
                 </span>
                 <button
                   onClick={onZoomIn}
-                  className="p-1.5 hover:bg-white/10 rounded-md text-white transition-colors"
+                  className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center hover:bg-white/10 rounded-md text-white transition-colors"
                 >
                   <Plus className="w-3.5 h-3.5" />
                 </button>

@@ -1115,7 +1115,7 @@ export default function ChatbotWidget() {
 
                 <button
                   onClick={() => setShowHistory(!showHistory)}
-                  className={`p-1.5 transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5 ${
+                  className={`p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5 ${
                     showHistory ? 'text-blue-500 dark:text-cyan-400' : 'text-black/45 dark:text-white/40 hover:text-blue-500 dark:hover:text-cyan-400'
                   }`}
                   title="View Chat History"
@@ -1124,21 +1124,21 @@ export default function ChatbotWidget() {
                 </button>
                 <button
                   onClick={handleClearChat}
-                  className="p-1.5 text-black/45 dark:text-white/40 hover:text-red-500 dark:hover:text-red-400 transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5"
+                  className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-black/45 dark:text-white/40 hover:text-red-500 dark:hover:text-red-400 transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5"
                   title="Clear Chat History"
                 >
                   <Trash2 className="w-4 h-4" />
                 </button>
                 <button
                   onClick={handleSwitchAccount}
-                  className="p-1.5 text-black/45 dark:text-white/40 hover:text-blue-500 dark:hover:text-cyan-400 transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5"
+                  className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-black/45 dark:text-white/40 hover:text-blue-500 dark:hover:text-cyan-400 transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5"
                   title="Switch Puter Account"
                 >
                   <LogOut className="w-4 h-4" />
                 </button>
                 <button
                   onClick={() => setIsMinimized(!isMinimized)}
-                  className="p-1.5 text-black/45 dark:text-white/40 hover:text-[var(--text-main)] transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5"
+                  className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-black/45 dark:text-white/40 hover:text-[var(--text-main)] transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5"
                 >
                   {isMinimized ? (
                     <Maximize2 className="w-4 h-4" />
@@ -1148,7 +1148,7 @@ export default function ChatbotWidget() {
                 </button>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-2.5 text-black/45 dark:text-white/40 hover:text-red-500 dark:hover:text-red-400 transition-colors rounded-xl hover:bg-black/5 dark:hover:bg-white/5"
+                  className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-black/45 dark:text-white/40 hover:text-red-500 dark:hover:text-red-400 transition-colors rounded-xl hover:bg-black/5 dark:hover:bg-white/5"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -1186,7 +1186,7 @@ export default function ChatbotWidget() {
                         setShowHistory(false)
                         setExpandedQAId(null)
                       }}
-                      className="p-1.5 text-black/40 dark:text-white/30 hover:text-[var(--text-main)] transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5"
+                      className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-black/40 dark:text-white/30 hover:text-[var(--text-main)] transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5"
                     >
                       <X className="w-4 h-4" />
                     </button>
@@ -1369,7 +1369,7 @@ export default function ChatbotWidget() {
                                             e.stopPropagation();
                                             handleCopyToClipboard(item.answer);
                                           }}
-                                          className="p-1.5 text-black/45 dark:text-white/40 hover:text-blue-500 dark:hover:text-cyan-400 transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5 flex items-center gap-1 text-[9px] font-orbitron font-black uppercase tracking-wider"
+                                          className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-black/45 dark:text-white/40 hover:text-blue-500 dark:hover:text-cyan-400 transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5 flex items-center gap-1 text-[9px] font-orbitron font-black uppercase tracking-wider"
                                           title="Copy Answer"
                                         >
                                           <Copy className="w-3.5 h-3.5" />
@@ -1393,7 +1393,7 @@ export default function ChatbotWidget() {
                                               }
                                             }
                                           }}
-                                          className="p-1.5 text-black/45 dark:text-white/40 hover:text-red-500 dark:hover:text-red-400 transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5 flex items-center gap-1 text-[9px] font-orbitron font-black uppercase tracking-wider"
+                                          className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-black/45 dark:text-white/40 hover:text-red-500 dark:hover:text-red-400 transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5 flex items-center gap-1 text-[9px] font-orbitron font-black uppercase tracking-wider"
                                           title="Delete Query"
                                         >
                                           <Trash2 className="w-3.5 h-3.5" />

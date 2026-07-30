@@ -14,7 +14,7 @@ export default {
       },
       fontFamily: {
         mono: ["JetBrains Mono", "monospace"],
-        orbitron: ["Outfit", "sans-serif"],
+        orbitron: ["Orbitron", "sans-serif"],
         space: ["Outfit", "sans-serif"],
         outfit: ["Outfit", "sans-serif"],
       },

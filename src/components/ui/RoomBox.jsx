@@ -132,6 +132,9 @@ const StaticRoom = ({ room, onClick, isSelected, floorId, commonFontSize }) => {
     <g
       className="group"
       onClick={isClickable ? onClick : undefined}
+      onKeyDown={isClickable ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onClick(); } } : undefined}
+      role={isClickable ? "button" : undefined}
+      tabIndex={isClickable ? 0 : undefined}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{ cursor: isClickable ? 'pointer' : 'default' }}

@@ -175,7 +175,7 @@ export default function BuildingBentoGrid({ onSelectBuilding }) {
               </div>
 
               {/* Arrow Indicator */}
-              <div className="p-1.5 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-slate-400 group-hover:text-white group-hover:bg-blue-500 transition-all flex-shrink-0">
+              <div className="p-1.5 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-slate-500 group-hover:text-white group-hover:bg-blue-500 transition-all flex-shrink-0">
                 <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </div>
             </div>
