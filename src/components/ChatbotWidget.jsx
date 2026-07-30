@@ -671,7 +671,7 @@ export default function ChatbotWidget() {
           // Check for numbered list: e.g. "1. " or "1.  "
           const numMatch = line.match(/^(\s*\d+)\.\s+(.*)/)
           // Check for bullet list: e.g. "- " or "* " or "• "
-          const bulletMatch = line.match(/^(\s*[\-*•])\s+(.*)/)
+          const bulletMatch = line.match(/^(\s*[-*•])\s+(.*)/)
 
           if (numMatch) {
             isListItem = true

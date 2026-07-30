@@ -1,17 +1,29 @@
 import { motion } from 'framer-motion'
 import {
+  Image as ImageIcon,
+  Navigation,
+  Save,
   X,
+  Maximize2,
+  Minimize2,
+  Trash2,
+  Bookmark,
+  MapPin,
+  ExternalLink,
   User,
   Building,
   ChevronLeft,
   ChevronRight,
   Edit3,
-  Save,
-  Bookmark,
-  Maximize2,
+  Loader2,
+  ImagePlus,
+  Upload,
 } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { uploadToCloudinary } from '../utils/cloudinaryUpload'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
+import { ref as storageRef, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
+import { storage } from '../firebase'
 import { resolveImageUrl } from '../config'
 import { searchIndex } from '../data/searchIndex'
 import { floorIdToUrl } from '../utils/slugHelpers'
@@ -23,9 +35,17 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
   const [isEditing, setIsEditing] = useState(false)
   const [editedDirections, setEditedDirections] = useState('')
   const [editedImage, setEditedImage] = useState('')
+  const [editedName, setEditedName] = useState('')
   const [isFullScreen, setIsFullScreen] = useState(false)
+  // Image upload state
+  const [uploadProgress, setUploadProgress] = useState(null)  // 0-100 or null
+  const [uploadError, setUploadError] = useState(null)
+  const [previewUrl, setPreviewUrl] = useState(null)
+  const fileInputRef = useRef(null)
 
-  const images = (room?.images || (room?.image ? [room.image] : [])).map(resolveImageUrl)
+  // Prefer room.image if it exists (meaning it was just uploaded/edited), fallback to room.images array
+  const rawImages = room?.image ? [room.image] : (room?.images || [])
+  const images = rawImages.map(resolveImageUrl)
 
   useEffect(() => {
     const handleEsc = (e) => {
@@ -45,6 +65,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
     if (room) {
       setEditedDirections(room.directions || '')
       setEditedImage(room.image || '')
+      setEditedName(room.name || room.label || '')
       setIsEditing(false)
       setIsFullScreen(false)
     }
@@ -52,11 +73,34 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
 
   if (!room) return null
 
+  const handleImageFile = async (file) => {
+    if (!file || !file.type.startsWith('image/')) return
+    // Show local preview immediately
+    const objectUrl = URL.createObjectURL(file)
+    setPreviewUrl(objectUrl)
+    setUploadError(null)
+    setUploadProgress(10) // Start progress
+
+    try {
+      const secureUrl = await uploadToCloudinary(file, (progress) => {
+        setUploadProgress(progress)
+      })
+      setEditedImage(secureUrl) // Save Cloudinary URL
+      setUploadProgress(null)
+      URL.revokeObjectURL(objectUrl) // free memory
+    } catch (err) {
+      console.error('[Upload] error:', err)
+      setUploadError(err.message || 'Upload failed. Did you create the unsigned preset?')
+      setUploadProgress(null)
+    }
+  }
+
   const handleSave = () => {
     if (onUpdateRoomData) {
-      onUpdateRoomData({ directions: editedDirections, image: editedImage })
+      onUpdateRoomData({ name: editedName, directions: editedDirections, image: editedImage })
     }
     setIsEditing(false)
+    setPreviewUrl(null)
   }
 
   return (
@@ -279,15 +323,102 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                 <div className="space-y-4">
                   <div>
                     <span className="text-[8px] font-orbitron font-black uppercase text-black/30 dark:text-white/20 block mb-2">
-                      ImgBB Link (Direct Image URL)
+                      Room Name
                     </span>
                     <input
                       type="text"
-                      value={editedImage}
-                      onChange={(e) => setEditedImage(e.target.value)}
+                      value={editedName}
+                      onChange={(e) => setEditedName(e.target.value)}
                       className="w-full bg-black/5 dark:bg-white/5 border-2 border-blue-500/20 focus:border-blue-500 rounded-xl px-4 py-3 text-sm font-medium text-black dark:text-white focus:outline-none transition-all shadow-inner"
-                      placeholder="https://i.ibb.co/..."
+                      placeholder="e.g. LH-506"
                     />
+                  </div>
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-[8px] font-orbitron font-black uppercase text-black/30 dark:text-white/20 block">
+                        Room Image
+                      </span>
+                      {(previewUrl || editedImage) && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setEditedImage('')
+                            setPreviewUrl(null)
+                          }}
+                          className="text-[9px] font-orbitron font-bold text-red-500 hover:underline uppercase flex items-center gap-1"
+                        >
+                          <Trash2 className="w-3 h-3" /> Clear Image
+                        </button>
+                      )}
+                    </div>
+
+                    {/* Hidden real file input */}
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      accept="image/*"
+                      className="hidden"
+                      onChange={(e) => handleImageFile(e.target.files?.[0])}
+                    />
+
+                    {/* Upload area */}
+                    <div
+                      onClick={() => fileInputRef.current?.click()}
+                      onDragOver={(e) => e.preventDefault()}
+                      onDrop={(e) => {
+                        e.preventDefault()
+                        handleImageFile(e.dataTransfer.files?.[0])
+                      }}
+                      className="relative w-full border-2 border-dashed border-blue-500/30 hover:border-blue-500/70 rounded-xl cursor-pointer transition-all group overflow-hidden"
+                      style={{ minHeight: previewUrl || editedImage ? 180 : 100 }}
+                    >
+                      {/* Preview */}
+                      {(previewUrl || editedImage) && (
+                        <img
+                          src={previewUrl || resolveImageUrl(editedImage)}
+                          alt="preview"
+                          className="w-full h-full object-contain rounded-xl max-h-48"
+                        />
+                      )}
+
+                      {/* Overlay prompt */}
+                      <div className={`absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-xl transition-all ${
+                        previewUrl || editedImage
+                          ? 'bg-black/40 opacity-0 group-hover:opacity-100'
+                          : 'bg-black/5 dark:bg-white/5'
+                      }`}>
+                        {uploadProgress !== null ? (
+                          <Loader2 className="w-6 h-6 text-blue-400 animate-spin" />
+                        ) : (
+                          <ImagePlus className="w-6 h-6 text-blue-400" />
+                        )}
+                        <span className="text-[9px] font-orbitron font-black uppercase tracking-widest text-black/50 dark:text-white/40">
+                          {uploadProgress !== null ? `Uploading ${uploadProgress}%` : 'Click or Drop Image'}
+                        </span>
+                      </div>
+
+                      {/* Progress bar */}
+                      {uploadProgress !== null && (
+                        <div className="absolute bottom-0 left-0 right-0 h-1 bg-black/20 rounded-b-xl overflow-hidden">
+                          <div
+                            className="h-full bg-blue-500 transition-all duration-300"
+                            style={{ width: `${uploadProgress}%` }}
+                          />
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Error message */}
+                    {uploadError && (
+                      <p className="mt-1.5 text-[10px] font-orbitron text-red-500">{uploadError}</p>
+                    )}
+
+                    {/* Uploaded indicator */}
+                    {uploadProgress === null && editedImage && editedImage.includes('firebasestorage') && (
+                      <p className="mt-1.5 text-[10px] font-orbitron text-emerald-500 flex items-center gap-1">
+                        <Upload className="w-3 h-3" /> Uploaded to Firebase Storage
+                      </p>
+                    )}
                   </div>
                   <div>
                     <span className="text-[8px] font-orbitron font-black uppercase text-black/30 dark:text-white/20 block mb-2">

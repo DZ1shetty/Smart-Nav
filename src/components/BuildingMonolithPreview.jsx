@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import {
@@ -16,7 +16,11 @@ import {
   Clock,
   Accessibility,
   Layers,
+  Loader2,
+  ImagePlus,
+  Trash2,
 } from 'lucide-react'
+import { uploadToCloudinary } from '../utils/cloudinaryUpload'
 import { floorIdToUrl } from '../utils/slugHelpers'
 
 export default function BuildingMonolithPreview({
@@ -32,9 +36,29 @@ export default function BuildingMonolithPreview({
   handleCancelEdit,
   handleSaveBuilding,
   handleBackToHome,
-  handleImageFileUpload,
 }) {
   const navigate = useNavigate()
+  const fileInputRef = useRef(null)
+  const [uploadProgress, setUploadProgress] = useState(null)
+  const [uploadError, setUploadError] = useState(null)
+
+  const handleImageFile = async (file) => {
+    if (!file || !file.type.startsWith('image/')) return
+    setUploadError(null)
+    setUploadProgress(10)
+
+    try {
+      const secureUrl = await uploadToCloudinary(file, (progress) => {
+        setUploadProgress(progress)
+      })
+      setEditedData((prev) => ({ ...prev, imageUrl: secureUrl }))
+      setUploadProgress(null)
+    } catch (err) {
+      console.error('[Upload] error:', err)
+      setUploadError(err.message || 'Upload failed')
+      setUploadProgress(null)
+    }
+  }
   const [activeFloorHover, setActiveFloorHover] = useState(null)
 
   // Map floor ID index to architectural level codes (e.g. L06, L05, L00, B01)
@@ -169,41 +193,60 @@ export default function BuildingMonolithPreview({
             <div className="p-3 rounded-2xl bg-white/80 dark:bg-white/[0.03] border border-black/10 dark:border-white/10 shadow-sm flex flex-col gap-2">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-orbitron font-black uppercase tracking-wider text-blue-500 flex items-center gap-1">
-                  <ImageIcon className="w-3.5 h-3.5" /> BUILDING IMAGE URL / UPLOAD
+                  <ImageIcon className="w-3.5 h-3.5" /> UPLOAD BUILDING IMAGE
                 </span>
                 {editedData?.imageUrl && (
                   <button
                     type="button"
                     onClick={() => setEditedData({ ...editedData, imageUrl: '' })}
-                    className="text-[9px] font-orbitron font-bold text-red-500 hover:underline uppercase"
+                    className="text-[9px] font-orbitron font-bold text-red-500 hover:underline uppercase flex items-center gap-1"
                   >
-                    Clear Image
+                    <Trash2 className="w-3 h-3" /> Clear Image
                   </button>
                 )}
               </div>
-              <div className="flex items-center gap-2">
-                <div className="relative flex-1">
-                  <LinkIcon className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3 h-3 text-slate-400" />
-                  <input
-                    type="text"
-                    value={editedData?.imageUrl || ''}
-                    onChange={(e) =>
-                      setEditedData({ ...editedData, imageUrl: e.target.value })
-                    }
-                    placeholder="Paste Image URL..."
-                    className="w-full pl-7 pr-2 py-1.5 text-xs rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-[var(--text-main)] font-mono"
-                  />
-                </div>
-                <label className="cursor-pointer px-3 py-1.5 rounded-xl bg-blue-500 hover:bg-blue-600 text-white text-[10px] font-orbitron font-black uppercase tracking-wider flex items-center gap-1 shadow-sm transition-all active:scale-95 whitespace-nowrap">
-                  <Upload className="w-3 h-3" /> Upload
-                  <input
-                    type="file"
-                    accept="image/*"
-                    className="hidden"
-                    onChange={handleImageFileUpload}
-                  />
-                </label>
+              <div
+                onClick={() => fileInputRef.current?.click()}
+                onDragOver={(e) => e.preventDefault()}
+                onDrop={(e) => {
+                  e.preventDefault()
+                  handleImageFile(e.dataTransfer.files?.[0])
+                }}
+                className="relative w-full border-2 border-dashed border-blue-500/30 hover:border-blue-500/70 rounded-xl cursor-pointer transition-all group overflow-hidden flex flex-col items-center justify-center p-6 bg-black/5 dark:bg-white/5 min-h-[100px]"
+              >
+                <input
+                  type="file"
+                  accept="image/*"
+                  className="hidden"
+                  ref={fileInputRef}
+                  onChange={(e) => handleImageFile(e.target.files?.[0])}
+                />
+                
+                {uploadProgress !== null ? (
+                  <div className="flex flex-col items-center justify-center gap-2">
+                    <Loader2 className="w-6 h-6 text-blue-400 animate-spin" />
+                    <span className="text-[9px] font-orbitron font-black uppercase tracking-widest text-black/50 dark:text-white/40">
+                      Uploading {uploadProgress}%
+                    </span>
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-black/20 rounded-b-xl overflow-hidden">
+                      <div
+                        className="h-full bg-blue-500 transition-all duration-300"
+                        style={{ width: `${uploadProgress}%` }}
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  <div className="flex flex-col items-center justify-center gap-2 transition-all opacity-70 group-hover:opacity-100">
+                    <ImagePlus className="w-6 h-6 text-blue-400" />
+                    <span className="text-[9px] font-orbitron font-black uppercase tracking-widest text-black/50 dark:text-white/40">
+                      Click or Drop Image
+                    </span>
+                  </div>
+                )}
               </div>
+              {uploadError && (
+                <p className="mt-1 text-[10px] font-orbitron text-red-500">{uploadError}</p>
+              )}
             </div>
           )}
 

@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { uploadToCloudinary } from '../utils/cloudinaryUpload'
 import { useNavigate, useParams } from 'react-router-dom'
 import {
   Users,
@@ -368,23 +369,6 @@ export default function HomePage() {
     setEditedData(null)
   }
 
-  const handleImageFileUpload = (e) => {
-    const file = e.target.files?.[0]
-    if (!file) return
-
-    if (file.size > 2.5 * 1024 * 1024) {
-      toast.error('Image size must be under 2.5MB for Firestore saving.')
-      return
-    }
-
-    const reader = new FileReader()
-    reader.onload = (event) => {
-      setEditedData((prev) => ({ ...prev, imageUrl: event.target.result }))
-      toast.success('Image loaded! Click SAVE to save permanently to Firestore.')
-    }
-    reader.readAsDataURL(file)
-  }
-
   const handleSaveBuilding = async () => {
     if (!editedData) return
 
@@ -498,7 +482,6 @@ export default function HomePage() {
               handleCancelEdit={handleCancelEdit}
               handleSaveBuilding={handleSaveBuilding}
               handleBackToHome={handleBackToHome}
-              handleImageFileUpload={handleImageFileUpload}
             />
           )}
         </AnimatePresence>

@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app'
 import { initializeFirestore, persistentLocalCache, persistentMultipleTabManager } from 'firebase/firestore'
+import { getStorage } from 'firebase/storage'
 import { FIREBASE_CONFIG } from './config'
 
 // Initialize Firebase
@@ -12,4 +13,7 @@ const db = initializeFirestore(app, {
   })
 })
 
-export { db }
+// Initialize Firebase Storage
+const storage = getStorage(app)
+
+export { db, storage }

@@ -179,6 +179,8 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
   const inputRef = useRef(null)
   const navigate = useNavigate()
 
+  const [dbLayouts, setDbLayouts] = useState(null)
+
   // ── Firestore real-time sync ────────────────────────────────────────────────
   useEffect(() => {
     const unsubscribe = onSnapshot(
@@ -190,6 +192,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
           if (d.floorId) data[d.floorId] = d
         })
         updateSearchData(data)
+        setDbLayouts(data)
       },
       (err) => {
         console.error("Error subscribing to layouts for search indexing:", err)
@@ -218,7 +221,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
       return
     }
 
-    resolveQueryAsync(debouncedQuery, currentFloor).then((result) => {
+    resolveQueryAsync(debouncedQuery, currentFloor, dbLayouts).then((result) => {
       if (!isCurrent) return
       setResolution(result)
       setIsResolving(false)
@@ -240,7 +243,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
     return () => {
       isCurrent = false
     }
-  }, [debouncedQuery, currentFloor, onResultsChange, resolveQueryAsync])
+  }, [debouncedQuery, currentFloor, onResultsChange, resolveQueryAsync, dbLayouts])
 
   // ── Focus pass-through ──────────────────────────────────────────────────────
   useEffect(() => {

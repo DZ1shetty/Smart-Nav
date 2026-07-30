@@ -1,0 +1,12 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Allow public read of all files (for displaying images on the site)
+    match /{allPaths=**} {
+      allow read: if true;
+      // Allow write for room images and faculty images without auth (admin-only UI)
+      allow write: if true;
+      allow delete: if true;
+    }
+  }
+}

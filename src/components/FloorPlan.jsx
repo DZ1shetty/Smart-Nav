@@ -24,6 +24,7 @@ import {
   Map,
   Search,
   SlidersHorizontal,
+  Trash2,
 } from 'lucide-react'
 import { puter } from '@heyputer/puter.js'
 import { floorsData, getFloorDataLoader } from '../data/floorsData'
@@ -33,13 +34,14 @@ import FloorMapCanvas from './FloorMapCanvas'
 import FloorMapSkeleton from './FloorMapSkeleton'
 import ModalSkeleton from './ModalSkeleton'
 import MobileOptionsSheet from './MobileOptionsSheet'
-import RoomModal from './RoomModal'
+import DossierModal from './DossierModal'
 import ThemeToggle from './ThemeToggle'
 import SearchSystem from './SearchSystem'
 import { db } from '../firebase'
 import { doc, onSnapshot, setDoc, getDoc } from 'firebase/firestore'
 import { useTheme } from '../context/ThemeContext'
 import { Toaster, toast } from 'sonner'
+import { uploadToCloudinary } from '../utils/cloudinaryUpload'
 import { getFirestoreDocName } from '../config'
 import { getFloorFullNameInWords } from '../utils/floorFormatter'
 import { trackFloorVisit, trackRoomView } from '../utils/analytics'
@@ -49,6 +51,7 @@ const FacultyProfileModal = lazy(() => import('./FacultyProfileModal'))
 const FacultyDirectoryModal = lazy(() => import('./FacultyDirectoryModal'))
 const FacultyManagerModal = lazy(() => import('./FacultyManagerModal'))
 const DirectionsManagerModal = lazy(() => import('./DirectionsManagerModal'))
+const RoomModal = lazy(() => import('./RoomModal'))
 
 /**
  * Case-insensitive name matching helper that handles prefix variations (Dr., Mr., Prof., etc.)
@@ -182,6 +185,27 @@ export default function FloorPlan() {
   const [staticFloorData, setStaticFloorData] = useState(null)
   const [isLoadingStatic, setIsLoadingStatic] = useState(true)
   const [staticLoadError, setStaticLoadError] = useState(null)
+  const [isSetupProgressOpen, setIsSetupProgressOpen] = useState(false)
+
+  useEffect(() => {
+    if (floorId === 'basement' || floorId === 'apj_basement' || floorId === 'atal_third') {
+      setIsSetupProgressOpen(true)
+    } else {
+      setIsSetupProgressOpen(false)
+    }
+  }, [floorId])
+
+  const handleCloseSetupProgress = () => {
+    setIsSetupProgressOpen(false)
+    const bSlug = 
+      floorId?.startsWith('cv_raman_') ? 'CV-Raman-Block' :
+      floorId?.startsWith('ramanujan_') ? 'Ramanujan-Block' :
+      floorId?.startsWith('smv_') || floorId?.startsWith('svm_') ? 'SMV-Block' :
+      floorId?.startsWith('atal_') ? 'Atal-Block' :
+      floorId?.startsWith('rajraman_') ? 'Rajraman-Block' :
+      'APJ-Block';
+    navigate(`/${bSlug}`)
+  }
 
   const [zoom, setZoom] = useState(1.0)
   const [resetKey, setResetKey] = useState(0)
@@ -340,7 +364,7 @@ export default function FloorPlan() {
 
     try {
       localStorage.removeItem('skip_mount_transition')
-    } catch (e) {}
+    } catch (e) { /* ignore */ }
 
     const loadBookmarks = async () => {
       let username = 'anonymous';
@@ -699,7 +723,7 @@ export default function FloorPlan() {
         try {
           localStorage.removeItem('show_save_success_toast')
           localStorage.removeItem('skip_mount_transition')
-        } catch (e) {}
+        } catch (e) { /* ignore */ }
         return 'Successfully saved the blueprint!'
       },
       error: (err) => {
@@ -707,7 +731,7 @@ export default function FloorPlan() {
         try {
           localStorage.removeItem('show_save_success_toast')
           localStorage.removeItem('skip_mount_transition')
-        } catch (e) {}
+        } catch (e) { /* ignore */ }
         console.error('[Firestore] Save failed:', err)
         return `Failed to save blueprint: ${err.message || 'Firestore write error'}`
       },
@@ -887,12 +911,18 @@ export default function FloorPlan() {
     setFaculty((prev) => prev.filter((f) => f.name !== targetName))
   }
 
-  const handleMapImageUpload = (e) => {
+  const handleMapImageUpload = async (e) => {
     const file = e.target.files[0]
     if (file) {
-      const reader = new FileReader()
-      reader.onload = (event) => setMapImage(event.target.result)
-      reader.readAsDataURL(file)
+      const loadingToastId = toast.loading('Uploading map image to Cloudinary...')
+      try {
+        const secureUrl = await uploadToCloudinary(file)
+        setMapImage(secureUrl)
+        toast.success('Map image uploaded! Click SAVE to save permanently.', { id: loadingToastId })
+      } catch (err) {
+        toast.error(`Upload failed: ${err.message}`, { id: loadingToastId })
+        console.error('Map image upload error:', err)
+      }
     }
   }
 
@@ -1358,6 +1388,14 @@ export default function FloorPlan() {
                       onChange={handleMapImageUpload}
                     />
                   </label>
+                  {mapImage && (
+                    <button
+                      onClick={() => setMapImage(null)}
+                      className="px-2.5 py-1.5 hover:bg-red-500/10 text-red-500 rounded-lg transition-all font-orbitron font-black text-[8px] uppercase flex items-center gap-1"
+                    >
+                      <Trash2 className="w-3 h-3" /> CLEAR
+                    </button>
+                  )}
                 </div>
                 <button
                   onClick={() => onSave()}
@@ -1798,27 +1836,63 @@ export default function FloorPlan() {
       </main>
 
 
-      <AnimatePresence>
-        {selectedRoom && (
-          <RoomModal
-            room={selectedRoom}
-            onClose={handleCloseRoom}
-            isBookmarked={bookmarkedRoomIds.includes(selectedRoom.id)}
-            onToggleBookmark={() => handleToggleBookmark(selectedRoom.id)}
-            onUpdateRoomData={async (data) => {
-              const updated = roomsWithMetadata.map((r) =>
-                r.id === selectedRoom.id
-                  ? { ...r, directions: data.directions, image: data.image }
-                  : r
-              )
-              setRooms(updated)
-              await onSave(updated)
-            }}
-          />
-        )}
-      </AnimatePresence>
-
       <Suspense fallback={<ModalSkeleton />}>
+        <AnimatePresence>
+          {selectedRoom && (
+            <RoomModal
+              room={selectedRoom}
+              onClose={handleCloseRoom}
+              isBookmarked={bookmarkedRoomIds.includes(selectedRoom.id)}
+              onToggleBookmark={() => handleToggleBookmark(selectedRoom.id)}
+              onUpdateRoomData={async (data) => {
+                const updated = roomsWithMetadata.map((r) => {
+                  if (r.id === selectedRoom.id) {
+                    const updatedRoom = { ...r, name: data.name || r.name, label: data.name || r.label, directions: data.directions, image: data.image };
+                    setSelectedRoom(updatedRoom);
+                    return updatedRoom;
+                  }
+                  return r;
+                })
+                setRooms(updated)
+                await onSave(updated)
+              }}
+            />
+          )}
+        </AnimatePresence>
+
+        <AnimatePresence>
+          {isSetupProgressOpen && (
+            <DossierModal
+              isOpen={isSetupProgressOpen}
+              onClose={handleCloseSetupProgress}
+              title="Setup in Progress"
+              subtitle="Floor Layout Status"
+              icon={Wrench}
+              maxWidth="max-w-md"
+            >
+              <div className="p-6 md:p-8 flex flex-col items-center text-center gap-6">
+                <div className="w-20 h-20 bg-blue-500/10 border border-blue-500/20 rounded-3xl flex items-center justify-center shadow-lg shadow-blue-500/5 animate-bounce">
+                  <Wrench className="w-10 h-10 text-blue-400" />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-lg font-orbitron font-black tracking-widest text-white uppercase italic">
+                    Layout Coming Soon
+                  </h3>
+                  <p className="text-sm text-white/60 font-mono leading-relaxed max-w-sm">
+                    This floor's interactive blueprint is currently being mapped by our administrative team.
+                  </p>
+                </div>
+                <button
+                  onClick={handleCloseSetupProgress}
+                  className="w-full py-3 bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-orbitron font-black text-xs tracking-widest uppercase rounded-xl transition-all shadow-lg active:scale-95 border border-blue-400/20"
+                >
+                  Acknowledge & Go Back
+                </button>
+              </div>
+            </DossierModal>
+          )}
+        </AnimatePresence>
+
         <AnimatePresence>
           {isFacultyModalOpen && (
             <FacultyDirectoryModal
