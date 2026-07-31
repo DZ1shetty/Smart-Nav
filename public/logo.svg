@@ -13,9 +13,6 @@
     </filter>
   </defs>
   
-  <!-- Solid Dark Background (App Icon Style) -->
-  <rect x="0" y="0" width="100" height="100" rx="22" fill="#0f172a" />
-  
   <!-- Scaled up Central 3D Crystalline Compass Needle -->
   <path d="M50 12 L82 50 L50 88 L50 12 Z" fill="url(#grad-core)" />
   <path d="M50 12 L18 50 L50 88 L50 12 Z" fill="#0d9488" />
