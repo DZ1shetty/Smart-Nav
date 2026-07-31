@@ -135,7 +135,7 @@ export const third = {
       h: 90,
       width: 220,
       height: 90,
-      directions: 'i. Stairs-1: Turn right; LH-310 is immediately on your right just outside the Stairs-1 exit.\nii. Stairs-2: Walk north and then turn right at the mid-floor corridor; LH-310 is on your right.\niii. LIFT: Turn right; LH-310 is directly to your right, adjacent to the Lift on the east side',
+      directions: 'i. Stairs-1: Turn right; LH-310 is immediately on your right just outside the Stairs-1 exit.\nii. Stairs-2: Walk north and then turn right at the mid-floor corridor; LH-310 is on your right.\niii. LIFT: Turn right; LH-310 is directly to your right, adjacent to the Lift on the east side.',
       description: 'Lecture Hall 310',
       image: `${IMG_BASE_URL}/apj-block-images/3th-floor/lh-310.jpeg`,
       tags: ["class","lh310"],

@@ -29,11 +29,16 @@ export const resolveImageUrl = (url) => {
   if (!url) return '';
   if (typeof url !== 'string') return url;
 
+  // Auto-correct legacy repository name (Smart_Nav -> Smart-Nav)
+  if (url.includes('/Smart_Nav/')) {
+    url = url.replaceAll('/Smart_Nav/', '/Smart-Nav/');
+  }
+
   // Clean out any legacy nested path references
   if (url.includes('/MJ/Major_Project/')) {
-    url = url.replace('/MJ/Major_Project/', '/');
+    url = url.replaceAll('/MJ/Major_Project/', '/');
   } else if (url.includes('MJ/Major_Project/')) {
-    url = url.replace('MJ/Major_Project/', '');
+    url = url.replaceAll('MJ/Major_Project/', '');
   }
 
   // When running locally, convert any raw.githubusercontent URLs to local relative paths

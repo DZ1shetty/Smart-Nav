@@ -9,8 +9,8 @@
   "bulgeHeight": 500,
   "boundaryVertices": [
     {
-      "y": 10,
-      "x": 5
+      "x": 5,
+      "y": 10
     },
     {
       "y": 10,
@@ -29,8 +29,8 @@
       "x": 1280
     },
     {
-      "y": 1020,
-      "x": 960
+      "x": 960,
+      "y": 1020
     },
     {
       "y": 1411,
@@ -45,8 +45,8 @@
       "x": 1734
     },
     {
-      "y": 1540,
-      "x": 960
+      "x": 960,
+      "y": 1540
     },
     {
       "y": 1540,
@@ -190,7 +190,7 @@
       "h": 90,
       "width": 220,
       "height": 90,
-      "directions": "i. Stairs-1: Turn right; LH-310 is immediately on your right just outside the Stairs-1 exit.\nii. Stairs-2: Walk north and then turn right at the mid-floor corridor; LH-310 is on your right.\niii. LIFT: Turn right; LH-310 is directly to your right, adjacent to the Lift on the east side",
+      "directions": "i. Stairs-1: Turn right; LH-310 is immediately on your right just outside the Stairs-1 exit.\nii. Stairs-2: Walk north and then turn right at the mid-floor corridor; LH-310 is on your right.\niii. LIFT: Turn right; LH-310 is directly to your right, adjacent to the Lift on the east side.",
       "description": "Lecture Hall 310",
       "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/lh-310.jpeg",
       "tags": [
@@ -493,39 +493,39 @@
   ],
   "faculty": [
     {
-      "name": "DR. KARUNA PANDIT",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.54-pm-1.jpeg",
+      "roomId": "ec-staff-room-1",
       "department": "ISE",
-      "roomId": "ec-staff-room-1",
-      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.54-pm-1.jpeg"
+      "name": "DR. KARUNA PANDIT"
     },
     {
-      "roomId": "ec-staff-room-1",
-      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.54-pm-2.jpeg",
       "name": "DR. ASHWINI K.",
-      "department": "ECE"
-    },
-    {
-      "roomId": "ec-staff-room-1",
-      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.54-pm.jpeg",
       "department": "ECE",
-      "name": "DR. BALASUBRAMANI R."
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.54-pm-2.jpeg",
+      "roomId": "ec-staff-room-1"
     },
     {
-      "name": "DR. ANUSHA R. SHARATH",
+      "department": "ECE",
+      "name": "DR. BALASUBRAMANI R.",
+      "roomId": "ec-staff-room-1",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.54-pm.jpeg"
+    },
+    {
+      "department": "ECE",
       "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.55-pm-1.jpeg",
+      "roomId": "ec-staff-room-1",
+      "name": "DR. ANUSHA R. SHARATH"
+    },
+    {
+      "name": "DR. SHUBHA B.",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.55-pm.jpeg",
       "department": "ECE",
       "roomId": "ec-staff-room-1"
     },
     {
-      "roomId": "ec-staff-room-1",
-      "name": "DR. SHUBHA B.",
-      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.55-pm.jpeg",
-      "department": "ECE"
-    },
-    {
-      "roomId": "ec-staff-room-1",
       "name": "DR. ANISHA P. RODRIGUES",
       "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.58-pm.jpeg",
+      "roomId": "ec-staff-room-1",
       "department": "ECE"
     },
     {
@@ -535,127 +535,127 @@
       "department": "ECE"
     },
     {
-      "department": "ECE",
-      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.59-pm.jpeg",
       "name": "DR. RAJU K.",
-      "roomId": "ec-staff-room-1"
+      "department": "ECE",
+      "roomId": "ec-staff-room-1",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.59-pm.jpeg"
     },
     {
-      "department": "ECE",
-      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.00-pm-1.jpeg",
       "name": "DR. PADMAVATHI K.",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.00-pm-1.jpeg",
+      "department": "ECE",
       "roomId": "ec-staff-room-1"
     },
     {
-      "department": "ECE",
       "name": "DR. MAMATHA GIRISH",
+      "department": "ECE",
       "roomId": "ec-staff-room-1",
       "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.00-pm-2.jpeg"
     },
     {
+      "name": "DR. SUDEEPA K. B.",
       "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.00-pm.jpeg",
-      "roomId": "ec-staff-room-1",
       "department": "ECE",
-      "name": "DR. SUDEEPA K. B."
+      "roomId": "ec-staff-room-1"
     },
     {
+      "department": "ECE",
       "name": "DR. CHAITRA K.",
-      "roomId": "ec-staff-room-2",
-      "department": "ECE",
-      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.01-pm-1.jpeg"
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.01-pm-1.jpeg",
+      "roomId": "ec-staff-room-2"
     },
     {
-      "roomId": "ec-staff-room-2",
       "name": "MRS. SOWMYA P.",
       "department": "ECE",
-      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.01-pm-2.jpeg"
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.01-pm-2.jpeg",
+      "roomId": "ec-staff-room-2"
     },
     {
-      "roomId": "ec-staff-room-2",
       "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.01-pm.jpeg",
-      "name": "MS. SHANKARI N.",
-      "department": "ECE"
-    },
-    {
       "roomId": "ec-staff-room-2",
       "department": "ECE",
+      "name": "MS. SHANKARI N."
+    },
+    {
       "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.02-pm-1.jpeg",
+      "department": "ECE",
+      "roomId": "ec-staff-room-2",
       "name": "DR. CHAITRA S. N."
     },
     {
+      "roomId": "ec-staff-room-2",
+      "department": "ECE",
       "name": "MR. VASUDEVA PAI",
-      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.02-pm-2.jpeg",
-      "roomId": "ec-staff-room-2",
-      "department": "ECE"
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.02-pm-2.jpeg"
     },
     {
-      "name": "DR. DEVIDAS",
-      "roomId": "ec-staff-room-2",
       "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.02-pm.jpeg",
-      "department": "ECE"
+      "department": "ECE",
+      "roomId": "ec-staff-room-2",
+      "name": "DR. DEVIDAS"
     },
     {
+      "name": "DR. ULLAL HARSHINI DEVI",
       "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.03-pm-1.jpeg",
       "roomId": "ec-staff-room-2",
-      "department": "ECE",
-      "name": "DR. ULLAL HARSHINI DEVI"
+      "department": "ECE"
     },
     {
+      "name": "DR. SANTHOSH POOJARY",
+      "department": "ECE",
       "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.03-pm-2.jpeg",
-      "roomId": "ec-staff-room-2",
-      "department": "ECE",
-      "name": "DR. SANTHOSH POOJARY"
+      "roomId": "ec-staff-room-2"
     },
     {
-      "name": "DR. KAVITHA S.",
       "department": "ECE",
+      "name": "DR. KAVITHA S.",
       "roomId": "ec-staff-room-2",
       "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.03-pm.jpeg"
     },
     {
-      "name": "MS. BHAVYA K.",
-      "roomId": "ec-staff-room-2",
       "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.04-pm-1.jpeg",
-      "department": "ECE"
+      "department": "ECE",
+      "name": "MS. BHAVYA K.",
+      "roomId": "ec-staff-room-2"
     },
     {
-      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.04-pm.jpeg",
+      "name": "DR. SNEHA NAYAK",
       "roomId": "ec-staff-room-2",
       "department": "ECE",
-      "name": "DR. SNEHA NAYAK"
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.04-pm.jpeg"
     },
     {
-      "roomId": "ec-staff-room-2",
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.05-pm-1.jpeg",
+      "department": "ECE",
       "name": "DR. VIJAYA MURARI T.",
-      "department": "ECE",
-      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.05-pm-1.jpeg"
+      "roomId": "ec-staff-room-2"
     },
     {
+      "name": "MS. RAMYA SHETTY",
+      "department": "ECE",
       "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.05-pm-2.jpeg",
-      "department": "ECE",
-      "roomId": "ec-staff-room-2",
-      "name": "MS. RAMYA SHETTY"
+      "roomId": "ec-staff-room-2"
     },
     {
-      "name": "DR. RAJALAXMI HEGDE",
       "department": "ECE",
+      "name": "DR. RAJALAXMI HEGDE",
       "roomId": "ec-staff-room-2",
       "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.05-pm.jpeg"
     },
     {
       "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.06-pm-1.jpeg",
       "roomId": "ec-staff-room-2",
-      "department": "ECE",
-      "name": "DR. CHARISHMA"
+      "name": "DR. CHARISHMA",
+      "department": "ECE"
     },
     {
       "department": "ECE",
       "name": "DR. NIJU RAJAN",
-      "roomId": "ec-staff-room-2",
-      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.06-pm.jpeg"
+      "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.06-pm.jpeg",
+      "roomId": "ec-staff-room-2"
     }
   ],
-  "lastEdited": "2026-07-31T11:26:02.154Z",
+  "lastEdited": "2026-07-31T11:45:21.344Z",
   "lastEditedBy": "admin",
   "locked": true
 }

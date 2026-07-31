@@ -1,0 +1,17 @@
+{
+  "name": "SmartNav Campus Navigation",
+  "short_name": "SmartNav",
+  "description": "Interactive Campus Map, Room Search & Faculty Directory Navigation System",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090d16",
+  "theme_color": "#090d16",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'smart-nav-offline-cache-v3';
+const CACHE_NAME = 'smart-nav-offline-cache-v4';
 
 // Assets to cache immediately on install
 const STATIC_ASSETS = [
@@ -11,9 +11,9 @@ const STATIC_ASSETS = [
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log('[Service Worker] Pre-caching static assets');
+      console.log('[Service Worker v4] Pre-caching static assets');
       return cache.addAll(STATIC_ASSETS).catch((err) => {
-        console.warn('[Service Worker] Failed to pre-cache some assets:', err);
+        console.warn('[Service Worker v4] Failed to pre-cache some assets:', err);
       });
     })
   );
@@ -26,7 +26,7 @@ self.addEventListener('activate', (event) => {
       return Promise.all(
         cacheNames.map((cache) => {
           if (cache !== CACHE_NAME) {
-            console.log('[Service Worker] Clearing old cache');
+            console.log('[Service Worker v4] Clearing old cache:', cache);
             return caches.delete(cache);
           }
         })
@@ -36,26 +36,7 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-// Helper for fetching with a timeout (prevents slow network from hanging asset loading)
-const fetchWithTimeout = (request, timeoutMs = 400) => {
-  return new Promise((resolve, reject) => {
-    const timeoutId = setTimeout(() => {
-      reject(new Error('Network request timed out'));
-    }, timeoutMs);
-
-    fetch(request)
-      .then((response) => {
-        clearTimeout(timeoutId);
-        resolve(response);
-      })
-      .catch((err) => {
-        clearTimeout(timeoutId);
-        reject(err);
-      });
-  });
-};
-
-// High-Performance Network-First / Timeout / Offline-Cache Strategy
+// Stale-While-Revalidate Strategy for Assets (JS, CSS, Images, Fonts)
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
 
@@ -64,18 +45,16 @@ self.addEventListener('fetch', (event) => {
   // Skip non-http schemes
   if (!url.protocol.startsWith('http')) return;
 
-  // Skip Firestore/Firebase authentication or database API requests to prevent breaking them
+  // Skip Firestore/Firebase authentication or database API requests
   if (url.pathname.includes('/api/layout') || url.href.includes('firestore.googleapis.com')) {
     return;
   }
 
-  // 1. INSTANT OFFLINE MODE: If navigator is completely offline, bypass network entirely (0ms load time)
+  // 1. INSTANT OFFLINE MODE: If navigator is offline, serve from CacheStorage directly
   if (navigator.onLine === false) {
     event.respondWith(
       caches.match(event.request).then((cachedResponse) => {
-        if (cachedResponse) {
-          return cachedResponse;
-        }
+        if (cachedResponse) return cachedResponse;
         if (event.request.headers.get('accept')?.includes('text/html')) {
           return caches.match('/');
         }
@@ -85,8 +64,8 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // 2. ONLINE MODE: Use Network-First with a 400ms Timeout Fallback for assets
-  const isAsset = 
+  // 2. STALE-WHILE-REVALIDATE for Static Assets (JS, CSS, Images, Fonts)
+  const isAsset =
     /\.(png|jpg|jpeg|gif|webp|svg|woff2|woff|ttf|css|js)/i.test(url.pathname) ||
     url.href.includes('raw.githubusercontent.com') ||
     url.href.includes('fonts.gstatic.com') ||
@@ -94,29 +73,25 @@ self.addEventListener('fetch', (event) => {
 
   if (isAsset) {
     event.respondWith(
-      fetchWithTimeout(event.request, 400)
-        .then((networkResponse) => {
-          if (networkResponse && networkResponse.status === 200) {
-            const responseToCache = networkResponse.clone();
-            caches.open(CACHE_NAME).then((cache) => {
-              cache.put(event.request, responseToCache);
-            });
-          }
-          return networkResponse;
-        })
-        .catch(() => {
-          // Network failed or timed out -> Fallback to Cache Storage instantly
-          console.log('[Service Worker] Network failed/timed out, serving from cache:', url.pathname);
-          return caches.match(event.request).then((cachedResponse) => {
-            if (cachedResponse) {
-              return cachedResponse;
-            }
-            return new Response('Resource not found in offline cache.', { status: 504 });
-          });
-        })
+      caches.open(CACHE_NAME).then((cache) => {
+        return cache.match(event.request).then((cachedResponse) => {
+          // Fire background fetch to revalidate & update cache
+          const fetchPromise = fetch(event.request)
+            .then((networkResponse) => {
+              if (networkResponse && networkResponse.status === 200) {
+                cache.put(event.request, networkResponse.clone());
+              }
+              return networkResponse;
+            })
+            .catch(() => cachedResponse);
+
+          // Return cached response instantly (0ms latency) if available, otherwise wait for network fetch
+          return cachedResponse || fetchPromise;
+        });
+      })
     );
   } else {
-    // For standard requests (non-assets), fetch normally
+    // For standard requests (HTML / Navigation), fetch network with offline fallback
     event.respondWith(
       fetch(event.request).catch(() => {
         if (event.request.headers.get('accept')?.includes('text/html')) {

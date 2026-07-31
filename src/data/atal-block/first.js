@@ -39,7 +39,7 @@ export const first = {
       directions: 'Located at the top-left area, next to the lift.',
       description: 'West side staircase access.',
       image: 'https://placehold.co/600x400?text=Stairs+1',
-      tags: ['stairs', 'utility'],
+      tags: ["stairs","utility"],
       clickable: true
     },
     {
@@ -56,7 +56,7 @@ export const first = {
       directions: 'Located next to the west stairs.',
       description: 'Elevator access to all floors.',
       image: 'https://placehold.co/600x400?text=Lift',
-      tags: ['lift', 'elevator', 'utility'],
+      tags: ["lift","elevator","utility"],
       clickable: true
     },
     {
@@ -73,7 +73,7 @@ export const first = {
       directions: 'On the upper side of the corridor, between the Lift and CBL01.',
       description: 'Nitte Education Trust office.',
       image: 'https://placehold.co/600x400?text=Nitte+Education+Trust',
-      tags: ['office', 'trust', 'nitte'],
+      tags: ["office","trust","nitte"],
       clickable: true
     },
     {
@@ -90,7 +90,7 @@ export const first = {
       directions: 'On the upper side of the corridor, next to Nitte Education Trust.',
       description: 'Computer Lab 01 (CBL01).',
       image: `${IMG_BASE_URL}/atal-block-images/first-floor/cbl01_edcnl104.png`,
-      tags: ['lab', 'cbl01', 'computer'],
+      tags: ["lab","cbl01","computer"],
       clickable: true
     },
     {
@@ -107,7 +107,7 @@ export const first = {
       directions: 'On the upper side of the corridor, next to EDC NL 104.',
       description: 'Advanced Computer Lab 01 (ACL01).',
       image: `${IMG_BASE_URL}/atal-block-images/first-floor/acl01_edcnl105.png`,
-      tags: ['lab', 'acl01', 'computer'],
+      tags: ["lab","acl01","computer"],
       clickable: true
     },
     {
@@ -124,7 +124,7 @@ export const first = {
       directions: 'Central staircase.',
       description: 'Central staircase access.',
       image: 'https://placehold.co/600x400?text=Stairs+2',
-      tags: ['stairs', 'utility'],
+      tags: ["stairs","utility"],
       clickable: true
     },
     {
@@ -141,7 +141,7 @@ export const first = {
       directions: 'On the upper side of the corridor, next to the central stairs.',
       description: 'Ladies washroom and restroom facilities.',
       image: 'https://placehold.co/600x400?text=Ladies+Room',
-      tags: ['toilet', 'ladies', 'washroom', 'utility'],
+      tags: ["toilet","ladies","washroom","utility"],
       clickable: true
     },
     {
@@ -155,10 +155,10 @@ export const first = {
       h: 150,
       width: 256,
       height: 150,
-      directions: 'On the upper side of the corridor, next to the Ladies Room.',
+      directions: 'On the upper side of the corridor, next to the Ladies Toilet.',
       description: 'Biotech Fabrication Lab (Fablab) for engineering biology experiments.',
       image: `${IMG_BASE_URL}/atal-block-images/first-floor/biotech_fablab.png`,
-      tags: ['lab', 'biotech', 'fablab'],
+      tags: ["lab","biotech","fablab"],
       clickable: true
     },
     {
@@ -175,7 +175,7 @@ export const first = {
       directions: 'At the far east end of the corridor, upper side.',
       description: 'Entrepreneurship Development Cell (EDC) and incubation facility.',
       image: `${IMG_BASE_URL}/atal-block-images/first-floor/edc_incubation.png`,
-      tags: ['office', 'edc', 'incubation', 'entrepreneurship'],
+      tags: ["office","edc","incubation","entrepreneurship"],
       clickable: true
     },
     {
@@ -192,7 +192,7 @@ export const first = {
       directions: 'On the lower side of the corridor, opposite Nitte Education Trust.',
       description: 'Meeting Room. Faculty: Shashank Shetty.',
       image: `${IMG_BASE_URL}/atal-block-images/first-floor/meeting_room_shashank.png`,
-      tags: ['office', 'meeting', 'shashank'],
+      tags: ["office","meeting","shashank"],
       clickable: true
     },
     {
@@ -208,8 +208,8 @@ export const first = {
       height: 114,
       directions: 'On the lower side of the corridor, opposite CBL01.',
       description: 'Lecture Hall ELH 104.',
-      image: `${IMG_BASE_URL}/atal-block-images/first-floor/elh104.png`,
-      tags: ['classroom', 'elh104'],
+      image: 'https://res.cloudinary.com/jjwuzizy/image/upload/v1785400996/ygad2dyvos8mmkgwuzao.jpg',
+      tags: ["classroom","elh104"],
       clickable: true
     },
     {
@@ -226,7 +226,7 @@ export const first = {
       directions: 'On the lower side of the corridor, opposite ACL01.',
       description: 'Centre of Excellence (CoE) Advanced Research facility.',
       image: `${IMG_BASE_URL}/atal-block-images/first-floor/center_of_excellence.png`,
-      tags: ['lab', 'coe', 'research'],
+      tags: ["lab","coe","research"],
       clickable: true
     },
     {
@@ -243,7 +243,7 @@ export const first = {
       directions: 'On the lower side of the corridor, next to the Centre of Excellence.',
       description: 'EDC Office NL 102.',
       image: `${IMG_BASE_URL}/atal-block-images/first-floor/edcnl102.png`,
-      tags: ['office', 'edc', 'nl102'],
+      tags: ["office","edc","nl102"],
       clickable: true
     },
     {
@@ -260,7 +260,7 @@ export const first = {
       directions: 'On the lower side of the corridor, next to EDC NL 102.',
       description: 'Lecture Hall ELH 102.',
       image: `${IMG_BASE_URL}/atal-block-images/first-floor/elh102.png`,
-      tags: ['classroom', 'elh102'],
+      tags: ["classroom","elh102"],
       clickable: true
     },
     {
@@ -277,7 +277,7 @@ export const first = {
       directions: 'On the lower side of the corridor, next to ELH 102.',
       description: 'EDC Office NL 101.',
       image: `${IMG_BASE_URL}/atal-block-images/first-floor/edcnl101.png`,
-      tags: ['office', 'edc', 'nl101'],
+      tags: ["office","edc","nl101"],
       clickable: true
     },
     {
@@ -294,7 +294,7 @@ export const first = {
       directions: 'On the lower side of the corridor, next to EDC NL 101.',
       description: 'Lecture Hall ELH 101.',
       image: `${IMG_BASE_URL}/atal-block-images/first-floor/elh101.png`,
-      tags: ['classroom', 'elh101'],
+      tags: ["classroom","elh101"],
       clickable: true
     }
   ],
@@ -303,13 +303,13 @@ export const first = {
       name: 'Dr. Shashank Shetty',
       department: 'Department of CSE / New Age Innovation Network',
       roomId: 'atal-first-meeting-shashank',
-      image: `${IMG_BASE_URL}/atal-block-images/first-floor/meeting_room_shashank.png`
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/atal-block-images/first-floor/meeting_room_shashank.png'
     },
     {
       name: 'Mr. Harikrishna Bhat',
       department: 'Office of International Affairs and Twinning Program',
       roomId: 'atal-first-edc-incubation',
-      image: `${IMG_BASE_URL}/atal-block-images/first-floor/edc_incubation.png`
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/atal-block-images/first-floor/edc_incubation.png'
     }
   ]
 }

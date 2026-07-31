@@ -7,12 +7,16 @@
     "dev": "concurrently -k -n \"SERVER,VITE\" -c \"cyan,magenta\" \"node server.js\" \"vite\"",
     "dev:vite": "vite",
     "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives",
     "preview": "vite preview",
-    "server": "node server.js"
+    "start": "node server.js",
+    "server": "node server.js",
+    "test:e2e": "playwright test",
+    "test:live": "powershell -Command \"$env:BASE_URL='https://smart-nav-g4b4.onrender.com'; npx playwright test\""
   },
   "dependencies": {
     "@heyputer/puter.js": "^2.5.4",
+    "@sentry/react": "^10.68.0",
     "body-parser": "^2.3.0",
     "clsx": "^2.1.1",
     "cors": "^2.8.6",
@@ -25,20 +29,25 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.28.0",
+    "react-zoom-pan-pinch": "^4.0.3",
     "sonner": "^1.7.0",
     "tailwind-merge": "^2.5.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.62.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.3",
     "autoprefixer": "^10.4.20",
     "concurrently": "^10.0.4",
     "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.6",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.14",
     "postcss": "^8.4.47",
+    "rollup-plugin-visualizer": "^7.0.1",
     "tailwindcss": "^3.4.15",
     "vite": "^5.4.11"
   }

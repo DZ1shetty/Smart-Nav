@@ -112,7 +112,7 @@ const preloadAllImages = async () => {
   console.log(`[Preloader] Found ${urls.length} unique images to cache.`)
 
   try {
-    const cache = await caches.open('smart-nav-offline-cache-v3')
+    const cache = await caches.open('smart-nav-offline-cache-v4')
 
     // STAGGERED LOADING: Loads one image every 150ms to prevent server network spikes
     let index = 0
