@@ -9,6 +9,7 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives",
     "preview": "vite preview",
+    "start": "node server.js",
     "server": "node server.js",
     "test:e2e": "playwright test",
     "test:live": "powershell -Command \"$env:BASE_URL='https://smart-nav-g4b4.onrender.com'; npx playwright test\""

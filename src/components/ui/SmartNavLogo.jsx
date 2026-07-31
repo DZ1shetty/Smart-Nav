@@ -1,11 +1,14 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 export const SmartNavLogo = ({ className = "", animated = true }) => {
+  const shouldReduceMotion = useReducedMotion();
+  const isAnimated = animated && !shouldReduceMotion;
+
   const drawTransition = { duration: 1.8, ease: [0.25, 1, 0.5, 1] };
   const fadeTransition = { delay: 1.4, duration: 1.2, ease: "easeOut" };
 
-  if (!animated) {
+  if (!isAnimated) {
     return (
       <svg 
         viewBox="0 0 100 100" 

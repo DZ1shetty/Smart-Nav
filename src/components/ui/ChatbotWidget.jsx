@@ -1007,8 +1007,8 @@ export default function ChatbotWidget() {
           {/* Subtle glow effect */}
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           
-          <div className="relative z-10 flex items-center justify-center text-cyan-400 w-5 h-5 md:w-6 md:h-6 flex-shrink-0">
-            <SmartNavLogo animated={false} className="w-5 h-5 md:w-6 md:h-6" />
+          <div className="relative z-10 flex items-center justify-center text-cyan-400 size-5 md:size-6 flex-shrink-0">
+            <SmartNavLogo animated={false} className="size-5 md:size-6" />
           </div>
           
           <span className="relative z-10 text-[10.5px] md:text-xs font-orbitron font-black uppercase tracking-wider text-white group-hover:text-cyan-300 transition-colors duration-300">
@@ -1101,7 +1101,7 @@ export default function ChatbotWidget() {
             >
               <div className="flex items-center gap-2.5">
                 <div className="text-blue-500 dark:text-cyan-400 flex items-center justify-center">
-                  <SmartNavLogo animated={false} className="w-5 h-5 md:w-6 md:h-6" />
+                  <SmartNavLogo animated={false} className="size-5 md:size-6" />
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-xs md:text-sm font-orbitron font-black tracking-wider text-[var(--text-main)] uppercase whitespace-nowrap">
@@ -1464,7 +1464,7 @@ export default function ChatbotWidget() {
                     >
                       {msg.sender === 'bot' && (
                         <div className="flex-shrink-0 flex items-start mt-1">
-                          <SmartNavLogo animated={false} className="w-6 h-6 md:w-7 md:h-7 text-cyan-400 drop-shadow-sm" />
+                          <SmartNavLogo animated={false} className="size-6 md:size-7 text-cyan-400 drop-shadow-sm" />
                         </div>
                       )}
 
