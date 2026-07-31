@@ -1,0 +1,532 @@
+{
+  "floorId": "smv_second",
+  "buildingName": "SMV-BLOCK",
+  "label": "2nd Floor",
+  "viewWidth": 1280,
+  "viewHeight": 1540,
+  "mainWidth": 960,
+  "bulgeWidth": 320,
+  "bulgeHeight": 500,
+  "boundaryVertices": [
+    {
+      "y": 1422,
+      "x": -944
+    },
+    {
+      "x": -940,
+      "y": 1183
+    },
+    {
+      "x": 151,
+      "y": 1184
+    },
+    {
+      "y": 903,
+      "x": 153
+    },
+    {
+      "y": 907,
+      "x": 633
+    },
+    {
+      "y": 1175,
+      "x": 632
+    },
+    {
+      "x": 1136,
+      "y": 1178
+    },
+    {
+      "x": 1150,
+      "y": 292
+    },
+    {
+      "y": 286,
+      "x": 255
+    },
+    {
+      "y": 73,
+      "x": 256
+    },
+    {
+      "x": 1800,
+      "y": 83
+    },
+    {
+      "y": 1436,
+      "x": 1798
+    }
+  ],
+  "rooms": [
+    {
+      "id": "smv-second-gents-toilet",
+      "name": "GENTS WASHROOM",
+      "label": "GENTS WASHROOM",
+      "type": "utility",
+      "x": 1329,
+      "y": 108,
+      "w": 223,
+      "h": 84,
+      "width": 223,
+      "height": 84,
+      "directions": "At the top-left end of the horizontal corridor, second floor.",
+      "description": "Gents washroom facilities on the second floor.",
+      "image": "https://placehold.co/600x400?text=Gents+Restroom",
+      "tags": [
+        "washroom",
+        "toilet",
+        "gents",
+        "utility"
+      ],
+      "clickable": false,
+      "linkToFloor": null
+    },
+    {
+      "id": "smv-second-nc21",
+      "name": "LECTURE ROOM NC21",
+      "label": "LECTURE ROOM NC21",
+      "type": "classroom",
+      "x": 1610,
+      "y": 261,
+      "w": 170,
+      "h": 80,
+      "width": 170,
+      "height": 80,
+      "directions": "Top horizontal corridor, second room from left.",
+      "description": "Lecture Room NC21 for Electrical & Electronics Engineering.",
+      "image": "/nc21_door.png",
+      "tags": [
+        "classroom",
+        "nc21",
+        "eee"
+      ],
+      "clickable": true,
+      "linkToFloor": null
+    },
+    {
+      "id": "smv-second-nc22",
+      "name": "LECTURE ROOM NC22",
+      "label": "LECTURE ROOM NC22",
+      "type": "classroom",
+      "x": 1578,
+      "y": 427,
+      "w": 207,
+      "h": 78,
+      "width": 207,
+      "height": 78,
+      "directions": "Top horizontal corridor, third room from left.",
+      "description": "Lecture Room NC22 for Electrical & Electronics Engineering.",
+      "image": "/nc22_door.png",
+      "tags": [
+        "classroom",
+        "nc22",
+        "eee"
+      ],
+      "clickable": true,
+      "linkToFloor": null
+    },
+    {
+      "id": "smv-second-sr21",
+      "name": "STAFF ROOM 21 (SR21)",
+      "label": "STAFF ROOM 21 (SR21)",
+      "type": "staffroom",
+      "x": 1161,
+      "y": 665,
+      "w": 204,
+      "h": 82,
+      "width": 204,
+      "height": 82,
+      "directions": "Top horizontal corridor, fourth room from left.",
+      "description": "Faculty Staff Room SR21 for EEE department professors.",
+      "image": "/sr21_door.png",
+      "tags": [
+        "staffroom",
+        "sr21",
+        "faculty",
+        "eee"
+      ],
+      "clickable": true,
+      "linkToFloor": null
+    },
+    {
+      "id": "smv-second-sr22",
+      "name": "STAFF ROOM 22 (SR22)",
+      "label": "STAFF ROOM 22 (SR22)",
+      "type": "staffroom",
+      "x": 1579,
+      "y": 958,
+      "w": 206,
+      "h": 89,
+      "width": 206,
+      "height": 89,
+      "directions": "Top horizontal corridor, fifth room from left.",
+      "description": "Faculty Staff Room SR22 for EEE department professors.",
+      "image": "/sr22_door.png",
+      "tags": [
+        "staffroom",
+        "sr22",
+        "faculty",
+        "eee"
+      ],
+      "clickable": true,
+      "linkToFloor": null
+    },
+    {
+      "id": "smv-second-nc23",
+      "name": "LECTURE ROOM NC23",
+      "label": "LECTURE ROOM NC23",
+      "type": "classroom",
+      "x": 1576,
+      "y": 1312,
+      "w": 200,
+      "h": 80,
+      "width": 200,
+      "height": 80,
+      "directions": "Top horizontal corridor, far right end.",
+      "description": "Lecture Room NC23 for Electrical & Electronics Engineering.",
+      "image": "/nc23_door.png",
+      "tags": [
+        "classroom",
+        "nc23",
+        "eee"
+      ],
+      "clickable": true,
+      "linkToFloor": null
+    },
+    {
+      "id": "smv-second-fire-exit-inner",
+      "name": "FIRE EXIT",
+      "label": "FIRE EXIT",
+      "type": "utility",
+      "x": -925,
+      "y": 1226,
+      "w": 125,
+      "h": 167,
+      "width": 125,
+      "height": 167,
+      "directions": "Located at the far left end of the inner corridor.",
+      "description": "Emergency fire exit at the west end of the second floor.",
+      "image": "/fire_exit_second_door.png",
+      "tags": [
+        "fire exit",
+        "exit",
+        "utility"
+      ],
+      "clickable": false,
+      "linkToFloor": null
+    },
+    {
+      "id": "smv-second-ladies-toilet",
+      "name": "LADIES & HANDICAPPED WASHROOM",
+      "label": "LADIES & HANDICAPPED WASHROOM",
+      "type": "utility",
+      "x": 293,
+      "y": 89,
+      "w": 267,
+      "h": 101,
+      "width": 267,
+      "height": 101,
+      "directions": "Located on the top side of the horizontal wing, left end.",
+      "description": "Restroom facilities for women and differently-abled individuals.",
+      "image": "https://placehold.co/600x400?text=Ladies+Restroom",
+      "tags": [
+        "washroom",
+        "toilet",
+        "ladies",
+        "handicapped",
+        "utility"
+      ],
+      "clickable": false,
+      "linkToFloor": null
+    },
+    {
+      "id": "smv-second-hod-eee",
+      "name": "HOD EEE OFFICE",
+      "label": "HOD EEE OFFICE",
+      "type": "hod",
+      "x": 1163,
+      "y": 510,
+      "w": 155,
+      "h": 92,
+      "width": 155,
+      "height": 92,
+      "directions": "Located on the inner side of the vertical wing, top area.",
+      "description": "Office of the Head of Department — Prof. & Head: Dr. Suryanarayana K. (M.Tech, Ph.D), Electrical & Electronics Engineering.",
+      "image": "/hod_eee_door.png",
+      "tags": [
+        "hod",
+        "office",
+        "head",
+        "eee"
+      ],
+      "clickable": true,
+      "linkToFloor": null
+    },
+    {
+      "id": "smv-second-sr23",
+      "name": "STAFF ROOM 23 (SR23)",
+      "label": "STAFF ROOM 23 (SR23)",
+      "type": "staffroom",
+      "x": 1562,
+      "y": 1109,
+      "w": 220,
+      "h": 83,
+      "width": 220,
+      "height": 83,
+      "directions": "Located on the inner side of the vertical wing, below HOD EEE.",
+      "description": "Faculty Staff Room SR23 for EEE department professors.",
+      "image": "/sr23_door.png",
+      "tags": [
+        "staffroom",
+        "sr23",
+        "faculty",
+        "eee"
+      ],
+      "clickable": true,
+      "linkToFloor": null
+    },
+    {
+      "id": "smv-second-nc27",
+      "name": "LECTURE ROOM NC27",
+      "label": "LECTURE ROOM NC27",
+      "type": "classroom",
+      "x": 1156,
+      "y": 799,
+      "w": 194,
+      "h": 68,
+      "width": 194,
+      "height": 68,
+      "directions": "Located on the inner side of the vertical wing, below SR23.",
+      "description": "PG Lecture Hall 04 (NC27) — Post-Graduate lecture hall for Electrical & Electronics Engineering.",
+      "image": "/eee_dept_board.png",
+      "tags": [
+        "classroom",
+        "nc27",
+        "eee"
+      ],
+      "clickable": true,
+      "linkToFloor": null
+    },
+    {
+      "id": "smv-second-lift-lobby",
+      "name": "LIFT (LOBBY)",
+      "label": "LIFT (LOBBY)",
+      "type": "utility",
+      "x": 1152,
+      "y": 923,
+      "w": 221,
+      "h": 45,
+      "width": 221,
+      "height": 45,
+      "directions": "Located near the lobby lift, inner vertical wing.",
+      "description": "Lobby elevator on the second floor.",
+      "image": "https://placehold.co/600x400?text=Lobby+Elevator",
+      "tags": [
+        "lift",
+        "elevator",
+        "utility"
+      ],
+      "clickable": false,
+      "linkToFloor": null
+    },
+    {
+      "id": "smv-second-lift-vertical",
+      "name": "LIFT",
+      "label": "LIFT",
+      "type": "utility",
+      "x": 500,
+      "y": 931,
+      "w": 120,
+      "h": 103,
+      "width": 120,
+      "height": 103,
+      "directions": "Center vertical corridor, elevator.",
+      "description": "Elevator serving the second floor.",
+      "image": "https://placehold.co/600x400?text=Elevator",
+      "tags": [
+        "lift",
+        "elevator",
+        "utility"
+      ],
+      "clickable": false,
+      "linkToFloor": null
+    },
+    {
+      "id": "smv-second-stairs-1",
+      "name": "STAIRS-1",
+      "label": "STAIRS-1",
+      "type": "utility",
+      "x": 169,
+      "y": 942,
+      "w": 319,
+      "h": 76,
+      "width": 319,
+      "height": 76,
+      "directions": "Center vertical corridor, staircase.",
+      "description": "Staircase access.",
+      "image": "https://placehold.co/600x400?text=Stairs+1",
+      "tags": [
+        "stairs",
+        "staircase",
+        "utility"
+      ],
+      "clickable": false,
+      "linkToFloor": null
+    },
+    {
+      "id": "smv-second-nc24",
+      "name": "LECTURE ROOM NC24",
+      "label": "LECTURE ROOM NC24",
+      "type": "classroom",
+      "x": -467,
+      "y": 1300,
+      "w": 183,
+      "h": 99,
+      "width": 183,
+      "height": 99,
+      "directions": "Located on the right vertical wing, upper section.",
+      "description": "Lecture Room NC24 for Electrical & Electronics Engineering.",
+      "image": "/nc24_door.png",
+      "tags": [
+        "classroom",
+        "nc24",
+        "eee"
+      ],
+      "clickable": true,
+      "linkToFloor": null
+    },
+    {
+      "id": "smv-second-sr24",
+      "name": "STAFF ROOM 24 (SR24)",
+      "label": "STAFF ROOM 24 (SR24)",
+      "type": "staffroom",
+      "x": -143,
+      "y": 1314,
+      "w": 204,
+      "h": 94,
+      "width": 204,
+      "height": 94,
+      "directions": "Located on the right vertical wing, below NC24.",
+      "description": "Faculty Staff Room SR24 for EEE department professors.",
+      "image": "/sr24_door.png",
+      "tags": [
+        "staffroom",
+        "sr24",
+        "faculty",
+        "eee"
+      ],
+      "clickable": true,
+      "linkToFloor": null
+    },
+    {
+      "id": "smv-second-nc25",
+      "name": "LECTURE ROOM NC25",
+      "label": "LECTURE ROOM NC25",
+      "type": "classroom",
+      "x": -744,
+      "y": 1297,
+      "w": 182,
+      "h": 92,
+      "width": 182,
+      "height": 92,
+      "directions": "Located on the right vertical wing, middle section.",
+      "description": "Lecture Room NC25 for Electrical & Electronics Engineering.",
+      "image": "/nc25_door.png",
+      "tags": [
+        "classroom",
+        "nc25",
+        "eee"
+      ],
+      "clickable": true,
+      "linkToFloor": null
+    },
+    {
+      "id": "smv-second-nc26",
+      "name": "LECTURE ROOM NC26",
+      "label": "LECTURE ROOM NC26",
+      "type": "classroom",
+      "x": 252,
+      "y": 1312,
+      "w": 182,
+      "h": 92,
+      "width": 182,
+      "height": 92,
+      "directions": "Located on the right vertical wing, lower section.",
+      "description": "Lecture Room NC26 for Electrical & Electronics Engineering.",
+      "image": "/nc26_door.png",
+      "tags": [
+        "classroom",
+        "nc26",
+        "eee"
+      ],
+      "clickable": true,
+      "linkToFloor": null
+    },
+    {
+      "id": "smv-second-fire-exit-bottom",
+      "name": "FIRE EXIT",
+      "label": "FIRE EXIT",
+      "type": "utility",
+      "x": 1161,
+      "y": 357,
+      "w": 150,
+      "h": 90,
+      "width": 150,
+      "height": 90,
+      "directions": "Located at the bottom of the right vertical wing.",
+      "description": "Emergency fire exit at the base of the vertical wing.",
+      "image": "/fire_exit_second_door.png",
+      "tags": [
+        "fire exit",
+        "exit",
+        "utility"
+      ],
+      "clickable": false,
+      "linkToFloor": null
+    },
+    {
+      "id": "smv-second-vertical-corridor",
+      "name": "VERTICAL CORRIDOR",
+      "label": "VERTICAL CORRIDOR",
+      "type": "corridor",
+      "x": 100,
+      "y": 100,
+      "w": 120,
+      "h": 1100,
+      "width": 120,
+      "height": 1100,
+      "directions": "Main corridor running north-south along the vertical wing.",
+      "description": "North-south vertical wing corridor.",
+      "image": "https://placehold.co/600x400?text=Vertical+Corridor",
+      "tags": [
+        "corridor"
+      ],
+      "clickable": false,
+      "linkToFloor": null
+    },
+    {
+      "id": "smv-second-horizontal-corridor",
+      "name": "HORIZONTAL CORRIDOR",
+      "label": "HORIZONTAL CORRIDOR",
+      "type": "corridor",
+      "x": -800,
+      "y": 1000,
+      "w": 2400,
+      "h": 100,
+      "width": 2400,
+      "height": 100,
+      "directions": "Main corridor running east-west along the horizontal wing.",
+      "description": "East-west horizontal wing corridor.",
+      "image": "https://placehold.co/600x400?text=Horizontal+Corridor",
+      "tags": [
+        "corridor"
+      ],
+      "clickable": false,
+      "linkToFloor": null
+    }
+  ],
+  "faculty": [],
+  "lastEdited": "2026-07-26T17:15:51.174Z",
+  "lastEditedBy": "admin",
+  "locked": true
+}

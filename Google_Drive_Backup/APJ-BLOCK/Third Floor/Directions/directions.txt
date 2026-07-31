@@ -29,7 +29,7 @@ iii. LIFT: Turn left and walk north; LH-309 is on your left, a few steps up from
 7. LH-310 (ID: lh-310)
    Directions: i. Stairs-1: Turn right; LH-310 is immediately on your right just outside the Stairs-1 exit.
 ii. Stairs-2: Walk north and then turn right at the mid-floor corridor; LH-310 is on your right.
-iii. LIFT: Turn right; LH-310 is directly to your right, adjacent to the Lift on the east side.
+iii. LIFT: Turn right; LH-310 is directly to your right, adjacent to the Lift on the east side
 
 8. WASHROOM (ID: washroom-3)
    Directions: Left side middle.

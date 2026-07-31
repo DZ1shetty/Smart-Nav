@@ -2,7 +2,7 @@
   "buildingName": "APJ-BLOCK",
   "floorLabel": "Third Floor",
   "floorId": "third",
-  "lastUpdated": "2026-07-25T14:03:51.871Z",
+  "lastUpdated": "2026-07-31T11:26:10.208Z",
   "directions": {
     "lh-311": "i. Stairs-1: Turn left and walk to the top of the corridor; LH-311 is on your left, LH-312 is on the opposite side.\nii. Stairs-2: Walk straight north all the way to the top; LH-311 is on your left at the far end.\niii. LIFT: Turn left and walk north to the top of the corridor; LH-311 is on your left.",
     "staff-room-top": "Top center area.",
@@ -10,7 +10,7 @@
     "staff-room-mid-1": "Middle section center.",
     "staff-room-mid-2": "Middle section center.",
     "lh-309": "i. Stairs-1: Turn left and walk north a short distance; LH-309 is on your left, just below LH-311.\nii. Stairs-2: Walk straight north; LH-309 is on your left in the upper-middle section of the corridor.\niii. LIFT: Turn left and walk north; LH-309 is on your left, a few steps up from the Lift.",
-    "lh-310": "i. Stairs-1: Turn right; LH-310 is immediately on your right just outside the Stairs-1 exit.\nii. Stairs-2: Walk north and then turn right at the mid-floor corridor; LH-310 is on your right.\niii. LIFT: Turn right; LH-310 is directly to your right, adjacent to the Lift on the east side.",
+    "lh-310": "i. Stairs-1: Turn right; LH-310 is immediately on your right just outside the Stairs-1 exit.\nii. Stairs-2: Walk north and then turn right at the mid-floor corridor; LH-310 is on your right.\niii. LIFT: Turn right; LH-310 is directly to your right, adjacent to the Lift on the east side",
     "washroom-3": "Left side middle.",
     "stairs-top-3": "Center area.",
     "ladies-common-room": "i. Stairs-1: Turn left; the Ladies Room is on your left, directly below the Washroom near the Stairs-1 exit.\nii. Stairs-2: Walk north; the Ladies Room is on your left just above the mid-floor level, below the Washroom.\niii. LIFT: Turn left; the Ladies Room is on your left, directly beside the Lift on the west side.",
@@ -60,7 +60,7 @@
     {
       "roomId": "lh-310",
       "roomName": "LH-310",
-      "directions": "i. Stairs-1: Turn right; LH-310 is immediately on your right just outside the Stairs-1 exit.\nii. Stairs-2: Walk north and then turn right at the mid-floor corridor; LH-310 is on your right.\niii. LIFT: Turn right; LH-310 is directly to your right, adjacent to the Lift on the east side."
+      "directions": "i. Stairs-1: Turn right; LH-310 is immediately on your right just outside the Stairs-1 exit.\nii. Stairs-2: Walk north and then turn right at the mid-floor corridor; LH-310 is on your right.\niii. LIFT: Turn right; LH-310 is directly to your right, adjacent to the Lift on the east side"
     },
     {
       "roomId": "washroom-3",

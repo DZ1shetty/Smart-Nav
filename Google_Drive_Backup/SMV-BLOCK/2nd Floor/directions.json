@@ -1,8 +1,8 @@
 {
   "buildingName": "SMV-BLOCK",
   "floorLabel": "2nd Floor",
-  "floorId": "svm_second",
-  "lastUpdated": "2026-07-25T14:03:43.940Z",
+  "floorId": "smv_second",
+  "lastUpdated": "2026-07-26T17:15:52.051Z",
   "directions": {
     "smv-second-gents-toilet": "At the top-left end of the horizontal corridor, second floor.",
     "smv-second-nc21": "Top horizontal corridor, second room from left.",
