@@ -12,17 +12,28 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Load Service Account
-const serviceAccount = JSON.parse(fs.readFileSync('./serviceAccountKey.json', 'utf8'));
+let db = null;
+let layoutsRef = null;
+let bookmarksRef = null;
+let activityLogsRef = null;
 
-// 1. Initialize Firebase Admin
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
-
-const db = admin.firestore();
-const layoutsRef = db.collection('layouts');
-const bookmarksRef = db.collection('bookmarks');
-const activityLogsRef = db.collection('activityLogs');
+if (fs.existsSync('./serviceAccountKey.json')) {
+  try {
+    const serviceAccount = JSON.parse(fs.readFileSync('./serviceAccountKey.json', 'utf8'));
+    admin.initializeApp({
+      credential: admin.credential.cert(serviceAccount)
+    });
+    db = admin.firestore();
+    layoutsRef = db.collection('layouts');
+    bookmarksRef = db.collection('bookmarks');
+    activityLogsRef = db.collection('activityLogs');
+    console.log('✅ Firebase Admin initialized successfully.');
+  } catch (err) {
+    console.error('⚠️ Error reading serviceAccountKey.json:', err.message);
+  }
+} else {
+  console.warn('⚠️ serviceAccountKey.json not found. Backend running without Firebase Admin SDK.');
+}
 
 const app = express();
 const PORT = 3001;
@@ -50,6 +61,9 @@ function getFirestoreDocName(floorId) {
 // 2. READ Route
 app.get('/api/layout/:floorId', async (req, res) => {
   try {
+    if (!layoutsRef) {
+      return res.json({ rooms: [], locked: false });
+    }
     const { floorId } = req.params;
     const docName = getFirestoreDocName(floorId);
     const doc = await layoutsRef.doc(docName).get();
@@ -246,13 +260,15 @@ function syncGoogleDriveBackup(floorId, data) {
     fs.writeFileSync(path.join(directionsFolder, 'directions.txt'), txtContent);
 
     // 3. Update directions collection in Firestore
-    const docName = getFirestoreDocName(floorId);
-    db.collection('directions').doc(docName).set({
-      floorId,
-      buildingName,
-      directions: directionsObj,
-      lastUpdated: new Date().toISOString()
-    }, { merge: true }).catch(err => console.error('Failed to sync directions doc in Firestore:', err));
+    if (db) {
+      const docName = getFirestoreDocName(floorId);
+      db.collection('directions').doc(docName).set({
+        floorId,
+        buildingName,
+        directions: directionsObj,
+        lastUpdated: new Date().toISOString()
+      }, { merge: true }).catch(err => console.error('Failed to sync directions doc in Firestore:', err));
+    }
 
     console.log(`[Backup Sync] Updated Google_Drive_Backup for ${buildingName} / ${floorLabel}`);
   } catch (err) {
@@ -301,7 +317,9 @@ app.post('/api/layout/:floorId', async (req, res) => {
     };
     
     // Save to Firestore
-    await layoutsRef.doc(docName).set(layoutData);
+    if (layoutsRef) {
+      await layoutsRef.doc(docName).set(layoutData);
+    }
     
     // Sync to local file
     writeStaticFile(floorId, layoutData);
@@ -319,6 +337,9 @@ app.post('/api/layout/:floorId', async (req, res) => {
 // 4. UNLOCK Route
 app.patch('/api/layout/:floorId/unlock', async (req, res) => {
   try {
+    if (!layoutsRef) {
+      return res.json({ success: true });
+    }
     const { floorId } = req.params;
     const docName = getFirestoreDocName(floorId);
     await layoutsRef.doc(docName).update({ locked: false });
@@ -332,6 +353,9 @@ app.patch('/api/layout/:floorId/unlock', async (req, res) => {
 // 5. Bookmarks - GET User Bookmarks
 app.get('/api/bookmarks/:username', async (req, res) => {
   try {
+    if (!bookmarksRef) {
+      return res.json([]);
+    }
     const { username } = req.params;
     const doc = await bookmarksRef.doc(username.toLowerCase()).get();
     if (doc.exists) {
@@ -348,6 +372,9 @@ app.get('/api/bookmarks/:username', async (req, res) => {
 // 6. Bookmarks - Toggle User Bookmark (Add/Remove)
 app.post('/api/bookmarks/:username/toggle', async (req, res) => {
   try {
+    if (!bookmarksRef || !db) {
+      return res.json({ success: true, isBookmarked: false });
+    }
     const { username } = req.params;
     const { roomId } = req.body;
     if (!roomId) {
@@ -385,6 +412,9 @@ app.post('/api/bookmarks/:username/toggle', async (req, res) => {
 // 7. Activity Logs - Save search/navigation actions
 app.post('/api/activity-log', async (req, res) => {
   try {
+    if (!activityLogsRef) {
+      return res.json({ success: true });
+    }
     const { type, query, roomId, floorKey, username, metadata } = req.body;
     
     const logData = {

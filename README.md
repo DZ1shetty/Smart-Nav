@@ -1,6 +1,6 @@
 ﻿# 🧭 Smart Nav — Campus Navigation System
 
-> An intelligent, real-time indoor navigation system for university campuses, built with React + Firebase Firestore.
+> A intelligent, real-time indoor navigation system for university campuses, built with React + Firebase Firestore.
 
 [![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)](https://react.dev)
 [![Firebase](https://img.shields.io/badge/Firebase-10-FFCA28?logo=firebase)](https://firebase.google.com)
