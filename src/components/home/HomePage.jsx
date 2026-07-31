@@ -314,6 +314,10 @@ export default function HomePage() {
   const { buildingId } = useParams()
   const navigate = useNavigate()
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+  }, [buildingId])
+
   const selectedBuilding = getBuildingKeyFromSlug(buildingId)
   const [buildingData, setBuildingData] = useState(null)
   const [isEditing, setIsEditing] = useState(false)
