@@ -27,6 +27,7 @@ import { floorIdToUrl } from '../../utils/slugHelpers'
 import BuildingBentoGrid from '../ui/BuildingBentoGrid'
 import BuildingMonolithPreview from '../ui/BuildingMonolithPreview'
 import { DiaTextReveal } from '../ui/dia-text-reveal'
+import { SmartNavLogo } from '../ui/SmartNavLogo'
 
 const buildingSlugMap = {
   'apj': 'apj',
@@ -423,18 +424,21 @@ export default function HomePage() {
       {/* HEADER SECTION */}
       <header className="relative z-30 flex flex-col items-center gap-1.5 mb-1 md:mb-1.5 flex-shrink-0 w-full max-w-4xl pt-0.5 px-2 md:px-0">
         <div className="w-full relative flex justify-center items-center min-h-[32px]">
-          <motion.h1
+          <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-lg md:text-xl lg:text-2xl font-orbitron font-black tracking-tighter leading-none text-center"
+            className="flex items-center gap-3"
           >
-            SMART{' '}
-            <DiaTextReveal 
-              text="NAVIGATION" 
-              textColor="#14b8a6"
-              className="text-transparent"
-            />
-          </motion.h1>
+            <SmartNavLogo className="w-8 h-8 md:w-10 md:h-10 text-teal-400" />
+            <h1 className="text-lg md:text-xl lg:text-2xl font-orbitron font-black tracking-tighter leading-none text-center m-0">
+              SMART{' '}
+              <DiaTextReveal 
+                text="NAVIGATION" 
+                textColor="#14b8a6"
+                className="text-transparent"
+              />
+            </h1>
+          </motion.div>
 
           {/* THEME TOGGLE (Local to HomePage) */}
           <div className="absolute right-0 flex items-center gap-2">
