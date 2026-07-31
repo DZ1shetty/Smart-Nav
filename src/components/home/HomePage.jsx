@@ -26,6 +26,7 @@ import ThemeToggle from '../ui/ThemeToggle'
 import { floorIdToUrl } from '../../utils/slugHelpers'
 import BuildingBentoGrid from '../ui/BuildingBentoGrid'
 import BuildingMonolithPreview from '../ui/BuildingMonolithPreview'
+import { DiaTextReveal } from '../ui/dia-text-reveal'
 
 const buildingSlugMap = {
   'apj': 'apj',
@@ -424,9 +425,11 @@ export default function HomePage() {
             className="text-lg md:text-xl lg:text-2xl font-orbitron font-black tracking-tighter leading-none text-center"
           >
             SMART{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-teal-400 to-emerald-500">
-              NAVIGATION
-            </span>
+            <DiaTextReveal 
+              text="NAVIGATION" 
+              textColor="#14b8a6"
+              className="text-transparent"
+            />
           </motion.h1>
 
           {/* THEME TOGGLE (Local to HomePage) */}
