@@ -388,4 +388,4 @@ Please help me:
 
 ## 📄 License
 
-This project is for academic/educational purposes. All rights reserved 2025.
+This project is for academic/educational purposes. All rights reserved 2025
