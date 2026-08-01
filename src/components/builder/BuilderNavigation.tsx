@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
 import { useBuilderStore } from '../../store/useBuilderStore';
 import { db } from '../../firebase';
-import { collection, doc, setDoc, addDoc, deleteDoc } from 'firebase/firestore';
-import { Save, Share, ChevronDown, Check, Settings, X, AlertCircle, Plus } from 'lucide-react';
-import { InteractiveHoverButton } from '../ui/interactive-hover-button';
+import { collection, doc, setDoc, addDoc } from 'firebase/firestore';
+import { Save, Check, Settings, X, Plus } from 'lucide-react';
 import clsx from 'clsx';
 import { toast } from 'sonner';
 
 export const BuilderNavigation = () => {
   const { buildingMeta, currentFloorIndex, switchFloor, floorsData, rooms, updateBuildingMeta, draftId, setDraftId, setUnsavedChanges, unsavedChanges } = useBuilderStore();
-  const [isPublishing, setIsPublishing] = useState(false);
-  const [publishSuccess, setPublishSuccess] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
   
@@ -28,47 +25,6 @@ export const BuilderNavigation = () => {
   }, [isSettingsOpen, buildingMeta]);
 
   if (!buildingMeta) return null;
-
-  const handlePublish = async () => {
-    setIsPublishing(true);
-    setPublishSuccess(false);
-
-    try {
-      // Ensure the current floor's rooms are saved into floorsData before publishing
-      const finalFloorsData = { ...floorsData, [currentFloorIndex]: rooms };
-
-      const buildingDoc = {
-        name: buildingMeta.name,
-        slug: buildingMeta.slug,
-        description: buildingMeta.overview,
-        floorCount: buildingMeta.floorCount,
-        theme: buildingMeta.theme,
-        floors: finalFloorsData,
-        updatedAt: new Date().toISOString()
-      };
-
-      await setDoc(doc(db, 'buildings', buildingMeta.slug), buildingDoc);
-      
-      // Delete draft after successful publish
-      if (draftId) {
-        try {
-          await deleteDoc(doc(db, 'builder_drafts', draftId));
-          setDraftId(null);
-        } catch (e) {
-          console.error("Failed to delete draft", e);
-        }
-      }
-      
-      setUnsavedChanges(false);
-      setPublishSuccess(true);
-      setTimeout(() => setPublishSuccess(false), 3000);
-    } catch (error) {
-      console.error('Error publishing building:', error);
-      toast.error('Failed to publish building. Check console for details.');
-    } finally {
-      setIsPublishing(false);
-    }
-  };
 
   const handleSaveDraft = async () => {
     if (isSaving || !buildingMeta) return;
@@ -111,6 +67,10 @@ export const BuilderNavigation = () => {
 
       setSaveSuccess(true);
       setUnsavedChanges(false);
+      // Persist slug so CustomBuildingPage "Continue Editing" can auto-select this draft
+      if (buildingMeta?.slug) {
+        localStorage.setItem('smart_nav_open_draft_slug', buildingMeta.slug);
+      }
       setTimeout(() => setSaveSuccess(false), 3000);
     } catch (error) {
       console.error('Error saving draft:', error);
@@ -196,7 +156,7 @@ export const BuilderNavigation = () => {
       <button
         onClick={handleSaveDraft}
         disabled={isSaving}
-        title="Save as draft without updating the live building"
+        title="Save as draft"
         className={clsx(
           "flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-all border border-zinc-200 dark:border-zinc-700",
           saveSuccess 
@@ -216,27 +176,6 @@ export const BuilderNavigation = () => {
         </span>
       </button>
 
-      {/* Publish Action */}
-      <button
-        onClick={handlePublish}
-        disabled={isPublishing}
-        title="Publish changes to the live building for all users"
-        className={clsx(
-          "flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-all",
-          publishSuccess 
-            ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
-            : "bg-blue-600 hover:bg-blue-700 text-white shadow-sm disabled:opacity-70"
-        )}
-      >
-        {isPublishing ? (
-          <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-        ) : publishSuccess ? (
-          <Check size={16} />
-        ) : (
-          <Share size={16} />
-        )}
-        {isPublishing ? 'Publishing...' : publishSuccess ? 'Published!' : 'Publish'}
-      </button>
       </div>
     </div>
 

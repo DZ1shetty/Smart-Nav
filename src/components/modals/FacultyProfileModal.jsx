@@ -58,46 +58,42 @@ export default function FacultyProfileModal({ faculty, onClose }) {
           className="relative w-full max-w-2xl bg-white dark:bg-[#0a0a0a] border border-black/10 dark:border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row"
         >
           {/* Left Side: Portrait Area */}
-          <div className="relative w-full md:w-[40%] p-8 flex flex-col items-center justify-center bg-black/[0.02] dark:bg-white/[0.02] border-b md:border-b-0 md:border-r border-black/5 dark:border-white/5">
-            <div
-              onClick={() => {
-                if (faculty.image) setIsFullScreen(true)
-              }}
-              className="relative w-40 h-40 rounded-2xl overflow-hidden border border-black/10 dark:border-white/10 p-1 bg-white dark:bg-black shadow-xl group cursor-zoom-in"
-            >
-              <div className="w-full h-full rounded-xl overflow-hidden bg-black/[0.05] dark:bg-white/[0.05] relative">
-                {faculty.image ? (
-                  <>
-                    <img
-                      src={resolveImageUrl(faculty.image)}
-                      alt={faculty.name}
-                      className="w-full h-full object-contain brightness-95"
-                      onError={(e) => {
-                        const currentSrc = e.target.src;
-                        if (currentSrc.includes('raw.githubusercontent.com')) {
-                          const parts = currentSrc.split('/public-backup');
-                          if (parts.length > 1) {
-                            e.target.src = parts[1];
-                            return;
-                          }
-                        }
-                        e.target.src = 'https://placehold.co/600x400?text=Image+Not+Found';
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-black/30 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
-                      <div className="px-2.5 py-1 bg-black/80 text-white text-[10px] font-mono rounded-lg border border-white/20 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
-                        <Maximize2 className="w-3 h-3 text-blue-400" />
-                        <span>Expand</span>
-                      </div>
-                    </div>
-                  </>
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center">
-                    <User className="w-16 h-16 text-black/10 dark:text-white/5" />
+          <div
+            onClick={() => {
+              if (faculty.image) setIsFullScreen(true)
+            }}
+            className="relative w-full md:w-[40%] min-h-[300px] md:min-h-0 flex flex-col items-center justify-center bg-black/[0.03] dark:bg-white/[0.02] border-b md:border-b-0 md:border-r border-black/5 dark:border-white/5 overflow-hidden group cursor-zoom-in"
+          >
+            {faculty.image ? (
+              <>
+                <img
+                  src={resolveImageUrl(faculty.image)}
+                  alt={faculty.name}
+                  className="w-full h-full md:object-contain object-cover brightness-95"
+                  onError={(e) => {
+                    const currentSrc = e.target.src;
+                    if (currentSrc.includes('raw.githubusercontent.com')) {
+                      const parts = currentSrc.split('/public-backup');
+                      if (parts.length > 1) {
+                        e.target.src = parts[1];
+                        return;
+                      }
+                    }
+                    e.target.src = 'https://placehold.co/600x400?text=Image+Not+Found';
+                  }}
+                />
+                <div className="absolute inset-0 bg-black/30 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                  <div className="px-2.5 py-1 bg-black/80 text-white text-[10px] font-mono rounded-lg border border-white/20 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
+                    <Maximize2 className="w-3 h-3 text-blue-400" />
+                    <span>Expand</span>
                   </div>
-                )}
+                </div>
+              </>
+            ) : (
+              <div className="w-full h-full flex items-center justify-center">
+                <User className="w-16 h-16 text-black/10 dark:text-white/5" />
               </div>
-            </div>
+            )}
           </div>
 
         {/* Right Side: Information Area */}

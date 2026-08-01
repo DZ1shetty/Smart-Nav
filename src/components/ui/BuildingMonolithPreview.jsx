@@ -332,31 +332,46 @@ export default function BuildingMonolithPreview({
               const levelCode = getLevelCode(floor.id, idx, floors.length)
               const isHovered = activeFloorHover === floor.id
 
+              const originalIndex = floors.length - 1 - idx;
+              const isStandardBuilding = ['apj', 'cv-raman', 'ramanujan', 'smv', 'atal', 'rajraman'].includes(buildingKey);
+              const floorRooms = buildingData?.floors && buildingData.floors[originalIndex] ? buildingData.floors[originalIndex] : [];
+              const hasData = isStandardBuilding || floorRooms.some(r => r.type !== 'layout');
+
               return (
                 <motion.button
                   key={floor.id}
-                  onClick={() => navigate(floorIdToUrl(floor.id))}
-                  onMouseEnter={() => setActiveFloorHover(floor.id)}
+                  onClick={() => {
+                    if (hasData) navigate(floorIdToUrl(floor.id))
+                  }}
+                  onMouseEnter={() => {
+                    if (hasData) setActiveFloorHover(floor.id)
+                  }}
                   onMouseLeave={() => setActiveFloorHover(null)}
-                  whileHover={{ scale: 1.012, x: 3 }}
-                  whileTap={{ scale: 0.985 }}
+                  whileHover={hasData ? { scale: 1.012, x: 3 } : {}}
+                  whileTap={hasData ? { scale: 0.985 } : {}}
                   transition={{ type: 'spring', stiffness: 350, damping: 22 }}
                   className={`group relative w-full p-3 md:p-3.5 rounded-2xl border transition-all duration-300 flex items-center justify-between overflow-hidden shadow-sm ${
-                    isHovered
+                    !hasData
+                      ? 'opacity-60 cursor-not-allowed border-black/5 dark:border-white/5 bg-black/5 dark:bg-white/5'
+                      : isHovered
                       ? `${theme.borderClass} bg-white dark:bg-white/[0.08] ${theme.shadowClass}`
                       : 'border-black/10 dark:border-white/10 bg-white/70 dark:bg-white/[0.03] hover:border-black/20 dark:hover:border-white/20'
                   }`}
                 >
                   {/* Subtle Background Glow */}
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-r ${theme.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}
-                  />
+                  {hasData && (
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-r ${theme.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}
+                    />
+                  )}
 
                   {/* Level Code Slab Tag */}
                   <div className="flex items-center gap-3.5 z-10">
                     <div
                       className={`px-2.5 py-1 rounded-xl text-xs md:text-sm font-orbitron font-black uppercase tracking-widest border transition-colors ${
-                        isHovered
+                        !hasData
+                          ? 'bg-black/5 dark:bg-white/5 text-slate-400 border-black/5 dark:border-white/5'
+                          : isHovered
                           ? `${theme.bgClass} ${theme.colorClass} ${theme.borderClass}`
                           : 'bg-black/5 dark:bg-white/5 text-slate-500 border-black/10 dark:border-white/10'
                       }`}
@@ -368,7 +383,11 @@ export default function BuildingMonolithPreview({
                     <div className="flex flex-col text-left">
                       <h3
                         className={`text-xs md:text-sm lg:text-base font-orbitron font-black tracking-tight uppercase transition-colors ${
-                          isHovered ? theme.colorClass : 'text-[var(--text-main)]'
+                          !hasData
+                            ? 'text-slate-400 dark:text-slate-500'
+                            : isHovered 
+                            ? theme.colorClass 
+                            : 'text-[var(--text-main)]'
                         }`}
                       >
                         {floor.label}
@@ -379,13 +398,19 @@ export default function BuildingMonolithPreview({
                   {/* Level Action Trigger */}
                   <div className="flex items-center gap-2 z-10">
                     <span
-                      className={`text-xs font-orbitron font-black tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${theme.colorClass}`}
+                      className={`text-[10px] md:text-xs font-orbitron font-black tracking-widest uppercase transition-opacity duration-300 ${
+                        !hasData
+                          ? 'opacity-60 text-slate-500'
+                          : `opacity-0 group-hover:opacity-100 ${theme.colorClass}`
+                      }`}
                     >
-                      OPEN MAP
+                      {hasData ? 'OPEN MAP' : 'SETUP IN PROGRESS'}
                     </span>
                     <div
                       className={`w-7 h-7 rounded-lg border flex items-center justify-center transition-all duration-300 ${
-                        isHovered
+                        !hasData
+                          ? 'border-black/5 dark:border-white/5 text-slate-400 bg-black/5 dark:bg-white/5'
+                          : isHovered
                           ? `${theme.btnBg} text-white border-transparent shadow-md scale-105`
                           : 'border-black/10 dark:border-white/10 text-slate-500 bg-black/5 dark:bg-white/5'
                       }`}

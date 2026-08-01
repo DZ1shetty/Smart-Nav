@@ -10,9 +10,8 @@ export async function uploadToCloudinary(file, onProgress) {
     if (!file) return reject(new Error('No file provided'))
     if (!file.type.startsWith('image/')) return reject(new Error('File is not an image'))
 
-    // These should ideally be in env vars, but hardcoding for now as they are public/unsigned
-    const cloudName = 'jjwuzizy'
-    const uploadPreset = 'smart_nav_preset'
+    const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || 'jjwuzizy'
+    const uploadPreset = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET || 'smart_nav_preset'
 
     const formData = new FormData()
     formData.append('file', file)

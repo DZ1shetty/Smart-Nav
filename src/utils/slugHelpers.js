@@ -38,13 +38,13 @@ const buildingKeyLookup = {
 export const getBuildingKeyFromSlug = (slug) => {
   if (!slug) return null
   const normalized = slug.toLowerCase().replace(/[^a-z0-9-]/g, '')
-  return buildingKeyLookup[normalized] || buildingKeyLookup[slug.toLowerCase()] || null
+  return buildingKeyLookup[normalized] || buildingKeyLookup[slug.toLowerCase()] || slug
 }
 
 export const getBuildingSlugFromKey = (key) => {
   if (!key) return 'APJ-Block'
-  const normalized = getBuildingKeyFromSlug(key)
-  return buildingSlugMap[normalized] || 'APJ-Block'
+  const normalized = key.toLowerCase().replace(/[^a-z0-9-]/g, '')
+  return buildingSlugMap[normalized] || buildingSlugMap[key.toLowerCase()] || key
 }
 
 // ─── FLOOR ID <-> URL MAPPING ───────────────────────────────────────────────
@@ -119,6 +119,11 @@ export const floorIdToUrl = (floorId) => {
   const found = floorIdToSlugData[floorId]
   if (found) {
     return `/${found.buildingSlug}/${found.floorSlug}`
+  }
+
+  // Dynamic custom building floors (e.g. Test_floor_0)
+  if (floorId.includes('_floor_')) {
+    return `/floor/${floorId}`
   }
 
   // Fallback: infer building & floor from string structure

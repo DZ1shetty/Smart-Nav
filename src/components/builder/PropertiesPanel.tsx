@@ -58,6 +58,7 @@ export const PropertiesPanel = () => {
     staircase: '#f3f4f6',
     lift: '#f3f4f6',
     corridor: '#fef08a',
+    staffroom: '#eab308',
     other: '#f3f4f6',
   };
 
@@ -116,6 +117,7 @@ export const PropertiesPanel = () => {
               <option className="bg-white dark:bg-[#1e1e1e]" value="staircase">Staircase</option>
               <option className="bg-white dark:bg-[#1e1e1e]" value="lift">Lift</option>
               <option className="bg-white dark:bg-[#1e1e1e]" value="corridor">Corridor</option>
+              <option className="bg-white dark:bg-[#1e1e1e]" value="staffroom">Staff Room</option>
               <option className="bg-white dark:bg-[#1e1e1e]" value="other">Other</option>
             </select>
           </div>

@@ -147,8 +147,29 @@ export const SetupModal = () => {
   const [availableThemes, setAvailableThemes] = useState<string[]>(['blue', 'emerald', 'purple', 'amber', 'rose', 'cyan']);
 
   useEffect(() => {
-    fetchDrafts();
-    fetchThemes();
+    const autoOpenSlug = localStorage.getItem('smart_nav_open_draft_slug');
+    fetchDrafts().then(async (fetchedList?: any[]) => {
+      fetchThemes();
+      if (!autoOpenSlug || !fetchedList || fetchedList.length === 0) return;
+      const match = fetchedList.find(
+        (d: any) => (d.buildingSlug || d.buildingMeta?.slug) === autoOpenSlug
+      );
+      if (!match) return;
+      localStorage.removeItem('smart_nav_open_draft_slug');
+      // Auto-load inline (no confirm dialog) — same logic as handleLoadDraft
+      try {
+        const floorsRef = collection(db, `builder_drafts/${match.id}/floors`);
+        const floorsSnapshot = await getDocs(floorsRef);
+        const loadedFloorsData: Record<number, any> = {};
+        floorsSnapshot.forEach(floorDoc => {
+          loadedFloorsData[parseInt(floorDoc.id)] = floorDoc.data().rooms || [];
+        });
+        const mergedFloorsData = { ...(match.floorsData || {}), ...loadedFloorsData };
+        completeSetup(match.buildingMeta, mergedFloorsData, match.id);
+      } catch (e) {
+        console.error('[Auto-load] Failed to load draft:', e);
+      }
+    });
   }, []);
 
   // Keyboard Shortcuts
@@ -177,8 +198,10 @@ export const SetupModal = () => {
         fetchedDrafts.push({ id: doc.id, ...doc.data() });
       });
       setDrafts(fetchedDrafts);
+      return fetchedDrafts;
     } catch (e) {
       console.error("Error fetching drafts", e);
+      return [];
     } finally {
       setIsLoadingDrafts(false);
     }
@@ -350,9 +373,108 @@ export const SetupModal = () => {
       </div>
 
       <div className="relative z-10 w-full max-w-7xl flex flex-col p-6 lg:p-12 min-h-screen">
-        {/* Header */}
-        <header className="flex flex-col mb-10 mt-2">
-          <div className="flex items-center gap-4 mb-6">
+        {/* Bento Grid Header (Dashboard View) */}
+        {view === 'dashboard' && (
+          <div className="grid grid-cols-1 md:grid-cols-12 auto-rows-[minmax(140px,auto)] gap-4 sm:gap-6 mb-12 mt-2">
+            
+            {/* Main Hero Card */}
+            <div className="md:col-span-8 md:row-span-2 relative overflow-hidden bg-gradient-to-br from-blue-600 to-indigo-800 rounded-[2rem] p-8 sm:p-10 text-white shadow-xl flex flex-col justify-between group">
+              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay pointer-events-none"></div>
+              
+              <div className="relative z-10 flex items-start justify-between">
+                <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/30 shadow-inner group-hover:scale-105 transition-transform duration-500">
+                  <Building2 className="w-8 h-8 text-white drop-shadow-md" />
+                </div>
+              </div>
+              
+              <div className="relative z-10 mt-12">
+                <h1 className="text-4xl sm:text-5xl font-black tracking-tight mb-4" style={{ fontFamily: 'var(--font-main)' }}>Smart Builder</h1>
+                <p className="text-blue-100 text-lg max-w-xl font-medium leading-relaxed">
+                  Design your campus building quickly in three simple steps. Create your layouts, assign rooms, and manage faculty effortlessly.
+                </p>
+              </div>
+              
+              <div className="absolute right-0 bottom-0 opacity-10 pointer-events-none transform translate-x-8 translate-y-8 group-hover:-translate-y-2 group-hover:-translate-x-2 transition-transform duration-700">
+                <Map className="w-64 h-64" />
+              </div>
+            </div>
+
+            {/* Stats: Total Projects */}
+            <div className="md:col-span-2 bg-white dark:bg-zinc-900 rounded-[2rem] p-6 border border-zinc-200 dark:border-zinc-800 shadow-sm flex flex-col justify-center items-center text-center group hover:border-blue-500/50 hover:shadow-blue-500/10 transition-all duration-300">
+              <div className="p-4 bg-blue-50 dark:bg-blue-500/10 rounded-2xl group-hover:-translate-y-1 transition-transform duration-300 mb-3">
+                 <FolderOpen className="w-7 h-7 text-blue-500" />
+              </div>
+              <div className="text-3xl font-black text-zinc-900 dark:text-white mb-1">{totalProjects}</div>
+              <div className="text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">Projects</div>
+            </div>
+
+            {/* Stats: Total Floors */}
+            <div className="md:col-span-2 bg-white dark:bg-zinc-900 rounded-[2rem] p-6 border border-zinc-200 dark:border-zinc-800 shadow-sm flex flex-col justify-center items-center text-center group hover:border-emerald-500/50 hover:shadow-emerald-500/10 transition-all duration-300">
+              <div className="p-4 bg-emerald-50 dark:bg-emerald-500/10 rounded-2xl group-hover:-translate-y-1 transition-transform duration-300 mb-3">
+                 <Layers className="w-7 h-7 text-emerald-500" />
+              </div>
+              <div className="text-3xl font-black text-zinc-900 dark:text-white mb-1">{totalFloors}</div>
+              <div className="text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">Floors</div>
+            </div>
+
+            {/* Last Activity */}
+            <div className="md:col-span-4 bg-zinc-900 dark:bg-black rounded-[2rem] p-6 sm:p-8 text-white shadow-xl flex flex-col justify-center border border-zinc-800 relative overflow-hidden group">
+              <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 group-hover:scale-110 transition-all duration-700">
+                <Activity className="w-32 h-32" />
+              </div>
+              <div className="relative z-10">
+                <div className="flex items-center gap-2 text-zinc-400 mb-3">
+                  <Clock className="w-4 h-4 text-purple-400" />
+                  <span className="text-xs font-bold uppercase tracking-widest text-zinc-400">Last Activity</span>
+                </div>
+                <div className="text-2xl font-bold text-white tracking-tight">
+                  {lastActivity ? <RelativeTime timestamp={lastActivity} /> : 'No recent activity'}
+                </div>
+                <div className="text-sm text-zinc-500 mt-2 font-medium">Keep building to update your progress</div>
+              </div>
+            </div>
+
+            {/* Step 1 */}
+            <div className="md:col-span-4 bg-white dark:bg-zinc-900 rounded-[2rem] p-6 sm:p-8 border border-zinc-200 dark:border-zinc-800 shadow-sm flex flex-col hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group">
+              <div className="flex items-center justify-between mb-6">
+                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 font-black rounded-2xl flex items-center justify-center text-xl shadow-inner group-hover:scale-110 transition-transform">1</div>
+                <AlignLeft className="w-6 h-6 text-zinc-300 dark:text-zinc-700" />
+              </div>
+              <h4 className="text-xl font-bold text-zinc-900 dark:text-white mb-3 tracking-tight">Design Layout</h4>
+              <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed font-medium">Draw the floor layout shape and drag & drop rooms onto the canvas to construct your building.</p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="md:col-span-4 bg-white dark:bg-zinc-900 rounded-[2rem] p-6 sm:p-8 border border-zinc-200 dark:border-zinc-800 shadow-sm flex flex-col hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group">
+              <div className="flex items-center justify-between mb-6">
+                <div className="w-12 h-12 bg-purple-100 dark:bg-purple-500/20 text-purple-600 dark:text-purple-400 font-black rounded-2xl flex items-center justify-center text-xl shadow-inner group-hover:scale-110 transition-transform">2</div>
+                <Type className="w-6 h-6 text-zinc-300 dark:text-zinc-700" />
+              </div>
+              <h4 className="text-xl font-bold text-zinc-900 dark:text-white mb-3 tracking-tight">Room Details</h4>
+              <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed font-medium">Select individual rooms to assign them custom names, categorize by types, and add descriptions.</p>
+            </div>
+
+            {/* Step 3 */}
+            <div 
+              className="md:col-span-4 bg-white dark:bg-zinc-900 rounded-[2rem] p-6 sm:p-8 border border-zinc-200 dark:border-zinc-800 shadow-sm flex flex-col hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group cursor-pointer"
+              onClick={() => {
+                alert("Please open a project from 'Recent Drafts' or create a new one to manage Faculty Details.");
+              }}
+            >
+              <div className="flex items-center justify-between mb-6">
+                <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 font-black rounded-2xl flex items-center justify-center text-xl shadow-inner group-hover:scale-110 transition-transform">3</div>
+                <Tag className="w-6 h-6 text-zinc-300 dark:text-zinc-700" />
+              </div>
+              <h4 className="text-xl font-bold text-zinc-900 dark:text-white mb-3 tracking-tight">Faculty Details</h4>
+              <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed font-medium">Assign faculty members to specific offices and classrooms to populate the directory.</p>
+            </div>
+
+          </div>
+        )}
+
+        {/* Minimal Header (New Project View) */}
+        {view === 'new' && (
+          <header className="flex items-center gap-4 mb-10 mt-2">
             <div className="p-3.5 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl shadow-xl shadow-blue-900/20 border border-white/10">
               <Building2 className="w-7 h-7 text-white" />
             </div>
@@ -365,68 +487,7 @@ export const SetupModal = () => {
               </h1>
               <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-0.5 font-medium">Design and manage campus building layouts</p>
             </div>
-          </div>
-          
-          {/* Stats Strip */}
-          {view === 'dashboard' && (
-            <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-sm">
-              <div className="flex items-center gap-2 bg-white dark:bg-zinc-900/80 px-4 py-2 rounded-full border border-zinc-200 dark:border-zinc-800 shadow-sm backdrop-blur-md">
-                <FolderOpen className="w-4 h-4 text-blue-500" />
-                <span className="font-semibold text-zinc-900 dark:text-zinc-100">{totalProjects}</span>
-                <span className="text-zinc-500 dark:text-zinc-400">Projects</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white dark:bg-zinc-900/80 px-4 py-2 rounded-full border border-zinc-200 dark:border-zinc-800 shadow-sm backdrop-blur-md">
-                <Layers className="w-4 h-4 text-emerald-500" />
-                <span className="font-semibold text-zinc-900 dark:text-zinc-100">{totalFloors}</span>
-                <span className="text-zinc-500 dark:text-zinc-400">Total Floors</span>
-              </div>
-              {lastActivity && (
-                <div className="flex items-center gap-2 bg-white dark:bg-zinc-900/80 px-4 py-2 rounded-full border border-zinc-200 dark:border-zinc-800 shadow-sm backdrop-blur-md">
-                  <Activity className="w-4 h-4 text-purple-500" />
-                  <span className="text-zinc-500 dark:text-zinc-400">Activity:</span>
-                  <span className="font-semibold text-zinc-900 dark:text-zinc-100"><RelativeTime timestamp={lastActivity} /></span>
-                </div>
-              )}
-            </div>
-          )}
-        </header>
-
-        {/* Workflow Info Section */}
-        {view === 'dashboard' && (
-          <div className="bg-white/50 dark:bg-zinc-900/40 border border-blue-200/50 dark:border-blue-900/30 rounded-2xl p-5 sm:p-6 mb-8 flex flex-col sm:flex-row items-start sm:items-center gap-6 shadow-sm">
-            <div className="flex-1">
-              <h3 className="text-sm font-bold text-blue-900 dark:text-blue-100 mb-3 flex items-center gap-2">
-                <Info className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                How Smart Builder Works
-              </h3>
-              <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
-                Design your campus building quickly in three simple steps. Start by creating a project below, and then progress through these phases in the builder toolbar.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-                <div className="flex-1 flex items-start gap-3 bg-white dark:bg-zinc-900/80 p-3 rounded-xl border border-zinc-100 dark:border-zinc-800">
-                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 font-bold text-xs shrink-0 shadow-sm">1</div>
-                  <div>
-                    <h4 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Design</h4>
-                    <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Draw the floor layout shape and drag & drop rooms onto the canvas.</p>
-                  </div>
-                </div>
-                <div className="flex-1 flex items-start gap-3 bg-white dark:bg-zinc-900/80 p-3 rounded-xl border border-zinc-100 dark:border-zinc-800">
-                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 font-bold text-xs shrink-0 shadow-sm">2</div>
-                  <div>
-                    <h4 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Room Details</h4>
-                    <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Select rooms to assign them names, types, and custom labels.</p>
-                  </div>
-                </div>
-                <div className="flex-1 flex items-start gap-3 bg-white dark:bg-zinc-900/80 p-3 rounded-xl border border-zinc-100 dark:border-zinc-800">
-                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 font-bold text-xs shrink-0 shadow-sm">3</div>
-                  <div>
-                    <h4 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Faculty Details</h4>
-                    <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Assign faculty members to specific offices and classrooms.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          </header>
         )}
 
         {view === 'dashboard' ? (
@@ -498,20 +559,6 @@ export const SetupModal = () => {
                     <div className="w-1/2 h-4 bg-zinc-200 dark:bg-zinc-800/50 rounded" />
                   </div>
                 ))
-              ) : drafts.length === 0 ? (
-                <div className="col-span-full py-24 flex flex-col items-center justify-center text-center">
-                  <div className="w-32 h-32 bg-blue-50 dark:bg-blue-500/10 rounded-full flex items-center justify-center mb-6 ring-8 ring-blue-50/50 dark:ring-blue-500/5">
-                    <Building2 className="w-12 h-12 text-blue-500" />
-                  </div>
-                  <h3 className="text-3xl font-bold text-zinc-900 dark:text-white mb-3">No projects yet</h3>
-                  <p className="text-lg text-zinc-500 dark:text-zinc-400 max-w-md mb-8">Get started by creating your first building draft. Your floor layouts will automatically save here.</p>
-                  <button 
-                    onClick={() => setView('new')}
-                    className="flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-2xl transition-all shadow-xl shadow-blue-500/25 active:scale-95 text-lg"
-                  >
-                    <Plus className="w-6 h-6" /> Create First Project
-                  </button>
-                </div>
               ) : (
                 filteredDrafts.map(draft => (
                   <div 

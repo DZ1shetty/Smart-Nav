@@ -20,7 +20,8 @@ import {
   Copy,
   ChevronRight,
   Folder,
-  ChevronDown
+  ChevronDown,
+  Users
 } from 'lucide-react';
 import clsx from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -34,6 +35,7 @@ const ROOM_TYPES: Record<RoomType, { icon: React.FC<any>; label: string; color: 
   lift: { icon: ArrowUpToLine, label: 'Lift', color: 'bg-stone-600' },
   corridor: { icon: GalleryHorizontal, label: 'Corridor', color: 'bg-slate-400' },
   layout: { icon: BoxSelect, label: 'Layout Base', color: 'bg-zinc-800' },
+  staffroom: { icon: Users, label: 'Staff Room', color: 'bg-yellow-500' },
   other: { icon: Square, label: 'Custom', color: 'bg-gray-500' },
 };
 
@@ -150,9 +152,8 @@ export const Toolbar = () => {
   const filteredRooms = rooms.filter(r => r.name.toLowerCase().includes(searchQuery.toLowerCase()));
   
   const steps = [
-    { id: 'layout', label: 'Design' },
-    { id: 'room_details', label: 'Room Details' },
-    { id: 'faculty_details', label: 'Faculty' }
+    { id: 'layout', label: 'Floor Design' },
+    { id: 'room_details', label: 'Room and Faculty Details' }
   ];
 
   const currentStepIndex = steps.findIndex(s => s.id === mode);

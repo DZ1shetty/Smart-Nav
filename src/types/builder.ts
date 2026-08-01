@@ -1,4 +1,4 @@
-export type RoomType = 'classroom' | 'lab' | 'washroom' | 'staircase' | 'lift' | 'office' | 'corridor' | 'layout' | 'other';
+export type RoomType = 'classroom' | 'lab' | 'washroom' | 'staircase' | 'lift' | 'office' | 'corridor' | 'layout' | 'staffroom' | 'other';
 export type RoomStatus = 'active' | 'under-construction' | 'closed' | 'renovating';
 
 export interface RoomCustomField {
@@ -11,6 +11,14 @@ export interface RoomDoor {
   x: number;
   y: number;
   connectsToRoomId?: string;
+}
+
+export interface FacultyMember {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+  department?: string;
 }
 
 export interface BuilderRoom {
@@ -34,6 +42,8 @@ export interface BuilderRoom {
   groupId?: string;
   points?: Point[];
   
+  facultyList?: FacultyMember[];
+
   // Visual specific properties
   color?: string; // Optional custom color override
   fontSize?: number;

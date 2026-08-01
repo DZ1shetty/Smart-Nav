@@ -7,7 +7,6 @@ import {
   FlaskConical,
   Map,
   ArrowUpRight,
-  Building2,
   ChevronLeft,
   Edit3,
   Save,
@@ -18,9 +17,9 @@ import {
   Trash2,
   Link as LinkIcon
 } from 'lucide-react'
-import { doc, getDoc, setDoc, collection, getDocs } from 'firebase/firestore'
+import { doc, getDoc, setDoc } from 'firebase/firestore'
 import { db } from '../../firebase'
-import { Toaster, toast } from 'sonner'
+import { toast } from 'sonner'
 import SearchSystem from '../ui/SearchSystem'
 import ThemeToggle from '../ui/ThemeToggle'
 import { floorIdToUrl } from '../../utils/slugHelpers'
@@ -324,44 +323,6 @@ export default function HomePage() {
   const [isEditing, setIsEditing] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [editedData, setEditedData] = useState(null)
-  const [customBuildings, setCustomBuildings] = useState([])
-
-  // Fetch custom buildings from Firestore
-  useEffect(() => {
-    const fetchCustomBuildings = async () => {
-      try {
-        const querySnapshot = await getDocs(collection(db, 'buildings'))
-        const fetched = []
-        querySnapshot.forEach((doc) => {
-          const data = doc.data()
-          // Only add buildings that aren't already hardcoded in default lists if needed
-          // Or just format them to match the BuildingBentoGrid props
-          if (!defaultBuildingDetails[doc.id]) {
-            fetched.push({
-              id: doc.id,
-              name: data.name || doc.id.toUpperCase(),
-              floorCount: data.floorCount || 1,
-              themeColor: data.theme || 'blue',
-              spanClass: 'col-span-1 md:col-span-1',
-              colorClass: `text-${data.theme || 'blue'}-500`,
-              borderClass: `border-${data.theme || 'blue'}-500/30 hover:border-${data.theme || 'blue'}-500/80`,
-              bgGradient: `from-${data.theme || 'blue'}-500/10 via-${data.theme || 'blue'}-600/5 to-transparent`,
-              shadowClass: `hover:shadow-[0_15px_35px_rgba(59,130,246,0.25)]`,
-              badgeClass: `bg-${data.theme || 'blue'}-500/10 text-${data.theme || 'blue'}-600 dark:text-${data.theme || 'blue'}-400 border-${data.theme || 'blue'}-500/30`,
-              highlights: [
-                { text: 'Custom Building', icon: Building2 }
-              ],
-              description: data.description || 'Created via Workspace Canvas Builder.'
-            })
-          }
-        })
-        setCustomBuildings(fetched)
-      } catch (err) {
-        console.error('Error fetching custom buildings:', err)
-      }
-    }
-    fetchCustomBuildings()
-  }, [])
 
   const handleSelectBuilding = (key) => {
     const slug = buildingKeyToUrlSlug[key] || key
@@ -484,7 +445,6 @@ export default function HomePage() {
       transition={{ duration: 0.25, ease: 'easeOut' }}
       className="relative min-h-[100dvh] pb-[env(safe-area-inset-bottom)] w-full bg-[var(--bg-main)] text-[var(--text-main)] font-space p-2 md:p-2 lg:p-3 lg:py-2 flex flex-col items-center justify-between overflow-x-hidden selection:bg-blue-500/30 transform-gpu"
     >
-      <Toaster richColors position="top-right" />
       {/* BACKGROUND ELEMENTS */}
       <div className="fixed inset-0 pointer-events-none opacity-[0.05] dark:opacity-[0.03]">
         <div className="absolute inset-0 blueprint-grid" />
@@ -542,7 +502,6 @@ export default function HomePage() {
             >
               <BuildingBentoGrid 
                 onSelectBuilding={handleSelectBuilding} 
-                customBuildings={customBuildings} 
               />
             </motion.div>
 

@@ -16,6 +16,7 @@ const TYPE_COLORS: Record<string, string> = {
   lift: '#a3a3a3',
   corridor: '#a3a3a3',
   layout: '#27272a',
+  staffroom: '#eab308',
   other: '#a3a3a3',
 };
 

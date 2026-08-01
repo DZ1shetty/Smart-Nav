@@ -21,8 +21,9 @@ export default function FacultyManagerModal({
   onClose,
   facultyList,
   onSave,
+  initialSearchQuery = '',
 }) {
-  const [searchQuery, setSearchQuery] = useState('')
+  const [searchQuery, setSearchQuery] = useState(initialSearchQuery)
   const debouncedSearchQuery = useDebounce(searchQuery, 200)
   const [editedFaculty, setEditedFaculty] = useState({})
   const [isSaving, setIsSaving] = useState(false)
@@ -33,6 +34,7 @@ export default function FacultyManagerModal({
   // Initialize edited data when modal opens or facultyList changes
   useEffect(() => {
     if (isOpen) {
+      setSearchQuery(initialSearchQuery)
       const initial = {}
       facultyList.forEach((faculty, idx) => {
         const id = faculty.id || `list-${idx}-${faculty.name}`
@@ -43,7 +45,7 @@ export default function FacultyManagerModal({
       })
       setEditedFaculty(initial)
     }
-  }, [isOpen, facultyList])
+  }, [isOpen, facultyList, initialSearchQuery])
 
   const filteredFaculty = useMemo(() => {
     return facultyList
@@ -137,10 +139,10 @@ export default function FacultyManagerModal({
         initial={{ opacity: 0, scale: 0.95, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
-        className="relative w-full max-w-5xl h-[85vh] bg-white dark:bg-[#0a0a0a] border border-black/10 dark:border-white/10 rounded-[32px] shadow-2xl overflow-hidden flex flex-col"
+        className="relative w-full max-w-5xl h-[85vh] bg-zinc-50 dark:bg-[#0a0a0a] border border-zinc-200/50 dark:border-zinc-800/50 rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col"
       >
         {/* Header */}
-        <div className="p-4 md:p-8 border-b border-black/5 dark:border-white/5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 bg-black/[0.02] dark:bg-white/[0.02]">
+        <div className="p-6 md:p-8 border-b border-zinc-200/80 dark:border-zinc-800/80 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 bg-white/50 dark:bg-zinc-900/50 backdrop-blur-md">
           <div>
             <h2 className="text-2xl font-orbitron font-black uppercase tracking-tighter text-black dark:text-white flex items-center gap-3">
               <div className="w-2 h-8 bg-blue-500 rounded-full" />
@@ -161,7 +163,7 @@ export default function FacultyManagerModal({
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="FILTER FACULTY..."
-                className="bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl pl-10 pr-4 py-2.5 text-xs font-orbitron font-black uppercase tracking-widest outline-none focus:border-blue-500/50 transition-all w-48 md:w-64"
+                className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl pl-10 pr-4 py-2.5 text-xs font-orbitron font-black uppercase tracking-widest text-zinc-900 dark:text-white outline-none focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/20 transition-all w-48 md:w-64 placeholder:text-zinc-400"
               />
             </div>
             <button
@@ -179,7 +181,7 @@ export default function FacultyManagerModal({
             {filteredFaculty.map((faculty) => (
               <div
                 key={faculty.id}
-                className="group flex flex-col md:flex-row gap-6 p-6 bg-black/[0.02] dark:bg-white/[0.01] border border-black/5 dark:border-white/5 rounded-2xl hover:border-blue-500/30 transition-all"
+                className="group flex flex-col md:flex-row gap-6 p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300"
               >
                 <div className="w-full md:w-64 shrink-0 flex flex-col gap-4">
                   <div className="flex items-center gap-3">
@@ -232,7 +234,7 @@ export default function FacultyManagerModal({
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <ImageIcon className="w-3 h-3 text-blue-500" />
-                        <span className="text-[11px] font-orbitron font-black uppercase tracking-widest text-black/40">
+                        <span className="text-[11px] font-orbitron font-black uppercase tracking-widest text-black dark:text-white">
                           Profile Image
                         </span>
                       </div>
@@ -271,7 +273,7 @@ export default function FacultyManagerModal({
                     
                     <label 
                       style={{ minHeight: editedFaculty[faculty.id]?.image ? 240 : 120 }}
-                      className={`relative flex flex-col items-center justify-center w-full bg-black/5 dark:bg-white/5 border-2 border-dashed ${uploadingImageFor[faculty.id] ? 'border-blue-500/50 bg-blue-500/5' : 'border-black/10 dark:border-white/10 hover:border-blue-500/30 hover:bg-black/[0.07] dark:hover:bg-white/[0.07]'} rounded-xl cursor-pointer transition-all duration-300 overflow-hidden group shadow-inner`}
+                      className={`relative flex flex-col items-center justify-center w-full bg-zinc-50 dark:bg-zinc-950/50 border-2 border-dashed ${uploadingImageFor[faculty.id] ? 'border-blue-500/50 bg-blue-50/50 dark:bg-blue-900/10' : 'border-zinc-300 dark:border-zinc-700 hover:border-blue-500/50 hover:bg-zinc-100 dark:hover:bg-zinc-800/50'} rounded-2xl cursor-pointer transition-all duration-300 overflow-hidden group shadow-inner`}
                       onDragOver={handleDragOver}
                       onDrop={(e) => handleDrop(e, faculty.id)}
                     >
@@ -299,7 +301,7 @@ export default function FacultyManagerModal({
                           <img
                             src={resolveImageUrl(editedFaculty[faculty.id].image)}
                             alt="preview"
-                            className="w-full h-full object-contain rounded-xl p-2 max-h-56"
+                            className="w-full h-full object-cover rounded-xl shadow-md"
                             onError={(e) => {
                               const currentSrc = e.target.src;
                               if (currentSrc.includes('raw.githubusercontent.com')) {
@@ -342,7 +344,7 @@ export default function FacultyManagerModal({
                   <div className="flex flex-col gap-2">
                     <div className="flex items-center gap-2">
                       <FileText className="w-3 h-3 text-blue-500" />
-                      <span className="text-[11px] font-orbitron font-black uppercase tracking-widest text-black/40 dark:text-white/40">
+                      <span className="text-[11px] font-orbitron font-black uppercase tracking-widest text-black dark:text-white">
                         Professional Description
                       </span>
                     </div>
@@ -356,7 +358,7 @@ export default function FacultyManagerModal({
                         )
                       }
                       placeholder="Enter faculty description, specializations, or notes..."
-                      className="w-full bg-black/5 dark:bg-white/5 border-2 border-black/5 dark:border-white/5 hover:border-blue-500/30 focus:border-blue-500/50 rounded-xl p-4 text-sm font-medium text-black dark:text-white focus:outline-none focus:ring-4 focus:ring-blue-500/5 transition-all min-h-[120px] shadow-inner custom-scrollbar"
+                      className="w-full bg-zinc-50 dark:bg-zinc-950/50 border border-zinc-200 dark:border-zinc-800 hover:border-blue-500/50 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 rounded-2xl p-5 text-sm font-medium text-zinc-900 dark:text-zinc-100 focus:outline-none transition-all min-h-[140px] shadow-inner custom-scrollbar resize-none"
                     />
                   </div>
                 </div>
@@ -366,7 +368,7 @@ export default function FacultyManagerModal({
         </div>
 
         {/* Action Bar */}
-        <div className="p-4 md:p-8 border-t border-black/5 dark:border-white/5 bg-black/[0.02] dark:bg-white/[0.02] flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="p-6 md:p-8 border-t border-zinc-200/80 dark:border-zinc-800/80 bg-white/50 dark:bg-zinc-900/50 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
               <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />

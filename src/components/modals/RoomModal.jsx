@@ -23,13 +23,11 @@ import {
 import { uploadToCloudinary } from '../../utils/cloudinaryUpload'
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import { ref as storageRef, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
-import { storage } from '../../firebase'
 import { resolveImageUrl } from '../../config'
 import { searchIndex } from '../../data/searchIndex'
 import { floorIdToUrl } from '../../utils/slugHelpers'
 
-export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarked, onToggleBookmark }) {
+export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarked, onToggleBookmark, onManageFaculty }) {
   const navigate = useNavigate()
   const location = useLocation()
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -37,6 +35,8 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
   const [editedDirections, setEditedDirections] = useState('')
   const [editedImage, setEditedImage] = useState('')
   const [editedName, setEditedName] = useState('')
+  const [editedFacultyImage, setEditedFacultyImage] = useState('')
+  const [editedFacultyDescription, setEditedFacultyDescription] = useState('')
   const [isFullScreen, setIsFullScreen] = useState(false)
   // Image upload state
   const [uploadProgress, setUploadProgress] = useState(null)  // 0-100 or null
@@ -45,6 +45,12 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
   const [clearedImage, setClearedImage] = useState(null)
   const fileInputRef = useRef(null)
   const cameraInputRef = useRef(null)
+
+  // Faculty image upload state
+  const [facultyUploadProgress, setFacultyUploadProgress] = useState(null)
+  const [facultyUploadError, setFacultyUploadError] = useState(null)
+  const [facultyPreviewUrl, setFacultyPreviewUrl] = useState(null)
+  const facultyFileInputRef = useRef(null)
 
   // Prefer room.image if it exists (meaning it was just uploaded/edited), fallback to room.images array
   const rawImages = room?.image ? [room.image] : (room?.images || [])
@@ -69,6 +75,8 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
       setEditedDirections(room.directions || '')
       setEditedImage(room.image || '')
       setEditedName(room.name || room.label || '')
+      setEditedFacultyImage(room.facultyImage || '')
+      setEditedFacultyDescription(room.facultyDescription || '')
       setIsEditing(false)
       setIsFullScreen(false)
     }
@@ -100,10 +108,37 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
 
   const handleSave = () => {
     if (onUpdateRoomData) {
-      onUpdateRoomData({ name: editedName, directions: editedDirections, image: editedImage })
+      const updates = { name: editedName, directions: editedDirections, image: editedImage }
+      if (room.type === 'staffroom') {
+        updates.facultyImage = editedFacultyImage
+        updates.facultyDescription = editedFacultyDescription
+      }
+      onUpdateRoomData(updates)
     }
     setIsEditing(false)
     setPreviewUrl(null)
+    setFacultyPreviewUrl(null)
+  }
+
+  const handleFacultyImageFile = async (file) => {
+    if (!file || !file.type.startsWith('image/')) return
+    const objectUrl = URL.createObjectURL(file)
+    setFacultyPreviewUrl(objectUrl)
+    setFacultyUploadError(null)
+    setFacultyUploadProgress(10)
+
+    try {
+      const secureUrl = await uploadToCloudinary(file, (progress) => {
+        setFacultyUploadProgress(progress)
+      })
+      setEditedFacultyImage(secureUrl)
+      setFacultyUploadProgress(null)
+      URL.revokeObjectURL(objectUrl)
+    } catch (err) {
+      console.error('[Upload] error:', err)
+      setFacultyUploadError(err.message || 'Upload failed.')
+      setFacultyUploadProgress(null)
+    }
   }
 
   return (
@@ -153,8 +188,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
             onClick={() => {
               if (images.length > 0) setIsFullScreen(true)
             }}
-            className="relative w-full md:w-[50%] bg-black/[0.03] dark:bg-white/[0.02] flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-black/5 dark:border-white/5 overflow-hidden group cursor-zoom-in"
-            style={{ minHeight: '40vw', maxHeight: '42vh' }}
+            className="relative w-full md:w-[50%] min-h-[300px] md:min-h-0 bg-black/[0.03] dark:bg-white/[0.02] flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-black/5 dark:border-white/5 overflow-hidden group cursor-zoom-in"
           >
             {images.length > 0 ? (
               <div className="relative w-full h-full flex items-center justify-center">
@@ -165,7 +199,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                   src={images[currentImageIndex]}
                   alt={room.name}
                   loading="lazy"
-                  className="w-full h-full object-contain"
+                  className="w-full h-full md:object-contain object-cover"
                   onError={(e) => {
                     const currentSrc = e.target.src;
                     if (currentSrc.includes('raw.githubusercontent.com')) {
@@ -238,7 +272,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-blue-500 text-xs font-orbitron font-black uppercase tracking-[0.2em]">
-                  {room.type}
+                  {room.type === 'staffroom' ? 'STAFF ROOM' : room.type}
                 </span>
                 <div className="w-1 h-1 rounded-full bg-black/10 dark:bg-white/10" />
                 <span className="text-black/40 dark:text-white/30 text-xs font-orbitron font-bold uppercase tracking-widest">
@@ -335,7 +369,23 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                         placeholder="e.g. LH-506"
                       />
                     </div>
-                    <div>
+
+                    {room.type === 'staffroom' && (
+                      <div className="space-y-4 pt-4 border-t border-black/5 dark:border-white/5 mt-4">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            if (onManageFaculty) onManageFaculty(room.faculty || room.id);
+                          }}
+                          className="w-full py-3.5 px-4 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white rounded-xl font-orbitron font-black text-xs tracking-widest uppercase flex items-center justify-center gap-3 transition-all duration-300 shadow-lg shadow-emerald-500/20 active:scale-[0.98] border border-emerald-500/20"
+                        >
+                          <User className="w-4 h-4" />
+                          <span>Manage Staff Faculty</span>
+                        </button>
+                      </div>
+                    )}
+
+                    <div className="pt-4 border-t border-black/5 dark:border-white/5 mt-4">
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-[8px] font-orbitron font-black uppercase text-black/30 dark:text-white/20 block">
                           Room Image
