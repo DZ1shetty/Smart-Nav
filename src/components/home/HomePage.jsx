@@ -18,7 +18,7 @@ import {
   Trash2,
   Link as LinkIcon
 } from 'lucide-react'
-import { doc, getDoc, setDoc } from 'firebase/firestore'
+import { doc, getDoc, setDoc, collection, getDocs } from 'firebase/firestore'
 import { db } from '../../firebase'
 import { Toaster, toast } from 'sonner'
 import SearchSystem from '../ui/SearchSystem'
@@ -62,7 +62,7 @@ const buildingKeyToUrlSlug = {
 const getBuildingKeyFromSlug = (slug) => {
   if (!slug) return null
   const normalized = slug.toLowerCase().replace(/[^a-z0-9-]/g, '')
-  return buildingSlugMap[normalized] || buildingSlugMap[slug.toLowerCase()] || null
+  return buildingSlugMap[normalized] || buildingSlugMap[slug.toLowerCase()] || slug
 }
 
 const apjFloors = [
@@ -324,6 +324,44 @@ export default function HomePage() {
   const [isEditing, setIsEditing] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [editedData, setEditedData] = useState(null)
+  const [customBuildings, setCustomBuildings] = useState([])
+
+  // Fetch custom buildings from Firestore
+  useEffect(() => {
+    const fetchCustomBuildings = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, 'buildings'))
+        const fetched = []
+        querySnapshot.forEach((doc) => {
+          const data = doc.data()
+          // Only add buildings that aren't already hardcoded in default lists if needed
+          // Or just format them to match the BuildingBentoGrid props
+          if (!defaultBuildingDetails[doc.id]) {
+            fetched.push({
+              id: doc.id,
+              name: data.name || doc.id.toUpperCase(),
+              floorCount: data.floorCount || 1,
+              themeColor: data.theme || 'blue',
+              spanClass: 'col-span-1 md:col-span-1',
+              colorClass: `text-${data.theme || 'blue'}-500`,
+              borderClass: `border-${data.theme || 'blue'}-500/30 hover:border-${data.theme || 'blue'}-500/80`,
+              bgGradient: `from-${data.theme || 'blue'}-500/10 via-${data.theme || 'blue'}-600/5 to-transparent`,
+              shadowClass: `hover:shadow-[0_15px_35px_rgba(59,130,246,0.25)]`,
+              badgeClass: `bg-${data.theme || 'blue'}-500/10 text-${data.theme || 'blue'}-600 dark:text-${data.theme || 'blue'}-400 border-${data.theme || 'blue'}-500/30`,
+              highlights: [
+                { text: 'Custom Building', icon: Building2 }
+              ],
+              description: data.description || 'Created via Workspace Canvas Builder.'
+            })
+          }
+        })
+        setCustomBuildings(fetched)
+      } catch (err) {
+        console.error('Error fetching custom buildings:', err)
+      }
+    }
+    fetchCustomBuildings()
+  }, [])
 
   const handleSelectBuilding = (key) => {
     const slug = buildingKeyToUrlSlug[key] || key
@@ -401,7 +439,42 @@ export default function HomePage() {
     })
   }
 
-  const theme = selectedBuilding ? (buildingThemes[selectedBuilding] || buildingThemes['apj']) : null
+  const theme = selectedBuilding ? (buildingThemes[selectedBuilding] || {
+    name: buildingData?.name || selectedBuilding.toUpperCase(),
+    floors: `${buildingData?.floorCount || 1} FLOORS`,
+    primary: 'blue',
+    colorClass: 'text-blue-500',
+    borderClass: 'border-blue-500',
+    hoverBorderClass: 'hover:border-blue-500',
+    shadowClass: 'hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]',
+    bgClass: 'bg-blue-500/10',
+    gradient: 'from-blue-500/0 via-blue-500/[0.04] to-blue-500/0',
+    btnBg: 'bg-blue-500 hover:bg-blue-600',
+    btnShadow: 'shadow-[0_0_15px_rgba(59,130,246,0.2)]',
+    focusRing: 'focus:border-blue-500 focus:ring-blue-500/30',
+    iconColor: 'text-blue-500',
+    tintBg: 'bg-blue-500/5'
+  }) : null
+
+  const getFloorsForBuilding = () => {
+    if (selectedBuilding === 'cv-raman') return cvRamanFloors
+    if (selectedBuilding === 'ramanujan') return ramanujanFloors
+    if (selectedBuilding === 'smv') return smvFloors
+    if (selectedBuilding === 'atal') return atalFloors
+    if (selectedBuilding === 'rajraman') return rajramanFloors
+    if (selectedBuilding === 'apj') return apjFloors
+    
+    // For custom buildings
+    const count = buildingData?.floorCount || 1
+    const customFloors = []
+    for (let i = 0; i < count; i++) {
+      customFloors.push({
+        id: `${selectedBuilding}_floor_${i}`,
+        label: i === 0 ? 'GROUND FLOOR' : `FLOOR ${i}`
+      })
+    }
+    return customFloors.length > 0 ? customFloors : apjFloors
+  }
 
   return (
     <motion.div
@@ -467,26 +540,17 @@ export default function HomePage() {
               exit={{ opacity: 0, y: -16 }}
               className="w-full max-w-5xl mx-auto py-0.5"
             >
-              <BuildingBentoGrid onSelectBuilding={handleSelectBuilding} />
+              <BuildingBentoGrid 
+                onSelectBuilding={handleSelectBuilding} 
+                customBuildings={customBuildings} 
+              />
             </motion.div>
 
           ) : (
             <BuildingMonolithPreview
               buildingKey={selectedBuilding}
               theme={theme}
-              floors={
-                selectedBuilding === 'cv-raman'
-                  ? cvRamanFloors
-                  : selectedBuilding === 'ramanujan'
-                  ? ramanujanFloors
-                  : selectedBuilding === 'smv'
-                  ? smvFloors
-                  : selectedBuilding === 'atal'
-                  ? atalFloors
-                  : selectedBuilding === 'rajraman'
-                  ? rajramanFloors
-                  : apjFloors
-              }
+              floors={getFloorsForBuilding()}
               buildingData={buildingData}
               isLoading={isLoading}
               isEditing={isEditing}
