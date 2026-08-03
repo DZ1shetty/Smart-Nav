@@ -20,7 +20,7 @@ import { floorIdToUrl } from '../utils/slugHelpers'
 
 // ─── ENGINE CONFIG ────────────────────────────────────────────────────────────
 const CONFIDENCE_THRESHOLD = 18 // Lower so fuzzy hits surface
-const MAX_ALTERNATIVES = 8
+const MAX_ALTERNATIVES = 50
 
 // ─── CACHE ───────────────────────────────────────────────────────────────────
 let SEARCH_POOL_CACHE = null

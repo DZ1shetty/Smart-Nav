@@ -167,7 +167,7 @@ The campus has 6 buildings with various floors. The layout database holds the ex
 3. SMV-BLOCK          — Main mechanical/engineering block. Fully mapped with classrooms, labs, and offices. (Ground to 6th Floor)
 4. ATAL-BLOCK         — Academic/research block. Fully mapped with offices, labs, and the Autoliv Incubation Centre. (Ground to 3rd Floor)
 5. RAMANUJAN-BLOCK    — Fully mapped across all floors. Physics, Chemistry, Maths departments with labs, HOD cabins, and classrooms. (Ground to 4th Floor)
-6. V . RAJRAMAN-BLOCK — Fully mapped across all floors. Robotics, MCA departments with labs, staff rooms, and offices. (Ground to 3rd Floor)
+6. V . RAJRAMAN-BLOCK — Fully mapped across all floors. Robotics, MCA departments with labs, staff rooms, and offices. (Basement to 5th Floor)
 
 All 6 buildings are fully mapped with rooms, labs, offices, and faculty data available in the LIVE DIRECTORY DATABASE below.
 
@@ -203,7 +203,7 @@ Valid floorKey values by building:
 - RAMANUJAN-BLOCK: ramanujan_ground · ramanujan_first · ramanujan_second · ramanujan_third · ramanujan_fourth
 - SMV-BLOCK:       smv_ground · smv_first · smv_second · smv_third · smv_fourth · smv_fifth · smv_sixth
 - ATAL-BLOCK:      atal_ground · atal_first · atal_second · atal_third
-- V . RAJRAMAN-BLOCK:  rajraman_ground · rajraman_first · rajraman_second · rajraman_third
+- V . RAJRAMAN-BLOCK:  rajraman_basement · rajraman_ground · rajraman_first · rajraman_second · rajraman_third · rajraman_fourth · rajraman_fifth
 
 === EXAMPLES ===
 - "LH-311 is on the Third Floor of APJ-BLOCK: [LH-311](/floor/third?room=lh-311)"

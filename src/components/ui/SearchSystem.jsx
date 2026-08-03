@@ -19,6 +19,7 @@ import {
   Award,
   Wrench,
   Mic,
+  Briefcase,
 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
@@ -35,6 +36,7 @@ const TypeIcon = ({ type, size = 14 }) => {
   if (type === 'lab') return <FlaskConical {...p} />
   if (type === 'classroom') return <BookOpen {...p} />
   if (type === 'staffroom' || type === 'hod') return <User {...p} />
+  if (type === 'office') return <Briefcase {...p} />
   if (type === 'utility') return <Zap {...p} />
   return <MapPin {...p} />
 }
@@ -460,6 +462,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
                       { queryText: 'hod', label: 'HODs', icon: Award },
                       { queryText: 'staffroom', label: 'Staff Rooms', icon: User },
                       { queryText: 'toilet', label: 'Washrooms', icon: Wrench },
+                      { queryText: 'office', label: 'Offices', icon: Briefcase },
                       { queryText: 'xerox', label: 'Xerox', icon: Zap },
                     ].map((chip) => {
                       const Icon = chip.icon
