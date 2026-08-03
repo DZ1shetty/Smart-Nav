@@ -5,6 +5,7 @@ const FloorPlan = lazy(() => import('./components/map/FloorPlan'))
 const WorkspaceBuilderPage = lazy(() => import('./pages/WorkspaceBuilderPage'))
 const CustomBuildingPage = lazy(() => import('./pages/CustomBuildingPage'))
 const CustomFloorPlanPage = lazy(() => import('./pages/CustomFloorPlanPage'))
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
 import { AnimatePresence } from 'framer-motion'
 import ChatbotWidget from './components/ui/ChatbotWidget'
 import { Toaster } from 'sonner'
@@ -42,7 +43,7 @@ function App() {
             <Route path="/:buildingSlug/:floorSlug" element={<FloorPlan />} />
             <Route path="/builder" element={<WorkspaceBuilderPage />} />
             <Route path="/:buildingId" element={<HomePage />} />
-            <Route path="*" element={<HomePage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>
       </AnimatePresence>

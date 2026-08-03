@@ -285,10 +285,10 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
               <InfoSection label="Description" value={room.description} />
 
               <div className="grid grid-cols-2 gap-4 md:gap-8">
-                {room.faculty && (
+                {(room.faculty || (room.linkedFaculty && room.linkedFaculty.length > 0)) && (
                   <InfoSection
                     label="Personnel"
-                    value={room.faculty}
+                    value={room.faculty || (room.linkedFaculty && room.linkedFaculty.join(', '))}
                     isFaculty={true}
                     onViewProfile={() => {
                       const searchParams = new URLSearchParams(location.search)

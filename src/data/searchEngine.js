@@ -156,7 +156,10 @@ const scoreToken = (target, query) => {
     .toLowerCase()
     .replace(/[^a-z0-9\s]/g, ' ')
     .trim()
-  const q = query.toLowerCase()
+  const q = query
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .trim()
 
   // Exact match
   if (t === q) return 1000

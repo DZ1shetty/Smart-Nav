@@ -146,7 +146,10 @@ export const CanvasSurface = () => {
     }
   }, [selectedIds, rooms]);
 
-  const snap = (val: number) => snapToGrid ? Math.round(val / 10) * 10 : val;
+  const snap = (val: number) => {
+    if (isNaN(val) || val === undefined) return 0;
+    return snapToGrid ? Math.round(val / 10) * 10 : val;
+  };
 
   const handleWheel = (e: KonvaEventObject<WheelEvent>) => {
     e.evt.preventDefault();
@@ -319,12 +322,15 @@ export const CanvasSurface = () => {
     node.scaleY(1);
     const room = rooms.find(r => r.id === id);
     const scaledPoints = room?.points?.map(p => ({ x: p.x * scaleX, y: p.y * scaleY }));
+    const newWidth = Math.max(MIN_SIZE, snap(node.width() * scaleX) || MIN_SIZE);
+    const newHeight = Math.max(MIN_SIZE, snap(node.height() * scaleY) || MIN_SIZE);
+    
     updateRoom(id, {
-      x: snap(node.x()),
-      y: snap(node.y()),
-      width: Math.max(MIN_SIZE, snap(node.width() * scaleX)),
-      height: Math.max(MIN_SIZE, snap(node.height() * scaleY)),
-      rotation: snap(node.rotation()),
+      x: snap(node.x()) || 0,
+      y: snap(node.y()) || 0,
+      width: newWidth,
+      height: newHeight,
+      rotation: snap(node.rotation()) || 0,
       ...(scaledPoints ? { points: scaledPoints } : {})
     });
   };

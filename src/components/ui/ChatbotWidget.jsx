@@ -231,7 +231,7 @@ export default function ChatbotWidget() {
     {
       id: 'welcome',
       sender: 'bot',
-      text: "Hi! I'm Smart Nav AI 🏫 Ask me for directions, rooms, or faculty across any campus block. You can also type \"go to [room]\" to navigate instantly!\n\n*(APJ, CV-Raman, SMV, Atal & Ramanujan Ground are fully mapped; others are under setup)*",
+      text: "Hi! I'm Smart Nav AI 🏫 Ask me for directions, rooms, or faculty across any campus block. You can also type \"go to [room]\" to navigate instantly!\n\n*(All 6 blocks are now fully mapped and ready to explore!)*",
       isWelcome: true
     },
   ])

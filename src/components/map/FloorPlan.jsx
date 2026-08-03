@@ -101,12 +101,16 @@ const isValidLayout = (layout) => {
   const rooms = Array.isArray(layout) ? layout : layout.rooms || []
   return (
     Array.isArray(rooms) &&
-    rooms.every(
-      (room) =>
-        room.id &&
-        typeof (room.x ?? 0) === 'number' &&
-        typeof (room.y ?? 0) === 'number'
-    )
+    rooms.every((room) => {
+      const isCustomShape = room.points && Array.isArray(room.points)
+      const hasDimensions = typeof room.width === 'number' && !isNaN(room.width) && room.width >= 0 &&
+                            typeof room.height === 'number' && !isNaN(room.height) && room.height >= 0
+      
+      return room.id &&
+             typeof (room.x ?? 0) === 'number' && !isNaN(room.x ?? 0) &&
+             typeof (room.y ?? 0) === 'number' && !isNaN(room.y ?? 0) &&
+             (hasDimensions || isCustomShape)
+    })
   )
 }
 
@@ -177,6 +181,14 @@ export default function FloorPlan() {
   }, [buildingSlug, floorSlug, routeFloorId])
 
   useEffect(() => {
+    if (buildingSlug && floorSlug) {
+      const resolved = urlToFloorId(buildingSlug, floorSlug)
+      if (!resolved) {
+        navigate('/404', { replace: true })
+        return
+      }
+    }
+
     if (routeFloorId && (!buildingSlug || !floorSlug)) {
       const targetUrl = floorIdToUrl(routeFloorId)
       if (location.pathname !== targetUrl) {
@@ -1138,6 +1150,13 @@ export default function FloorPlan() {
     )
   }
 
+  const handleRoomClick = useCallback((room) => {
+    const linkedFaculty = floorData?.faculty
+      ?.filter((f) => f.roomId === room.id)
+      .map((f) => f.name) || []
+    setSelectedRoom({ ...room, linkedFaculty })
+  }, [floorData])
+
   const handleCloseRoom = () => {
     if (selectedRoom) setHighlightedRoomId(selectedRoom.id)
     navigate(location.pathname, { replace: true })
@@ -1156,6 +1175,13 @@ export default function FloorPlan() {
     const facultyName = searchParams.get('faculty')
 
     if (roomId && floorData && floorData.rooms) {
+      const roomToSelect = floorData.rooms.find((r) => r.id === roomId)
+      if (roomToSelect && !selectedRoom) {
+        const linkedFaculty = floorData.faculty
+          ?.filter((f) => f.roomId === roomToSelect.id)
+          .map((f) => f.name) || []
+        setSelectedRoom({ ...roomToSelect, linkedFaculty })
+      }
       const room = floorData.rooms.find((r) => r.id === roomId)
       if (room) {
         if (highlightedRoomId !== room.id) {
@@ -1164,7 +1190,10 @@ export default function FloorPlan() {
 
         if (!facultyName) {
           if (selectedRoom?.id !== room.id) {
-            setSelectedRoom(room)
+            const linkedFaculty = floorData.faculty
+              ?.filter((f) => f.roomId === room.id)
+              .map((f) => f.name) || []
+            setSelectedRoom({ ...room, linkedFaculty })
           }
         }
 
