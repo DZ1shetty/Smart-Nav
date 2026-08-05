@@ -26,7 +26,8 @@ export const CanvasSurface = () => {
   const { 
     rooms, selectedIds, setSelection, tool, setTool, activeRoomType,
     mode, addRoom, updateRoom, deleteRooms,
-    viewport, setViewport, showMinimap, setShowMinimap, snapToGrid, currentFloorIndex
+    viewport, setViewport, showMinimap, setShowMinimap, snapToGrid, currentFloorIndex,
+    groupRooms, ungroupRooms
   } = useBuilderStore();
   
   const { theme } = useTheme();
@@ -49,6 +50,9 @@ export const CanvasSurface = () => {
   const [selEnd, setSelEnd] = useState<{x: number, y: number} | null>(null);
 
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  // For multi-drag synchronization
+  const dragStartNodesRef = useRef<Map<string, { x: number; y: number }>>(new Map());
 
   // Local ref for dragging points without flooding global history or interrupting Konva drag
   const draggedPointsRef = useRef<{roomId: string, points: {x: number, y: number}[]} | null>(null);
@@ -92,6 +96,18 @@ export const CanvasSurface = () => {
         }
       }
 
+      // Grouping
+      if ((e.key === 'g' || e.key === 'G') && (e.ctrlKey || e.metaKey) && document.activeElement?.tagName !== 'INPUT') {
+        e.preventDefault();
+        if (e.shiftKey) {
+          ungroupRooms(selectedIds);
+        } else {
+          if (selectedIds.length > 1) {
+            groupRooms(selectedIds);
+          }
+        }
+      }
+
       // Nudging
       if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key) && document.activeElement?.tagName !== 'INPUT') {
         e.preventDefault();
@@ -120,7 +136,7 @@ export const CanvasSurface = () => {
       window.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('keyup', handleKeyUp);
     };
-  }, [isSpaceDown, selectedIds, rooms, deleteRooms, updateRoom]);
+  }, [isSpaceDown, selectedIds, rooms, deleteRooms, updateRoom, groupRooms, ungroupRooms]);
 
   // Auto-attach transformer
   useEffect(() => {
@@ -270,11 +286,26 @@ export const CanvasSurface = () => {
         width: Math.abs(selEnd.x - selStart.x),
         height: Math.abs(selEnd.y - selStart.y)
       };
-      
-      const newSelected = rooms.filter(r => 
+      let newSelected = rooms.filter(r => 
         r.x < box.x + box.width && r.x + r.width > box.x &&
         r.y < box.y + box.height && r.y + r.height > box.y
       ).map(r => r.id);
+
+      // Expand to include groups
+      const groupsToSelect = new Set<string>();
+      newSelected.forEach(id => {
+        const room = rooms.find(r => r.id === id);
+        if (room?.groupId) groupsToSelect.add(room.groupId);
+      });
+      if (groupsToSelect.size > 0) {
+        const expanded = new Set<string>(newSelected);
+        rooms.forEach(room => {
+          if (room.groupId && groupsToSelect.has(room.groupId)) {
+            expanded.add(room.id);
+          }
+        });
+        newSelected = Array.from(expanded);
+      }
 
       if (e.evt.shiftKey) {
         setSelection([...new Set([...selectedIds, ...newSelected])]);
@@ -309,9 +340,69 @@ export const CanvasSurface = () => {
     }
   };
 
+  const handleDragStart = (e: KonvaEventObject<DragEvent>, id: string) => {
+    // Record original positions of all selected rooms
+    const dragMap = new Map<string, { x: number; y: number }>();
+    selectedIds.forEach(selId => {
+      const room = rooms.find(r => r.id === selId);
+      if (room && !room.locked) {
+        dragMap.set(selId, { x: room.x, y: room.y });
+      }
+    });
+    dragStartNodesRef.current = dragMap;
+  };
+
+  const handleDragMove = (e: KonvaEventObject<DragEvent>, id: string) => {
+    if (selectedIds.length <= 1) return;
+    
+    const node = e.target;
+    const dragStartPos = dragStartNodesRef.current.get(id);
+    if (!dragStartPos) return;
+
+    const dx = node.x() - dragStartPos.x;
+    const dy = node.y() - dragStartPos.y;
+
+    const stage = stageRef.current;
+    if (!stage) return;
+
+    selectedIds.forEach(selId => {
+      if (selId === id) return; // Self is handled by Konva natively
+      const originalPos = dragStartNodesRef.current.get(selId);
+      if (originalPos) {
+        const otherNode = stage.findOne(`#room-${selId}`);
+        if (otherNode) {
+          otherNode.position({
+            x: originalPos.x + dx,
+            y: originalPos.y + dy
+          });
+        }
+      }
+    });
+  };
+
   const handleDragEnd = (e: KonvaEventObject<DragEvent>, id: string) => {
     const node = e.target;
-    updateRoom(id, { x: snap(node.x()), y: snap(node.y()) });
+    const dragStartPos = dragStartNodesRef.current.get(id);
+    
+    if (selectedIds.length > 1 && dragStartPos) {
+      const dx = node.x() - dragStartPos.x;
+      const dy = node.y() - dragStartPos.y;
+      
+      const updatesList = selectedIds.map(selId => {
+        const originalPos = dragStartNodesRef.current.get(selId);
+        if (originalPos) {
+          return {
+            id: selId,
+            updates: { x: snap(originalPos.x + dx), y: snap(originalPos.y + dy) }
+          };
+        }
+        return null;
+      }).filter(Boolean) as { id: string, updates: Partial<BuilderRoom> }[];
+      
+      updateRooms(updatesList);
+    } else {
+      updateRoom(id, { x: snap(node.x()), y: snap(node.y()) });
+    }
   };
 
   const handleTransformEnd = (e: KonvaEventObject<Event>, id: string) => {
@@ -338,10 +429,25 @@ export const CanvasSurface = () => {
   const handleRoomClick = (e: KonvaEventObject<MouseEvent | TouchEvent>, id: string) => {
     if (tool !== 'select' || isSpaceDown) return;
     const metaPressed = e.evt.shiftKey || e.evt.ctrlKey || e.evt.metaKey;
+    const altPressed = e.evt.altKey;
+
+    const room = rooms.find(r => r.id === id);
+    let idsToSelect = [id];
+
+    if (!altPressed && room?.groupId) {
+      idsToSelect = rooms.filter(r => r.groupId === room.groupId).map(r => r.id);
+    }
+
     if (metaPressed) {
-      setSelection(selectedIds.includes(id) ? selectedIds.filter(s => s !== id) : [...selectedIds, id]);
+      // Toggle logic for multi-select
+      const allIncluded = idsToSelect.every(i => selectedIds.includes(i));
+      if (allIncluded) {
+        setSelection(selectedIds.filter(s => !idsToSelect.includes(s)));
+      } else {
+        setSelection([...new Set([...selectedIds, ...idsToSelect])]);
+      }
     } else {
-      setSelection([id]);
+      setSelection(idsToSelect);
     }
   };
 
@@ -382,6 +488,20 @@ export const CanvasSurface = () => {
   const gridSpacing = 40 * viewport.scale;
 
   const sortedRooms = [...rooms].sort((a, b) => (a.type === 'layout' ? -1 : b.type === 'layout' ? 1 : 0));
+  
+  // Compute visual bounding box for selected groups
+  let groupBoundingBox = null;
+  if (selectedIds.length > 1) {
+    const selectedRooms = rooms.filter(r => selectedIds.includes(r.id));
+    const allSameGroup = selectedRooms.every(r => r.groupId && r.groupId === selectedRooms[0].groupId);
+    if (allSameGroup && selectedRooms.length > 0) {
+      const minX = Math.min(...selectedRooms.map(r => r.x));
+      const minY = Math.min(...selectedRooms.map(r => r.y));
+      const maxX = Math.max(...selectedRooms.map(r => r.x + r.width));
+      const maxY = Math.max(...selectedRooms.map(r => r.y + r.height));
+      groupBoundingBox = { x: minX, y: minY, width: maxX - minX, height: maxY - minY };
+    }
+  }
 
   return (
     <div 
@@ -410,6 +530,19 @@ export const CanvasSurface = () => {
         onMouseUp={handleMouseUp}
       >
         <Layer>
+          {groupBoundingBox && (
+            <Rect
+              x={groupBoundingBox.x - 5 / viewport.scale}
+              y={groupBoundingBox.y - 5 / viewport.scale}
+              width={groupBoundingBox.width + 10 / viewport.scale}
+              height={groupBoundingBox.height + 10 / viewport.scale}
+              stroke="#06b6d4"
+              strokeWidth={1.5 / viewport.scale}
+              dash={[5 / viewport.scale, 5 / viewport.scale]}
+              listening={false}
+            />
+          )}
+
           {sortedRooms.map(room => {
             const isSel = selectedIds.includes(room.id);
             const color = room.color || TYPE_COLORS[room.type] || '#ccc';
@@ -458,6 +591,8 @@ export const CanvasSurface = () => {
                     text.height(newHeight);
                   }
                 }}
+                onDragStart={(e) => handleDragStart(e, room.id)}
+                onDragMove={(e) => handleDragMove(e, room.id)}
                 onDragEnd={(e) => handleDragEnd(e, room.id)}
                 onTransformEnd={(e) => handleTransformEnd(e, room.id)}
               >

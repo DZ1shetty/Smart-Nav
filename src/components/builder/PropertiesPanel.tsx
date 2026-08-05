@@ -4,7 +4,7 @@ import { X, HelpCircle, Move, Maximize2, RotateCw, Type, Hash } from 'lucide-rea
 import clsx from 'clsx';
 
 export const PropertiesPanel = () => {
-  const { rooms, selectedIds, updateRoom, setSelection, measurementUnit, setMeasurementUnit } = useBuilderStore();
+  const { rooms, selectedIds, updateRoom, setSelection, measurementUnit, setMeasurementUnit, groupRooms, ungroupRooms } = useBuilderStore();
   const nameInputRef = useRef<HTMLInputElement>(null);
   const [showHelp, setShowHelp] = useState(false);
 
@@ -22,7 +22,7 @@ export const PropertiesPanel = () => {
     }
   }, [selectedRoom?.id]);
 
-  if (!selectedRoom) {
+  if (selectedIds.length === 0) {
     return (
       <div className="w-[280px] h-full border-l border-zinc-200 dark:border-zinc-800 bg-white dark:bg-[#1e1e1e] flex flex-col shrink-0 z-10 font-sans shadow-xl">
         <div className="flex items-center justify-between p-3 border-b border-zinc-100 dark:border-zinc-800/50">
@@ -37,6 +37,47 @@ export const PropertiesPanel = () => {
       </div>
     );
   }
+
+  if (selectedIds.length > 1) {
+    const selectedRooms = rooms.filter(r => selectedIds.includes(r.id));
+    const allSameGroup = selectedRooms.every(r => r.groupId && r.groupId === selectedRooms[0].groupId);
+    
+    return (
+      <div className="w-[280px] h-full border-l border-zinc-200 dark:border-zinc-800 bg-white dark:bg-[#1e1e1e] flex flex-col shrink-0 z-10 font-sans shadow-xl">
+        <div className="flex items-center justify-between p-3 border-b border-zinc-100 dark:border-zinc-800/50">
+          <h3 className="text-xs font-semibold tracking-wide text-zinc-800 dark:text-zinc-200 uppercase">Selection</h3>
+        </div>
+        <div className="flex-1 flex flex-col items-center justify-center p-6 text-center text-zinc-400 dark:text-zinc-500">
+          <div className="w-16 h-16 mb-4 rounded-xl border-2 border-dashed border-zinc-300 dark:border-zinc-700 flex items-center justify-center">
+            <span className="block w-8 h-8 bg-zinc-100 dark:bg-zinc-800 rounded-md" />
+          </div>
+          <p className="text-xs font-medium mb-4 text-zinc-800 dark:text-zinc-200">{selectedIds.length} shapes selected</p>
+          
+          {allSameGroup && selectedRooms.length > 0 ? (
+            <div className="flex flex-col items-center gap-2">
+              <span className="text-xs text-blue-500">Grouped ({selectedRooms.length} shapes)</span>
+              <button 
+                onClick={() => ungroupRooms(selectedIds)} 
+                className="px-3 py-1.5 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-900 dark:text-zinc-100 rounded text-xs font-medium transition-colors"
+              >
+                Ungroup
+              </button>
+            </div>
+          ) : (
+            <button 
+              onClick={() => groupRooms(selectedIds)} 
+              className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded text-xs font-medium transition-colors"
+            >
+              Group Selection
+            </button>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  // If we get here, selectedRoom is guaranteed to be non-null because selectedIds.length === 1
+  if (!selectedRoom) return null;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;

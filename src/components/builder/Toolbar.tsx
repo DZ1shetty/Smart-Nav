@@ -21,7 +21,9 @@ import {
   ChevronRight,
   Folder,
   ChevronDown,
-  Users
+  Users,
+  Group,
+  Ungroup
 } from 'lucide-react';
 import clsx from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -57,7 +59,9 @@ export const Toolbar = () => {
     currentFloorIndex,
     buildingMeta,
     switchFloor,
-    floorsData
+    floorsData,
+    groupRooms,
+    ungroupRooms
   } = useBuilderStore();
 
   const [searchQuery, setSearchQuery] = useState('');
@@ -182,6 +186,11 @@ export const Toolbar = () => {
         <div className="flex gap-0.5">
           <ToolbarButton icon={Undo} label="Undo (Ctrl+Z)" onClick={undo} disabled={!canUndo} />
           <ToolbarButton icon={Redo} label="Redo (Ctrl+Y)" onClick={redo} disabled={!canRedo} />
+        </div>
+        <div className="w-px h-4 bg-zinc-200 dark:bg-zinc-700 mx-1"></div>
+        <div className="flex gap-0.5 items-center">
+          <ToolbarButton icon={Group} label="Group (Ctrl+G)" onClick={() => groupRooms(selectedIds)} disabled={selectedIds.length < 2} />
+          <ToolbarButton icon={Ungroup} label="Ungroup (Ctrl+Shift+G)" onClick={() => ungroupRooms(selectedIds)} disabled={!selectedIds.some(id => rooms.find(r => r.id === id)?.groupId)} />
         </div>
         <div className="w-px h-4 bg-zinc-200 dark:bg-zinc-700 mx-1"></div>
         <div className="flex gap-0.5 items-center">

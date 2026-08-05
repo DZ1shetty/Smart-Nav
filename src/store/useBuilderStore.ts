@@ -59,9 +59,14 @@ interface BuilderState {
   // Room Actions
   addRoom: (room: Omit<BuilderRoom, 'id'>) => void;
   updateRoom: (id: string, updates: Partial<BuilderRoom>) => void;
+  updateRooms: (updates: { id: string, updates: Partial<BuilderRoom> }[]) => void;
   deleteRooms: (ids: string[]) => void;
   
   updateBuildingMeta: (updates: Partial<BuildingMeta>) => void;
+  
+  // Grouping Actions
+  groupRooms: (ids: string[]) => void;
+  ungroupRooms: (ids: string[]) => void;
   
   // History Actions
   undo: () => void;
@@ -143,7 +148,9 @@ export const useBuilderStore = create<BuilderState>((set, get) => ({
   setMode: (mode) => {
     set({ mode, selectedIds: [], tool: 'select' });
   },
-  setSelection: (ids) => set({ selectedIds: ids }),
+  setSelection: (ids) => {
+    set({ selectedIds: ids });
+  },
   
   setViewport: (viewport) => set({ viewport }),
   setShowMinimap: (showMinimap) => set({ showMinimap }),
@@ -166,11 +173,50 @@ export const useBuilderStore = create<BuilderState>((set, get) => ({
     get().commitHistory();
   },
 
+  updateRooms: (updatesList) => {
+    const updatesMap = new Map(updatesList.map(u => [u.id, u.updates]));
+    const newRooms = get().rooms.map(room => {
+      const updates = updatesMap.get(room.id);
+      return updates ? { ...room, ...updates } : room;
+    });
+    set({ rooms: newRooms });
+    get().commitHistory();
+  },
+
   deleteRooms: (ids) => {
     const newRooms = get().rooms.filter(room => !ids.includes(room.id));
     const newSelection = get().selectedIds.filter(id => !ids.includes(id));
     set({ rooms: newRooms, selectedIds: newSelection });
     get().commitHistory();
+  },
+
+  groupRooms: (ids) => {
+    const { rooms, commitHistory } = get();
+    if (ids.length < 2) return;
+    
+    const newGroupId = uuidv4();
+    const newRooms = rooms.map(room => 
+      ids.includes(room.id) ? { ...room, groupId: newGroupId } : room
+    );
+    
+    set({ rooms: newRooms });
+    commitHistory();
+  },
+
+  ungroupRooms: (ids) => {
+    const { rooms, commitHistory } = get();
+    if (ids.length === 0) return;
+    
+    const newRooms = rooms.map(room => {
+      if (ids.includes(room.id) && room.groupId) {
+        const { groupId, ...rest } = room;
+        return rest as BuilderRoom;
+      }
+      return room;
+    });
+
+    set({ rooms: newRooms });
+    commitHistory();
   },
 
   // History Actions

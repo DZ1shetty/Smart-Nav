@@ -57,19 +57,19 @@ function NaviBotIcon({ className = "w-5 h-5", glowColor = "currentColor" }) {
         className="w-full h-full"
       >
         {/* Antenna with pulsing halo */}
-        <circle 
-          cx="12" 
-          cy="3" 
-          r="1.2" 
+        <circle
+          cx="12"
+          cy="3"
+          r="1.2"
           fill="none"
           stroke={glowColor}
           strokeWidth="0.8"
           className="opacity-40"
         />
-        <motion.circle 
-          cx="12" 
-          cy="3" 
-          r="1.2" 
+        <motion.circle
+          cx="12"
+          cy="3"
+          r="1.2"
           fill={glowColor}
           animate={{
             scale: [1, 1.6, 1],
@@ -81,25 +81,25 @@ function NaviBotIcon({ className = "w-5 h-5", glowColor = "currentColor" }) {
             ease: "easeInOut"
           }}
         />
-        <path 
-          d="M12 4.5V7" 
-          stroke="currentColor" 
-          strokeWidth="1.5" 
-          strokeLinecap="round" 
+        <path
+          d="M12 4.5V7"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
         />
-        
+
         {/* Sleek Floating Side Receivers (Ears) */}
-        <path 
-          d="M4.5 11.5C4 12.5 4 14.5 4.5 15.5" 
-          stroke="currentColor" 
-          strokeWidth="1.5" 
-          strokeLinecap="round" 
+        <path
+          d="M4.5 11.5C4 12.5 4 14.5 4.5 15.5"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
         />
-        <path 
-          d="M19.5 11.5C20 12.5 20 14.5 19.5 15.5" 
-          stroke="currentColor" 
-          strokeWidth="1.5" 
-          strokeLinecap="round" 
+        <path
+          d="M19.5 11.5C20 12.5 20 14.5 19.5 15.5"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
         />
 
         {/* Head Shell (Sleek Cyber Helmet) */}
@@ -113,7 +113,7 @@ function NaviBotIcon({ className = "w-5 h-5", glowColor = "currentColor" }) {
           strokeWidth="1.8"
           className="fill-black/[0.03] dark:fill-white/[0.04]"
         />
-        
+
         {/* Visor Screen */}
         <rect
           x="8"
@@ -126,7 +126,7 @@ function NaviBotIcon({ className = "w-5 h-5", glowColor = "currentColor" }) {
           stroke="currentColor"
           strokeWidth="1"
         />
-        
+
         {/* Visor Scanning Laser Dot */}
         <motion.circle
           cx="12"
@@ -142,13 +142,13 @@ function NaviBotIcon({ className = "w-5 h-5", glowColor = "currentColor" }) {
             ease: "easeInOut",
           }}
         />
-        
+
         {/* Futuristic Neck Collar */}
-        <path 
-          d="M9.5 19.5C10.5 20.2 13.5 20.2 14.5 19.5" 
-          stroke="currentColor" 
-          strokeWidth="1.5" 
-          strokeLinecap="round" 
+        <path
+          d="M9.5 19.5C10.5 20.2 13.5 20.2 14.5 19.5"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
         />
       </svg>
     </div>
@@ -327,7 +327,7 @@ export default function ChatbotWidget() {
       setActiveSpeech(null);
     }
   }, [isOpen, isMinimized])
- 
+
   // Close chatbot when clicking outside the widget or trigger button
   useEffect(() => {
     function handleClickOutside(event) {
@@ -379,7 +379,7 @@ export default function ChatbotWidget() {
   // Load dynamic query count and chat history whenever puterUser changes
   useEffect(() => {
     const currentUsername = puterUser ? puterUser.username : 'anonymous';
-    
+
     // ─── MONTHLY RESET LOGIC ────────────────────────────────────────────────────
     // Each account gets 15 fresh chats every calendar month.
     // Q&A history is NEVER cleared — it accumulates forever across all months.
@@ -502,14 +502,14 @@ export default function ChatbotWidget() {
   // Persist messages to localStorage whenever they change
   useEffect(() => {
     const currentUsername = puterUser ? puterUser.username : 'anonymous';
-    
+
     // Prevents race conditions: avoid saving if we haven't loaded this user's history yet
     if (lastLoadedUsernameRef.current !== currentUsername) {
       return;
     }
 
     if (messages.length === 0) return;
-    
+
     // Only skip saving if it's ONLY the welcome message and nothing else has been added
     // Save as soon as there are 2+ messages (meaning the user has actually chatted)
     const hasRealMessages = messages.some(m => m.id !== 'welcome');
@@ -605,9 +605,8 @@ export default function ChatbotWidget() {
       if (token.startsWith('**') && token.endsWith('**')) {
         const boldContent = token.slice(2, -2)
         return (
-          <strong key={tokenKey} className={`font-bold text-black dark:text-white bg-black/[0.04] dark:bg-white/[0.08] px-1 py-0.5 rounded border border-black/10 dark:border-white/10 font-sans ${
-            chatTextSize === 'large' ? 'text-[13.5px]' : 'text-[12px]'
-          }`}>
+          <strong key={tokenKey} className={`font-bold text-black dark:text-white bg-black/[0.04] dark:bg-white/[0.08] px-1 py-0.5 rounded border border-black/10 dark:border-white/10 font-sans ${chatTextSize === 'large' ? 'text-[13.5px]' : 'text-[12px]'
+            }`}>
             {boldContent}
           </strong>
         )
@@ -625,9 +624,8 @@ export default function ChatbotWidget() {
               onClick={() => {
                 navigate(linkUrl)
               }}
-              className={`inline-flex items-center gap-0.5 mx-0.5 px-2 py-0.5 bg-blue-500/10 dark:bg-cyan-500/15 border border-blue-500/20 dark:border-cyan-400/20 font-orbitron font-black text-blue-600 dark:text-cyan-400 hover:bg-blue-500 hover:text-white dark:hover:bg-cyan-400 dark:hover:text-black rounded-md transition-all ${
-                chatTextSize === 'large' ? 'text-[12px]' : 'text-[11px]'
-              }`}
+              className={`inline-flex items-center gap-0.5 mx-0.5 px-2 py-0.5 bg-blue-500/10 dark:bg-cyan-500/15 border border-blue-500/20 dark:border-cyan-400/20 font-orbitron font-black text-blue-600 dark:text-cyan-400 hover:bg-blue-500 hover:text-white dark:hover:bg-cyan-400 dark:hover:text-black rounded-md transition-all ${chatTextSize === 'large' ? 'text-[12px]' : 'text-[11px]'
+                }`}
               style={{ verticalAlign: 'middle', transform: 'translateY(-1px)' }}
             >
               {linkText}
@@ -690,9 +688,8 @@ export default function ChatbotWidget() {
           if (isListItem) {
             return (
               <div key={`li-${lineIdx}`} className="flex items-start gap-1.5 py-0.5 group w-full">
-                <span className={`font-orbitron font-black text-blue-500 dark:text-cyan-400 mt-[1px] select-none w-4 text-right flex-shrink-0 ${
-                  chatTextSize === 'large' ? 'text-[12px]' : 'text-[11px]'
-                }`}>
+                <span className={`font-orbitron font-black text-blue-500 dark:text-cyan-400 mt-[1px] select-none w-4 text-right flex-shrink-0 ${chatTextSize === 'large' ? 'text-[12px]' : 'text-[11px]'
+                  }`}>
                   {listMarker}
                 </span>
                 <div className={`flex-1 leading-normal text-[var(--text-main)] w-full ${lineFontSize}`}>
@@ -778,11 +775,11 @@ export default function ChatbotWidget() {
     const lowerQuery = queryText.toLowerCase().trim();
     // Words suggesting navigation/location lookup
     const navKeywords = ['where', 'locate', 'go to', 'take me to', 'find', 'navigate', 'directions', 'how to get to', 'show me', 'search'];
-    
+
     // Check if the query matches navigation keywords or if it's a simple room code (like "LH-311", "NFL003", etc.)
     const isRoomCode = /^[a-z]{2,3}[-\s]?\d{3}$/.test(lowerQuery) || /^[a-z]{3}\s[a-z]\d{3}$/.test(lowerQuery);
     const hasNavIntent = navKeywords.some(keyword => lowerQuery.includes(keyword)) || isRoomCode || lowerQuery.length < 15;
-    
+
     if (hasNavIntent) {
       // Clean query by removing typical intro phrases
       let cleanQuery = queryText;
@@ -792,9 +789,9 @@ export default function ChatbotWidget() {
       });
       cleanQuery = cleanQuery.trim();
       if (!cleanQuery) cleanQuery = queryText; // fallback to original if cleaned to empty
-      
+
       const resolved = resolveNavigationQuery(cleanQuery);
-      
+
       if (resolved && resolved.confidence_score >= 70) {
         // Log this navigation event to backend log endpoint
         try {
@@ -819,7 +816,7 @@ export default function ChatbotWidget() {
         } catch (logErr) {
           console.warn('[Activity Log] Failed to send chatbot navigation log:', logErr);
         }
-        
+
         // Add the user message
         const userMessage = {
           id: `msg-${Date.now()}`,
@@ -828,30 +825,30 @@ export default function ChatbotWidget() {
         }
         setMessages((prev) => [...prev, userMessage])
         setIsLoading(true)
-        
+
         // Add delayed bot navigation response
         setTimeout(() => {
           const botMessageId = `bot-${Date.now()}`
-          
+
           let botResponseText = `I found **${resolved.title}** on the **${resolved._floorLabel}** of **${resolved.description.split('·')[1]?.trim() || 'APJ-BLOCK'}**.\n\nLet me take you there! Routing now...`;
           if (resolved.directions) {
             botResponseText += `\n\n*Directions: ${resolved.directions}*`;
           }
-          
+
           setMessages((prev) => [
             ...prev,
-            { 
-              id: botMessageId, 
-              sender: 'bot', 
+            {
+              id: botMessageId,
+              sender: 'bot',
               text: botResponseText
             }
           ]);
           setIsLoading(false);
-          
+
           // Auto-navigate!
           navigate(resolved.url);
         }, 600);
-        
+
         return; // EXIT submitQuery
       }
     }
@@ -935,10 +932,10 @@ export default function ChatbotWidget() {
       try {
         const savedQAsKey = `smart_nav_saved_qa_${activeUsername}`;
         const existingQAs = JSON.parse(localStorage.getItem(savedQAsKey) || '[]');
-        
+
         // Exclude duplicate queries to always hold the freshest response
         const filteredQAs = existingQAs.filter(item => item.query.toLowerCase() !== queryText.trim().toLowerCase());
-        
+
         filteredQAs.push({
           id: `qa-${Date.now()}`,
           query: queryText.trim(),
@@ -947,7 +944,7 @@ export default function ChatbotWidget() {
           queryIndex: nextCount,         // Which chat number this was (1-15) for this month
           month: currentMonth,           // "2026-06" — used to group by month in history drawer
         });
-        
+
         localStorage.setItem(savedQAsKey, JSON.stringify(filteredQAs));
         setSavedQAs(filteredQAs);
 
@@ -961,12 +958,12 @@ export default function ChatbotWidget() {
       setIsLoading(false)
 
       const errMsg = error?.message || error?.toString() || '';
-      const isLimitError = errMsg.toLowerCase().includes('balance') || 
-                           errMsg.toLowerCase().includes('limit') || 
-                           errMsg.toLowerCase().includes('credit') ||
-                           errMsg.toLowerCase().includes('insufficient') ||
-                           errMsg.toLowerCase().includes('funding') ||
-                           errMsg.toLowerCase().includes('payment');
+      const isLimitError = errMsg.toLowerCase().includes('balance') ||
+        errMsg.toLowerCase().includes('limit') ||
+        errMsg.toLowerCase().includes('credit') ||
+        errMsg.toLowerCase().includes('insufficient') ||
+        errMsg.toLowerCase().includes('funding') ||
+        errMsg.toLowerCase().includes('payment');
 
       setMessages((prev) => [
         ...prev,
@@ -1006,11 +1003,11 @@ export default function ChatbotWidget() {
         >
           {/* Subtle glow effect */}
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          
+
           <div className="relative z-10 flex items-center justify-center text-cyan-400 size-5 md:size-6 flex-shrink-0">
             <SmartNavLogo animated={false} className="size-5 md:size-6" />
           </div>
-          
+
           <span className="relative z-10 text-[10.5px] md:text-xs font-orbitron font-black uppercase tracking-wider text-white group-hover:text-cyan-300 transition-colors duration-300">
             Ask AI
           </span>
@@ -1023,8 +1020,8 @@ export default function ChatbotWidget() {
           <motion.div
             ref={widgetRef}
             variants={{
-              hidden: { 
-                opacity: 0, 
+              hidden: {
+                opacity: 0,
                 scale: 0.15,
                 y: 240,
                 x: 120,
@@ -1091,8 +1088,8 @@ export default function ChatbotWidget() {
             <motion.header
               variants={{
                 hidden: { opacity: 0, y: 15 },
-                visible: { 
-                  opacity: 1, 
+                visible: {
+                  opacity: 1,
                   y: 0,
                   transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] }
                 }
@@ -1116,9 +1113,8 @@ export default function ChatbotWidget() {
 
                 <button
                   onClick={() => setShowHistory(!showHistory)}
-                  className={`p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5 ${
-                    showHistory ? 'text-blue-500 dark:text-cyan-400' : 'text-black/45 dark:text-white/40 hover:text-blue-500 dark:hover:text-cyan-400'
-                  }`}
+                  className={`p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5 ${showHistory ? 'text-blue-500 dark:text-cyan-400' : 'text-black/45 dark:text-white/40 hover:text-blue-500 dark:hover:text-cyan-400'
+                    }`}
                   title="View Chat History"
                 >
                   <History className="w-4 h-4" />
@@ -1160,20 +1156,20 @@ export default function ChatbotWidget() {
             <AnimatePresence>
               {showHistory && (
                 <motion.div
-                  initial={{ 
+                  initial={{
                     clipPath: "circle(0% at 78% 0px)",
                     opacity: 0
                   }}
-                  animate={{ 
+                  animate={{
                     clipPath: "circle(150% at 78% 0px)",
                     opacity: 1
                   }}
-                  exit={{ 
+                  exit={{
                     clipPath: "circle(0% at 78% 0px)",
                     opacity: 0
                   }}
-                  transition={{ 
-                    duration: 0.65, 
+                  transition={{
+                    duration: 0.65,
                     ease: [0.16, 1, 0.3, 1] // premium lazy ease-out
                   }}
                   className="absolute inset-x-0 bottom-0 top-[60px] bg-white/95 dark:bg-[#0c0c0e]/95 backdrop-blur-3xl z-40 flex flex-col p-5 border-t border-black/5 dark:border-white/5 overflow-hidden"
@@ -1246,13 +1242,12 @@ export default function ChatbotWidget() {
                             <span className="text-xs font-orbitron font-black text-black/40 dark:text-white/30 uppercase tracking-wider">
                               {savedQAs.length} saved · {queriesRemaining} left this month
                             </span>
-                            <span className={`text-[11px] font-orbitron font-black uppercase tracking-widest px-2 py-0.5 rounded-full border ${
-                              queriesRemaining === 0
+                            <span className={`text-[11px] font-orbitron font-black uppercase tracking-widest px-2 py-0.5 rounded-full border ${queriesRemaining === 0
                                 ? 'text-red-500 border-red-500/30 bg-red-500/10'
                                 : queriesRemaining <= 3
-                                ? 'text-amber-500 border-amber-500/30 bg-amber-500/10'
-                                : 'text-emerald-500 border-emerald-500/30 bg-emerald-500/10'
-                            }`}>
+                                  ? 'text-amber-500 border-amber-500/30 bg-amber-500/10'
+                                  : 'text-emerald-500 border-emerald-500/30 bg-emerald-500/10'
+                              }`}>
                               {queriesRemaining === 0 ? '⛔ Resets Next Month' : queriesRemaining <= 3 ? '⚠️ Nearly Full' : '✓ Active'}
                             </span>
                           </div>
@@ -1265,11 +1260,10 @@ export default function ChatbotWidget() {
                               <div key={monthKey} className="flex flex-col gap-2">
                                 {/* Month section header */}
                                 <div className="flex items-center gap-2 px-1 pt-1">
-                                  <span className={`text-[11px] font-orbitron font-black uppercase tracking-widest px-2 py-0.5 rounded-full border ${
-                                    isCurrentMonth
+                                  <span className={`text-[11px] font-orbitron font-black uppercase tracking-widest px-2 py-0.5 rounded-full border ${isCurrentMonth
                                       ? 'text-blue-500 dark:text-cyan-400 border-blue-500/25 dark:border-cyan-400/25 bg-blue-500/8 dark:bg-cyan-500/8'
                                       : 'text-black/35 dark:text-white/25 border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03]'
-                                  }`}>
+                                    }`}>
                                     📅 {monthLabel}{isCurrentMonth ? ' · Now' : ''}
                                   </span>
                                   <span className="text-[11px] text-black/25 dark:text-white/20 font-orbitron font-black">
@@ -1279,136 +1273,136 @@ export default function ChatbotWidget() {
 
                                 {/* Q&A cards for this month */}
                                 {monthItems.map((item, idx) => {
-                            const isExpanded = expandedQAId === item.id;
-                            // Format relative timestamp
-                            const ts = item.timestamp ? new Date(item.timestamp) : null;
-                            const tsLabel = ts ? ts.toLocaleString('en-IN', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }) : null;
-                            return (
-                              <div
-                                key={item.id || idx}
-                                id={`qa-card-${item.id}`}
-                                className="w-full flex flex-col bg-black/[0.02] dark:bg-white/[0.03] border border-black/5 dark:border-white/[0.05] hover:border-blue-500/20 dark:hover:border-cyan-400/20 rounded-2xl transition-all duration-300 shadow-sm overflow-hidden"
-                              >
-                              {/* Card Header (clickable to expand) */}
-                              <button
-                                onClick={() => setExpandedQAId(isExpanded ? null : item.id)}
-                                className="w-full text-left p-3.5 flex flex-col gap-1.5 text-black/75 dark:text-white/70 hover:text-blue-500 dark:hover:text-cyan-400 transition-colors focus:outline-none"
-                              >
-                                <div className="flex items-center justify-between gap-3">
-                                  <span className="line-clamp-2 font-medium text-[13px] pr-2 leading-snug flex-1">
-                                    {item.query}
-                                  </span>
-                                  <div className="flex items-center gap-2 flex-shrink-0">
-                                    {item.queryIndex && (
-                                      <span className="text-[8.5px] font-orbitron font-black text-black/35 dark:text-white/25 uppercase tracking-widest">
-                                        #{item.queryIndex}/{queryLimit}
-                                      </span>
-                                    )}
-                                    <span className="text-[11px] font-orbitron font-black text-blue-500 dark:text-cyan-400 uppercase tracking-widest bg-blue-500/10 dark:bg-cyan-500/10 border border-blue-500/20 dark:border-cyan-500/20 px-2 py-0.5 rounded-lg">
-                                      {isExpanded ? 'Hide' : 'View'}
-                                    </span>
-                                    {isExpanded ? (
-                                      <ChevronUp className="w-4 h-4 text-black/30 dark:text-white/30" />
-                                    ) : (
-                                      <ChevronDown className="w-4 h-4 text-black/30 dark:text-white/30" />
-                                    )}
-                                  </div>
-                                </div>
-                                {tsLabel && (
-                                  <span className="text-xs text-black/30 dark:text-white/25 font-sans">
-                                    {tsLabel}
-                                  </span>
-                                )}
-                              </button>
-
-                            {/* Expanded Answer Content */}
-                            <AnimatePresence initial={false}>
-                              {isExpanded && (
-                                <motion.div
-                                  initial={{ height: 0, opacity: 0 }}
-                                  animate={{ height: 'auto', opacity: 1 }}
-                                  exit={{ height: 0, opacity: 0 }}
-                                  transition={{ duration: 0.25, ease: 'easeInOut' }}
-                                  className="border-t border-black/5 dark:border-white/5"
-                                >
-                                  <div className="p-4 bg-black/[0.01] dark:bg-white/[0.01] flex flex-col gap-3 select-text border-l-2 border-blue-500 dark:border-cyan-400">
-                                    {/* Answer Body */}
-                                    <div className="text-black/80 dark:text-white/80 select-text font-sans">
-                                      {renderMessageContent(item.answer)}
-                                    </div>
-
-                                    {/* Action Buttons Footer */}
-                                    <div className="flex items-center justify-between border-t border-black/5 dark:border-white/5 pt-3 mt-1 select-none">
+                                  const isExpanded = expandedQAId === item.id;
+                                  // Format relative timestamp
+                                  const ts = item.timestamp ? new Date(item.timestamp) : null;
+                                  const tsLabel = ts ? ts.toLocaleString('en-IN', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }) : null;
+                                  return (
+                                    <div
+                                      key={item.id || idx}
+                                      id={`qa-card-${item.id}`}
+                                      className="w-full flex flex-col bg-black/[0.02] dark:bg-white/[0.03] border border-black/5 dark:border-white/[0.05] hover:border-blue-500/20 dark:hover:border-cyan-400/20 rounded-2xl transition-all duration-300 shadow-sm overflow-hidden"
+                                    >
+                                      {/* Card Header (clickable to expand) */}
                                       <button
-                                        onClick={(e) => {
-                                          e.stopPropagation();
-                                          // Instantly append the pre-fetched Q&A directly into active messages list!
-                                          const userMsg = {
-                                            id: `user-recall-${Date.now()}`,
-                                            sender: 'user',
-                                            text: item.query
-                                          };
-                                          const botMsg = {
-                                            id: `bot-recall-${Date.now()}`,
-                                            sender: 'bot',
-                                            text: item.answer
-                                          };
-                                          
-                                          setMessages((prev) => [...prev, userMsg, botMsg]);
-                                          setShowHistory(false);
-                                          setExpandedQAId(null);
-                                          toast.success("Recalled to active chat!");
-                                        }}
-                                        className="px-3 py-1.5 bg-blue-500 hover:bg-blue-600 dark:bg-cyan-500/10 dark:hover:bg-cyan-500/20 border border-blue-500/20 dark:border-cyan-400/20 text-white dark:text-cyan-400 font-orbitron font-black text-[11px] uppercase tracking-wider rounded-lg transition-all active:scale-[0.99]"
+                                        onClick={() => setExpandedQAId(isExpanded ? null : item.id)}
+                                        className="w-full text-left p-3.5 flex flex-col gap-1.5 text-black/75 dark:text-white/70 hover:text-blue-500 dark:hover:text-cyan-400 transition-colors focus:outline-none"
                                       >
-                                        Import to Chat
+                                        <div className="flex items-center justify-between gap-3">
+                                          <span className="line-clamp-2 font-medium text-[13px] pr-2 leading-snug flex-1">
+                                            {item.query}
+                                          </span>
+                                          <div className="flex items-center gap-2 flex-shrink-0">
+                                            {item.queryIndex && (
+                                              <span className="text-[8.5px] font-orbitron font-black text-black/35 dark:text-white/25 uppercase tracking-widest">
+                                                #{item.queryIndex}/{queryLimit}
+                                              </span>
+                                            )}
+                                            <span className="text-[11px] font-orbitron font-black text-blue-500 dark:text-cyan-400 uppercase tracking-widest bg-blue-500/10 dark:bg-cyan-500/10 border border-blue-500/20 dark:border-cyan-500/20 px-2 py-0.5 rounded-lg">
+                                              {isExpanded ? 'Hide' : 'View'}
+                                            </span>
+                                            {isExpanded ? (
+                                              <ChevronUp className="w-4 h-4 text-black/30 dark:text-white/30" />
+                                            ) : (
+                                              <ChevronDown className="w-4 h-4 text-black/30 dark:text-white/30" />
+                                            )}
+                                          </div>
+                                        </div>
+                                        {tsLabel && (
+                                          <span className="text-xs text-black/30 dark:text-white/25 font-sans">
+                                            {tsLabel}
+                                          </span>
+                                        )}
                                       </button>
 
-                                      <div className="flex items-center gap-2">
-                                        <button
-                                          onClick={(e) => {
-                                            e.stopPropagation();
-                                            handleCopyToClipboard(item.answer);
-                                          }}
-                                          className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-black/45 dark:text-white/40 hover:text-blue-500 dark:hover:text-cyan-400 transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5 flex items-center gap-1 text-[11px] font-orbitron font-black uppercase tracking-wider"
-                                          title="Copy Answer"
-                                        >
-                                          <Copy className="w-3.5 h-3.5" />
-                                          Copy
-                                        </button>
-                                        <button
-                                          onClick={(e) => {
-                                            e.stopPropagation();
-                                            if (window.confirm("Delete this past query from history?")) {
-                                              const username = puterUser ? puterUser.username : 'anonymous';
-                                              const savedQAsKey = `smart_nav_saved_qa_${username}`;
-                                              try {
-                                                const existingQAs = JSON.parse(localStorage.getItem(savedQAsKey) || '[]');
-                                                const updatedQAs = existingQAs.filter(q => q.id !== item.id);
-                                                localStorage.setItem(savedQAsKey, JSON.stringify(updatedQAs));
-                                                setSavedQAs(updatedQAs);  // ← Instantly remove from drawer
-                                                setExpandedQAId(null);
-                                                toast.success("Query deleted!");
-                                              } catch (err) {
-                                                console.warn("Failed to delete query:", err);
-                                              }
-                                            }
-                                          }}
-                                          className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-black/45 dark:text-white/40 hover:text-red-500 dark:hover:text-red-400 transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5 flex items-center gap-1 text-[11px] font-orbitron font-black uppercase tracking-wider"
-                                          title="Delete Query"
-                                        >
-                                          <Trash2 className="w-3.5 h-3.5" />
-                                          Delete
-                                        </button>
-                                      </div>
+                                      {/* Expanded Answer Content */}
+                                      <AnimatePresence initial={false}>
+                                        {isExpanded && (
+                                          <motion.div
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: 'auto', opacity: 1 }}
+                                            exit={{ height: 0, opacity: 0 }}
+                                            transition={{ duration: 0.25, ease: 'easeInOut' }}
+                                            className="border-t border-black/5 dark:border-white/5"
+                                          >
+                                            <div className="p-4 bg-black/[0.01] dark:bg-white/[0.01] flex flex-col gap-3 select-text border-l-2 border-blue-500 dark:border-cyan-400">
+                                              {/* Answer Body */}
+                                              <div className="text-black/80 dark:text-white/80 select-text font-sans">
+                                                {renderMessageContent(item.answer)}
+                                              </div>
+
+                                              {/* Action Buttons Footer */}
+                                              <div className="flex items-center justify-between border-t border-black/5 dark:border-white/5 pt-3 mt-1 select-none">
+                                                <button
+                                                  onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    // Instantly append the pre-fetched Q&A directly into active messages list!
+                                                    const userMsg = {
+                                                      id: `user-recall-${Date.now()}`,
+                                                      sender: 'user',
+                                                      text: item.query
+                                                    };
+                                                    const botMsg = {
+                                                      id: `bot-recall-${Date.now()}`,
+                                                      sender: 'bot',
+                                                      text: item.answer
+                                                    };
+
+                                                    setMessages((prev) => [...prev, userMsg, botMsg]);
+                                                    setShowHistory(false);
+                                                    setExpandedQAId(null);
+                                                    toast.success("Recalled to active chat!");
+                                                  }}
+                                                  className="px-3 py-1.5 bg-blue-500 hover:bg-blue-600 dark:bg-cyan-500/10 dark:hover:bg-cyan-500/20 border border-blue-500/20 dark:border-cyan-400/20 text-white dark:text-cyan-400 font-orbitron font-black text-[11px] uppercase tracking-wider rounded-lg transition-all active:scale-[0.99]"
+                                                >
+                                                  Import to Chat
+                                                </button>
+
+                                                <div className="flex items-center gap-2">
+                                                  <button
+                                                    onClick={(e) => {
+                                                      e.stopPropagation();
+                                                      handleCopyToClipboard(item.answer);
+                                                    }}
+                                                    className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-black/45 dark:text-white/40 hover:text-blue-500 dark:hover:text-cyan-400 transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5 flex items-center gap-1 text-[11px] font-orbitron font-black uppercase tracking-wider"
+                                                    title="Copy Answer"
+                                                  >
+                                                    <Copy className="w-3.5 h-3.5" />
+                                                    Copy
+                                                  </button>
+                                                  <button
+                                                    onClick={(e) => {
+                                                      e.stopPropagation();
+                                                      if (window.confirm("Delete this past query from history?")) {
+                                                        const username = puterUser ? puterUser.username : 'anonymous';
+                                                        const savedQAsKey = `smart_nav_saved_qa_${username}`;
+                                                        try {
+                                                          const existingQAs = JSON.parse(localStorage.getItem(savedQAsKey) || '[]');
+                                                          const updatedQAs = existingQAs.filter(q => q.id !== item.id);
+                                                          localStorage.setItem(savedQAsKey, JSON.stringify(updatedQAs));
+                                                          setSavedQAs(updatedQAs);  // ← Instantly remove from drawer
+                                                          setExpandedQAId(null);
+                                                          toast.success("Query deleted!");
+                                                        } catch (err) {
+                                                          console.warn("Failed to delete query:", err);
+                                                        }
+                                                      }
+                                                    }}
+                                                    className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-black/45 dark:text-white/40 hover:text-red-500 dark:hover:text-red-400 transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5 flex items-center gap-1 text-[11px] font-orbitron font-black uppercase tracking-wider"
+                                                    title="Delete Query"
+                                                  >
+                                                    <Trash2 className="w-3.5 h-3.5" />
+                                                    Delete
+                                                  </button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </motion.div>
+                                        )}
+                                      </AnimatePresence>
                                     </div>
-                                  </div>
-                                </motion.div>
-                              )}
-                            </AnimatePresence>
-                           </div>
-                         );
-                       })}
+                                  );
+                                })}
                               </div>
                             );
                           })}
@@ -1426,8 +1420,8 @@ export default function ChatbotWidget() {
                 <motion.main
                   variants={{
                     hidden: { opacity: 0, y: 20 },
-                    visible: { 
-                      opacity: 1, 
+                    visible: {
+                      opacity: 1,
                       y: 0,
                       transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] }
                     }
@@ -1458,9 +1452,8 @@ export default function ChatbotWidget() {
                   {messages.map((msg) => (
                     <div
                       key={msg.id}
-                      className={`flex gap-2.5 ${
-                        msg.sender === 'user' ? 'justify-end' : 'justify-start'
-                      }`}
+                      className={`flex gap-2.5 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'
+                        }`}
                     >
                       {msg.sender === 'bot' && (
                         <div className="flex-shrink-0 flex items-start mt-1">
@@ -1469,13 +1462,11 @@ export default function ChatbotWidget() {
                       )}
 
                       <div
-                        className={`max-w-[85%] rounded-2xl px-4 py-2.5 leading-relaxed select-text font-sans shadow-sm border transition-all duration-300 ${
-                          chatTextSize === 'large' ? 'text-[15px]' : 'text-[13.5px]'
-                        } ${
-                          msg.sender === 'user'
+                        className={`max-w-[85%] rounded-2xl px-4 py-2.5 leading-relaxed select-text font-sans shadow-sm border transition-all duration-300 ${chatTextSize === 'large' ? 'text-[15px]' : 'text-[13.5px]'
+                          } ${msg.sender === 'user'
                             ? 'bg-blue-50/90 border-blue-100 text-blue-900 rounded-tr-none dark:bg-blue-500/15 dark:border-blue-500/25 dark:text-cyan-300 dark:shadow-[0_4px_20px_rgba(59,130,246,0.1)] font-semibold'
                             : 'bg-white/80 border-black/5 text-slate-800 rounded-tl-none dark:bg-[#131316]/90 dark:border-white/[0.06] dark:text-slate-200 dark:shadow-[0_4px_20px_rgba(0,0,0,0.2)]'
-                        }`}
+                          }`}
                       >
                         {renderMessageContent(msg.text)}
 
@@ -1539,11 +1530,10 @@ export default function ChatbotWidget() {
                             </button>
                             <button
                               onClick={() => handleToggleSpeech(msg.id, msg.text)}
-                              className={`transition-colors flex items-center gap-0.5 text-[8.5px] font-orbitron font-black uppercase tracking-wider ${
-                                activeSpeech === msg.id 
-                                  ? 'text-emerald-500 dark:text-emerald-400 animate-pulse' 
+                              className={`transition-colors flex items-center gap-0.5 text-[8.5px] font-orbitron font-black uppercase tracking-wider ${activeSpeech === msg.id
+                                  ? 'text-emerald-500 dark:text-emerald-400 animate-pulse'
                                   : 'text-black/45 dark:text-white/40 hover:text-blue-500 dark:hover:text-cyan-400'
-                              }`}
+                                }`}
                               title="Read response aloud"
                             >
                               {activeSpeech === msg.id ? (
@@ -1595,7 +1585,7 @@ export default function ChatbotWidget() {
                           <NaviBotIcon className="w-3.5 h-3.5 text-cyan-500 dark:text-cyan-400" glowColor="currentColor" />
                         </div>
                       </div>
-                      
+
                       <div className="relative overflow-hidden bg-black/[0.02] dark:bg-white/[0.03] text-black/55 dark:text-white/40 border border-black/[0.03] dark:border-white/[0.03] rounded-xl rounded-tl-none px-3 py-2 shadow-sm select-text font-sans">
                         {/* Flowing laser-beam gradient line on top border */}
                         <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-cyan-500 via-purple-500 via-pink-500 to-cyan-500 animate-shimmer-fast" />
@@ -1617,8 +1607,8 @@ export default function ChatbotWidget() {
                 <motion.footer
                   variants={{
                     hidden: { opacity: 0, y: 15 },
-                    visible: { 
-                      opacity: 1, 
+                    visible: {
+                      opacity: 1,
                       y: 0,
                       transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] }
                     }

@@ -199,6 +199,7 @@ export default function FloorPlan() {
 
   const [selectedRoom, setSelectedRoom] = useState(null)
   const [isFloorMenuOpen, setIsFloorMenuOpen] = useState(false)
+  const [isDesktopFloorMenuOpen, setIsDesktopFloorMenuOpen] = useState(true)
   const [isFacultyModalOpen, setIsFacultyModalOpen] = useState(false)
   const [facultyModalSearchTerm, setFacultyModalSearchTerm] = useState('')
   const [isFacultyManagerOpen, setIsFacultyManagerOpen] = useState(false)
@@ -213,7 +214,7 @@ export default function FloorPlan() {
   const [isLocked, setIsLocked] = useState(true)
 
   useEffect(() => {
-    if (floorId === 'basement' || floorId === 'apj_basement' || floorId === 'atal_third') {
+    if (floorId === 'atal_third') {
       setIsSetupProgressOpen(true)
     } else {
       setIsSetupProgressOpen(false)
@@ -529,8 +530,9 @@ export default function FloorPlan() {
           const data = JSON.parse(cachedData)
           console.log(`[Offline Cache] Loaded layout from localStorage for ${floorId}`)
           if (isMounted) {
-            if (data.rooms) setRooms(data.rooms)
-            if (data.faculty) setFaculty(data.faculty)
+            // Only use cached rooms if they're non-empty; otherwise static data will handle it
+            if (data.rooms && data.rooms.length > 0) setRooms(data.rooms)
+            if (data.faculty && data.faculty.length > 0) setFaculty(data.faculty)
             if (data.mapImage) setMapImage(data.mapImage)
             if (data.boundaryVertices) setBoundaryVertices(data.boundaryVertices)
             setMainWidth(data.mainWidth !== undefined ? data.mainWidth : resolvedStaticData?.mainWidth || 455)
@@ -608,8 +610,18 @@ export default function FloorPlan() {
               // Save to localStorage cache for offline/instant load support
               localStorage.setItem(`smart_nav_layout_${floorId}`, JSON.stringify(data))
 
-              if (data.rooms) setRooms(data.rooms)
-              if (data.faculty) setFaculty(data.faculty)
+              // If Firestore has rooms, use them. Otherwise fall back to static data.
+              if (data.rooms && data.rooms.length > 0) {
+                setRooms(data.rooms)
+              } else if (resolvedStaticData?.rooms?.length > 0) {
+                console.log(`[Firestore] No rooms in Firestore doc — using static data for ${floorId}`)
+                setRooms(resolvedStaticData.rooms)
+              }
+              if (data.faculty && data.faculty.length > 0) {
+                setFaculty(data.faculty)
+              } else if (resolvedStaticData?.faculty) {
+                setFaculty(resolvedStaticData.faculty)
+              }
               if (data.mapImage) setMapImage(data.mapImage)
               if (data.boundaryVertices) {
                 setBoundaryVertices(data.boundaryVertices)
@@ -1850,30 +1862,47 @@ export default function FloorPlan() {
         >
           {/* Desktop Vertical Floor Switcher Stack (Desktop only) */}
           <div className="hidden md:flex bg-white/90 dark:bg-black/60 backdrop-blur-xl border border-black/10 dark:border-white/10 p-2 rounded-2xl shadow-xl flex-col gap-1.5 items-center w-28 md:w-32">
-            <span className="text-[11px] md:text-[9.5px] font-orbitron font-black text-black/50 dark:text-white/40 uppercase tracking-wider pb-1 border-b border-black/10 dark:border-white/10 w-full text-center select-none">
-              Floor Select
-            </span>
-            {floors.slice().reverse().map((f) => {
-              const isActive = f.id === floorId
-              const floorWord = getFloorWord(f.label)
-              return (
-                <button
-                  key={f.id}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    navigate(floorIdToUrl(f.id))
-                    resetView()
-                  }}
-                  className={`w-full px-2.5 py-1.5 text-[9.5px] md:text-[10.5px] font-orbitron font-black uppercase tracking-wider rounded-xl transition-all duration-300 active:scale-95 flex items-center justify-center text-center
-                    ${isActive 
-                      ? 'bg-blue-500 text-white shadow-md shadow-blue-500/30 scale-102 font-black' 
-                      : 'bg-black/[0.03] dark:bg-white/5 border border-black/10 dark:border-white/10 text-black/70 dark:text-white/60 hover:text-blue-500 dark:hover:text-blue-400 hover:bg-black/10 dark:hover:bg-white/10 font-bold'
-                    }`}
+            <button
+              onClick={() => setIsDesktopFloorMenuOpen(!isDesktopFloorMenuOpen)}
+              className="flex items-center justify-center gap-1 w-full pb-1 border-b border-black/10 dark:border-white/10 hover:opacity-70 transition-opacity"
+            >
+              <span className="text-[11px] md:text-[9.5px] font-orbitron font-black text-black/50 dark:text-white/40 uppercase tracking-wider select-none">
+                Floor Select
+              </span>
+              <ChevronDown className={`w-3 h-3 text-black/50 dark:text-white/40 transition-transform duration-300 ${isDesktopFloorMenuOpen ? 'rotate-180' : ''}`} />
+            </button>
+            <AnimatePresence>
+              {isDesktopFloorMenuOpen && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                  animate={{ height: 'auto', opacity: 1, marginTop: '2px' }}
+                  exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                  className="flex flex-col gap-1.5 w-full overflow-hidden origin-top"
                 >
-                  {floorWord}
-                </button>
-              )
-            })}
+                  {floors.slice().reverse().map((f) => {
+                    const isActive = f.id === floorId
+                    const floorWord = getFloorWord(f.label)
+                    return (
+                      <button
+                        key={f.id}
+                        onClick={(e) => {
+                          e.preventDefault()
+                          navigate(floorIdToUrl(f.id))
+                          resetView()
+                        }}
+                        className={`w-full px-2.5 py-1.5 text-[9.5px] md:text-[10.5px] font-orbitron font-black uppercase tracking-wider rounded-xl transition-all duration-300 active:scale-95 flex items-center justify-center text-center
+                          ${isActive 
+                            ? 'bg-blue-500 text-white shadow-md shadow-blue-500/30 scale-102 font-black' 
+                            : 'bg-black/[0.03] dark:bg-white/5 border border-black/10 dark:border-white/10 text-black/70 dark:text-white/60 hover:text-blue-500 dark:hover:text-blue-400 hover:bg-black/10 dark:hover:bg-white/10 font-bold'
+                          }`}
+                      >
+                        {floorWord}
+                      </button>
+                    )
+                  })}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
 
