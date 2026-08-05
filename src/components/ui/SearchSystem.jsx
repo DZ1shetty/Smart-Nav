@@ -320,7 +320,11 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
   return (
     <div
       ref={searchRef}
-      className="relative w-full max-w-[640px] mx-auto z-[200]"
+      className={`z-[200] ${
+        isFocused 
+          ? 'fixed top-[8vh] left-[2vw] right-[2vw] md:left-[5vw] md:right-[5vw] lg:left-[12vw] lg:right-[12vw] max-w-[1400px] mx-auto' 
+          : 'relative w-full max-w-[640px] mx-auto'
+      }`}
     >
       {/* ── Spotlight Backdrop Sheet ── */}
       <AnimatePresence>
@@ -429,7 +433,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
             }}
           >
             <div
-              className="max-h-[75vh] md:max-h-[85vh] overflow-y-auto overscroll-contain"
+              className="max-h-[75vh] overflow-y-auto overscroll-contain"
               style={{
                 scrollbarWidth: 'thin',
                 scrollbarColor: 'rgba(255,255,255,0.08) transparent',
@@ -632,7 +636,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
                           >
                             Also found
                           </div>
-                          <div className="space-y-0.5">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 px-2">
                             {resolution.alternatives.map((alt, idx) => (
                               <ResultRow
                                 key={`${alt.id}-${idx}`}
