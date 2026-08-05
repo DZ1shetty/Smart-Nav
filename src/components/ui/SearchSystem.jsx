@@ -496,36 +496,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
                     </p>
                   </div>
 
-                  {/* Google style quick category search chips */}
-                  <div className="flex flex-wrap items-center justify-center gap-2 max-w-md mt-1 border-t border-slate-100 dark:border-zinc-800/60 pt-4 w-full">
-                    {[
-                      { queryText: 'classroom', label: 'Classrooms', icon: BookOpen },
-                      { queryText: 'lab', label: 'Labs', icon: FlaskConical },
-                      { queryText: 'hod', label: 'HODs', icon: Award },
-                      { queryText: 'staffroom', label: 'Staff Rooms', icon: User },
-                      { queryText: 'toilet', label: 'Washrooms', icon: Wrench },
-                      { queryText: 'office', label: 'Offices', icon: Briefcase },
-                      { queryText: 'xerox', label: 'Xerox', icon: Zap },
-                    ].map((chip) => {
-                      const Icon = chip.icon
-                      return (
-                        <button
-                          key={chip.queryText}
-                          aria-label={`Search for ${chip.label}`}
-                          onMouseDown={(e) => e.preventDefault()}
-                          onClick={() => {
-                            setQuery(chip.queryText)
-                            inputRef.current?.focus()
-                          }}
-                          className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900/40 text-slate-600 dark:text-zinc-400 hover:text-blue-500 dark:hover:text-blue-400 hover:border-blue-500/30 hover:bg-blue-500/5 transition-all text-xs font-semibold"
-                          style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-                        >
-                          <Icon className="w-3.5 h-3.5" />
-                          <span>{chip.label}</span>
-                        </button>
-                      )
-                    })}
-                  </div>
+
                 </div>
               )}
 
