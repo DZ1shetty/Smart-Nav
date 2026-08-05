@@ -199,7 +199,7 @@ export default function FloorPlan() {
 
   const [selectedRoom, setSelectedRoom] = useState(null)
   const [isFloorMenuOpen, setIsFloorMenuOpen] = useState(false)
-  const [isDesktopFloorMenuOpen, setIsDesktopFloorMenuOpen] = useState(true)
+  const [isDesktopFloorMenuOpen, setIsDesktopFloorMenuOpen] = useState(false)
   const [isFacultyModalOpen, setIsFacultyModalOpen] = useState(false)
   const [facultyModalSearchTerm, setFacultyModalSearchTerm] = useState('')
   const [isFacultyManagerOpen, setIsFacultyManagerOpen] = useState(false)
