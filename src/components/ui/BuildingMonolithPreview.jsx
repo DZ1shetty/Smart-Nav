@@ -20,7 +20,6 @@ import {
   ImagePlus,
   Trash2,
   Camera,
-  ArrowRight,
 } from 'lucide-react'
 import { uploadToCloudinary } from '../../utils/cloudinaryUpload'
 import { floorIdToUrl } from '../../utils/slugHelpers'
@@ -333,61 +332,90 @@ export default function BuildingMonolithPreview({
               const levelCode = getLevelCode(floor.id, idx, floors.length)
               const isHovered = activeFloorHover === floor.id
 
+              const originalIndex = floors.length - 1 - idx;
+              const isStandardBuilding = ['apj', 'cv-raman', 'ramanujan', 'smv', 'atal', 'rajraman'].includes(buildingKey);
+              const floorRooms = buildingData?.floors && buildingData.floors[originalIndex] ? buildingData.floors[originalIndex] : [];
+              const hasData = isStandardBuilding || floorRooms.some(r => r.type !== 'layout');
+
               return (
                 <motion.button
                   key={floor.id}
-                  onClick={() => navigate(floorIdToUrl(floor.id))}
-                  whileTap={{ scale: 0.985 }}
-                  className={`group relative w-full p-3 md:p-3.5 rounded-2xl border transition-all duration-300 flex items-center justify-between overflow-hidden shadow-sm border-black/10 dark:border-white/10 bg-white/70 dark:bg-white/[0.03] hover:border-black/20 dark:hover:border-white/20`}
+                  onClick={() => {
+                    if (hasData) navigate(floorIdToUrl(floor.id))
+                  }}
+                  onMouseEnter={() => {
+                    if (hasData) setActiveFloorHover(floor.id)
+                  }}
+                  onMouseLeave={() => setActiveFloorHover(null)}
+                  whileHover={hasData ? { scale: 1.012, x: 3 } : {}}
+                  whileTap={hasData ? { scale: 0.985 } : {}}
+                  transition={{ type: 'spring', stiffness: 350, damping: 22 }}
+                  className={`group relative w-full p-3 md:p-3.5 rounded-2xl border transition-all duration-300 flex items-center justify-between overflow-hidden shadow-sm ${
+                    !hasData
+                      ? 'opacity-60 cursor-not-allowed border-black/5 dark:border-white/5 bg-black/5 dark:bg-white/5'
+                      : isHovered
+                      ? `${theme.borderClass} bg-white dark:bg-white/[0.08] ${theme.shadowClass}`
+                      : 'border-black/10 dark:border-white/10 bg-white/70 dark:bg-white/[0.03] hover:border-black/20 dark:hover:border-white/20'
+                  }`}
                 >
-                  {/* Expanding background dot (InteractiveHoverButton effect) */}
-                  <div className={`absolute left-4 top-1/2 h-2 w-2 -translate-y-1/2 rounded-full ${theme.bgClass} opacity-0 transition-all duration-300 group-hover:scale-[200] group-hover:opacity-100 z-0`}></div>
+                  {/* Subtle Background Glow */}
+                  {hasData && (
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-r ${theme.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}
+                    />
+                  )}
 
-                  {/* INITIAL STATE */}
-                  <div className="relative z-10 flex items-center justify-between w-full transition-all duration-300 group-hover:translate-x-12 group-hover:opacity-0">
-                    {/* Level Code Slab Tag and Floor Label */}
-                    <div className="flex items-center gap-3.5 z-10">
-                      <div
-                        className={`px-2.5 py-1 rounded-xl text-xs md:text-sm font-orbitron font-black uppercase tracking-widest border transition-colors bg-black/5 dark:bg-white/5 text-slate-500 border-black/10 dark:border-white/10`}
-                      >
-                        {levelCode}
-                      </div>
-                      <h3 className="text-xs md:text-sm lg:text-base font-orbitron font-black tracking-tight uppercase transition-colors text-[var(--text-main)]">
-                        {floor.label}
-                      </h3>
+                  {/* Level Code Slab Tag */}
+                  <div className="flex items-center gap-3.5 z-10">
+                    <div
+                      className={`px-2.5 py-1 rounded-xl text-xs md:text-sm font-orbitron font-black uppercase tracking-widest border transition-colors ${
+                        !hasData
+                          ? 'bg-black/5 dark:bg-white/5 text-slate-400 border-black/5 dark:border-white/5'
+                          : isHovered
+                          ? `${theme.bgClass} ${theme.colorClass} ${theme.borderClass}`
+                          : 'bg-black/5 dark:bg-white/5 text-slate-500 border-black/10 dark:border-white/10'
+                      }`}
+                    >
+                      {levelCode}
                     </div>
 
-                    {/* Level Action Trigger */}
-                    <div className="flex items-center gap-2 z-10">
-                      <span className="text-xs font-orbitron font-black tracking-widest uppercase text-slate-500">
-                        OPEN MAP
-                      </span>
-                      <div className="w-7 h-7 rounded-lg border flex items-center justify-center transition-all duration-300 border-black/10 dark:border-white/10 text-slate-500 bg-black/5 dark:bg-white/5">
-                        <Building className="w-3.5 h-3.5" />
-                      </div>
+                    {/* Floor Label */}
+                    <div className="flex flex-col text-left">
+                      <h3
+                        className={`text-xs md:text-sm lg:text-base font-orbitron font-black tracking-tight uppercase transition-colors ${
+                          !hasData
+                            ? 'text-slate-400 dark:text-slate-500'
+                            : isHovered 
+                            ? theme.colorClass 
+                            : 'text-[var(--text-main)]'
+                        }`}
+                      >
+                        {floor.label}
+                      </h3>
                     </div>
                   </div>
 
-                  {/* HOVER STATE (Slides in) */}
-                  <div className={`absolute inset-0 z-20 flex h-full w-full translate-x-12 items-center justify-between px-3 md:px-3.5 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 ${theme.colorClass}`}>
-                    <div className="flex items-center gap-3.5">
-                      <div
-                        className={`px-2.5 py-1 rounded-xl text-xs md:text-sm font-orbitron font-black uppercase tracking-widest border transition-colors ${theme.bgClass} ${theme.colorClass} ${theme.borderClass}`}
-                      >
-                        {levelCode}
-                      </div>
-                      <h3 className="text-xs md:text-sm lg:text-base font-orbitron font-black tracking-tight uppercase transition-colors text-[inherit]">
-                        {floor.label}
-                      </h3>
-                    </div>
-
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs font-orbitron font-black tracking-widest uppercase text-[inherit]">
-                        OPEN MAP
-                      </span>
-                      <div className={`w-7 h-7 rounded-lg border-transparent shadow-md flex items-center justify-center transition-all duration-300 ${theme.btnBg} text-white scale-105`}>
-                        <ArrowRight className="w-4 h-4" />
-                      </div>
+                  {/* Level Action Trigger */}
+                  <div className="flex items-center gap-2 z-10">
+                    <span
+                      className={`text-[10px] md:text-xs font-orbitron font-black tracking-widest uppercase transition-opacity duration-300 ${
+                        !hasData
+                          ? 'opacity-60 text-slate-500'
+                          : `opacity-0 group-hover:opacity-100 ${theme.colorClass}`
+                      }`}
+                    >
+                      {hasData ? 'OPEN MAP' : 'SETUP IN PROGRESS'}
+                    </span>
+                    <div
+                      className={`w-7 h-7 rounded-lg border flex items-center justify-center transition-all duration-300 ${
+                        !hasData
+                          ? 'border-black/5 dark:border-white/5 text-slate-400 bg-black/5 dark:bg-white/5'
+                          : isHovered
+                          ? `${theme.btnBg} text-white border-transparent shadow-md scale-105`
+                          : 'border-black/10 dark:border-white/10 text-slate-500 bg-black/5 dark:bg-white/5'
+                      }`}
+                    >
+                      <Building className="w-3.5 h-3.5" />
                     </div>
                   </div>
                 </motion.button>

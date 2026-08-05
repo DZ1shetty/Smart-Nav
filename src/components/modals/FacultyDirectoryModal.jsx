@@ -243,6 +243,11 @@ export default function FacultyDirectoryModal({
                           {item.department}
                         </p>
                       )}
+                      {item.description && (
+                        <p className="text-[8px] font-medium text-black/50 dark:text-white/50 mt-1.5 line-clamp-2 leading-relaxed">
+                          {item.description}
+                        </p>
+                      )}
                     </div>
 
                     <div className="flex items-center gap-1.5 mt-1 border-t border-black/5 dark:border-white/5 pt-2">

@@ -78,6 +78,10 @@ export const floorsData = {
  */
 export const getFloorDataLoader = (floorId) => {
   if (!floorId) return floorsData['ground']
+  
+  // Custom Smart Builder floors — no static data, handled by Firestore exclusively
+  if (floorId.includes('_floor_')) return null
+  
   if (floorsData[floorId]) return floorsData[floorId]
 
   const norm = floorId.toLowerCase().replace(/[^a-z0-9_]/g, '')
@@ -138,6 +142,7 @@ export const getFloorDataLoader = (floorId) => {
     return floorsData['basement']
   }
 
-  return floorsData['ground']
+  // Unknown floor ID — return null instead of defaulting to APJ Ground
+  return null
 }
 

@@ -7,7 +7,6 @@ import {
   FlaskConical,
   Map,
   ArrowUpRight,
-  Building2,
   ChevronLeft,
   Edit3,
   Save,
@@ -20,7 +19,7 @@ import {
 } from 'lucide-react'
 import { doc, getDoc, setDoc } from 'firebase/firestore'
 import { db } from '../../firebase'
-import { Toaster, toast } from 'sonner'
+import { toast } from 'sonner'
 import SearchSystem from '../ui/SearchSystem'
 import ThemeToggle from '../ui/ThemeToggle'
 import { floorIdToUrl } from '../../utils/slugHelpers'
@@ -62,7 +61,7 @@ const buildingKeyToUrlSlug = {
 const getBuildingKeyFromSlug = (slug) => {
   if (!slug) return null
   const normalized = slug.toLowerCase().replace(/[^a-z0-9-]/g, '')
-  return buildingSlugMap[normalized] || buildingSlugMap[slug.toLowerCase()] || null
+  return buildingSlugMap[normalized] || buildingSlugMap[slug.toLowerCase()] || slug
 }
 
 const apjFloors = [
@@ -401,7 +400,42 @@ export default function HomePage() {
     })
   }
 
-  const theme = selectedBuilding ? (buildingThemes[selectedBuilding] || buildingThemes['apj']) : null
+  const theme = selectedBuilding ? (buildingThemes[selectedBuilding] || {
+    name: buildingData?.name || selectedBuilding.toUpperCase(),
+    floors: `${buildingData?.floorCount || 1} FLOORS`,
+    primary: 'blue',
+    colorClass: 'text-blue-500',
+    borderClass: 'border-blue-500',
+    hoverBorderClass: 'hover:border-blue-500',
+    shadowClass: 'hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]',
+    bgClass: 'bg-blue-500/10',
+    gradient: 'from-blue-500/0 via-blue-500/[0.04] to-blue-500/0',
+    btnBg: 'bg-blue-500 hover:bg-blue-600',
+    btnShadow: 'shadow-[0_0_15px_rgba(59,130,246,0.2)]',
+    focusRing: 'focus:border-blue-500 focus:ring-blue-500/30',
+    iconColor: 'text-blue-500',
+    tintBg: 'bg-blue-500/5'
+  }) : null
+
+  const getFloorsForBuilding = () => {
+    if (selectedBuilding === 'cv-raman') return cvRamanFloors
+    if (selectedBuilding === 'ramanujan') return ramanujanFloors
+    if (selectedBuilding === 'smv') return smvFloors
+    if (selectedBuilding === 'atal') return atalFloors
+    if (selectedBuilding === 'rajraman') return rajramanFloors
+    if (selectedBuilding === 'apj') return apjFloors
+    
+    // For custom buildings
+    const count = buildingData?.floorCount || 1
+    const customFloors = []
+    for (let i = 0; i < count; i++) {
+      customFloors.push({
+        id: `${selectedBuilding}_floor_${i}`,
+        label: i === 0 ? 'GROUND FLOOR' : `FLOOR ${i}`
+      })
+    }
+    return customFloors.length > 0 ? customFloors : apjFloors
+  }
 
   return (
     <motion.div
@@ -411,7 +445,6 @@ export default function HomePage() {
       transition={{ duration: 0.25, ease: 'easeOut' }}
       className="relative min-h-[100dvh] pb-[env(safe-area-inset-bottom)] w-full bg-[var(--bg-main)] text-[var(--text-main)] font-space p-2 md:p-2 lg:p-3 lg:py-2 flex flex-col items-center justify-between overflow-x-hidden selection:bg-blue-500/30 transform-gpu"
     >
-      <Toaster richColors position="top-right" />
       {/* BACKGROUND ELEMENTS */}
       <div className="fixed inset-0 pointer-events-none opacity-[0.05] dark:opacity-[0.03]">
         <div className="absolute inset-0 blueprint-grid" />
@@ -467,26 +500,16 @@ export default function HomePage() {
               exit={{ opacity: 0, y: -16 }}
               className="w-full max-w-5xl mx-auto py-0.5"
             >
-              <BuildingBentoGrid onSelectBuilding={handleSelectBuilding} />
+              <BuildingBentoGrid 
+                onSelectBuilding={handleSelectBuilding} 
+              />
             </motion.div>
 
           ) : (
             <BuildingMonolithPreview
               buildingKey={selectedBuilding}
               theme={theme}
-              floors={
-                selectedBuilding === 'cv-raman'
-                  ? cvRamanFloors
-                  : selectedBuilding === 'ramanujan'
-                  ? ramanujanFloors
-                  : selectedBuilding === 'smv'
-                  ? smvFloors
-                  : selectedBuilding === 'atal'
-                  ? atalFloors
-                  : selectedBuilding === 'rajraman'
-                  ? rajramanFloors
-                  : apjFloors
-              }
+              floors={getFloorsForBuilding()}
               buildingData={buildingData}
               isLoading={isLoading}
               isEditing={isEditing}

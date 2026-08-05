@@ -40,7 +40,7 @@ import SearchSystem from '../ui/SearchSystem'
 import { db } from '../../firebase'
 import { doc, onSnapshot, setDoc, getDoc } from 'firebase/firestore'
 import { useTheme } from '../../context/ThemeContext'
-import { Toaster, toast } from 'sonner'
+import { toast } from 'sonner'
 import { uploadToCloudinary } from '../../utils/cloudinaryUpload'
 import { getFirestoreDocName } from '../../config'
 import { getFloorFullNameInWords } from '../../utils/floorFormatter'
@@ -101,12 +101,16 @@ const isValidLayout = (layout) => {
   const rooms = Array.isArray(layout) ? layout : layout.rooms || []
   return (
     Array.isArray(rooms) &&
-    rooms.every(
-      (room) =>
-        room.id &&
-        typeof (room.x ?? 0) === 'number' &&
-        typeof (room.y ?? 0) === 'number'
-    )
+    rooms.every((room) => {
+      const isCustomShape = room.points && Array.isArray(room.points)
+      const hasDimensions = typeof room.width === 'number' && !isNaN(room.width) && room.width >= 0 &&
+                            typeof room.height === 'number' && !isNaN(room.height) && room.height >= 0
+      
+      return room.id &&
+             typeof (room.x ?? 0) === 'number' && !isNaN(room.x ?? 0) &&
+             typeof (room.y ?? 0) === 'number' && !isNaN(room.y ?? 0) &&
+             (hasDimensions || isCustomShape)
+    })
   )
 }
 
@@ -177,17 +181,28 @@ export default function FloorPlan() {
   }, [buildingSlug, floorSlug, routeFloorId])
 
   useEffect(() => {
+    if (buildingSlug && floorSlug) {
+      const resolved = urlToFloorId(buildingSlug, floorSlug)
+      if (!resolved) {
+        navigate('/404', { replace: true })
+        return
+      }
+    }
+
     if (routeFloorId && (!buildingSlug || !floorSlug)) {
       const targetUrl = floorIdToUrl(routeFloorId)
-      navigate(`${targetUrl}${location.search}`, { replace: true })
+      if (location.pathname !== targetUrl) {
+        navigate(`${targetUrl}${location.search}`, { replace: true })
+      }
     }
-  }, [routeFloorId, buildingSlug, floorSlug, location.search, navigate])
+  }, [routeFloorId, buildingSlug, floorSlug, location.search, navigate, location.pathname])
 
   const [selectedRoom, setSelectedRoom] = useState(null)
   const [isFloorMenuOpen, setIsFloorMenuOpen] = useState(false)
   const [isFacultyModalOpen, setIsFacultyModalOpen] = useState(false)
   const [facultyModalSearchTerm, setFacultyModalSearchTerm] = useState('')
   const [isFacultyManagerOpen, setIsFacultyManagerOpen] = useState(false)
+  const [facultyManagerSearch, setFacultyManagerSearch] = useState('')
   const [selectedFacultyProfile, setSelectedFacultyProfile] = useState(null)
   const [highlightedRoomId, setHighlightedRoomId] = useState(null)
   const [saveStatus, setSaveStatus] = useState('idle') // 'idle', 'saving', 'saved'
@@ -456,32 +471,56 @@ export default function FloorPlan() {
 
     const loadData = async () => {
       let resolvedStaticData = null
-      try {
-        const loader = getFloorDataLoader(floorId)
-        if (loader) {
-          resolvedStaticData = await loader()
-          if (isMounted) {
-            setStaticFloorData(resolvedStaticData)
+      const isCustomBuildingFloor = floorId?.includes('_floor_')
+
+      if (!isCustomBuildingFloor) {
+        // Standard campus buildings: load static floor data
+        try {
+          const loader = getFloorDataLoader(floorId)
+          if (loader) {
+            resolvedStaticData = await loader()
+            if (isMounted) {
+              setStaticFloorData(resolvedStaticData)
+            }
+          } else {
+            // Unrecognized standard floor — not a fatal error
+            console.warn(`[Static Loader] No static data for floor: ${floorId}`)
           }
-        } else {
-          throw new Error(`Floor configuration not found for: ${floorId}`)
+        } catch (err) {
+          console.error(`[Static Loader] Error loading static floor ${floorId}:`, err)
+          if (isMounted) {
+            setStaticLoadError(err)
+          }
+        } finally {
+          if (isMounted) {
+            setIsLoadingStatic(false)
+          }
         }
-      } catch (err) {
-        console.error(`[Static Loader] Error loading static floor ${floorId}:`, err)
-        if (isMounted) {
-          setStaticLoadError(err)
-        }
-      } finally {
-        if (isMounted) {
-          setIsLoadingStatic(false)
-        }
+      } else {
+        // Custom building floors skip static loading
+        if (isMounted) setIsLoadingStatic(false)
+      }
+
+
+      // Parse custom building info (reuse isCustomBuildingFloor from above)
+      let customBuildingSlug = '';
+      let customFloorIndex = 0;
+      if (isCustomBuildingFloor) {
+        const parts = floorId.split('_floor_');
+        customBuildingSlug = parts[0];
+        customFloorIndex = parseInt(parts[1], 10);
       }
 
       // Map floorId (e.g., 'fifth') to document name (e.g., 'Fifth-Floor')
       const docName = getFirestoreDocName(floorId)
-      const docRef = doc(db, 'layouts', docName)
+      // Custom floors: read from builder_drafts (matched by slug field)
+      // Standard floors: read from layouts collection
+      const docRef = isCustomBuildingFloor
+        ? null  // Custom floors use a query, not a direct ref — handled below
+        : doc(db, 'layouts', docName)
 
-      console.log(`[Firestore] Subscribing to: ${docName}`)
+      console.log(`[Firestore] Subscribing to: ${isCustomBuildingFloor ? `builder_drafts[slug=${customBuildingSlug}]/floor[${customFloorIndex}]` : docName}`)
+
 
       // OFFLINE CACHE FIRST: Try loading instantly from localStorage
       const cachedData = localStorage.getItem(`smart_nav_layout_${floorId}`)
@@ -506,68 +545,117 @@ export default function FloorPlan() {
         }
       }
 
-      unsub = onSnapshot(
-        docRef,
-        (snap) => {
-          if (!isMounted) return
-          if (snap.exists()) {
-            const data = snap.data()
-            console.log(`[Firestore] New data received for ${docName}:`, data)
+      if (isCustomBuildingFloor) {
+        // Custom building: fetch once from builder_drafts by slug
+        try {
+          const { getDocs: gd, collection: col, query: q, orderBy: ob } = await import('firebase/firestore')
+          const draftsQ = q(col(db, 'builder_drafts'), ob('updatedAt', 'desc'))
+          const draftsSnap = await gd(draftsQ)
+          let foundDraft = null
+          let foundDraftId = null
+          draftsSnap.forEach(dSnap => {
+            const d = dSnap.data()
+            const slug = d.buildingSlug || d.buildingMeta?.slug
+            if (slug === customBuildingSlug && !foundDraft) {
+              foundDraft = d
+              foundDraftId = dSnap.id
+            }
+          })
 
-            // Save to localStorage cache for offline/instant load support
-            localStorage.setItem(`smart_nav_layout_${floorId}`, JSON.stringify(data))
+          if (!foundDraft) {
+            if (isMounted) setStaticLoadError(new Error('Building draft not found'))
+            return
+          }
 
-            if (data.rooms) setRooms(data.rooms)
-            if (data.faculty) setFaculty(data.faculty)
-            if (data.mapImage) setMapImage(data.mapImage)
-            if (data.boundaryVertices) {
-              setBoundaryVertices(data.boundaryVertices)
-            } else {
-              setBoundaryVertices(resolvedStaticData?.boundaryVertices || [])
-            }
-            setMainWidth(data.mainWidth !== undefined ? data.mainWidth : resolvedStaticData?.mainWidth || 455)
-            setBulgeWidth(data.bulgeWidth !== undefined ? data.bulgeWidth : resolvedStaticData?.bulgeWidth || 165)
-            setBulgeHeight(data.bulgeHeight !== undefined ? data.bulgeHeight : resolvedStaticData?.bulgeHeight || 200)
-            setViewHeight(data.viewHeight !== undefined ? data.viewHeight : resolvedStaticData?.viewHeight || 663)
-            setViewWidth(data.viewWidth !== undefined ? data.viewWidth : resolvedStaticData?.viewWidth || 640)
-            setIsLocked(data.locked !== false)
-          } else {
-            console.warn(
-              `[Firestore] Document ${docName} does not exist. Falling back to static data.`
-            )
-            if (resolvedStaticData) {
-              setRooms(resolvedStaticData.rooms || [])
-              setFaculty(resolvedStaticData.faculty || [])
-              setMapImage(resolvedStaticData.mapImage || null)
-              setBoundaryVertices(resolvedStaticData.boundaryVertices || [])
-              setMainWidth(resolvedStaticData.mainWidth || 455)
-              setBulgeWidth(resolvedStaticData.bulgeWidth || 165)
-              setBulgeHeight(resolvedStaticData.bulgeHeight || 200)
-              setViewHeight(resolvedStaticData.viewHeight || 663)
-              setViewWidth(resolvedStaticData.viewWidth || 640)
-              setIsLocked(true)
-            }
+          // Try subcollection floor data first
+          const floorsRef = col(db, `builder_drafts/${foundDraftId}/floors`)
+          const floorsSnap = await gd(floorsRef)
+          const subcollectionFloors = {}
+          floorsSnap.forEach(fd => { subcollectionFloors[parseInt(fd.id)] = fd.data().rooms || [] })
+
+          const merged = { ...(foundDraft.floorsData || {}), ...subcollectionFloors }
+          const floorRooms = merged[customFloorIndex] || []
+
+          if (!floorRooms || floorRooms.length === 0) {
+            if (isMounted) setStaticLoadError(new Error('Floor setup in progress'))
+            return
           }
-        },
-        (error) => {
-          console.error('[Firestore] Snapshot error:', error)
-          if (!isMounted) return
-          if (!localStorage.getItem(`smart_nav_layout_${floorId}`)) {
-            if (resolvedStaticData) {
-              setRooms(resolvedStaticData.rooms || [])
-              setFaculty(resolvedStaticData.faculty || [])
-              setMapImage(resolvedStaticData.mapImage || null)
-              setBoundaryVertices(resolvedStaticData.boundaryVertices || [])
-              setMainWidth(resolvedStaticData.mainWidth || 455)
-              setBulgeWidth(resolvedStaticData.bulgeWidth || 165)
-              setBulgeHeight(resolvedStaticData.bulgeHeight || 200)
-              setViewHeight(resolvedStaticData.viewHeight || 663)
-              setViewWidth(resolvedStaticData.viewWidth || 640)
-              setIsLocked(true)
-            }
+
+          if (isMounted) {
+            setRooms(floorRooms)
+            setFaculty([])
+            setMainWidth(800)
+            setBulgeWidth(200)
+            setBulgeHeight(200)
+            setViewHeight(800)
+            setViewWidth(800)
+            setIsLocked(false)
           }
+        } catch (err) {
+          console.error('[Custom Floor] Failed to load:', err)
+          if (isMounted) setStaticLoadError(err)
         }
-      )
+      } else {
+        // Standard campus buildings: use real-time onSnapshot on layouts
+        unsub = onSnapshot(
+          docRef,
+          (snap) => {
+            if (!isMounted) return
+            if (snap.exists()) {
+              const data = snap.data()
+              console.log(`[Firestore] New data received for ${docName}:`, data)
+
+              // Save to localStorage cache for offline/instant load support
+              localStorage.setItem(`smart_nav_layout_${floorId}`, JSON.stringify(data))
+
+              if (data.rooms) setRooms(data.rooms)
+              if (data.faculty) setFaculty(data.faculty)
+              if (data.mapImage) setMapImage(data.mapImage)
+              if (data.boundaryVertices) {
+                setBoundaryVertices(data.boundaryVertices)
+              } else {
+                setBoundaryVertices(resolvedStaticData?.boundaryVertices || [])
+              }
+              setMainWidth(data.mainWidth !== undefined ? data.mainWidth : resolvedStaticData?.mainWidth || 455)
+              setBulgeWidth(data.bulgeWidth !== undefined ? data.bulgeWidth : resolvedStaticData?.bulgeWidth || 165)
+              setBulgeHeight(data.bulgeHeight !== undefined ? data.bulgeHeight : resolvedStaticData?.bulgeHeight || 200)
+              setViewHeight(data.viewHeight !== undefined ? data.viewHeight : resolvedStaticData?.viewHeight || 663)
+              setViewWidth(data.viewWidth !== undefined ? data.viewWidth : resolvedStaticData?.viewWidth || 640)
+              setIsLocked(data.locked !== false)
+            } else {
+              console.warn(`[Firestore] Document ${docName} does not exist. Falling back to static data.`)
+              if (resolvedStaticData) {
+                setRooms(resolvedStaticData.rooms || [])
+                setFaculty(resolvedStaticData.faculty || [])
+                setMapImage(resolvedStaticData.mapImage || null)
+                setBoundaryVertices(resolvedStaticData.boundaryVertices || [])
+                setMainWidth(resolvedStaticData.mainWidth || 455)
+                setBulgeWidth(resolvedStaticData.bulgeWidth || 165)
+                setBulgeHeight(resolvedStaticData.bulgeHeight || 200)
+                setViewHeight(resolvedStaticData.viewHeight || 663)
+                setViewWidth(resolvedStaticData.viewWidth || 640)
+                setIsLocked(true)
+              }
+            }
+          },
+          (error) => {
+            console.error('[Firestore] Snapshot error:', error)
+            if (!isMounted) return
+            if (!localStorage.getItem(`smart_nav_layout_${floorId}`) && resolvedStaticData) {
+              setRooms(resolvedStaticData.rooms || [])
+              setFaculty(resolvedStaticData.faculty || [])
+              setMapImage(resolvedStaticData.mapImage || null)
+              setBoundaryVertices(resolvedStaticData.boundaryVertices || [])
+              setMainWidth(resolvedStaticData.mainWidth || 455)
+              setBulgeWidth(resolvedStaticData.bulgeWidth || 165)
+              setBulgeHeight(resolvedStaticData.bulgeHeight || 200)
+              setViewHeight(resolvedStaticData.viewHeight || 663)
+              setViewWidth(resolvedStaticData.viewWidth || 640)
+              setIsLocked(true)
+            }
+          }
+        )
+      }
     }
 
     loadData()
@@ -1062,6 +1150,13 @@ export default function FloorPlan() {
     )
   }
 
+  const handleRoomClick = useCallback((room) => {
+    const linkedFaculty = floorData?.faculty
+      ?.filter((f) => f.roomId === room.id)
+      .map((f) => f.name) || []
+    setSelectedRoom({ ...room, linkedFaculty })
+  }, [floorData])
+
   const handleCloseRoom = () => {
     if (selectedRoom) setHighlightedRoomId(selectedRoom.id)
     navigate(location.pathname, { replace: true })
@@ -1080,6 +1175,13 @@ export default function FloorPlan() {
     const facultyName = searchParams.get('faculty')
 
     if (roomId && floorData && floorData.rooms) {
+      const roomToSelect = floorData.rooms.find((r) => r.id === roomId)
+      if (roomToSelect && !selectedRoom) {
+        const linkedFaculty = floorData.faculty
+          ?.filter((f) => f.roomId === roomToSelect.id)
+          .map((f) => f.name) || []
+        setSelectedRoom({ ...roomToSelect, linkedFaculty })
+      }
       const room = floorData.rooms.find((r) => r.id === roomId)
       if (room) {
         if (highlightedRoomId !== room.id) {
@@ -1088,7 +1190,10 @@ export default function FloorPlan() {
 
         if (!facultyName) {
           if (selectedRoom?.id !== room.id) {
-            setSelectedRoom(room)
+            const linkedFaculty = floorData.faculty
+              ?.filter((f) => f.roomId === room.id)
+              .map((f) => f.name) || []
+            setSelectedRoom({ ...room, linkedFaculty })
           }
         }
 
@@ -1246,7 +1351,6 @@ export default function FloorPlan() {
         isBlueprintMode ? 'bg-black' : 'bg-[var(--bg-main)]'
       }`}
     >
-      <Toaster theme={theme} richColors closeButton position="bottom-left" />
       <div className="absolute inset-0 blueprint-grid opacity-[0.05] pointer-events-none hidden md:block" />
 
       {!isBlueprintMode && (
@@ -1255,13 +1359,13 @@ export default function FloorPlan() {
         <div className="flex items-center gap-2 md:gap-4">
           <button
             onClick={() => {
-              const bSlug = 
-                floorId?.startsWith('cv_raman_') ? 'CV-Raman-Block' :
-                floorId?.startsWith('ramanujan_') ? 'Ramanujan-Block' :
-                floorId?.startsWith('smv_') || floorId?.startsWith('svm_') ? 'SMV-Block' :
-                floorId?.startsWith('atal_') ? 'Atal-Block' :
-                floorId?.startsWith('rajraman_') ? 'Rajraman-Block' :
-                'APJ-Block'
+              let bSlug = 'APJ-Block'
+              if (floorId?.startsWith('cv_raman_')) bSlug = 'CV-Raman-Block'
+              else if (floorId?.startsWith('ramanujan_')) bSlug = 'Ramanujan-Block'
+              else if (floorId?.startsWith('smv_') || floorId?.startsWith('svm_')) bSlug = 'SMV-Block'
+              else if (floorId?.startsWith('atal_')) bSlug = 'Atal-Block'
+              else if (floorId?.startsWith('rajraman_')) bSlug = 'Rajraman-Block'
+              else if (floorId?.includes('_floor_')) bSlug = floorId.split('_floor_')[0]
               navigate(`/${bSlug}`)
             }}
             className="p-2 md:p-2.5 bg-black/[0.03] dark:bg-white/5 hover:bg-blue-500/10 border border-black/10 dark:border-white/10 rounded-xl transition-all group active:scale-95 shadow-sm flex-shrink-0"
@@ -1281,6 +1385,7 @@ export default function FloorPlan() {
                   floorId?.startsWith('smv_') || floorId?.startsWith('svm_') ? 'SMV-Block' :
                   floorId?.startsWith('atal_') ? 'Atal-Block' :
                   floorId?.startsWith('rajraman_') ? 'Rajraman-Block' :
+                  floorId?.includes('_floor_') ? floorId.split('_floor_')[0] :
                   'APJ-Block'
                 }`}
                 className="hover:text-blue-500 transition-colors"
@@ -1696,9 +1801,6 @@ export default function FloorPlan() {
                       setFacultyModalSearchTerm(room.name || '')
                       setIsFacultyModalOpen(true)
                     } else {
-                      if (zoomControlsRef.current) {
-                        zoomControlsRef.current.setTransform(0, 0, 0.9, 300)
-                      }
                       navigate(`?room=${room.id}`)
                     }
                   }}
@@ -1731,9 +1833,6 @@ export default function FloorPlan() {
                       setFacultyModalSearchTerm(room.name || '')
                       setIsFacultyModalOpen(true)
                     } else {
-                      if (zoomControlsRef.current) {
-                        zoomControlsRef.current.setTransform(0, 0, 0.9, 300)
-                      }
                       navigate(`?room=${room.id}`)
                     }
                   }}
@@ -1854,6 +1953,10 @@ export default function FloorPlan() {
               onClose={handleCloseRoom}
               isBookmarked={bookmarkedRoomIds.includes(selectedRoom.id)}
               onToggleBookmark={() => handleToggleBookmark(selectedRoom.id)}
+              onManageFaculty={(search) => {
+                setFacultyManagerSearch(search)
+                setIsFacultyManagerOpen(true)
+              }}
               onUpdateRoomData={async (data) => {
                 const updated = roomsWithMetadata.map((r) => {
                   if (r.id === selectedRoom.id) {
@@ -1960,6 +2063,7 @@ export default function FloorPlan() {
               isOpen={isFacultyManagerOpen}
               onClose={() => setIsFacultyManagerOpen(false)}
               facultyList={allFaculty}
+              initialSearchQuery={facultyManagerSearch}
               onSave={async (updatedFaculty) => {
                 setFaculty(updatedFaculty)
                 await onSave(null, updatedFaculty)

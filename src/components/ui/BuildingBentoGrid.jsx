@@ -126,10 +126,12 @@ const buildingsData = [
   },
 ]
 
-export default function BuildingBentoGrid({ onSelectBuilding }) {
+export default function BuildingBentoGrid({ onSelectBuilding, customBuildings = [] }) {
+  const allBuildings = [...customBuildings, ...buildingsData];
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-2 lg:gap-2.5 py-1 px-1 md:px-0 w-full max-w-5xl mx-auto">
-      {buildingsData.map((item, idx) => (
+      {allBuildings.map((item, idx) => (
         <motion.button
           key={item.id}
           onClick={() => onSelectBuilding(item.id)}

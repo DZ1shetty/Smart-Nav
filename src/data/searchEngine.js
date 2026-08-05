@@ -20,7 +20,7 @@ import { floorIdToUrl } from '../utils/slugHelpers'
 
 // ─── ENGINE CONFIG ────────────────────────────────────────────────────────────
 const CONFIDENCE_THRESHOLD = 18 // Lower so fuzzy hits surface
-const MAX_ALTERNATIVES = 8
+const MAX_ALTERNATIVES = 50
 
 // ─── CACHE ───────────────────────────────────────────────────────────────────
 let SEARCH_POOL_CACHE = null
@@ -49,8 +49,29 @@ const ALIAS_MAP = [
   ['stair', 'stairs'],
   // Department shorthands
   ['cs', 'cse'],
+  ['computer science', 'cse'],
   ['is', 'ise'],
+  ['information science', 'ise'],
   ['ec', 'ece'],
+  ['electronics', 'ece'],
+  ['me', 'mech'],
+  ['mechanical', 'mech'],
+  ['cv', 'civil'],
+  ['ai', 'aiml'],
+  ['artificial intelligence', 'aiml'],
+  ['bt', 'biotech'],
+  ['ee', 'eee'],
+  ['electrical', 'eee'],
+  
+  // Faculty/staff
+  ['staff room', 'staffroom'],
+  ['head of department', 'hod'],
+  
+  // Amenities
+  ['canteen', 'cafeteria'],
+  ['food court', 'cafeteria'],
+  ['first aid', 'medical'],
+  
   // Numeric shorthand: "lh505" → "lh-505", "btl5" → "btl 5"
 ]
 
@@ -62,9 +83,14 @@ const expandAliases = (query) => {
   const q = query.toLowerCase().trim()
   const variants = new Set([q])
   for (const [alias, canonical] of ALIAS_MAP) {
-    if (q === alias || q.includes(alias)) {
-      variants.add(q.replace(alias, canonical))
+    if (q === alias) {
       variants.add(canonical)
+    } else {
+      // Use word boundaries to avoid replacing substrings (e.g. "cs" in "csl08")
+      const regex = new RegExp(`\\b${alias}\\b`, 'g')
+      if (regex.test(q)) {
+        variants.add(q.replace(regex, canonical))
+      }
     }
   }
   // Normalise room codes: "lh505" → "lh 505" → "lh-505"
@@ -89,7 +115,11 @@ const FLOOR_LABEL_MAP = {
 const detectFloorIntent = (query) => {
   const q = query.toLowerCase()
   for (const [key, aliases] of Object.entries(FLOOR_LABEL_MAP)) {
-    if (aliases.some((a) => q.includes(a))) return key
+    for (const alias of aliases) {
+      if (q === alias) return key
+      const regex = new RegExp(`\\b${alias}\\b`)
+      if (regex.test(q)) return key
+    }
   }
   return null
 }
@@ -126,7 +156,10 @@ const scoreToken = (target, query) => {
     .toLowerCase()
     .replace(/[^a-z0-9\s]/g, ' ')
     .trim()
-  const q = query.toLowerCase()
+  const q = query
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .trim()
 
   // Exact match
   if (t === q) return 1000
@@ -201,6 +234,11 @@ const scoreItem = (item, queryVariants) => {
       item.name,
       item.roomName,
       item.department,
+      item.designation,
+      item.type,
+      item.description,
+      item.buildingName,
+      item.floorLabel,
       ...(item.tags || []),
     ]
     const fieldStr = fields.filter(Boolean).join(' ')
@@ -345,7 +383,7 @@ const buildSearchPool = () => {
         department: fac.department || room?.department || '',
         designation: fac.designation || '',
         directions: room?.directions || '',
-        tags: [],
+        tags: room?.tags || [],
       })
     }
 
@@ -377,7 +415,7 @@ export const resolveNavigationQuery = (query, context = {}) => {
       if (item.floorKey === context.currentFloor) rawScore *= 1.12
 
       // Floor-intent: if user typed "third floor", boost all third-floor items
-      if (floorIntent && item.floorKey === floorIntent)
+      if (floorIntent && item.floorKey.includes(floorIntent))
         rawScore = Math.max(rawScore, 400)
 
       // Faculty gets a small identity boost (people searches are common)

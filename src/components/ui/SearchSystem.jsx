@@ -19,6 +19,7 @@ import {
   Award,
   Wrench,
   Mic,
+  Briefcase,
 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
@@ -35,6 +36,7 @@ const TypeIcon = ({ type, size = 14 }) => {
   if (type === 'lab') return <FlaskConical {...p} />
   if (type === 'classroom') return <BookOpen {...p} />
   if (type === 'staffroom' || type === 'hod') return <User {...p} />
+  if (type === 'office') return <Briefcase {...p} />
   if (type === 'utility') return <Zap {...p} />
   return <MapPin {...p} />
 }
@@ -104,6 +106,7 @@ const ResultRow = ({ item, isSelected, onSelect, onHover }) => {
 
   return (
     <button
+      aria-label={`Select ${item.title}`}
       onMouseDown={(e) => e.preventDefault()}
       onClick={() => onSelect(item)}
       onMouseEnter={onHover}
@@ -354,12 +357,13 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
           <input
             ref={inputRef}
             type="text"
+            role="searchbox"
+            aria-label="Search campus map"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onFocus={() => setIsFocused(true)}
             onKeyDown={handleKeyDown}
             placeholder="Search campus blocks, rooms or staff..."
-            aria-label="Search campus blocks, rooms or staff"
             className="w-full py-[9px] md:py-[11px] bg-transparent outline-none text-[14px] md:text-[15px] font-medium text-slate-900 dark:text-white placeholder:text-slate-500 dark:placeholder:text-zinc-500"
             style={{
               fontFamily: 'Inter, Segoe UI, system-ui, sans-serif',
@@ -458,12 +462,14 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
                       { queryText: 'hod', label: 'HODs', icon: Award },
                       { queryText: 'staffroom', label: 'Staff Rooms', icon: User },
                       { queryText: 'toilet', label: 'Washrooms', icon: Wrench },
+                      { queryText: 'office', label: 'Offices', icon: Briefcase },
                       { queryText: 'xerox', label: 'Xerox', icon: Zap },
                     ].map((chip) => {
                       const Icon = chip.icon
                       return (
                         <button
                           key={chip.queryText}
+                          aria-label={`Search for ${chip.label}`}
                           onMouseDown={(e) => e.preventDefault()}
                           onClick={() => {
                             setQuery(chip.queryText)
@@ -577,6 +583,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
                             onClick={(e) => e.stopPropagation()}
                           >
                             <button
+                              aria-label={`Select navigation step: ${resolution.mainText}`}
                               onMouseDown={(e) => e.preventDefault()}
                               onClick={() => handleSelect(resolution)}
                               className={`px-3.5 py-1.5 rounded-lg text-sm font-bold transition-all flex items-center gap-1.5 shadow-sm active:scale-95
@@ -594,6 +601,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
                             {resolution.directions &&
                               resolution.directions !== 'TBD' && (
                                 <button
+                                  aria-label="Listen to directions"
                                   onMouseDown={(e) => e.preventDefault()}
                                   onClick={(e) => handleSpeak(e, resolution)}
                                   className="p-2 rounded-lg text-slate-500 dark:text-white/25 hover:text-slate-600 dark:hover:text-white/60 hover:bg-slate-100 dark:hover:bg-white/8 transition-all"
