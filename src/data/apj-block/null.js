@@ -1,6 +1,6 @@
 import { IMG_BASE_URL } from '../../config.js'
 
-export const null = {
+export const defaultFloorConfig = {
   buildingName: '',
   label: '',
   viewWidth: 1280,
@@ -8,13 +8,7 @@ export const null = {
   mainWidth: null,
   bulgeWidth: null,
   bulgeHeight: null,
-  boundaryVertices: [
-
-  ],
-  rooms: [
-
-  ],
-  faculty: [
-
-  ]
+  boundaryVertices: [],
+  rooms: [],
+  faculty: []
 }
