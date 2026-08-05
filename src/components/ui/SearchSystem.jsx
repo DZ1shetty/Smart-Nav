@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import { useDebounce } from '../../hooks/useDebounce'
 import { useSearchWorker } from '../../hooks/useSearchWorker'
 import {
@@ -93,6 +93,16 @@ const getColor = (tags = []) => {
 const getType = (tags = []) => {
   const types = ['faculty', 'lab', 'classroom', 'staffroom', 'hod', 'office', 'building', 'utility']
   return tags.find((t) => types.includes(t)) || 'utility'
+}
+const TYPE_LABELS = {
+  faculty: 'Faculty',
+  lab: 'Labs',
+  classroom: 'Classrooms',
+  staffroom: 'Staff Rooms',
+  hod: 'HOD Offices',
+  office: 'Offices',
+  building: 'Buildings',
+  utility: 'Utilities'
 }
 
 // ─── RESULT ROW (compact) ─────────────────────────────────────────────────────
@@ -270,9 +280,30 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
     return () => document.removeEventListener('mousedown', h)
   }, [])
 
+  // ── Data Grouping ───────────────────────────────────────────────────────────
+  const sortedAlternatives = useMemo(() => {
+    if (!resolution?.alternatives) return []
+    const order = { building: 1, classroom: 2, lab: 3, faculty: 4, staffroom: 5, hod: 6, office: 7, utility: 8 }
+    return [...resolution.alternatives].sort((a, b) => {
+      const typeA = getType(a.category_tags)
+      const typeB = getType(b.category_tags)
+      return (order[typeA] || 99) - (order[typeB] || 99)
+    })
+  }, [resolution])
+
+  const groupedAlternatives = useMemo(() => {
+    const groups = {}
+    sortedAlternatives.forEach(alt => {
+      const t = getType(alt.category_tags)
+      if (!groups[t]) groups[t] = []
+      groups[t].push(alt)
+    })
+    return groups
+  }, [sortedAlternatives])
+
   // ── Keyboard ────────────────────────────────────────────────────────────────
   const allResults = resolution
-    ? [resolution, ...(resolution.alternatives || [])]
+    ? [resolution, ...sortedAlternatives]
     : []
 
   const handleKeyDown = (e) => {
@@ -322,7 +353,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
       ref={searchRef}
       className={`z-[200] ${
         isFocused 
-          ? 'relative w-full max-w-[640px] mx-auto md:fixed md:top-[8vh] md:max-w-[1400px] md:left-[5vw] md:right-[5vw] lg:left-[12vw] lg:right-[12vw]' 
+          ? 'fixed top-[8vh] left-[2vw] right-[2vw] md:left-[5vw] md:right-[5vw] lg:left-[12vw] lg:right-[12vw] max-w-[1400px] mx-auto' 
           : 'relative w-full max-w-[640px] mx-auto'
       }`}
     >
@@ -433,7 +464,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
             }}
           >
             <div
-              className="max-h-[400px] md:max-h-[75vh] overflow-y-auto overscroll-contain"
+              className="max-h-[75vh] overflow-y-auto overscroll-contain"
               style={{
                 scrollbarWidth: 'thin',
                 scrollbarColor: 'rgba(255,255,255,0.08) transparent',
@@ -626,28 +657,33 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
                       </div>
 
                       {/* ── alternatives ── */}
-                      {resolution.alternatives?.length > 0 && (
-                        <>
-                          <div
-                            className="px-4 pt-2 pb-1.5 text-[9.5px] font-bold uppercase tracking-widest text-slate-500 dark:text-zinc-500"
-                            style={{
-                              fontFamily: 'Inter, system-ui, sans-serif',
-                            }}
-                          >
-                            Also found
-                          </div>
-                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 px-2">
-                            {resolution.alternatives.map((alt, idx) => (
-                              <ResultRow
-                                key={`${alt.id}-${idx}`}
-                                item={alt}
-                                isSelected={selectedIndex === idx + 1}
-                                onSelect={handleSelect}
-                                onHover={() => setSelectedIndex(idx + 1)}
-                              />
-                            ))}
-                          </div>
-                        </>
+                      {sortedAlternatives.length > 0 && (
+                        <div className="flex flex-col gap-6 px-2 mt-4">
+                          {Object.entries(groupedAlternatives).map(([type, items]) => (
+                            <div key={type} className="flex flex-col">
+                              <div className="flex items-center gap-2 px-2 mb-3 pb-1.5 border-b border-slate-200 dark:border-white/10 text-slate-500 dark:text-zinc-400">
+                                <TypeIcon type={type} size={14} />
+                                <span className="text-[11px] font-orbitron font-bold uppercase tracking-widest">
+                                  {TYPE_LABELS[type] || type}
+                                </span>
+                              </div>
+                              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                                {items.map((alt) => {
+                                  const globalIdx = sortedAlternatives.indexOf(alt) + 1;
+                                  return (
+                                    <ResultRow
+                                      key={`${alt.id}-${globalIdx}`}
+                                      item={alt}
+                                      isSelected={selectedIndex === globalIdx}
+                                      onSelect={handleSelect}
+                                      onHover={() => setSelectedIndex(globalIdx)}
+                                    />
+                                  );
+                                })}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
                       )}
                     </>
                   ) : (
