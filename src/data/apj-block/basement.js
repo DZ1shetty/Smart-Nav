@@ -393,6 +393,40 @@ export const basement = {
       image: 'https://placehold.co/600x400?text=Way+to+SAC',
       tags: ["path","utility","sac"],
       clickable: true
+    },
+    {
+      id: 'main-entrance-1',
+      name: 'MAIN ENTRANCE',
+      label: 'MAIN ENTRANCE',
+      type: 'utility',
+      x: 1896,
+      y: 524,
+      w: 404,
+      h: 40,
+      width: 404,
+      height: 40,
+      directions: 'Main Entrance near Reception.',
+      description: 'Main Entrance to APJ Block',
+      image: 'https://placehold.co/600x400?text=Main+Entrance',
+      tags: ["entrance","main","utility"],
+      clickable: true
+    },
+    {
+      id: 'main-entrance-2',
+      name: 'MAIN ENTRANCE',
+      label: 'MAIN ENTRANCE',
+      type: 'utility',
+      x: 1896,
+      y: 1413,
+      w: 404,
+      h: 40,
+      width: 404,
+      height: 40,
+      directions: 'Main Entrance near Hostel Office.',
+      description: 'Main Entrance to APJ Block',
+      image: 'https://placehold.co/600x400?text=Main+Entrance',
+      tags: ["entrance","main","utility"],
+      clickable: true
     }
   ],
   faculty: [
