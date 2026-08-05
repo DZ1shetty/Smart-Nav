@@ -3,6 +3,7 @@ import { useDebounce } from '../../hooks/useDebounce'
 import { useSearchWorker } from '../../hooks/useSearchWorker'
 import {
   Search,
+  Building2,
   MapPin,
   X,
   User,
@@ -38,6 +39,7 @@ const TypeIcon = ({ type, size = 14 }) => {
   if (type === 'staffroom' || type === 'hod') return <User {...p} />
   if (type === 'office') return <Briefcase {...p} />
   if (type === 'utility') return <Zap {...p} />
+  if (type === 'building') return <Building2 {...p} />
   return <MapPin {...p} />
 }
 
@@ -73,6 +75,11 @@ const TYPE_COLOR = {
     pill: 'bg-teal-500/10 text-teal-600 dark:text-teal-400',
     icon: 'bg-teal-500/20 dark:bg-teal-500/20 text-teal-600 dark:text-teal-400',
   },
+  building: {
+    ring: '#3b82f6',
+    pill: 'bg-blue-500/10 text-blue-600 dark:text-blue-400',
+    icon: 'bg-blue-500/20 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400',
+  },
   utility: {
     ring: '#6b7280',
     pill: 'bg-zinc-500/10 text-zinc-600 dark:text-zinc-400',
@@ -84,7 +91,7 @@ const getColor = (tags = []) => {
   return TYPE_COLOR.utility
 }
 const getType = (tags = []) => {
-  const types = ['faculty', 'lab', 'classroom', 'staffroom', 'hod', 'office', 'utility']
+  const types = ['faculty', 'lab', 'classroom', 'staffroom', 'hod', 'office', 'building', 'utility']
   return tags.find((t) => types.includes(t)) || 'utility'
 }
 

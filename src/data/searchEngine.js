@@ -259,7 +259,14 @@ const scoreItem = (item, queryVariants) => {
 
     const avg = tokenScores.reduce((a, b) => a + b, 0) / tokenScores.length
     // Multi-token bonus — if BOTH tokens fire, it's a strong signal
-    const bonus = tokens.length > 1 ? 50 : 0
+    let bonus = tokens.length > 1 ? 50 : 0
+
+    // Full-string match bonus (if the exact typed query is a substring of the item's name)
+    const nameClean = (item.name || '').toLowerCase().replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim()
+    if (nameClean.includes(qVariant.replace(/\s+/g, ' '))) {
+      bonus += 200
+    }
+
     bestTotal = Math.max(bestTotal, avg + bonus)
   }
 
@@ -389,6 +396,31 @@ const buildSearchPool = () => {
 
   }
 
+    // ── Campus Buildings ────────────────────────────────────────────────
+    const campusBuildings = [
+      { id: 'bld-apj', name: 'APJ Block', slug: 'APJ-Block' },
+      { id: 'bld-cvr', name: 'CV Raman Block', slug: 'CV-Raman-Block' },
+      { id: 'bld-ram', name: 'Ramanujan Block', slug: 'Ramanujan-Block' },
+      { id: 'bld-smv', name: 'SMV Block', slug: 'SMV-Block' },
+      { id: 'bld-atl', name: 'Atal Block', slug: 'Atal-Block' },
+      { id: 'bld-raj', name: 'V. Rajraman Block', slug: 'Rajraman-Block' }
+    ]
+  
+    for (const bld of campusBuildings) {
+      pool.push({
+        _kind: 'building',
+        id: bld.id,
+        name: bld.name,
+        type: 'building',
+        slug: bld.slug,
+        floorKey: bld.slug.toLowerCase().replaceAll('-', '_'), // pseudo key
+        floorLabel: 'Building',
+        buildingName: 'BUILDING',
+        tags: ['building'],
+        description: 'Building',
+      })
+    }
+
   SEARCH_POOL_CACHE = pool
   return pool
 }
@@ -430,7 +462,9 @@ export const resolveNavigationQuery = (query, context = {}) => {
       // ── Build description ─────────────────────────────────────────────────
       let description = ''
       const bld = item.buildingName ? `${item.buildingName} · ` : ''
-      if (item._kind === 'faculty') {
+      if (item._kind === 'building') {
+        description = `Campus Building`
+      } else if (item._kind === 'faculty') {
         const dept = item.department ? ` · ${item.department}` : ''
         description = `${item.roomName} · ${bld}${item.floorLabel}${dept}`
       } else {
@@ -445,11 +479,16 @@ export const resolveNavigationQuery = (query, context = {}) => {
 
 
       // ── URL ───────────────────────────────────────────────────────────────
-      const baseUrl = floorIdToUrl(item.floorKey)
-      const url =
-        item._kind === 'faculty'
-          ? `${baseUrl}?room=${item.id}&faculty=${encodeURIComponent(item.name)}`
-          : `${baseUrl}?room=${item.id}`
+      let url = ''
+      if (item._kind === 'building') {
+        url = `/${item.slug}`
+      } else {
+        const baseUrl = floorIdToUrl(item.floorKey)
+        url =
+          item._kind === 'faculty'
+            ? `${baseUrl}?room=${item.id}&faculty=${encodeURIComponent(item.name)}`
+            : `${baseUrl}?room=${item.id}`
+      }
 
       return {
         id: item.id,
@@ -470,8 +509,12 @@ export const resolveNavigationQuery = (query, context = {}) => {
       // Primary: confidence
       const diff = b.confidence_score - a.confidence_score
       if (diff !== 0) return diff
-      // Secondary: rooms before faculty (rooms are the destination)
-      if (a._kind !== b._kind) return a._kind === 'room' ? -1 : 1
+      // Secondary: buildings first, then rooms, then faculty
+      if (a._kind !== b._kind) {
+        if (a._kind === 'building') return -1
+        if (b._kind === 'building') return 1
+        return a._kind === 'room' ? -1 : 1
+      }
       return 0
     })
 
