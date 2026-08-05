@@ -429,7 +429,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
             }}
           >
             <div
-              className="max-h-[400px] overflow-y-auto overscroll-contain"
+              className="max-h-[75vh] md:max-h-[85vh] overflow-y-auto overscroll-contain"
               style={{
                 scrollbarWidth: 'thin',
                 scrollbarColor: 'rgba(255,255,255,0.08) transparent',
