@@ -322,7 +322,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
       ref={searchRef}
       className={`z-[200] ${
         isFocused 
-          ? 'fixed top-[8vh] left-[2vw] right-[2vw] md:left-[5vw] md:right-[5vw] lg:left-[12vw] lg:right-[12vw] max-w-[1400px] mx-auto' 
+          ? 'relative w-full max-w-[640px] mx-auto md:fixed md:top-[8vh] md:max-w-[1400px] md:left-[5vw] md:right-[5vw] lg:left-[12vw] lg:right-[12vw]' 
           : 'relative w-full max-w-[640px] mx-auto'
       }`}
     >
@@ -433,7 +433,7 @@ const SearchSystem = ({ onResultsChange, onSearchFocus, currentFloor }) => {
             }}
           >
             <div
-              className="max-h-[75vh] overflow-y-auto overscroll-contain"
+              className="max-h-[400px] md:max-h-[75vh] overflow-y-auto overscroll-contain"
               style={{
                 scrollbarWidth: 'thin',
                 scrollbarColor: 'rgba(255,255,255,0.08) transparent',
