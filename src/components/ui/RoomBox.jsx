@@ -12,7 +12,7 @@ const TYPE_COLORS = {
 }
 
 // --- SVG COORD LABEL COMPONENT (Prevents foreignObject clipping) ---
-const CoordLabelSVG = ({ rx, ry, w, floorId }) => {
+const InfoLabelSVG = ({ rx, ry, w, floorId, text, isHighlighted }) => {
   const isLargeViewBox =
     floorId?.startsWith('cv_raman_') ||
     floorId?.startsWith('ramanujan_') ||
@@ -22,60 +22,67 @@ const CoordLabelSVG = ({ rx, ry, w, floorId }) => {
     ['basement', 'ground', 'first', 'second', 'third', 'fourth', 'fifth'].includes(floorId)
   const isAtal = floorId?.startsWith('atal_')
 
-  let fontSize = 12
-  let height = 20
-  let width = 100
-  let offset = 15
+  let fontSize = 10
+  let arrowSize = 10
+  let tipOffset = 6
 
   if (isAtal) {
-    fontSize = 44
-    height = 65
-    width = 300
-    offset = 48
+    fontSize = 32
+    arrowSize = 32
+    tipOffset = 16
   } else if (isLargeViewBox) {
-    fontSize = 28
-    height = 42
-    width = 200
-    offset = 32
-  } else {
-    fontSize = 16
-    height = 28
-    width = 130
-    offset = 22
+    fontSize = 18
+    arrowSize = 20
+    tipOffset = 10
   }
 
   const textX = rx + w / 2
-  const textY = ry - offset
+  const arrowTipY = ry - tipOffset
+  const arrowBaseY = arrowTipY - arrowSize
+  const textY = arrowBaseY - (fontSize * 0.5)
+
+  // Vibe matching cyan for the arrow
+  const color = '#00eaff'
 
   return (
     <g style={{ pointerEvents: 'none' }}>
-      <rect
-        x={textX - width / 2}
-        y={textY - height + 4}
-        width={width}
-        height={height}
-        rx={height / 4}
-        fill="rgba(0, 0, 0, 0.95)"
-        stroke="#00eaff"
-        strokeWidth={isLargeViewBox ? 2 : 1}
+      {/* Sleek, solid triangle arrow pointing down */}
+      <path
+        d={`M ${textX} ${arrowTipY} L ${textX - arrowSize * 0.6} ${arrowBaseY} L ${textX + arrowSize * 0.6} ${arrowBaseY} Z`}
+        fill={color}
       />
-      <text
-        x={textX}
-        y={textY - height / 2 + fontSize / 2 - 2}
-        fill="#00eaff"
-        fontSize={fontSize}
-        fontFamily="monospace"
-        fontWeight="bold"
-        textAnchor="middle"
-      >
-        ({Math.round(rx)}, {Math.round(ry)})
-      </text>
+      {text !== undefined && text !== '' && (
+        <text
+          x={textX}
+          y={textY}
+          fill={color}
+          fontSize={fontSize}
+          fontFamily="var(--font-main, sans-serif)"
+          fontWeight="600"
+          letterSpacing="0.05em"
+          textAnchor="middle"
+        >
+          {text.toUpperCase()}
+        </text>
+      )}
+      {text === undefined && (
+        <text
+          x={textX}
+          y={textY}
+          fill={color}
+          fontSize={fontSize}
+          fontFamily="monospace"
+          textAnchor="middle"
+        >
+          ({Math.round(rx)}, {Math.round(ry)})
+        </text>
+      )}
     </g>
   )
 }
 
 // --- STATIC BOX (VIEW MODE) ---
-const StaticRoom = ({ room, onClick, isSelected, floorId, commonFontSize }) => {
+const StaticRoom = ({ room, onClick, isSelected, isHighlighted, floorId, commonFontSize }) => {
   const [isHovered, setIsHovered] = useState(false)
   const isCorridor = room.type === 'corridor'
   const isConnection = !!room.linkToFloor
@@ -148,7 +155,7 @@ const StaticRoom = ({ room, onClick, isSelected, floorId, commonFontSize }) => {
         />
       )}
 
-      {/* Pulsing highlight ring for selected state */}
+      {/* Pulsing highlight ring for active selected state only */}
       {isSelected && !isCorridor && !isConnection && (
         <path
           d={roomPath}
@@ -182,8 +189,15 @@ const StaticRoom = ({ room, onClick, isSelected, floorId, commonFontSize }) => {
           commonFontSize={commonFontSize}
         />
       )}
-      {(isHovered || isSelected) && !isCorridor && (
-        <CoordLabelSVG rx={rx} ry={ry} w={w} floorId={floorId} />
+      {(isHovered || isSelected || isHighlighted) && !isCorridor && (
+        <InfoLabelSVG 
+          rx={rx} 
+          ry={ry} 
+          w={w} 
+          floorId={floorId} 
+          isHighlighted={isHighlighted}
+          text={isHighlighted && !isSelected ? "" : undefined}
+        />
       )}
     </g>
   )
@@ -345,7 +359,7 @@ const DraggableRoom = ({ room, onMove, onResize, floorId, commonFontSize }) => {
 
       <RoomLabel room={room} w={w} h={h} color={color} isConnection={isConnection} floorId={floorId} commonFontSize={commonFontSize} />
       {!isCorridor && (
-        <CoordLabelSVG rx={rx} ry={ry} w={w} floorId={floorId} />
+        <InfoLabelSVG rx={rx} ry={ry} w={w} floorId={floorId} />
       )}
 
       {/* Resize Handle */}
@@ -484,12 +498,13 @@ const RoomBox = ({
   onResize,
   onClick,
   isSelected,
+  isHighlighted,
   commonFontSize,
 }) => {
   return isEditMode ? (
     <DraggableRoom room={room} floorId={floorId} onMove={onMove} onResize={onResize} commonFontSize={commonFontSize} />
   ) : (
-    <StaticRoom room={room} floorId={floorId} onClick={onClick} isSelected={isSelected} commonFontSize={commonFontSize} />
+    <StaticRoom room={room} floorId={floorId} onClick={onClick} isSelected={isSelected} isHighlighted={isHighlighted} commonFontSize={commonFontSize} />
   )
 }
 

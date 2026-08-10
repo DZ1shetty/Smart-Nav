@@ -404,9 +404,8 @@ const FloorMapSVG = memo(function FloorMapSVG({
                   key={room.id}
                   room={room}
                   floorId={floorData?.floorId}
-                  isSelected={
-                    selectedRoomId === room.id || highlightedRoomId === room.id
-                  }
+                  isSelected={selectedRoomId === room.id}
+                  isHighlighted={highlightedRoomId === room.id && selectedRoomId !== room.id}
                   isEditMode={isEditMode}
                   onMove={onRoomMove}
                   onResize={onRoomResize}

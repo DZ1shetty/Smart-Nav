@@ -155,10 +155,12 @@ const scoreToken = (target, query) => {
   const t = target
     .toLowerCase()
     .replace(/[^a-z0-9\s]/g, ' ')
+    .replace(/\s+/g, ' ')
     .trim()
   const q = query
     .toLowerCase()
     .replace(/[^a-z0-9\s]/g, ' ')
+    .replace(/\s+/g, ' ')
     .trim()
 
   // Exact match
@@ -263,7 +265,8 @@ const scoreItem = (item, queryVariants) => {
 
     // Full-string match bonus (if the exact typed query is a substring of the item's name)
     const nameClean = (item.name || '').toLowerCase().replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim()
-    if (nameClean.includes(qVariant.replace(/\s+/g, ' '))) {
+    const qClean = qVariant.toLowerCase().replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim()
+    if (nameClean.includes(qClean) && qClean.length > 0) {
       bonus += 200
     }
 

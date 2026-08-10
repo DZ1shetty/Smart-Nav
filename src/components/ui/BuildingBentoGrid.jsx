@@ -188,35 +188,7 @@ export default function BuildingBentoGrid({ onSelectBuilding, customBuildings = 
             </p>
           </div>
 
-          {/* Middle Animated Marquee Loop (Magic UI Style) */}
-          <div className="relative z-10 mt-1 md:mt-1.5 overflow-hidden rounded-xl bg-black/5 dark:bg-black/40 border border-black/5 dark:border-white/5 p-1.5">
-            <div className="flex items-center gap-2 overflow-hidden mask-fade-edge">
-              <motion.div
-                animate={{ x: ['0%', '-50%'] }}
-                transition={{
-                  duration: 20,
-                  repeat: Infinity,
-                  ease: 'linear',
-                }}
-                className="flex items-center gap-2 flex-shrink-0"
-              >
-                {[...item.highlights, ...item.highlights].map((h, hIdx) => {
-                  const IconComp = h.icon
-                  return (
-                    <div
-                      key={hIdx}
-                      className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/90 dark:bg-zinc-900/90 border border-black/10 dark:border-white/10 shadow-sm flex-shrink-0"
-                    >
-                      <IconComp className={`w-3 h-3 ${item.colorClass}`} />
-                      <span className="text-[9px] md:text-[10px] font-orbitron font-bold text-slate-800 dark:text-zinc-200 uppercase tracking-wider whitespace-nowrap">
-                        {h.text}
-                      </span>
-                    </div>
-                  )
-                })}
-              </motion.div>
-            </div>
-          </div>
+
         </motion.button>
       ))}
     </div>
