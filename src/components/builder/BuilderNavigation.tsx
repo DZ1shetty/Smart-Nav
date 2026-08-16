@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 import { useBuilderStore } from '../../store/useBuilderStore';
 import { db } from '../../firebase';
 import { collection, doc, setDoc, addDoc } from 'firebase/firestore';
-import { Save, Check, Settings, X, Plus } from 'lucide-react';
+import { Save, Check, Settings, X, Plus, UploadCloud } from 'lucide-react';
 import clsx from 'clsx';
 import { toast } from 'sonner';
+import { getFirestoreDocName } from '../../config';
 
 export const BuilderNavigation = () => {
   const { buildingMeta, currentFloorIndex, switchFloor, floorsData, rooms, updateBuildingMeta, draftId, setDraftId, setUnsavedChanges, unsavedChanges } = useBuilderStore();
   const [isSaving, setIsSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
+  const [isPublishing, setIsPublishing] = useState(false);
   
   // Settings Modal State
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
@@ -77,6 +79,51 @@ export const BuilderNavigation = () => {
       toast.error('Failed to save progress. Please try again.');
     } finally {
       setIsSaving(false);
+    }
+  };
+
+  const handlePublishBuilding = async () => {
+    if (isPublishing || !buildingMeta) return;
+    setIsPublishing(true);
+    try {
+      await handleSaveDraft();
+      const finalFloorsData = { ...floorsData, [currentFloorIndex]: rooms };
+      const buildingSlug = buildingMeta.slug;
+
+      for (let i = 0; i < buildingMeta.floorCount; i++) {
+        const floorRooms = finalFloorsData[i] || [];
+        const floorLabel = i === 0 ? 'Ground Floor' : `Floor ${i}`;
+        const floorId = `${buildingSlug}_floor_${i}`;
+        const docName = getFirestoreDocName(floorId);
+
+        const layoutData = {
+          floorId,
+          buildingName: buildingMeta.name,
+          label: floorLabel,
+          rooms: floorRooms,
+          lastEdited: new Date().toISOString(),
+          locked: true
+        };
+
+        await setDoc(doc(db, 'layouts', docName), layoutData, { merge: true });
+
+        try {
+          await fetch(`/api/layout/${floorId}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(layoutData)
+          });
+        } catch (e) {
+          // Local server offline, Firestore record updated cleanly
+        }
+      }
+
+      toast.success(`Published ${buildingMeta.name} to campus map!`);
+    } catch (err) {
+      console.error('Error publishing building:', err);
+      toast.error('Failed to publish building to campus map.');
+    } finally {
+      setIsPublishing(false);
     }
   };
 
@@ -152,7 +199,7 @@ export const BuilderNavigation = () => {
 
       <div className="w-px h-6 bg-zinc-200 dark:bg-zinc-800 mx-1"></div>
 
-      {/* Save Action */}
+      {/* Save Draft Action */}
       <button
         onClick={handleSaveDraft}
         disabled={isSaving}
@@ -172,7 +219,24 @@ export const BuilderNavigation = () => {
           <Save size={16} />
         )}
         <span className="hidden sm:inline">
-          {isSaving ? 'Saving...' : saveSuccess ? 'Saved!' : 'Save'}
+          {isSaving ? 'Saving...' : saveSuccess ? 'Saved!' : 'Save Draft'}
+        </span>
+      </button>
+
+      {/* Publish Action */}
+      <button
+        onClick={handlePublishBuilding}
+        disabled={isPublishing}
+        title="Publish building to campus map"
+        className="flex items-center gap-2 px-4 py-2 text-sm font-bold rounded-lg transition-all bg-blue-600 hover:bg-blue-700 text-white shadow-sm disabled:opacity-70"
+      >
+        {isPublishing ? (
+          <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+        ) : (
+          <UploadCloud size={16} />
+        )}
+        <span className="hidden sm:inline">
+          {isPublishing ? 'Publishing...' : 'Publish to Campus'}
         </span>
       </button>
 

@@ -3,11 +3,13 @@ import { useBuilderStore } from '../../store/useBuilderStore';
 import { 
   Building2, Layers, Type, Tag, AlignLeft, Plus, Clock, Trash2, ArrowLeft, 
   FolderOpen, Sparkles, Map, ArrowRight, Search, MoreVertical, Copy, 
-  Edit2, LayoutGrid, List, SortDesc, X, Check, Activity, Info 
+  Edit2, LayoutGrid, List, SortDesc, X, Check, Activity, Info, Loader2 
 } from 'lucide-react';
 import { collection, getDocs, doc, deleteDoc, updateDoc, setDoc, query, orderBy } from 'firebase/firestore';
 import { db } from '../../firebase';
 import { formatDistanceToNow } from 'date-fns';
+import { EXISTING_BUILDINGS_PRESETS, loadExistingBuildingPreset, ExistingBuildingPreset } from '../../utils/buildingImporter';
+import { toast } from 'sonner';
 
 // Auto-updating relative time component
 const RelativeTime = ({ timestamp }: { timestamp: any }) => {
@@ -145,6 +147,32 @@ export const SetupModal = () => {
   const [floorCount, setFloorCount] = useState<number>(3);
   const [theme, setTheme] = useState('');
   const [availableThemes, setAvailableThemes] = useState<string[]>(['blue', 'emerald', 'purple', 'amber', 'rose', 'cyan']);
+  const [importingPresetId, setImportingPresetId] = useState<string | null>(null);
+
+  const handleImportPreset = async (preset: ExistingBuildingPreset) => {
+    if (unsavedChanges) {
+      if (!window.confirm(`You have unsaved changes. Discard them and load ${preset.name}?`)) {
+        return;
+      }
+    }
+    setImportingPresetId(preset.id);
+    try {
+      const floorsData = await loadExistingBuildingPreset(preset);
+      completeSetup({
+        name: preset.name,
+        slug: preset.slug,
+        overview: preset.overview,
+        floorCount: preset.floorCount,
+        theme: preset.theme
+      }, floorsData, null);
+      toast.success(`Imported ${preset.name} into Smart Builder!`);
+    } catch (err) {
+      console.error("Error importing preset:", err);
+      toast.error(`Failed to import ${preset.name}.`);
+    } finally {
+      setImportingPresetId(null);
+    }
+  };
 
   useEffect(() => {
     const autoOpenSlug = localStorage.getItem('smart_nav_open_draft_slug');
@@ -701,10 +729,49 @@ export const SetupModal = () => {
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Dashboard
             </button>
 
+            {/* Existing Campus Buildings Row */}
+            <div className="mb-10">
+              <h3 className="text-sm font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-4 flex items-center gap-2">
+                <Building2 className="w-4 h-4 text-blue-500" /> Edit Existing Campus Building
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {EXISTING_BUILDINGS_PRESETS.map((preset) => {
+                  const isImporting = importingPresetId === preset.id;
+                  return (
+                    <button
+                      key={preset.id}
+                      disabled={isImporting}
+                      onClick={() => handleImportPreset(preset)}
+                      className="p-5 text-left border border-zinc-200 dark:border-zinc-800 rounded-2xl bg-white dark:bg-zinc-900 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg transition-all group relative overflow-hidden disabled:opacity-60"
+                    >
+                      <div className="flex items-center justify-between mb-3">
+                        <div className="w-10 h-10 bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 rounded-xl flex items-center justify-center">
+                          {isImporting ? <Loader2 className="w-5 h-5 animate-spin" /> : <Building2 className="w-5 h-5" />}
+                        </div>
+                        <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
+                          {preset.floorCount} FLOORS
+                        </span>
+                      </div>
+                      <h4 className="font-bold text-zinc-900 dark:text-white group-hover:text-blue-500 transition-colors">
+                        {preset.name}
+                      </h4>
+                      <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1 line-clamp-2 leading-relaxed">
+                        {preset.overview}
+                      </p>
+                      <div className="mt-3 flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 group-hover:translate-x-1 transition-transform">
+                        <span>{isImporting ? 'Importing...' : 'Edit in Builder'}</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
             {/* Quick Start Templates Row */}
             <div className="mb-10">
               <h3 className="text-sm font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-4 flex items-center gap-2">
-                <Sparkles className="w-4 h-4" /> Start from Template
+                <Sparkles className="w-4 h-4" /> Start from Blank Template
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <button onClick={() => applyTemplate('Single Floor Office', 1, 'A standard layout for a single-floor office space.')} className="p-5 text-left border border-zinc-200 dark:border-zinc-800 rounded-2xl bg-white dark:bg-zinc-900 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg transition-all group">

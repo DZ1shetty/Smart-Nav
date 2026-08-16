@@ -239,8 +239,9 @@ async function repairFirestore() {
             height: forceStaticCoords ? (sRoom.height ?? sRoom.h)  : (fRoom.height ?? fRoom.h  ?? sRoom.height ?? sRoom.h  ?? 0),
             // Content: prefer Firestore (admin-edited metadata)
             directions:  fRoom.directions  || sRoom.directions  || '',
-            description: fRoom.description || sRoom.description || '',
-            image:       sRoom.image       || fRoom.image       || '',
+            description: sRoom.description || fRoom.description || '',
+            image:       sRoom.image !== undefined ? sRoom.image : (fRoom.image || ''),
+            linkToFloor: sRoom.linkToFloor || fRoom.linkToFloor || null,
           }
         }
         return sRoom

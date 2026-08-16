@@ -29,6 +29,11 @@ export const resolveImageUrl = (url) => {
   if (!url) return '';
   if (typeof url !== 'string') return url;
 
+  // Replace literal template variable ${IMG_BASE_URL}
+  if (url.includes('${IMG_BASE_URL}')) {
+    url = url.replaceAll('${IMG_BASE_URL}', IMG_BASE_URL);
+  }
+
   // Auto-correct legacy repository name (Smart_Nav -> Smart-Nav)
   if (url.includes('/Smart_Nav/')) {
     url = url.replaceAll('/Smart_Nav/', '/Smart-Nav/');
@@ -41,7 +46,7 @@ export const resolveImageUrl = (url) => {
     url = url.replaceAll('MJ/Major_Project/', '');
   }
 
-  // When running locally, convert any raw.githubusercontent URLs to local relative paths
+  // When running locally (localhost), convert raw.githubusercontent URLs to local relative public paths
   if (!IS_CLOUD && url.includes('raw.githubusercontent.com')) {
     if (url.includes('/public-backup/')) {
       const parts = url.split('/public-backup/');
@@ -53,7 +58,7 @@ export const resolveImageUrl = (url) => {
     }
   }
 
-  // Self-heal any hardcoded raw.githubusercontent URLs (e.g. from database or old offline cache)
+  // Self-heal any hardcoded raw.githubusercontent URLs
   if (url.includes('raw.githubusercontent.com') && url.includes('/public-backup')) {
     const parts = url.split('/public-backup');
     if (parts.length > 1) {
@@ -61,9 +66,6 @@ export const resolveImageUrl = (url) => {
     }
   }
 
-  if (url.includes('${IMG_BASE_URL}')) {
-    return url.replace('${IMG_BASE_URL}', IMG_BASE_URL);
-  }
   return url;
 }
 

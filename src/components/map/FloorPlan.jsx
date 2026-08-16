@@ -1989,7 +1989,15 @@ export default function FloorPlan() {
               onUpdateRoomData={async (data) => {
                 const updated = roomsWithMetadata.map((r) => {
                   if (r.id === selectedRoom.id) {
-                    const updatedRoom = { ...r, name: data.name || r.name, label: data.name || r.label, directions: data.directions, image: data.image };
+                    const updatedRoom = {
+                      ...r,
+                      name: data.name || r.name,
+                      label: data.name || r.label,
+                      type: data.type !== undefined ? data.type : r.type,
+                      description: data.description !== undefined ? data.description : r.description,
+                      directions: data.directions,
+                      image: data.image
+                    };
                     setSelectedRoom(updatedRoom);
                     return updatedRoom;
                   }
