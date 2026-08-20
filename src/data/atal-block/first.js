@@ -303,13 +303,13 @@ export const first = {
       name: 'Dr. Shashank Shetty',
       department: 'Department of CSE / New Age Innovation Network',
       roomId: 'atal-first-meeting-shashank',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/atal-block-images/first-floor/meeting_room_shashank.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/atal-block-images/first-floor/meeting_room_shashank.png'
     },
     {
       name: 'Mr. Harikrishna Bhat',
       department: 'Office of International Affairs and Twinning Program',
       roomId: 'atal-first-edc-incubation',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/atal-block-images/first-floor/edc_incubation.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/atal-block-images/first-floor/edc_incubation.png'
     }
   ]
 }

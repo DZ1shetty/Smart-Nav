@@ -551,133 +551,133 @@ export const second = {
       name: 'Dr. Austin Dinesh D\'Souza',
       department: 'Mechanical Engineering',
       roomId: 'ramanujan-second-mrc-add-sr',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/dr_add_mrc.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/dr_add_mrc.png'
     },
     {
       name: 'Dr. Melwyn Rajesh Castelino',
       department: 'Mechanical Engineering',
       roomId: 'ramanujan-second-mrc-add-sr',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/dr_add_mrc.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/dr_add_mrc.png'
     },
     {
       name: 'Dr. Ravindra',
       department: 'Mechanical Engineering',
       roomId: 'ramanujan-second-ravindra-vs-sr',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/dr_ravindra.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/dr_ravindra.png'
     },
     {
       name: 'Dr. Vidyasagar Shetty',
       department: 'Mechanical Engineering',
       roomId: 'ramanujan-second-ravindra-vs-sr',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/dr_vs.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/dr_vs.png'
     },
     {
       name: 'Dr. Nithin Kumar Shetty',
       department: 'Mechanical Engineering',
       roomId: 'ramanujan-second-nks-vjs-sr',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/dr_nithin.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/dr_nithin.png'
     },
     {
       name: 'Dr. Vishwanath J S',
       department: 'Mechanical Engineering',
       roomId: 'ramanujan-second-nks-vjs-sr',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/dr_vishwanath.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/dr_vishwanath.png'
     },
     {
       name: 'Dr. Sharath Chandra H.S.',
       department: 'Mechanical Engineering',
       roomId: 'ramanujan-second-sr-left',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/mech_sr_left.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/mech_sr_left.png'
     },
     {
       name: 'Dr. Ajit M. Hebbale',
       department: 'Mechanical Engineering',
       roomId: 'ramanujan-second-sr-left',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/mech_sr_left.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/mech_sr_left.png'
     },
     {
       name: 'Dr. Narasimha Marakala',
       department: 'Mechanical Engineering',
       roomId: 'ramanujan-second-nm-rp-rnr-sr',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/marakala_pai_rao.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/marakala_pai_rao.png'
     },
     {
       name: 'Mr. Raghavendra Pai',
       department: 'Mechanical Engineering',
       roomId: 'ramanujan-second-nm-rp-rnr-sr',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/marakala_pai_rao.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/marakala_pai_rao.png'
     },
     {
       name: 'Mr. Rajath N. Rao',
       department: 'Mechanical Engineering',
       roomId: 'ramanujan-second-nm-rp-rnr-sr',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/marakala_pai_rao.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/marakala_pai_rao.png'
     },
     {
       name: 'Dr. Srinivasa Pai P.',
       department: 'Mechanical Engineering',
       roomId: 'ramanujan-second-mech-hod',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/mech_hod.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/mech_hod.png'
     },
     {
       name: 'Dr. Mohan Poojari',
       department: 'Mechanical Engineering',
       roomId: 'ramanujan-second-dept-library',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/dept_library.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/dept_library.png'
     },
     {
       name: 'Mr. P. Venkatesh Murthy',
       department: 'Electronics & Communication Engineering',
       roomId: 'ramanujan-second-sr-right',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/ec_sr.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/ec_sr.png'
     },
     {
       name: 'Dr. Suresh Shetty',
       department: 'Electronics & Communication Engineering',
       roomId: 'ramanujan-second-sr-right',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/ec_sr.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/ec_sr.png'
     },
     {
       name: 'Dr. Santhosh G',
       department: 'Electronics & Communication Engineering',
       roomId: 'ramanujan-second-sr-right',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/ec_sr.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/ec_sr.png'
     },
     {
       name: 'Dr. Uday D.',
       department: 'Electronics & Communication Engineering',
       roomId: 'ramanujan-second-sr-right',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/ec_sr.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/ec_sr.png'
     },
     {
       name: 'Dr. Mallikappa',
       department: 'Mechanical Engineering',
       roomId: 'ramanujan-second-mech-sr',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/mech_sr_bottom.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/mech_sr_bottom.png'
     },
     {
       name: 'Dr. Kumar H.S.',
       department: 'Mechanical Engineering',
       roomId: 'ramanujan-second-mech-sr',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/mech_sr_bottom.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/mech_sr_bottom.png'
     },
     {
       name: 'Dr. Ananthakrishna Somayaji',
       department: 'Mechanical Engineering',
       roomId: 'ramanujan-second-mech-sr',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/mech_sr_bottom.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/mech_sr_bottom.png'
     },
     {
       name: 'Dr. Dilip Kumar K.',
       department: 'Mechanical Engineering',
       roomId: 'ramanujan-second-mech-sr',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/mech_sr_bottom.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/mech_sr_bottom.png'
     },
     {
       name: 'Srinivas Prabhu',
       department: 'Mechanical Engineering',
       roomId: 'ramanujan-second-mech-sr',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/mech_sr_bottom.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/mech_sr_bottom.png'
     }
   ]
 }

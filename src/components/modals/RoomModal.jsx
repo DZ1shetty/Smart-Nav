@@ -443,25 +443,27 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                         className="w-full h-full md:object-contain object-cover"
                         onError={(e) => {
                           const currentSrc = e.target.src;
+                          if (currentSrc.includes('Smart_Nav')) {
+                            e.target.src = currentSrc.replace('Smart_Nav', 'Smart-Nav');
+                            return;
+                          }
                           if (currentSrc.includes('raw.githubusercontent.com')) {
-                            const parts = currentSrc.split('/public-backup');
-                            if (parts.length > 1 && !currentSrc.endsWith(parts[1])) {
-                              e.target.src = parts[1];
-                              return;
+                            if (currentSrc.includes('/public/')) {
+                              const parts = currentSrc.split('/public/');
+                              if (parts.length > 1 && !currentSrc.endsWith(parts[1])) {
+                                e.target.src = '/' + parts[1];
+                                return;
+                              }
+                            }
+                            if (currentSrc.includes('/public-backup/')) {
+                              const parts = currentSrc.split('/public-backup/');
+                              if (parts.length > 1 && !currentSrc.endsWith(parts[1])) {
+                                e.target.src = '/' + parts[1];
+                                return;
+                              }
                             }
                           }
-                          if (currentSrc.includes('/apj-block-images/')) {
-                            const rel = '/apj-block-images/' + currentSrc.split('/apj-block-images/')[1];
-                            if (!currentSrc.endsWith(rel)) {
-                              e.target.src = rel;
-                              return;
-                            }
-                          }
-                          // Fallback to type door image
-                          if (room.type === 'office') e.target.src = '/it_cell_door.png';
-                          else if (room.type === 'lab') e.target.src = '/adl01_door.png';
-                          else if (room.type === 'classroom') e.target.src = '/ccl41_door.png';
-                          else e.target.src = '/staff_room_01_door.png';
+                          e.target.src = `https://placehold.co/800x600/0f172a/ffffff?text=${encodeURIComponent(room.name || 'Room Image')}`;
                         }}
                       />
 
@@ -661,19 +663,28 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                   loading="lazy"
                   className="max-w-full max-h-full object-contain rounded-xl shadow-2xl select-none"
                   onError={(e) => {
-                    const currentSrc = e.target.src
+                    const currentSrc = e.target.src;
                     if (currentSrc.includes('Smart_Nav')) {
-                      e.target.src = currentSrc.replace('Smart_Nav', 'Smart-Nav')
-                      return
+                      e.target.src = currentSrc.replace('Smart_Nav', 'Smart-Nav');
+                      return;
                     }
                     if (currentSrc.includes('raw.githubusercontent.com')) {
-                      const parts = currentSrc.split('/public-backup')
-                      if (parts.length > 1) {
-                        e.target.src = parts[1]
-                        return
+                      if (currentSrc.includes('/public/')) {
+                        const parts = currentSrc.split('/public/');
+                        if (parts.length > 1 && !currentSrc.endsWith(parts[1])) {
+                          e.target.src = '/' + parts[1];
+                          return;
+                        }
+                      }
+                      if (currentSrc.includes('/public-backup/')) {
+                        const parts = currentSrc.split('/public-backup/');
+                        if (parts.length > 1 && !currentSrc.endsWith(parts[1])) {
+                          e.target.src = '/' + parts[1];
+                          return;
+                        }
                       }
                     }
-                    e.target.src = `https://placehold.co/800x600/0f172a/ffffff?text=${encodeURIComponent(room.name || 'Room Image')}`
+                    e.target.src = `https://placehold.co/800x600/0f172a/ffffff?text=${encodeURIComponent(room.name || 'Room Image')}`;
                   }}
                 />
 

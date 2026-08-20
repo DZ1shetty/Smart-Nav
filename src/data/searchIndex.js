@@ -9,8 +9,353 @@
 export const searchIndex = {
   "basement": {
     "buildingName": "APJ-BLOCK",
-    "label": "Basement",
-    "rooms": [],
+    "label": "Basement Floor",
+    "rooms": [
+      {
+        "id": "ladies-washroom",
+        "name": "LADIES WASHROOM",
+        "type": "washroom",
+        "faculty": null,
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ladies_common_room_door.png",
+        "tags": [
+          "washroom",
+          "ladies",
+          "stairs"
+        ],
+        "department": "",
+        "directions": "Top left corner.",
+        "description": "Ladies washroom facility in APJ Basement Floor.",
+        "linkToFloor": null
+      },
+      {
+        "id": "accounts-section",
+        "name": "ACCOUNTS SECTION",
+        "type": "office",
+        "faculty": null,
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1785945720/irwem10quzzdam5lypcf.png",
+        "tags": [
+          "office",
+          "accounts"
+        ],
+        "department": "",
+        "directions": "Top middle-left",
+        "description": "Accounts & Finance section office for fee payments, scholarships, and financial queries.",
+        "linkToFloor": null
+      },
+      {
+        "id": "academic-exam-section",
+        "name": "ACADEMIC & EXAM SECTION",
+        "type": "office",
+        "faculty": null,
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1785945719/lynyopnagnednqjyypka.png",
+        "tags": [
+          "office",
+          "academic",
+          "exam"
+        ],
+        "department": "",
+        "directions": "Top middle.",
+        "description": "Academic and examination administration section for transcripts, certificates, and hall tickets.",
+        "linkToFloor": null
+      },
+      {
+        "id": "reception",
+        "name": "RECEPTION",
+        "type": "office",
+        "faculty": null,
+        "image": null,
+        "tags": [
+          "reception",
+          "office"
+        ],
+        "department": "",
+        "directions": "Top middle-right, near entrance.",
+        "description": "Main campus information and visitor reception desk.",
+        "linkToFloor": null
+      },
+      {
+        "id": "hostel-office",
+        "name": "HOSTEL OFFICE",
+        "type": "office",
+        "faculty": null,
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1785945718/gvcjsvge0ubrq7vnkogk.png",
+        "tags": [
+          "office",
+          "hostel"
+        ],
+        "department": "",
+        "directions": "Top right corner.",
+        "description": "Hostel administration and student accommodation office.",
+        "linkToFloor": null
+      },
+      {
+        "id": "administrative-section",
+        "name": "ADMINISTRATIVE SECTION",
+        "type": "office",
+        "faculty": null,
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1785945717/cmemfspv8atocuj26bkc.png",
+        "tags": [
+          "office",
+          "admin"
+        ],
+        "department": "",
+        "directions": "Right side, below Hostel Office.",
+        "description": "General administration section for official documentation and campus affairs.",
+        "linkToFloor": null
+      },
+      {
+        "id": "chief-warden",
+        "name": "CHIEF WARDEN",
+        "type": "office",
+        "faculty": null,
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1785941094/s2jz3i9dhzxvraan2thz.png",
+        "tags": [
+          "office",
+          "warden"
+        ],
+        "department": "",
+        "directions": "Right side, below Admin Section.",
+        "description": "Office of the Chief Warden for student housing and hostel discipline.",
+        "linkToFloor": null
+      },
+      {
+        "id": "administration-block",
+        "name": "ADMINISTRATION BLOCK",
+        "type": "office",
+        "faculty": null,
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1785945722/lscyuezg3cjclwnt9jtp.png",
+        "tags": [
+          "office",
+          "admin",
+          "block"
+        ],
+        "department": "",
+        "directions": "Next to Administrative Section.",
+        "description": "Main Administrative Block complex.",
+        "linkToFloor": null
+      },
+      {
+        "id": "wheelchair-ramp",
+        "name": "RAMP",
+        "type": "other",
+        "faculty": null,
+        "image": "https://placehold.co/600x400?text=Accessible+Ramp",
+        "tags": [
+          "ramp",
+          "wheelchair",
+          "entrance"
+        ],
+        "department": "",
+        "directions": "At the entrance, near Administration Block.",
+        "description": "Accessible wheelchair entrance ramp.",
+        "linkToFloor": null
+      },
+      {
+        "id": "stairs-2",
+        "name": "STAIRS 2",
+        "type": "staircase",
+        "faculty": null,
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/fire_exit_first_door.png",
+        "tags": [
+          "stairs"
+        ],
+        "department": "",
+        "directions": "Middle top area.",
+        "description": "Staircase 2 connecting Basement to Ground and Upper Floors.",
+        "linkToFloor": null
+      },
+      {
+        "id": "xerox",
+        "name": "XEROX",
+        "type": "other",
+        "faculty": null,
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1785947534/k6nhtb9gpa7hos6q8lsq.jpg",
+        "tags": [
+          "shop",
+          "xerox"
+        ],
+        "department": "",
+        "directions": "Center area.",
+        "description": "Campus Xerox and reprography shop for printing, binding, and photocopies.",
+        "linkToFloor": null
+      },
+      {
+        "id": "sitting-area",
+        "name": "SITTING AREA",
+        "type": "other",
+        "faculty": null,
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/civil_dept_corridor.png",
+        "tags": [
+          "sitting",
+          "lounge"
+        ],
+        "department": "",
+        "directions": "Center area, right of Xerox.",
+        "description": "Open student and visitor lounge sitting area in APJ Basement.",
+        "linkToFloor": null
+      },
+      {
+        "id": "stairs-1",
+        "name": "STAIRS 1",
+        "type": "staircase",
+        "faculty": null,
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/fire_exit_door.png",
+        "tags": [
+          "stairs"
+        ],
+        "department": "",
+        "directions": "Center area, below Xerox.",
+        "description": "Staircase 1 connecting to Ground Floor.",
+        "linkToFloor": null
+      },
+      {
+        "id": "lift",
+        "name": "LIFT",
+        "type": "lift",
+        "faculty": null,
+        "image": "https://placehold.co/600x400?text=Elevator+Lobby",
+        "tags": [
+          "lift"
+        ],
+        "department": "",
+        "directions": "Center area, below Sitting area.",
+        "description": "Elevator access serving all floors of APJ Block.",
+        "linkToFloor": null
+      },
+      {
+        "id": "gents-wr",
+        "name": "GENTS WASHROOM",
+        "type": "washroom",
+        "faculty": null,
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/staff_room_02_door.png",
+        "tags": [
+          "washroom",
+          "gents"
+        ],
+        "department": "",
+        "directions": "Left side middle.",
+        "description": "Gents washroom facility in APJ Basement Floor.",
+        "linkToFloor": null
+      },
+      {
+        "id": "connection-cv-raman",
+        "name": "CONNECTION TO CV RAMAN",
+        "type": "other",
+        "faculty": null,
+        "image": null,
+        "tags": [
+          "path",
+          "utility",
+          "cv-raman"
+        ],
+        "department": "",
+        "directions": "Left side.",
+        "description": "Covered connecting corridor linking APJ Block to CV Raman Ground Floor.",
+        "linkToFloor": "cv_raman_ground"
+      },
+      {
+        "id": "inst-measurement-lab",
+        "name": "INSTRUMENTATION & MEASUREMENT LAB",
+        "type": "lab",
+        "faculty": null,
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1785941091/hipmogpi3db4zacmxmmr.png",
+        "tags": [
+          "lab",
+          "instrumentation",
+          "measurement"
+        ],
+        "department": "",
+        "directions": "Left side, lower half.",
+        "description": "Instrumentation & Measurement laboratory for Electrical and Electronics Engineering.",
+        "linkToFloor": null
+      },
+      {
+        "id": "eel03",
+        "name": "EEL03",
+        "type": "lab",
+        "faculty": null,
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1785941094/fykyylgb8izsm1dgjrg0.png",
+        "tags": [
+          "lab",
+          "classroom",
+          "eel03"
+        ],
+        "department": "",
+        "directions": "Center bottom area.",
+        "description": "Electrical Engineering Laboratory 03.",
+        "linkToFloor": null
+      },
+      {
+        "id": "eel02",
+        "name": "EEL02",
+        "type": "lab",
+        "faculty": null,
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1785941092/cq3ruq31vpx3w6i538cc.png",
+        "tags": [
+          "lab",
+          "classroom",
+          "eel02"
+        ],
+        "department": "",
+        "directions": "Bottom left corner.",
+        "description": "Electrical Engineering Laboratory 02.",
+        "linkToFloor": null
+      },
+      {
+        "id": "stairs-3",
+        "name": "STAIRS 3",
+        "type": "staircase",
+        "faculty": null,
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/fire_exit_second_door.png",
+        "tags": [
+          "stairs"
+        ],
+        "department": "",
+        "directions": "Bottom center.",
+        "description": "Staircase 3.",
+        "linkToFloor": null
+      },
+      {
+        "id": "way-to-sac",
+        "name": "WAY TO SAC",
+        "type": "other",
+        "faculty": null,
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/civil_dept_corridor.png",
+        "tags": [
+          "path",
+          "utility",
+          "sac"
+        ],
+        "department": "",
+        "directions": "Bottom right edge.",
+        "description": "Path leading to Student Activity Center (SAC).",
+        "linkToFloor": null
+      },
+      {
+        "id": "main-entrance-1",
+        "name": "MAIN ENTRANCE",
+        "type": "other",
+        "faculty": null,
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/civil_dept_board.jpg",
+        "tags": [],
+        "department": "",
+        "directions": "Main Entrance near Reception.",
+        "description": "APJ Block main entrance near Reception.",
+        "linkToFloor": null
+      },
+      {
+        "id": "main-entrance-2",
+        "name": "MAIN ENTRANCE",
+        "type": "other",
+        "faculty": null,
+        "image": null,
+        "tags": [],
+        "department": "",
+        "directions": "Main Entrance near Hostel Office.",
+        "description": "APJ Block main entrance near Hostel Office.",
+        "linkToFloor": null
+      }
+    ],
     "faculty": []
   },
   "ground": {
@@ -22,7 +367,7 @@ export const searchIndex = {
         "name": "NITTE ALUMNI LOUNGE",
         "type": "hall",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/alumni-lounge.jpg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/ground-floor/alumni-lounge.jpg",
         "tags": [
           "lounge",
           "alumni"
@@ -37,7 +382,7 @@ export const searchIndex = {
         "name": "BOARD ROOM",
         "type": "hall",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/ground-board-room.jpg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/ground-floor/ground-board-room.jpg",
         "tags": [
           "board",
           "room"
@@ -52,7 +397,7 @@ export const searchIndex = {
         "name": "VINAY HEGDE CABIN",
         "type": "hod",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/vinay-hegde.jpg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/ground-floor/vinay-hegde.jpg",
         "tags": [
           "office"
         ],
@@ -66,7 +411,7 @@ export const searchIndex = {
         "name": "VICE PRINCIPAL CABIN",
         "type": "hod",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/vice-principal.jpg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/ground-floor/vice-principal.jpg",
         "tags": [
           "office",
           "principal"
@@ -81,7 +426,7 @@ export const searchIndex = {
         "name": "VICE PRESIDENT CABIN (TE)",
         "type": "hod",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/vice-president.jpg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/ground-floor/vice-president.jpg",
         "tags": [
           "office"
         ],
@@ -109,7 +454,7 @@ export const searchIndex = {
         "name": "EXAMINATION CENTER",
         "type": "office",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/exam-section.jpg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/ground-floor/exam-section.jpg",
         "tags": [
           "exam",
           "center"
@@ -166,7 +511,7 @@ export const searchIndex = {
         "name": "PRINCIPAL CABIN",
         "type": "hod",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/principal.jpg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/ground-floor/principal.jpg",
         "tags": [
           "office",
           "principal"
@@ -181,7 +526,7 @@ export const searchIndex = {
         "name": "DEPUTY REGISTRAR OFFICE",
         "type": "hod",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/ground-deputy-registrar.jpg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/ground-floor/ground-deputy-registrar.jpg",
         "tags": [
           "office",
           "registry"
@@ -196,7 +541,7 @@ export const searchIndex = {
         "name": "NANDHINI SEMINAR HALL",
         "type": "hall",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/ground-floor/nandhini-hall.jpg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/ground-floor/nandhini-hall.jpg",
         "tags": [
           "seminar",
           "hall"
@@ -275,7 +620,7 @@ export const searchIndex = {
         "name": "BTL05",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.24-pm.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.24-pm.jpeg",
         "tags": [
           "lab",
           "project",
@@ -292,7 +637,7 @@ export const searchIndex = {
         "name": "BTL06",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.24-pm-1.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.24-pm-1.jpeg",
         "tags": [
           "lab",
           "bio",
@@ -308,7 +653,7 @@ export const searchIndex = {
         "name": "SEMINAR HALL",
         "type": "hall",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.25-pm.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.25-pm.jpeg",
         "tags": [
           "seminar",
           "hall"
@@ -323,7 +668,7 @@ export const searchIndex = {
         "name": "BTL04",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.15-pm.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.15-pm.jpeg",
         "tags": [
           "lab",
           "bt",
@@ -339,7 +684,7 @@ export const searchIndex = {
         "name": "BTL03",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.14-pm-1.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.14-pm-1.jpeg",
         "tags": [
           "lab",
           "bt",
@@ -369,7 +714,7 @@ export const searchIndex = {
         "name": "BTL02",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.23-pm-1.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.23-pm-1.jpeg",
         "tags": [
           "lab",
           "bt",
@@ -385,7 +730,7 @@ export const searchIndex = {
         "name": "BTL12",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.22-pm.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.22-pm.jpeg",
         "tags": [
           "lab",
           "bt",
@@ -429,7 +774,7 @@ export const searchIndex = {
         "name": "PURCHASE SECTION",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.23-pm.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.23-pm.jpeg",
         "tags": [
           "office",
           "purchase"
@@ -444,7 +789,7 @@ export const searchIndex = {
         "name": "STAFF ROOM",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.20-pm-1.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.20-pm-1.jpeg",
         "tags": [
           "office"
         ],
@@ -458,7 +803,7 @@ export const searchIndex = {
         "name": "SEMINAR HALL",
         "type": "hall",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.25-pm.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.25-pm.jpeg",
         "tags": [
           "seminar",
           "hall"
@@ -473,7 +818,7 @@ export const searchIndex = {
         "name": "SHAMBAVI SEMINAR HALL",
         "type": "hall",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.20-pm.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.20-pm.jpeg",
         "tags": [
           "seminar",
           "hall"
@@ -488,7 +833,7 @@ export const searchIndex = {
         "name": "LH-110",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.14-pm.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.14-pm.jpeg",
         "tags": [
           "class",
           "lh",
@@ -504,7 +849,7 @@ export const searchIndex = {
         "name": "LH-112",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.20-pm-2.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.20-pm-2.jpeg",
         "tags": [
           "class",
           "lh",
@@ -520,7 +865,7 @@ export const searchIndex = {
         "name": "BTL01",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.21-pm.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/1st-floor/whatsapp-image-2026-04-27-at-3.04.21-pm.jpeg",
         "tags": [
           "lab",
           "bt",
@@ -582,7 +927,7 @@ export const searchIndex = {
         "name": "LH-211",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/lh-211.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/2nd-floor/lh-211.jpeg",
         "tags": [
           "classroom",
           "lh211"
@@ -661,7 +1006,7 @@ export const searchIndex = {
         "name": "LH-212",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/lh-212.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/2nd-floor/lh-212.jpeg",
         "tags": [
           "classroom",
           "lh212"
@@ -676,7 +1021,7 @@ export const searchIndex = {
         "name": "BTL09",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/bioprocessbtl09.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/2nd-floor/bioprocessbtl09.jpeg",
         "tags": [
           "lab",
           "bt",
@@ -706,7 +1051,7 @@ export const searchIndex = {
         "name": "BT HOD",
         "type": "hod",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/hodbt.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/2nd-floor/hodbt.jpeg",
         "tags": [
           "hod",
           "office",
@@ -738,7 +1083,7 @@ export const searchIndex = {
         "name": "BTL08",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/btl08.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/2nd-floor/btl08.jpeg",
         "tags": [
           "lab",
           "bt",
@@ -754,7 +1099,7 @@ export const searchIndex = {
         "name": "BTL07",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/immunology-labbtl07.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/2nd-floor/immunology-labbtl07.jpeg",
         "tags": [
           "lab",
           "bt",
@@ -770,7 +1115,7 @@ export const searchIndex = {
         "name": "BTL10",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/research_labbtl10.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/2nd-floor/research_labbtl10.jpeg",
         "tags": [
           "lab",
           "bt",
@@ -828,7 +1173,7 @@ export const searchIndex = {
         "name": "LH-210",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/lh-210.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/2nd-floor/lh-210.jpeg",
         "tags": [
           "classroom",
           "lh210"
@@ -843,7 +1188,7 @@ export const searchIndex = {
         "name": "BTL11",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/research_labbtl-11.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/2nd-floor/research_labbtl-11.jpeg",
         "tags": [
           "lab",
           "bt",
@@ -859,7 +1204,7 @@ export const searchIndex = {
         "name": "METROLOGY LAB",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/2nd-floor/metrology_lab.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/2nd-floor/metrology_lab.jpeg",
         "tags": [
           "lab",
           "mechanical"
@@ -954,7 +1299,7 @@ export const searchIndex = {
         "name": "LH-311",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/lh-311.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/lh-311.jpeg",
         "tags": [
           "class",
           "lh311"
@@ -969,7 +1314,7 @@ export const searchIndex = {
         "name": "STAFF ROOM",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.29-pm-1.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.29-pm-1.jpeg",
         "tags": [
           "staff",
           "office",
@@ -985,7 +1330,7 @@ export const searchIndex = {
         "name": "LH-312",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/lh-312.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/lh-312.jpeg",
         "tags": [
           "class",
           "lh312"
@@ -1000,7 +1345,7 @@ export const searchIndex = {
         "name": "STAFF ROOM",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.29-pm-2.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.29-pm-2.jpeg",
         "tags": [
           "office"
         ],
@@ -1014,7 +1359,7 @@ export const searchIndex = {
         "name": "STAFF ROOM",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.29-pm-1.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.29-pm-1.jpeg",
         "tags": [
           "office"
         ],
@@ -1028,7 +1373,7 @@ export const searchIndex = {
         "name": "LH-309",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/lh-309.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/lh-309.jpeg",
         "tags": [
           "class",
           "lh309"
@@ -1043,7 +1388,7 @@ export const searchIndex = {
         "name": "LH-310",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/lh-310.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/lh-310.jpeg",
         "tags": [
           "class",
           "lh310"
@@ -1086,7 +1431,7 @@ export const searchIndex = {
         "name": "LADIES COMMON ROOM",
         "type": "utility",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/ladies_room.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/ladies_room.jpeg",
         "tags": [
           "common"
         ],
@@ -1114,7 +1459,7 @@ export const searchIndex = {
         "name": "LH-308",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/lh-308.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/lh-308.jpeg",
         "tags": [
           "class",
           "lh308"
@@ -1129,7 +1474,7 @@ export const searchIndex = {
         "name": "E&C STAFF ROOM",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.28-pm.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.28-pm.jpeg",
         "tags": [
           "staff",
           "office",
@@ -1145,7 +1490,7 @@ export const searchIndex = {
         "name": "E&C STAFF ROOM",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.32-pm-1.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.32-pm-1.jpeg",
         "tags": [
           "staff",
           "office",
@@ -1161,7 +1506,7 @@ export const searchIndex = {
         "name": "STAFF ROOM",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.29-pm-1.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.29-pm-1.jpeg",
         "tags": [
           "office"
         ],
@@ -1175,7 +1520,7 @@ export const searchIndex = {
         "name": "STAFF ROOM",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.29-pm-2.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.29-pm-2.jpeg",
         "tags": [
           "office"
         ],
@@ -1189,7 +1534,7 @@ export const searchIndex = {
         "name": "LH-306",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/lh-306.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/lh-306.jpeg",
         "tags": [
           "class",
           "lh306"
@@ -1204,7 +1549,7 @@ export const searchIndex = {
         "name": "TEXAS INSTRUMENTS",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/texas.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/texas.jpeg",
         "tags": [
           "lab",
           "ece",
@@ -1220,7 +1565,7 @@ export const searchIndex = {
         "name": "STAFF ROOM",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.32-pm-1.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.32-pm-1.jpeg",
         "tags": [
           "office"
         ],
@@ -1488,7 +1833,7 @@ export const searchIndex = {
         "name": "STAFF ROOM",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/sr1.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/4th-floor/sr1.jpeg",
         "tags": [
           "staff",
           "office",
@@ -1504,7 +1849,7 @@ export const searchIndex = {
         "name": "CSL 06",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/csl06.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/4th-floor/csl06.jpeg",
         "tags": [
           "lab",
           "cse",
@@ -1520,7 +1865,7 @@ export const searchIndex = {
         "name": "CSL 05",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/csl05.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/4th-floor/csl05.jpeg",
         "tags": [
           "lab",
           "cse",
@@ -1550,7 +1895,7 @@ export const searchIndex = {
         "name": "CSE HOD",
         "type": "hod",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/hod-cse.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/4th-floor/hod-cse.jpeg",
         "tags": [
           "hod",
           "office",
@@ -1566,7 +1911,7 @@ export const searchIndex = {
         "name": "CSL 03",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/csl03.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/4th-floor/csl03.jpeg",
         "tags": [
           "lab",
           "cse",
@@ -1582,7 +1927,7 @@ export const searchIndex = {
         "name": "CSL 04",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/csl04.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/4th-floor/csl04.jpeg",
         "tags": [
           "lab",
           "cse",
@@ -1598,7 +1943,7 @@ export const searchIndex = {
         "name": "ISL 04",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/isl04.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/4th-floor/isl04.jpeg",
         "tags": [
           "lab",
           "ise",
@@ -1614,7 +1959,7 @@ export const searchIndex = {
         "name": "CSL 07",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/csl07.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/4th-floor/csl07.jpeg",
         "tags": [
           "lab",
           "cse",
@@ -1630,7 +1975,7 @@ export const searchIndex = {
         "name": "ISL 03",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/isl03.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/4th-floor/isl03.jpeg",
         "tags": [
           "lab",
           "ise",
@@ -1646,7 +1991,7 @@ export const searchIndex = {
         "name": "ISL 02",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/isl02.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/4th-floor/isl02.jpeg",
         "tags": [
           "lab",
           "ise",
@@ -1662,7 +2007,7 @@ export const searchIndex = {
         "name": "ISL 01",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/isl01.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/4th-floor/isl01.jpeg",
         "tags": [
           "lab",
           "ise",
@@ -1678,7 +2023,7 @@ export const searchIndex = {
         "name": "CSL 02",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/csl02.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/4th-floor/csl02.jpeg",
         "tags": [
           "lab",
           "cse",
@@ -1694,7 +2039,7 @@ export const searchIndex = {
         "name": "CSL 01",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/csl01.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/4th-floor/csl01.jpeg",
         "tags": [
           "lab",
           "cse",
@@ -1710,7 +2055,7 @@ export const searchIndex = {
         "name": "STAFF ROOM",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/sr2.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/4th-floor/sr2.jpeg",
         "tags": [
           "staff",
           "office",
@@ -1726,7 +2071,7 @@ export const searchIndex = {
         "name": "STAFF ROOM",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/sr1.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/4th-floor/sr1.jpeg",
         "tags": [
           "office"
         ],
@@ -1740,7 +2085,7 @@ export const searchIndex = {
         "name": "STAFF ROOM",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/apj-block-images/4th-floor/sr2.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/4th-floor/sr2.jpeg",
         "tags": [
           "office"
         ],
@@ -1920,7 +2265,7 @@ export const searchIndex = {
         "name": "LH-505",
         "type": "classroom",
         "faculty": null,
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/lh-505.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/5th-floor/lh-505.jpeg",
         "tags": [
           "class",
           "ise",
@@ -1936,7 +2281,7 @@ export const searchIndex = {
         "name": "LH-503",
         "type": "classroom",
         "faculty": null,
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/lh503.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/5th-floor/lh503.png",
         "tags": [
           "class",
           "ise",
@@ -1966,7 +2311,7 @@ export const searchIndex = {
         "name": "ISE HOD",
         "type": "hod",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/refs/heads/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/apj-block-images/5th-floor/hod_cabinise.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/5th-floor/hod_cabinise.jpeg",
         "tags": [
           "hod",
           "office",
@@ -1997,7 +2342,7 @@ export const searchIndex = {
         "name": "CSL 08",
         "type": "lab",
         "faculty": null,
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/csl08.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/5th-floor/csl08.png",
         "tags": [
           "lab",
           "cse",
@@ -2013,7 +2358,7 @@ export const searchIndex = {
         "name": "LH-506",
         "type": "classroom",
         "faculty": null,
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/lh-506.jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/5th-floor/lh-506.jpeg",
         "tags": [
           "class",
           "ise",
@@ -2029,7 +2374,7 @@ export const searchIndex = {
         "name": "LH-504",
         "type": "classroom",
         "faculty": null,
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/lh504.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/5th-floor/lh504.png",
         "tags": [
           "class",
           "ise",
@@ -2045,7 +2390,7 @@ export const searchIndex = {
         "name": "LH-502",
         "type": "classroom",
         "faculty": null,
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/lh502.jpg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/5th-floor/lh502.jpg",
         "tags": [
           "class",
           "ise",
@@ -2061,7 +2406,7 @@ export const searchIndex = {
         "name": "LH-500",
         "type": "classroom",
         "faculty": null,
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/lh500.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/5th-floor/lh500.png",
         "tags": [
           "class",
           "ise",
@@ -2077,7 +2422,7 @@ export const searchIndex = {
         "name": "STAFF ROOM",
         "type": "staffroom",
         "faculty": null,
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/sf(i).jpeg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/5th-floor/sf(i).jpeg",
         "tags": [
           "staff",
           "office",
@@ -2121,7 +2466,7 @@ export const searchIndex = {
         "name": "LH-501 (PG)",
         "type": "classroom",
         "faculty": null,
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/lh501_pg.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/5th-floor/lh501_pg.png",
         "tags": [
           "class",
           "pg"
@@ -2136,7 +2481,7 @@ export const searchIndex = {
         "name": "LIBRARY (CSE)",
         "type": "utility",
         "faculty": null,
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/library.jpg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/5th-floor/library.jpg",
         "tags": [
           "books",
           "cse"
@@ -2165,7 +2510,7 @@ export const searchIndex = {
         "name": "CFR 03 LAB",
         "type": "lab",
         "faculty": null,
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/cfr03_lab.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/5th-floor/cfr03_lab.png",
         "tags": [
           "lab",
           "cse",
@@ -2180,7 +2525,7 @@ export const searchIndex = {
     "faculty": [
       {
         "name": "DR. RAVI B.",
-        "roomId": "staff-room-big",
+        "roomId": "",
         "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.15-pm-1.jpeg",
         "description": "",
         "department": "ISE",
@@ -2188,7 +2533,7 @@ export const searchIndex = {
       },
       {
         "name": "DR. JASON ELROY MARTIS",
-        "roomId": "staff-room-big",
+        "roomId": "",
         "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.15-pm-2.jpeg",
         "description": "",
         "department": "ISE",
@@ -2196,7 +2541,7 @@ export const searchIndex = {
       },
       {
         "name": "DR. ASHWINI B.",
-        "roomId": "hod-cabin",
+        "roomId": "",
         "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.15-pm.jpeg",
         "description": "",
         "department": "ISE",
@@ -2204,7 +2549,7 @@ export const searchIndex = {
       },
       {
         "name": "DR. ANUSHA N.",
-        "roomId": "staff-room-big",
+        "roomId": "",
         "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.16-pm.jpeg",
         "description": "",
         "department": "ISE",
@@ -2212,7 +2557,7 @@ export const searchIndex = {
       },
       {
         "name": "DR. CHINMAI SHETTY",
-        "roomId": "staff-room-big",
+        "roomId": "",
         "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.18-pm.jpeg",
         "description": "",
         "department": "ISE",
@@ -2220,7 +2565,7 @@ export const searchIndex = {
       },
       {
         "name": "DR. DEEPA",
-        "roomId": "staff-room-big",
+        "roomId": "",
         "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.19-pm-1.jpeg",
         "description": "",
         "department": "ISE",
@@ -2228,7 +2573,7 @@ export const searchIndex = {
       },
       {
         "name": "DR. RAGHUNANDAN K R",
-        "roomId": "staff-room-left",
+        "roomId": "",
         "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.19-pm-2.jpeg",
         "description": "",
         "department": "CSE",
@@ -2236,7 +2581,7 @@ export const searchIndex = {
       },
       {
         "name": "DR. RASHMI NAVEEN",
-        "roomId": "staff-room-big",
+        "roomId": "",
         "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.19-pm.jpeg",
         "description": "",
         "department": "ISE",
@@ -2244,7 +2589,7 @@ export const searchIndex = {
       },
       {
         "name": "MR. PAWAN HEGDE",
-        "roomId": "staff-room-left",
+        "roomId": "",
         "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.20-pm-1.jpeg",
         "description": "",
         "department": "CSE",
@@ -2252,7 +2597,7 @@ export const searchIndex = {
       },
       {
         "name": "MS. SAVITHA SHETTY",
-        "roomId": "staff-room-left",
+        "roomId": "",
         "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.20-pm-2.jpeg",
         "description": "",
         "department": "CSE",
@@ -2260,7 +2605,7 @@ export const searchIndex = {
       },
       {
         "name": "DR. SARIKA HEGDE",
-        "roomId": "staff-room-left",
+        "roomId": "",
         "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.20-pm.jpeg",
         "description": "",
         "department": "CSE",
@@ -2268,7 +2613,7 @@ export const searchIndex = {
       },
       {
         "name": "MS. ANUPAMA HC",
-        "roomId": "staff-room-left",
+        "roomId": "",
         "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.21-pm-1.jpeg",
         "description": "",
         "department": "CSE",
@@ -2276,7 +2621,7 @@ export const searchIndex = {
       },
       {
         "name": "MS. PRATHEEKSHA HEGDE N",
-        "roomId": "staff-room-big",
+        "roomId": "",
         "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.21-pm-2.jpeg",
         "description": "",
         "department": "ISE",
@@ -2284,7 +2629,7 @@ export const searchIndex = {
       },
       {
         "name": "DR. ASMITA POOJARY",
-        "roomId": "staff-room-left",
+        "roomId": "",
         "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.21-pm.jpeg",
         "description": "",
         "department": "CSE",
@@ -2292,7 +2637,7 @@ export const searchIndex = {
       },
       {
         "name": "MS. VAISHALI BANGERA",
-        "roomId": "staff-room-left",
+        "roomId": "",
         "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.22-pm-1.jpeg",
         "description": "",
         "department": "CSE",
@@ -2300,7 +2645,7 @@ export const searchIndex = {
       },
       {
         "name": "DR. SANDEEP KUMAR HEGDE",
-        "roomId": "staff-room-left",
+        "roomId": "",
         "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.22-pm-2.jpeg",
         "description": "",
         "department": "CSE",
@@ -2308,7 +2653,7 @@ export const searchIndex = {
       },
       {
         "name": "MS. PRATHYAKSHINI",
-        "roomId": "staff-room-big",
+        "roomId": "",
         "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.22-pm.jpeg",
         "description": "",
         "department": "ISE",
@@ -2316,7 +2661,7 @@ export const searchIndex = {
       },
       {
         "name": "MS. SIMRAN BANU",
-        "roomId": "staff-room-left",
+        "roomId": "",
         "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.23-pm.jpeg",
         "description": "",
         "department": "CSE",
@@ -2579,7 +2924,7 @@ export const searchIndex = {
         "name": "LC-01",
         "type": "classroom",
         "faculty": null,
-        "image": "${IMG_BASE_URL}/cv-raman-block-images/ground-floor/lc01.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/ground-floor/lc01.png",
         "tags": [
           "classroom",
           "lc01",
@@ -2627,7 +2972,7 @@ export const searchIndex = {
         "name": "LC-02",
         "type": "classroom",
         "faculty": null,
-        "image": "${IMG_BASE_URL}/cv-raman-block-images/ground-floor/lc02.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/ground-floor/lc02.png",
         "tags": [
           "classroom",
           "lc02",
@@ -2643,7 +2988,7 @@ export const searchIndex = {
         "name": "DR. NARASHIMA BAILKERI (HOD)",
         "type": "hod",
         "faculty": null,
-        "image": "${IMG_BASE_URL}/cv-raman-block-images/ground-floor/narashima_bailkeri.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/ground-floor/narashima_bailkeri.png",
         "tags": [
           "hod",
           "faculty",
@@ -2659,7 +3004,7 @@ export const searchIndex = {
         "name": "XEROX CENTER",
         "type": "utility",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/ground-floor/xerox.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/ground-floor/xerox.png",
         "tags": [
           "xerox",
           "copy",
@@ -2675,7 +3020,7 @@ export const searchIndex = {
         "name": "NOTICE BOARD",
         "type": "utility",
         "faculty": null,
-        "image": "${IMG_BASE_URL}/cv-raman-block-images/ground-floor/notice_board.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/ground-floor/notice_board.png",
         "tags": [
           "notice",
           "board",
@@ -2721,7 +3066,7 @@ export const searchIndex = {
         "name": "LC-04",
         "type": "classroom",
         "faculty": null,
-        "image": "${IMG_BASE_URL}/cv-raman-block-images/ground-floor/lc04.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/ground-floor/lc04.png",
         "tags": [
           "classroom",
           "lc04"
@@ -2736,7 +3081,7 @@ export const searchIndex = {
         "name": "SKILL DEVELOPMENT LAB",
         "type": "lab",
         "faculty": null,
-        "image": "${IMG_BASE_URL}/cv-raman-block-images/ground-floor/skill_dev.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/ground-floor/skill_dev.png",
         "tags": [
           "lab",
           "skill",
@@ -2752,7 +3097,7 @@ export const searchIndex = {
         "name": "ISL09 (LAB)",
         "type": "lab",
         "faculty": null,
-        "image": "${IMG_BASE_URL}/cv-raman-block-images/ground-floor/skill_dev.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/ground-floor/skill_dev.png",
         "tags": [
           "lab",
           "isl09",
@@ -2792,6 +3137,23 @@ export const searchIndex = {
         "directions": "Bottom-center entrance doors.",
         "description": "Ground floor main entrance lobby",
         "linkToFloor": null
+      },
+      {
+        "id": "cv-raman-ground-connection-apj-basement",
+        "name": "CONNECTION TO APJ BASEMENT",
+        "type": "utility",
+        "faculty": null,
+        "image": "https://placehold.co/600x400?text=Connection+to+APJ+Basement",
+        "tags": [
+          "path",
+          "utility",
+          "apj-block",
+          "connection"
+        ],
+        "department": "",
+        "directions": "Right side corridor leading to APJ Block basement.",
+        "description": "Connection block to APJ Basement floor",
+        "linkToFloor": "apj_basement"
       }
     ],
     "faculty": [
@@ -2830,13 +3192,13 @@ export const searchIndex = {
         "name": "LC-12",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/first-floor/lc12.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/first-floor/lc12.png",
         "tags": [
           "classroom",
           "lc12"
         ],
         "department": "",
-        "directions": "Right wing, near lift.",
+        "directions": "Right wing, near lift",
         "description": "Classroom LC-12",
         "linkToFloor": null
       },
@@ -2861,7 +3223,7 @@ export const searchIndex = {
         "name": "LC-11",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/first-floor/lc11.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/first-floor/lc11.png",
         "tags": [
           "classroom",
           "lc11"
@@ -2892,7 +3254,7 @@ export const searchIndex = {
         "name": "LC-13",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/first-floor/lc13.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/first-floor/lc13.png",
         "tags": [
           "classroom",
           "lc13"
@@ -2907,7 +3269,7 @@ export const searchIndex = {
         "name": "LC-14",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/first-floor/lc14.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/first-floor/lc14.png",
         "tags": [
           "classroom",
           "lc14"
@@ -2922,7 +3284,7 @@ export const searchIndex = {
         "name": "CNMSE",
         "type": "office",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/first-floor/cnmse.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/first-floor/cnmse.png",
         "tags": [
           "office",
           "cnmse",
@@ -2938,7 +3300,7 @@ export const searchIndex = {
         "name": "HEAT TRANSFER LAB",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/first-floor/heat_transfer.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/first-floor/heat_transfer.png",
         "tags": [
           "lab",
           "engineering",
@@ -3007,7 +3369,7 @@ export const searchIndex = {
         "name": "LC-25",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/second-floor/lc25.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/second-floor/lc25.png",
         "tags": [
           "classroom",
           "lc25"
@@ -3022,7 +3384,7 @@ export const searchIndex = {
         "name": "LC-24",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/second-floor/lc24.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/second-floor/lc24.png",
         "tags": [
           "classroom",
           "lc24"
@@ -3053,7 +3415,7 @@ export const searchIndex = {
         "name": "LC-23",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/second-floor/lc23.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/second-floor/lc23.png",
         "tags": [
           "classroom",
           "lc23"
@@ -3068,7 +3430,7 @@ export const searchIndex = {
         "name": "LC-22",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/second-floor/lc22.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/second-floor/lc22.png",
         "tags": [
           "classroom",
           "lc22"
@@ -3099,7 +3461,7 @@ export const searchIndex = {
         "name": "LC-26",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/second-floor/lc26.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/second-floor/lc26.png",
         "tags": [
           "classroom",
           "lc26"
@@ -3114,7 +3476,7 @@ export const searchIndex = {
         "name": "LC-27",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/second-floor/lc27.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/second-floor/lc27.png",
         "tags": [
           "classroom",
           "lc27"
@@ -3144,7 +3506,7 @@ export const searchIndex = {
         "name": "LC-21",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/second-floor/lc21.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/second-floor/lc21.png",
         "tags": [
           "classroom",
           "lc21"
@@ -3159,7 +3521,7 @@ export const searchIndex = {
         "name": "SR-21",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/second-floor/sr21.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/second-floor/sr21.png",
         "tags": [
           "staffroom",
           "office"
@@ -3227,13 +3589,13 @@ export const searchIndex = {
         "name": "LADIES ROOM",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/ladies_room.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/ladies_room.png",
         "tags": [
           "ladies",
           "lounge"
         ],
         "department": "",
-        "directions": "Right wing, top corridor next to Ladies Washroom.",
+        "directions": "i. Stairs-1: Walk straight past the lift and NC-35,SR-34; the Ladies Room is on your left.\n\nii. Stairs-2: Walk straight past the Lift and SR-34; the Ladies Room is on your right.\n\niii. Lift: Exit the Lift, walk straight past SR-34; the Ladies Room is on your left.",
         "description": "Ladies Common Room",
         "linkToFloor": null
       },
@@ -3242,7 +3604,7 @@ export const searchIndex = {
         "name": "SR-34",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr34.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr34.png",
         "tags": [
           "staffroom",
           "office"
@@ -3257,13 +3619,13 @@ export const searchIndex = {
         "name": "LC-35",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/lc35.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/lc35.png",
         "tags": [
           "classroom",
           "lc35"
         ],
         "department": "",
-        "directions": "Right wing, near lift.",
+        "directions": "i. Stairs-1: Walk straight past the Lift; LC-35 is the first room on your left.\n\nii. Stairs-2: Walk straight past the Lift; LC-35 is the first room on your right.\n\niii. Lift: Exit the lift and turn left , LC-35 is the first roomon your left",
         "description": "Classroom LC-35",
         "linkToFloor": null
       },
@@ -3279,8 +3641,8 @@ export const searchIndex = {
           "utility"
         ],
         "department": "",
-        "directions": "Center area, next to stairs.",
-        "description": "Elevator access shaft",
+        "directions": "Center area.",
+        "description": "Elevator",
         "linkToFloor": null
       },
       {
@@ -3288,13 +3650,13 @@ export const searchIndex = {
         "name": "LC-32",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/lc32.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/lc32.png",
         "tags": [
           "classroom",
           "lc32"
         ],
         "department": "",
-        "directions": "Left wing, upper corridor near lift.",
+        "directions": "i. Stairs-1: Walk to the Lift, turn right and walk straight, LC-32 is on your right.\n\nii. Stairs-2: Walk to the Lift, turn left and walk straight, LC-32 is on your right.\n\niii. Lift: Exit the Lift, turn right and walk straight,  LC-32 is on your right.",
         "description": "Classroom LC-32",
         "linkToFloor": null
       },
@@ -3303,7 +3665,7 @@ export const searchIndex = {
         "name": "SR-33",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr33.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr33.png",
         "tags": [
           "staffroom",
           "office"
@@ -3318,7 +3680,7 @@ export const searchIndex = {
         "name": "SR-32",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr32.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr32.png",
         "tags": [
           "staffroom",
           "office"
@@ -3349,13 +3711,13 @@ export const searchIndex = {
         "name": "LC-36",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/lc36.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/lc36.png",
         "tags": [
           "classroom",
           "lc36"
         ],
         "department": "",
-        "directions": "Right wing end, bottom corridor.",
+        "directions": "i. Stairs-1: Walk straight past the Lift and LC-37, LC-36 is on your left.\n\nii. Stairs-2: Walk towards the Lift; LC-36 is on your right.\n\niii. Lift: Exit the Lift and turn left and walk straight LC-36 is on your right.",
         "description": "Classroom LC-36",
         "linkToFloor": null
       },
@@ -3364,13 +3726,13 @@ export const searchIndex = {
         "name": "LC-37",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/lc37.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/lc37.png",
         "tags": [
           "classroom",
           "lc37"
         ],
         "department": "",
-        "directions": "Right wing, bottom corridor near stairs.",
+        "directions": "i. Stairs-1: Walk straight past the Lift and turn left, LC-37 is on your right.\n\nii. Stairs-2: Walk towards the Lift and turn right,LC-37 is on your right.\n\niii. Lift: Exit the Lift,turn left and walk straight; LC-37 is on your right.",
         "description": "Classroom LC-37",
         "linkToFloor": null
       },
@@ -3379,13 +3741,13 @@ export const searchIndex = {
         "name": "FIRST YEAR COORDINATOR",
         "type": "office",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/fy_coordinator.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/fy_coordinator.png",
         "tags": [
           "office",
           "coordinator"
         ],
         "department": "",
-        "directions": "Bottom wing corridor.",
+        "directions": "i. Stairs-1: Walk straight past the lift, the First Year Coordinator room is on your right.\n\nii. Stairs-2: The First Year Coordinator room is beside the stairs2.\n\niii. Lift: Walk straight from the lift.",
         "description": "First Year Coordinator Office",
         "linkToFloor": null
       },
@@ -3394,7 +3756,7 @@ export const searchIndex = {
         "name": "SR-31",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr31.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr31.png",
         "tags": [
           "staffroom",
           "office"
@@ -3409,13 +3771,13 @@ export const searchIndex = {
         "name": "LC-31",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/lc31.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/lc31.png",
         "tags": [
           "classroom",
           "lc31"
         ],
         "department": "",
-        "directions": "Bottom left wing end.",
+        "directions": "i. Stairs-1: Walk straight past the lift, turn right and walk straight then turn left,LC-31 is on your right.\n\nii. Stairs-2: Walk straight a few steps, turn left and walk staright and then turn turn left again, LC-31 is on your right.\n\niii. Lift: Walk straight and turn left, LC-31 is on your right.",
         "description": "Classroom LC-31",
         "linkToFloor": null
       },
@@ -3454,7 +3816,7 @@ export const searchIndex = {
       {
         "name": "Dr. Nagaraja B.S.",
         "roomId": "cv-raman-third-sr31",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr31.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr31.png",
         "description": "",
         "department": "Physics",
         "designation": ""
@@ -3462,7 +3824,7 @@ export const searchIndex = {
       {
         "name": "Mr. Krishnaraj Rao N S",
         "roomId": "cv-raman-third-sr31",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr31.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr31.png",
         "description": "",
         "department": "Physics",
         "designation": ""
@@ -3470,7 +3832,7 @@ export const searchIndex = {
       {
         "name": "Dr. Bola Sunil Kamath",
         "roomId": "cv-raman-third-sr31",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr31.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr31.png",
         "description": "",
         "department": "Physics",
         "designation": ""
@@ -3478,7 +3840,7 @@ export const searchIndex = {
       {
         "name": "Dr. Shyam Prasad K.",
         "roomId": "cv-raman-third-sr31",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr31.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr31.png",
         "description": "",
         "department": "Physics",
         "designation": ""
@@ -3486,7 +3848,7 @@ export const searchIndex = {
       {
         "name": "Dr. Sunu Rose Joseph",
         "roomId": "cv-raman-third-sr31",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr31.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr31.png",
         "description": "",
         "department": "Physics",
         "designation": ""
@@ -3494,7 +3856,7 @@ export const searchIndex = {
       {
         "name": "Ms. Ashwini D Y",
         "roomId": "cv-raman-third-sr32",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr32.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr32.png",
         "description": "",
         "department": "First Year / General",
         "designation": ""
@@ -3502,7 +3864,7 @@ export const searchIndex = {
       {
         "name": "Dr. Pramod Kumar PS",
         "roomId": "cv-raman-third-sr32",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr32.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr32.png",
         "description": "",
         "department": "First Year / General",
         "designation": ""
@@ -3510,7 +3872,7 @@ export const searchIndex = {
       {
         "name": "Ms. Sanchita CM",
         "roomId": "cv-raman-third-sr32",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr32.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr32.png",
         "description": "",
         "department": "First Year / General",
         "designation": ""
@@ -3518,7 +3880,7 @@ export const searchIndex = {
       {
         "name": "Mrs. Anitha D. Bayar",
         "roomId": "cv-raman-third-sr32",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr32.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr32.png",
         "description": "",
         "department": "First Year / General",
         "designation": ""
@@ -3526,7 +3888,7 @@ export const searchIndex = {
       {
         "name": "Ms. Smitha G. V.",
         "roomId": "cv-raman-third-sr32",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr32.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr32.png",
         "description": "",
         "department": "First Year / General",
         "designation": ""
@@ -3534,7 +3896,7 @@ export const searchIndex = {
       {
         "name": "Sharmila",
         "roomId": "cv-raman-third-sr32",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr32.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr32.png",
         "description": "",
         "department": "First Year / General",
         "designation": ""
@@ -3542,7 +3904,7 @@ export const searchIndex = {
       {
         "name": "Ms. Anjana Pai K.",
         "roomId": "cv-raman-third-sr32",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr32.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr32.png",
         "description": "",
         "department": "First Year / General",
         "designation": ""
@@ -3550,7 +3912,7 @@ export const searchIndex = {
       {
         "name": "Mr. Sunil Kumar Aithal S.",
         "roomId": "cv-raman-third-sr33",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr33.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr33.png",
         "description": "",
         "department": "Computer Science & Engineering",
         "designation": ""
@@ -3558,7 +3920,7 @@ export const searchIndex = {
       {
         "name": "Mr. Srikanth Bhat K.",
         "roomId": "cv-raman-third-sr33",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr33.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr33.png",
         "description": "",
         "department": "Computer Science & Engineering",
         "designation": ""
@@ -3566,7 +3928,7 @@ export const searchIndex = {
       {
         "name": "Mr. Krishnaprasad Rao",
         "roomId": "cv-raman-third-sr33",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr33.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr33.png",
         "description": "",
         "department": "Computer Science & Engineering",
         "designation": ""
@@ -3574,7 +3936,7 @@ export const searchIndex = {
       {
         "name": "Dr. Santhosh S",
         "roomId": "cv-raman-third-sr33",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr33.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr33.png",
         "description": "",
         "department": "Computer Science & Engineering",
         "designation": ""
@@ -3582,7 +3944,7 @@ export const searchIndex = {
       {
         "name": "Rajashree",
         "roomId": "cv-raman-third-sr33",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr33.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr33.png",
         "description": "",
         "department": "Computer Science & Engineering",
         "designation": ""
@@ -3590,7 +3952,7 @@ export const searchIndex = {
       {
         "name": "Ms. Soumya",
         "roomId": "cv-raman-third-sr33",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr33.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr33.png",
         "description": "",
         "department": "Computer Science & Engineering",
         "designation": ""
@@ -3598,7 +3960,7 @@ export const searchIndex = {
       {
         "name": "Ms. Alaka Anant'i",
         "roomId": "cv-raman-third-sr34",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr34.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr34.png",
         "description": "",
         "department": "Information Science & Engineering",
         "designation": ""
@@ -3606,7 +3968,7 @@ export const searchIndex = {
       {
         "name": "Dr. Preethi Salian",
         "roomId": "cv-raman-third-sr34",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr34.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr34.png",
         "description": "",
         "department": "Information Science & Engineering",
         "designation": ""
@@ -3614,7 +3976,7 @@ export const searchIndex = {
       {
         "name": "Dr. Shivaprasad Shetty M.",
         "roomId": "cv-raman-third-sr34",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr34.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr34.png",
         "description": "",
         "department": "Chemistry",
         "designation": ""
@@ -3622,7 +3984,7 @@ export const searchIndex = {
       {
         "name": "Ms. Tanzila Nargis",
         "roomId": "cv-raman-third-sr34",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr34.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr34.png",
         "description": "",
         "department": "Information Science & Engineering",
         "designation": ""
@@ -3630,7 +3992,7 @@ export const searchIndex = {
       {
         "name": "Dr. Ranjitha",
         "roomId": "cv-raman-third-sr34",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr34.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr34.png",
         "description": "",
         "department": "Chemistry",
         "designation": ""
@@ -3638,7 +4000,7 @@ export const searchIndex = {
       {
         "name": "Dr. Subrahmanya L Bhat",
         "roomId": "cv-raman-third-sr34",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr34.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr34.png",
         "description": "",
         "department": "Chemistry",
         "designation": ""
@@ -3646,7 +4008,7 @@ export const searchIndex = {
       {
         "name": "Ankitha A. Nayak",
         "roomId": "cv-raman-third-sr34",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr34.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr34.png",
         "description": "",
         "department": "Computer Science & Engineering",
         "designation": ""
@@ -3678,7 +4040,7 @@ export const searchIndex = {
         "name": "LC-45",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/fourth-floor/lc45.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/fourth-floor/lc45.png",
         "tags": [
           "classroom",
           "lc45"
@@ -3693,7 +4055,7 @@ export const searchIndex = {
         "name": "LC-44",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/fourth-floor/lc44.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/fourth-floor/lc44.png",
         "tags": [
           "classroom",
           "lc44"
@@ -3715,7 +4077,7 @@ export const searchIndex = {
           "utility"
         ],
         "department": "",
-        "directions": "Center area, next to stairs.",
+        "directions": "Center area.",
         "description": "Elevator access shaft",
         "linkToFloor": null
       },
@@ -3724,7 +4086,7 @@ export const searchIndex = {
         "name": "LC-43",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/fourth-floor/lc43.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/fourth-floor/lc43.png",
         "tags": [
           "classroom",
           "lc43"
@@ -3739,7 +4101,7 @@ export const searchIndex = {
         "name": "LC-42",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/fourth-floor/lc42.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/fourth-floor/lc42.png",
         "tags": [
           "classroom",
           "lc42"
@@ -3770,7 +4132,7 @@ export const searchIndex = {
         "name": "LC-46",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/fourth-floor/lc46.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/fourth-floor/lc46.png",
         "tags": [
           "classroom",
           "lc46"
@@ -3785,7 +4147,7 @@ export const searchIndex = {
         "name": "LC-47",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/fourth-floor/lc47.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/fourth-floor/lc47.png",
         "tags": [
           "classroom",
           "lc47"
@@ -3815,7 +4177,7 @@ export const searchIndex = {
         "name": "SR-41",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/fourth-floor/sr41.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/fourth-floor/sr41.png",
         "tags": [
           "staffroom",
           "office"
@@ -3830,7 +4192,7 @@ export const searchIndex = {
         "name": "LC-41",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/fourth-floor/lc41.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/fourth-floor/lc41.png",
         "tags": [
           "classroom",
           "lc41"
@@ -3891,7 +4253,7 @@ export const searchIndex = {
       {
         "name": "Mr. Puneeth R. P.",
         "roomId": "cv-raman-fourth-sr41",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/fourth-floor/sr41.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/fourth-floor/sr41.png",
         "description": "",
         "department": "Computer Science & Engineering",
         "designation": ""
@@ -3899,7 +4261,7 @@ export const searchIndex = {
       {
         "name": "Ms. Bhavya D.",
         "roomId": "cv-raman-fourth-sr41",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/fourth-floor/sr41.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/fourth-floor/sr41.png",
         "description": "",
         "department": "Mathematics",
         "designation": ""
@@ -3907,7 +4269,7 @@ export const searchIndex = {
       {
         "name": "Mrs. Joylin Priya Pinto",
         "roomId": "cv-raman-fourth-sr41",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/fourth-floor/sr41.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/fourth-floor/sr41.png",
         "description": "",
         "department": "Computer Science & Engineering",
         "designation": ""
@@ -3923,7 +4285,7 @@ export const searchIndex = {
         "name": "EEE COMPUTER LABORATORY",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/fifth-floor/eee_lab.jpg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/fifth-floor/eee_lab.jpg",
         "tags": [
           "lab",
           "eee",
@@ -3939,7 +4301,7 @@ export const searchIndex = {
         "name": "CAD LAB",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/fifth-floor/cad.jpg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/fifth-floor/cad.jpg",
         "tags": [
           "lab",
           "cad",
@@ -3955,7 +4317,7 @@ export const searchIndex = {
         "name": "CAED LAB",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/fifth-floor/caed.jpg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/fifth-floor/caed.jpg",
         "tags": [
           "lab",
           "caed",
@@ -3971,7 +4333,7 @@ export const searchIndex = {
         "name": "SUBASHINI LANGUAGE LAB-2",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/fifth-floor/language_lab.jpg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/fifth-floor/language_lab.jpg",
         "tags": [
           "lab",
           "language",
@@ -3988,7 +4350,7 @@ export const searchIndex = {
         "name": "SUBASHINI LANGUAGE LAB",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/fifth-floor/subashini_language_lab.jpg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/fifth-floor/subashini_language_lab.jpg",
         "tags": [
           "lab",
           "language",
@@ -4006,7 +4368,7 @@ export const searchIndex = {
         "name": "PG & RESEARCH LAB",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/fifth-floor/research_lab.jpg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/fifth-floor/research_lab.jpg",
         "tags": [
           "lab",
           "research",
@@ -4023,7 +4385,7 @@ export const searchIndex = {
         "name": "DEPT. OF HUMANITIES STAFF ROOM",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/fifth-floor/humanities_staff.jpg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/fifth-floor/humanities_staff.jpg",
         "tags": [
           "staffroom",
           "office",
@@ -4039,7 +4401,7 @@ export const searchIndex = {
         "name": "COMPUTER PROGRAMMING LAB (CCP/CSL10)",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/fifth-floor/ccp_csl10.jpg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/fifth-floor/ccp_csl10.jpg",
         "tags": [
           "lab",
           "programming",
@@ -4230,7 +4592,7 @@ export const searchIndex = {
         "name": "LH006",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/lh006.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/lh006.png",
         "tags": [
           "classroom",
           "lh006"
@@ -4245,7 +4607,7 @@ export const searchIndex = {
         "name": "INTERVIEW CUBICLES",
         "type": "office",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/interview_cubicles.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/interview_cubicles.png",
         "tags": [
           "office",
           "cubicles"
@@ -4321,7 +4683,7 @@ export const searchIndex = {
         "name": "LH002",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/lh002.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/lh002.png",
         "tags": [
           "classroom",
           "lh002"
@@ -4336,7 +4698,7 @@ export const searchIndex = {
         "name": "LH001",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/lh001.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/lh001.png",
         "tags": [
           "classroom",
           "lh001"
@@ -4383,7 +4745,7 @@ export const searchIndex = {
         "name": "LH003",
         "type": "office",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/lh003.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/lh003.png",
         "tags": [
           "office",
           "department",
@@ -4399,7 +4761,7 @@ export const searchIndex = {
         "name": "PURCHASE DEPARTMENT",
         "type": "room",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/purchase_dept.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/purchase_dept.png",
         "tags": [
           "room",
           "purchase"
@@ -4414,7 +4776,7 @@ export const searchIndex = {
         "name": "GROUP DISCUSSION-1",
         "type": "room",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/gd1.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/gd1.png",
         "tags": [
           "room",
           "discussion"
@@ -4429,7 +4791,7 @@ export const searchIndex = {
         "name": "PLACEMENT OFFICE",
         "type": "office",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/placement_office.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/placement_office.png",
         "tags": [
           "office",
           "placement"
@@ -4524,7 +4886,7 @@ export const searchIndex = {
         "name": "Sambhram Hall",
         "type": "hall",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/sambhram_hall.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/sambhram_hall.png",
         "tags": [
           "hall",
           "sambhram"
@@ -4562,7 +4924,7 @@ export const searchIndex = {
         "name": "DEPT OF MATHEMATICS (HOD)",
         "type": "hod",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/maths_hod.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/maths_hod.png",
         "tags": [
           "hod",
           "maths",
@@ -4640,7 +5002,7 @@ export const searchIndex = {
         "name": "CHEMISTRY LAB 1",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/chem_lab_1.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/chem_lab_1.png",
         "tags": [
           "lab",
           "chemistry"
@@ -4671,7 +5033,7 @@ export const searchIndex = {
         "name": "DEPT OF CHEMISTRY (HOD)",
         "type": "hod",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/chem_hod.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/chem_hod.png",
         "tags": [
           "hod",
           "chemistry",
@@ -4702,7 +5064,7 @@ export const searchIndex = {
         "name": "PHYSICS LAB 2",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/physics_lab_b.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/physics_lab_b.png",
         "tags": [
           "lab",
           "physics"
@@ -4717,7 +5079,7 @@ export const searchIndex = {
         "name": "PHYSICS LAB 1",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/physics_lab_a.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/physics_lab_a.png",
         "tags": [
           "lab",
           "physics"
@@ -4748,7 +5110,7 @@ export const searchIndex = {
         "name": "CABINS (DR. JN & DR. SMH)",
         "type": "office",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/jn_smh.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/jn_smh.png",
         "tags": [
           "office",
           "staff",
@@ -4764,7 +5126,7 @@ export const searchIndex = {
         "name": "LH104",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/lh104.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/lh104.png",
         "tags": [
           "classroom",
           "lh104"
@@ -4794,7 +5156,7 @@ export const searchIndex = {
         "name": "Staff Room",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/sr_phy.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/sr_phy.png",
         "tags": [
           "staffroom",
           "physics"
@@ -4826,7 +5188,7 @@ export const searchIndex = {
         "name": "LIBRARY & INFORMATION CENTRE",
         "type": "hall",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/library.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/library.png",
         "tags": [
           "library",
           "books",
@@ -4850,7 +5212,7 @@ export const searchIndex = {
         "name": "Staff Room",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/dr_add_mrc.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/dr_add_mrc.png",
         "tags": [
           "staffroom",
           "office",
@@ -4867,7 +5229,7 @@ export const searchIndex = {
         "name": "LH207",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/lh207.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/lh207.png",
         "tags": [
           "classroom",
           "lh207"
@@ -4882,7 +5244,7 @@ export const searchIndex = {
         "name": "LH205",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/lh205.jpg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/lh205.jpg",
         "tags": [
           "classroom",
           "lh205"
@@ -4897,7 +5259,7 @@ export const searchIndex = {
         "name": "TECHNO CULTURAL CENTRE",
         "type": "hall",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/techno_cultural.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/techno_cultural.png",
         "tags": [
           "hall",
           "cultural",
@@ -4928,7 +5290,7 @@ export const searchIndex = {
         "name": "DEPT OF MECH (HOD)",
         "type": "hod",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/mech_hod.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/mech_hod.png",
         "tags": [
           "hod",
           "office",
@@ -4944,7 +5306,7 @@ export const searchIndex = {
         "name": "MECH DEPT OFFICE",
         "type": "office",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/mech_office.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/mech_office.png",
         "tags": [
           "office",
           "mech"
@@ -4959,7 +5321,7 @@ export const searchIndex = {
         "name": "Staff Room",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/mech_sr_left.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/mech_sr_left.png",
         "tags": [
           "staffroom",
           "office",
@@ -5007,7 +5369,7 @@ export const searchIndex = {
         "name": "LH201",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/lh201.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/lh201.png",
         "tags": [
           "classroom",
           "lh201"
@@ -5022,7 +5384,7 @@ export const searchIndex = {
         "name": "Staff Room",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/mech_sr_bottom.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/mech_sr_bottom.png",
         "tags": [
           "staffroom",
           "office",
@@ -5038,7 +5400,7 @@ export const searchIndex = {
         "name": "PHALGUNI",
         "type": "hall",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/phalguni.jpg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/phalguni.jpg",
         "tags": [
           "hall",
           "classroom"
@@ -5053,7 +5415,7 @@ export const searchIndex = {
         "name": "DEPT LIBRARY",
         "type": "library",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/dept_library.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/dept_library.png",
         "tags": [
           "library",
           "reading",
@@ -5069,7 +5431,7 @@ export const searchIndex = {
         "name": "Staff Room",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/dr_nithin.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/dr_nithin.png",
         "tags": [
           "staffroom",
           "office",
@@ -5119,7 +5481,7 @@ export const searchIndex = {
         "name": "Staff Room",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/dr_ravindra.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/dr_ravindra.png",
         "tags": [
           "staffroom",
           "office",
@@ -5136,7 +5498,7 @@ export const searchIndex = {
         "name": "Staff Room",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/marakala_pai_rao.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/marakala_pai_rao.png",
         "tags": [
           "staffroom",
           "office",
@@ -5154,7 +5516,7 @@ export const searchIndex = {
         "name": "LH208",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/lh208.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/lh208.png",
         "tags": [
           "classroom",
           "lh208"
@@ -5169,7 +5531,7 @@ export const searchIndex = {
         "name": "LH206",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/lh206.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/lh206.png",
         "tags": [
           "classroom",
           "lh206"
@@ -5184,7 +5546,7 @@ export const searchIndex = {
         "name": "Staff Room",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/ec_sr.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/ec_sr.png",
         "tags": [
           "staffroom",
           "office"
@@ -5199,7 +5561,7 @@ export const searchIndex = {
         "name": "CAD/CAM/CFD LAB",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/cad_cam_lab.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/cad_cam_lab.png",
         "tags": [
           "lab",
           "computer",
@@ -5216,7 +5578,7 @@ export const searchIndex = {
         "name": "RESEARCH LAB",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/research_lab.jpg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/research_lab.jpg",
         "tags": [
           "lab",
           "research"
@@ -5231,7 +5593,7 @@ export const searchIndex = {
         "name": "DEPT OF EC (VLSI LAB)",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/vlsi_lab.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/vlsi_lab.png",
         "tags": [
           "lab",
           "ec",
@@ -5247,7 +5609,7 @@ export const searchIndex = {
         "name": "ARM PROCESSOR LAB",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/arm_processor_lab.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/arm_processor_lab.png",
         "tags": [
           "lab",
           "arm",
@@ -5263,7 +5625,7 @@ export const searchIndex = {
         "name": "LH204",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/lh204.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/lh204.png",
         "tags": [
           "classroom",
           "lh204"
@@ -5278,7 +5640,7 @@ export const searchIndex = {
         "name": "MECH DEPT LH",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/mech_dept_lh.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/mech_dept_lh.png",
         "tags": [
           "classroom",
           "mech"
@@ -5293,7 +5655,7 @@ export const searchIndex = {
         "name": "LH202",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/lh202.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/lh202.png",
         "tags": [
           "classroom",
           "lh202"
@@ -5323,7 +5685,7 @@ export const searchIndex = {
       {
         "name": "Dr. Austin Dinesh D'Souza",
         "roomId": "ramanujan-second-mrc-add-sr",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/dr_add_mrc.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/dr_add_mrc.png",
         "description": "",
         "department": "Mechanical Engineering",
         "designation": ""
@@ -5331,7 +5693,7 @@ export const searchIndex = {
       {
         "name": "Dr. Melwyn Rajesh Castelino",
         "roomId": "ramanujan-second-mrc-add-sr",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/dr_add_mrc.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/dr_add_mrc.png",
         "description": "",
         "department": "Mechanical Engineering",
         "designation": ""
@@ -5339,7 +5701,7 @@ export const searchIndex = {
       {
         "name": "Dr. Ravindra",
         "roomId": "ramanujan-second-ravindra-vs-sr",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/dr_ravindra.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/dr_ravindra.png",
         "description": "",
         "department": "Mechanical Engineering",
         "designation": ""
@@ -5347,7 +5709,7 @@ export const searchIndex = {
       {
         "name": "Dr. Vidyasagar Shetty",
         "roomId": "ramanujan-second-ravindra-vs-sr",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/dr_vs.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/dr_vs.png",
         "description": "",
         "department": "Mechanical Engineering",
         "designation": ""
@@ -5355,7 +5717,7 @@ export const searchIndex = {
       {
         "name": "Dr. Nithin Kumar Shetty",
         "roomId": "ramanujan-second-nks-vjs-sr",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/dr_nithin.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/dr_nithin.png",
         "description": "",
         "department": "Mechanical Engineering",
         "designation": ""
@@ -5363,7 +5725,7 @@ export const searchIndex = {
       {
         "name": "Dr. Vishwanath J S",
         "roomId": "ramanujan-second-nks-vjs-sr",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/dr_vishwanath.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/dr_vishwanath.png",
         "description": "",
         "department": "Mechanical Engineering",
         "designation": ""
@@ -5371,7 +5733,7 @@ export const searchIndex = {
       {
         "name": "Dr. Sharath Chandra H.S.",
         "roomId": "ramanujan-second-sr-left",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/mech_sr_left.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/mech_sr_left.png",
         "description": "",
         "department": "Mechanical Engineering",
         "designation": ""
@@ -5379,7 +5741,7 @@ export const searchIndex = {
       {
         "name": "Dr. Ajit M. Hebbale",
         "roomId": "ramanujan-second-sr-left",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/mech_sr_left.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/mech_sr_left.png",
         "description": "",
         "department": "Mechanical Engineering",
         "designation": ""
@@ -5387,7 +5749,7 @@ export const searchIndex = {
       {
         "name": "Dr. Narasimha Marakala",
         "roomId": "ramanujan-second-nm-rp-rnr-sr",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/marakala_pai_rao.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/marakala_pai_rao.png",
         "description": "",
         "department": "Mechanical Engineering",
         "designation": ""
@@ -5395,7 +5757,7 @@ export const searchIndex = {
       {
         "name": "Mr. Raghavendra Pai",
         "roomId": "ramanujan-second-nm-rp-rnr-sr",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/marakala_pai_rao.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/marakala_pai_rao.png",
         "description": "",
         "department": "Mechanical Engineering",
         "designation": ""
@@ -5403,7 +5765,7 @@ export const searchIndex = {
       {
         "name": "Mr. Rajath N. Rao",
         "roomId": "ramanujan-second-nm-rp-rnr-sr",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/marakala_pai_rao.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/marakala_pai_rao.png",
         "description": "",
         "department": "Mechanical Engineering",
         "designation": ""
@@ -5411,7 +5773,7 @@ export const searchIndex = {
       {
         "name": "Dr. Srinivasa Pai P.",
         "roomId": "ramanujan-second-mech-hod",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/mech_hod.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/mech_hod.png",
         "description": "",
         "department": "Mechanical Engineering",
         "designation": ""
@@ -5419,7 +5781,7 @@ export const searchIndex = {
       {
         "name": "Dr. Mohan Poojari",
         "roomId": "ramanujan-second-dept-library",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/dept_library.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/dept_library.png",
         "description": "",
         "department": "Mechanical Engineering",
         "designation": ""
@@ -5427,7 +5789,7 @@ export const searchIndex = {
       {
         "name": "Mr. P. Venkatesh Murthy",
         "roomId": "ramanujan-second-sr-right",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/ec_sr.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/ec_sr.png",
         "description": "",
         "department": "Electronics & Communication Engineering",
         "designation": ""
@@ -5435,7 +5797,7 @@ export const searchIndex = {
       {
         "name": "Dr. Suresh Shetty",
         "roomId": "ramanujan-second-sr-right",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/ec_sr.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/ec_sr.png",
         "description": "",
         "department": "Electronics & Communication Engineering",
         "designation": ""
@@ -5443,7 +5805,7 @@ export const searchIndex = {
       {
         "name": "Dr. Santhosh G",
         "roomId": "ramanujan-second-sr-right",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/ec_sr.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/ec_sr.png",
         "description": "",
         "department": "Electronics & Communication Engineering",
         "designation": ""
@@ -5451,7 +5813,7 @@ export const searchIndex = {
       {
         "name": "Dr. Uday D.",
         "roomId": "ramanujan-second-sr-right",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/ec_sr.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/ec_sr.png",
         "description": "",
         "department": "Electronics & Communication Engineering",
         "designation": ""
@@ -5459,7 +5821,7 @@ export const searchIndex = {
       {
         "name": "Dr. Mallikappa",
         "roomId": "ramanujan-second-mech-sr",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/mech_sr_bottom.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/mech_sr_bottom.png",
         "description": "",
         "department": "Mechanical Engineering",
         "designation": ""
@@ -5467,7 +5829,7 @@ export const searchIndex = {
       {
         "name": "Dr. Kumar H.S.",
         "roomId": "ramanujan-second-mech-sr",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/mech_sr_bottom.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/mech_sr_bottom.png",
         "description": "",
         "department": "Mechanical Engineering",
         "designation": ""
@@ -5475,7 +5837,7 @@ export const searchIndex = {
       {
         "name": "Dr. Ananthakrishna Somayaji",
         "roomId": "ramanujan-second-mech-sr",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/mech_sr_bottom.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/mech_sr_bottom.png",
         "description": "",
         "department": "Mechanical Engineering",
         "designation": ""
@@ -5483,7 +5845,7 @@ export const searchIndex = {
       {
         "name": "Dr. Dilip Kumar K.",
         "roomId": "ramanujan-second-mech-sr",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/mech_sr_bottom.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/mech_sr_bottom.png",
         "description": "",
         "department": "Mechanical Engineering",
         "designation": ""
@@ -5491,7 +5853,7 @@ export const searchIndex = {
       {
         "name": "Srinivas Prabhu",
         "roomId": "ramanujan-second-mech-sr",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/mech_sr_bottom.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/ramanujan-block-images/mech_sr_bottom.png",
         "description": "",
         "department": "Mechanical Engineering",
         "designation": ""
@@ -5524,7 +5886,7 @@ export const searchIndex = {
         "name": "Staff Room",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/dr_subramanya_bhat.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/dr_subramanya_bhat.png",
         "tags": [
           "staffroom",
           "office",
@@ -5540,7 +5902,7 @@ export const searchIndex = {
         "name": "Staff Room",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/sr_3rd_faculty_2.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/sr_3rd_faculty_2.png",
         "tags": [
           "staffroom",
           "office"
@@ -5555,7 +5917,7 @@ export const searchIndex = {
         "name": "ECL07",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/ecl07.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/ecl07.png",
         "tags": [
           "lab",
           "ec",
@@ -5571,7 +5933,7 @@ export const searchIndex = {
         "name": "ECL05",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/ecl05.jpg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/ecl05.jpg",
         "tags": [
           "lab",
           "ec",
@@ -5587,7 +5949,7 @@ export const searchIndex = {
         "name": "ECL06",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/ecl06.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/ecl06.png",
         "tags": [
           "lab",
           "ec",
@@ -5618,7 +5980,7 @@ export const searchIndex = {
         "name": "Staff Room",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/dr_shankar_bb.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/dr_shankar_bb.png",
         "tags": [
           "staffroom",
           "office",
@@ -5634,7 +5996,7 @@ export const searchIndex = {
         "name": "Staff Room",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/mr_mahaveera_k.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/mr_mahaveera_k.png",
         "tags": [
           "staffroom",
           "office",
@@ -5650,7 +6012,7 @@ export const searchIndex = {
         "name": "E&C DEPT. OFFICE / HOD",
         "type": "hod",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/ec_hod_office.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/ec_hod_office.png",
         "tags": [
           "hod",
           "office",
@@ -5667,7 +6029,7 @@ export const searchIndex = {
         "name": "ECL03",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/ecl03.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/ecl03.png",
         "tags": [
           "lab",
           "ec",
@@ -5683,7 +6045,7 @@ export const searchIndex = {
         "name": "ECL02",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/ecl02.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/ecl02.png",
         "tags": [
           "lab",
           "ec",
@@ -5699,7 +6061,7 @@ export const searchIndex = {
         "name": "ECL04",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/ecl04.jpg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/ecl04.jpg",
         "tags": [
           "lab",
           "ec",
@@ -5715,7 +6077,7 @@ export const searchIndex = {
         "name": "COMMUNICATION & MICROWAVE LABORATORY",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/comm_microwave_lab.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/comm_microwave_lab.png",
         "tags": [
           "lab",
           "ec",
@@ -5732,7 +6094,7 @@ export const searchIndex = {
         "name": "LH305",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/lh305.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/lh305.png",
         "tags": [
           "classroom",
           "lh305"
@@ -5809,7 +6171,7 @@ export const searchIndex = {
         "name": "LH302",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/lh302.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/lh302.png",
         "tags": [
           "classroom",
           "lh302"
@@ -5824,7 +6186,7 @@ export const searchIndex = {
         "name": "Staff Room",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/sr_3rd_faculty.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/sr_3rd_faculty.png",
         "tags": [
           "staffroom",
           "office",
@@ -5840,7 +6202,7 @@ export const searchIndex = {
         "name": "LH301",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/lh301.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/lh301.png",
         "tags": [
           "classroom",
           "lh301"
@@ -5855,7 +6217,7 @@ export const searchIndex = {
         "name": "ECL01",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/ecl01.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/ecl01.png",
         "tags": [
           "lab",
           "ec",
@@ -5888,7 +6250,7 @@ export const searchIndex = {
         "name": "Staff Room",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/sr_3rd_generic.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/sr_3rd_generic.png",
         "tags": [
           "staffroom",
           "office",
@@ -6048,7 +6410,7 @@ export const searchIndex = {
         "name": "RADIO STATION (NINADA)",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/radio_station_ninada.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/radio_station_ninada.png",
         "tags": [
           "lab",
           "radio",
@@ -6065,7 +6427,7 @@ export const searchIndex = {
         "name": "SATOSHI KOBAYASHI",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/satoshi_kobayashi.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/satoshi_kobayashi.png",
         "tags": [
           "lab",
           "satoshi",
@@ -6081,7 +6443,7 @@ export const searchIndex = {
         "name": "ISL06",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/isl06.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/isl06.png",
         "tags": [
           "lab",
           "isl06",
@@ -6112,7 +6474,7 @@ export const searchIndex = {
         "name": "DEPT OF CYBER SECURITY (HOD)",
         "type": "hod",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/cyber_security_hod.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/cyber_security_hod.png",
         "tags": [
           "hod",
           "office",
@@ -6129,7 +6491,7 @@ export const searchIndex = {
         "name": "CSL13",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/csl13.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/csl13.png",
         "tags": [
           "lab",
           "csl13"
@@ -6160,7 +6522,7 @@ export const searchIndex = {
         "name": "DEPT OF VLSI",
         "type": "hod",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/dept_vlsi.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/dept_vlsi.png",
         "tags": [
           "hod",
           "office",
@@ -6177,7 +6539,7 @@ export const searchIndex = {
         "name": "HOD OF ACT",
         "type": "hod",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/hod_act_durga.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/hod_act_durga.png",
         "tags": [
           "hod",
           "office",
@@ -6193,7 +6555,7 @@ export const searchIndex = {
         "name": "LH401",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/lh401.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/lh401.png",
         "tags": [
           "classroom",
           "lh401"
@@ -6208,7 +6570,7 @@ export const searchIndex = {
         "name": "NETRAVATI HALL",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/netravati.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/netravati.png",
         "tags": [
           "hall",
           "netravati",
@@ -6224,7 +6586,7 @@ export const searchIndex = {
         "name": "STAFF ROOM",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/sr_jayapadmini.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/sr_jayapadmini.png",
         "tags": [
           "staffroom",
           "office"
@@ -6239,7 +6601,7 @@ export const searchIndex = {
         "name": "MCA CR / LH402",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/lh402_mca_cr.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/lh402_mca_cr.png",
         "tags": [
           "classroom",
           "lh402",
@@ -6271,7 +6633,7 @@ export const searchIndex = {
         "name": "VTL01",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/vtl01.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/vtl01.png",
         "tags": [
           "lab",
           "vtl01"
@@ -6286,7 +6648,7 @@ export const searchIndex = {
         "name": "DEPT OF ISE (RESEARCH LAB)",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/ise_research_lab.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/ise_research_lab.png",
         "tags": [
           "lab",
           "ise",
@@ -6302,7 +6664,7 @@ export const searchIndex = {
         "name": "ISL05",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/isl05.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/isl05.png",
         "tags": [
           "lab",
           "isl05",
@@ -6318,7 +6680,7 @@ export const searchIndex = {
         "name": "COE DESIGN",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/coe_design.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/coe_design.png",
         "tags": [
           "lab",
           "coe",
@@ -6334,7 +6696,7 @@ export const searchIndex = {
         "name": "PHOTO STAT CENTRE",
         "type": "utility",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/photostat_centre.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/photostat_centre.png",
         "tags": [
           "utility",
           "photo",
@@ -6353,7 +6715,7 @@ export const searchIndex = {
         "name": "ISL07",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/isl07.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/isl07.png",
         "tags": [
           "lab",
           "isl07"
@@ -6386,7 +6748,7 @@ export const searchIndex = {
         "name": "STAFF ROOM",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/sr_deepa.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/sr_deepa.png",
         "tags": [
           "staffroom",
           "office"
@@ -6416,7 +6778,7 @@ export const searchIndex = {
       {
         "name": "Ms. Jayapadmini Kanchan",
         "roomId": "ramanujan-fourth-sr-bot-left",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/sr_jayapadmini.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/sr_jayapadmini.png",
         "description": "",
         "department": "Computer Science & Engineering",
         "designation": ""
@@ -6424,7 +6786,7 @@ export const searchIndex = {
       {
         "name": "Prof. Shilpa Karegoudar",
         "roomId": "ramanujan-fourth-sr-bot-left",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/sr_jayapadmini.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/sr_jayapadmini.png",
         "description": "",
         "department": "Computer Science & Engineering",
         "designation": ""
@@ -6432,7 +6794,7 @@ export const searchIndex = {
       {
         "name": "Mr. Prithviraj Jain",
         "roomId": "ramanujan-fourth-sr-bot-left",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/sr_jayapadmini.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/sr_jayapadmini.png",
         "description": "",
         "department": "Computer Science & Engineering",
         "designation": ""
@@ -6440,7 +6802,7 @@ export const searchIndex = {
       {
         "name": "Dr. Manjunatha Badiger",
         "roomId": "ramanujan-fourth-sr-bot-left",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/sr_jayapadmini.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/sr_jayapadmini.png",
         "description": "",
         "department": "VLSI Design & Technology",
         "designation": ""
@@ -6448,7 +6810,7 @@ export const searchIndex = {
       {
         "name": "Ms. Deepa K.",
         "roomId": "ramanujan-fourth-sr-right",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/sr_deepa.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/sr_deepa.png",
         "description": "",
         "department": "Electronics & Communication Engineering",
         "designation": ""
@@ -6456,7 +6818,7 @@ export const searchIndex = {
       {
         "name": "Mr. Karthik",
         "roomId": "ramanujan-fourth-sr-right",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/sr_deepa.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/sr_deepa.png",
         "description": "",
         "department": "Electronics & Communication Engineering",
         "designation": ""
@@ -6464,7 +6826,7 @@ export const searchIndex = {
       {
         "name": "Dr. Nisanth A.",
         "roomId": "ramanujan-fourth-sr-right",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/sr_deepa.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/sr_deepa.png",
         "description": "",
         "department": "VLSI Design & Technology",
         "designation": ""
@@ -6472,7 +6834,7 @@ export const searchIndex = {
       {
         "name": "Dr. Roshan Fernandes",
         "roomId": "ramanujan-fourth-cyber-hod",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/cyber_security_hod.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/cyber_security_hod.png",
         "description": "",
         "department": "Cyber Security",
         "designation": ""
@@ -6480,7 +6842,7 @@ export const searchIndex = {
       {
         "name": "Dr. Durga Prasad",
         "roomId": "ramanujan-fourth-hod-act",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/hod_act_durga.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/hod_act_durga.png",
         "description": "",
         "department": "Advanced Communication Technology",
         "designation": ""
@@ -6488,7 +6850,7 @@ export const searchIndex = {
       {
         "name": "Dr. Sushma P. S.",
         "roomId": "ramanujan-fourth-dept-vlsi",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/ramanujan-block-images/dept_vlsi.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/ramanujan-block-images/dept_vlsi.png",
         "description": "",
         "department": "VLSI Design & Technology",
         "designation": ""
@@ -6676,7 +7038,7 @@ export const searchIndex = {
           "utility"
         ],
         "department": "",
-        "directions": "Located next to the Environmental Engineering Lab.",
+        "directions": "Located at the top of the right vertical wing, above the Building Exit.",
         "description": "Main entrance lobby area for the SMV Block.",
         "linkToFloor": null
       },
@@ -9112,7 +9474,7 @@ export const searchIndex = {
         "name": "NF L003",
         "type": "office",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/atal-block-images/ground-floor/nfl003.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/atal-block-images/ground-floor/nfl003.png",
         "tags": [
           "office",
           "academic",
@@ -9128,7 +9490,7 @@ export const searchIndex = {
         "name": "AUTOLIV NMAMIT INCUBATION CENTRE",
         "type": "office",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/atal-block-images/ground-floor/autoliv.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/atal-block-images/ground-floor/autoliv.png",
         "tags": [
           "office",
           "incubation",
@@ -9178,7 +9540,7 @@ export const searchIndex = {
         "name": "MATERIALS PERFORMANCE & CHARACTERIZATION LABORATORY",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/atal-block-images/ground-floor/materials_lab.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/atal-block-images/ground-floor/materials_lab.png",
         "tags": [
           "lab",
           "materials",
@@ -9195,7 +9557,7 @@ export const searchIndex = {
         "name": "RESEARCH LABORATORY",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/atal-block-images/ground-floor/research_lab.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/atal-block-images/ground-floor/research_lab.png",
         "tags": [
           "lab",
           "research",
@@ -9241,7 +9603,7 @@ export const searchIndex = {
         "name": "NCRF & CENTRE FOR NEW MATERIALS & SURFACE ENGINEERING",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/atal-block-images/ground-floor/ncrf.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/atal-block-images/ground-floor/ncrf.png",
         "tags": [
           "lab",
           "ncrf",
@@ -9339,7 +9701,7 @@ export const searchIndex = {
         "name": "CBL01",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/atal-block-images/first-floor/cbl01_edcnl104.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/atal-block-images/first-floor/cbl01_edcnl104.png",
         "tags": [
           "lab",
           "cbl01",
@@ -9355,7 +9717,7 @@ export const searchIndex = {
         "name": "ACL01",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/atal-block-images/first-floor/acl01_edcnl105.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/atal-block-images/first-floor/acl01_edcnl105.png",
         "tags": [
           "lab",
           "acl01",
@@ -9403,14 +9765,14 @@ export const searchIndex = {
         "name": "BIOTECH FABLAB",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/atal-block-images/first-floor/biotech_fablab.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/atal-block-images/first-floor/biotech_fablab.png",
         "tags": [
           "lab",
           "biotech",
           "fablab"
         ],
         "department": "",
-        "directions": "On the upper side of the corridor, next to the Ladies Room.",
+        "directions": "On the upper side of the corridor, next to the Ladies Toilet.",
         "description": "Biotech Fabrication Lab (Fablab) for engineering biology experiments.",
         "linkToFloor": null
       },
@@ -9419,7 +9781,7 @@ export const searchIndex = {
         "name": "ENTREPRENEURSHIP DEVELOPMENT CELL (EDC)",
         "type": "office",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/atal-block-images/first-floor/edc_incubation.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/atal-block-images/first-floor/edc_incubation.png",
         "tags": [
           "office",
           "edc",
@@ -9436,7 +9798,7 @@ export const searchIndex = {
         "name": "MEETING ROOM (SHASHANK SHETTY)",
         "type": "office",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/atal-block-images/first-floor/meeting_room_shashank.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/atal-block-images/first-floor/meeting_room_shashank.png",
         "tags": [
           "office",
           "meeting",
@@ -9452,7 +9814,7 @@ export const searchIndex = {
         "name": "ELH 104",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/atal-block-images/first-floor/elh104.png",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1785400996/ygad2dyvos8mmkgwuzao.jpg",
         "tags": [
           "classroom",
           "elh104"
@@ -9467,7 +9829,7 @@ export const searchIndex = {
         "name": "CENTRE OF EXCELLENCE",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/atal-block-images/first-floor/center_of_excellence.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/atal-block-images/first-floor/center_of_excellence.png",
         "tags": [
           "lab",
           "coe",
@@ -9483,7 +9845,7 @@ export const searchIndex = {
         "name": "EDC NL 102",
         "type": "office",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/atal-block-images/first-floor/edcnl102.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/atal-block-images/first-floor/edcnl102.png",
         "tags": [
           "office",
           "edc",
@@ -9499,7 +9861,7 @@ export const searchIndex = {
         "name": "ELH 102",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/atal-block-images/first-floor/elh102.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/atal-block-images/first-floor/elh102.png",
         "tags": [
           "classroom",
           "elh102"
@@ -9514,7 +9876,7 @@ export const searchIndex = {
         "name": "EDC NL 101",
         "type": "office",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/atal-block-images/first-floor/edcnl101.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/atal-block-images/first-floor/edcnl101.png",
         "tags": [
           "office",
           "edc",
@@ -9530,7 +9892,7 @@ export const searchIndex = {
         "name": "ELH 101",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/atal-block-images/first-floor/elh101.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/atal-block-images/first-floor/elh101.png",
         "tags": [
           "classroom",
           "elh101"
@@ -9545,7 +9907,7 @@ export const searchIndex = {
       {
         "name": "Dr. Shashank Shetty",
         "roomId": "atal-first-meeting-shashank",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/atal-block-images/first-floor/meeting_room_shashank.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/atal-block-images/first-floor/meeting_room_shashank.png",
         "description": "",
         "department": "Department of CSE / New Age Innovation Network",
         "designation": ""
@@ -9553,7 +9915,7 @@ export const searchIndex = {
       {
         "name": "Mr. Harikrishna Bhat",
         "roomId": "atal-first-edc-incubation",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/atal-block-images/first-floor/edc_incubation.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/atal-block-images/first-floor/edc_incubation.png",
         "description": "",
         "department": "Office of International Affairs and Twinning Program",
         "designation": ""
@@ -9600,7 +9962,7 @@ export const searchIndex = {
         "name": "ISL08",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/atal-block-images/second-floor/isl08.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/atal-block-images/second-floor/isl08.png",
         "tags": [
           "lab",
           "ise",
@@ -9618,7 +9980,7 @@ export const searchIndex = {
         "name": "STAFFS ROOM",
         "type": "office",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/atal-block-images/second-floor/staff_room.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/atal-block-images/second-floor/staff_room.png",
         "tags": [
           "office",
           "staffs",
@@ -9700,7 +10062,7 @@ export const searchIndex = {
         "name": "ECOPOLY BIOTECH LLP",
         "type": "office",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/atal-block-images/second-floor/ecopoled.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/atal-block-images/second-floor/ecopoled.png",
         "tags": [
           "office",
           "biotech",
@@ -9708,7 +10070,7 @@ export const searchIndex = {
         ],
         "department": "",
         "directions": "On the upper side of the corridor, next to the washrooms.",
-        "description": "Ecopoly Biotech LLP.",
+        "description": "Ecopoled Biotech LLP.",
         "linkToFloor": null
       },
       {
@@ -9716,7 +10078,7 @@ export const searchIndex = {
         "name": "COWORKING SPACE",
         "type": "office",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/atal-block-images/second-floor/coworking.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/atal-block-images/second-floor/coworking.png",
         "tags": [
           "office",
           "lobby",
@@ -9733,7 +10095,7 @@ export const searchIndex = {
         "name": "CSL12",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/atal-block-images/second-floor/csl12.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/atal-block-images/second-floor/csl12.png",
         "tags": [
           "lab",
           "computer",
@@ -9751,7 +10113,7 @@ export const searchIndex = {
         "name": "CSL11",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/atal-block-images/second-floor/csl11.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/atal-block-images/second-floor/csl11.png",
         "tags": [
           "lab",
           "computer",
@@ -9801,7 +10163,7 @@ export const searchIndex = {
         "name": "NFL002 COMPONENTS ROOM",
         "type": "office",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/atal-block-images/second-floor/nfl002.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/atal-block-images/second-floor/nfl002.png",
         "tags": [
           "office",
           "components",
@@ -9924,7 +10286,7 @@ export const searchIndex = {
         "name": "LAB 1",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/lab1.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/lab1.png",
         "tags": [
           "lab",
           "robotics",
@@ -9940,7 +10302,7 @@ export const searchIndex = {
         "name": "LAB 2",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/lab2.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/lab2.png",
         "tags": [
           "lab",
           "robotics",
@@ -9956,7 +10318,7 @@ export const searchIndex = {
         "name": "LAB 3",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/lab3.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/lab3.png",
         "tags": [
           "lab",
           "robotics",
@@ -9989,7 +10351,7 @@ export const searchIndex = {
         "name": "HOD",
         "type": "hod",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/hod_muralidhara.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/hod_muralidhara.png",
         "tags": [
           "hod",
           "office",
@@ -10037,7 +10399,7 @@ export const searchIndex = {
         "name": "DEPT OFFICE ROBOTICS",
         "type": "office",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/dept_office.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/dept_office.png",
         "tags": [
           "office",
           "robotics",
@@ -10069,7 +10431,7 @@ export const searchIndex = {
       {
         "name": "DR. MURALIDHARA",
         "roomId": "rajraman-ground-hod",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/hod_muralidhara.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/hod_muralidhara.png",
         "description": "Head of the Department of Robotics and AI",
         "department": "Dept. of Robotics and AI",
         "designation": "Professor & HOD"
@@ -10077,7 +10439,7 @@ export const searchIndex = {
       {
         "name": "DR. PRASAD PRABHU",
         "roomId": "rajraman-ground-staffroom",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd3_prasad.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/gd3_prasad.png",
         "description": "Assistant Professor Gd III in Dept. of Robotics and AI",
         "department": "Dept. of Robotics and AI",
         "designation": "Assistant Professor Gd III"
@@ -10085,7 +10447,7 @@ export const searchIndex = {
       {
         "name": "MR. VINCENT LINISH DSOUZA",
         "roomId": "rajraman-ground-staffroom",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd2_vincent.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/gd2_vincent.png",
         "description": "Assistant Professor Gd II in Dept. of Robotics and AI",
         "department": "Dept. of Robotics and AI",
         "designation": "Assistant Professor Gd II"
@@ -10093,7 +10455,7 @@ export const searchIndex = {
       {
         "name": "DR. TANYA MENDEZ",
         "roomId": "rajraman-ground-staffroom",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd3_tanya.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/gd3_tanya.png",
         "description": "Assistant Professor Gd III in Dept. of Robotics and AI",
         "department": "Dept. of Robotics and AI",
         "designation": "Assistant Professor Gd III"
@@ -10101,7 +10463,7 @@ export const searchIndex = {
       {
         "name": "DR. RASHMI P SHETTY",
         "roomId": "rajraman-ground-staffroom",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/assoc_rashmi.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/assoc_rashmi.png",
         "description": "Associate Professor in Dept. of Robotics and AI",
         "department": "Dept. of Robotics and AI",
         "designation": "Associate Professor"
@@ -10133,7 +10495,7 @@ export const searchIndex = {
         "name": "Robotics Club",
         "type": "classroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/robotics_club.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/robotics_club.png",
         "tags": [
           "club",
           "robotics",
@@ -10194,7 +10556,7 @@ export const searchIndex = {
         "name": "LAB 4",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/lab4.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/lab4.png",
         "tags": [
           "lab",
           "robotics",
@@ -10210,7 +10572,7 @@ export const searchIndex = {
         "name": "LAB 5",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/lab5.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/lab5.png",
         "tags": [
           "lab",
           "robotics",
@@ -10226,7 +10588,7 @@ export const searchIndex = {
         "name": "LAB 6",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/lab6.jpg",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/lab6.jpg",
         "tags": [
           "lab",
           "robotics",
@@ -10242,7 +10604,7 @@ export const searchIndex = {
         "name": "SERVER/BATTERY ROOM",
         "type": "utility",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/server_battery.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/server_battery.png",
         "tags": [
           "server",
           "battery",
@@ -10308,14 +10670,14 @@ export const searchIndex = {
         "name": "MCA STAFF ROOM",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_staff_room.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/mca_staff_room.png",
         "tags": [
           "staffroom",
           "office",
           "mca"
         ],
         "department": "",
-        "directions": "Located at the top left corridor next to the Ladies Room.",
+        "directions": "Located at the top left corridor next to the Ladies Toilet.",
         "description": "MCA Faculty Staff Room.",
         "linkToFloor": null
       }
@@ -10324,82 +10686,82 @@ export const searchIndex = {
       {
         "name": "MS. ANUSHA PRASHANTH SHETTY",
         "roomId": "rajraman-first-mca-sr",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_staff_room.png",
-        "description": "Assistant Professor Gd I in MCA Department",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/rajraman-block-images/mca_staff_room.png",
+        "description": "",
         "department": "MCA",
-        "designation": "Assistant Professor Gd I"
+        "designation": ""
       },
       {
         "name": "MS. RAKSHA PUTHRAN",
         "roomId": "rajraman-first-mca-sr",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_staff_room.png",
-        "description": "Assistant Professor Gd II in MCA Department",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/rajraman-block-images/mca_staff_room.png",
+        "description": "",
         "department": "MCA",
-        "designation": "Assistant Professor Gd II"
+        "designation": ""
       },
       {
         "name": "MS. ASHWINI K.M.",
         "roomId": "rajraman-first-mca-sr",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_staff_room.png",
-        "description": "Assistant Professor Gd I in MCA Department",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/rajraman-block-images/mca_staff_room.png",
+        "description": "",
         "department": "MCA",
-        "designation": "Assistant Professor Gd I"
+        "designation": ""
       },
       {
         "name": "DR. ROSHAN D SUVARIS",
         "roomId": "rajraman-first-mca-sr",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_staffroom_roshan.png",
-        "description": "Assistant Professor Gd III in MCA Department",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/rajraman-block-images/mca_staffroom_roshan.png",
+        "description": "",
         "department": "MCA",
-        "designation": "Assistant Professor Gd III"
+        "designation": ""
       },
       {
         "name": "MS. SARITHA SHETTY",
         "roomId": "rajraman-first-mca-sr",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_staffroom_saritha.png",
-        "description": "Assistant Professor Gd II in MCA Department",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/rajraman-block-images/mca_staffroom_saritha.png",
+        "description": "",
         "department": "MCA",
-        "designation": "Assistant Professor Gd II"
+        "designation": ""
       },
       {
         "name": "MRS. ANKITHA RAO",
         "roomId": "rajraman-first-sr1",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd1_ankitha.png",
-        "description": "Assistant Professor Gd I in Dept. of Robotics and AI",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/rajraman-block-images/gd1_ankitha.png",
+        "description": "",
         "department": "Dept. of Robotics and AI",
-        "designation": "Assistant Professor Gd I"
+        "designation": ""
       },
       {
         "name": "MRS. RAJASHREE NAMBIAR",
         "roomId": "rajraman-first-sr2",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd2_rajashree.png",
-        "description": "Assistant Professor Gd II in Dept. of Robotics and AI",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/rajraman-block-images/gd2_rajashree.png",
+        "description": "",
         "department": "Dept. of Robotics and AI",
-        "designation": "Assistant Professor Gd II"
+        "designation": ""
       },
       {
         "name": "MR. RANJITH BHAT",
         "roomId": "rajraman-first-sr1",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd3_ranjith.png",
-        "description": "Assistant Professor Gd III in Dept. of Robotics and AI",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/rajraman-block-images/gd3_ranjith.png",
+        "description": "",
         "department": "Dept. of Robotics and AI",
-        "designation": "Assistant Professor Gd III"
+        "designation": ""
       },
       {
         "name": "DR. A. ADARSH RAI",
         "roomId": "rajraman-first-sr2",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd3_adarsh.png",
-        "description": "Assistant Professor Gd III in Dept. of Robotics and AI",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/rajraman-block-images/gd3_adarsh.png",
+        "description": "",
         "department": "Dept. of Robotics and AI",
-        "designation": "Assistant Professor Gd III"
+        "designation": ""
       },
       {
         "name": "DR. VEERESHA R K",
         "roomId": "rajraman-first-sr2",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/assoc_veeresha.png",
-        "description": "Associate Professor in Dept. of Robotics and AI",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/rajraman-block-images/assoc_veeresha.png",
+        "description": "",
         "department": "Dept. of Robotics and AI",
-        "designation": "Associate Professor"
+        "designation": ""
       }
     ]
   },
@@ -10428,7 +10790,7 @@ export const searchIndex = {
         "name": "MCA Research Lab-1",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_research_lab1.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/mca_research_lab1.png",
         "tags": [
           "lab",
           "mca",
@@ -10490,7 +10852,7 @@ export const searchIndex = {
         "name": "MCA LAB 1",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_lab1.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/mca_lab1.png",
         "tags": [
           "lab",
           "mca",
@@ -10506,7 +10868,7 @@ export const searchIndex = {
         "name": "MCA LAB 2",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_lab2.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/mca_lab2.png",
         "tags": [
           "lab",
           "mca",
@@ -10522,7 +10884,7 @@ export const searchIndex = {
         "name": "MCA LAB 3",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_lab3.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/mca_lab3.png",
         "tags": [
           "lab",
           "mca",
@@ -10538,7 +10900,7 @@ export const searchIndex = {
         "name": "MCA Dept Office",
         "type": "office",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_office.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/mca_office.png",
         "tags": [
           "office",
           "mca",
@@ -10554,7 +10916,7 @@ export const searchIndex = {
         "name": "STAFF ROOM",
         "type": "staffroom",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_staff_room.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/mca_staff_room.png",
         "tags": [
           "staffroom",
           "office",
@@ -10570,7 +10932,7 @@ export const searchIndex = {
         "name": "MCA LAB 4",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_lab4.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/mca_lab4.png",
         "tags": [
           "lab",
           "mca",
@@ -10665,7 +11027,7 @@ export const searchIndex = {
         "name": "MCA HOD",
         "type": "hod",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/hod_mca_mamatha.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/hod_mca_mamatha.png",
         "tags": [
           "hod",
           "mca",
@@ -10712,7 +11074,7 @@ export const searchIndex = {
       {
         "name": "DR. MAMATHA BALIPA",
         "roomId": "rajraman-second-mca-hod",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/hod_mca_mamatha.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/hod_mca_mamatha.png",
         "description": "Professor & Head in MCA Department",
         "department": "MCA",
         "designation": "Professor & Head"
@@ -10720,7 +11082,7 @@ export const searchIndex = {
       {
         "name": "DR. SURENDRA SHETTY",
         "roomId": "rajraman-second-sr-right",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/prof_surendra.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/prof_surendra.png",
         "description": "Professor in MCA Department",
         "department": "MCA",
         "designation": "Professor"
@@ -10728,7 +11090,7 @@ export const searchIndex = {
       {
         "name": "DR. PRAVEENA KUMARI M K",
         "roomId": "rajraman-second-sr-right",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd3_praveena.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/gd3_praveena.png",
         "description": "Assistant Professor Gd III in MCA Department",
         "department": "MCA",
         "designation": "Assistant Professor Gd III"
@@ -10736,7 +11098,7 @@ export const searchIndex = {
       {
         "name": "DR. SPOORTHI B. SHETTY",
         "roomId": "rajraman-second-sr-right",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd3_spoorthi.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/gd3_spoorthi.png",
         "description": "Associate Professor in MCA Department",
         "department": "MCA",
         "designation": "Associate Professor"
@@ -10744,7 +11106,7 @@ export const searchIndex = {
       {
         "name": "DR. MANGALA SHETTY",
         "roomId": "rajraman-second-sr-right",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd3_mangala.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/gd3_mangala.png",
         "description": "Associate Professor in MCA Department",
         "department": "MCA",
         "designation": "Associate Professor"
@@ -10752,7 +11114,7 @@ export const searchIndex = {
       {
         "name": "DR. PALLAVI SHETTY",
         "roomId": "rajraman-second-sr-right",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd3_pallavi.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/gd3_pallavi.png",
         "description": "Associate Professor in MCA Department",
         "department": "MCA",
         "designation": "Associate Professor"
@@ -10760,7 +11122,7 @@ export const searchIndex = {
       {
         "name": "DR. ANANTHA MURTHY",
         "roomId": "rajraman-second-sr-right",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/prof_anantha.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/prof_anantha.png",
         "description": "Associate Professor in MCA Department",
         "department": "MCA",
         "designation": "Associate Professor"
@@ -10768,7 +11130,7 @@ export const searchIndex = {
       {
         "name": "MS. PREMITHA KAMATH",
         "roomId": "rajraman-second-sr-right",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd1_premitha.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/gd1_premitha.png",
         "description": "Assistant Professor Gd I in MCA Department",
         "department": "MCA",
         "designation": "Assistant Professor Gd I"
@@ -10776,7 +11138,7 @@ export const searchIndex = {
       {
         "name": "MR. ARHATH KUMAR",
         "roomId": "rajraman-second-sr-right",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd2_arhath.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/gd2_arhath.png",
         "description": "Assistant Professor Gd II in MCA Department",
         "department": "MCA",
         "designation": "Assistant Professor Gd II"
@@ -10784,7 +11146,7 @@ export const searchIndex = {
       {
         "name": "MS. HARSHITHA G M",
         "roomId": "rajraman-second-sr-right",
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/prof_harshitha.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/prof_harshitha.png",
         "description": "Assistant Professor Gd II in MCA Department",
         "department": "MCA",
         "designation": "Assistant Professor Gd II"
@@ -10815,7 +11177,7 @@ export const searchIndex = {
         "name": "VAYURVYA Aero Club",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/vayurvya_aero_club.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/vayurvya_aero_club.png",
         "tags": [
           "lab",
           "aero",
@@ -10834,7 +11196,7 @@ export const searchIndex = {
         "name": "MCA Research Lab-2",
         "type": "lab",
         "faculty": null,
-        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_research_lab2.png",
+        "image": "https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/rajraman-block-images/mca_research_lab2.png",
         "tags": [
           "lab",
           "mca",

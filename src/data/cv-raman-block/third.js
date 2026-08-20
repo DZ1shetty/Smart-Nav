@@ -309,151 +309,151 @@ export const third = {
       name: 'Dr. Nagaraja B.S.',
       department: 'Physics',
       roomId: 'cv-raman-third-sr31',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr31.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr31.png'
     },
     {
       name: 'Mr. Krishnaraj Rao N S',
       department: 'Physics',
       roomId: 'cv-raman-third-sr31',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr31.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr31.png'
     },
     {
       name: 'Dr. Bola Sunil Kamath',
       department: 'Physics',
       roomId: 'cv-raman-third-sr31',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr31.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr31.png'
     },
     {
       name: 'Dr. Shyam Prasad K.',
       department: 'Physics',
       roomId: 'cv-raman-third-sr31',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr31.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr31.png'
     },
     {
       name: 'Dr. Sunu Rose Joseph',
       department: 'Physics',
       roomId: 'cv-raman-third-sr31',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr31.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr31.png'
     },
     {
       name: 'Ms. Ashwini D Y',
       department: 'First Year / General',
       roomId: 'cv-raman-third-sr32',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr32.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr32.png'
     },
     {
       name: 'Dr. Pramod Kumar PS',
       department: 'First Year / General',
       roomId: 'cv-raman-third-sr32',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr32.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr32.png'
     },
     {
       name: 'Ms. Sanchita CM',
       department: 'First Year / General',
       roomId: 'cv-raman-third-sr32',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr32.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr32.png'
     },
     {
       name: 'Mrs. Anitha D. Bayar',
       department: 'First Year / General',
       roomId: 'cv-raman-third-sr32',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr32.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr32.png'
     },
     {
       name: 'Ms. Smitha G. V.',
       department: 'First Year / General',
       roomId: 'cv-raman-third-sr32',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr32.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr32.png'
     },
     {
       name: 'Sharmila',
       department: 'First Year / General',
       roomId: 'cv-raman-third-sr32',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr32.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr32.png'
     },
     {
       name: 'Ms. Anjana Pai K.',
       department: 'First Year / General',
       roomId: 'cv-raman-third-sr32',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr32.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr32.png'
     },
     {
       name: 'Mr. Sunil Kumar Aithal S.',
       department: 'Computer Science & Engineering',
       roomId: 'cv-raman-third-sr33',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr33.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr33.png'
     },
     {
       name: 'Mr. Srikanth Bhat K.',
       department: 'Computer Science & Engineering',
       roomId: 'cv-raman-third-sr33',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr33.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr33.png'
     },
     {
       name: 'Mr. Krishnaprasad Rao',
       department: 'Computer Science & Engineering',
       roomId: 'cv-raman-third-sr33',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr33.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr33.png'
     },
     {
       name: 'Dr. Santhosh S',
       department: 'Computer Science & Engineering',
       roomId: 'cv-raman-third-sr33',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr33.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr33.png'
     },
     {
       name: 'Rajashree',
       department: 'Computer Science & Engineering',
       roomId: 'cv-raman-third-sr33',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr33.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr33.png'
     },
     {
       name: 'Ms. Soumya',
       department: 'Computer Science & Engineering',
       roomId: 'cv-raman-third-sr33',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr33.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr33.png'
     },
     {
       name: 'Ms. Alaka Anant\'i',
       department: 'Information Science & Engineering',
       roomId: 'cv-raman-third-sr34',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr34.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr34.png'
     },
     {
       name: 'Dr. Preethi Salian',
       department: 'Information Science & Engineering',
       roomId: 'cv-raman-third-sr34',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr34.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr34.png'
     },
     {
       name: 'Dr. Shivaprasad Shetty M.',
       department: 'Chemistry',
       roomId: 'cv-raman-third-sr34',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr34.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr34.png'
     },
     {
       name: 'Ms. Tanzila Nargis',
       department: 'Information Science & Engineering',
       roomId: 'cv-raman-third-sr34',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr34.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr34.png'
     },
     {
       name: 'Dr. Ranjitha',
       department: 'Chemistry',
       roomId: 'cv-raman-third-sr34',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr34.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr34.png'
     },
     {
       name: 'Dr. Subrahmanya L Bhat',
       department: 'Chemistry',
       roomId: 'cv-raman-third-sr34',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr34.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr34.png'
     },
     {
       name: 'Ankitha A. Nayak',
       department: 'Computer Science & Engineering',
       roomId: 'cv-raman-third-sr34',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/third-floor/sr34.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/third-floor/sr34.png'
     }
   ]
 }

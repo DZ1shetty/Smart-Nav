@@ -286,19 +286,19 @@ export const fourth = {
       name: 'Mr. Puneeth R. P.',
       department: 'Computer Science & Engineering',
       roomId: 'cv-raman-fourth-sr41',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/fourth-floor/sr41.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/fourth-floor/sr41.png'
     },
     {
       name: 'Ms. Bhavya D.',
       department: 'Mathematics',
       roomId: 'cv-raman-fourth-sr41',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/fourth-floor/sr41.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/fourth-floor/sr41.png'
     },
     {
       name: 'Mrs. Joylin Priya Pinto',
       department: 'Computer Science & Engineering',
       roomId: 'cv-raman-fourth-sr41',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/OLD_LOCAL_DATA/public-backup/cv-raman-block-images/fourth-floor/sr41.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/cv-raman-block-images/fourth-floor/sr41.png'
     }
   ]
 }

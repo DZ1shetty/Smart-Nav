@@ -22,7 +22,7 @@ export const IS_CLOUD = !isLocalhost
 
 // --- DYNAMIC BASE URL ---
 export const IMG_BASE_URL = IS_CLOUD
-  ? `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/OLD_LOCAL_DATA/public-backup`
+  ? `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/public`
   : '' // Empty string resolves to local root in Vite (e.g. /apj-block-images)
 
 export const resolveImageUrl = (url) => {
@@ -39,7 +39,13 @@ export const resolveImageUrl = (url) => {
     url = url.replaceAll('/Smart_Nav/', '/Smart-Nav/');
   }
 
-  // Clean out any legacy nested path references
+  // Clean out legacy nested path references
+  if (url.includes('/OLD_LOCAL_DATA/public-backup/')) {
+    url = url.replaceAll('/OLD_LOCAL_DATA/public-backup/', '/public/');
+  }
+  if (url.includes('/public-backup/')) {
+    url = url.replaceAll('/public-backup/', '/public/');
+  }
   if (url.includes('/MJ/Major_Project/')) {
     url = url.replaceAll('/MJ/Major_Project/', '/');
   } else if (url.includes('MJ/Major_Project/')) {
@@ -48,17 +54,13 @@ export const resolveImageUrl = (url) => {
 
   // When running locally (localhost), convert raw.githubusercontent URLs to local relative public paths
   if (!IS_CLOUD && url.includes('raw.githubusercontent.com')) {
-    if (url.includes('/public-backup/')) {
-      const parts = url.split('/public-backup/');
-      if (parts[1]) return '/' + parts[1];
-    }
-    if (url.includes('/OLD_LOCAL_DATA/')) {
-      const parts = url.split('/OLD_LOCAL_DATA/');
+    if (url.includes('/public/')) {
+      const parts = url.split('/public/');
       if (parts[1]) return '/' + parts[1];
     }
   }
 
-  // Self-heal any hardcoded raw.githubusercontent URLs
+  // Self-heal any legacy hardcoded raw.githubusercontent URLs pointing to public-backup
   if (url.includes('raw.githubusercontent.com') && url.includes('/public-backup')) {
     const parts = url.split('/public-backup');
     if (parts.length > 1) {

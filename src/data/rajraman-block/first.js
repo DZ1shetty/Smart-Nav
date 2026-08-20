@@ -253,61 +253,61 @@ export const first = {
       name: 'MS. ANUSHA PRASHANTH SHETTY',
       department: 'MCA',
       roomId: 'rajraman-first-mca-sr',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_staff_room.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/rajraman-block-images/mca_staff_room.png'
     },
     {
       name: 'MS. RAKSHA PUTHRAN',
       department: 'MCA',
       roomId: 'rajraman-first-mca-sr',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_staff_room.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/rajraman-block-images/mca_staff_room.png'
     },
     {
       name: 'MS. ASHWINI K.M.',
       department: 'MCA',
       roomId: 'rajraman-first-mca-sr',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_staff_room.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/rajraman-block-images/mca_staff_room.png'
     },
     {
       name: 'DR. ROSHAN D SUVARIS',
       department: 'MCA',
       roomId: 'rajraman-first-mca-sr',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_staffroom_roshan.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/rajraman-block-images/mca_staffroom_roshan.png'
     },
     {
       name: 'MS. SARITHA SHETTY',
       department: 'MCA',
       roomId: 'rajraman-first-mca-sr',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/mca_staffroom_saritha.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/rajraman-block-images/mca_staffroom_saritha.png'
     },
     {
       name: 'MRS. ANKITHA RAO',
       department: 'Dept. of Robotics and AI',
       roomId: 'rajraman-first-sr1',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd1_ankitha.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/rajraman-block-images/gd1_ankitha.png'
     },
     {
       name: 'MRS. RAJASHREE NAMBIAR',
       department: 'Dept. of Robotics and AI',
       roomId: 'rajraman-first-sr2',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd2_rajashree.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/rajraman-block-images/gd2_rajashree.png'
     },
     {
       name: 'MR. RANJITH BHAT',
       department: 'Dept. of Robotics and AI',
       roomId: 'rajraman-first-sr1',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd3_ranjith.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/rajraman-block-images/gd3_ranjith.png'
     },
     {
       name: 'DR. A. ADARSH RAI',
       department: 'Dept. of Robotics and AI',
       roomId: 'rajraman-first-sr2',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/gd3_adarsh.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/rajraman-block-images/gd3_adarsh.png'
     },
     {
       name: 'DR. VEERESHA R K',
       department: 'Dept. of Robotics and AI',
       roomId: 'rajraman-first-sr2',
-      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart_Nav/main/MJ/Major_Project/OLD_LOCAL_DATA/public-backup/rajraman-block-images/assoc_veeresha.png'
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/MJ/Major_Project/public/rajraman-block-images/assoc_veeresha.png'
     }
   ]
 }
