@@ -34,8 +34,23 @@
     --coord-font-weight: 400;
 
     /* FONT FAMILY */
-    --font-main: 'Orbitron', 'Inter', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
+    --font-main: monospace;
+    --font-mono: monospace;
+  }
+
+  /* Override Tailwind's default sans-serif */
+  html {
+    font-family: monospace !important;
+    font-size: 16px;
+  }
+  body {
+    font-family: monospace !important;
+  }
+  /* Ensure all text elements inherit monospace */
+  h1, h2, h3, h4, h5, h6,
+  p, span, a, label, button, input, textarea, select,
+  li, td, th, caption, blockquote, pre, code {
+    font-family: monospace !important;
   }
 
   .dark {
@@ -52,7 +67,7 @@
 body {
   background-color: var(--bg-main);
   color: var(--text-main);
-  font-family: 'Monaco', 'Consolas', monospace;
+  font-family: var(--font-main);
   margin: 0;
   overflow-x: hidden;
   transition:

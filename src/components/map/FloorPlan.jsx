@@ -1184,23 +1184,29 @@ export default function FloorPlan() {
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search)
     const roomId = searchParams.get('room')
+    const searchId = searchParams.get('search')
     const facultyName = searchParams.get('faculty')
 
-    if (roomId && floorData && floorData.rooms) {
-      const roomToSelect = floorData.rooms.find((r) => r.id === roomId)
-      if (roomToSelect && !selectedRoom) {
+    const targetRoomId = roomId || searchId;
+
+    if (targetRoomId && floorData && floorData.rooms) {
+      const roomToSelect = floorData.rooms.find((r) => r.id === targetRoomId)
+      
+      // Only set selected room if it was explicitly clicked (?room=)
+      if (roomToSelect && roomId && !selectedRoom) {
         const linkedFaculty = floorData.faculty
           ?.filter((f) => f.roomId === roomToSelect.id)
           .map((f) => f.name) || []
         setSelectedRoom({ ...roomToSelect, linkedFaculty })
       }
-      const room = floorData.rooms.find((r) => r.id === roomId)
+      
+      const room = floorData.rooms.find((r) => r.id === targetRoomId)
       if (room) {
         if (highlightedRoomId !== room.id) {
           setHighlightedRoomId(room.id)
         }
 
-        if (!facultyName) {
+        if (!facultyName && roomId) {
           if (selectedRoom?.id !== room.id) {
             const linkedFaculty = floorData.faculty
               ?.filter((f) => f.roomId === room.id)
@@ -1619,7 +1625,6 @@ export default function FloorPlan() {
               currentFloor={floorId}
               onResultsChange={(ids) => {
                 setActiveSearchIds(ids)
-                if (ids) setIsMobileSearchOpen(false)
               }}
             />
           </motion.div>

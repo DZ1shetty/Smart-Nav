@@ -13,10 +13,12 @@ export default {
         "room-bg": "#1c1c1c",
       },
       fontFamily: {
-        mono: ["JetBrains Mono", "monospace"],
-        orbitron: ["Orbitron", "sans-serif"],
-        space: ["Outfit", "sans-serif"],
-        outfit: ["Outfit", "sans-serif"],
+        sans: ["monospace"],
+        serif: ["monospace"],
+        mono: ["monospace"],
+        orbitron: ["monospace"],
+        space: ["monospace"],
+        outfit: ["monospace"],
       },
       animation: {
         'spin-slow': 'spin 10s linear infinite',

@@ -23,17 +23,23 @@ const InfoLabelSVG = ({ rx, ry, w, floorId, text, isHighlighted }) => {
   const isAtal = floorId?.startsWith('atal_')
 
   let fontSize = 10
-  let arrowSize = 10
-  let tipOffset = 6
+  let arrowSize = 14
+  let tipOffset = 8
 
   if (isAtal) {
     fontSize = 32
-    arrowSize = 32
-    tipOffset = 16
+    arrowSize = 42
+    tipOffset = 20
   } else if (isLargeViewBox) {
     fontSize = 18
-    arrowSize = 20
-    tipOffset = 10
+    arrowSize = 26
+    tipOffset = 14
+  }
+
+  // Make it significantly larger and more noticeable if it's the active search highlight
+  if (isHighlighted) {
+    arrowSize *= 1.5
+    tipOffset *= 1.5
   }
 
   const textX = rx + w / 2
@@ -50,7 +56,18 @@ const InfoLabelSVG = ({ rx, ry, w, floorId, text, isHighlighted }) => {
       <path
         d={`M ${textX} ${arrowTipY} L ${textX - arrowSize * 0.6} ${arrowBaseY} L ${textX + arrowSize * 0.6} ${arrowBaseY} Z`}
         fill={color}
-      />
+        style={{ filter: `drop-shadow(0px 2px 8px ${color})` }}
+      >
+        {isHighlighted && (
+          <animateTransform
+            attributeName="transform"
+            type="translate"
+            values={`0,0; 0,-${arrowSize * 0.4}; 0,0`}
+            dur="1s"
+            repeatCount="indefinite"
+          />
+        )}
+      </path>
       {text !== undefined && text !== '' && (
         <text
           x={textX}

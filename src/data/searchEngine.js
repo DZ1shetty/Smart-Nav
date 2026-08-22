@@ -489,8 +489,8 @@ export const resolveNavigationQuery = (query, context = {}) => {
         const baseUrl = floorIdToUrl(item.floorKey)
         url =
           item._kind === 'faculty'
-            ? `${baseUrl}?room=${item.id}&faculty=${encodeURIComponent(item.name)}`
-            : `${baseUrl}?room=${item.id}`
+            ? `${baseUrl}?search=${item.id}&faculty=${encodeURIComponent(item.name)}`
+            : `${baseUrl}?search=${item.id}`
       }
 
       return {
