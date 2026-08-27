@@ -989,7 +989,7 @@ export default function ChatbotWidget() {
   return (
     <>
       {/* FLOATING TRIGGER BUTTON */}
-      <div ref={triggerRef} className="fixed bottom-4 right-4 sm:bottom-6 sm:right-5 z-[300]">
+      <div ref={triggerRef} className="fixed bottom-4 right-4 sm:bottom-6 sm:right-5 z-[40]">
         <motion.button
           onClick={() => {
             setIsOpen(!isOpen)
@@ -1066,7 +1066,7 @@ export default function ChatbotWidget() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="fixed bottom-16 right-3 sm:right-5 w-[calc(100vw-24px)] max-w-[380px] sm:w-[380px] max-h-[80vh] sm:max-h-none flex flex-col bg-transparent shadow-[0_20px_50px_rgba(0,0,0,0.18)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.6)] overflow-hidden z-[300] transition-colors"
+            className="fixed bottom-16 right-3 sm:right-5 w-[calc(100vw-24px)] max-w-[380px] sm:w-[380px] max-h-[80vh] sm:max-h-none flex flex-col bg-transparent shadow-[0_20px_50px_rgba(0,0,0,0.18)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.6)] overflow-hidden z-[40] transition-colors"
           >
             {/* Top Gemini-style gradient bar */}
             <div className="h-1.5 w-full bg-gradient-to-r from-blue-500 via-purple-500 via-pink-500 to-amber-400 relative z-10" />

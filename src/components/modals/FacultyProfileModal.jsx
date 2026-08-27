@@ -31,7 +31,7 @@ export default function FacultyProfileModal({ faculty, onClose }) {
 
   return (
     <>
-      <div className="fixed inset-0 z-[110] flex items-end sm:items-center justify-center p-0 sm:p-4 md:p-8 overflow-hidden">
+      <div className="fixed inset-0 z-[110] flex items-center justify-center p-3 sm:p-4 md:p-8 overflow-hidden" style={{ paddingTop: 'max(12px, env(safe-area-inset-top))', paddingBottom: 'max(12px, env(safe-area-inset-bottom))', paddingLeft: 'max(12px, env(safe-area-inset-left))', paddingRight: 'max(12px, env(safe-area-inset-right))' }}>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -55,7 +55,7 @@ export default function FacultyProfileModal({ faculty, onClose }) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.3 }}
-          className="relative w-full sm:max-w-md md:max-w-2xl max-h-[88dvh] bg-white dark:bg-[#0a0a0a] border border-black/10 dark:border-white/10 rounded-t-2xl sm:rounded-2xl shadow-2xl overflow-hidden flex flex-row"
+          className="relative w-full max-w-[calc(100vw-24px)] sm:max-w-md md:max-w-2xl max-h-[min(82dvh,640px)] bg-white dark:bg-[#0a0a0a] border border-black/10 dark:border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-row"
         >
           {/* Left Side: Portrait Area */}
           <div
@@ -88,10 +88,6 @@ export default function FacultyProfileModal({ faculty, onClose }) {
                     <span>Expand</span>
                   </div>
                 </div>
-                <div className="absolute bottom-2 right-2 md:hidden px-2 py-1 bg-black/70 text-white text-[9px] font-mono rounded-md border border-white/15 flex items-center gap-1 pointer-events-none">
-                  <Maximize2 className="w-2.5 h-2.5 text-blue-400" />
-                  <span>Tap</span>
-                </div>
               </>
             ) : (
               <div className="w-full h-full flex items-center justify-center">
@@ -101,16 +97,25 @@ export default function FacultyProfileModal({ faculty, onClose }) {
           </div>
 
         {/* Right Side: Information Area */}
-        <div className="flex-1 min-h-0 p-4 md:p-10 flex flex-col justify-center overflow-y-auto custom-scrollbar">
-          <div className="mb-3 md:mb-6 pr-8">
-            <h2 className="text-base sm:text-lg md:text-2xl font-orbitron font-black uppercase tracking-tighter text-black dark:text-white leading-tight mb-1 md:mb-2">
-              {faculty.name}
-            </h2>
-            {blockFloorCode && (
-              <p className="text-[10px] md:text-[11px] font-orbitron font-black uppercase tracking-[0.16em] text-blue-500">
-                {blockFloorCode}
-              </p>
-            )}
+        <div className="flex-1 min-h-0 p-3.5 md:p-10 flex flex-col justify-center overflow-y-auto custom-scrollbar">
+          <div className="mb-3 md:mb-6 flex items-start gap-2">
+            <div className="min-w-0 flex-1">
+              <h2 className="text-base sm:text-lg md:text-2xl font-orbitron font-black uppercase tracking-tighter text-black dark:text-white leading-tight mb-1 md:mb-2 break-words">
+                {faculty.name}
+              </h2>
+              {blockFloorCode && (
+                <p className="text-[10px] md:text-[11px] font-orbitron font-black uppercase tracking-[0.16em] text-blue-500">
+                  {blockFloorCode}
+                </p>
+              )}
+            </div>
+            <button
+              onClick={onClose}
+              className="shrink-0 p-2 bg-black/5 hover:bg-black/10 dark:bg-white/5 dark:hover:bg-white/10 rounded-xl transition-all duration-300 group border border-black/5 dark:border-white/5 shadow-sm"
+              aria-label="Close"
+            >
+              <X className="w-4 h-4 text-black/50 dark:text-white/40 group-hover:text-blue-500 dark:group-hover:text-blue-400 group-hover:rotate-90 transition-all duration-300" />
+            </button>
           </div>
 
           {/* description / Bio Section */}
@@ -155,15 +160,6 @@ export default function FacultyProfileModal({ faculty, onClose }) {
             </div>
           </div>
         </div>
-
-        {/* Overlaid Close Button (rendered last for absolute z-index stacking safety) */}
-        <button
-          onClick={onClose}
-          className="absolute top-2.5 right-2.5 md:top-5 md:right-5 p-2 md:p-2.5 bg-black/5 hover:bg-black/10 dark:bg-white/5 dark:hover:bg-white/10 rounded-xl transition-all duration-300 group z-[60] border border-black/5 dark:border-white/5 shadow-sm"
-          aria-label="Close"
-        >
-          <X className="w-4 h-4 text-black/50 dark:text-white/40 group-hover:text-blue-500 dark:group-hover:text-blue-400 group-hover:rotate-90 transition-all duration-300" />
-        </button>
 
         {/* Fullscreen Photo Lightbox Overlay */}
         {isFullScreen && faculty.image && (

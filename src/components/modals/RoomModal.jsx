@@ -149,7 +149,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
 
   return (
     <>
-      <div className="fixed inset-0 z-[110] flex items-end sm:items-center justify-center p-0 sm:p-3 md:p-8 overflow-hidden">
+      <div className="fixed inset-0 z-[110] flex items-center justify-center overflow-hidden" style={{ paddingTop: 'max(12px, env(safe-area-inset-top))', paddingBottom: 'max(12px, env(safe-area-inset-bottom))', paddingLeft: 'max(12px, env(safe-area-inset-left))', paddingRight: 'max(12px, env(safe-area-inset-right))' }}>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -166,41 +166,29 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
           className={`relative w-full ${
             room.linkToFloor || room.id?.startsWith('connection-') || room.name?.toLowerCase().includes('connection') || room.id?.includes('connection')
               ? 'max-w-lg'
-              : 'sm:max-w-md md:max-w-4xl'
-          } bg-white/95 dark:bg-[#0c0c0e]/95 backdrop-blur-2xl border border-black/10 dark:border-white/10 rounded-t-2xl sm:rounded-2xl md:rounded-3xl shadow-[0_25px_60px_rgba(0,0,0,0.3)] overflow-hidden flex ${
+              : 'max-w-[calc(100vw-24px)] sm:max-w-md md:max-w-4xl'
+          } bg-white/95 dark:bg-[#0c0c0e]/95 backdrop-blur-2xl border border-black/10 dark:border-white/10 rounded-2xl md:rounded-3xl shadow-[0_25px_60px_rgba(0,0,0,0.3)] overflow-hidden flex ${
             room.linkToFloor || room.id?.startsWith('connection-') || room.name?.toLowerCase().includes('connection') || room.id?.includes('connection')
               ? 'flex-col'
               : 'flex-row'
-          } items-stretch max-h-[88dvh]`}
+          } items-stretch max-h-[min(82dvh,720px)]`}
         >
-          {/* Actions Container */}
-          <div className="absolute top-2.5 right-2.5 md:top-4 md:right-4 flex items-center gap-2 z-[60]">
-            {onToggleBookmark && (
-              <button
-                onClick={onToggleBookmark}
-                className={`p-2 border rounded-lg transition-all duration-300 backdrop-blur-md ${isBookmarked
-                    ? 'bg-amber-500/10 border-amber-500/30 text-amber-500 hover:bg-amber-500/20'
-                    : 'bg-black/5 dark:bg-white/5 border-black/5 dark:border-white/5 text-black/40 dark:text-white/20 hover:text-amber-500 dark:hover:text-amber-400 shadow-sm'
-                  }`}
-                aria-label={isBookmarked ? "Remove Bookmark" : "Add Bookmark"}
-                title={isBookmarked ? "Remove Bookmark" : "Add Bookmark"}
-              >
-                <Bookmark className={`w-5 h-5 ${isBookmarked ? 'fill-current' : ''}`} />
-              </button>
-            )}
-            <button
-              onClick={onClose}
-              className="p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-lg transition-all group border border-black/5 dark:border-white/5 backdrop-blur-md shadow-sm"
-              aria-label="Close"
-            >
-              <X className="w-5 h-5 text-black/40 dark:text-white/20 group-hover:text-red-500 dark:group-hover:text-red-400 transition-colors" />
-            </button>
-          </div>
 
           {/* If Editing: Full-Width Spacious 2-Column Studio Editor Workspace */}
           {isEditing ? (
-            <div className="w-full flex flex-col h-full max-h-[85vh] p-6 md:p-8 bg-white/95 dark:bg-[#0c0c0e]/95 backdrop-blur-2xl">
-              {/* Studio Editor Form Workspace */}
+            <div className="w-full flex flex-col h-full max-h-[85vh] p-4 md:p-8 bg-white/95 dark:bg-[#0c0c0e]/95 backdrop-blur-2xl">
+              <div className="flex items-center justify-between gap-3 mb-4">
+                <h3 className="text-sm md:text-base font-orbitron font-black uppercase tracking-tight text-black dark:text-white">
+                  Edit Room
+                </h3>
+                <button
+                  onClick={onClose}
+                  className="p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-lg transition-all group border border-black/5 dark:border-white/5 shadow-sm"
+                  aria-label="Close"
+                >
+                  <X className="w-4 h-4 text-black/40 dark:text-white/20 group-hover:text-red-500" />
+                </button>
+              </div>
 
               {/* Form Fields: 2 Columns on Desktop */}
               <div className="flex-1 overflow-y-auto custom-scrollbar grid grid-cols-1 md:grid-cols-2 gap-8 pr-2">
@@ -473,11 +461,10 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                           e.stopPropagation()
                           setIsFullScreen(true)
                         }}
-                        className="absolute bottom-2 left-2 md:bottom-3 md:left-3 z-20 px-2 py-1 md:px-3.5 md:py-2.5 bg-black/80 hover:bg-blue-600 active:scale-95 text-white text-[9px] md:text-xs font-mono font-bold rounded-md md:rounded-xl border border-white/25 backdrop-blur-md transition-all shadow-xl flex items-center gap-1 md:gap-2 cursor-pointer"
+                        className="absolute top-2 left-2 md:bottom-3 md:left-3 md:top-auto z-20 p-1.5 md:px-3.5 md:py-2.5 bg-black/70 hover:bg-blue-600 active:scale-95 text-white text-[9px] md:text-xs font-mono font-bold rounded-md md:rounded-xl border border-white/25 backdrop-blur-md transition-all shadow-xl flex items-center gap-1 md:gap-2 cursor-pointer"
                       >
                         <Maximize2 className="w-3 h-3 md:w-4 md:h-4 text-blue-400 group-hover:text-white" />
-                        <span className="hidden sm:inline">Expand Image</span>
-                        <span className="sm:hidden">Tap</span>
+                        <span className="hidden md:inline">Expand Image</span>
                       </button>
 
                       {images.length > 1 && (
@@ -542,10 +529,34 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
               {/* Right Side: Information */}
               <div className="flex-1 min-h-0 p-3.5 md:p-8 overflow-y-auto custom-scrollbar flex flex-col space-y-3 md:space-y-6">
                 {/* Header Bar: Title & Action Badges */}
-                <div className="border-b border-black/10 dark:border-white/10 pb-3 md:pb-5">
-                  <h2 className="text-base sm:text-lg md:text-3xl font-orbitron font-black uppercase tracking-tight text-black dark:text-white leading-tight mb-2 md:mb-3 pr-16 md:pr-24">
-                    {room.name}
-                  </h2>
+                <div className="border-b border-black/10 dark:border-white/10 pb-3 md:pb-5 space-y-2.5">
+                  <div className="flex items-start gap-2">
+                    <h2 className="flex-1 min-w-0 text-base sm:text-lg md:text-3xl font-orbitron font-black uppercase tracking-tight text-black dark:text-white leading-tight break-words">
+                      {room.name}
+                    </h2>
+                    <div className="flex items-center gap-1.5 shrink-0">
+                      {onToggleBookmark && (
+                        <button
+                          onClick={onToggleBookmark}
+                          className={`p-2 border rounded-lg transition-all duration-300 ${isBookmarked
+                              ? 'bg-amber-500/10 border-amber-500/30 text-amber-500 hover:bg-amber-500/20'
+                              : 'bg-black/5 dark:bg-white/5 border-black/5 dark:border-white/5 text-black/40 dark:text-white/20 hover:text-amber-500 dark:hover:text-amber-400 shadow-sm'
+                            }`}
+                          aria-label={isBookmarked ? "Remove Bookmark" : "Add Bookmark"}
+                          title={isBookmarked ? "Remove Bookmark" : "Add Bookmark"}
+                        >
+                          <Bookmark className={`w-4 h-4 md:w-5 md:h-5 ${isBookmarked ? 'fill-current' : ''}`} />
+                        </button>
+                      )}
+                      <button
+                        onClick={onClose}
+                        className="p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-lg transition-all group border border-black/5 dark:border-white/5 shadow-sm"
+                        aria-label="Close"
+                      >
+                        <X className="w-4 h-4 md:w-5 md:h-5 text-black/40 dark:text-white/20 group-hover:text-red-500 dark:group-hover:text-red-400 transition-colors" />
+                      </button>
+                    </div>
+                  </div>
                   <div className="flex items-center justify-between gap-2 w-full">
                     <span className="px-2.5 py-0.5 md:px-3 md:py-1 rounded-full text-[9px] md:text-[10px] font-orbitron font-black uppercase tracking-widest bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/30">
                       {room.type === 'staffroom' ? 'STAFF ROOM' : room.type}
