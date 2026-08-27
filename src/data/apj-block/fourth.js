@@ -416,47 +416,40 @@ export const fourth = {
     }
   ],
   faculty: [
-    {
-      name: 'DR. VENKATRAMANA BHAT P',
-      department: 'CSE',
-      roomId: 'staff-room-top-center',
-      image: '${IMG_BASE_URL}/apj-block-images/4th-floor/4th-floor-staff-room/whatsapp-image-2026-04-24-at-10.12.32-pm.jpeg'
-    },
-    {
-      name: 'DR. JYOTHI SHETTY',
-      department: 'CSE',
-      roomId: 'staff-room-top-center',
-      image: '${IMG_BASE_URL}/apj-block-images/4th-floor/4th-floor-staff-room/whatsapp-image-2026-04-24-at-10.12.33-pm.jpeg'
-    },
-    {
-      name: 'DR. SHABARI SHEDTHI B',
-      department: 'CSE',
-      roomId: 'staff-room-top-center',
-      image: '${IMG_BASE_URL}/apj-block-images/4th-floor/4th-floor-staff-room/whatsapp-image-2026-04-24-at-10.12.33-pm-1.jpeg'
-    },
-    {
-      name: 'DR. PALLAVI K N',
-      department: 'CSE',
-      roomId: 'staff-room-top-center',
-      image: '${IMG_BASE_URL}/apj-block-images/4th-floor/4th-floor-staff-room/whatsapp-image-2026-04-24-at-10.12.34-pm.jpeg'
-    },
-    {
-      name: 'DR. PRADEEP KANCHAN',
-      department: 'CSE',
-      roomId: 'staff-room-top-center',
-      image: '${IMG_BASE_URL}/apj-block-images/4th-floor/4th-floor-staff-room/whatsapp-image-2026-04-24-at-10.12.33-pm-2.jpeg'
-    },
-    {
-      name: 'DR. DESAI KARANAM SREEKANTHA',
-      department: 'CSE',
-      roomId: 'staff-room-top-center',
-      image: '${IMG_BASE_URL}/apj-block-images/4th-floor/4th-floor-staff-room/whatsapp-image-2026-04-24-at-10.12.34-pm-1.jpeg'
-    },
-    {
-      name: 'DR. SANNIDHAN M S',
-      department: 'CSE',
-      roomId: 'staff-room-top-center',
-      image: '${IMG_BASE_URL}/apj-block-images/4th-floor/4th-floor-staff-room/whatsapp-image-2026-04-24-at-10.12.34-pm-2.jpeg'
-    }
-  ]
+  {
+    "name": "DR. USHA DIVAKARLA",
+    "department": "ISE",
+    "designation": "Professor",
+    "roomId": "staff-room-top-center",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787841206/iwowh3xjulmxfmlzjokk.png"
+  },
+  {
+    "name": "DR. MANJULA GURURAJ RAO",
+    "department": "ISE",
+    "designation": "Professor",
+    "roomId": "staff-room-top-center",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787841207/mevvymwtqkmgdoyxn2yf.png"
+  },
+  {
+    "name": "DR. VAIKUNTH PAI",
+    "department": "ISE",
+    "designation": "Associate Professor",
+    "roomId": "staff-room-top-center",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787841208/rcol5xerb2auijhfiqe0.png"
+  },
+  {
+    "name": "DR. VANDANA B S",
+    "department": "ISE",
+    "designation": "Associate Professor",
+    "roomId": "staff-room-top-center",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787841209/u2yxtgqtjuoamhvuaxes.png"
+  },
+  {
+    "name": "DR. NAGANNA CHETTY",
+    "department": "ISE",
+    "designation": "Associate Professor",
+    "roomId": "staff-room-top-center",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787841210/obfugrqtjt3mehzwtznt.png"
+  }
+]
 }

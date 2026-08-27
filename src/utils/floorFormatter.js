@@ -45,3 +45,34 @@ export const formatFloorKeyToWords = (floorKey) => {
 
   return `${block} • ${floor}`
 }
+
+/** e.g. APJ-BLOCK:FIFTH, CV-RAMAN-BLOCK:THIRD, SMV-BLOCK:GROUND */
+export const formatBlockFloorCode = (floorKey, buildingName) => {
+  const l = (floorKey || '').toLowerCase()
+
+  let block = (buildingName || '')
+    .toUpperCase()
+    .replace(/\s+/g, '-')
+    .replace(/_+/g, '-')
+  if (!block) {
+    if (l.startsWith('cv_raman_')) block = 'CV-RAMAN-BLOCK'
+    else if (l.startsWith('ramanujan_')) block = 'RAMANUJAN-BLOCK'
+    else if (l.startsWith('svm_') || l.startsWith('smv_')) block = 'SMV-BLOCK'
+    else if (l.startsWith('atal_')) block = 'ATAL-BLOCK'
+    else if (l.startsWith('rajraman_')) block = 'RAJRAMAN-BLOCK'
+    else block = 'APJ-BLOCK'
+  }
+
+  let floorWord = ''
+  if (l.includes('basement')) floorWord = 'BASEMENT'
+  else if (l.includes('ground')) floorWord = 'GROUND'
+  else if (l.includes('sixth')) floorWord = 'SIXTH'
+  else if (l.includes('fifth')) floorWord = 'FIFTH'
+  else if (l.includes('fourth')) floorWord = 'FOURTH'
+  else if (l.includes('third')) floorWord = 'THIRD'
+  else if (l.includes('second')) floorWord = 'SECOND'
+  else if (l.includes('first')) floorWord = 'FIRST'
+  else floorWord = (floorKey || '').split('_').pop().toUpperCase()
+
+  return floorWord ? `${block}:${floorWord}` : block
+}

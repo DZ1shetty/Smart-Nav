@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
-import { X, User, Navigation, Building2, FileText, Maximize2 } from 'lucide-react'
+import { X, User, Briefcase, GraduationCap, FileText, Maximize2 } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { resolveImageUrl } from '../../config'
-import { formatFloorKeyToWords } from '../../utils/floorFormatter'
+import { formatBlockFloorCode } from '../../utils/floorFormatter'
 
 export default function FacultyProfileModal({ faculty, onClose }) {
   const [isFullScreen, setIsFullScreen] = useState(false)
@@ -24,10 +24,10 @@ export default function FacultyProfileModal({ faculty, onClose }) {
 
   if (!faculty) return null
 
-  // Priority: 1. Faculty own description, 2. Room directions, 3. Default message
   const bioContent = faculty.description || null
-  const directions =
-    faculty.originalRoom?.directions || 'Located in the department staff room.'
+  const designation = faculty.designation?.trim() || '—'
+  const department = faculty.department?.trim() || '—'
+  const blockFloorCode = formatBlockFloorCode(faculty.floorKey, faculty.buildingName)
 
   return (
     <>
@@ -102,12 +102,11 @@ export default function FacultyProfileModal({ faculty, onClose }) {
             <h2 className="text-2xl font-orbitron font-black uppercase tracking-tighter text-black dark:text-white leading-tight mb-2">
               {faculty.name}
             </h2>
-            <div className="flex items-center gap-2 text-blue-500">
-              <Building2 className="w-3.5 h-3.5" />
-              <span className="text-[10px] font-orbitron font-black uppercase tracking-widest">
-                {formatFloorKeyToWords(faculty.floorKey)} • {faculty.roomName}
-              </span>
-            </div>
+            {blockFloorCode && (
+              <p className="text-[11px] font-orbitron font-black uppercase tracking-[0.18em] text-blue-500">
+                {blockFloorCode}
+              </p>
+            )}
           </div>
 
           {/* description / Bio Section */}
@@ -126,51 +125,28 @@ export default function FacultyProfileModal({ faculty, onClose }) {
           )}
 
           <div className="flex flex-col gap-3">
-            <div className="p-6 bg-black/[0.03] dark:bg-white/[0.03] border border-black/5 dark:border-white/5 rounded-xl">
-              <div className="flex items-center gap-2 mb-3">
-                <Navigation className="w-3 h-3 text-blue-500" />
-                <span className="text-[9px] font-orbitron font-black uppercase tracking-widest text-black/40 dark:text-white/20">
-                  Location Details
-                </span>
+            <div className="p-6 bg-black/[0.03] dark:bg-white/[0.03] border border-black/5 dark:border-white/5 rounded-xl space-y-5">
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <Briefcase className="w-3 h-3 text-blue-500" />
+                  <span className="text-[9px] font-orbitron font-black uppercase tracking-widest text-black/40 dark:text-white/20">
+                    Designation
+                  </span>
+                </div>
+                <p className="text-[13px] font-black text-black dark:text-white leading-relaxed tracking-tight">
+                  {designation}
+                </p>
               </div>
-              <div className="text-[13px] font-black text-black dark:text-white leading-relaxed tracking-tight">
-                {(() => {
-                  if (!directions || directions === 'TBD')
-                    return 'Located in the department staff room.'
-
-                  let items = directions
-                    .split('\n')
-                    .map((item) => item.trim())
-                    .filter((item) => item)
-
-                  if (items.length === 1) {
-                    items = directions
-                      .split(
-                        /(?=[a-z]\)\s|(?:\s|^)(?:[ivx]+\.\s|\d+\.\s|•\s))/i
-                      )
-                      .map((item) => item.trim())
-                      .filter((item) => item)
-                  }
-
-                  if (
-                    items.length > 1 ||
-                    /^[ivx]+\.|^[a-z]\)|^\d+\.|^•/i.test(directions.trim())
-                  ) {
-                    return (
-                      <ul className="space-y-2">
-                        {items.map((item, idx) => (
-                          <li key={idx} className="flex gap-2 items-start">
-                            <span className="flex-1 tracking-tight">
-                              {item.trim()}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    )
-                  }
-
-                  return directions
-                })()}
+              <div className="border-t border-black/5 dark:border-white/5 pt-5">
+                <div className="flex items-center gap-2 mb-2">
+                  <GraduationCap className="w-3 h-3 text-blue-500" />
+                  <span className="text-[9px] font-orbitron font-black uppercase tracking-widest text-black/40 dark:text-white/20">
+                    Department
+                  </span>
+                </div>
+                <p className="text-[13px] font-black text-black dark:text-white leading-relaxed tracking-tight">
+                  {department}
+                </p>
               </div>
             </div>
           </div>

@@ -1486,6 +1486,22 @@ export const searchIndex = {
         "linkToFloor": null
       },
       {
+        "id": "ec-staff-room-extra",
+        "name": "STAFF ROOM",
+        "type": "staffroom",
+        "faculty": null,
+        "image": "https://placehold.co/600x400?text=Staff+Room",
+        "tags": [
+          "staff",
+          "office",
+          "ece"
+        ],
+        "department": "",
+        "directions": "Located on the left corridor of the 3rd Floor between the E&C Staff Rooms.",
+        "description": "E&C Staff Room Auxiliary",
+        "linkToFloor": null
+      },
+      {
         "id": "ec-staff-room-2",
         "name": "E&C STAFF ROOM",
         "type": "staffroom",
@@ -1607,220 +1623,172 @@ export const searchIndex = {
     ],
     "faculty": [
       {
-        "name": "DR. KARUNA PANDIT",
-        "roomId": "ec-staff-room-1",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.54-pm-1.jpeg",
-        "description": "",
-        "department": "ISE",
-        "designation": ""
-      },
-      {
-        "name": "DR. ASHWINI K.",
-        "roomId": "ec-staff-room-1",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.54-pm-2.jpeg",
-        "description": "",
-        "department": "ECE",
-        "designation": ""
-      },
-      {
-        "name": "DR. BALASUBRAMANI R.",
-        "roomId": "ec-staff-room-1",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.54-pm.jpeg",
-        "description": "",
-        "department": "ECE",
-        "designation": ""
-      },
-      {
-        "name": "DR. ANUSHA R. SHARATH",
-        "roomId": "ec-staff-room-1",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.55-pm-1.jpeg",
-        "description": "",
-        "department": "ECE",
-        "designation": ""
-      },
-      {
         "name": "DR. SHUBHA B.",
         "roomId": "ec-staff-room-1",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.55-pm.jpeg",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849709/m3wexkhi0xq1pzvrhmqf.png",
         "description": "",
         "department": "ECE",
-        "designation": ""
+        "designation": "Assistant Professor Gd.III"
       },
       {
-        "name": "DR. ANISHA P. RODRIGUES",
+        "name": "DR. ANUSHA R SHARATH",
         "roomId": "ec-staff-room-1",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.58-pm.jpeg",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849710/klnemtbexbrjv4cal9k3.png",
         "description": "",
         "department": "ECE",
-        "designation": ""
+        "designation": "Assistant Professor Gd.III"
       },
       {
-        "name": "DR. SHRIVIDYA G.",
+        "name": "DR. NIJU RAJAN",
         "roomId": "ec-staff-room-1",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.59-pm-1.jpeg",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849711/vz9weuws3vxhtt7wjoxy.png",
         "description": "",
         "department": "ECE",
-        "designation": ""
+        "designation": "Assistant Professor Gd.III"
       },
       {
-        "name": "DR. RAJU K.",
+        "name": "DR. SUKESH RAO M",
         "roomId": "ec-staff-room-1",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.59-pm.jpeg",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849712/er2ba2vkdukqgo4xvmmc.png",
         "description": "",
         "department": "ECE",
-        "designation": ""
+        "designation": "Associate Professor"
       },
       {
-        "name": "DR. PADMAVATHI K.",
+        "name": "DR. SUMATHI PAWAR",
         "roomId": "ec-staff-room-1",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.00-pm-1.jpeg",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849712/pyvgmrhk0kpdwfbhzb77.png",
         "description": "",
-        "department": "ECE",
-        "designation": ""
+        "department": "ISE",
+        "designation": "Professor"
       },
       {
-        "name": "DR. MAMATHA GIRISH",
-        "roomId": "ec-staff-room-1",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.00-pm-2.jpeg",
+        "name": "DR. CHAITHRA K",
+        "roomId": "ec-staff-room-extra",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849713/piihq5td1ch96xrppzpc.png",
         "description": "",
-        "department": "ECE",
-        "designation": ""
+        "department": "Mathematics",
+        "designation": "Assistant Professor Gd.III"
       },
       {
-        "name": "DR. SUDEEPA K. B.",
-        "roomId": "ec-staff-room-1",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.00-pm.jpeg",
+        "name": "MS. BHAVYA K",
+        "roomId": "ec-staff-room-extra",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849714/k4bffzcb7sbefhru550d.png",
         "description": "",
-        "department": "ECE",
-        "designation": ""
+        "department": "Mathematics",
+        "designation": "Assistant Professor Gd.I"
       },
       {
-        "name": "DR. CHAITRA K.",
-        "roomId": "ec-staff-room-2",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.01-pm-1.jpeg",
+        "name": "DR. SANTHOSH POOJARY",
+        "roomId": "ec-staff-room-extra",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849714/hybtlfv40girzhntengf.png",
         "description": "",
-        "department": "ECE",
-        "designation": ""
+        "department": "BioTechnology",
+        "designation": "Assistant Professor Gd.III"
       },
       {
-        "name": "MRS. SOWMYA P.",
-        "roomId": "ec-staff-room-2",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.01-pm-2.jpeg",
+        "name": "DR. ULLAL HARSHINI DEVI",
+        "roomId": "ec-staff-room-extra",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849715/voq8tqsmzuixrqj40qri.png",
         "description": "",
-        "department": "ECE",
-        "designation": ""
+        "department": "BioTechnology",
+        "designation": "Assistant Professor Gd.III"
+      },
+      {
+        "name": "DR. SNEHA NAYAK",
+        "roomId": "ec-staff-room-extra",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849716/hhyqsf1322bnsij3rtwz.png",
+        "description": "",
+        "department": "BioTechnology",
+        "designation": "Associate Professor"
       },
       {
         "name": "MS. SHANKARI N.",
         "roomId": "ec-staff-room-2",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.01-pm.jpeg",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849717/lrsyceuzu5valpzhfkbn.png",
         "description": "",
         "department": "ECE",
-        "designation": ""
+        "designation": "Assistant Professor Gd.I"
       },
       {
-        "name": "DR. CHAITRA S. N.",
+        "name": "MS. NAGAPRIYA KAMATH",
         "roomId": "ec-staff-room-2",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.02-pm-1.jpeg",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849717/orkjnkedhzxzbcw3qu63.png",
         "description": "",
         "department": "ECE",
-        "designation": ""
+        "designation": "Assistant Professor Gd.II"
       },
       {
-        "name": "MR. VASUDEVA PAI",
+        "name": "DR. ASHWINI K",
         "roomId": "ec-staff-room-2",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.02-pm-2.jpeg",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849718/qtbjwwq3qvmtoiyt40xw.png",
         "description": "",
         "department": "ECE",
-        "designation": ""
-      },
-      {
-        "name": "DR. DEVIDAS",
-        "roomId": "ec-staff-room-2",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.02-pm.jpeg",
-        "description": "",
-        "department": "ECE",
-        "designation": ""
-      },
-      {
-        "name": "DR. ULLAL HARSHINI DEVI",
-        "roomId": "ec-staff-room-2",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.03-pm-1.jpeg",
-        "description": "",
-        "department": "ECE",
-        "designation": ""
-      },
-      {
-        "name": "DR. SANTHOSH POOJARY",
-        "roomId": "ec-staff-room-2",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.03-pm-2.jpeg",
-        "description": "",
-        "department": "ECE",
-        "designation": ""
-      },
-      {
-        "name": "DR. KAVITHA S.",
-        "roomId": "ec-staff-room-2",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.03-pm.jpeg",
-        "description": "",
-        "department": "ECE",
-        "designation": ""
-      },
-      {
-        "name": "MS. BHAVYA K.",
-        "roomId": "ec-staff-room-2",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.04-pm-1.jpeg",
-        "description": "",
-        "department": "ECE",
-        "designation": ""
-      },
-      {
-        "name": "DR. SNEHA NAYAK",
-        "roomId": "ec-staff-room-2",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.04-pm.jpeg",
-        "description": "",
-        "department": "ECE",
-        "designation": ""
-      },
-      {
-        "name": "DR. VIJAYA MURARI T.",
-        "roomId": "ec-staff-room-2",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.05-pm-1.jpeg",
-        "description": "",
-        "department": "ECE",
-        "designation": ""
-      },
-      {
-        "name": "MS. RAMYA SHETTY",
-        "roomId": "ec-staff-room-2",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.05-pm-2.jpeg",
-        "description": "",
-        "department": "ECE",
-        "designation": ""
-      },
-      {
-        "name": "DR. RAJALAXMI HEGDE",
-        "roomId": "ec-staff-room-2",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.05-pm.jpeg",
-        "description": "",
-        "department": "ECE",
-        "designation": ""
+        "designation": "Assistant Professor Gd.III"
       },
       {
         "name": "DR. CHARISHMA",
         "roomId": "ec-staff-room-2",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.06-pm-1.jpeg",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849719/fhzalvcdpcli6jw7ag4p.png",
         "description": "",
         "department": "ECE",
-        "designation": ""
+        "designation": "Assistant Professor Gd.III"
       },
       {
-        "name": "DR. NIJU RAJAN",
+        "name": "MS. RAMYA SHETTY",
         "roomId": "ec-staff-room-2",
-        "image": "${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.06-pm.jpeg",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849719/csztnr4kpzzermdrn6tk.png",
         "description": "",
         "department": "ECE",
-        "designation": ""
+        "designation": "Assistant Professor Gd.III"
+      },
+      {
+        "name": "MS. HARSHITHA BHAT",
+        "roomId": "ec-staff-room-2",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849720/uz00pfjexozcv3uozccr.png",
+        "description": "",
+        "department": "ECE",
+        "designation": "Assistant Professor Gd.I"
+      },
+      {
+        "name": "MS. ANUPAMA B",
+        "roomId": "ec-staff-room-2",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849721/oenvt516yy0by57kmhuz.png",
+        "description": "",
+        "department": "ECE",
+        "designation": "Assistant Professor Gd.I"
+      },
+      {
+        "name": "MR. VASUDEVA PAI",
+        "roomId": "ec-staff-room-2",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849721/f2kz5vdaofwjxt5pyemb.png",
+        "description": "",
+        "department": "ISE",
+        "designation": "Asst. Professor Gd.III"
+      },
+      {
+        "name": "DR. DEVIDAS",
+        "roomId": "ec-staff-room-2",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849722/noqir44kighroj7znasz.png",
+        "description": "",
+        "department": "ISE",
+        "designation": "Assistant Professor Gd.III"
+      },
+      {
+        "name": "DR. CHAITRA S N",
+        "roomId": "ec-staff-room-2",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849723/f2m9rcsqlnaob0wlnhvw.png",
+        "description": "",
+        "department": "ISE",
+        "designation": "Assistant Professor Gd.III"
+      },
+      {
+        "name": "MS. TANZILA NARGIS",
+        "roomId": "ec-staff-room-2",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849724/zdawme4jowcc0rm1txwx.png",
+        "description": "",
+        "department": "ISE",
+        "designation": "Assistant Professor Gd.II"
       }
     ]
   },
@@ -2184,60 +2152,44 @@ export const searchIndex = {
     ],
     "faculty": [
       {
-        "name": "DR. VENKATRAMANA BHAT P",
+        "name": "DR. USHA DIVAKARLA",
         "roomId": "staff-room-top-center",
-        "image": "${IMG_BASE_URL}/apj-block-images/4th-floor/4th-floor-staff-room/whatsapp-image-2026-04-24-at-10.12.32-pm.jpeg",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787841206/iwowh3xjulmxfmlzjokk.png",
         "description": "",
-        "department": "CSE",
-        "designation": ""
+        "department": "ISE",
+        "designation": "Professor"
       },
       {
-        "name": "DR. JYOTHI SHETTY",
+        "name": "DR. MANJULA GURURAJ RAO",
         "roomId": "staff-room-top-center",
-        "image": "${IMG_BASE_URL}/apj-block-images/4th-floor/4th-floor-staff-room/whatsapp-image-2026-04-24-at-10.12.33-pm.jpeg",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787841207/mevvymwtqkmgdoyxn2yf.png",
         "description": "",
-        "department": "CSE",
-        "designation": ""
+        "department": "ISE",
+        "designation": "Professor"
       },
       {
-        "name": "DR. SHABARI SHEDTHI B",
+        "name": "DR. VAIKUNTH PAI",
         "roomId": "staff-room-top-center",
-        "image": "${IMG_BASE_URL}/apj-block-images/4th-floor/4th-floor-staff-room/whatsapp-image-2026-04-24-at-10.12.33-pm-1.jpeg",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787841208/rcol5xerb2auijhfiqe0.png",
         "description": "",
-        "department": "CSE",
-        "designation": ""
+        "department": "ISE",
+        "designation": "Associate Professor"
       },
       {
-        "name": "DR. PALLAVI K N",
+        "name": "DR. VANDANA B S",
         "roomId": "staff-room-top-center",
-        "image": "${IMG_BASE_URL}/apj-block-images/4th-floor/4th-floor-staff-room/whatsapp-image-2026-04-24-at-10.12.34-pm.jpeg",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787841209/u2yxtgqtjuoamhvuaxes.png",
         "description": "",
-        "department": "CSE",
-        "designation": ""
+        "department": "ISE",
+        "designation": "Associate Professor"
       },
       {
-        "name": "DR. PRADEEP KANCHAN",
+        "name": "DR. NAGANNA CHETTY",
         "roomId": "staff-room-top-center",
-        "image": "${IMG_BASE_URL}/apj-block-images/4th-floor/4th-floor-staff-room/whatsapp-image-2026-04-24-at-10.12.33-pm-2.jpeg",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787841210/obfugrqtjt3mehzwtznt.png",
         "description": "",
-        "department": "CSE",
-        "designation": ""
-      },
-      {
-        "name": "DR. DESAI KARANAM SREEKANTHA",
-        "roomId": "staff-room-top-center",
-        "image": "${IMG_BASE_URL}/apj-block-images/4th-floor/4th-floor-staff-room/whatsapp-image-2026-04-24-at-10.12.34-pm-1.jpeg",
-        "description": "",
-        "department": "CSE",
-        "designation": ""
-      },
-      {
-        "name": "DR. SANNIDHAN M S",
-        "roomId": "staff-room-top-center",
-        "image": "${IMG_BASE_URL}/apj-block-images/4th-floor/4th-floor-staff-room/whatsapp-image-2026-04-24-at-10.12.34-pm-2.jpeg",
-        "description": "",
-        "department": "CSE",
-        "designation": ""
+        "department": "ISE",
+        "designation": "Associate Professor"
       }
     ]
   },
@@ -2524,148 +2476,140 @@ export const searchIndex = {
     ],
     "faculty": [
       {
-        "name": "DR. RAVI B.",
-        "roomId": "",
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.15-pm-1.jpeg",
+        "name": "DR. CHINMAI SHETTY",
+        "roomId": "CFR01",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787842415/drfsqlww3ftlavuwigi5.png",
         "description": "",
         "department": "ISE",
-        "designation": ""
+        "designation": "Assistant Professor Gd.III"
+      },
+      {
+        "name": "DR. RASHMI NAVEEN",
+        "roomId": "CFR01",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787842416/j5hwmwjfjqpcvyolgojg.png",
+        "description": "",
+        "department": "ISE",
+        "designation": "Assistant Professor Gd.III"
+      },
+      {
+        "name": "MS. ANUSHA N",
+        "roomId": "CFR01",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787842630/rq90ssl9sqgina6r7pkb.png",
+        "description": "",
+        "department": "ISE",
+        "designation": "Assistant Professor Gd.I"
+      },
+      {
+        "name": "DR. DEEPA",
+        "roomId": "CFR01",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787842418/mq43qjn3hkm4vmsgvufb.png",
+        "description": "",
+        "department": "ISE",
+        "designation": "Assistant Professor Gd.III"
+      },
+      {
+        "name": "MS. PRATHEEKSHA HEGDE N",
+        "roomId": "CFR02",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787842629/l11elj6srrilqlmcdcrv.png",
+        "description": "",
+        "department": "ISE",
+        "designation": "Assistant Professor Gd.II"
+      },
+      {
+        "name": "MS. ALAKA ANANTH",
+        "roomId": "CFR02",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787841891/tbamrethjifcud8n8eyl.png",
+        "description": "",
+        "department": "ISE",
+        "designation": "Assistant Professor Gd.III"
+      },
+      {
+        "name": "MR. SRIKANTH BHAT K.",
+        "roomId": "CFR02",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787841891/fax7fowz3rjeg5m3lndk.png",
+        "description": "",
+        "department": "ISE",
+        "designation": "Assistant Professor Grade.II"
+      },
+      {
+        "name": "MS. PRATHYAKSHINI",
+        "roomId": "CFR02",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787842628/rk8vdmxryzp8m2nk67a9.png",
+        "description": "",
+        "department": "ISE",
+        "designation": "Assistant Professor Gd.II"
+      },
+      {
+        "name": "MR. KRISHNARAJ RAO",
+        "roomId": "CFR03",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787841888/xfsl1edcwvxpgvxjstzd.png",
+        "description": "",
+        "department": "CSE",
+        "designation": "Assistant Professor Gd.III"
+      },
+      {
+        "name": "DR. SANTHOSH S",
+        "roomId": "CFR03",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787842205/bnmc1r6koyg81wtqray3.png",
+        "description": "",
+        "department": "ISE",
+        "designation": "Assistant Professor Gd.III"
+      },
+      {
+        "name": "DR. RAMESH G.",
+        "roomId": "CFR03",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787842206/sbcllgmowfgzz07854jm.png",
+        "description": "",
+        "department": "ISE",
+        "designation": "Assistant Professor Gd.III"
+      },
+      {
+        "name": "DR. BOLA SUNIL KAMATH",
+        "roomId": "CFR03",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787842207/i2fh9cbju2dw7zm9qsxt.png",
+        "description": "",
+        "department": "ISE",
+        "designation": "Assistant Professor Gd.III"
       },
       {
         "name": "DR. JASON ELROY MARTIS",
         "roomId": "",
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.15-pm-2.jpeg",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787842631/h3k0zxpuzwwz534mgtis.png",
         "description": "",
         "department": "ISE",
-        "designation": ""
+        "designation": "Associate Professor & System Administrator"
       },
       {
-        "name": "DR. ASHWINI B.",
+        "name": "DR. PREETHI SALIAN K",
         "roomId": "",
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.15-pm.jpeg",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787841889/bmocrmdodyepk6rkho19.png",
         "description": "",
         "department": "ISE",
-        "designation": ""
+        "designation": "Associate Professor"
       },
       {
-        "name": "DR. ANUSHA N.",
+        "name": "DR. RAVI B.",
         "roomId": "",
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.16-pm.jpeg",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787842632/xqm2vaudnmqnqr9mxt6j.png",
         "description": "",
         "department": "ISE",
-        "designation": ""
+        "designation": "Associate Professor"
       },
       {
-        "name": "DR. CHINMAI SHETTY",
+        "name": "DR. VASUDEVA",
         "roomId": "",
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.18-pm.jpeg",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787841890/mnoz4sy2gp0o90p8a7sm.png",
         "description": "",
         "department": "ISE",
-        "designation": ""
+        "designation": "Professor"
       },
       {
-        "name": "DR. DEEPA",
-        "roomId": "",
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.19-pm-1.jpeg",
+        "name": "DR. ASHWINI B",
+        "roomId": "hod-cabin",
+        "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787842415/mh3jrqeb42snkfbdqc96.png",
         "description": "",
         "department": "ISE",
-        "designation": ""
-      },
-      {
-        "name": "DR. RAGHUNANDAN K R",
-        "roomId": "",
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.19-pm-2.jpeg",
-        "description": "",
-        "department": "CSE",
-        "designation": ""
-      },
-      {
-        "name": "DR. RASHMI NAVEEN",
-        "roomId": "",
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.19-pm.jpeg",
-        "description": "",
-        "department": "ISE",
-        "designation": ""
-      },
-      {
-        "name": "MR. PAWAN HEGDE",
-        "roomId": "",
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.20-pm-1.jpeg",
-        "description": "",
-        "department": "CSE",
-        "designation": ""
-      },
-      {
-        "name": "MS. SAVITHA SHETTY",
-        "roomId": "",
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.20-pm-2.jpeg",
-        "description": "",
-        "department": "CSE",
-        "designation": ""
-      },
-      {
-        "name": "DR. SARIKA HEGDE",
-        "roomId": "",
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.20-pm.jpeg",
-        "description": "",
-        "department": "CSE",
-        "designation": ""
-      },
-      {
-        "name": "MS. ANUPAMA HC",
-        "roomId": "",
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.21-pm-1.jpeg",
-        "description": "",
-        "department": "CSE",
-        "designation": ""
-      },
-      {
-        "name": "MS. PRATHEEKSHA HEGDE N",
-        "roomId": "",
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.21-pm-2.jpeg",
-        "description": "",
-        "department": "ISE",
-        "designation": ""
-      },
-      {
-        "name": "DR. ASMITA POOJARY",
-        "roomId": "",
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.21-pm.jpeg",
-        "description": "",
-        "department": "CSE",
-        "designation": ""
-      },
-      {
-        "name": "MS. VAISHALI BANGERA",
-        "roomId": "",
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.22-pm-1.jpeg",
-        "description": "",
-        "department": "CSE",
-        "designation": ""
-      },
-      {
-        "name": "DR. SANDEEP KUMAR HEGDE",
-        "roomId": "",
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.22-pm-2.jpeg",
-        "description": "",
-        "department": "CSE",
-        "designation": ""
-      },
-      {
-        "name": "MS. PRATHYAKSHINI",
-        "roomId": "",
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.22-pm.jpeg",
-        "description": "",
-        "department": "ISE",
-        "designation": ""
-      },
-      {
-        "name": "MS. SIMRAN BANU",
-        "roomId": "",
-        "image": "${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.23-pm.jpeg",
-        "description": "",
-        "department": "CSE",
-        "designation": ""
+        "designation": "Professor & Head"
       }
     ]
   },

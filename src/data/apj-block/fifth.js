@@ -327,113 +327,124 @@ export const fifth = {
     }
   ],
   faculty: [
-    {
-      name: 'DR. RAVI B.',
-      department: 'ISE',
-      roomId: '',
-      image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.15-pm-1.jpeg'
-    },
-    {
-      name: 'DR. JASON ELROY MARTIS',
-      department: 'ISE',
-      roomId: '',
-      image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.15-pm-2.jpeg'
-    },
-    {
-      name: 'DR. ASHWINI B.',
-      department: 'ISE',
-      roomId: '',
-      image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.15-pm.jpeg'
-    },
-    {
-      name: 'DR. ANUSHA N.',
-      department: 'ISE',
-      roomId: '',
-      image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.16-pm.jpeg'
-    },
-    {
-      name: 'DR. CHINMAI SHETTY',
-      department: 'ISE',
-      roomId: '',
-      image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.18-pm.jpeg'
-    },
-    {
-      name: 'DR. DEEPA',
-      department: 'ISE',
-      roomId: '',
-      image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.19-pm-1.jpeg'
-    },
-    {
-      name: 'DR. RAGHUNANDAN K R',
-      department: 'CSE',
-      roomId: '',
-      image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.19-pm-2.jpeg'
-    },
-    {
-      name: 'DR. RASHMI NAVEEN',
-      department: 'ISE',
-      roomId: '',
-      image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.19-pm.jpeg'
-    },
-    {
-      name: 'MR. PAWAN HEGDE',
-      department: 'CSE',
-      roomId: '',
-      image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.20-pm-1.jpeg'
-    },
-    {
-      name: 'MS. SAVITHA SHETTY',
-      department: 'CSE',
-      roomId: '',
-      image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.20-pm-2.jpeg'
-    },
-    {
-      name: 'DR. SARIKA HEGDE',
-      department: 'CSE',
-      roomId: '',
-      image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.20-pm.jpeg'
-    },
-    {
-      name: 'MS. ANUPAMA HC',
-      department: 'CSE',
-      roomId: '',
-      image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.21-pm-1.jpeg'
-    },
-    {
-      name: 'MS. PRATHEEKSHA HEGDE N',
-      department: 'ISE',
-      roomId: '',
-      image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.21-pm-2.jpeg'
-    },
-    {
-      name: 'DR. ASMITA POOJARY',
-      department: 'CSE',
-      roomId: '',
-      image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.21-pm.jpeg'
-    },
-    {
-      name: 'MS. VAISHALI BANGERA',
-      department: 'CSE',
-      roomId: '',
-      image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.22-pm-1.jpeg'
-    },
-    {
-      name: 'DR. SANDEEP KUMAR HEGDE',
-      department: 'CSE',
-      roomId: '',
-      image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.22-pm-2.jpeg'
-    },
-    {
-      name: 'MS. PRATHYAKSHINI',
-      department: 'ISE',
-      roomId: '',
-      image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.22-pm.jpeg'
-    },
-    {
-      name: 'MS. SIMRAN BANU',
-      department: 'CSE',
-      roomId: '',
-      image: '${IMG_BASE_URL}/apj-block-images/5th-floor/5th-floor-staff-room/whatsapp-image-2026-04-23-at-10.27.23-pm.jpeg'
-    }
-  ]
+  {
+    "name": "DR. CHINMAI SHETTY",
+    "department": "ISE",
+    "designation": "Assistant Professor Gd.III",
+    "roomId": "CFR01",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787842415/drfsqlww3ftlavuwigi5.png"
+  },
+  {
+    "name": "DR. RASHMI NAVEEN",
+    "department": "ISE",
+    "designation": "Assistant Professor Gd.III",
+    "roomId": "CFR01",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787842416/j5hwmwjfjqpcvyolgojg.png"
+  },
+  {
+    "name": "MS. ANUSHA N",
+    "department": "ISE",
+    "designation": "Assistant Professor Gd.I",
+    "roomId": "CFR01",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787842630/rq90ssl9sqgina6r7pkb.png"
+  },
+  {
+    "name": "DR. DEEPA",
+    "department": "ISE",
+    "designation": "Assistant Professor Gd.III",
+    "roomId": "CFR01",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787842418/mq43qjn3hkm4vmsgvufb.png"
+  },
+  {
+    "name": "MS. PRATHEEKSHA HEGDE N",
+    "department": "ISE",
+    "designation": "Assistant Professor Gd.II",
+    "roomId": "CFR02",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787842629/l11elj6srrilqlmcdcrv.png"
+  },
+  {
+    "name": "MS. ALAKA ANANTH",
+    "department": "ISE",
+    "designation": "Assistant Professor Gd.III",
+    "roomId": "CFR02",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787841891/tbamrethjifcud8n8eyl.png"
+  },
+  {
+    "name": "MR. SRIKANTH BHAT K.",
+    "department": "ISE",
+    "designation": "Assistant Professor Grade.II",
+    "roomId": "CFR02",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787841891/fax7fowz3rjeg5m3lndk.png"
+  },
+  {
+    "name": "MS. PRATHYAKSHINI",
+    "department": "ISE",
+    "designation": "Assistant Professor Gd.II",
+    "roomId": "CFR02",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787842628/rk8vdmxryzp8m2nk67a9.png"
+  },
+  {
+    "name": "MR. KRISHNARAJ RAO",
+    "department": "CSE",
+    "designation": "Assistant Professor Gd.III",
+    "roomId": "CFR03",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787841888/xfsl1edcwvxpgvxjstzd.png"
+  },
+  {
+    "name": "DR. SANTHOSH S",
+    "department": "ISE",
+    "designation": "Assistant Professor Gd.III",
+    "roomId": "CFR03",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787842205/bnmc1r6koyg81wtqray3.png"
+  },
+  {
+    "name": "DR. RAMESH G.",
+    "department": "ISE",
+    "designation": "Assistant Professor Gd.III",
+    "roomId": "CFR03",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787842206/sbcllgmowfgzz07854jm.png"
+  },
+  {
+    "name": "DR. BOLA SUNIL KAMATH",
+    "department": "ISE",
+    "designation": "Assistant Professor Gd.III",
+    "roomId": "CFR03",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787842207/i2fh9cbju2dw7zm9qsxt.png"
+  },
+  {
+    "name": "DR. JASON ELROY MARTIS",
+    "department": "ISE",
+    "designation": "Associate Professor & System Administrator",
+    "roomId": "",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787842631/h3k0zxpuzwwz534mgtis.png"
+  },
+  {
+    "name": "DR. PREETHI SALIAN K",
+    "department": "ISE",
+    "designation": "Associate Professor",
+    "roomId": "",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787841889/bmocrmdodyepk6rkho19.png"
+  },
+  {
+    "name": "DR. RAVI B.",
+    "department": "ISE",
+    "designation": "Associate Professor",
+    "roomId": "",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787842632/xqm2vaudnmqnqr9mxt6j.png"
+  },
+  {
+    "name": "DR. VASUDEVA",
+    "department": "ISE",
+    "designation": "Professor",
+    "roomId": "",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787841890/mnoz4sy2gp0o90p8a7sm.png"
+  },
+  {
+    "name": "DR. ASHWINI B",
+    "department": "ISE",
+    "designation": "Professor & Head",
+    "roomId": "hod-cabin",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787842415/mh3jrqeb42snkfbdqc96.png"
+  }
+]
 }

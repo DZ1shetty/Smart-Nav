@@ -12,7 +12,7 @@ const TYPE_COLORS = {
 }
 
 // --- SVG COORD LABEL COMPONENT (Prevents foreignObject clipping) ---
-const InfoLabelSVG = ({ rx, ry, w, floorId, text, isHighlighted }) => {
+const InfoLabelSVG = ({ rx, ry, w, floorId, text, isHighlighted, hideArrow = false }) => {
   const isLargeViewBox =
     floorId?.startsWith('cv_raman_') ||
     floorId?.startsWith('ramanujan_') ||
@@ -45,29 +45,31 @@ const InfoLabelSVG = ({ rx, ry, w, floorId, text, isHighlighted }) => {
   const textX = rx + w / 2
   const arrowTipY = ry - tipOffset
   const arrowBaseY = arrowTipY - arrowSize
-  const textY = arrowBaseY - (fontSize * 0.5)
+  const textY = hideArrow ? (ry - 8) : (arrowBaseY - (fontSize * 0.5))
 
-  // Vibe matching cyan for the arrow
+  // Vibe matching cyan for the text/arrow
   const color = '#00eaff'
 
   return (
     <g style={{ pointerEvents: 'none' }}>
       {/* Sleek, solid triangle arrow pointing down */}
-      <path
-        d={`M ${textX} ${arrowTipY} L ${textX - arrowSize * 0.6} ${arrowBaseY} L ${textX + arrowSize * 0.6} ${arrowBaseY} Z`}
-        fill={color}
-        style={{ filter: `drop-shadow(0px 2px 8px ${color})` }}
-      >
-        {isHighlighted && (
-          <animateTransform
-            attributeName="transform"
-            type="translate"
-            values={`0,0; 0,-${arrowSize * 0.4}; 0,0`}
-            dur="1s"
-            repeatCount="indefinite"
-          />
-        )}
-      </path>
+      {!hideArrow && (
+        <path
+          d={`M ${textX} ${arrowTipY} L ${textX - arrowSize * 0.6} ${arrowBaseY} L ${textX + arrowSize * 0.6} ${arrowBaseY} Z`}
+          fill={color}
+          style={{ filter: `drop-shadow(0px 2px 8px ${color})` }}
+        >
+          {isHighlighted && (
+            <animateTransform
+              attributeName="transform"
+              type="translate"
+              values={`0,0; 0,-${arrowSize * 0.4}; 0,0`}
+              dur="1s"
+              repeatCount="indefinite"
+            />
+          )}
+        </path>
+      )}
       {text !== undefined && text !== '' && (
         <text
           x={textX}
@@ -376,7 +378,7 @@ const DraggableRoom = ({ room, onMove, onResize, floorId, commonFontSize }) => {
 
       <RoomLabel room={room} w={w} h={h} color={color} isConnection={isConnection} floorId={floorId} commonFontSize={commonFontSize} />
       {!isCorridor && (
-        <InfoLabelSVG rx={rx} ry={ry} w={w} floorId={floorId} />
+        <InfoLabelSVG rx={rx} ry={ry} w={w} floorId={floorId} hideArrow={true} />
       )}
 
       {/* Resize Handle */}

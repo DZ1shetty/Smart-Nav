@@ -1079,8 +1079,10 @@ export default function FloorPlan() {
   const allFaculty = useMemo(() => {
     try {
       if (!floorData) return []
+      const staticFaculty = staticFloorData?.faculty || []
       const rooms = floorData.rooms || []
       const facultyList = floorData.faculty || []
+      const buildingName = floorData.buildingName || staticFloorData?.buildingName || ''
 
       const roomFaculty = rooms
         .filter(
@@ -1098,6 +1100,8 @@ export default function FloorPlan() {
           image: room.image,
           roomName: room.name,
           department: room.department,
+          designation: room.designation || '',
+          buildingName,
           originalRoom: room,
           floorKey: floorId,
           description: room.description || '',
@@ -1105,12 +1109,15 @@ export default function FloorPlan() {
 
       const listFaculty = facultyList.map((f, idx) => {
         const room = rooms.find((r) => r.id === f.roomId)
+        const staticMatch = staticFaculty.find((s) => isMatchingName(s.name, f.name))
         return {
           id: f.id || `list-${idx}-${f.name}`,
           name: f.name,
           image: f.image,
           roomName: room?.name || 'Staff Area',
-          department: f.department || room?.department,
+          department: f.department || staticMatch?.department || room?.department,
+          designation: f.designation || staticMatch?.designation || room?.designation || '',
+          buildingName,
           originalRoom: room,
           floorKey: floorId,
           description: f.description || '',
@@ -1122,7 +1129,7 @@ export default function FloorPlan() {
       console.error("Error generating allFaculty list in FloorPlan:", e)
       return []
     }
-  }, [floorData, floorId, faculty])
+  }, [floorData, floorId, faculty, staticFloorData])
 
   const findFacultyGlobally = (name) => {
     for (const [fKey, fData] of Object.entries(searchIndex)) {
@@ -1134,6 +1141,8 @@ export default function FloorPlan() {
           image: roomMatch.image,
           roomName: roomMatch.name,
           department: roomMatch.department,
+          designation: roomMatch.designation || '',
+          buildingName: fData.buildingName || '',
           originalRoom: roomMatch,
           floorKey: fKey,
           description: roomMatch.description || '',
@@ -1147,6 +1156,8 @@ export default function FloorPlan() {
           image: listMatch.image,
           roomName: room?.name || 'Staff Area',
           department: listMatch.department || room?.department,
+          designation: listMatch.designation || room?.designation || '',
+          buildingName: fData.buildingName || '',
           originalRoom: room,
           floorKey: fKey,
           description: listMatch.description || '',
@@ -1815,7 +1826,7 @@ export default function FloorPlan() {
                       .includes('PURCHASE')
 
                     if (room.type === 'staffroom' && !isAdminOffice) {
-                      setFacultyModalSearchTerm(room.name || '')
+                      setFacultyModalSearchTerm('')
                       setIsFacultyModalOpen(true)
                     } else {
                       navigate(`?room=${room.id}`)
@@ -1847,7 +1858,7 @@ export default function FloorPlan() {
                       .includes('PURCHASE')
 
                     if (room.type === 'staffroom' && !isAdminOffice) {
-                      setFacultyModalSearchTerm(room.name || '')
+                      setFacultyModalSearchTerm('')
                       setIsFacultyModalOpen(true)
                     } else {
                       navigate(`?room=${room.id}`)

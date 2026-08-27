@@ -35,7 +35,7 @@ export const third = {
       height: 90,
       directions: 'i. Stairs-1: Turn left and walk to the top of the corridor; LH-311 is on your left, LH-312 is on the opposite side.\nii. Stairs-2: Walk straight north all the way to the top; LH-311 is on your left at the far end.\niii. LIFT: Turn left and walk north to the top of the corridor; LH-311 is on your left.',
       description: 'Lecture Hall 311',
-      image: `${IMG_BASE_URL}/apj-block-images/3th-floor/lh-311.jpeg`,
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/lh-311.jpeg',
       tags: ["class","lh311"],
       clickable: true
     },
@@ -52,7 +52,7 @@ export const third = {
       height: 76,
       directions: 'Top center area.',
       description: 'ECE Staff Room 1',
-      image: `${IMG_BASE_URL}/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.29-pm-1.jpeg`,
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.29-pm-1.jpeg',
       tags: ["staff","office","ece"],
       clickable: true
     },
@@ -69,7 +69,7 @@ export const third = {
       height: 90,
       directions: 'i. Stairs-1: Turn left and walk to the top of the corridor; LH-312 is on your right, LH-311 is on the opposite side.\nii. Stairs-2: Walk straight north all the way to the top; LH-312 is on your right at the far end.\niii. LIFT: Turn left and walk north to the top; LH-312 is on your right.',
       description: 'Lecture Hall 312',
-      image: `${IMG_BASE_URL}/apj-block-images/3th-floor/lh-312.jpeg`,
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/lh-312.jpeg',
       tags: ["class","lh312"],
       clickable: true
     },
@@ -86,7 +86,7 @@ export const third = {
       height: 122,
       directions: 'Middle section center.',
       description: 'Staff workspace',
-      image: `${IMG_BASE_URL}/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.29-pm-2.jpeg`,
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.29-pm-2.jpeg',
       tags: ["office"],
       clickable: true
     },
@@ -103,7 +103,7 @@ export const third = {
       height: 122,
       directions: 'Middle section center.',
       description: 'Staff workspace',
-      image: `${IMG_BASE_URL}/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.29-pm-1.jpeg`,
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.29-pm-1.jpeg',
       tags: ["office"],
       clickable: true
     },
@@ -120,7 +120,7 @@ export const third = {
       height: 90,
       directions: 'i. Stairs-1: Turn left and walk north a short distance; LH-309 is on your left, just below LH-311.\nii. Stairs-2: Walk straight north; LH-309 is on your left in the upper-middle section of the corridor.\niii. LIFT: Turn left and walk north; LH-309 is on your left, a few steps up from the Lift.',
       description: 'Lecture Hall 309',
-      image: `${IMG_BASE_URL}/apj-block-images/3th-floor/lh-309.jpeg`,
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/lh-309.jpeg',
       tags: ["class","lh309"],
       clickable: true
     },
@@ -137,7 +137,7 @@ export const third = {
       height: 90,
       directions: 'i. Stairs-1: Turn right; LH-310 is immediately on your right just outside the Stairs-1 exit.\nii. Stairs-2: Walk north and then turn right at the mid-floor corridor; LH-310 is on your right.\niii. LIFT: Turn right; LH-310 is directly to your right, adjacent to the Lift on the east side.',
       description: 'Lecture Hall 310',
-      image: `${IMG_BASE_URL}/apj-block-images/3th-floor/lh-310.jpeg`,
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/lh-310.jpeg',
       tags: ["class","lh310"],
       clickable: true
     },
@@ -188,7 +188,7 @@ export const third = {
       height: 100,
       directions: 'i. Stairs-1: Turn left; the Ladies Room is on your left, directly below the Washroom near the Stairs-1 exit.\nii. Stairs-2: Walk north; the Ladies Room is on your left just above the mid-floor level, below the Washroom.\niii. LIFT: Turn left; the Ladies Room is on your left, directly beside the Lift on the west side.',
       description: 'Ladies common room',
-      image: `${IMG_BASE_URL}/apj-block-images/3th-floor/ladies_room.jpeg`,
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/ladies_room.jpeg',
       tags: ["common"],
       clickable: true
     },
@@ -222,7 +222,7 @@ export const third = {
       height: 90,
       directions: 'i. Stairs-1: Turn right and walk south a short distance; LH-308 is on your right, below LH-310.\nii. Stairs-2: Walk north and turn right; LH-308 is on your right in the mid-east section of the floor.\niii. LIFT: Turn right and walk south slightly; LH-308 is on your right just below the Lift level.',
       description: 'Lecture Hall 308',
-      image: `${IMG_BASE_URL}/apj-block-images/3th-floor/lh-308.jpeg`,
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/lh-308.jpeg',
       tags: ["class","lh308"],
       clickable: true
     },
@@ -231,15 +231,32 @@ export const third = {
       name: 'E&C STAFF ROOM',
       label: 'E&C STAFF ROOM',
       type: 'staffroom',
-      x: 20,
-      y: 941,
+      x: 22,
+      y: 1031,
       w: 220,
-      h: 110,
+      h: 90,
       width: 220,
-      height: 110,
+      height: 90,
       directions: 'Top center area.',
       description: 'ECE Staff Room',
-      image: `${IMG_BASE_URL}/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.28-pm.jpeg`,
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.28-pm.jpeg',
+      tags: ["staff","office","ece"],
+      clickable: true
+    },
+    {
+      id: 'ec-staff-room-extra',
+      name: 'STAFF ROOM',
+      label: 'STAFF ROOM',
+      type: 'staffroom',
+      x: 20,
+      y: 930,
+      w: 220,
+      h: 80,
+      width: 220,
+      height: 80,
+      directions: 'Located on the left corridor of the 3rd Floor between the E&C Staff Rooms.',
+      description: 'E&C Staff Room Auxiliary',
+      image: 'https://placehold.co/600x400?text=Staff+Room',
       tags: ["staff","office","ece"],
       clickable: true
     },
@@ -249,14 +266,14 @@ export const third = {
       label: 'E&C STAFF ROOM',
       type: 'staffroom',
       x: 25,
-      y: 1128,
+      y: 1139,
       w: 220,
-      h: 110,
+      h: 95,
       width: 220,
-      height: 110,
+      height: 95,
       directions: 'Lower left area.',
       description: 'ECE Staff Room',
-      image: `${IMG_BASE_URL}/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.32-pm-1.jpeg`,
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.32-pm-1.jpeg',
       tags: ["staff","office","ece"],
       clickable: true
     },
@@ -273,7 +290,7 @@ export const third = {
       height: 101,
       directions: 'Lower center area.',
       description: 'Department staff room',
-      image: `${IMG_BASE_URL}/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.29-pm-1.jpeg`,
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.29-pm-1.jpeg',
       tags: ["office"],
       clickable: true
     },
@@ -290,7 +307,7 @@ export const third = {
       height: 99,
       directions: 'Lower center area.',
       description: 'Department staff room',
-      image: `${IMG_BASE_URL}/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.29-pm-2.jpeg`,
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.29-pm-2.jpeg',
       tags: ["office"],
       clickable: true
     },
@@ -307,7 +324,7 @@ export const third = {
       height: 90,
       directions: 'i. Stairs-1: Turn right and walk south past LH-308; LH-306 is further down on your right in the lower-east section.\nii. Stairs-2: Turn left and walk north slightly; LH-306 is on your right on the east side, near the south end.\niii. LIFT: Turn right and walk south past LH-308; LH-306 is on your right further south.',
       description: 'Lecture Hall 306',
-      image: `${IMG_BASE_URL}/apj-block-images/3th-floor/lh-306.jpeg`,
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/lh-306.jpeg',
       tags: ["class","lh306"],
       clickable: true
     },
@@ -324,7 +341,7 @@ export const third = {
       height: 85,
       directions: 'i. Stairs-1: Turn left and walk south past the Lift and Ladies Room; the lab is on your left in the lower section, above Stairs-2.\nii. Stairs-2: Turn right; the lab is immediately on your left, just above Stairs-2.\niii. LIFT: Turn left and walk south; the lab is on your left near the bottom of the floor, just above Stairs-2.',
       description: 'Texas Instruments Innovation Lab',
-      image: `${IMG_BASE_URL}/apj-block-images/3th-floor/texas.jpeg`,
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/texas.jpeg',
       tags: ["lab","ece","innovation"],
       clickable: true
     },
@@ -341,7 +358,7 @@ export const third = {
       height: 80,
       directions: 'Bottom center area.',
       description: 'Auxiliary staff room',
-      image: `${IMG_BASE_URL}/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.32-pm-1.jpeg`,
+      image: 'https://raw.githubusercontent.com/DZ1shetty/Smart-Nav/main/public/apj-block-images/3th-floor/whatsapp-image-2026-04-23-at-3.43.32-pm-1.jpeg',
       tags: ["office"],
       clickable: true
     },
@@ -382,167 +399,152 @@ export const third = {
     }
   ],
   faculty: [
-    {
-      name: 'DR. KARUNA PANDIT',
-      department: 'ISE',
-      roomId: 'ec-staff-room-1',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.54-pm-1.jpeg'
-    },
-    {
-      name: 'DR. ASHWINI K.',
-      department: 'ECE',
-      roomId: 'ec-staff-room-1',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.54-pm-2.jpeg'
-    },
-    {
-      name: 'DR. BALASUBRAMANI R.',
-      department: 'ECE',
-      roomId: 'ec-staff-room-1',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.54-pm.jpeg'
-    },
-    {
-      name: 'DR. ANUSHA R. SHARATH',
-      department: 'ECE',
-      roomId: 'ec-staff-room-1',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.55-pm-1.jpeg'
-    },
-    {
-      name: 'DR. SHUBHA B.',
-      department: 'ECE',
-      roomId: 'ec-staff-room-1',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.55-pm.jpeg'
-    },
-    {
-      name: 'DR. ANISHA P. RODRIGUES',
-      department: 'ECE',
-      roomId: 'ec-staff-room-1',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.58-pm.jpeg'
-    },
-    {
-      name: 'DR. SHRIVIDYA G.',
-      department: 'ECE',
-      roomId: 'ec-staff-room-1',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.59-pm-1.jpeg'
-    },
-    {
-      name: 'DR. RAJU K.',
-      department: 'ECE',
-      roomId: 'ec-staff-room-1',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.14.59-pm.jpeg'
-    },
-    {
-      name: 'DR. PADMAVATHI K.',
-      department: 'ECE',
-      roomId: 'ec-staff-room-1',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.00-pm-1.jpeg'
-    },
-    {
-      name: 'DR. MAMATHA GIRISH',
-      department: 'ECE',
-      roomId: 'ec-staff-room-1',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.00-pm-2.jpeg'
-    },
-    {
-      name: 'DR. SUDEEPA K. B.',
-      department: 'ECE',
-      roomId: 'ec-staff-room-1',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.00-pm.jpeg'
-    },
-    {
-      name: 'DR. CHAITRA K.',
-      department: 'ECE',
-      roomId: 'ec-staff-room-2',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.01-pm-1.jpeg'
-    },
-    {
-      name: 'MRS. SOWMYA P.',
-      department: 'ECE',
-      roomId: 'ec-staff-room-2',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.01-pm-2.jpeg'
-    },
-    {
-      name: 'MS. SHANKARI N.',
-      department: 'ECE',
-      roomId: 'ec-staff-room-2',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.01-pm.jpeg'
-    },
-    {
-      name: 'DR. CHAITRA S. N.',
-      department: 'ECE',
-      roomId: 'ec-staff-room-2',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.02-pm-1.jpeg'
-    },
-    {
-      name: 'MR. VASUDEVA PAI',
-      department: 'ECE',
-      roomId: 'ec-staff-room-2',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.02-pm-2.jpeg'
-    },
-    {
-      name: 'DR. DEVIDAS',
-      department: 'ECE',
-      roomId: 'ec-staff-room-2',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.02-pm.jpeg'
-    },
-    {
-      name: 'DR. ULLAL HARSHINI DEVI',
-      department: 'ECE',
-      roomId: 'ec-staff-room-2',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.03-pm-1.jpeg'
-    },
-    {
-      name: 'DR. SANTHOSH POOJARY',
-      department: 'ECE',
-      roomId: 'ec-staff-room-2',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.03-pm-2.jpeg'
-    },
-    {
-      name: 'DR. KAVITHA S.',
-      department: 'ECE',
-      roomId: 'ec-staff-room-2',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.03-pm.jpeg'
-    },
-    {
-      name: 'MS. BHAVYA K.',
-      department: 'ECE',
-      roomId: 'ec-staff-room-2',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.04-pm-1.jpeg'
-    },
-    {
-      name: 'DR. SNEHA NAYAK',
-      department: 'ECE',
-      roomId: 'ec-staff-room-2',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.04-pm.jpeg'
-    },
-    {
-      name: 'DR. VIJAYA MURARI T.',
-      department: 'ECE',
-      roomId: 'ec-staff-room-2',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.05-pm-1.jpeg'
-    },
-    {
-      name: 'MS. RAMYA SHETTY',
-      department: 'ECE',
-      roomId: 'ec-staff-room-2',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.05-pm-2.jpeg'
-    },
-    {
-      name: 'DR. RAJALAXMI HEGDE',
-      department: 'ECE',
-      roomId: 'ec-staff-room-2',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.05-pm.jpeg'
-    },
-    {
-      name: 'DR. CHARISHMA',
-      department: 'ECE',
-      roomId: 'ec-staff-room-2',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.06-pm-1.jpeg'
-    },
-    {
-      name: 'DR. NIJU RAJAN',
-      department: 'ECE',
-      roomId: 'ec-staff-room-2',
-      image: '${IMG_BASE_URL}/apj-block-images/3th-floor/3rd-floor-staff-room/whatsapp-image-2026-04-23-at-10.15.06-pm.jpeg'
-    }
-  ]
+  {
+    "name": "DR. SHUBHA B.",
+    "department": "ECE",
+    "designation": "Assistant Professor Gd.III",
+    "roomId": "ec-staff-room-1",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849709/m3wexkhi0xq1pzvrhmqf.png"
+  },
+  {
+    "name": "DR. ANUSHA R SHARATH",
+    "department": "ECE",
+    "designation": "Assistant Professor Gd.III",
+    "roomId": "ec-staff-room-1",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849710/klnemtbexbrjv4cal9k3.png"
+  },
+  {
+    "name": "DR. NIJU RAJAN",
+    "department": "ECE",
+    "designation": "Assistant Professor Gd.III",
+    "roomId": "ec-staff-room-1",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849711/vz9weuws3vxhtt7wjoxy.png"
+  },
+  {
+    "name": "DR. SUKESH RAO M",
+    "department": "ECE",
+    "designation": "Associate Professor",
+    "roomId": "ec-staff-room-1",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849712/er2ba2vkdukqgo4xvmmc.png"
+  },
+  {
+    "name": "DR. SUMATHI PAWAR",
+    "department": "ISE",
+    "designation": "Professor",
+    "roomId": "ec-staff-room-1",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849712/pyvgmrhk0kpdwfbhzb77.png"
+  },
+  {
+    "name": "DR. CHAITHRA K",
+    "department": "Mathematics",
+    "designation": "Assistant Professor Gd.III",
+    "roomId": "ec-staff-room-extra",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849713/piihq5td1ch96xrppzpc.png"
+  },
+  {
+    "name": "MS. BHAVYA K",
+    "department": "Mathematics",
+    "designation": "Assistant Professor Gd.I",
+    "roomId": "ec-staff-room-extra",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849714/k4bffzcb7sbefhru550d.png"
+  },
+  {
+    "name": "DR. SANTHOSH POOJARY",
+    "department": "BioTechnology",
+    "designation": "Assistant Professor Gd.III",
+    "roomId": "ec-staff-room-extra",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849714/hybtlfv40girzhntengf.png"
+  },
+  {
+    "name": "DR. ULLAL HARSHINI DEVI",
+    "department": "BioTechnology",
+    "designation": "Assistant Professor Gd.III",
+    "roomId": "ec-staff-room-extra",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849715/voq8tqsmzuixrqj40qri.png"
+  },
+  {
+    "name": "DR. SNEHA NAYAK",
+    "department": "BioTechnology",
+    "designation": "Associate Professor",
+    "roomId": "ec-staff-room-extra",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849716/hhyqsf1322bnsij3rtwz.png"
+  },
+  {
+    "name": "MS. SHANKARI N.",
+    "department": "ECE",
+    "designation": "Assistant Professor Gd.I",
+    "roomId": "ec-staff-room-2",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849717/lrsyceuzu5valpzhfkbn.png"
+  },
+  {
+    "name": "MS. NAGAPRIYA KAMATH",
+    "department": "ECE",
+    "designation": "Assistant Professor Gd.II",
+    "roomId": "ec-staff-room-2",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849717/orkjnkedhzxzbcw3qu63.png"
+  },
+  {
+    "name": "DR. ASHWINI K",
+    "department": "ECE",
+    "designation": "Assistant Professor Gd.III",
+    "roomId": "ec-staff-room-2",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849718/qtbjwwq3qvmtoiyt40xw.png"
+  },
+  {
+    "name": "DR. CHARISHMA",
+    "department": "ECE",
+    "designation": "Assistant Professor Gd.III",
+    "roomId": "ec-staff-room-2",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849719/fhzalvcdpcli6jw7ag4p.png"
+  },
+  {
+    "name": "MS. RAMYA SHETTY",
+    "department": "ECE",
+    "designation": "Assistant Professor Gd.III",
+    "roomId": "ec-staff-room-2",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849719/csztnr4kpzzermdrn6tk.png"
+  },
+  {
+    "name": "MS. HARSHITHA BHAT",
+    "department": "ECE",
+    "designation": "Assistant Professor Gd.I",
+    "roomId": "ec-staff-room-2",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849720/uz00pfjexozcv3uozccr.png"
+  },
+  {
+    "name": "MS. ANUPAMA B",
+    "department": "ECE",
+    "designation": "Assistant Professor Gd.I",
+    "roomId": "ec-staff-room-2",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849721/oenvt516yy0by57kmhuz.png"
+  },
+  {
+    "name": "MR. VASUDEVA PAI",
+    "department": "ISE",
+    "designation": "Asst. Professor Gd.III",
+    "roomId": "ec-staff-room-2",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849721/f2kz5vdaofwjxt5pyemb.png"
+  },
+  {
+    "name": "DR. DEVIDAS",
+    "department": "ISE",
+    "designation": "Assistant Professor Gd.III",
+    "roomId": "ec-staff-room-2",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849722/noqir44kighroj7znasz.png"
+  },
+  {
+    "name": "DR. CHAITRA S N",
+    "department": "ISE",
+    "designation": "Assistant Professor Gd.III",
+    "roomId": "ec-staff-room-2",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849723/f2m9rcsqlnaob0wlnhvw.png"
+  },
+  {
+    "name": "MS. TANZILA NARGIS",
+    "department": "ISE",
+    "designation": "Assistant Professor Gd.II",
+    "roomId": "ec-staff-room-2",
+    "image": "https://res.cloudinary.com/jjwuzizy/image/upload/v1787849724/zdawme4jowcc0rm1txwx.png"
+  }
+]
 }

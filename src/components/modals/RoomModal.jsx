@@ -582,9 +582,12 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                           label="Personnel"
                           value={room.faculty || (room.linkedFaculty && room.linkedFaculty.join(', '))}
                           isFaculty={true}
-                          onViewProfile={() => {
+                          onViewProfile={(facultyName) => {
+                            const target = facultyName || room.faculty || (room.linkedFaculty && room.linkedFaculty[0])
+                            if (!target) return
                             const searchParams = new URLSearchParams(location.search)
-                            searchParams.set('faculty', room.faculty)
+                            if (room.id) searchParams.set('room', room.id)
+                            searchParams.set('faculty', target)
                             navigate(`${location.pathname}?${searchParams.toString()}`)
                           }}
                         />
@@ -779,22 +782,31 @@ function InfoSection({ label, value, isFaculty, onViewProfile }) {
   const renderValue = () => {
     if (!value || value === 'TBD') return 'Not specified'
 
+    const items = isFaculty && typeof value === 'string'
+      ? value.split(',').map(s => s.trim()).filter(Boolean)
+      : [value]
+
     return (
-      <div className="flex flex-col gap-2">
-        <p className="leading-relaxed text-xs md:text-sm font-bold text-black dark:text-white">
-          {value}
-        </p>
-        {isFaculty && onViewProfile && (
-          <button
-            onClick={onViewProfile}
-            className="flex items-center gap-2 px-3 py-2.5 bg-blue-500/10 hover:bg-blue-500 border border-blue-500/20 hover:border-blue-500 text-blue-500 hover:text-white rounded-lg transition-all duration-300 w-fit group"
-          >
-            <User className="w-3 h-3 group-hover:scale-110 transition-transform" />
-            <span className="text-[11px] font-orbitron font-black uppercase tracking-widest">
-              View Profile
-            </span>
-          </button>
-        )}
+      <div className="flex flex-col gap-3">
+        {items.map((item, idx) => (
+          <div key={idx} className="flex flex-col gap-1.5">
+            <p className="leading-relaxed text-xs md:text-sm font-bold text-black dark:text-white">
+              {item}
+            </p>
+            {isFaculty && onViewProfile && (
+              <button
+                type="button"
+                onClick={() => onViewProfile(item)}
+                className="flex items-center gap-2 px-3 py-2 bg-blue-500/10 hover:bg-blue-500 border border-blue-500/20 hover:border-blue-500 text-blue-500 hover:text-white rounded-lg transition-all duration-300 w-fit group cursor-pointer"
+              >
+                <User className="w-3 h-3 group-hover:scale-110 transition-transform" />
+                <span className="text-[10px] font-orbitron font-black uppercase tracking-widest">
+                  View Profile
+                </span>
+              </button>
+            )}
+          </div>
+        ))}
       </div>
     )
   }
