@@ -711,7 +711,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                         e.stopPropagation()
                         setCurrentImageIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))
                       }}
-                      className="absolute left-2 md:left-6 top-2/2 -translate-y-1/2 p-3.5 bg-black/70 hover:bg-blue-600 text-white rounded-full border border-white/20 backdrop-blur-md transition-all shadow-xl active:scale-95"
+                      className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 p-3.5 bg-black/70 hover:bg-blue-600 text-white rounded-full border border-white/20 backdrop-blur-md transition-all shadow-xl active:scale-95"
                     >
                       <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
                     </button>
@@ -720,7 +720,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                         e.stopPropagation()
                         setCurrentImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))
                       }}
-                      className="absolute right-2 md:right-6 top-2/2 -translate-y-1/2 p-3.5 bg-black/70 hover:bg-blue-600 text-white rounded-full border border-white/20 backdrop-blur-md transition-all shadow-xl active:scale-95"
+                      className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 p-3.5 bg-black/70 hover:bg-blue-600 text-white rounded-full border border-white/20 backdrop-blur-md transition-all shadow-xl active:scale-95"
                     >
                       <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
                     </button>
@@ -729,8 +729,8 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
 
                 {/* Bottom Caption Pill */}
                 <div className="absolute bottom-4 inset-x-0 flex justify-center items-center pointer-events-none">
-                  <div className="px-5 py-2 bg-black/80 text-white text-xs font-mono rounded-full border border-white/15 backdrop-blur-md shadow-xl flex items-center gap-3 pointer-events-auto">
-                    <span className="font-bold">{room.name}</span>
+                  <div className="max-w-[calc(100vw-2rem)] px-5 py-2 bg-black/80 text-white text-xs font-mono rounded-full border border-white/15 backdrop-blur-md shadow-xl flex items-center gap-3 pointer-events-auto">
+                    <span className="font-bold truncate">{room.name}</span>
                     {images.length > 1 && (
                       <span className="text-white/60 font-medium">
                         ({currentImageIndex + 1}/{images.length})

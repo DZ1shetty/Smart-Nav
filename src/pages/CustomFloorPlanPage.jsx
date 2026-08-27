@@ -317,8 +317,8 @@ export default function CustomFloorPlanPage() {
   return (
     <div className="fixed inset-0 flex flex-col bg-[var(--bg-main)] text-[var(--text-main)] overflow-hidden">
       {/* Top Bar */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-black/10 dark:border-white/10 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-xl shrink-0 z-20">
-        <div className="flex items-center gap-3">
+      <div className="flex flex-col gap-2 px-3 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-4 border-b border-black/10 dark:border-white/10 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-xl shrink-0 z-20">
+        <div className="flex min-w-0 items-center gap-2 sm:gap-3">
           <button
             onClick={() => navigate(`/custom/${slug}`)}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20 transition-all text-sm font-bold"
@@ -326,19 +326,20 @@ export default function CustomFloorPlanPage() {
             <ChevronLeft className="w-4 h-4" />
             Back
           </button>
-          <div className="flex items-center gap-2 text-sm">
-            <span className="font-bold text-zinc-900 dark:text-white font-mono">{buildingName}</span>
+          <div className="flex min-w-0 items-center gap-2 text-sm">
+            <span className="min-w-0 truncate font-bold text-zinc-900 dark:text-white font-mono">{buildingName}</span>
             <span className="text-zinc-300 dark:text-zinc-700">·</span>
-            <span className="text-zinc-600 dark:text-zinc-400 font-mono">{floorLabel}</span>
+            <span className="shrink-0 text-zinc-600 dark:text-zinc-400 font-mono">{floorLabel}</span>
           </div>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center justify-end gap-2">
           <button
             onClick={() => { localStorage.setItem('smart_nav_open_draft_slug', slug); navigate('/builder') }}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-colors"
           >
             <Edit3 className="w-3.5 h-3.5" />
-            Edit in Builder
+            <span className="hidden sm:inline">Edit in Builder</span>
+            <span className="sm:hidden">Edit</span>
           </button>
           <ThemeToggle />
         </div>

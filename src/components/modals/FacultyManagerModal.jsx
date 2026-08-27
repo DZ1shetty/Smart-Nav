@@ -126,7 +126,7 @@ export default function FacultyManagerModal({
   }
 
   return (
-    <div className="fixed inset-0 z-[120] flex items-center justify-center p-4 md:p-8">
+    <div className="fixed inset-0 z-[120] flex items-center justify-center p-3 sm:p-4 md:p-8">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -139,10 +139,10 @@ export default function FacultyManagerModal({
         initial={{ opacity: 0, scale: 0.95, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
-        className="relative w-full max-w-5xl h-[85vh] bg-zinc-50 dark:bg-[#0a0a0a] border border-zinc-200/50 dark:border-zinc-800/50 rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col"
+        className="relative w-full max-w-5xl h-[min(85dvh,700px)] bg-zinc-50 dark:bg-[#0a0a0a] border border-zinc-200/50 dark:border-zinc-800/50 rounded-2xl sm:rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col"
       >
         {/* Header */}
-        <div className="p-6 md:p-8 border-b border-zinc-200/80 dark:border-zinc-800/80 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 bg-white/50 dark:bg-zinc-900/50 backdrop-blur-md">
+        <div className="p-4 sm:p-6 md:p-8 border-b border-zinc-200/80 dark:border-zinc-800/80 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 bg-white/50 dark:bg-zinc-900/50 backdrop-blur-md">
           <div>
             <h2 className="text-2xl font-orbitron font-black uppercase tracking-tighter text-black dark:text-white flex items-center gap-3">
               <div className="w-2 h-8 bg-blue-500 rounded-full" />
@@ -176,7 +176,7 @@ export default function FacultyManagerModal({
         </div>
 
         {/* List Area */}
-        <div className="flex-1 overflow-y-auto p-8 custom-scrollbar">
+        <div className="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8 custom-scrollbar">
           <div className="grid grid-cols-1 gap-6">
             {filteredFaculty.map((faculty) => (
               <div

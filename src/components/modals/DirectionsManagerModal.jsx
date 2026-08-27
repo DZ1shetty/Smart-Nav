@@ -58,7 +58,7 @@ export default function DirectionsManagerModal({
   }
 
   return (
-    <div className="fixed inset-0 z-[120] flex items-center justify-center p-4 md:p-8">
+    <div className="fixed inset-0 z-[120] flex items-center justify-center p-3 sm:p-4 md:p-8">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -71,7 +71,7 @@ export default function DirectionsManagerModal({
         initial={{ opacity: 0, scale: 0.95, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
-        className="relative w-full max-w-5xl h-[85vh] bg-white dark:bg-[#0a0a0a] border border-black/10 dark:border-white/10 rounded-[32px] shadow-2xl overflow-hidden flex flex-col"
+        className="relative w-full max-w-5xl h-[min(85dvh,700px)] bg-white dark:bg-[#0a0a0a] border border-black/10 dark:border-white/10 rounded-2xl sm:rounded-[32px] shadow-2xl overflow-hidden flex flex-col"
       >
         {/* Header */}
         <div className="p-4 md:p-8 border-b border-black/5 dark:border-white/5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 bg-black/[0.02] dark:bg-white/[0.02]">
@@ -108,7 +108,7 @@ export default function DirectionsManagerModal({
         </div>
 
         {/* List Area */}
-        <div className="flex-1 overflow-y-auto p-8 custom-scrollbar">
+        <div className="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8 custom-scrollbar">
           <div className="grid grid-cols-1 gap-4">
             {filteredRooms.map((room) => (
               <div

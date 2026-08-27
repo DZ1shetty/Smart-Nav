@@ -80,7 +80,7 @@ export default function FacultyDirectoryModal({
   }, [facultyList, debouncedSearchTerm])
 
   return (
-    <div className="fixed inset-0 z-[120] flex items-center justify-center p-4 md:p-8 overflow-hidden">
+    <div className="fixed inset-0 z-[120] flex items-center justify-center p-3 sm:p-4 md:p-8 overflow-hidden">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -104,26 +104,26 @@ export default function FacultyDirectoryModal({
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 15 }}
         transition={{ type: 'spring', duration: 0.4 }}
-        className="relative w-full max-w-5xl bg-white/95 dark:bg-[#070707]/90 border border-black/10 dark:border-white/10 rounded-3xl shadow-[0_0_50px_-12px_rgba(59,130,246,0.15)] overflow-hidden flex flex-col max-h-[85vh] backdrop-blur-xl z-10"
+        className="relative w-full max-w-5xl bg-white/95 dark:bg-[#070707]/90 border border-black/10 dark:border-white/10 rounded-2xl sm:rounded-3xl shadow-[0_0_50px_-12px_rgba(59,130,246,0.15)] overflow-hidden flex flex-col max-h-[min(85dvh,700px)] backdrop-blur-xl z-10"
       >
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2.5 bg-black/5 hover:bg-black/10 dark:bg-white/5 dark:hover:bg-white/10 rounded-xl transition-all duration-300 group z-[60] border border-black/5 dark:border-white/5"
+          className="absolute top-3 right-3 sm:top-5 sm:right-5 p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center bg-black/5 hover:bg-black/10 dark:bg-white/5 dark:hover:bg-white/10 rounded-xl transition-all duration-300 group z-[60] border border-black/5 dark:border-white/5"
           aria-label="Close"
         >
           <X className="w-4 h-4 text-black/50 dark:text-white/40 group-hover:text-blue-500 dark:group-hover:text-blue-400 group-hover:rotate-90 transition-all duration-300" />
         </button>
 
         {/* Header */}
-        <div className="p-8 pb-5 border-b border-black/5 dark:border-white/5 relative z-10">
+        <div className="p-4 pr-14 pb-4 sm:p-8 sm:pb-5 border-b border-black/5 dark:border-white/5 relative z-10">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-blue-500/10 dark:bg-blue-500/20 rounded-2xl flex items-center justify-center text-blue-500 dark:text-blue-400 border border-blue-500/20 shadow-[0_0_15px_-3px_rgba(59,130,246,0.3)]">
                 <Users className="w-6 h-6 animate-pulse" />
               </div>
               <div>
-                <h2 className="text-2xl font-orbitron font-black uppercase tracking-tighter text-black dark:text-white">
+                <h2 className="text-lg sm:text-2xl font-orbitron font-black uppercase tracking-tighter text-black dark:text-white">
                   FACULTY <span className="text-blue-500 dark:text-blue-400">DIRECTORY</span>
                 </h2>
                 <div className="flex items-center gap-2 mt-1.5">
@@ -161,7 +161,7 @@ export default function FacultyDirectoryModal({
         </div>
 
         {/* Content */}
-        <div className="flex-1 overflow-y-auto p-8 custom-scrollbar scroll-smooth relative z-10">
+        <div className="flex-1 overflow-y-auto p-4 sm:p-8 custom-scrollbar scroll-smooth relative z-10">
           {filteredFaculty.length > 0 ? (
             <motion.div
               layout
@@ -276,7 +276,7 @@ export default function FacultyDirectoryModal({
         </div>
 
         {/* Footer */}
-        <div className="p-4 px-8 border-t border-black/5 dark:border-white/5 flex items-center justify-between relative z-10 bg-black/[0.01] dark:bg-white/[0.01]">
+          <div className="p-4 sm:px-8 border-t border-black/5 dark:border-white/5 flex items-center justify-between relative z-10 bg-black/[0.01] dark:bg-white/[0.01]">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)] animate-pulse" />
             <span className="text-[9px] font-orbitron font-black text-black/35 dark:text-white/20 uppercase tracking-widest">
