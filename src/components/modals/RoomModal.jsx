@@ -149,7 +149,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
 
   return (
     <>
-      <div className="fixed inset-0 z-[110] flex items-center justify-center p-2 md:p-8 overflow-hidden">
+      <div className="fixed inset-0 z-[110] flex items-end sm:items-center justify-center p-0 sm:p-3 md:p-8 overflow-hidden">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -166,15 +166,15 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
           className={`relative w-full ${
             room.linkToFloor || room.id?.startsWith('connection-') || room.name?.toLowerCase().includes('connection') || room.id?.includes('connection')
               ? 'max-w-lg'
-              : 'max-w-4xl'
-          } bg-white/95 dark:bg-[#0c0c0e]/95 backdrop-blur-2xl border border-black/10 dark:border-white/10 rounded-2xl md:rounded-3xl shadow-[0_25px_60px_rgba(0,0,0,0.3)] overflow-hidden flex flex-col ${
+              : 'sm:max-w-md md:max-w-4xl'
+          } bg-white/95 dark:bg-[#0c0c0e]/95 backdrop-blur-2xl border border-black/10 dark:border-white/10 rounded-t-2xl sm:rounded-2xl md:rounded-3xl shadow-[0_25px_60px_rgba(0,0,0,0.3)] overflow-hidden flex ${
             room.linkToFloor || room.id?.startsWith('connection-') || room.name?.toLowerCase().includes('connection') || room.id?.includes('connection')
-              ? ''
-              : 'md:flex-row'
-          } items-stretch max-h-[90vh]`}
+              ? 'flex-col'
+              : 'flex-row'
+          } items-stretch max-h-[88dvh]`}
         >
           {/* Actions Container */}
-          <div className="absolute top-4 right-4 flex items-center gap-2.5 z-[60]">
+          <div className="absolute top-2.5 right-2.5 md:top-4 md:right-4 flex items-center gap-2 z-[60]">
             {onToggleBookmark && (
               <button
                 onClick={onToggleBookmark}
@@ -429,7 +429,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                   onClick={() => {
                     if (images.length > 0) setIsFullScreen(true)
                   }}
-                  className="relative w-full md:w-[50%] min-h-[300px] md:min-h-0 bg-black/[0.03] dark:bg-white/[0.02] flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-black/5 dark:border-white/5 overflow-hidden group cursor-zoom-in"
+                  className="relative w-[42%] md:w-[50%] shrink-0 bg-black/[0.03] dark:bg-white/[0.02] flex flex-col items-center justify-center border-r border-black/5 dark:border-white/5 overflow-hidden group cursor-zoom-in"
                 >
                   {images.length > 0 ? (
                     <div className="relative w-full h-full flex items-center justify-center">
@@ -440,7 +440,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                         src={images[currentImageIndex]}
                         alt={room.name}
                         loading="lazy"
-                        className="w-full h-full md:object-contain object-cover"
+                        className="w-full h-full max-h-[200px] md:max-h-none object-contain object-center"
                         onError={(e) => {
                           const currentSrc = e.target.src;
                           if (currentSrc.includes('Smart_Nav')) {
@@ -473,10 +473,11 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                           e.stopPropagation()
                           setIsFullScreen(true)
                         }}
-                        className="absolute bottom-3 left-3 z-20 px-3.5 py-2.5 bg-black/80 hover:bg-blue-600 active:scale-95 text-white text-xs font-mono font-bold rounded-xl border border-white/25 backdrop-blur-md transition-all shadow-xl flex items-center gap-2 cursor-pointer"
+                        className="absolute bottom-2 left-2 md:bottom-3 md:left-3 z-20 px-2 py-1 md:px-3.5 md:py-2.5 bg-black/80 hover:bg-blue-600 active:scale-95 text-white text-[9px] md:text-xs font-mono font-bold rounded-md md:rounded-xl border border-white/25 backdrop-blur-md transition-all shadow-xl flex items-center gap-1 md:gap-2 cursor-pointer"
                       >
-                        <Maximize2 className="w-4 h-4 text-blue-400 group-hover:text-white" />
-                        <span>Expand Image</span>
+                        <Maximize2 className="w-3 h-3 md:w-4 md:h-4 text-blue-400 group-hover:text-white" />
+                        <span className="hidden sm:inline">Expand Image</span>
+                        <span className="sm:hidden">Tap</span>
                       </button>
 
                       {images.length > 1 && (
@@ -507,7 +508,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                       )}
                     </div>
                   ) : (
-                    <div className="w-full h-full p-8 flex flex-col items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-950/40 via-zinc-900/60 to-black text-center">
+                    <div className="w-full h-full min-h-[160px] md:min-h-0 p-4 md:p-8 flex flex-col items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-950/40 via-zinc-900/60 to-black text-center">
                       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
                       <div className="relative z-10 flex flex-col items-center gap-3">
                         <div className="w-16 h-16 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 shadow-lg shadow-blue-500/10">
@@ -539,22 +540,22 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
               )}
 
               {/* Right Side: Information */}
-              <div className="flex-1 p-5 md:p-8 overflow-y-auto custom-scrollbar flex flex-col space-y-6">
+              <div className="flex-1 min-h-0 p-3.5 md:p-8 overflow-y-auto custom-scrollbar flex flex-col space-y-3 md:space-y-6">
                 {/* Header Bar: Title & Action Badges */}
-                <div className="border-b border-black/10 dark:border-white/10 pb-5">
-                  <h2 className="text-2xl md:text-3xl font-orbitron font-black uppercase tracking-tight text-black dark:text-white leading-tight mb-3 pr-20 md:pr-24">
+                <div className="border-b border-black/10 dark:border-white/10 pb-3 md:pb-5">
+                  <h2 className="text-base sm:text-lg md:text-3xl font-orbitron font-black uppercase tracking-tight text-black dark:text-white leading-tight mb-2 md:mb-3 pr-16 md:pr-24">
                     {room.name}
                   </h2>
-                  <div className="flex items-center justify-between gap-3 w-full">
-                    <span className="px-3 py-1 rounded-full text-[10px] font-orbitron font-black uppercase tracking-widest bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/30">
+                  <div className="flex items-center justify-between gap-2 w-full">
+                    <span className="px-2.5 py-0.5 md:px-3 md:py-1 rounded-full text-[9px] md:text-[10px] font-orbitron font-black uppercase tracking-widest bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/30">
                       {room.type === 'staffroom' ? 'STAFF ROOM' : room.type}
                     </span>
                     <button
                       onClick={() => setIsEditing(true)}
-                      className="flex items-center gap-1.5 px-3.5 py-1.5 bg-blue-500/10 hover:bg-blue-600 border border-blue-500/30 hover:border-blue-600 text-blue-600 dark:text-blue-400 hover:text-white rounded-xl transition-all duration-300 shadow-sm active:scale-95 group cursor-pointer"
+                      className="flex items-center gap-1.5 px-2.5 py-1 md:px-3.5 md:py-1.5 bg-blue-500/10 hover:bg-blue-600 border border-blue-500/30 hover:border-blue-600 text-blue-600 dark:text-blue-400 hover:text-white rounded-lg md:rounded-xl transition-all duration-300 shadow-sm active:scale-95 group cursor-pointer"
                     >
                       <Edit3 className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
-                      <span className="text-[10px] font-orbitron font-black uppercase tracking-wider">
+                      <span className="text-[9px] md:text-[10px] font-orbitron font-black uppercase tracking-wider">
                         Edit
                       </span>
                     </button>
@@ -562,9 +563,9 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                 </div>
 
                 {/* Content Sections Container */}
-                <div className="space-y-6 flex-1">
+                <div className="space-y-3 md:space-y-6 flex-1">
                   {/* Description Section */}
-                  <div className="p-4 rounded-2xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-2">
+                  <div className="p-3 md:p-4 rounded-xl md:rounded-2xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-2">
                     <div className="flex items-center gap-2 text-xs font-orbitron font-black text-blue-500 uppercase tracking-widest">
                       <FileText className="w-4 h-4 text-blue-500" />
                       <span>Description</span>
@@ -617,7 +618,7 @@ export default function RoomModal({ room, onClose, onUpdateRoomData, isBookmarke
                   )}
 
                   {/* Navigation & Directions Card */}
-                  <div className="p-4 md:p-5 bg-gradient-to-br from-emerald-500/5 via-black/[0.02] dark:via-white/[0.02] to-transparent border border-emerald-500/20 dark:border-emerald-500/20 rounded-2xl relative overflow-hidden space-y-3">
+                  <div className="p-3 md:p-5 bg-gradient-to-br from-emerald-500/5 via-black/[0.02] dark:via-white/[0.02] to-transparent border border-emerald-500/20 dark:border-emerald-500/20 rounded-xl md:rounded-2xl relative overflow-hidden space-y-2 md:space-y-3">
                     <div className="flex items-center gap-2 text-xs font-orbitron font-black text-emerald-500 uppercase tracking-widest">
                       <Compass className="w-4 h-4 text-emerald-500" />
                       <span>Wayfinding & Directions</span>

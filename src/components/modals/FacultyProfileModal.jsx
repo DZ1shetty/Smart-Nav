@@ -31,7 +31,7 @@ export default function FacultyProfileModal({ faculty, onClose }) {
 
   return (
     <>
-      <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 md:p-8 overflow-hidden">
+      <div className="fixed inset-0 z-[110] flex items-end sm:items-center justify-center p-0 sm:p-4 md:p-8 overflow-hidden">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -55,21 +55,21 @@ export default function FacultyProfileModal({ faculty, onClose }) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.3 }}
-          className="relative w-full max-w-2xl bg-white dark:bg-[#0a0a0a] border border-black/10 dark:border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row"
+          className="relative w-full sm:max-w-md md:max-w-2xl max-h-[88dvh] bg-white dark:bg-[#0a0a0a] border border-black/10 dark:border-white/10 rounded-t-2xl sm:rounded-2xl shadow-2xl overflow-hidden flex flex-row"
         >
           {/* Left Side: Portrait Area */}
           <div
             onClick={() => {
               if (faculty.image) setIsFullScreen(true)
             }}
-            className="relative w-full md:w-[40%] min-h-[300px] md:min-h-0 flex flex-col items-center justify-center bg-black/[0.03] dark:bg-white/[0.02] border-b md:border-b-0 md:border-r border-black/5 dark:border-white/5 overflow-hidden group cursor-zoom-in"
+            className="relative w-[42%] md:w-[40%] shrink-0 flex flex-col items-center justify-center bg-black/[0.03] dark:bg-white/[0.02] border-r border-black/5 dark:border-white/5 overflow-hidden group cursor-zoom-in"
           >
             {faculty.image ? (
               <>
                 <img
                   src={resolveImageUrl(faculty.image)}
                   alt={faculty.name}
-                  className="w-full h-full md:object-contain object-cover brightness-95"
+                  className="w-full h-full max-h-[200px] md:max-h-none object-contain object-center brightness-95"
                   onError={(e) => {
                     const currentSrc = e.target.src;
                     if (currentSrc.includes('raw.githubusercontent.com')) {
@@ -82,11 +82,15 @@ export default function FacultyProfileModal({ faculty, onClose }) {
                     e.target.src = 'https://placehold.co/600x400?text=Image+Not+Found';
                   }}
                 />
-                <div className="absolute inset-0 bg-black/30 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                <div className="absolute inset-0 bg-black/20 opacity-0 md:group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
                   <div className="px-2.5 py-1 bg-black/80 text-white text-[10px] font-mono rounded-lg border border-white/20 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
                     <Maximize2 className="w-3 h-3 text-blue-400" />
                     <span>Expand</span>
                   </div>
+                </div>
+                <div className="absolute bottom-2 right-2 md:hidden px-2 py-1 bg-black/70 text-white text-[9px] font-mono rounded-md border border-white/15 flex items-center gap-1 pointer-events-none">
+                  <Maximize2 className="w-2.5 h-2.5 text-blue-400" />
+                  <span>Tap</span>
                 </div>
               </>
             ) : (
@@ -97,13 +101,13 @@ export default function FacultyProfileModal({ faculty, onClose }) {
           </div>
 
         {/* Right Side: Information Area */}
-        <div className="flex-1 p-10 flex flex-col justify-center overflow-y-auto custom-scrollbar max-h-[70vh] md:max-h-none">
-          <div className="mb-6">
-            <h2 className="text-2xl font-orbitron font-black uppercase tracking-tighter text-black dark:text-white leading-tight mb-2">
+        <div className="flex-1 min-h-0 p-4 md:p-10 flex flex-col justify-center overflow-y-auto custom-scrollbar">
+          <div className="mb-3 md:mb-6 pr-8">
+            <h2 className="text-base sm:text-lg md:text-2xl font-orbitron font-black uppercase tracking-tighter text-black dark:text-white leading-tight mb-1 md:mb-2">
               {faculty.name}
             </h2>
             {blockFloorCode && (
-              <p className="text-[11px] font-orbitron font-black uppercase tracking-[0.18em] text-blue-500">
+              <p className="text-[10px] md:text-[11px] font-orbitron font-black uppercase tracking-[0.16em] text-blue-500">
                 {blockFloorCode}
               </p>
             )}
@@ -111,7 +115,7 @@ export default function FacultyProfileModal({ faculty, onClose }) {
 
           {/* description / Bio Section */}
           {bioContent && (
-            <div className="mb-6 p-4 bg-blue-500/5 border border-blue-500/10 rounded-xl">
+            <div className="mb-3 md:mb-6 p-3 md:p-4 bg-blue-500/5 border border-blue-500/10 rounded-xl">
               <div className="flex items-center gap-2 mb-2">
                 <FileText className="w-3 h-3 text-blue-500" />
                 <span className="text-[9px] font-orbitron font-black uppercase tracking-widest text-blue-500/60">
@@ -125,26 +129,26 @@ export default function FacultyProfileModal({ faculty, onClose }) {
           )}
 
           <div className="flex flex-col gap-3">
-            <div className="p-6 bg-black/[0.03] dark:bg-white/[0.03] border border-black/5 dark:border-white/5 rounded-xl space-y-5">
+            <div className="p-3.5 md:p-6 bg-black/[0.03] dark:bg-white/[0.03] border border-black/5 dark:border-white/5 rounded-xl space-y-3 md:space-y-5">
               <div>
-                <div className="flex items-center gap-2 mb-2">
-                  <Briefcase className="w-3 h-3 text-blue-500" />
+                <div className="flex items-center gap-2 mb-1.5 md:mb-2">
+                  <Briefcase className="w-3 h-3 text-blue-500 shrink-0" />
                   <span className="text-[9px] font-orbitron font-black uppercase tracking-widest text-black/40 dark:text-white/20">
                     Designation
                   </span>
                 </div>
-                <p className="text-[13px] font-black text-black dark:text-white leading-relaxed tracking-tight">
+                <p className="text-[12px] md:text-[13px] font-black text-black dark:text-white leading-snug tracking-tight">
                   {designation}
                 </p>
               </div>
-              <div className="border-t border-black/5 dark:border-white/5 pt-5">
-                <div className="flex items-center gap-2 mb-2">
-                  <GraduationCap className="w-3 h-3 text-blue-500" />
+              <div className="border-t border-black/5 dark:border-white/5 pt-3 md:pt-5">
+                <div className="flex items-center gap-2 mb-1.5 md:mb-2">
+                  <GraduationCap className="w-3 h-3 text-blue-500 shrink-0" />
                   <span className="text-[9px] font-orbitron font-black uppercase tracking-widest text-black/40 dark:text-white/20">
                     Department
                   </span>
                 </div>
-                <p className="text-[13px] font-black text-black dark:text-white leading-relaxed tracking-tight">
+                <p className="text-[12px] md:text-[13px] font-black text-black dark:text-white leading-snug tracking-tight break-words">
                   {department}
                 </p>
               </div>
@@ -155,7 +159,7 @@ export default function FacultyProfileModal({ faculty, onClose }) {
         {/* Overlaid Close Button (rendered last for absolute z-index stacking safety) */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2.5 bg-black/5 hover:bg-black/10 dark:bg-white/5 dark:hover:bg-white/10 rounded-xl transition-all duration-300 group z-[60] border border-black/5 dark:border-white/5 shadow-sm"
+          className="absolute top-2.5 right-2.5 md:top-5 md:right-5 p-2 md:p-2.5 bg-black/5 hover:bg-black/10 dark:bg-white/5 dark:hover:bg-white/10 rounded-xl transition-all duration-300 group z-[60] border border-black/5 dark:border-white/5 shadow-sm"
           aria-label="Close"
         >
           <X className="w-4 h-4 text-black/50 dark:text-white/40 group-hover:text-blue-500 dark:group-hover:text-blue-400 group-hover:rotate-90 transition-all duration-300" />
