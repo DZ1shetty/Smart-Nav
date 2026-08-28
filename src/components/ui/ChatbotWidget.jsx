@@ -15,6 +15,10 @@ import {
   ChevronUp,
   Copy,
   AlertTriangle,
+  Navigation,
+  MapPin,
+  ExternalLink,
+  Compass,
 } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { getSearchPool, resolveNavigationQuery } from '../../data/searchEngine'
@@ -25,21 +29,75 @@ import { trackChatbotQuery } from '../../utils/analytics'
 import { SmartNavLogo } from './SmartNavLogo'
 
 /**
- * Helper to extract location details from the first matching map/faculty markdown link.
- * Matches formats: [Label](/floor/floorKey?room=roomId&...)
+ * Helper to extract location details from markdown link or redirectLocation object.
+ * Returns { floorKey, rawUrl, roomId } for Map Preview SVG.
+ * Optimized to be lightweight and fast during render passes.
  */
-const extractLocationDetails = (text) => {
-  if (!text) return null
-  const regex = /\[[^\]]+\]\(\/floor\/([a-zA-Z0-9_-]+)\?([^)]*room=([a-zA-Z0-9_-]+)[^)]*)\)/
-  const match = text.match(regex)
-  if (match) {
+const extractLocationDetails = (msg) => {
+  if (!msg) return null
+  const redirectLoc = typeof msg === 'object' ? msg.redirectLocation : null
+  const text = typeof msg === 'string' ? msg : msg?.text || ''
+
+  if (redirectLoc && redirectLoc.floorKey) {
     return {
-      floorKey: match[1],
-      rawUrl: `/floor/${match[1]}?${match[2]}`,
-      roomId: match[3],
+      floorKey: redirectLoc.floorKey,
+      rawUrl: redirectLoc.url,
+      roomId: redirectLoc.roomId || redirectLoc.id,
     }
   }
+
+  if (!text) return null
+
+  // Format 1: [Label](/floor/floorKey?room=roomId...)
+  const regex1 = /\[[^\]]+\]\(\/floor\/([a-zA-Z0-9_-]+)\?([^)]*(?:room|search)=([a-zA-Z0-9_-]+)[^)]*)\)/
+  const match1 = text.match(regex1)
+  if (match1) {
+    return {
+      floorKey: match1[1],
+      rawUrl: `/floor/${match1[1]}?${match1[2]}`,
+      roomId: match1[3],
+    }
+  }
+
   return null
+}
+
+/**
+ * Helper to extract location target(s) for rendering the dedicated Redirect Button.
+ * Uses pre-computed redirectLocation or fast markdown link extraction (NO heavy search scoring in render).
+ */
+const getMsgLocationTargets = (msg) => {
+  if (!msg) return []
+  const targets = []
+  const seenUrls = new Set()
+
+  // 1. Direct location attached when message was created
+  if (msg.redirectLocation && msg.redirectLocation.url) {
+    targets.push(msg.redirectLocation)
+    seenUrls.add(msg.redirectLocation.url)
+  }
+
+  // 2. Extract markdown links from message text
+  if (msg.text) {
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g
+    let match
+    while ((match = linkRegex.exec(msg.text)) !== null) {
+      const label = match[1]
+      const rawUrl = match[2]
+
+      if (!seenUrls.has(rawUrl) && (rawUrl.includes('/floor/') || rawUrl.includes('-Block/') || rawUrl.includes('search=') || rawUrl.includes('room='))) {
+        seenUrls.add(rawUrl)
+        targets.push({
+          title: label,
+          url: rawUrl,
+          floorLabel: '',
+          buildingName: ''
+        })
+      }
+    }
+  }
+
+  return targets
 }
 
 /**
@@ -622,12 +680,15 @@ export default function ChatbotWidget() {
             <button
               key={tokenKey}
               onClick={() => {
+                toast.info(`Redirecting to ${linkText}...`)
                 navigate(linkUrl)
+                setIsOpen(false)
               }}
-              className={`inline-flex items-center gap-0.5 mx-0.5 px-2 py-0.5 bg-blue-500/10 dark:bg-cyan-500/15 border border-blue-500/20 dark:border-cyan-400/20 font-orbitron font-black text-blue-600 dark:text-cyan-400 hover:bg-blue-500 hover:text-white dark:hover:bg-cyan-400 dark:hover:text-black rounded-md transition-all ${chatTextSize === 'large' ? 'text-[12px]' : 'text-[11px]'
+              className={`inline-flex items-center gap-1 mx-0.5 px-2.5 py-0.5 bg-blue-500/10 dark:bg-cyan-500/15 border border-blue-500/25 dark:border-cyan-400/30 font-orbitron font-black text-blue-600 dark:text-cyan-400 hover:bg-blue-500 hover:text-white dark:hover:bg-cyan-400 dark:hover:text-black rounded-lg transition-all shadow-sm ${chatTextSize === 'large' ? 'text-[12px]' : 'text-[11px]'
                 }`}
               style={{ verticalAlign: 'middle', transform: 'translateY(-1px)' }}
             >
+              <Navigation className="w-2.5 h-2.5 opacity-80" />
               {linkText}
               <ArrowUpRight className="w-2.5 h-2.5" />
             </button>
@@ -830,7 +891,7 @@ export default function ChatbotWidget() {
         setTimeout(() => {
           const botMessageId = `bot-${Date.now()}`
 
-          let botResponseText = `I found **${resolved.title}** on the **${resolved._floorLabel}** of **${resolved.description.split('·')[1]?.trim() || 'APJ-BLOCK'}**.\n\nLet me take you there! Routing now...`;
+          let botResponseText = `I found **${resolved.title}** on the **${resolved._floorLabel}** of **${resolved.description.split('·')[1]?.trim() || 'APJ-BLOCK'}**.`;
           if (resolved.directions) {
             botResponseText += `\n\n*Directions: ${resolved.directions}*`;
           }
@@ -840,13 +901,19 @@ export default function ChatbotWidget() {
             {
               id: botMessageId,
               sender: 'bot',
-              text: botResponseText
+              text: botResponseText,
+              redirectLocation: {
+                title: resolved.title,
+                url: resolved.url,
+                roomId: resolved.id,
+                floorKey: resolved._floorKey,
+                floorLabel: resolved._floorLabel,
+                buildingName: resolved.description?.split('·')[1]?.trim() || 'APJ-BLOCK',
+                kind: resolved._kind
+              }
             }
           ]);
           setIsLoading(false);
-
-          // Auto-navigate!
-          navigate(resolved.url);
         }, 600);
 
         return; // EXIT submitQuery
@@ -865,6 +932,18 @@ export default function ChatbotWidget() {
     // Setup temporary bot message ID for streaming
     const botMessageId = `bot-${Date.now()}`
     let streamedText = ''
+
+    // Also resolve query against navigation engine to prepare a fallback redirectLocation
+    const navTarget = resolveNavigationQuery(userMessage.text)
+    const redirectLoc = (navTarget && navTarget.confidence_score >= 60) ? {
+      title: navTarget.title,
+      url: navTarget.url,
+      roomId: navTarget.id,
+      floorKey: navTarget._floorKey,
+      floorLabel: navTarget._floorLabel,
+      buildingName: navTarget.description?.split('·')[1]?.trim() || '',
+      kind: navTarget._kind
+    } : null;
 
     try {
       // Retrieve live search pool containing 100% accurate, synced Firestore/Static data
@@ -907,7 +986,7 @@ export default function ChatbotWidget() {
       // Add empty bot message that we will stream into
       setMessages((prev) => [
         ...prev,
-        { id: botMessageId, sender: 'bot', text: '' },
+        { id: botMessageId, sender: 'bot', text: '', redirectLocation: redirectLoc },
       ])
       setIsLoading(false)
 
@@ -989,17 +1068,17 @@ export default function ChatbotWidget() {
   return (
     <>
       {/* FLOATING TRIGGER BUTTON */}
-      <div ref={triggerRef} className="fixed bottom-4 right-4 sm:bottom-6 sm:right-5 z-[40]">
+      <div ref={triggerRef} className="fixed bottom-4 right-4 sm:bottom-6 sm:right-5 z-[100] pointer-events-auto cursor-pointer">
         <motion.button
           onClick={() => {
-            setIsOpen(!isOpen)
+            setIsOpen(prev => !prev)
             setIsMinimized(false)
           }}
           aria-label="Open campus chatbot"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           transition={{ type: 'spring', stiffness: 350, damping: 25 }}
-          className="relative flex items-center gap-2 px-3.5 py-2.5 rounded-full bg-slate-900/90 dark:bg-black/90 text-white backdrop-blur-xl border border-cyan-500/40 dark:border-cyan-500/30 shadow-[0_8px_25px_rgba(0,0,0,0.3)] dark:shadow-[0_10px_35px_rgba(0,0,0,0.8)] hover:border-cyan-400 hover:shadow-cyan-500/20 transition-all duration-300 group overflow-hidden focus:outline-none"
+          className="relative flex items-center gap-2 px-3.5 py-2.5 rounded-full bg-slate-900/90 dark:bg-black/90 text-white backdrop-blur-xl border border-cyan-500/40 dark:border-cyan-500/30 shadow-[0_8px_25px_rgba(0,0,0,0.3)] dark:shadow-[0_10px_35px_rgba(0,0,0,0.8)] hover:border-cyan-400 hover:shadow-cyan-500/20 transition-all duration-300 group overflow-hidden focus:outline-none cursor-pointer"
         >
           {/* Subtle glow effect */}
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -1066,7 +1145,7 @@ export default function ChatbotWidget() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="fixed bottom-16 right-3 sm:right-5 w-[calc(100vw-24px)] max-w-[380px] sm:w-[380px] max-h-[80vh] sm:max-h-none flex flex-col bg-transparent shadow-[0_20px_50px_rgba(0,0,0,0.18)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.6)] overflow-hidden z-[40] transition-colors"
+            className="fixed bottom-16 right-3 sm:right-5 w-[calc(100vw-24px)] max-w-[380px] sm:w-[380px] max-h-[80vh] sm:max-h-none flex flex-col bg-transparent shadow-[0_20px_50px_rgba(0,0,0,0.18)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.6)] overflow-hidden z-[100] transition-colors"
           >
             {/* Top Gemini-style gradient bar */}
             <div className="h-1.5 w-full bg-gradient-to-r from-blue-500 via-purple-500 via-pink-500 to-amber-400 relative z-10" />
@@ -1470,15 +1549,19 @@ export default function ChatbotWidget() {
                       >
                         {renderMessageContent(msg.text)}
 
-                        {/* Render inline map preview if a location link is found in the message */}
+                        {/* Render inline map preview if a location link or redirect target is found */}
                         {msg.sender === 'bot' && !msg.isError && (
                           (() => {
-                            const loc = extractLocationDetails(msg.text)
+                            const loc = extractLocationDetails(msg)
                             if (loc && searchIndex[loc.floorKey]) {
                               const targetFloorData = searchIndex[loc.floorKey]
                               return (
                                 <div
-                                  onClick={() => navigate(loc.rawUrl)}
+                                  onClick={() => {
+                                    toast.info(`Redirecting to ${loc.roomId || targetFloorData.label}...`)
+                                    navigate(loc.rawUrl)
+                                    setIsOpen(false)
+                                  }}
                                   className="mt-2.5 bg-slate-50 dark:bg-black/40 border border-black/10 dark:border-white/10 rounded-xl overflow-hidden h-[130px] w-full relative cursor-pointer group/map shadow-inner transition-all hover:border-blue-500/40 hover:shadow-lg hover:shadow-blue-500/5 select-none"
                                 >
                                   {/* Small map indicator banner */}
@@ -1510,6 +1593,45 @@ export default function ChatbotWidget() {
                               )
                             }
                             return null
+                          })()
+                        )}
+
+                        {/* Render minimalistic Redirect Button for searched locations */}
+                        {msg.sender === 'bot' && !msg.isWelcome && !msg.isError && (
+                          (() => {
+                            const targets = getMsgLocationTargets(msg)
+
+                            if (!targets || targets.length === 0) return null
+
+                            return (
+                              <div className="mt-2.5 pt-2 border-t border-black/5 dark:border-white/5 flex flex-col gap-1.5 select-none">
+                                {targets.map((target, tIdx) => (
+                                  <button
+                                    key={`redirect-${msg.id}-${tIdx}`}
+                                    onClick={() => {
+                                      toast.info(`Redirecting to ${target.title}...`)
+                                      navigate(target.url)
+                                      setIsOpen(false)
+                                    }}
+                                    className="w-full py-1.5 px-3 bg-blue-500/8 dark:bg-cyan-500/10 hover:bg-blue-500/15 dark:hover:bg-cyan-500/20 border border-blue-500/20 dark:border-cyan-400/25 rounded-lg text-blue-600 dark:text-cyan-400 transition-all duration-200 flex items-center justify-between group cursor-pointer"
+                                  >
+                                    <div className="flex items-center gap-2 min-w-0">
+                                      <Navigation className="w-3.5 h-3.5 flex-shrink-0 text-blue-500 dark:text-cyan-400 opacity-80 group-hover:opacity-100 transition-opacity" />
+                                      <span className="font-orbitron font-semibold text-[11.5px] tracking-wide truncate">
+                                        Go to {target.title}
+                                      </span>
+                                      {target.floorLabel && (
+                                        <span className="text-[10px] font-sans text-black/45 dark:text-white/45 truncate hidden sm:inline">
+                                          • {target.floorLabel}
+                                        </span>
+                                      )}
+                                    </div>
+
+                                    <ArrowUpRight className="w-3.5 h-3.5 flex-shrink-0 text-blue-500 dark:text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                                  </button>
+                                ))}
+                              </div>
+                            )
                           })()
                         )}
 
