@@ -41,14 +41,20 @@ const DraggableVertex = ({ x, y, index, onDrag, onDragEnd, onDoubleClick, isSnap
     }
 
     const onPointerUp = (upEvent) => {
-      e.target.releasePointerCapture(upEvent.pointerId)
+      try {
+        if (e.target.hasPointerCapture && e.target.hasPointerCapture(upEvent.pointerId)) {
+          e.target.releasePointerCapture(upEvent.pointerId)
+        }
+      } catch (err) { /* ignore pointer capture error */ }
       window.removeEventListener('pointermove', onPointerMove)
       window.removeEventListener('pointerup', onPointerUp)
+      window.removeEventListener('pointercancel', onPointerUp)
       if (onDragEnd) onDragEnd()
     }
 
     window.addEventListener('pointermove', onPointerMove)
     window.addEventListener('pointerup', onPointerUp)
+    window.addEventListener('pointercancel', onPointerUp)
   }
 
   return (

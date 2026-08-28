@@ -28,6 +28,7 @@ import {
   Trash2,
 } from 'lucide-react'
 import { puter } from '@heyputer/puter.js'
+import { useThrottledCallback } from '../../hooks/useThrottle'
 import { floorsData, getFloorDataLoader } from '../../data/floorsData'
 import { searchIndex } from '../../data/searchIndex'
 import FloorMapSVG from './FloorMapSVG'
@@ -234,6 +235,11 @@ export default function FloorPlan() {
   }
 
   const [zoom, setZoom] = useState(1.0)
+  const handleTransformed = useThrottledCallback((ref) => {
+    if (ref?.state?.scale) {
+      setZoom(ref.state.scale)
+    }
+  }, 100)
   const zoomControlsRef = useRef(null)
   const [resetKey, setResetKey] = useState(0)
   const [mouseCoords, setMouseCoords] = useState({ x: 0, y: 0 })
@@ -1772,14 +1778,14 @@ export default function FloorPlan() {
               disabled={isEditMode}
               panning={{ disabled: isEditMode }}
               pinch={{ disabled: isEditMode }}
-              onTransformed={(ref) => {
-                setZoom(ref.state.scale)
-              }}
+              onTransformed={handleTransformed}
+              onZoomStop={(ref) => ref?.state?.scale && setZoom(ref.state.scale)}
+              onPanningStop={(ref) => ref?.state?.scale && setZoom(ref.state.scale)}
             >
               <ZoomControlsProxy controlsRef={zoomControlsRef} />
               <TransformComponent 
-                wrapperStyle={{ width: "100%", height: "100%" }} 
-                contentStyle={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}
+                wrapperStyle={{ width: "100%", height: "100%", touchAction: "none" }} 
+                contentStyle={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", touchAction: "none" }}
               >
                 <motion.div
                   key={`${floorId}-${resetKey}`}
@@ -1793,8 +1799,9 @@ export default function FloorPlan() {
                 height: isBlueprintMode
                   ? `min(82vh, calc(92vw * (${mapBounds.svgH} / ${mapBounds.svgW})))`
                   : undefined,
+                touchAction: 'none',
               }}
-              className={`relative floor-${floorId} bg-white dark:bg-[#121215] overflow-hidden transition-all duration-500 ${
+              className={`relative floor-${floorId} bg-white dark:bg-[#121215] overflow-hidden select-none transition-colors duration-500 ${
                 isBlueprintMode
                   ? 'border-2 border-blue-500/30 dark:border-blue-500/25 rounded-[20px] shadow-[0_0_60px_rgba(0,0,0,0.8)]'
                   : 'w-full h-full border border-black/10 dark:border-white/10 rounded-[16px] md:rounded-[24px] shadow-xl'

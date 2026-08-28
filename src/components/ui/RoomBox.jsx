@@ -266,13 +266,19 @@ const DraggableRoom = ({ room, onMove, onResize, floorId, commonFontSize }) => {
     }
 
     const onPointerUp = (upEvent) => {
-      e.target.releasePointerCapture(upEvent.pointerId)
+      try {
+        if (e.target.hasPointerCapture && e.target.hasPointerCapture(upEvent.pointerId)) {
+          e.target.releasePointerCapture(upEvent.pointerId)
+        }
+      } catch (err) { /* ignore pointer capture error */ }
       window.removeEventListener('pointermove', onPointerMove)
       window.removeEventListener('pointerup', onPointerUp)
+      window.removeEventListener('pointercancel', onPointerUp)
     }
 
     window.addEventListener('pointermove', onPointerMove)
     window.addEventListener('pointerup', onPointerUp)
+    window.addEventListener('pointercancel', onPointerUp)
   }
 
   const handleResizePointerDown = (e) => {
@@ -310,13 +316,19 @@ const DraggableRoom = ({ room, onMove, onResize, floorId, commonFontSize }) => {
     }
 
     const onPointerUp = (upEvent) => {
-      e.target.releasePointerCapture(upEvent.pointerId)
+      try {
+        if (e.target.hasPointerCapture && e.target.hasPointerCapture(upEvent.pointerId)) {
+          e.target.releasePointerCapture(upEvent.pointerId)
+        }
+      } catch (err) { /* ignore pointer capture error */ }
       window.removeEventListener('pointermove', onPointerMove)
       window.removeEventListener('pointerup', onPointerUp)
+      window.removeEventListener('pointercancel', onPointerUp)
     }
 
     window.addEventListener('pointermove', onPointerMove)
     window.addEventListener('pointerup', onPointerUp)
+    window.addEventListener('pointercancel', onPointerUp)
   }
 
   const r = Math.min(12, w / 2, h / 2)

@@ -228,9 +228,16 @@ export default function FloorMapCanvas({
 
   // Redraw when properties change or window resizes
   useEffect(() => {
-    drawCanvas()
-    window.addEventListener('resize', drawCanvas)
-    return () => window.removeEventListener('resize', drawCanvas)
+    let animId
+    const handleDraw = () => {
+      animId = requestAnimationFrame(drawCanvas)
+    }
+    handleDraw()
+    window.addEventListener('resize', handleDraw)
+    return () => {
+      if (animId) cancelAnimationFrame(animId)
+      window.removeEventListener('resize', handleDraw)
+    }
   }, [drawCanvas])
 
   // Canvas Click Handler (Hit Testing)

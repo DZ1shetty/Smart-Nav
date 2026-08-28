@@ -1074,20 +1074,18 @@ export default function ChatbotWidget() {
             setIsOpen(prev => !prev)
             setIsMinimized(false)
           }}
-          aria-label="Open campus chatbot"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ type: 'spring', stiffness: 350, damping: 25 }}
-          className="relative flex items-center gap-2 px-3.5 py-2.5 rounded-full bg-slate-900/90 dark:bg-black/90 text-white backdrop-blur-xl border border-cyan-500/40 dark:border-cyan-500/30 shadow-[0_8px_25px_rgba(0,0,0,0.3)] dark:shadow-[0_10px_35px_rgba(0,0,0,0.8)] hover:border-cyan-400 hover:shadow-cyan-500/20 transition-all duration-300 group overflow-hidden focus:outline-none cursor-pointer"
+          aria-label="Open Campus Assistant"
+          whileHover={{ scale: 1.03, y: -2 }}
+          whileTap={{ scale: 0.97 }}
+          transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+          className="relative flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-white/95 dark:bg-[#141419]/95 text-slate-800 dark:text-slate-100 backdrop-blur-xl border border-slate-200/90 dark:border-slate-800 shadow-[0_10px_30px_rgba(0,0,0,0.12)] dark:shadow-[0_12px_40px_rgba(0,0,0,0.5)] hover:border-blue-500/40 dark:hover:border-blue-400/40 hover:shadow-blue-500/10 transition-all duration-300 group overflow-hidden focus:outline-none cursor-pointer select-none"
         >
-          {/* Subtle glow effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-          <div className="relative z-10 flex items-center justify-center text-cyan-400 size-5 md:size-6 flex-shrink-0">
-            <SmartNavLogo animated={false} className="size-5 md:size-6" />
+          <div className="relative flex items-center justify-center">
+            <SmartNavLogo className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" animated={false} />
+            <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-emerald-500 ring-2 ring-white dark:ring-[#141419]" />
           </div>
 
-          <span className="relative z-10 text-[10.5px] md:text-xs font-orbitron font-black uppercase tracking-wider text-white group-hover:text-cyan-300 transition-colors duration-300">
+          <span className="font-sans font-semibold text-xs md:text-[13px] tracking-wide text-slate-800 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-cyan-300 transition-colors">
             Ask AI
           </span>
         </motion.button>
@@ -1122,7 +1120,7 @@ export default function ChatbotWidget() {
                 height: isMinimized ? '52px' : '520px',
                 transition: {
                   duration: 0.75,
-                  ease: [0.16, 1, 0.3, 1], // easeOutQuart (lazy loading curve)
+                  ease: [0.16, 1, 0.3, 1],
                   staggerChildren: 0.08,
                   delayChildren: 0.06
                 }
@@ -1138,32 +1136,24 @@ export default function ChatbotWidget() {
                 borderBottomRightRadius: "220px",
                 transition: {
                   duration: 0.4,
-                  ease: [0.7, 0, 0.84, 0] // easeIn
+                  ease: [0.7, 0, 0.84, 0]
                 }
               }
             }}
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="fixed bottom-16 right-3 sm:right-5 w-[calc(100vw-24px)] max-w-[380px] sm:w-[380px] max-h-[80vh] sm:max-h-none flex flex-col bg-transparent shadow-[0_20px_50px_rgba(0,0,0,0.18)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.6)] overflow-hidden z-[100] transition-colors"
+            className="fixed bottom-16 right-3 sm:right-5 w-[calc(100vw-24px)] max-w-[380px] sm:w-[380px] max-h-[80vh] sm:max-h-none flex flex-col bg-transparent shadow-[0_20px_50px_rgba(0,0,0,0.14)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.6)] overflow-hidden z-[100] transition-colors"
           >
-            {/* Top Gemini-style gradient bar */}
-            <div className="h-1.5 w-full bg-gradient-to-r from-blue-500 via-purple-500 via-pink-500 to-amber-400 relative z-10" />
+            {/* Clean Static Background Panel */}
+            <div className="absolute inset-0 bg-white/95 dark:bg-[#121218]/95 backdrop-blur-2xl border border-slate-200 dark:border-slate-800 rounded-2xl z-0 pointer-events-none" />
 
-            {/* Static Background Panel */}
-            <div className="absolute inset-0 bg-white/95 dark:bg-[#0c0c0e]/95 backdrop-blur-3xl border border-black/10 dark:border-white/[0.08] rounded-2xl z-0 pointer-events-none" />
-
-            {/* Glowing Border Laser Orbit (Thinking State) */}
+            {/* Subtle progress loading line */}
             {isLoading && (
-              <div className="absolute inset-0 overflow-hidden rounded-2xl z-0 pointer-events-none animate-fade-in">
-                {/* Conic rotating gradient */}
-                <div className="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] bg-[conic-gradient(from_0deg,transparent_0%,rgba(59,130,246,0.85)_25%,rgba(168,85,247,0.85)_50%,rgba(6,182,212,0.85)_75%,transparent_100%)] animate-[laser-spin_3s_linear_infinite]" />
-                {/* Mask to leave a thin outline */}
-                <div className="absolute inset-[1.5px] bg-white/95 dark:bg-[#0c0c0e]/95 backdrop-blur-3xl rounded-[18px]" />
-              </div>
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-600 animate-pulse z-20" />
             )}
 
-            {/* MINIMALIST HEADER */}
+            {/* NATURAL HEADER */}
             <motion.header
               variants={{
                 hidden: { opacity: 0, y: 15 },
@@ -1173,18 +1163,19 @@ export default function ChatbotWidget() {
                   transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] }
                 }
               }}
-              className="relative z-10 flex items-center justify-between px-4 py-3 border-b border-black/[0.08] dark:border-white/[0.08] bg-black/[0.01] dark:bg-white/[0.01] backdrop-blur-md"
+              className="relative z-10 flex items-center justify-between px-4 py-3 border-b border-slate-200/80 dark:border-slate-800/80 bg-slate-50/60 dark:bg-slate-900/40 backdrop-blur-md"
             >
               <div className="flex items-center gap-2.5">
-                <div className="text-blue-500 dark:text-cyan-400 flex items-center justify-center">
-                  <SmartNavLogo animated={false} className="size-5 md:size-6" />
+                <div className="w-7 h-7 rounded-lg bg-teal-500/10 dark:bg-teal-500/15 border border-teal-500/20 dark:border-teal-500/20 flex items-center justify-center flex-shrink-0">
+                  <SmartNavLogo className="w-5 h-5" animated={false} />
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs md:text-sm font-orbitron font-black tracking-wider text-[var(--text-main)] uppercase whitespace-nowrap">
-                    CAMPUS ASSIST
+                  <span className="text-xs md:text-sm font-sans font-bold tracking-tight text-slate-900 dark:text-slate-100 uppercase whitespace-nowrap">
+                    Ask AI
                   </span>
-                  <span className="px-2 py-0.5 rounded-full bg-blue-500/10 dark:bg-cyan-500/10 border border-blue-500/20 dark:border-cyan-500/20 text-xs font-orbitron font-black text-blue-600 dark:text-cyan-400 select-none flex items-center gap-1 whitespace-nowrap" title="Remaining Queries Count">
-                    ⚡ {queriesRemaining} LEFT
+                  <span className="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[11px] font-sans font-medium text-slate-600 dark:text-slate-300 select-none flex items-center gap-1 whitespace-nowrap" title="Remaining Queries Count">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                    {queriesRemaining} left
                   </span>
                 </div>
               </div>
@@ -1249,13 +1240,13 @@ export default function ChatbotWidget() {
                   }}
                   transition={{
                     duration: 0.65,
-                    ease: [0.16, 1, 0.3, 1] // premium lazy ease-out
+                    ease: [0.16, 1, 0.3, 1]
                   }}
-                  className="absolute inset-x-0 bottom-0 top-[60px] bg-white/95 dark:bg-[#0c0c0e]/95 backdrop-blur-3xl z-40 flex flex-col p-5 border-t border-black/5 dark:border-white/5 overflow-hidden"
+                  className="absolute inset-x-0 bottom-0 top-[60px] bg-white/95 dark:bg-[#121218]/95 backdrop-blur-2xl z-40 flex flex-col p-5 border-t border-slate-200 dark:border-slate-800 overflow-hidden"
                 >
-                  <div className="flex items-center justify-between border-b border-black/5 dark:border-white/5 pb-3 mb-4 select-none">
-                    <span className="text-[12px] font-orbitron font-black text-blue-500 dark:text-cyan-400 uppercase tracking-widest">
-                      📜 Past Queries
+                  <div className="flex items-center justify-between border-b border-slate-200/80 dark:border-slate-800/80 pb-3 mb-4 select-none">
+                    <span className="text-xs font-sans font-bold text-slate-800 dark:text-slate-200 tracking-tight">
+                      Past Queries
                     </span>
                     <button
                       onClick={() => {
@@ -1270,26 +1261,23 @@ export default function ChatbotWidget() {
 
                   <div className="flex-1 overflow-y-auto flex flex-col gap-3 pr-1 select-none pb-2">
                     {(() => {
-                      // Use reactive savedQAs state (updated by migration, submitQuery, and delete)
-                      // Sort by timestamp: newest first. Old migrated entries (timestamp=0) go to bottom.
                       const sortedQAs = [...savedQAs].sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
-                      const reversedQAs = sortedQAs; // Already newest-first
+                      const reversedQAs = sortedQAs;
 
                       if (reversedQAs.length === 0) {
                         return (
                           <div className="flex-1 flex flex-col items-center justify-center text-center p-5">
                             <History className="w-8 h-8 text-black/20 dark:text-white/10 mb-2.5 animate-pulse" />
-                            <span className="text-[12px] font-orbitron font-bold text-black/45 dark:text-white/30 uppercase tracking-wider">
+                            <span className="text-xs font-sans font-semibold text-slate-500 dark:text-slate-400">
                               No history found
                             </span>
-                            <span className="text-[11px] text-black/35 dark:text-white/20 mt-1 font-sans">
+                            <span className="text-[11px] text-slate-400 dark:text-slate-500 mt-1 font-sans">
                               Your asked questions will appear here.
                             </span>
                           </div>
                         );
                       }
 
-                      // Helper: format a "2026-06" key into "June 2026"
                       const formatMonthLabel = (monthKey) => {
                         if (!monthKey) return 'Earlier';
                         const [year, month] = monthKey.split('-');
@@ -1299,7 +1287,6 @@ export default function ChatbotWidget() {
 
                       const currentMonthKey = new Date().toISOString().slice(0, 7);
 
-                      // Group Q&As by month key, newest month first
                       const grouped = {};
                       sortedQAs.forEach(item => {
                         const key = item.month || 'earlier';
@@ -1307,27 +1294,25 @@ export default function ChatbotWidget() {
                         grouped[key].push(item);
                       });
 
-                      // Sort month keys: current month first, then desc, 'earlier' last
                       const sortedMonthKeys = Object.keys(grouped).sort((a, b) => {
                         if (a === 'earlier') return 1;
                         if (b === 'earlier') return -1;
-                        return b.localeCompare(a); // newest month first
+                        return b.localeCompare(a);
                       });
 
-                      // Summary bar above list
                       return (
                         <>
                           <div className="flex items-center justify-between px-1 pb-1 select-none">
-                            <span className="text-xs font-orbitron font-black text-black/40 dark:text-white/30 uppercase tracking-wider">
+                            <span className="text-xs font-sans font-medium text-slate-500 dark:text-slate-400">
                               {savedQAs.length} saved · {queriesRemaining} left this month
                             </span>
-                            <span className={`text-[11px] font-orbitron font-black uppercase tracking-widest px-2 py-0.5 rounded-full border ${queriesRemaining === 0
+                            <span className={`text-[11px] font-sans font-semibold px-2 py-0.5 rounded-full border ${queriesRemaining === 0
                                 ? 'text-red-500 border-red-500/30 bg-red-500/10'
                                 : queriesRemaining <= 3
                                   ? 'text-amber-500 border-amber-500/30 bg-amber-500/10'
-                                  : 'text-emerald-500 border-emerald-500/30 bg-emerald-500/10'
+                                  : 'text-emerald-600 dark:text-emerald-400 border-emerald-500/30 bg-emerald-500/10'
                               }`}>
-                              {queriesRemaining === 0 ? '⛔ Resets Next Month' : queriesRemaining <= 3 ? '⚠️ Nearly Full' : '✓ Active'}
+                              {queriesRemaining === 0 ? 'Resets Next Month' : queriesRemaining <= 3 ? 'Nearly Full' : 'Active'}
                             </span>
                           </div>
 
@@ -1337,145 +1322,66 @@ export default function ChatbotWidget() {
                             const monthLabel = formatMonthLabel(monthKey === 'earlier' ? null : monthKey);
                             return (
                               <div key={monthKey} className="flex flex-col gap-2">
-                                {/* Month section header */}
                                 <div className="flex items-center gap-2 px-1 pt-1">
-                                  <span className={`text-[11px] font-orbitron font-black uppercase tracking-widest px-2 py-0.5 rounded-full border ${isCurrentMonth
-                                      ? 'text-blue-500 dark:text-cyan-400 border-blue-500/25 dark:border-cyan-400/25 bg-blue-500/8 dark:bg-cyan-500/8'
-                                      : 'text-black/35 dark:text-white/25 border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03]'
+                                  <span className={`text-[11px] font-sans font-semibold px-2 py-0.5 rounded-full border ${isCurrentMonth
+                                      ? 'text-blue-600 dark:text-cyan-400 border-blue-500/25 dark:border-cyan-400/25 bg-blue-500/10 dark:bg-cyan-500/10'
+                                      : 'text-slate-500 dark:text-slate-400 border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-800'
                                     }`}>
-                                    📅 {monthLabel}{isCurrentMonth ? ' · Now' : ''}
+                                    {monthLabel}{isCurrentMonth ? ' · Current' : ''}
                                   </span>
-                                  <span className="text-[11px] text-black/25 dark:text-white/20 font-orbitron font-black">
+                                  <span className="text-[11px] text-slate-400 font-sans">
                                     {monthItems.length} {monthItems.length === 1 ? 'query' : 'queries'}
                                   </span>
                                 </div>
 
-                                {/* Q&A cards for this month */}
                                 {monthItems.map((item, idx) => {
                                   const isExpanded = expandedQAId === item.id;
-                                  // Format relative timestamp
                                   const ts = item.timestamp ? new Date(item.timestamp) : null;
                                   const tsLabel = ts ? ts.toLocaleString('en-IN', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }) : null;
                                   return (
                                     <div
                                       key={item.id || idx}
                                       id={`qa-card-${item.id}`}
-                                      className="w-full flex flex-col bg-black/[0.02] dark:bg-white/[0.03] border border-black/5 dark:border-white/[0.05] hover:border-blue-500/20 dark:hover:border-cyan-400/20 rounded-2xl transition-all duration-300 shadow-sm overflow-hidden"
+                                      className="w-full flex flex-col bg-slate-50/80 dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800 hover:border-blue-500/30 rounded-xl transition-all duration-300 shadow-sm overflow-hidden"
                                     >
-                                      {/* Card Header (clickable to expand) */}
                                       <button
                                         onClick={() => setExpandedQAId(isExpanded ? null : item.id)}
-                                        className="w-full text-left p-3.5 flex flex-col gap-1.5 text-black/75 dark:text-white/70 hover:text-blue-500 dark:hover:text-cyan-400 transition-colors focus:outline-none"
+                                        className="w-full text-left p-3 flex flex-col gap-1 text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400 transition-colors focus:outline-none"
                                       >
                                         <div className="flex items-center justify-between gap-3">
-                                          <span className="line-clamp-2 font-medium text-[13px] pr-2 leading-snug flex-1">
+                                          <span className="line-clamp-2 font-medium text-[13px] pr-2 leading-snug flex-1 font-sans">
                                             {item.query}
                                           </span>
                                           <div className="flex items-center gap-2 flex-shrink-0">
-                                            {item.queryIndex && (
-                                              <span className="text-[8.5px] font-orbitron font-black text-black/35 dark:text-white/25 uppercase tracking-widest">
-                                                #{item.queryIndex}/{queryLimit}
-                                              </span>
-                                            )}
-                                            <span className="text-[11px] font-orbitron font-black text-blue-500 dark:text-cyan-400 uppercase tracking-widest bg-blue-500/10 dark:bg-cyan-500/10 border border-blue-500/20 dark:border-cyan-500/20 px-2 py-0.5 rounded-lg">
+                                            <span className="text-[11px] font-sans font-semibold text-blue-600 dark:text-cyan-400 bg-blue-500/10 dark:bg-cyan-500/10 border border-blue-500/20 dark:border-cyan-500/20 px-2 py-0.5 rounded-md">
                                               {isExpanded ? 'Hide' : 'View'}
                                             </span>
                                             {isExpanded ? (
-                                              <ChevronUp className="w-4 h-4 text-black/30 dark:text-white/30" />
+                                              <ChevronUp className="w-4 h-4 text-slate-400" />
                                             ) : (
-                                              <ChevronDown className="w-4 h-4 text-black/30 dark:text-white/30" />
+                                              <ChevronDown className="w-4 h-4 text-slate-400" />
                                             )}
                                           </div>
                                         </div>
                                         {tsLabel && (
-                                          <span className="text-xs text-black/30 dark:text-white/25 font-sans">
+                                          <span className="text-xs text-slate-400 font-sans">
                                             {tsLabel}
                                           </span>
                                         )}
                                       </button>
 
-                                      {/* Expanded Answer Content */}
                                       <AnimatePresence initial={false}>
                                         {isExpanded && (
                                           <motion.div
                                             initial={{ height: 0, opacity: 0 }}
-                                            animate={{ height: 'auto', opacity: 1 }}
+                                            animate={{ height: "auto", opacity: 1 }}
                                             exit={{ height: 0, opacity: 0 }}
-                                            transition={{ duration: 0.25, ease: 'easeInOut' }}
-                                            className="border-t border-black/5 dark:border-white/5"
+                                            transition={{ duration: 0.3 }}
+                                            className="border-t border-slate-200/80 dark:border-slate-800 p-3 bg-white/60 dark:bg-slate-950/60"
                                           >
-                                            <div className="p-4 bg-black/[0.01] dark:bg-white/[0.01] flex flex-col gap-3 select-text border-l-2 border-blue-500 dark:border-cyan-400">
-                                              {/* Answer Body */}
-                                              <div className="text-black/80 dark:text-white/80 select-text font-sans">
-                                                {renderMessageContent(item.answer)}
-                                              </div>
-
-                                              {/* Action Buttons Footer */}
-                                              <div className="flex items-center justify-between border-t border-black/5 dark:border-white/5 pt-3 mt-1 select-none">
-                                                <button
-                                                  onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    // Instantly append the pre-fetched Q&A directly into active messages list!
-                                                    const userMsg = {
-                                                      id: `user-recall-${Date.now()}`,
-                                                      sender: 'user',
-                                                      text: item.query
-                                                    };
-                                                    const botMsg = {
-                                                      id: `bot-recall-${Date.now()}`,
-                                                      sender: 'bot',
-                                                      text: item.answer
-                                                    };
-
-                                                    setMessages((prev) => [...prev, userMsg, botMsg]);
-                                                    setShowHistory(false);
-                                                    setExpandedQAId(null);
-                                                    toast.success("Recalled to active chat!");
-                                                  }}
-                                                  className="px-3 py-1.5 bg-blue-500 hover:bg-blue-600 dark:bg-cyan-500/10 dark:hover:bg-cyan-500/20 border border-blue-500/20 dark:border-cyan-400/20 text-white dark:text-cyan-400 font-orbitron font-black text-[11px] uppercase tracking-wider rounded-lg transition-all active:scale-[0.99]"
-                                                >
-                                                  Import to Chat
-                                                </button>
-
-                                                <div className="flex items-center gap-2">
-                                                  <button
-                                                    onClick={(e) => {
-                                                      e.stopPropagation();
-                                                      handleCopyToClipboard(item.answer);
-                                                    }}
-                                                    className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-black/45 dark:text-white/40 hover:text-blue-500 dark:hover:text-cyan-400 transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5 flex items-center gap-1 text-[11px] font-orbitron font-black uppercase tracking-wider"
-                                                    title="Copy Answer"
-                                                  >
-                                                    <Copy className="w-3.5 h-3.5" />
-                                                    Copy
-                                                  </button>
-                                                  <button
-                                                    onClick={(e) => {
-                                                      e.stopPropagation();
-                                                      if (window.confirm("Delete this past query from history?")) {
-                                                        const username = puterUser ? puterUser.username : 'anonymous';
-                                                        const savedQAsKey = `smart_nav_saved_qa_${username}`;
-                                                        try {
-                                                          const existingQAs = JSON.parse(localStorage.getItem(savedQAsKey) || '[]');
-                                                          const updatedQAs = existingQAs.filter(q => q.id !== item.id);
-                                                          localStorage.setItem(savedQAsKey, JSON.stringify(updatedQAs));
-                                                          setSavedQAs(updatedQAs);  // ← Instantly remove from drawer
-                                                          setExpandedQAId(null);
-                                                          toast.success("Query deleted!");
-                                                        } catch (err) {
-                                                          console.warn("Failed to delete query:", err);
-                                                        }
-                                                      }
-                                                    }}
-                                                    className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-black/45 dark:text-white/40 hover:text-red-500 dark:hover:text-red-400 transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5 flex items-center gap-1 text-[11px] font-orbitron font-black uppercase tracking-wider"
-                                                    title="Delete Query"
-                                                  >
-                                                    <Trash2 className="w-3.5 h-3.5" />
-                                                    Delete
-                                                  </button>
-                                                </div>
-                                              </div>
-                                            </div>
+                                            <p className="text-[12.5px] text-slate-700 dark:text-slate-300 leading-relaxed font-sans whitespace-pre-wrap">
+                                              {item.answer}
+                                            </p>
                                           </motion.div>
                                         )}
                                       </AnimatePresence>
@@ -1493,58 +1399,29 @@ export default function ChatbotWidget() {
               )}
             </AnimatePresence>
 
-            {/* MESSAGES VIEWPORT */}
+            {/* MAIN CONTENT AREA */}
             {!isMinimized && (
               <>
                 <motion.main
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                      transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] }
-                    }
-                  }}
-                  className="relative z-10 flex-1 overflow-y-auto p-4 flex flex-col gap-4 select-none"
+                  className="flex-1 overflow-y-auto p-4 space-y-4 z-10 select-text"
                 >
-
-
-                  {/* Out of Queries warning banner */}
-                  {queriesRemaining <= 0 && (
-                    <div className="p-3.5 bg-amber-500/10 border border-amber-500/20 rounded-xl flex flex-col gap-2.5 text-center select-text">
-                      <span className="text-[12px] font-orbitron font-black text-amber-600 dark:text-amber-400 uppercase tracking-widest">
-                        ⚠️ LIMIT REACHED (0 LEFT)
-                      </span>
-                      <span className="text-[11.5px] font-sans text-black/60 dark:text-white/50 leading-relaxed font-medium">
-                        You have used all available queries for this session. Please switch Google accounts using the button below to continue chatting immediately!
-                      </span>
-                      <button
-                        onClick={handleSwitchAccount}
-                        className="py-2 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-orbitron font-black text-xs uppercase tracking-wider rounded-xl transition-all shadow-sm active:scale-95 flex items-center justify-center gap-1.5"
-                      >
-                        <LogOut className="w-3.5 h-3.5" />
-                        Switch Google Account
-                      </button>
-                    </div>
-                  )}
-
                   {messages.map((msg) => (
                     <div
                       key={msg.id}
-                      className={`flex gap-2.5 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'
-                        }`}
+                      className={`flex w-full ${msg.sender === 'user' ? 'justify-end' : 'justify-start items-start gap-2'}`}
                     >
+                      {/* Bot Avatar Badge on Left */}
                       {msg.sender === 'bot' && (
-                        <div className="flex-shrink-0 flex items-start mt-1">
-                          <SmartNavLogo animated={false} className="size-6 md:size-7 text-cyan-400 drop-shadow-sm" />
+                        <div className="w-6 h-6 rounded-full bg-teal-500/10 dark:bg-teal-500/15 border border-teal-500/20 dark:border-teal-500/20 flex items-center justify-center flex-shrink-0 mt-1 shadow-xs">
+                          <SmartNavLogo className="w-4 h-4" animated={false} />
                         </div>
                       )}
 
                       <div
-                        className={`max-w-[85%] rounded-2xl px-4 py-2.5 leading-relaxed select-text font-sans shadow-sm border transition-all duration-300 ${chatTextSize === 'large' ? 'text-[15px]' : 'text-[13.5px]'
+                        className={`max-w-[82%] rounded-2xl px-4 py-2.5 leading-relaxed select-text font-sans shadow-sm border transition-all duration-300 ${chatTextSize === 'large' ? 'text-[15px]' : 'text-[13.5px]'
                           } ${msg.sender === 'user'
-                            ? 'bg-blue-50/90 border-blue-100 text-blue-900 rounded-tr-none dark:bg-blue-500/15 dark:border-blue-500/25 dark:text-cyan-300 dark:shadow-[0_4px_20px_rgba(59,130,246,0.1)] font-semibold'
-                            : 'bg-white/80 border-black/5 text-slate-800 rounded-tl-none dark:bg-[#131316]/90 dark:border-white/[0.06] dark:text-slate-200 dark:shadow-[0_4px_20px_rgba(0,0,0,0.2)]'
+                            ? 'bg-blue-600 border-blue-600 text-white rounded-br-xs font-medium ml-auto'
+                            : 'bg-slate-100 dark:bg-[#1a1a24] border-slate-200/80 dark:border-slate-800 text-slate-800 dark:text-slate-100 rounded-bl-xs'
                           }`}
                       >
                         {renderMessageContent(msg.text)}
@@ -1562,21 +1439,21 @@ export default function ChatbotWidget() {
                                     navigate(loc.rawUrl)
                                     setIsOpen(false)
                                   }}
-                                  className="mt-2.5 bg-slate-50 dark:bg-black/40 border border-black/10 dark:border-white/10 rounded-xl overflow-hidden h-[130px] w-full relative cursor-pointer group/map shadow-inner transition-all hover:border-blue-500/40 hover:shadow-lg hover:shadow-blue-500/5 select-none"
+                                  className="mt-2.5 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden h-[130px] w-full relative cursor-pointer group/map shadow-sm transition-all hover:border-blue-500/40 select-none"
                                 >
                                   {/* Small map indicator banner */}
-                                  <div className="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 bg-black/60 backdrop-blur-md rounded-md flex items-center gap-1 pointer-events-none">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                                    <span className="text-xs font-orbitron font-black uppercase text-white/90 tracking-widest">
+                                  <div className="absolute top-1.5 left-1.5 z-10 px-2 py-0.5 bg-slate-900/80 backdrop-blur-md rounded-md flex items-center gap-1.5 pointer-events-none">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                                    <span className="text-[11px] font-sans font-semibold text-white tracking-wide">
                                       {targetFloorData.label} Map Preview
                                     </span>
                                   </div>
 
                                   {/* Hover overlay with button */}
-                                  <div className="absolute inset-0 bg-blue-500/10 opacity-0 group-hover/map:opacity-100 transition-opacity flex items-center justify-center z-10 backdrop-blur-[1px]">
-                                    <div className="bg-blue-600/90 text-white font-orbitron font-black text-xs tracking-widest uppercase px-2.5 py-1 rounded-md shadow-lg flex items-center gap-1 scale-90 group-hover/map:scale-100 transition-transform">
-                                      <Maximize2 className="w-3 h-3" />
-                                      Locate in Main View
+                                  <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover/map:opacity-100 transition-opacity flex items-center justify-center z-10 backdrop-blur-[1px]">
+                                    <div className="bg-blue-600 text-white font-sans font-semibold text-xs tracking-wide px-3 py-1.5 rounded-lg shadow-md flex items-center gap-1.5 scale-90 group-hover/map:scale-100 transition-transform">
+                                      <Maximize2 className="w-3.5 h-3.5" />
+                                      Open Map View
                                     </div>
                                   </div>
 
@@ -1604,7 +1481,7 @@ export default function ChatbotWidget() {
                             if (!targets || targets.length === 0) return null
 
                             return (
-                              <div className="mt-2.5 pt-2 border-t border-black/5 dark:border-white/5 flex flex-col gap-1.5 select-none">
+                              <div className="mt-3 flex flex-col gap-2 select-none">
                                 {targets.map((target, tIdx) => (
                                   <button
                                     key={`redirect-${msg.id}-${tIdx}`}
@@ -1613,21 +1490,27 @@ export default function ChatbotWidget() {
                                       navigate(target.url)
                                       setIsOpen(false)
                                     }}
-                                    className="w-full py-1.5 px-3 bg-blue-500/8 dark:bg-cyan-500/10 hover:bg-blue-500/15 dark:hover:bg-cyan-500/20 border border-blue-500/20 dark:border-cyan-400/25 rounded-lg text-blue-600 dark:text-cyan-400 transition-all duration-200 flex items-center justify-between group cursor-pointer"
+                                    className="w-full p-2.5 bg-blue-500/10 dark:bg-cyan-500/15 hover:bg-blue-500/20 dark:hover:bg-cyan-500/25 border border-blue-500/25 dark:border-cyan-400/30 rounded-xl transition-all duration-300 flex items-center justify-between gap-2.5 shadow-sm active:scale-[0.99] cursor-pointer group select-none"
                                   >
-                                    <div className="flex items-center gap-2 min-w-0">
-                                      <Navigation className="w-3.5 h-3.5 flex-shrink-0 text-blue-500 dark:text-cyan-400 opacity-80 group-hover:opacity-100 transition-opacity" />
-                                      <span className="font-orbitron font-semibold text-[11.5px] tracking-wide truncate">
-                                        Go to {target.title}
-                                      </span>
-                                      {target.floorLabel && (
-                                        <span className="text-[10px] font-sans text-black/45 dark:text-white/45 truncate hidden sm:inline">
-                                          • {target.floorLabel}
+                                    <div className="flex items-center gap-2.5 min-w-0 flex-1">
+                                      <div className="w-7 h-7 rounded-lg bg-blue-500/15 dark:bg-cyan-400/15 border border-blue-500/30 dark:border-cyan-400/30 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-500/25 dark:group-hover:bg-cyan-400/25 transition-colors">
+                                        <Navigation className="w-3.5 h-3.5 text-blue-600 dark:text-cyan-400 group-hover:scale-110 transition-transform" />
+                                      </div>
+                                      <div className="flex items-center gap-2 min-w-0 flex-1 flex-wrap">
+                                        <span className="font-sans font-semibold text-[13px] text-blue-600 dark:text-cyan-300 tracking-wide truncate">
+                                          Go to {target.title}
                                         </span>
-                                      )}
+                                        {target.floorLabel && (
+                                          <span className="px-2 py-0.5 text-[10px] font-sans font-semibold uppercase tracking-wider rounded-md bg-blue-500/10 dark:bg-cyan-400/15 text-blue-600/90 dark:text-cyan-300/90 border border-blue-500/20 dark:border-cyan-400/25 whitespace-nowrap flex-shrink-0">
+                                            {target.floorLabel}
+                                          </span>
+                                        )}
+                                      </div>
                                     </div>
 
-                                    <ArrowUpRight className="w-3.5 h-3.5 flex-shrink-0 text-blue-500 dark:text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                                    <div className="w-6 h-6 rounded-lg bg-black/5 dark:bg-white/5 group-hover:bg-blue-500/20 dark:group-hover:bg-cyan-400/20 flex items-center justify-center flex-shrink-0 transition-colors">
+                                      <ArrowUpRight className="w-3.5 h-3.5 text-blue-600 dark:text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                                    </div>
                                   </button>
                                 ))}
                               </div>
@@ -1635,26 +1518,24 @@ export default function ChatbotWidget() {
                           })()
                         )}
 
-
-
-                        {/* Bot actions: Copy and Listen (Read Aloud) */}
+                        {/* Bot actions: Copy and Listen */}
                         {msg.sender === 'bot' && !msg.isWelcome && !msg.isError && (
-                          <div className="mt-2 pt-1.5 border-t border-black/5 dark:border-white/5 flex items-center gap-3 select-none">
+                          <div className="mt-2.5 pt-2 border-t border-slate-200/80 dark:border-slate-800 flex items-center gap-3.5 select-none">
                             <button
                               onClick={() => handleCopyToClipboard(msg.text)}
-                              className="text-black/45 dark:text-white/40 hover:text-blue-500 dark:hover:text-cyan-400 transition-colors flex items-center gap-0.5 text-[8.5px] font-orbitron font-black uppercase tracking-wider"
+                              className="text-slate-400 dark:text-slate-500 hover:text-blue-600 dark:hover:text-cyan-400 transition-colors flex items-center gap-1 text-[11px] font-sans font-semibold"
                               title="Copy response to clipboard"
                             >
-                              <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
                               </svg>
                               Copy
                             </button>
                             <button
                               onClick={() => handleToggleSpeech(msg.id, msg.text)}
-                              className={`transition-colors flex items-center gap-0.5 text-[8.5px] font-orbitron font-black uppercase tracking-wider ${activeSpeech === msg.id
+                              className={`transition-colors flex items-center gap-1 text-[11px] font-sans font-semibold ${activeSpeech === msg.id
                                   ? 'text-emerald-500 dark:text-emerald-400 animate-pulse'
-                                  : 'text-black/45 dark:text-white/40 hover:text-blue-500 dark:hover:text-cyan-400'
+                                  : 'text-slate-400 dark:text-slate-500 hover:text-blue-600 dark:hover:text-cyan-400'
                                 }`}
                               title="Read response aloud"
                             >
@@ -1668,7 +1549,7 @@ export default function ChatbotWidget() {
                                 </>
                               ) : (
                                 <>
-                                  <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
                                   </svg>
                                   Listen
@@ -1677,55 +1558,27 @@ export default function ChatbotWidget() {
                             </button>
                           </div>
                         )}
-
-                        {/* Error message action button */}
-                        {msg.isError && (
-                          <div className="mt-2 pt-2 border-t border-black/5 dark:border-white/5 flex flex-col gap-1.5">
-                            <span className="text-xs text-black/40 dark:text-white/40 font-medium">
-                              Click below to sign out of the current Puter session:
-                            </span>
-                            <button
-                              onClick={handleSwitchAccount}
-                              className="w-full py-1.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:to-pink-600 text-white font-orbitron font-black text-[11px] uppercase tracking-widest rounded-lg transition-all shadow-md active:scale-98 flex items-center justify-center gap-1.5"
-                            >
-                              <LogOut className="w-3 h-3" />
-                              Switch Google Account
-                            </button>
-                          </div>
-                        )}
                       </div>
                     </div>
                   ))}
 
-
-                  {/* MINIMALIST LOADER WITH GLOWING SHIMMER AND HOLOGRAPHIC WAVE */}
+                  {/* Clean thinking state */}
                   {isLoading && (
                     <div className="flex justify-start gap-2.5 animate-fade-in">
-                      <div className="w-7 h-7 rounded-xl flex-shrink-0 flex items-center justify-center bg-gradient-to-tr from-cyan-400 via-purple-500 to-pink-500 p-[1px] shadow-sm mt-0.5 relative overflow-hidden animate-pulse">
-                        <div className="absolute inset-0 bg-gradient-to-tr from-cyan-400 via-purple-500 to-pink-500 opacity-80 rounded-full blur-[2px] animate-spin" style={{ animationDuration: '3s' }} />
-                        <div className="w-full h-full rounded-xl bg-slate-50 dark:bg-[#111115] flex items-center justify-center relative z-10">
-                          <NaviBotIcon className="w-3.5 h-3.5 text-cyan-500 dark:text-cyan-400" glowColor="currentColor" />
-                        </div>
+                      <div className="w-7 h-7 rounded-lg flex-shrink-0 flex items-center justify-center bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-500/20 mt-0.5">
+                        <SmartNavLogo className="w-4 h-4" animated={false} />
                       </div>
 
-                      <div className="relative overflow-hidden bg-black/[0.02] dark:bg-white/[0.03] text-black/55 dark:text-white/40 border border-black/[0.03] dark:border-white/[0.03] rounded-xl rounded-tl-none px-3 py-2 shadow-sm select-text font-sans">
-                        {/* Flowing laser-beam gradient line on top border */}
-                        <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-cyan-500 via-purple-500 via-pink-500 to-cyan-500 animate-shimmer-fast" />
-                        <div className="flex items-center gap-1.5">
-                          <span className="text-black/55 dark:text-white/40 font-orbitron font-black text-[8.5px] uppercase tracking-widest animate-pulse">
-                            Processing Query
-                          </span>
-                          <span className="flex gap-0.5">
-                            <span className="h-1 w-1 bg-cyan-400 rounded-full animate-ping" />
-                          </span>
-                        </div>
+                      <div className="bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 rounded-2xl rounded-tl-xs px-3.5 py-2 shadow-sm font-sans text-xs flex items-center gap-2">
+                        <span>Thinking...</span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-teal-500 animate-ping" />
                       </div>
                     </div>
                   )}
                   <div ref={messagesEndRef} />
                 </motion.main>
 
-                {/* Google Gemini Style Pill Footer */}
+                {/* Natural Footer */}
                 <motion.footer
                   variants={{
                     hidden: { opacity: 0, y: 15 },
@@ -1735,7 +1588,7 @@ export default function ChatbotWidget() {
                       transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] }
                     }
                   }}
-                  className="relative z-10 p-3 border-t border-black/[0.05] dark:border-white/[0.05] bg-white/50 dark:bg-black/20 backdrop-blur-md"
+                  className="relative z-10 p-3 border-t border-slate-200/80 dark:border-slate-800/80 bg-slate-50/60 dark:bg-slate-900/40 backdrop-blur-md"
                 >
                   <AnimatePresence>
                     {duplicateWarning && (
@@ -1743,27 +1596,25 @@ export default function ChatbotWidget() {
                         initial={{ opacity: 0, y: 10, scale: 0.98 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.98 }}
-                        className="mb-2.5 p-2.5 bg-blue-500/10 dark:bg-cyan-500/10 border border-blue-500/25 dark:border-cyan-500/25 rounded-xl flex flex-col gap-1.5 select-text"
+                        className="mb-2.5 p-3 bg-blue-50 dark:bg-slate-900 border border-blue-200 dark:border-slate-800 rounded-xl flex flex-col gap-1.5 select-text"
                       >
                         <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-1 text-blue-600 dark:text-cyan-400">
+                          <div className="flex items-center gap-1.5 text-blue-600 dark:text-cyan-400 font-sans font-semibold text-xs">
                             <AlertTriangle className="w-3.5 h-3.5" />
-                            <span className="text-[11px] font-orbitron font-black uppercase tracking-widest">
-                              Similar Query Found
-                            </span>
+                            <span>Similar Query Found</span>
                           </div>
                           <button
                             type="button"
                             onClick={() => setDuplicateWarning(null)}
-                            className="p-0.5 text-black/40 dark:text-white/30 hover:text-black dark:hover:text-white transition-colors"
+                            className="p-0.5 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors"
                           >
                             <X className="w-3 h-3" />
                           </button>
                         </div>
-                        <p className="text-[10.5px] text-black/60 dark:text-white/60 leading-relaxed font-sans font-medium">
-                          A similar question was found in your history: <strong className="text-black dark:text-white">"{duplicateWarning.query}"</strong>. Click below to view the past answer directly and save your monthly queries.
+                        <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
+                          Found in your history: <strong>"{duplicateWarning.query}"</strong>. View past answer to save queries.
                         </p>
-                        <div className="flex items-center gap-1.5 mt-0.5">
+                        <div className="flex items-center gap-2 mt-1">
                           <button
                             type="button"
                             onClick={() => {
@@ -1779,9 +1630,9 @@ export default function ChatbotWidget() {
                                 }
                               }, 300);
                             }}
-                            className="px-2.5 py-1 bg-blue-500 hover:bg-blue-600 dark:bg-cyan-500/10 dark:hover:bg-cyan-500/20 border border-blue-500/20 dark:border-cyan-400/20 text-white dark:text-cyan-400 font-orbitron font-black text-[8.5px] uppercase tracking-wider rounded-md transition-all active:scale-95 shadow-sm"
+                            className="px-2.5 py-1 bg-blue-600 hover:bg-blue-700 text-white font-sans font-semibold text-xs rounded-md transition-all active:scale-95 shadow-sm"
                           >
-                            🔍 View Past Answer
+                            View Past Answer
                           </button>
                           <button
                             type="button"
@@ -1791,7 +1642,7 @@ export default function ChatbotWidget() {
                               submitQuery(textToSend, true);
                               setInputValue('');
                             }}
-                            className="px-2.5 py-1 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-black/60 dark:text-white/60 border border-black/10 dark:border-white/10 font-orbitron font-black text-[8.5px] uppercase tracking-wider rounded-md transition-all active:scale-95"
+                            className="px-2.5 py-1 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 text-slate-700 dark:text-slate-300 font-sans font-semibold text-xs rounded-md transition-all active:scale-95"
                           >
                             Send Anyway
                           </button>
@@ -1800,26 +1651,26 @@ export default function ChatbotWidget() {
                     )}
                   </AnimatePresence>
 
-                  <form onSubmit={handleSend} className="relative flex items-center bg-black/[0.03] dark:bg-white/[0.04] border border-black/[0.08] dark:border-white/[0.08] rounded-full p-1 pl-4 focus-within:border-blue-500/40 focus-within:ring-2 focus-within:ring-blue-500/15 transition-all duration-300">
+                  <form onSubmit={handleSend} className="relative flex items-center bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-full p-1 pl-4 focus-within:border-blue-500/50 focus-within:ring-2 focus-within:ring-blue-500/15 transition-all duration-300 shadow-sm">
                     <input
                       type="text"
                       value={inputValue}
                       onChange={(e) => setInputValue(e.target.value)}
-                      placeholder={queriesRemaining <= 0 ? "Limit reached. Switch account!" : "Ask Smart Nav AI..."}
+                      placeholder={queriesRemaining <= 0 ? "Query limit reached." : "Ask about rooms, departments, faculty, or directions..."}
                       disabled={isLoading || queriesRemaining <= 0}
-                      className="flex-1 bg-transparent border-none text-[13px] md:text-[14px] text-[var(--text-main)] focus:outline-none placeholder:text-black/40 dark:placeholder:text-white/40 disabled:opacity-50 font-sans py-1.5 pr-10"
+                      className="flex-1 bg-transparent border-none text-[13px] md:text-[14px] text-slate-900 dark:text-slate-100 focus:outline-none placeholder:text-slate-400 dark:placeholder:text-slate-500 disabled:opacity-50 font-sans py-1.5 pr-10"
                     />
                     <button
                       type="submit"
                       disabled={!inputValue.trim() || isLoading || queriesRemaining <= 0}
-                      className="absolute right-1.5 top-1/2 -translate-y-1/2 p-2 bg-blue-500 hover:bg-blue-600 disabled:bg-slate-300 dark:disabled:bg-white/10 text-white disabled:text-black/30 dark:disabled:text-white/30 rounded-full transition-all duration-300 flex items-center justify-center shadow-md disabled:shadow-none focus:outline-none"
+                      className="absolute right-1.5 top-1/2 -translate-y-1/2 p-2 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-200 dark:disabled:bg-slate-800 text-white disabled:text-slate-400 dark:disabled:text-slate-600 rounded-full transition-all duration-300 flex items-center justify-center shadow-sm disabled:shadow-none focus:outline-none cursor-pointer"
                     >
                       <Send className="w-3.5 h-3.5" />
                     </button>
                   </form>
-                  {/* Google style disclaimer note */}
-                  <div className="text-center text-[11px] font-sans text-black/40 dark:text-white/40 mt-1.5 tracking-wider uppercase select-none font-semibold">
-                    Campus Assist AI can make mistakes. Verify critical paths.
+                  {/* Natural disclaimer note */}
+                  <div className="text-center text-[11px] font-sans text-slate-400 dark:text-slate-500 mt-2 select-none font-normal">
+                    Campus Assistant helps with navigation. Verify critical routes before walking.
                   </div>
                 </motion.footer>
               </>

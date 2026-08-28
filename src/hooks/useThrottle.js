@@ -10,20 +10,39 @@ import { useState, useEffect, useRef, useCallback } from 'react'
  */
 export function useThrottle(value, limit = 30) {
   const [throttledValue, setThrottledValue] = useState(value)
-  const lastRan = useRef(Date.now())
+  const lastRanRef = useRef(Date.now())
+  const timeoutRef = useRef(null)
+  const valueRef = useRef(value)
+
+  valueRef.current = value
 
   useEffect(() => {
-    const handler = setTimeout(() => {
-      if (Date.now() - lastRan.current >= limit) {
-        setThrottledValue(value)
-        lastRan.current = Date.now()
-      }
-    }, limit - (Date.now() - lastRan.current))
+    const now = Date.now()
+    const elapsed = now - lastRanRef.current
 
-    return () => {
-      clearTimeout(handler)
+    if (elapsed >= limit) {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+        timeoutRef.current = null
+      }
+      lastRanRef.current = now
+      setThrottledValue(valueRef.current)
+    } else if (!timeoutRef.current) {
+      timeoutRef.current = setTimeout(() => {
+        lastRanRef.current = Date.now()
+        setThrottledValue(valueRef.current)
+        timeoutRef.current = null
+      }, limit - elapsed)
     }
   }, [value, limit])
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+    }
+  }, [])
 
   return throttledValue
 }
@@ -40,29 +59,47 @@ export function useThrottledCallback(callback, limit = 16) {
   const callbackRef = useRef(callback)
   const lastRanRef = useRef(0)
   const timeoutRef = useRef(null)
+  const lastArgsRef = useRef(null)
 
   useEffect(() => {
     callbackRef.current = callback
   }, [callback])
 
-  return useCallback(
+  const throttled = useCallback(
     (...args) => {
       const now = Date.now()
       const elapsed = now - lastRanRef.current
+      lastArgsRef.current = args
 
       if (elapsed >= limit) {
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current)
+          timeoutRef.current = null
+        }
         lastRanRef.current = now
-        callbackRef.current(...args)
-      } else {
-        clearTimeout(timeoutRef.current)
+        callbackRef.current(...lastArgsRef.current)
+      } else if (!timeoutRef.current) {
         timeoutRef.current = setTimeout(() => {
           lastRanRef.current = Date.now()
-          callbackRef.current(...args)
+          if (lastArgsRef.current) {
+            callbackRef.current(...lastArgsRef.current)
+          }
+          timeoutRef.current = null
         }, limit - elapsed)
       }
     },
     [limit]
   )
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+    }
+  }, [])
+
+  return throttled
 }
 
 export default useThrottle
